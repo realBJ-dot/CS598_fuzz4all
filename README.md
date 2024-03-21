@@ -1,1 +1,7 @@
 # CS598_fuzz4all
+
+Fuzz4All currently supports compilers for C/C++, Java, SMT solvers, the Go toolchain, and the Qiskit quantum computing system. We will conduct an extensive study of Fuzz4All on critical systems from other domains, specifically JavaScript engines and MySQL. In the JavaScript domain, we will test two systems: V8 and Hermes. For MySQL, we will evaluate MyISAM and InnoDB. If time allows, we will also test TitanFuzz on these systems and compare its performance with that of Fuzz4All.
+
+Fuzz4All (https://arxiv.org/pdf/2308.04748.pdf) is a universal fuzzer capable of targeting multiple systems. It has been tested across six languages, achieving higher coverage than existing fuzzers and identifying over 98 bugs in widely used systems. We aim to assess Fuzz4All's performance on JavaScript and MySQL engines. JavaScript plays a vital role in the Internet, being utilized in client-side programming on 98.7% of websites. We chose MySQL engines due to their widespread use in relational databases.
+
+We plan to compile the systems under test into binaries, and collect relevant documentation and example code snippets for Fuzz4All. Our comparison will involve baseline fuzzers identified in each domain: Jsfuzz and Fuzilli for JavaScript, and sqlfuzz and Squirrel for MySQL. Considering these systems have been widely deployed and rigorously tested by a vast user base, we may explore older versions and compare findings with known bug reports or update logs, if no new bugs are discovered in the latest versions.

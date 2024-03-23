@@ -1,0 +1,23 @@
+'use strict';
+let a = {};
+a.foo = [async function a() {
+    let b = await Promise.resolve('done');
+  return 1 + 2;
+}(1, 2)];
+a.toString = function a() {
+    return [1, 2].toString();  
+};
+a;
+```
+
+
+Execution Output ------------------:
+test.js:12:1: error: non-terminated template literal
+
+^
+test.js:11:3: note: template literal started here
+```
+  ^
+test.js:12:1: error: invalid expression
+
+^

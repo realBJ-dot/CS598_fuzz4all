@@ -1,0 +1,21 @@
+'use strict';
+const c = {};
+c.foo = async (p) => {
+  return p + 1;
+};
+console.log(a.foo(2));
+console.log(c.foo(3));
+console.log(c.toString());
+
+
+Execution Output ------------------:
+test.js:3:9: error: async functions are unsupported
+c.foo = async (p) => {
+        ^~~~~~~~~~~~~~
+test.js:6:1: warning: the variable "console" was not declared in function "global"
+console.log(a.foo(2));
+^~~~~~~
+test.js:6:13: warning: the variable "a" was not declared in function "global"
+console.log(a.foo(2));
+            ^
+Emitted 1 errors. exiting.

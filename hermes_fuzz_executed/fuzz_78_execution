@@ -1,0 +1,20 @@
+'use strict';
+await Promise.resolve('done');
+a;
+ 
+'use strict';
+a.foo().then(function a() {
+  return 1 + 2;
+});
+a;
+ 
+ 
+'use strict';
+let {a} = {a: await Promise.resolve('done')};
+a;
+
+
+Execution Output ------------------:
+test.js:2:7: error: ';' expected
+await Promise.resolve('done');
+      ^

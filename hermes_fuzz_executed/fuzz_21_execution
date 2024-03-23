@@ -1,0 +1,57 @@
+'use strict';
+ 
+let mutatedInt = 3579;
+let mutatedSet = new Set();
+let mutatedMap = new Map();
+'use strict';
+ 
+let obj = {};
+console.log(obj.__proto__);
+console.log(Object.hasOwn(obj));
+ 
+console.log(Object.getOwnPropertyNames(obj));
+ 
+let val = obj.__proto__;
+console.log('proto', val);
+let numObj = {__proto__ : val};
+console.log('Object', numObj);
+let stringObj = {__proto__ : null};
+console.log('String', stringObj);
+console.log(numObj.__proto__);
+ 
+ 
+'use strict';
+ 
+Object.defineProperty(Arrray.prototype, 'values', {
+    get: function () {
+        return this.map(x => x);
+    }
+});
+Array.prototype[Symbol.iterator] = Array.values.bind(Array.prototype);
+ 
+Object.defineProperty(Map.prototype, 'values', {
+    get: function () {
+        return Array.from(this.values());
+    }
+});
+ 
+Map.prototype[Symbol.iterator] = Map.prototype.values.bind(Map.prototype);
+ 
+Object.defineProperty(Object.prototype, 'values', {
+    get: function () {
+        return Object.getOwnPropertyNames(this).map(p => this[p]);
+    }
+});
+Object.defineProperty(Object.prototype, Symbol.iterator, {
+    value: Object.getOwnPropertyNames(Object.prototype).map(p => Object.prototype[p]).values()
+});
+ 
+'use strict';
+Object.defineProperties(String.prototype, {
+    __proto__: null,
+    trim:
+
+Execution Output ------------------:
+test.js:52:10: error: invalid expression
+    trim:
+         ^

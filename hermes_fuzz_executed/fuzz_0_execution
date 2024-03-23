@@ -1,0 +1,61 @@
+'use strict';
+
+
+class Test {
+
+}
+
+async function getPromise () {
+    function getPromise () {
+        return Promise.resolve('foobar');
+    }
+    return await getPromise();
+}
+
+const p = new Promise((resolve, reject) => {
+    reject(2);
+});
+
+p.then(()=>{}, ()=>{})
+
+class Test {
+    constructor() {
+        Test.super_.constructor.call(this, 1);
+        this.y = 2;
+    }
+}
+
+function myTest() {}
+
+function print() {
+    console.log('string');
+}
+
+for (i = 1; i < 16; ++i) {
+    myTest();
+}
+
+print();
+ 
+ 
+ 
+ 
+
+
+Execution Output ------------------:
+test.js:10:16: warning: the variable "Promise" was not declared in function "getPromise 1#"
+        return Promise.resolve('foobar');
+               ^~~~~~~
+test.js:31:5: warning: the variable "console" was not declared in function "print"
+    console.log('string');
+    ^~~~~~~
+test.js:4:1: error: invalid statement encountered.
+class Test {
+^~~~~~~~~~~~
+test.js:21:1: error: invalid statement encountered.
+class Test {
+^~~~~~~~~~~~
+test.js:34:6: warning: the variable "i" was not declared in function "global"
+for (i = 1; i < 16; ++i) {
+     ^
+Emitted 2 errors. exiting.

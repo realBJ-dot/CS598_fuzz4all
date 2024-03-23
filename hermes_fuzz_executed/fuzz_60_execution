@@ -1,0 +1,84 @@
+'use strict';
+a.foo = function a() {
+    a.foo = function a() {
+        a.foo = function a() {
+            a.foo = function a() {
+                a.foo = function a() {
+                    a.foo = function a() {
+                        a.foo = function a() {
+                            a.foo = function a() {
+                                a.foo = function a() {
+                                    a.foo = function a() {
+                                        a.foo = function a() {
+                                            a.foo = function a() {
+                                                a.foo = function a() {
+                                                    a.foo = function a() {
+                                                        a.foo = function a() {
+                                                            a.foo = function a() {
+                                                                a.foo = function a() {
+                                                                    a.foo = function a() {
+                                                                        return 1 + 2;
+                                                                    };
+                                                                };
+                                                            };
+                                                        };
+                                                    };
+                                                };
+                                            };
+                                        };
+                                    };
+                                };
+                            };
+                        };
+                    };
+                };
+            };
+        };
+    };
+    return 1 + 2;
+};
+a.toString();
+ 
+ 
+ 
+ 
+ 
+const b = {
+    value: "undefined",
+    name: function name() {},
+    add: function add(x) {},
+    use: function use($function) {
+        const f = new Function("a", "$function", "x", "return a + x");
+        return f(this, $function, 2);
+    },
+};
+ 
+const c = {
+    value: "undefined",
+    name: function name() {},
+    add: function add(x) {},
+    use: function use($function) {
+        const f = $function.bind(this);
+        f();
+        return f(2);
+    },
+};
+c.use($function);
+ 
+ 
+ 
+ 
+ 
+const e = {
+    foo1: function foo1() {},
+    foo2: function foo2() {
+        return this.foo1();
+    },
+};
+ 
+const d = { foo2: function foo2()
+
+Execution Output ------------------:
+test.js:79:34: error: '{' expected in function expression
+const d = { foo2: function foo2()
+                  ~~~~~~~~~~~~~~~^

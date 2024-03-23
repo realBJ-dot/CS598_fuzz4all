@@ -1,0 +1,60 @@
+'use strict';
+let mutatedSet = new Set();
+mutatedSet.add(123);
+let set = new Set();
+set.add(123);
+set.add(mutatedSet);
+Promise.resolve().catch((_) => {
+    console.log('promise resolved', _);
+    throw 'An unexpected error occurred';
+}).then(() => {
+    console.log('promise resolved and then called');
+});
+ 
+const __recompute_set$ = function () {
+    mutatedSet.add(123);
+};
+
+ 
+const __recompute_set$_ = function () {
+    set.add(123);
+};
+
+'use strict';
+let [a,, c] = [1,, 25];
+let [b] = a;
+let obj = { b: 3 };
+let a;
+try {
+    a = Symbol();
+} catch (_) {
+    console.log('Unexpected error (should not happen)');
+    return;
+}
+('use strict';
+a = Symbol();
+a).toString();
+a;
+let set = new Set();
+set.foo = a;
+set;
+a[a];
+a.toString();
+a.toString();
+'use strict';
+delete set.foo;
+a;
+'use strict';
+(new Set).foo;
+'use strict';
+(new Set).foo = 123;
+a;
+a;
+'use strict';
+set.add(set);
+
+
+Execution Output ------------------:
+test.js:34:14: error: ')' expected at end of parenthesized expression
+('use strict';
+~~~~~~~~~~~~~^

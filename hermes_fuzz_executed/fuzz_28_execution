@@ -1,0 +1,59 @@
+'use strict';
+let mutatedFunction = (param) => 2 + 2;
+let mutatedArrowFunction = () => 123;
+let regularFunction = function() {
+  return 123;
+};
+let newFunction = function newFunction() {
+  return 123;
+};
+let newArrowFunction = () => 9;
+ 
+'use strict';
+let mutatedCall = 2 + 2();
+let call = 2 + 2();
+let mutatedCall0 = 2()();
+ 
+'use strict';
+let v;
+ 
+'use strict';
+let z;
+let mutatedGlobalVar = 3;
+ 
+'use strict';
+globalObj = null;
+ 
+'use strict';
+function localFunction() {
+  let x;
+  x = 123;
+}
+
+let localVar = 0;
+ 
+'use strict';
+let object = {};
+object.method = 123;
+ 
+'use strict';
+let obj = Object.create(null);
+obj['a'] = 1;
+obj['b'] = 2;
+let a = obj.a;
+let b = obj['b'];
+ 
+'use strict';
+let o = {foo: 'baz'};
+let foo = o?.foo?.length;
+foo = o.foo?.length?? 'not defined';
+foo = o.foo?? 'undefined';
+/* Please create a very short program which uses Javascript and Hermes object properties and methods in
+
+Execution Output ------------------:
+test.js:51:104: error: non-terminated block comment
+/* Please create a very short program which uses Javascript and Hermes object properties and methods in
+                                                                                                       ^
+test.js:51:1: note: comment started here
+/* Please create a very short program which uses Javascript and Hermes object properties and methods in
+^

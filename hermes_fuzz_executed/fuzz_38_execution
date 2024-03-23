@@ -1,0 +1,48 @@
+'use strict';
+let first_1 = new Map().set('first', 123), second_1 = new Map();
+second_1.set('second', 124), first_1.set('first', 126), third_1 = new Map();
+third_1.set('third', 125), second_1.set('third', 126), second_1.set(first_1['first'], 555), console.log(first_1), console.log(second_1), console.log(third_1)
+'use strict';
+let first_2 = new Map();
+for (let [name, index] of first_2.entries()) {
+    console.log(name);
+}
+let second_2 = new Map();
+for (let [name, index] of second_2) {
+    console.log(name);
+}
+function foo() {
+    return () => ({});
+}
+let third_2 = new Map();
+third_2.set('first', Number.NaN), third_2.set('second', foo());
+console.log(third_2.get('first'));
+console.log(third_2.get('second')[0]);
+ 
+let fourth_1 = first && second? first : second;
+console.log(fourth_1);
+ 
+let fifth_1 = second && third? third : second;
+console.log(fifth_1);
+'use strict';
+let fifth_2 = second || third;
+console.log(fifth_2)
+"use strict";
+ 
+let third_3 = third || second;
+console.log(third_3);
+'use strict';
+ 
+second.set(first.get('first'), second.get(first.get('first')) + 1);
+console.log(second)
+"use strict";
+let fifth_3 = (third == undefined? second + third + fourth - fifth : second > third? third : fifth) >= 5 && second / 2 > 3) >= first < third;
+ 
+console.log(fifth_3)
+'use strict';
+let fifth_4 =!(second && third
+
+Execution Output ------------------:
+test.js:39:123: error: ';' expected
+let fifth_3 = (third == undefined? second + third + fourth - fifth : second > third? third : fifth) >= 5 && second / 2 > 3) >= first < third;
+                                                                                                                          ^

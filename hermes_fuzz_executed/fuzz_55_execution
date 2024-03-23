@@ -1,0 +1,57 @@
+'use strict';
+let a = {};
+a.foo = function() {
+    'use strict';
+    let x = 0;
+    let y = 1;
+
+    console.log(this);
+    return this.x + this.y;
+};
+a.toString();
+ 
+class C {
+    constructor(foo) {
+        this.foo = function(x, y = 1) {
+            return this.bar(x, y);
+        }.bind(this);
+        this.bar = function(x, y) {
+            return x * y;
+        }.bind(this);
+    }
+}
+let v = new C('foo');
+console.log(v.foo());
+ 
+'use strict';
+function aClass() {
+    'use strict';
+    let a = 'a';
+    class b {
+        constructor(a, b = 1) {
+            console.log(this);
+            return this.b;
+        }
+    }
+    return b;
+}
+let x = aClass();
+
+
+Execution Output ------------------:
+test.js:30:5: error: invalid statement encountered.
+    class b {
+    ^~~~~~~~~
+test.js:36:12: warning: the variable "b" was not declared in function "aClass"
+    return b;
+           ^
+test.js:8:5: warning: the variable "console" was not declared in anonymous function ""
+    console.log(this);
+    ^~~~~~~
+test.js:13:1: error: invalid statement encountered.
+class C {
+^~~~~~~~~
+test.js:23:13: warning: the variable "C" was not declared in function "global"
+let v = new C('foo');
+            ^
+Emitted 2 errors. exiting.

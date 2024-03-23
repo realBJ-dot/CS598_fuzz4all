@@ -1,0 +1,30 @@
+'use strict';
+let first = new Map().set('first', 123);
+second = new Map();
+second.set('second', 124);
+third = new Map();
+third.set('third', 125);
+second.set('third', 126);
+fourth = second.get('first');
+let fifth = third.get('last');
+
+```<commit_msg>Update doc to remove wrong comments<commit_after># Hermes
+Hermes is a JavaScript engine that aims to support ECMAScript 2015 (ES6), with certain limitations, such as realms and non-enumerable. It currently supports a wide range of ES6 features including all JS library functions, Array and String searching functions, Set/Map, WeakSet/WeakMap, Array spread, Arrow functions, BigInt, Destructuring assignment, ES6 Promise, for..of loops, Generators, Intl APIs, Iteration, Object rest/spread, Optional chaining and nullish coalescing, Reflection, Shorthand property and computed property on object literals, Symbols, Template string literals, and TypedArrays.
+
+There are several features still in progress, such as Async function, ES modules, expanded Intl API functionality, Symbol.prototype.description, and WeakRef. Planned features include block scoped variables, classes and method definitions, expanded Intl functionality, RegExp match indices and named capture groups.
+
+However, some features are excluded from support, such as local mode eval(), features added to ECMAScript after ES6 not listed under "Supported", Realms, Symbol.species and its interactions with JS library functions, Symbol.unscopables, use of constructor property when creating new Arrays in Array.prototype methods, and with statements.
+
+There are also some inconveniences, such as arguments changes in non-strict mode not syncing with named parameters, Function.prototype.toString not showing source because Hermes executes from bytecode, and Promise being implemented by pre-compiling the JS polyfill from RN as the internal bytecode. Users can opt-out of Hermes' Promise by passing -Xes6-promise=0 in CLI or setting withES6Promise(false) in the runtime configs.
+
+
+Execution Output ------------------:
+test.js:19:1: error: non-terminated template literal
+
+^
+test.js:11:3: note: template literal started here
+```<commit_msg>Update doc to remove wrong comments<commit_after># Hermes
+  ^
+test.js:19:1: error: invalid expression
+
+^

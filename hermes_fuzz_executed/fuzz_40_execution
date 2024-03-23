@@ -1,0 +1,14 @@
+'use strict';
+let x, y, z = 2, w = 3, v;
+let u;
+class Z { constructor() { x = 2; } } function Y() { let z; return z; } () => { return this; }  
+let y = 1;
+() => { return v; }  
+let x = 1;
+
+
+Execution Output ------------------:
+test.js:4:1: error: invalid statement encountered.
+class Z { constructor() { x = 2; } } function Y() { let z; return z; } () => { return this; }  
+^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Emitted 1 errors. exiting.

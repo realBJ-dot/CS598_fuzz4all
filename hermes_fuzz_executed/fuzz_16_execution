@@ -1,0 +1,34 @@
+'use strict';
+for (let key of set) {
+	key = key * 2;
+}
+'use strict';
+function getIter() {
+	return {
+		next() {
+			return { done: false, value: [] };
+		},
+	};
+}
+
+ 
+(function main() {
+	 
+	eval('let set = new Set(); set = set.add(123);');
+})();
+```
+
+## FAQ
+
+
+
+Execution Output ------------------:
+test.js:23:1: error: non-terminated template literal
+
+^
+test.js:19:3: note: template literal started here
+```
+  ^
+test.js:23:1: error: invalid expression
+
+^

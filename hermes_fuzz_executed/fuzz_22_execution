@@ -1,0 +1,78 @@
+'use strict';
+let mutationCount = 0;
+function foo() {
+    mutationCount++;
+}
+foo();
+ 
+ 
+ 
+ 
+let isAot = false;
+if (isAot) {
+    try {
+         
+        let lib = new NativeModule('../test', 'HermesNativeTest');
+        lib.add1(4);
+        lib.subtractWithPromise(5, 3);
+    } catch (e) {
+         
+        console.log('NativeModule test failed', e);
+    }
+}
+async function wait(ms) {
+    return new Promise((res) => {
+        setTimeout(() => {
+            res();
+        }, ms);
+    });
+}
+function bar() {
+    console.log('Hello, world');
+}
+let asyncFoo = async () => {
+    console.log('Doing it async');
+    await wait(5000);
+    console.log('It\'s done async');
+    return;
+};
+bar();
+ 
+ 
+let mutated = 0;
+try {
+    console.log(Math.random());
+    mutated = 1 / 0;
+} catch (e) {
+}
+console.log(mutated);
+async function func() { return 'Hello'; }
+console.log(func());
+let a = 1;
+async function funcAsync() { return 'Hello'; }
+console.log(funcAsync());
+let funcPromise = () => {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve('Hello');
+        }, 1000);
+    });
+};
+console.log(funcPromise());
+let a = Promise.resolve('Hello');
+console.log(a);
+class A {
+    async func() {
+        return 'Hello';
+    }
+}
+async function funcA() {
+    return 'Hello';
+}
+let a = new A();
+let
+
+Execution Output ------------------:
+test.js:73:4: error: 'identifier' expected in declaration
+let
+~~~^

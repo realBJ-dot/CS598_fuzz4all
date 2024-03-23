@@ -1,0 +1,14 @@
+'use strict';
+let first = {first: 123};
+let second = first;
+second['second'] = 124;
+let third = {third: 125};
+third['last'] = 126;
+let fourth = {second[first['first']]};
+let fifth = {third[third['last']]};
+
+
+Execution Output ------------------:
+test.js:7:21: error: ':' expected in property initialization
+let fourth = {second[first['first']]};
+              ~~~~~~^

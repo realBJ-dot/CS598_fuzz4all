@@ -1,0 +1,62 @@
+'use strict';
+'use strict';
+"use strict";
+a = {
+    foo: async () => {
+        let b = await Promise.resolve('done');
+        b.toLowerCase = 'toLowerCase';
+        return 1;
+      },
+      bar: async () => {
+        let b = await Promise.resolve('done');
+        let c = await b.toUpperCase();
+        c.toLowerCase = 'LowerCase';
+        return c;
+      },
+     baz: async () => {
+        let b = await xawait Promise.resolve('done');
+        let c = await b.toUpperCase();
+        c.toLowerCase = 'LowerCase';
+        return c;
+      }
+    },
+    toString() { return 'done';
+    }
+}
+a;
+let a = new Promise(function (resolve, reject) {
+    setTimeout(() => {
+        resolve('done'); 
+    }, 500);
+  });
+ 
+ 
+ 
+ 
+ 
+a;
+a;
+({
+    then: resolve,
+    catch: reject
+});
+a;
+a;
+a;
+a;
+a;
+a;
+}
+
+function awaitWithReject() {
+const awaitPromise = () => new Promise((resolve, reject) => {
+    return reject('Reject the async code.');
+  });
+  await(awaitPromise);
+}
+
+
+Execution Output ------------------:
+test.js:17:30: error: ';' expected
+        let b = await xawait Promise.resolve('done');
+                             ^

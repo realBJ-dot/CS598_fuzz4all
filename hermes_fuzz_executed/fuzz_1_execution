@@ -1,0 +1,117 @@
+'use strict';
+
+
+class A {
+  foo() {
+    return 42;
+  }
+}
+
+class B {
+  bar() {
+    return 42;
+  }
+}
+
+class C extends B {
+  constructor() {
+    super();
+    foo = this.foo;
+    baz = 0;
+  }
+}
+
+class D extends B {
+  baz() {
+    const {foo} = this;
+  }
+}
+const D2 = D;
+
+let a = new A();
+let b = new B();
+let c = new C();
+let d = new D();
+let d2 = new D2();
+let x2 = 1;
+let y = 1;
+
+[1, '2'].forEach(number => {
+  x2 = 2;
+  y;
+  return `Hello world! ${number}`;
+});
+
+(async () => {
+  return 'awaited';
+})();
+
+async function test() {
+  console.log(await 'awaited');
+  console.log(y);
+  console.log('x2', x2);
+  console.log(a);
+  console.log(c);
+}
+
+test();
+
+class A2 {
+  static b = 2;
+  constructor(_a) {
+    var foo = _a.foo, bar = _a.bar;
+    var _b;
+    baz = 1;
+    return Object.assign(this, (_b = {}, _b[foo] = bar, _b));
+  }
+}
+
+class B2 extends A2 {
+  constructor() {
+    super({foo: 'boo', bar: 'buzz'});
+  }
+}
+console.log(new B2().b);
+
+
+Execution Output ------------------:
+test.js:50:3: warning: the variable "console" was not declared in function "?anon_0_?anon_0_test"
+  console.log(await 'awaited');
+  ^~~~~~~
+test.js:4:1: error: invalid statement encountered.
+class A {
+^~~~~~~~~
+test.js:10:1: error: invalid statement encountered.
+class B {
+^~~~~~~~~
+test.js:16:1: error: invalid statement encountered.
+class C extends B {
+^~~~~~~~~~~~~~~~~~~
+test.js:24:1: error: invalid statement encountered.
+class D extends B {
+^~~~~~~~~~~~~~~~~~~
+test.js:29:12: warning: the variable "D" was not declared in function "global"
+const D2 = D;
+           ^
+test.js:31:13: warning: the variable "A" was not declared in function "global"
+let a = new A();
+            ^
+test.js:32:13: warning: the variable "B" was not declared in function "global"
+let b = new B();
+            ^
+test.js:33:13: warning: the variable "C" was not declared in function "global"
+let c = new C();
+            ^
+test.js:45:2: error: async functions are unsupported
+(async () => {
+ ^~~~~~~~~~~~~
+test.js:59:1: error: invalid statement encountered.
+class A2 {
+^~~~~~~~~~
+test.js:69:1: error: invalid statement encountered.
+class B2 extends A2 {
+^~~~~~~~~~~~~~~~~~~~~
+test.js:74:17: warning: the variable "B2" was not declared in function "global"
+console.log(new B2().b);
+                ^~
+Emitted 7 errors. exiting.

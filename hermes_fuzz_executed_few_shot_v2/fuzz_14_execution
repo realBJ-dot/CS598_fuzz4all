@@ -1,0 +1,17 @@
+'use strict';
+var Promise = Promise || require('es6-promise').Promise;
+var myFunction = async () => Promise.resolve();
+```
+
+
+
+Execution Output ------------------:
+test.js:6:1: error: non-terminated template literal
+
+^
+test.js:4:3: note: template literal started here
+```
+  ^
+test.js:6:1: error: invalid expression
+
+^

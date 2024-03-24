@@ -1,0 +1,48 @@
+'use strict';
+
+class C1 {
+    foo(a) {
+        console.log('a:', a);
+        return a + 1;
+    }
+}
+class C2 {
+    foo(a, b, c, d, e) {
+        console.log('a:', a, 'b:', b, 'c:', c, 'd:', d, 'e:', e);
+        return a + b + c + d + e;
+    }
+}
+class C3 {
+    foo(a,, b, c,, d) {
+        console.log('a:', a, 'b:', b, 'c:', c, 'd:', d);
+        return a + b + c + d;
+    }
+}
+class C4 {
+    foo2(a) {
+        console.log('a:', a);
+        return a + 2;
+    }
+}
+class A {
+    foo3(...args) {
+        console.log('args: ', args);
+        args.push(1);
+        args.push(...[...args]);
+        return args[1];
+    }
+}
+var c2 = new C2(2, 'Hello, world!', true, [], null);
+var c3 = new C3(2, 2, 2, 2, 3, 3);
+var c4 = new C4();
+var a = new A(c2);
+var arr = [c2, c3, c4, a];
+for (var i = 0; i < arr.length; i++) {
+    console.log('Result of a:', arr[i].foo(...arr));
+}
+
+
+Execution Output ------------------:
+test.js:16:11: error: identifier, '{' or '[' expected in binding pattern
+    foo(a,, b, c,, d) {
+          ^

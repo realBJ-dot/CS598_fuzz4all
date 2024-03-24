@@ -1,0 +1,32 @@
+'use strict';
+
+var myFunction = Array.prototype.some.call(Array(23), (x) => {x=0;return x===0;});
+var myFunction = Array.prototype.some.call(Array(23), (x) => {x=1;return x===0;});
+'use strict';
+
+var myFunction = Array.prototype.some.call(Array(23), {x: 1, y: x => x});
+
+function myFunction(){}
+function myFunction(){}
+'use strict';
+
+var myFunction = Object.assign(Array.prototype, {
+  some: function(objSelector, options)
+});
+'use strict';
+
+var myFunction = Array.prototype.reduce.call(Array(23), (a,b) => a+b, 0);
+'use strict';
+
+var myFunction = Array.prototype.some.call(Array(23), (x) => x===23/2);
+
+function myFunction(){}
+
+
+Execution Output ------------------:
+test.js:15:1: error: '{' expected in function expression
+});
+^
+test.js:14:9: note: start of function expression
+  some: function(objSelector, options)
+        ^

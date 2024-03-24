@@ -1,0 +1,43 @@
+'use strict';
+var myFunction = {
+  [Symbol.species]: () => Promise.resolve(),
+  foo() {
+     
+    return Promise.resolve();
+  },
+}; 
+var myFunction = () => Promise.resolve();
+var myFunction = () => Promise.resolve({foo() {}});
+(function() {
+  function A() {}
+  function B() {}
+}).foo().then();  
+var a = new A(new B()).foo().then();  
+ 
+'use strict';
+const a = [ 2, 3, 4 ][ 1 ].then(function() {   });
+a.then();
+async function a(await x) {   }
+await a(b);  
+async function a(yield x) {   }
+yield a(await b);  
+ 
+var a = ["foo"].map(x => x.toUpperCase());  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+*/
+
+Execution Output ------------------:
+test.js:20:18: error: Unexpected usage of 'await' as an identifier
+async function a(await x) {   }
+                 ^~~~~
+test.js:20:24: error: ')' expected at end of function parameter list
+async function a(await x) {   }
+                ~~~~~~~^

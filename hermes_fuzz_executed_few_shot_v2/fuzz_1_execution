@@ -1,0 +1,20 @@
+'use strict';
+
+
+var a = true; var b = false;
+async function bar() {
+  var x = foo();
+  ...  
+}
+foo.bar = bar  
+
+function foo() { return 2; }
+
+foo.baz = bar;  
+<fim_middle>
+
+
+Execution Output ------------------:
+test.js:7:3: error: invalid expression
+  ...  
+  ^

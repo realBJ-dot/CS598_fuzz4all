@@ -1,0 +1,16 @@
+'use strict';
+var myFunction = [...Array(23)].some((x) => x);
+```
+Hermes should be compatible with the latest ECMAScript release, but the stability is still very preliminary.
+
+
+Execution Output ------------------:
+test.js:5:1: error: non-terminated template literal
+
+^
+test.js:3:3: note: template literal started here
+```
+  ^
+test.js:5:1: error: invalid expression
+
+^

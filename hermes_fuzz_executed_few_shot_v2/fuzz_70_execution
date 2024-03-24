@@ -1,0 +1,50 @@
+'use strict';
+async function asyncFunc(a) {
+    var t = await a;
+    if (!_some(t, function (x) { return _some(x.foo, function (y) { return y === 1; }); }))
+        console.log(1);
+    if (_some(t, function (x) { return _some(x.foo, function (y) { return y === 4; }); }))
+        await Promise.race([foo(a.foo[0])]);
+    await Promise.resolve([foo(a.foo[0].bar)]);
+}
+ 
+'use strict';
+async function asyncFunc(a) {
+    await new Promise(function (c, e) {
+        a.then(function () {
+            c([1]);
+        }, e);
+        console.log(1);
+    });
+    var t = await a;
+    if (!_some(t, function (x) { return _some(x.foo, function (y) { return y === 1; }); }))
+        console.log(1);
+    if (_some(t, function (x) { return _some(x.foo, function (y) { return y === 4; }); }))
+        await Promise.race([foo(a.foo[0])]);
+    await Promise.resolve(foo(a.foo[0].bar));
+}
+async function asyncFunc(a) {
+    var t = await a;
+    if (!_some(t, function (x) {
+        var y = _some(x.foo, function (y) { return y === 1; });
+        y.length > 4;
+    }
+    )
+        console.log(1);
+}
+ 
+'use strict';
+async function asyncFunc(a) {
+    await a;
+    await b(a);
+    a = await c(a);
+    await a;
+    if (!_some(a.foo, function (x) { return _some(x.foo, function (y) { return y
+
+Execution Output ------------------:
+test.js:33:9: error: ')' expected at end of 'if' condition
+        console.log(1);
+        ^
+test.js:28:8: note: 'if' condition starts here
+    if (!_some(t, function (x) {
+       ^

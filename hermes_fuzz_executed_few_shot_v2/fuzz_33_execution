@@ -1,0 +1,23 @@
+'use strict';
+var myFunction = Array(23).some((x) => x === arguments[0]);
+```
+```
+ 
+'use strict';
+var myFunction = function(...args){
+	 
+}
+```
+
+
+
+Execution Output ------------------:
+test.js:12:1: error: non-terminated template literal
+
+^
+test.js:10:3: note: template literal started here
+```
+  ^
+test.js:12:1: error: invalid expression
+
+^

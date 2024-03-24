@@ -1,0 +1,33 @@
+'use strict';
+var _a, _b;
+ 
+let x = new WeakMap();
+let y = Symbol('x');
+let Z = Object.defineProperties({}, { [y]: [Function] });
+let A = Symbol('x').concat(y);
+class B {
+    foo(a,
+     
+     
+    [,..._c]) {
+        try {
+            return a;
+        }
+        finally {
+            const [x,, y,, z, w] = [_a,..._b, _b..._b];
+            let x = z + 100;
+            let w = z - x;
+        }
+    }
+    bar(...[_d,,..._e]) {
+        let [_g,,..._e] = [_f,..._b];
+        let [_h] = _e[..._f];
+        return [_d];
+    }
+}
+
+
+Execution Output ------------------:
+test.js:17:49: error: ']' expected at end of array literal '[...'
+            const [x,, y,, z, w] = [_a,..._b, _b..._b];
+                                   ~~~~~~~~~~~~~^

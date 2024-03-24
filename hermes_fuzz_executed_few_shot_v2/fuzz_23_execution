@@ -1,0 +1,46 @@
+'use strict';
+var v1 = {
+  Promise: Promise,
+  foo() {
+    return Promise.resolve();
+  },
+};
+ 
+ 
+ 
+ 
+ 
+await v1.Promise.resolve().then(v1.foo)
+ 
+ 
+ 
+ 
+ 
+
+
+ 
+'use strict';
+var myFunction = {
+  [Symbol.species]: () => Promise.resolve(),
+  foo() {
+    return Promise.resolve();
+  },
+};
+await myFunction[ Symbol.species ]().then( myFunction[ 'foo' ] );
+ 
+ 
+ 
+'use strict';
+await myFunction[ Symbol.species ]();
+ 
+ 
+ 
+ 
+ 
+```
+
+
+Execution Output ------------------:
+test.js:13:7: error: ';' expected
+await v1.Promise.resolve().then(v1.foo)
+      ^

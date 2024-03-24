@@ -1,0 +1,40 @@
+'use strict';
+var myFunction = Array.prototype.some((x) => x);
+
+ 
+'use strict';
+var myFunction = Array.filter.call([], (x) => x);
+
+ 
+'use strict';
+var myFunction = (Array.from.call(null, []).some((x) => x));
+```
+
+1. [Hermes.js](https: 
+2. [Hermes Spec](https: 
+
+<!--
+[2].[3].[4](https: 
+
+[2]:<https: 
+[3]:<https: 
+[4]:<https: 
+
+-->
+
+## API Reference
+
+* `withES6Promise([boolean])`
+* `withStrictNullChecks([boolean])`
+* `withAsyncFunctions([boolean])`
+
+> Note: Currently, Hermes supports only async function, it will be updated along with the compatibility on.
+> Since Async functions and Promise are the key APIs for most users, we recommend developers use [babel-plugin-async-to-gen](https: 
+
+<!-- 
+
+
+Execution Output ------------------:
+test.js:27:4: error: ';' expected
+* `withES6Promise([boolean])`
+   ^

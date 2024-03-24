@@ -1,0 +1,17 @@
+'use strict';
+
+import * as RN from'react-native';
+import { render } from'react-dom';
+ 
+Promise.then = RN.Promise.prototype.then;
+RN.createClass({});
+
+render(<RN.Text>Test</RN.Text>, null, () => {});
+```
+
+
+
+Execution Output ------------------:
+test.js:9:8: error: invalid expression (possible JSX: pass -parse-jsx to parse)
+render(<RN.Text>Test</RN.Text>, null, () => {});
+       ^

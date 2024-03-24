@@ -1,0 +1,28 @@
+'use strict';
+let x = function(...b) {
+    let a = 2;
+    class C {
+    }
+    return a = b[0];
+};
+let obj1 = Object.create(null);
+class D {
+}
+let obj2 = Object.create(D);
+console.log(obj2.__proto__);
+
+
+Execution Output ------------------:
+test.js:4:5: error: invalid statement encountered.
+    class C {
+    ^~~~~~~~~
+test.js:9:1: error: invalid statement encountered.
+class D {
+^~~~~~~~~
+test.js:11:26: warning: the variable "D" was not declared in function "global"
+let obj2 = Object.create(D);
+                         ^
+test.js:12:1: warning: the variable "console" was not declared in function "global"
+console.log(obj2.__proto__);
+^~~~~~~
+Emitted 2 errors. exiting.

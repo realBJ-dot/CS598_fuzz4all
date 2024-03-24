@@ -1,0 +1,18 @@
+'use strict';
+ 
+
+function a() { return 4; }
+
+async function b() { 
+  return Promise.resolve(11);
+}
+
+console.log(a());      
+console.log(a());      
+console.log(await b());  
+
+
+Execution Output ------------------:
+test.js:12:19: error: ')' expected at end of function call
+console.log(await b());  
+           ~~~~~~~^

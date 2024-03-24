@@ -1,0 +1,57 @@
+'use strict';
+var myFunction = function myFunction() { return Array.prototype.every.call(arguments, (x) => x); };
+ 
+'use strict';
+var myFunction = Array.prototype.every.call(arguments, (x) => x < 3);  
+'use strict';
+ 
+'use strict';
+var myFunction = function myFunction() { return Array.prototype.every.call(arguments, x => x < 3); };
+ 
+
+ 
+
+'use strict';
+ 
+
+var a;
+var b = a = 'b';
+ 
+
+'use strict';
+var b = 'another value';
+ 
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+function with
+
+Execution Output ------------------:
+test.js:52:10: error: 'identifier' expected after 'function'
+function with
+~~~~~~~~~^

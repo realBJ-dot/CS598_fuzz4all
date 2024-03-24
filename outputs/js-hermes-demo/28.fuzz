@@ -1,0 +1,16 @@
+const fs = require('fs');
+
+const path = require('path');
+console.log( "Working directory is:\""+ process.cwd()+ "\"");
+let file = fs.readFileSync(path.join(__dirname, "basicfile.js"), 'utf-8');
+console.log("The file in JS is:");
+console.log(file);
+file = file.replace('file1.txt','replaced.txt');
+let result = fs.writeFileSync(path.join(__dirname, "basicfile.js"), file, 'utf-8');
+console.log("The file in JS is:");
+console.log(file);
+console.log("And the file is saved in the right place");
+const hbsSource = fs.readFileSync(path.join(__dirname, "basicfile.htm"), 'utf-8');
+console.log("The source of the file in HTML is:");
+console.log(hbsSource);
+```

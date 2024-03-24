@@ -1,0 +1,15 @@
+const fs = require('fs');
+
+const fetch = require('node-fetch');
+const parse = require('esprima').parse;
+const transform = require('./HermesTransform');
+ 
+const a = '1'.match(/(?<!\d)(\d+?)/)[1];  
+const b = eval('1');  
+const c = fetch('https://github.com', { method: 'POST' }).then(r => r.text());  
+console.log(transform(parse(`(function a() { console.log(${a}); })();`)));
+console.log(transform(parse(`a(1, 2, 3); a = b; console.log(a); a(b); c['']; try { c; } catch (e) { e; } 100 + 200; [1,2,3].forEach(function(e) { e; }); const a = Symbol.create('a'); const b = null; console.log(a.description); try { new Promise(() => {}); } catch (e) { e; } }`)));
+console.log(transform(parse(`var a = BigInt('${a}'); const b = BigInt('${a}');console.log(a-b,a.toString(),b.toString());`)));
+console.log(transform(parse(`let a;const b = BigInt('${a}');console.log(a-b,a.toString(),b.toString());`)));
+console.log(transform(parse(`a = BigInt('${a}'); const b = BigInt('${a}');if(a<b) console.log('a is smaller',a,b);console.log(a-b,a.toString(),b.toString());`)));
+ 

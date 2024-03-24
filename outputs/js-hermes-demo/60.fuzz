@@ -1,0 +1,11 @@
+const fs = require('fs');
+
+const Hermes = require('hermes-engine');  
+
+const test = async () => {
+  const content = await fs.readFile('README.md', { encoding: 'utf8' });
+  const text = Hermes.compile(content, { jsify: { no_return: true } });
+  console.log(text);
+}
+
+exports.test = test;

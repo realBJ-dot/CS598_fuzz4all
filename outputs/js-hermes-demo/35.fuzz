@@ -1,0 +1,22 @@
+const fs = require('fs');
+
+const fetch = require('node-fetch');
+
+ 
+ 
+ 
+
+class NativeModule {
+  static open(path) {
+    console.log(path);
+  }
+  static close(fd) { console.log('Closed'+ fd + '.') }
+}
+const nativeModule = new NativeModule();
+
+const { createJSModule } = JSCore;
+const JSModule = createJSModule(NativeModule.open, NativeModule.close);
+
+fetch("https://github.com/facebook/hermes-engine/releases/tag/v0.4.0")
+  .then(response => response.arrayBuffer())
+  .then(buffer => JSModule.load(buffer));

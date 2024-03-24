@@ -1,0 +1,66 @@
+const fs = require('fs');
+
+```
+
+# Future Features
+These features are not planned for Hermes, but you can vote on them in https: 
+```
+- Hermes JS debugger:
+  - Debug JS code in native context from the IDE.
+  - Supports a view of VM and the JS debugger for JavaScript, JavaScriptCore, WebAssembly and WebAssembly debuggers.
+  - Includes ability to set breakpoints and watch expressions in native view. 
+
+- JavaScript debugger
+  - Debug JS code in native context from the IDE.
+  - Supports a view for debugger, including function scopes in tree view.
+
+- Memory profiling:
+  - Profiles the memory usage of JS code.
+  - Profiles the native code (e.g. native view, native async execution, native GC, native debugger)
+
+- VM:
+  - The JavaScript execution context is defined on a per-thread basis and represents a whole VM.
+  - Supports thread context switches, thread stacks, thread stacks tracing, and global variables and function definitions/closures.
+  - Supports async and generator functions.
+  - Supports a native object monitor for objects allocated in JS code.
+  - Supports debugger and memory monitoring for a specific VM.
+  - Supports a view of the VM and the native code and function scopes for Java objects.
+  - A new native function is added called "callOnMainThread".  It is used to invoke the callback code (e.g. native code for some UI, as opposed to a Promise) as a main thread (e.g. JS thread).
+
+- Modules:
+  - Native modules are loaded before the module script.
+  - Supports loading external modules in a module.
+  - Supports module scripts reevaluation, for code loading or module configuration.
+  - Supports the package module feature from NPM.
+  - Supports loading system Node modules like fs, path and crypto in a module.
+  - Supports multiple module with a single package.
+  - Supports a module-specific native object monitor for all of the module object monitors of the whole VM.
+  - Supports a native module-specific call handler for each module.
+
+- Intl:
+  - All of Intl and related APIs is loaded at runtime (e.g. number formatting and locale).
+
+- Promise:
+  - Promise implementation is compiled to native bytecode when possible.
+  - The Promise is a "one-shot" version.
+
+- Realm:
+  - Supports realm initialization with a bundle path.
+  - Implements Realm API for accessing the JS module system.
+  - Pre-compiles the Realm JS library to the native bytecode, and then is loaded only on demand
+```
+
+# Usage as Script Tag
+
+
+```
+<!-- Import Hermes runtime if you are not using React Native -->
+<script src="hermes.js"></script>
+
+<!-- Import Hermes runtime if you are using React Native -->
+<script src="hermes-rn.min.js"></script>
+
+<!-- Import React Native runtime if you are using React Native -->
+<script src="react-native.min.js"></script>
+
+<!-- Now you can use

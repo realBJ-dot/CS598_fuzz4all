@@ -1,0 +1,42 @@
+const fs = require('fs');
+
+await fs.promises.writeFile(`${__dirname}/es6.out.js`, 'console.log(function() {});');
+await fs.promises.writeFile(`${__dirname}/es6-arrow.out.js`, 'async function() {};');
+console.log(`${__dirname}/output/es6.out.js`);
+ 
+ 
+console.log(`${__dirname}/output/es6-arrow.out.js`);
+ 
+
+ 
+if (typeof window!== "undefined") {
+  const fs = require("fs");
+
+  function generateSource(data) {
+    return `function(){${data}}()`;
+  }
+
+  async function main() {
+    try {
+      const es6Source = await generateSource(
+        'console.log(function() {});',
+        'async function() {});',
+      );
+      await fs.promises.writeFile(`${__dirname}/es6.out.js`, es6Source);
+      console.log(`${__dirname}/output/es6.out.js`);
+      const es6SourceArrow = await generateSource(
+        'async function() {};',
+        'function() {});',
+      );
+      await fs.promises.writeFile(
+        `${__dirname}/es6-arrow.out.js`,
+        es6SourceArrow,
+      );
+      console.log(`${__dirname}/output/es6-arrow.out.js`);
+    } catch (e) {
+      console.error(e);
+    }
+  }
+
+  main();
+}

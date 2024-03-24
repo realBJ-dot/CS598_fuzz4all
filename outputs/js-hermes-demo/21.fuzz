@@ -1,0 +1,17 @@
+const fs = require('fs');
+
+"use strict";
+var x = 5;
+async function a() {
+    x = await 2;
+    return x;
+}
+async function b() {
+    try {
+        x = await 0;  
+        console.log("I didn't find 0 in scope");
+    }
+    catch (_) {
+    }
+}
+document.write(await a());

@@ -1,0 +1,29 @@
+const fs = require('fs');
+
+const path = require('path');
+const { parse } = require('./node_modules/babel-runtime/helpers/translation-helpers/runtime');
+const { run } = require('./node_modules/hermes-engine/HermesEngine');
+
+function compile(text) {
+  'use strict';
+
+  return run(parse('(\n' + text + '\n)(x)'), { x: {} });
+}
+
+function write_file(file_path, program) {
+  let s = compile(program);
+  fs.writeFileSync(file_path, s, 'utf-8');
+}
+
+
+let x = function() {
+
+};
+
+var a = function*() {
+  yield 1;
+}
+
+let v;
+({ v } = { v: 1 });
+ 

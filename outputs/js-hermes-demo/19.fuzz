@@ -1,0 +1,10 @@
+const fs = require('fs');
+
+const http = require('http');
+
+export function log(msg) {
+  console.log(msg);
+}
+```
+
+Note Hermes has only been tested with JavaScript in ES6, and ES6 support is still in very early stages. 

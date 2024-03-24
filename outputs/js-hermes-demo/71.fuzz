@@ -1,0 +1,47 @@
+const fs = require('fs');
+
+
+const filename = process.argv[2];
+if(filename === void 0 || filename === '') {
+  console.log("Provide a file path containing the code");
+  console.log('Usage: node file.js file2.js');
+  process.exit(1);
+}
+
+const originalPath = fs.realpathSync(filename);
+const originalFileName = filename.substring(originalPath.length+1);
+
+console.log('originalFileName', originalFileName);
+console.log('originalPath', originalPath);
+ 
+ fs.readFile(filename, (err,data) => {
+   if(err) {
+     console.error('file does not exist', err);
+   } else {
+     try {
+        
+        
+       const promise = new Promise((resolve,reject) => {
+         resolve(data);
+       });       
+       
+        
+       var result = `<!doctype html><html><button id="btnA">A</button>\n<button id="btnB">B</button>\n<script type="module">\nvar result = ${promise.then((x) => {return x;}).then((x) => {return x;}).catch((err) => {throw err;})};\nvar result2 = ${promise.then((x) => {return x;}).then((x) => {return x;}).catch((err) => {throw err;}).then((x) => {return x;}).then((x) => {return x;})} catch (e) {console.log('Error caught', e);}};\n</script></html>
+       `;
+       
+       data = Buffer.from(result, 'utf8');
+     } catch(err) {
+       err.stack = undefined; 
+       data = Buffer.from(result, 'utf8');
+     }
+     
+     const outputPath = `output/${originalFileName.toLowerCase()}.bundle.js`;
+     fs.writeFile(outputPath, data, 'utf8', err => {
+       if (err) {
+         console.error('Failure while writing to file', err);
+       } else {
+         console.log(`\nFile written as`, outputPath, '\n', 'originalFileName', originalFileName); 
+       }
+     });
+   }
+ });

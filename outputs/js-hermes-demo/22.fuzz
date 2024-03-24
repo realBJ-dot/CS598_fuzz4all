@@ -1,0 +1,16 @@
+const fs = require('fs');
+
+function* f() {
+  await f;
+}
+f
+  [Symbol.iterator]() {};  
+f
+  [Symbol.toStringTag] = undefined; 
+
+module.exports = function(x,y){};
+
+const foo = async function bar(){};    
+
+
+```

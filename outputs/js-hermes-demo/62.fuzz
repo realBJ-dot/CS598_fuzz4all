@@ -1,0 +1,17 @@
+const fs = require('fs');
+
+var v0x10 = [];
+v0x10[0] = 10;
+const foo = v0x10;
+foo({});
+console.log(foo({ x: 2 }));
+console.log(foo({}));
+console.log(foo(v0x10));
+console.log(foo({}));
+}
+try {
+  console.log(foo(10), 'true');  
+} catch (e) {
+  console.log(`SyntaxError: ${e.name}`);
+  console.log(e);  
+}

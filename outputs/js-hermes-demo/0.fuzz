@@ -1,0 +1,33 @@
+const fs = require('fs');
+
+const path = require('path');
+
+const {
+  createHermesRuntime,
+  runJS,
+  createEvalAndPrintHelpers,
+  createStringifier,
+} = await createHermesRuntime({
+  shouldIgnorePromiseError: true,
+});
+
+ 
+   
+     
+
+const runEval = createEvalAndPrintHelpers(createHermesRuntime(), eval, runJS);
+
+function findRoot(currentPath) {
+  const isModule = /\.esm?\.js$/.test(currentPath);
+  const isPackage = path.basename(currentPath).includes('/package.json');
+  const isMain = isModule || isPackage;
+  return isMain || isModule? '' : path.dirname(currentPath);
+}
+
+const files = ['./test/es6tests', './test/arraytests/es6array', './test/es6tests/es6tests', './test/es6tests/es6tests-05.js'];
+
+for (const file of files) {
+  const content = fs.readFileSync(path.resolve(__dirname, file), 'utf8');
+  const out = runEval('var content =\n'+content);
+  out.toFile('./test/es6output/' + path.basename(file).split('.js')[0] + '.json');
+}

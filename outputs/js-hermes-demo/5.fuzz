@@ -1,0 +1,10 @@
+const fs = require('fs');
+
+
+function f(x) {
+  return x * x;
+}
+
+console.log(f(3));
+
+

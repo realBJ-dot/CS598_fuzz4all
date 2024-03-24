@@ -1,0 +1,15 @@
+const fs = require('fs');
+
+let data = fs.readFileSync("./a.js");
+console.log(data.toString());
+console.log(data);  
+async function fetch() {
+    let response = await fetch("/a.js");
+    return response.text();
+}
+let text = await fetch();
+console.log(text);  
+console.log(text);  
+console.log(fetch());  
+```
+

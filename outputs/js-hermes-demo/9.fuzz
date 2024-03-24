@@ -1,0 +1,51 @@
+const fs = require('fs');
+
+const { runInHermes } = require('hermes-engine');
+
+runInHermes(js =>
+{
+    const { callFunction, argumentCountMismatchError } = js;
+
+    callFunction(js, Array.isArray.bind(''));  
+    callFunction(js, Array.isArray.bind(13));  
+    callFunction(js, Array.isArray.bind(false));  
+    callFunction(js, Array.isArray.bind(undefined));  
+
+    callFunction(js, fs.open.bind(null));  
+    callFunction(js, fs.open.bind(null, 'test'));  
+    callFunction(js, fs.open.bind(null, 'utf8', 755));  
+    callFunction(js, fs.open.bind(null, 'utf8', 32));  
+    callFunction(js, fs.open.bind(null, 'utf8', 99, 'base64'));  
+    callFunction(js, fs.open.bind(null, 'utf8', 0));  
+    callFunction(js, fs.open.bind(null, 'utf8/w'));  
+
+    callFunction(js, BigInt);  
+    callFunction(js, BigInt.prototype);  
+    callFunction(js, BigInt.prototype.toLocaleString);  
+    callFunction(js, BigInt.fromString.bind(null, '493'));  
+
+    callFunction(js, Symbol);  
+    callFunction(js, Symbol('a'));  
+    callFunction(js, Symbol.prototype);  
+    callFunction(js, Symbol.prototype.toString);  
+    callFunction(js, Symbol.prototype.concat);  
+    callFunction(js, Symbol.prototype.description);  
+    callFunction(js, Symbol.prototype.hasInstance);  
+    callFunction(js, Symbol.prototype.species);  
+    callFunction(js, Symbol.prototype.unscopables);  
+
+    callFunction(js, Reflect.construct);  
+    callFunction(js, Reflect.defineProperty);  
+    callFunction(js, Reflect.defineProperty.bind(null));  
+    callFunction(js, Reflect.defineProperty.bind(null, {}));  
+    callFunction(js, Reflect.defineProperty.bind(null, {}, {}));  
+    callFunction(js, Reflect.defineProperties.bind(null));  
+    callFunction(js, Reflect.defineProperties.bind(null, {}));  
+    callFunction(js, Reflect.defineProperties.bind(null, {}, {}));  
+    callFunction(js, Reflect.has);  
+    callFunction(js, Reflect.get);  
+    callFunction(js, Reflect.getOwnPropertyNames);  
+    callFunction(js, Reflect.getOwnPropertySymbols);  
+    callFunction(js, Reflect.getPrototypeOf);  
+    callFunction(js, Reflect.set);  
+    callFunction(js,

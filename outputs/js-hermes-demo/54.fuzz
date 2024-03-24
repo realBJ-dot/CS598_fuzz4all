@@ -1,0 +1,27 @@
+const fs = require('fs');
+
+var a = {
+  b: 1
+};
+function f() {
+  console.log(a.b);
+  return a.b;
+}
+function* g() {
+  yield a;
+  yield a;
+}
+const gList = Array.from(g());
+console.log(g.prototype);  
+console.log(gList[0]);
+gList.forEach(function(arg) {
+  console.log(arg instanceof Object);   
+  console.log(arg instanceof Function);  
+});
+for (let i = 0; i < gList.length; i++) {
+  console.log(gList[i] instanceof Object);   
+  console.log(gList[i] instanceof Function);
+  for (let x = 0; x < 5; x++) {
+    console.log('x: ', x, 'and  i: ', i);
+  }
+}

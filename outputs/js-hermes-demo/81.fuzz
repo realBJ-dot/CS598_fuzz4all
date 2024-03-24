@@ -1,0 +1,8 @@
+const fs = require('fs');
+
+const util = require('util');
+fs
+  .readFileSync('/dev/foo.js').toString()
+  .indexOf('var n = 0;')
+  .should.be.above(0);
+console.warn("'fs' module not yet supported on the fly during compilation", JSON.stringify('fs'));

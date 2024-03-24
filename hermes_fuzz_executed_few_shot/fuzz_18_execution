@@ -1,0 +1,31 @@
+'use strict';
+
+function add(a, b) {
+  let result = a + b;
+}
+
+let addAsync = async (a, b) => {
+  let result = await new Promise((resolve, reject) => {
+    if (a > 100) reject(new Error('a is too big'));
+
+    resolve(a + b);
+  });
+};
+
+Promise.resolve()
+.then(() => add(3, 2))
+.then(addAsync)
+.then(result => console.log(result));
+
+
+Execution Output ------------------:
+test.js:7:16: error: async functions are unsupported
+let addAsync = async (a, b) => {
+               ^~~~~~~~~~~~~~~~~
+test.js:15:1: warning: the variable "Promise" was not declared in function "global"
+Promise.resolve()
+^~~~~~~
+test.js:18:17: warning: the variable "console" was not declared in anonymous arrow function " 1#"
+.then(result => console.log(result));
+                ^~~~~~~
+Emitted 1 errors. exiting.

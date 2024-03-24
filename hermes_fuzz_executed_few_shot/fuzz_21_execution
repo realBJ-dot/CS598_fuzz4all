@@ -1,0 +1,31 @@
+'use strict';
+
+function foo(str) {
+  return str.length;
+}
+
+async function asyncFunc() {
+  function someFunc() {
+    foo('hello world');
+  }
+}
+
+asyncFunc();
+
+'use strict';
+import { foo } from './another';
+
+console.log(foo);
+ 
+
+'use strict';
+var _x = foo.apply(undefined, arguments),
+    bar = _x.bar;
+console.log(bar);
+ 
+
+
+Execution Output ------------------:
+test.js:16:1: error: 'import' statement requires module mode
+import { foo } from './another';
+^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -1,0 +1,14 @@
+'use strict';
+<fim_middle>
+function f() {
+  return 1 + 2;
+}
+console.log(f(...[1,2]));
+```
+
+
+
+Execution Output ------------------:
+test.js:2:1: error: invalid expression (possible JSX: pass -parse-jsx to parse)
+<fim_middle>
+^

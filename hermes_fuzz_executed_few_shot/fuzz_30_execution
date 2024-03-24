@@ -1,0 +1,36 @@
+'use strict';
+
+
+let f = () => {
+  return 'f()';
+};
+let l = function () {
+  return 'l()';
+};
+let b = () => {
+  return await new Promise.resolve('b()');
+};
+
+console.log(typeof function*() {
+   return 'function*()';
+}());
+console.log(f());
+console.log(l());
+console.log([...function*() {
+    return * function() {
+      return 'array()';
+    }();
+  }()])
+console.log([...Promise.resolve([...function*() {
+    return * function() {
+      return 'array()';
+    }();
+  }()])]);
+console.log(b());
+ 
+
+
+Execution Output ------------------:
+test.js:11:16: error: ';' expected
+  return await new Promise.resolve('b()');
+               ^

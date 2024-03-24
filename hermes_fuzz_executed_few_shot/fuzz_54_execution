@@ -1,0 +1,76 @@
+'use strict';
+let foo35 = 'foo35';
+foo35;
+let foo42;
+foo42;
+let foo44;
+foo44;
+const Foo = class Foo {
+  get foo43() {
+    return 'foo';
+  }
+  set foo45(value) {
+    this.bar = value;
+  }
+};
+Foo.bar;
+Foo.baz;
+Foo.qux;
+Foo.constructor.foo = 'foo1';
+Foo.toString();
+Foo.toString.constructor;
+Foo.toString.constructor().foo4;
+Foo.prototype.bar = 'foo3';
+Foo.prototype.baz = 'foo3';
+Foo.qux = 'foo' + 1;  
+Foo.qux;  
+'use strict';
+let foo = 'foo';
+foo;
+let foo2 = 2;
+foo2;
+let foo3 = 3;
+foo3;
+foo2 * 2 + 2;
+foo3 / 4 + foo3 - 1;
+foo3 - foo2 * 100000;
+foo3 + 4;
+foo3 / foo2 * 1000;
+foo3 % foo2;
+(foo3 - 1) * foo2;
+foo2 + foo4;
+foo4 - foo2;
+foo3 % foo3 % foo4 + foo4;
+10^10;
+"hello" - "Hello" + "!";
+foo - foo;
+foo + 2;
+foo() + 1;
+foo3 - foo;
+(foo3 - 1) - foo2;
+foo2 * foo2 * foo2 * foo2 * foo2 * foo2;
+foo * (foo3 / 10 + 1);
+foo + foo4;
+foo + 1;
+foo2 + foo + foo;
+foo ^ foo;
+foo - foo;
+foo && foo;
+foo || foo;
+(foo + 1 & foo) + 2;
+foo() + 2;
+foo + foo2;
+foo + 0;
+(foo3 - 1) / foo;
+(foo3 - 1 & foo4) | foo3;
+foo + 2;
+(foo3 - 1) * 1;
+foo / foo * foo;
+foo - foo3 - 1;
+(foo3 - 1) * foo4;
+(foo
+
+Execution Output ------------------:
+test.js:71:5: error: ')' expected at end of parenthesized expression
+(foo
+~~~~^

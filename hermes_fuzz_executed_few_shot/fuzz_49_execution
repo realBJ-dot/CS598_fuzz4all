@@ -1,0 +1,70 @@
+'use strict';
+foo1;
+foo1 = 'changed';
+foo1;
+foo4;
+foo4 = 'changed again';
+foo4;
+foo3;  
+foo3 = 'changed again';
+foo3;
+ 
+
+'use strict';
+console.log('done');
+ 
+'use strict';
+function foo2(foo1) {
+   
+   
+  return bar6.concat(foo1, foo3, foo2);
+}
+
+ 
+ 
+ 
+ 
+ 
+ 
+<fim_middle>let bar6 = [];
+bar6.push(foo1);
+bar6;
+
+function main() {
+  let foo1 = 2;
+  let bar6 = [];
+  bar6.push(foo1);
+  bar6;
+  return bar6;  
+}
+
+main();
+main()[0];
+ 
+
+'use strict';
+'use babel';
+"use es6"
+"use strict";
+const foo2 = 'bar2';
+foo2;
+'use strict';
+const foo1 = 'bar1';
+foo1;
+function foo3(foo1) {
+  return bar6.concat(foo1, foo3);
+}
+foo3;
+foo3;
+'use strict';
+function foo4() {
+  return bar6.concat(foo1, foo3, foo4);
+}
+foo4;
+foo4;
+ 
+
+Execution Output ------------------:
+test.js:29:1: error: invalid expression (possible JSX: pass -parse-jsx to parse)
+<fim_middle>let bar6 = [];
+^

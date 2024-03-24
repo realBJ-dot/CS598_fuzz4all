@@ -1,0 +1,23 @@
+'use strict';
+
+
+const a = [1, "2", 3, {x: "ab", y: 2}];
+```
+
+***
+
+## About Hermes
+Hermes helps to develop cross-platform RN apps as simple as possible and achieve more than our competitors. Hermes is focused on 80% JS codebase and has minimal dependency on the JavaScript. However, Hermes can be a nightmare to understand and debug. Hermes implements all the native functions which makes debugging faster and harder but requires more code for understanding, debugging and maintenance. You need to start with simple 80% minimal code. Hermes also runs in NodeJS enviornment.
+
+
+
+Execution Output ------------------:
+test.js:12:1: error: non-terminated template literal
+
+^
+test.js:5:3: note: template literal started here
+```
+  ^
+test.js:12:1: error: invalid expression
+
+^

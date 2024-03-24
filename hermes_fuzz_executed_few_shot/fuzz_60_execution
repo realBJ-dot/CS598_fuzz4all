@@ -1,0 +1,60 @@
+'use strict';
+let foo1 = {x: 4, y: true};
+let foo2 = foo1;
+let foo3 = foo1.y = true;
+let foo4 = foo1.a;
+let foo5 = foo1[2];
+let foo6 = foo1.b;
+let foo7 =!!foo1.y;
+let foo8 = foo1.z;
+let foo9 = foo1.x;
+let foo10 = 'foo'.includes(foo2.z);
+let foo11 = foo2.z + foo1.y;
+let foo12 = foo3(4, foo2);
+console.log(foo12);
+console.log(foo3(4));
+ 
+'use strict';
+var bar1 = {x: 1, y: false};
+var bar2 = {x: 2, z: true};
+var bar3 = {x: 3, y: true, z: 2};
+function func1(param1 = bar1, param2 = {}) {
+  "use strict";
+  const a = foo1.x.length;
+  const b = foo1.x;
+  "a" in b;
+  "c" in b;
+  var foo1 = {x: 1, y: false};
+  function func2(param1 = bar1, param2 = {}) {
+    "use strict";
+    const a = foo1.x.length;
+    const b = foo1.x;
+    "a" in b;
+    "c" in b;
+    return;
+  }
+  func2();
+}
+var foo1 = {x: 2, y: false};
+var foo2 = {x: 3, z: true};
+var foo3 = {x: 4};
+function func4(param1 = bar2, param2 = {...bar2}) {
+  "use strict";
+  const a = foo2.x.length;
+  const b = foo2.x;
+  "a" in b;
+  "
+
+Execution Output ------------------:
+test.js:46:4: error: non-terminated string
+  "
+   ^
+test.js:46:3: note: string started here
+  "
+  ^
+test.js:46:4: error: '}' expected at end of block
+  "
+   ^
+test.js:41:51: note: block starts here
+function func4(param1 = bar2, param2 = {...bar2}) {
+                                                  ^

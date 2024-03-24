@@ -1,0 +1,33 @@
+'use strict';
+console.log(sum(1, 1));
+ 
+```
+
+```bash
+node --experimental-modules build/hermes-main.js test/basic
+```
+
+## Testing
+
+Hermes tests uses mocha. See `test/suite`.
+
+Hermes unit tests are run in the Android emulator (Emulator Pixel_3_API_28). The tests runs in `HermesTestsRunnerInstrumentation` class. Refer the screenshot below. A successful test must print a success message and no errors. 
+
+![test output](test/suite/Output.png "Success Test Output")
+
+## Building
+
+```bash
+yarn run clean:hermes
+yarn run build:hermes
+yarn run build
+```
+
+## License
+
+Hermes is licensed under the 3 clause BSD license. See `LICENSE` for more details. 
+
+Execution Output ------------------:
+test.js:6:4: error: ';' expected
+```bash
+   ^

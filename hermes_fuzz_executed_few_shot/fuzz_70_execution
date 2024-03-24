@@ -1,0 +1,76 @@
+'use strict';
+function doSomething() {
+    setTimeout(function () {
+         
+    }, 5000);
+}
+var a = document.getElementById('app');
+a.onclick = function () {
+    doSomething();
+};
+ 
+ 
+'use strict';
+function isEven(x) {
+    return x % 2 === 0;
+}
+if (!isEven) {
+    isEven = require('./isEven.js');
+}
+isEven(5);
+function getBiggest(array) {
+    var maxItem = array[0];
+    for (_i = 1; _i < array.length; _i++) {
+        var item = array[_i];
+        if (item >= maxItem)
+            maxItem = item;
+    }
+    return maxItem;
+}
+function getLargest(array) {
+    var first = array[0];
+    for (_i = 1; _i < array.length; _i++) {
+        var item = array[_i];
+        if (item < first)
+            first = item;
+    }
+    return first;
+}
+var array = [];
+var times = 0;
+for (var i = 0; i < 4; i++) {
+    for (var j = 0; j < 200; j++) {
+        array[times++] = Math.random();
+    }
+}
+console.log(array);
+ 
+'use strict';
+function add(a, b) {
+    return a + b;
+}
+function printValue() {
+    console.log('printing'+ arguments);
+}
+printValue(true);
+'use strict';
+printValue(4);
+'use strict';
+function createAndPrint(func, a, b, c) {
+    console.log(func(a, b, c));
+}
+createAndPrint(add, 5, 4, 3);
+'use strict';
+function isEven(x, callback = function () { }) {
+    callback('the input value is not even!');
+}
+if (!isEven) {
+    isEven = require('./isEven.js');
+}
+isEven(5, function (err, response) {
+    console.log(response
+
+Execution Output ------------------:
+test.js:71:25: error: ')' expected at end of function call
+    console.log(response
+               ~~~~~~~~~^

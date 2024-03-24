@@ -1,0 +1,14 @@
+'use strict';
+function foo() {}
+class C {
+    [foo()]();
+}
+new (class C {}) ();
+let a = new C();
+a[foo()]();
+
+
+Execution Output ------------------:
+test.js:4:14: error: '{' expected in method definition
+    [foo()]();
+    ~~~~~~~~~^

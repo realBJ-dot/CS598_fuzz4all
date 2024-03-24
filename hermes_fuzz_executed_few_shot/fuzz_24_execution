@@ -1,0 +1,16 @@
+'use strict';
+
+import Realm from 'HermesRuntime';
+const Realm = Realm.ObjC.prepare();
+ 
+
+ 
+const realm = new Realm();
+realm.ObjC.set('Realm', Realm);
+
+console.log(Realm);  
+
+Execution Output ------------------:
+test.js:3:1: error: 'import' statement requires module mode
+import Realm from 'HermesRuntime';
+^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

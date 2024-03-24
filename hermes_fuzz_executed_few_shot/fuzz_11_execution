@@ -1,0 +1,65 @@
+'use strict';
+
+
+ 
+import reactNativePolyfill from'react-native-polyfill';
+
+ 
+ 
+import { 
+  AppRegistry, 
+  Navigator} from'react-native';
+
+ 
+ 
+const AppNavigator = Navigator(
+   
+  <Route key="root">
+    <Screen containerStyle={{ padding:20 }}>
+      <Text>Main Screen</Text>
+    </Screen>
+    <Screen containerStyle={{ padding:20 }}>
+      <Text>Second Screen</Text>
+    </Screen>
+  </Route>
+);
+
+export default AppNavigator;
+```
+
+Also, you need to make sure you install the npm-react-native-hermes package, otherwise it will fail to start:
+```commandline
+npm install https: 
+```
+
+Note: it's a good idea to start your project from scratch, so you don't rely on the hermes.js built-in runtimes to compile its own code at compile-time.
+
+Run your app, and after first start of the application, you will see errors in terminal. This is on both macOS and Linux. You can see logs in the terminal from your app as well (you can open the developer tools in your terminal to view the logs), like this:
+
+macOS:
+```
+info: [hermes] Hermes is ready!!
+```
+
+Linux:
+```
+INFO [Hermes] Hermes is ready!!!
+```
+
+If everything goes well, your application should be ready to run at least on iOS device. However, you might want to do some additional configuration and setup to get the hermes work in all your apps. Refer [here](https: 
+
+## iOS Setup ##
+
+Install Hermes and run `react-native link` to link Hermes to React Native. [React Native link](https: 
+
+If you already have your bundle signed with a test certificate, to make sure the app works with Hermes you should set `useModernBuild` option to `true` within the ios/Podfile:
+
+    platform :ios, '10.0'
+    use_frameworks!
+    target 'NativeApp' do
+      pod 'Hermes', :path =>'../../node
+
+Execution Output ------------------:
+test.js:17:3: error: invalid expression (possible JSX: pass -parse-jsx to parse)
+  <Route key="root">
+  ^

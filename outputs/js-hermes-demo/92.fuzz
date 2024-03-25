@@ -1,0 +1,6 @@
+const fs = require('fs');
+
+print(fs);  
+print( fs.readFileSync('foo.js' );  
+```
+

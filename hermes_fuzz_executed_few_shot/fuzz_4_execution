@@ -1,0 +1,50 @@
+'use strict';
+
+let a = new Array
+a['1'] = 1   
+a['1']  
+a['1'];  
+``` 
+
+## Hermes Runtime Config
+
+Hermes exposes a lot of configuration options through runtime-config.json with the properties listed below.
+
+RuntimeConfig   |     Type   |      Description      | Default            | 
+---------------|------------|-----------------------|--------------------|
+ withESModules  | Boolean    |  Enables ES modules mode, allows you to target a specific package/module of any major ES module transpiler, e.g. import/require syntax for bundling apps to run on web and the native platform. For advanced use cases, it's important to make sure, the module path that gets passed to the compiled code is valid without any further preprocessing. It does not make sense to set it globally - if you set it to false in runtime-config.json, every module in your project will be compiled in one bundle after the build is starting. | -  |
+ es6Promise      | Boolean    |  Enable support for ES6 Promise in the Hermes compiler to provide better performance when calling native APIs (as the internal compiler backend is pre-compiled to JavaScript). | On  |
+
+## ECMAScript Support in Hermes
+
+Hermes currently supports all most common ECMA-262 features, as it's the target for ECMAScript 2015. All features that are not in the syntax of ECMA-262, such as `let`/`const` and `async`/`await`, are considered as untranspilable in Hermes. Anytime you have a case for doing so in Hermes, you can opt-out of transpiling them by adding `noBuiltin: true` to the config or via the runtime option withES6Promise(false).
+
+We support ECMA-262 syntax that are close to the ECMAScript 2015 standard syntax and that should be supported by most modern transpilers.
+
+## Custom Runtime Configuration
+
+Hermes has a lot of configuration options as well. To customize any of the runtime-config.json values which are listed below, create a new file similar to the runtime-config.json one in the root folder of your app, then add your changes in there. These will be used when the app is loaded at runtime.
+
+Sometimes you need to dynamically override a runtime-config.json property in your client code as it is loaded at runtime before the runtime is set up. Example:
+```javascript
+const Hermes = require('hermes-engine');
+const myConfig = require('../runtime-config.json');
+Hermes.setRuntimeConfig(myConfig);
+```
+
+## Development
+
+* git clone https: 
+* cd hermes
+* npm install
+* npm run boot
+* npm run test
+
+## Release notes
+
+This is a non-exhaustive list of the most recent changes. See [CHANGELOG](https: 
+
+Execution Output ------------------:
+test.js:20:164: error: ';' expected
+Hermes currently supports all most common ECMA-262 features, as it's the target for ECMAScript 2015. All features that are not in the syntax of ECMA-262, such as `let`/`const` and `async`/`await`, are considered as untranspilable in Hermes. Anytime you have a case for doing so in Hermes, you can opt-out of transpiling them by adding `noBuiltin: true` to the config or via the runtime option withES6Promise(false).
+                                                                                                                                                                   ^

@@ -1,0 +1,29 @@
+const fs = require('fs');
+
+const hermesSupport = false; 
+export class Demo{
+    arr:[number|string,number];
+    async method(){
+        console.log("Hello");
+        for await (const i of this.arr){
+            console.log(i);
+        };
+    }
+}
+function main(){
+    const arr=[1,2,3,4,5];
+    const obj=new Demo;
+    obj.arr=`Hello ${new Date}`;
+    obj.method();
+}
+if (hermesSupport) {
+    import('@hermes-engine/hapi');
+}
+ 
+main();
+ 
+```
+
+## License
+
+Hermes is available under the MIT license. See the LICENSE file for more info.

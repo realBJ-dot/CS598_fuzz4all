@@ -1,0 +1,45 @@
+const fs = require('fs');
+
+const vm = require('vm');
+const es6 = require('es6-module');
+es6.set(vm.Script);
+ 
+
+const a = new es6.Module();
+a.importFunction('jsFunction',function(func){});
+console.log('a.jsFunction()',a.jsFunction());
+ 
+
+const a = new es6.Module();
+a.importFunction('jsFunction',{name:'test',source:function(){},options:{},imports:{},functionName:{}});
+console.log('a.jsFunction()',a.jsFunction());
+ 
+
+const a = new es6.Module();
+a.importFunction('jsFunction',{name:'test',options:{},imports:{test:function(){}}});
+ 
+
+const a = new es6.Module();
+const exp = require('./file.js');
+exp.a = 1;
+a.exportFunction('a',a.jsGlobal.a);
+console.log('a.a',a.jsGlobal.a);
+ 
+ 
+
+const a = new es6.Module();
+a.importFunction('foo',{name:'test',source:function(){},options:{},imports:{},functionName:{}});
+a.exportFunction('bar',a.jsGlobal.foo);
+ 
+
+const a = new es6.Module();
+a.importFunction('jsFunction',{name:'test',source:function(){},options:{},imports:{},functionName:{}});
+const ret = a.jsFunction("Hello world!");
+console.log('ret',ret);
+ 
+
+var a = new es6.Module();
+a.importString('abc', 'Hello World');
+console.log('a.abc',a.jsGlobal.abc);
+a.set('abc', 'a');
+console.log('a.abc',a.jsGlobal.abc);

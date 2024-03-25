@@ -1,0 +1,26 @@
+'use strict';
+
+let arr = [];
+for (let i = 0; i < 23; ++i)
+    for (let j = 0; j < 10; j++)
+        arr[i][j] = i + j;
+console.log(_some(...arr));
+arr.some(function (_, _) {}) === true;
+ 
+ 
+```
+
+
+
+[Hermes](https: 
+
+Execution Output ------------------:
+test.js:15:17: error: non-terminated template literal
+[Hermes](https: 
+                ^
+test.js:11:3: note: template literal started here
+```
+  ^
+test.js:15:17: error: invalid expression
+[Hermes](https: 
+                ^

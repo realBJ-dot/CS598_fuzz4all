@@ -1,0 +1,13 @@
+const fs = require('fs');
+
+fs.readFile('./README.md', 'utf8', (err, data) => console.log(data))
+```
+To make RN compile to Native code, pass -Xjscompile=1 to the command line, or set the withJsCompileConfig(true) option.
+```js
+withRuntimeConfig({
+  withJsCompileConfig: true
+})
+```
+
+## Features
+

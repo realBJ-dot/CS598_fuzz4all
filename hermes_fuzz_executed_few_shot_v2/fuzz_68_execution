@@ -1,0 +1,18 @@
+'use strict';
+function foo2() {
+    return 42;
+}
+const bar2 = foo2;
+async function fooAsync() {
+    return foo2;
+}
+function barAsync() {
+    return await fooAsync();
+}
+barAsync();
+barAsync().then(foo2);
+
+Execution Output ------------------:
+test.js:10:18: error: ';' expected
+    return await fooAsync();
+                 ^

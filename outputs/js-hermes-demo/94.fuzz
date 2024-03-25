@@ -1,0 +1,25 @@
+const fs = require('fs');
+
+(async function(arg) {
+  console.log('arg', arg);
+  if (!(await fs.read("/etc/passwd"))) {
+    console.log('File exists');
+  } else {
+    console.log("The file does not exist");
+  }
+})("someValue")
+```
+
+More examples and test cases are coming soon.
+
+See also [Wiki](https: 
+```
+npx hermes -h
+npx hermes -h -v
+npx hermes -x. -x./node_modules/ -x./package-lock.json
+npx hermes -p./node_modules -p./package-lock.json
+```
+
+# License
+
+Hermes is released under [MIT](LICENSE).

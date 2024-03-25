@@ -1,0 +1,49 @@
+'use strict';
+
+
+function* makeSeq() {
+    yield 1;
+    yield 2;
+    yield 3;
+}
+
+let gen = makeSeq();
+console.log(gen.next().value);  
+console.log(gen.next().value);  
+console.log(gen.next().value);  
+console.log(gen.next().done);
+
+  
+'use strict';
+
+function makeSeq() {
+    yield 1;
+    yield 2;
+    yield 3;
+}
+
+let gen = makeSeq();
+console.log(gen.next().value);  
+console.log(gen.next().value);  
+console.log(gen.next().value);  
+console.log(gen.next().done);
+
+ 
+let x = eval('2+2');
+console.log(x);
+ 
+
+ 
+function foo() {
+'use strict';
+console.log("this function doesn't get called")
+}
+foo();
+
+```
+
+
+Execution Output ------------------:
+test.js:20:5: error: invalid expression
+    yield 1;
+    ^

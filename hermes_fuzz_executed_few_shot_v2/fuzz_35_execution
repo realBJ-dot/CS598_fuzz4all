@@ -1,0 +1,23 @@
+'use strict';
+var myFunction = Array.prototype.some((x) => x);
+```
+
+**A. Syntax**:
+
+```
+let arr = [1,2,3]
+let arr2 = [arr[i] for (i in [1,2,3])]
+```
+
+```javascript
+var x = [1,2,3];
+var y = [x.reduce(func, {z: 0}) for (var x,y[z]);];
+var z = x.filter((y,i) => y>1);
+```
+
+
+
+Execution Output ------------------:
+test.js:9:20: error: ']' expected at end of array literal '[...'
+let arr2 = [arr[i] for (i in [1,2,3])]
+           ~~~~~~~~^

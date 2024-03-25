@@ -1,0 +1,40 @@
+const fs = require('fs');
+
+const Hermes = require('react-native-hermes-engine');
+const url = require('url');
+Hermes.setMinModuleCount(1000);
+
+const parse = function (request) {
+  const params = Array.prototype.slice.call(arguments, 1);
+  var url2 = url.parse(request, true);
+
+  if (url2.query && url2.query.type) {
+    url2.query.type ='source_map';
+  }
+
+  if (!url2.query ||!url2.query.type) {
+    url2.query = url2.query || {};
+  }
+  url2.query.type = url2.query.type || 'binary_js';
+  url2.query.url = (url2.query.url || 'http://localhost:8081/jsbundle.js') + '?type=' + url2.query.type + '&params=' + JSON.stringify(params);
+  return new Promise((resolve, reject) =>
+    fs
+      .readFileSync(url2.query.url)
+      .toString()
+      .replace(
+          /function _JSCODE(eval)(function.*return this[id];\n.*\/);/,
+          function (_JSCODE, eval, functionReturnText) {
+            resolve(eval(functionReturnText));
+          }
+        )
+  );
+};
+Hermes.setSourceRoot(uri => uri.startsWith('file://')? 'file:///Users/zxcv/Documents/code/jsh-server' : '');
+
+module.exports = async (function () {
+  let x = 1;
+
+  console.log('parse', (await parse(require.resolve('react-native'), x, true)));
+
+  return Hermes.createJavaScriptContext();
+})();

@@ -1,0 +1,59 @@
+const fs = require('fs');
+
+function writeFileAsync(filePath, content, encoding ='utf8') {
+  return new Promise((resolve, reject) => {
+    fs.writeFile(`${filePath}.txt`, content,
+      encoding,
+      (error) => {
+        if (error) {
+          reject(error);
+        } else {
+          resolve();
+        }
+      }
+    );
+  })
+}
+
+async function program() {
+  let result = '';  
+
+  try {
+    result += await writeFileAsync('hello.txt', 'Hello, world!\n');
+  } catch (error) {
+    result += error;
+  }
+
+  return result;
+}
+```
+
+Run it using Hermes
+
+- ```npx -p hermes-engine yarn test # or npx -p hermes-engine tsc```
+
+You will have error `Cannot find module '@hermes-engine/core'.` to resolve to right package to run the project. If you installed `npm`, run `npm add @hermes-engine/core --save-dev`.
+
+Hermes comes with both NativeModules and NodeModules resolvers.
+NativeModules is a default resolver and it is used by Hermes to load Native Modules used in the project, for example, ReactNative or react-native.
+NodeModules is a default resolver, and NodeModules is used by Hermes to load Node modules of modules that are in a Node program (like npm) for example, core-js, react, ReactNative, etc.
+
+# Available Packages
+
+## Hermes JS Engine for Android
+
+You can use Hermes engine for Android to run ECMAScript 6 code, which includes native modules. 
+
+You can install the package via CLI or `yarn install --package-lock-only` and `yarn add @hermes-engine/android`
+
+## Hermes JS engine for iOS
+
+> Please ensure that the system is configured to allow iOS apps to use the device’s hardware for OpenGL contexts.
+
+- Install the package via CLI or `yarn install --package-lock-only` and `yarn add @hermes-engine/ios`
+- Use `--force` to build Hermes, then copy the built `libhermes.a` to your iOS project to use it as a module
+- Use `--require=require('./HermesEngine')` to import Hermes into the project
+
+# LICENSE
+
+Apache-2.0

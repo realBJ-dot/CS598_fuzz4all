@@ -1,0 +1,30 @@
+const fs = require('fs');
+
+const path = require('path');
+
+const { promise } = require('es6-promise');
+const Promise = promise;
+
+const { AsyncFunction } = require('es6-promise');
+ 
+
+const sourceFile = path.join(__dirname,'main.js');
+const compiledFile = path.join(__dirname, 'bundle.js');
+const moduleString = fs.readFileSync(sourceFile, 'utf8');
+const code = `(${moduleString.replace(/[\\r\\n]/g, '')})()`;
+
+const asyncFunction = new AsyncFunction("return a", code);
+
+const main = asyncFunction.call();
+
+Promise.wrap(main)
+  .then(value => {
+        fs.writeFileSync(compiledFile, value);
+        return value;
+    })
+  .catch(error => {
+        console.log(error);
+    });
+```
+
+For other info, please see readme.md in the source tree.

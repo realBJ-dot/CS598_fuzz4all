@@ -1,0 +1,111 @@
+const fs = require('fs');
+
+const hermes = require('hermes-engine');
+const path = require('path');
+
+const program = `
+  export const {readFile, writeFile, stat} = {
+    readFile(a: string, b?: {}) {
+        return Promise.resolve();
+    },
+    writeFile(a: string, b: string) {
+        return Promise.resolve();
+    },
+    stat(a: string, b?: {}) {
+        return Promise.resolve();
+    },
+  };
+
+  export const {arrayFromFloat64Array, arrayFromInt32Array, arrayFromUint32Array, arrayFromFloat32Array, arrayFromUint8Array} = {
+    arrayFromFloat64Array(a: Float64Array) {
+      return Promise.resolve();
+    },
+    arrayFromInt32Array(a: Int32Array) {
+      return Promise.resolve();
+    },
+    arrayFromUint32Array(a: Uint32Array) {
+      return Promise.resolve();
+    },
+    arrayFromFloat32Array(a: Float32Array) {
+      return Promise.resolve();
+    },
+    arrayFromUint8Array(a: Uint8Array) {
+      return Promise.resolve();
+    },
+  };
+
+  export function arrayBufferToView(a: ArrayBuffer) {
+    return Promise.resolve();
+  }
+
+  export function viewToArrayBuffer(a: Uint8Array) {
+    return Promise.resolve();
+  }
+
+  export function readInt32(a: string) {
+    return Promise.resolve(a);
+  }
+
+  export function writeInt32(a: number) {
+    return Promise.resolve();
+  }
+
+  export function copyWithin() {
+      return Promise.resolve();
+  }
+
+  export const {set, get, defineProperty, keys, entries, values, fromEntries} = {
+    set() {
+      return Promise.resolve();
+    },
+    get() {
+      return Promise.resolve();
+    },
+    defineProperty() {
+      return Promise.resolve();
+    },
+    keys() {
+      return Promise.resolve();
+    },
+    entries() {
+      return Promise.resolve();
+    },
+    values() {
+      return Promise.resolve();
+    },
+    fromEntries() {
+      return Promise.resolve();
+    },
+  };
+
+  export const {getOwnPropertyDescriptor} = {
+    getOwnPropertyDescriptor() {
+      return Promise.resolve();
+    },
+  };
+
+  export const {setPrototypeOf, getPrototypeOf} = {
+    setPrototypeOf() {
+      return Promise.resolve();
+    },
+    getPrototypeOf() {
+      return Promise.resolve();
+    },
+  };
+  `;
+
+const hermesEngine = await hermes.setup({
+  mode :'react',
+  projectRoot : __dirname
+});
+
+if(!fs.existsSync(path.resolve('myBundle.js')))
+{
+  let code = program.trim();
+  const compiled = await hermesEngine.compile(code);
+  
+  console.log(`\n${compiled.code}\n`);
+  fs.writeFileSync(path.resolve('myBundle.js'), code);
+}
+
+const bytecodeBlob = new hermes.Blob(require(path.

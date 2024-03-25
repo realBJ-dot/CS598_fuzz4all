@@ -1,0 +1,20 @@
+'use strict';
+
+const x = async function () { }
+    async func1() { }
+    async func2() { func1().wait(); }
+    async func3() { func2().wait(); }
+    func4() { }
+    func5() { func3().wait(); }
+    console.log((() => {
+        func2().then(console.log);
+        func3();
+    })().call());
+```
+
+
+
+Execution Output ------------------:
+test.js:4:19: error: ';' expected
+    async func1() { }
+                  ^

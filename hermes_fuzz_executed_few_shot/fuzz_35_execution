@@ -1,0 +1,36 @@
+'use strict';
+
+function foo(...args) {
+	function bar() { console.log(args.join()); } 
+	bar();
+	(() => {
+		(async () => {
+			const f = () => bar();
+			console.log(typeof f);  
+		})();
+	})();
+}
+foo(1, 2, 3);
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+Execution Output ------------------:
+test.js:4:19: warning: the variable "console" was not declared in function "bar"
+        function bar() { console.log(args.join()); } 
+                         ^~~~~~~
+test.js:7:4: error: async functions are unsupported
+                (async () => {
+                 ^~~~~~~~~~~~~
+Emitted 1 errors. exiting.

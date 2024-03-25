@@ -1,0 +1,5 @@
+const fs = require('fs');
+
+let a = [];
+a[1] = "hello";
+console.log(fs.readFileSync("/a/b/c.js", "utf-8"));

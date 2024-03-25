@@ -1,0 +1,32 @@
+'use strict';
+let foo5 = foo1.replace(/foo/, foo2).toLowerCase();
+foo5;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+const foo = 'bar';
+foo.toUpperCase();
+ 
+ 
+ 
+foo.indexOf('foo');
+ 
+ 
+ 
+ 
+ 
+<fim_middle>'use strict';
+'use strict';
+foo;  
+
+
+Execution Output ------------------:
+test.js:24:1: error: invalid expression (possible JSX: pass -parse-jsx to parse)
+<fim_middle>'use strict';
+^

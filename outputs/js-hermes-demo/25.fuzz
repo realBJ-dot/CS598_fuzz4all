@@ -1,0 +1,9 @@
+const fs = require('fs');
+
+
+const program = process.argv[2];
+const content = fs.readFileSync(`./example-${program}.js`, 'utf8').replace(/window\.Hermes\s*=\s*require/, "");
+const module = global.__hermesRuntime__.module;
+
+if (!module) throw "Module not initialized yet. Run init to do so";
+module.exports = new Function("exports", `$${content}`, `$${require('./polyfill')}`)();

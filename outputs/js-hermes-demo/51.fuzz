@@ -1,0 +1,26 @@
+const fs = require('fs');
+
+const path = require('path');
+const exec = require('child_process').exec;
+const async = require('./async');
+
+async.parallel(
+	['getdata', 'loaddata', 'compile'],
+	(err, results) => {
+		let str = `
+			let obj = ${JSON.stringify(results.getdata)},
+				arr = obj.arr;
+			for (let i = 0; i < arr.length; i++) {
+				if (arr[i] === undefined) {
+					console.log(`obj.arr[${i + 1}] = undefined`);
+				}
+				else {
+					console.log(`obj.arr[${i + 1}] = [${JSON.stringify(
+						arr[i]
+					)}]`);
+				}
+			}
+		`;
+		fs.writeFileSync(path.join(__dirname, '../res/promise-es6.js'), str);
+	}
+);

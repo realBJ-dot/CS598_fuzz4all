@@ -1,0 +1,52 @@
+'use strict';
+function myFunction() {
+    return 123;
+}
+Object.getOwnPropertyDescriptor(myFunction, "length")  
+   
+  writable: true,
+  enumerable: false,
+  configurable: true,
+ 
+ 
+```
+
+```javascript
+ 
+ 
+ 
+ 
+ 
+```
+
+## Contributing
+In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality.
+
+## Release History
+* 3.0.1 (14/07/2022)
+  * Added hermes.js function definition to module exports (#91)
+* 3.0 (15/07/2022)
+  * Added support for the Array.prototype.forEach method to run on Hermes-compatible systems. It's recommended to run on Hermes enabled devices (#80)
+  * Added support for the async for..of loop to run on Hermes-compatible systems
+* 2.1.1 (22/04/2022)
+  * Fix minor issue regarding Symbol.prototype.description, and in-place update of Symbol description (#81)
+* 2.1.0 (4/03/2022)
+  * Added support for the for...in loops (#70)
+  * Added support for Intl APIs (#72)
+  * Fixed a race condition that could lead sometimes to infinite loading of resources (#73)
+* 2.0.1 (10/11/2021)
+  * Fix issues with optional chaining and nullish coallescing (#57)
+  * Added support for the optional chaining operator (#57)
+  * Fixed a potential memory leak issue causing high memory usage for large files
+* 2.0 (11/10/2021)
+  * Added support for the String.prototype.fromCodePoint() method to compile to bytecode, allowing for the use of JS strings larger than the JavaScript VM can handle (#48)
+  * Implemented support for optional chaining and nullish coalescing using the ECMAScript optional chaining operator (#29) (#40)
+  * Added support for the new Intl APIs (#27) (#13)
+*  1.5 (3/8/2021)
+  * Added support for the new RegExp APIs, and added support for full spec compliance to the latest spec text (#21)
+  * Updated tests to support the new spec text to properly test Hermes handling of RegExp
+
+Execution Output ------------------:
+test.js:8:13: error: ';' expected
+  enumerable: false,
+            ^

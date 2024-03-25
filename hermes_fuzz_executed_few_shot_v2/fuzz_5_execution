@@ -1,0 +1,25 @@
+'use strict';
+
+
+async function asyncThen(callbackFunction, argsArray,...newArgsArray){}  
+asyncThen(printSomething, "Arg11", "Arg12");  
+asyncThen(printSomething, true);  
+asyncThen(printSomething.bind(this));  
+asyncThen((a,...b) => alert(a || b));  
+
+```
+
+To learn more about the limitations and limitations of Hermes, visit [React Native Docs](https: 
+
+
+
+Execution Output ------------------:
+test.js:14:1: error: non-terminated template literal
+
+^
+test.js:10:3: note: template literal started here
+```
+  ^
+test.js:14:1: error: invalid expression
+
+^

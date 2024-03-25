@@ -1,0 +1,15 @@
+const fs = require('fs');
+
+
+async function myFunc() {
+    return true;
+}
+
+const testFunc = myFunc  
+
+function test() {
+    return "Hello";
+}
+
+eval(test.toString())  
+```

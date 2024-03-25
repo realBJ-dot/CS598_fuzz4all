@@ -1,0 +1,6 @@
+const fs = require('fs');
+
+
+let result = fs.readFileSync('hello_js.js', 'utf-8');
+result = eval(result);
+console.log(result);

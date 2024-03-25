@@ -1,0 +1,10 @@
+const fs = require('fs');
+
+class aClass {
+}
+function func() {
+  throw new Error('Error thrown by the program');
+}
+console.dir({a: 1, b: aClass, c: () => {}, d: async () => {
+  throw new Error('Error thrown by async program');
+}} );

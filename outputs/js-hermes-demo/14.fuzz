@@ -1,0 +1,41 @@
+const fs = require('fs');
+
+const {compileHermeticExpr, parseExpr, runExpr, runAstExpr} = require('hermes-engine-js');
+const {NativeModules} = require('react-native');
+
+const myFunction= ()=>{
+  const string = "x=> x+1";
+  const ast = parseExpr(string);
+  console.log("AST:\n", ast.toSource());
+
+  const evalFunc = eval(string);
+  console.log(typeof evalFunc);
+
+   
+  const isAFunction = typeof evalFunc == "function";
+   
+  const isAString = typeof string == "string";
+   
+  const canBeCompiled = compileHermeticExpr(ast);
+
+   
+
+  const evalInModule = runExpr(ast, NativeModules);
+
+  return evalInModule(2);
+};
+
+
+var compiled = compileHermeticExpr(runAstExpr(parseExpr("x=>{x+1}"), myFunction));
+ 
+fs.writeFile(
+  'app.js',
+  String(compiled),
+  function(err) {
+    if (err) {
+      console.log('could not compile!', err);
+    }
+    console.log("success!");
+    process.exit(0);
+  }
+);

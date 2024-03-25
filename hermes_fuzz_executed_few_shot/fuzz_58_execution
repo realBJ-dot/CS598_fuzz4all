@@ -1,0 +1,35 @@
+'use strict';
+var foo9 = {value: 'foo9'};
+foo9;
+foo9 = 'foo9';
+foo9;
+let foo10 = {value: 'foo1'};
+foo10;
+foo10 = 'foo10';
+foo10;
+foo10;
+let foo11 = 'foo11';
+foo11;
+foo11;
+let foo12 = 'foo12';
+foo12;
+foo12 = 'foo2';
+foo12;
+foo12 = 'foo12';<fim_middle>let food13 = 'food13';
+food13;
+food13 = 'food13';
+food13;
+food13 = 'food13';
+food13;
+food13;
+food13 = 'food13';
+food13 = 'food13';
+food13 = 'food13';
+food13;
+food13;
+
+
+Execution Output ------------------:
+test.js:18:17: error: invalid expression (possible JSX: pass -parse-jsx to parse)
+foo12 = 'foo12';<fim_middle>let food13 = 'food13';
+                ^

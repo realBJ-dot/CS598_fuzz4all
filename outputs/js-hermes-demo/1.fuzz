@@ -1,0 +1,40 @@
+const fs = require('fs');
+
+const path = require('path');
+const { evaluate, compile} = require('hermes-engine')  
+const { withTimeout} = require('promisify-node');
+const { promises:fsPromises} = require('fs');
+
+const fileName = path.resolve(__dirname, 'hello-world.js');
+async function main(){
+  const code = await fsPromises.readFile(fileName, 'utf-8');
+  
+   
+   
+  
+   
+   
+   
+  let buffer = await evaluate(code);
+  
+   
+   
+  [buffer] = await toArrayBuffer(buffer);
+    
+  try{
+     
+    const func = await compile(buffer, { allowDynamicImport: false, mode:"text" });
+    
+    const r = await func();  
+    
+    console.log(r);
+    
+  }catch(e){
+    console.log(e);
+  }
+}
+
+main();
+```
+In the future, Hermes may also target a more strict subset of CommonJS.
+

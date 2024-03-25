@@ -1,0 +1,17 @@
+const fs = require('fs');
+
+const {Promise} = require('es6-promise');
+console.log(Promise);
+const prom1 = Promise.resolve('yes').then(() => {
+  console.log(new Date().toString());
+});
+prom1.then((value) => {
+  console.log('hi!');
+  console.log(new Date().toString());
+});
+console.log('hello');
+console.log(new Date().toString());
+console.log(fs.readFileSync('README.md', {encoding: 'utf8'}));
+console.log(new Date().toString());
+console.log(prom1);
+console.log(new Date().toString());

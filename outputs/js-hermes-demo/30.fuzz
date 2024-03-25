@@ -1,0 +1,5 @@
+const fs = require('fs');
+
+const url = new URL('https://google.com');
+url.searchParams.set('q', 'Hermes');
+alert(url.searchParams.toString());

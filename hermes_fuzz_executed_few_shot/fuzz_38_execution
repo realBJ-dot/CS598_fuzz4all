@@ -1,0 +1,75 @@
+'use strict';
+
+
+var x = function(a, b=5) {
+  function print() {
+    console.log("x has been called " + arguments.length);
+  }
+  return a + b;
+};
+var a = 2; Print function.call(...); with (x); Print x(...); x(0); x(0, -2);
+ 
+
+```
+If Hermes is in `use strict` mode and you need some syntax from ES5 features, you need to write the JS code in a strict way, such as `function(){...`
+
+```
+a = 10;
+class MyClass {
+  constructor(a) {
+    console.warn('constructor', a);
+  }
+  say(a, b = 20) {
+    console.log('MyClass say', a +'and'+ b);
+  }
+}
+const myClass = new MyClass(30);
+myClass.say();
+myClass.say(5, 6);
+class Outer {
+  constructor(){}
+  say() {
+    function print() {
+      console.log("say called " + arguments);
+    }
+    return print.bind(this)();
+  }
+}
+function inner() {
+  let value = 0;
+  return new Proxy({}, {
+    get: function(target, property) {
+      return function() {
+        console.log('inner', property, this, arguments, value, property);
+        value++;
+        return arguments[0];
+      };
+    }
+  });
+}
+var o = new Outer;
+Proxy.revocable(o, {
+   
+  create: function(target, handler, receiver) {
+    console.log('create');
+  },
+  
+   
+  has: function(target, property) {
+    console.log('has', property);
+    return true;
+  }
+})(o.say);
+
+  
+with (myClass) {
+  say();
+  say(5, 6);
+}
+```
+
+
+Execution Output ------------------:
+test.js:10:18: error: ';' expected
+var a = 2; Print function.call(...); with (x); Print x(...); x(0); x(0, -2);
+                 ^

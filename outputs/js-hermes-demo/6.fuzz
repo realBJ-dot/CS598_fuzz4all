@@ -1,0 +1,70 @@
+const fs = require('fs');
+
+function callMe(functionToCall) {
+    return Promise.resolve().then(() => {
+        return Promise.resolve()  
+      .then(() => {
+            return Promise.resolve(functionToCall);
+        })
+      .then(() => {
+            return Promise.resolve();
+        })
+      .then(() => {
+            return Promise.resolve()  
+        });
+    });
+}
+const program = `
+function foo() {
+    this.m();
+}
+var r = foo();
+var l = [new Promise(r => r())];
+var t = new Promise((r, err) => {
+    r();
+});
+function bar(r = new Promise((r) => r())) {
+    return r();
+}
+var p = Promise.race([1, 2, 3]);
+var s = "hello";
+const v = "world";
+function x(n) {
+    return new Promise((r) => {
+        r(n? 1 : 0);
+    });
+}
+var b = x(true);
+const w = x(false);
+const d = typeof r.then? "resolve" : "reject";
+function y() {
+    return new Promise((r) => {
+        r(123);
+    });
+}
+y();
+y().then((v) => {
+    return v;
+}).then((v) => {
+    return v;
+});
+x(true)
+  .then((v) => { return v + 5; })
+  .then((n) => { return Promise.resolve(n); })
+  .then((v) => { return Promise.resolve(v); });
+    r = x(false);
+const z = "123";
+console.log('string', s, typeof s,'string', typeof s, 'number', s);
+console.log('array', l[0].then((v) => { return v }), ['array', l[0].then((v) => { return v })]);
+console.log('object', t.then((v) => { return v }), [{object: 'Promise.prototype'}, {object: 'Promise', value: t}]);
+console.log('Promise', p.then((v) => { return v }), ['Promise', {array: [{object: 'Promise', value: p}], length: 3}]);
+let p = {promise: new Promise(r => r())}, q = {promise: {value: "value"}};
+p.promise.constructor = Array;
+(q.promise).constructor = Number
+return Promise.all([p.promise.then(v => v), q.promise.then(v => v)]);
+`;
+async function main() {
+     
+    let result = RN.FS.readFile('./src/rn-app/index.js', RN.FS.EncodingType.UTF8);
+     
+    let program = result.

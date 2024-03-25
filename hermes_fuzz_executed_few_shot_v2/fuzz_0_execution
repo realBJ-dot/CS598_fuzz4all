@@ -1,0 +1,34 @@
+'use strict';
+
+
+var a = 1, b = 2;
+new Promise(function(resolve) {resolve(3);});
+
+console.log(a + b)  
+ 
+
+console.log("var a = 1, b = 2", {a + b});  
+
+function fun() {
+  return {a, b};
+}
+
+ 
+console.log(Fun.call(undefined, 1, 2));  
+console.log(Fun.apply(undefined, [1, 2]));  
+
+console.log("fun()", fun());  
+```
+
+## Native code - JS to native
+
+At this point it is likely that your RN code will run on the native platform. However, for our application purposes Hermes runs the code from a JS runtime. This code then runs on the native platform.
+
+This document describes using Hermes to run from RN. If you only plan to use Hermes on Android, then there is some more detailed documentation for that [here](react-native-hermes-setup.md).
+
+
+
+Execution Output ------------------:
+test.js:10:36: error: ':' expected in property initialization
+console.log("var a = 1, b = 2", {a + b});  
+                                 ~~^

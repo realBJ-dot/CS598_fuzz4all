@@ -1,0 +1,77 @@
+'use strict';
+function sum(a, b, c) {
+    a++;
+    b--;
+    return a - b - c;
+}
+sum(1, 2, 3);
+ 
+'use strict';
+var x = randomRange(0, 10);
+var randomFunc = getRandomInt = function () {
+    return Math.floor(randomRange(0, 10));
+};
+console.log(randomFunc());
+ 
+ 
+ 
+ 
+ 
+ 
+'use strict';
+function toLower(string) {
+    return string.toLowerCase();
+}
+function toUpper(string) {
+    return string.toUpperCase();
+}
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+ 
+function capitalizeSentence(string) {
+    return toUpper(toLower(capitalizeFirstLetter(string))).trim().replace(/^\w/, function (match) {
+        return match.toUpperCase();
+    });
+}
+capitalizeSentence('hello, world');
+'use strict';
+function sayHello1(name) {
+    console.log('Hello'+ toUpper(name));
+}
+sayHello1('world');
+'use strict';
+function sayHello2(name = 'Nobody') {
+    console.log('Howdy'+ toUpper(name));
+}
+sayHello2();
+ 
+sayHello2('Nobody');
+ 
+sayHello2('Good Day');
+ 
+ 
+'use strict';
+function showHelloOrNothing(name) {
+    if (name) {
+        console.log('Hello'+ toUpper(name));
+    } else {
+        console.log('Never show Nobody');
+    }
+}
+showHelloOrNothing();
+showHelloOrNothing('Nobody');
+ 
+ 
+'use strict';
+function showHelloOrNobody(name) {
+    if (name) {
+        console.log
+
+Execution Output ------------------:
+test.js:69:20: error: '}' expected at end of block
+        console.log
+                   ^
+test.js:68:15: note: block starts here
+    if (name) {
+              ^

@@ -1,0 +1,79 @@
+const fs = require('fs');
+
+
+
+const a = fs.readFileSync('hello.txt');
+const a = fs.readFileSync('hello.txt');
+
+
+fs.readFile('hello.txt', { encoding: 'utf8' })
+.then(() => {
+  fs.readFile('hello.txt', { encoding: 'utf8' })
+.then(() => 'hello.txt')
+.then( () => 'hello.txt')
+.then( () => 'hello.txt')
+.then( () => {
+    fs.readFile('hello.txt', { encoding: 'utf8' })
+  })
+.then( () => {
+    fs.readFile('hello.txt', { encoding: 'utf8' })
+  })
+.then( () => {
+    fs.readFile('hello.txt', { encoding: 'utf8' })
+  })
+.then( () => {
+    fs.readFile('hello.txt', { encoding: 'utf8' })
+ })
+.then( () => {
+    fs.readFile('hello.txt', { encoding: 'utf8' })
+ })
+.then( () => {
+    fs.readFile('hello.txt', { encoding: 'utf8' })
+ })
+.then( () => {
+    fs.readFile('hello.txt', { encoding: 'utf8' })
+ })
+.then( () => {
+    fs.readFile('hello.txt', { encoding: 'utf8' })
+ })
+.then( () => {
+    fs.readFile('hello.txt', { encoding: 'utf8' })
+ })
+.then( () => {
+    fs.readFile('hello.txt', { encoding: 'utf8' })
+ })
+.then( () => {
+    fs.readFile('hello.txt', { encoding: 'utf8' })
+ })
+.then( () => {
+    fs.readFile('hello.txt', { encoding: 'utf8' })
+ })
+.then( () => {
+    fs.readFile('hello.txt', { encoding: 'utf8' })
+ })
+.then( () => {
+    fs.readFile('hello.txt', { encoding: 'utf8' })
+ })
+.then( () => {
+    fs.readFile('hello.txt', { encoding: 'utf8' })
+ })
+.then( () => {
+    fs.readFile('hello.txt', { encoding: 'utf8' })
+ })
+.then( () => {
+    fs.readFile('hello.txt', { encoding: 'utf8' })
+ })
+.then( () => {
+    fs.readFile('hello.txt', { encoding: 'utf8' })
+ })
+.then( () => {
+    fs.readFile('hello.txt', { encoding: 'utf8' })
+ })
+.then( () => {
+    fs.readFile('hello.txt', { encoding: 'utf8' })
+ })
+.then( () => {
+    fs.readFile('hello.txt', { encoding: 'utf8' })
+ })
+.then( () => {
+    fs.readFile('

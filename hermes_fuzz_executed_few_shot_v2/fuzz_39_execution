@@ -1,0 +1,9 @@
+'use strict';
+
+ReactDOM.render(<NativeComponent ref={this} />);
+
+
+Execution Output ------------------:
+test.js:3:17: error: invalid expression (possible JSX: pass -parse-jsx to parse)
+ReactDOM.render(<NativeComponent ref={this} />);
+                ^

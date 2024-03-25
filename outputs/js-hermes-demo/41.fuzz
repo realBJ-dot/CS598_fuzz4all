@@ -1,0 +1,49 @@
+const fs = require('fs');
+<fim_middle>
+    const test = 15; 
+    const fn = () => {
+        const sum = (a, fn) => {
+          return a + fn();
+        };
+        const result = sum(undefined, fn);
+        if (result === undefined) throw 'Should be undefined but is undefined';
+        return result;
+    };
+    const result = fn();
+    const output = {
+        result,
+        msg: ''
+    };
+    const dir = fs.realpathSync('.');
+    const filename = `${dir}/../js/test.js`;
+    fs.writeFileSync(filename, String(fn()), 'utf-8');
+    const program = spawn(
+        node,
+        [filename]
+    );
+    program.stdout.pipe(process.stdout).pipe(process.stderr);
+    var stdout = '';
+    var stderr = '';
+    program.stdout.on('data', data => {
+        stdout += `${JSON.parse(data).msg} `;
+    });
+    program.stderr.on('data', data => {
+        stderr += data;
+    });
+    program.on('close', code => {
+        if (code!= 0) {
+            stdout = String(stdout).trim();
+            if (stdout!= String(fn())) {
+                output.result = 1;
+                output.msg = `Wrong answer: ` + stdout;
+            }
+        }
+        if (code == 0) {
+            if (stderr.indexOf('TypeError: unsupported operation')!= -1) {
+                output.result = 2;
+                output.msg = `${stderr}`;
+            } 
+        }
+        console.log(JSON.stringify(output));
+    });
+})();

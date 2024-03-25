@@ -1,0 +1,21 @@
+const fs = require('fs');
+
+async function read(filename) {
+   
+  const promise1 = fs.readFile(filename);
+  const promise2 = fs.readFile(filename);
+  await Promise.all([promise1, promise2]);
+  return promise1.result;
+}
+async function main() {
+  fs.readFile('hello.txt').then(value => {
+    console.log(value.length);
+  });
+  const str = await read('hello.txt');
+  
+  const value2 = readSync('hello.txt');
+  console.log(value2.length);
+}
+main();
+ 
+

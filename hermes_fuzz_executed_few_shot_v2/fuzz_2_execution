@@ -1,0 +1,64 @@
+'use strict';
+
+
+let obj = {
+    greetMe: (name, callback) => {
+         
+        setTimeout(() => {
+             
+            callback('Hello,'+ name);
+        }, 1200);
+    }
+};
+obj
+  .greetMe('Alice')
+  .then((res) => {
+        console.log(res);
+    })
+  .catch((e) => {
+        console.log(e);
+    });
+
+function greet(name, callback) {
+     
+    setTimeout(() => {
+         
+        callback('Hello,'+ name);
+    }, 1200);
+}
+
+async function test() {
+    console.log(await greet('Alice'));
+}
+
+setInterval(test, 1000);
+
+ 
+ 
+ 
+
+ 
+function test() {
+    console.log('Hi from a different isolate');
+}
+```
+
+As for the following sections, we will not be providing examples to help you run Hermes in JavaScript using RN. Users can follow the official [Quick Start Guide](https: 
+
+We have several libraries:
+- [Hermes Test Suite](https: 
+- [React Hermes Sample](https: 
+- [React and Hermes Sample](https: 
+- [hermes-native-example](https: 
+
+
+Execution Output ------------------:
+test.js:53:1: error: non-terminated template literal
+
+^
+test.js:44:3: note: template literal started here
+```
+  ^
+test.js:53:1: error: invalid expression
+
+^

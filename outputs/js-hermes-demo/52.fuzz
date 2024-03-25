@@ -1,0 +1,16 @@
+const fs = require('fs');
+
+hermesExec('var arr = [1, 2, 3];');
+ 
+
+hermesExec('try { return undefined; } catch (e) { return e; }', []);
+ 
+
+hermesExec('(function(){ try { return undefined; } catch (e) { return e; } })();');
+ 
+```
+
+License
+--------
+
+MIT

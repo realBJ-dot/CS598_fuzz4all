@@ -1,0 +1,760 @@
+[TRACE] Validating outputs/js-hermes-demo/0.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/0.fuzz has potential error!
+error message:
+/tmp/temp1711253385.5741968.js:10:11: error: ';' expected
+} = await createHermesRuntime({
+          ^
+
+[TRACE] Validating outputs/js-hermes-demo/1.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/1.fuzz has potential error!
+error message:
+/tmp/temp1711253385.5741968.js:41:1: error: non-terminated template literal
+
+^
+/tmp/temp1711253385.5741968.js:38:3: note: template literal started here
+```
+  ^
+/tmp/temp1711253385.5741968.js:41:1: error: invalid expression
+
+^
+
+[TRACE] Validating outputs/js-hermes-demo/2.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/2.fuzz failed validation with error message: Uncaught ReferenceError: Property 'require' doesn't exist
+    at global (/tmp/temp1711253385.5741968.js:1:12)
+
+[TRACE] Validating outputs/js-hermes-demo/3.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/3.fuzz has potential error!
+error message:
+/tmp/temp1711253385.5741968.js:6:11: error: ';' expected
+interface FileSystem {
+          ^
+
+[TRACE] Validating outputs/js-hermes-demo/4.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/4.fuzz failed validation with error message: Uncaught ReferenceError: Property 'require' doesn't exist
+    at global (/tmp/temp1711253385.5741968.js:1:12)
+
+[TRACE] Validating outputs/js-hermes-demo/5.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/5.fuzz failed validation with error message: Uncaught ReferenceError: Property 'require' doesn't exist
+    at global (/tmp/temp1711253385.5741968.js:1:12)
+
+[TRACE] Validating outputs/js-hermes-demo/6.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/6.fuzz has potential error!
+error message:
+/tmp/temp1711253385.5741968.js:70:26: error: 'identifier' expected after '.' or '?.' in member expression
+    let program = result.
+                  ~~~~~~~^
+
+[TRACE] Validating outputs/js-hermes-demo/7.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/7.fuzz has potential error!
+error message:
+/tmp/temp1711253385.5741968.js:9:1: error: non-terminated template literal
+
+^
+/tmp/temp1711253385.5741968.js:8:3: note: template literal started here
+```
+  ^
+/tmp/temp1711253385.5741968.js:9:1: error: invalid expression
+
+^
+
+[TRACE] Validating outputs/js-hermes-demo/8.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/8.fuzz failed validation with error message: Uncaught ReferenceError: Property 'require' doesn't exist
+    at global (/tmp/temp1711253385.5741968.js:1:12)
+
+[TRACE] Validating outputs/js-hermes-demo/9.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/9.fuzz has potential error!
+error message:
+/tmp/temp1711253385.5741968.js:51:21: error: invalid expression
+    callFunction(js,
+                    ^
+
+[TRACE] Validating outputs/js-hermes-demo/10.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/10.fuzz failed validation with error message: Uncaught ReferenceError: Property 'require' doesn't exist
+    at global (/tmp/temp1711253385.5741968.js:1:12)
+
+[TRACE] Validating outputs/js-hermes-demo/11.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/11.fuzz has potential error!
+error message:
+/tmp/temp1711253385.5741968.js:6:4: error: ';' expected
+```js
+   ^
+
+[TRACE] Validating outputs/js-hermes-demo/12.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/12.fuzz failed validation with error message: /tmp/temp1711253385.5741968.js:5:10: warning: Direct call to eval(), but lexical scope is not supported.
+result = eval(result);
+         ^~~~~~~~~~~~
+Uncaught ReferenceError: Property 'require' doesn't exist
+    at global (/tmp/temp1711253385.5741968.js:1:12)
+
+[TRACE] Validating outputs/js-hermes-demo/13.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/13.fuzz failed validation with error message: Uncaught ReferenceError: Property 'require' doesn't exist
+    at global (/tmp/temp1711253385.5741968.js:1:12)
+
+[TRACE] Validating outputs/js-hermes-demo/14.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/14.fuzz failed validation with error message: /tmp/temp1711253385.5741968.js:11:20: warning: Direct call to eval(), but lexical scope is not supported.
+  const evalFunc = eval(string);
+                   ^~~~~~~~~~~~
+Uncaught ReferenceError: Property 'require' doesn't exist
+    at global (/tmp/temp1711253385.5741968.js:1:12)
+
+[TRACE] Validating outputs/js-hermes-demo/15.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/15.fuzz failed validation with error message: Uncaught ReferenceError: Property 'require' doesn't exist
+    at global (/tmp/temp1711253385.5741968.js:1:12)
+
+[TRACE] Validating outputs/js-hermes-demo/16.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/16.fuzz has potential error!
+error message:
+/tmp/temp1711253385.5741968.js:30:1: error: invalid expression
+*/
+^
+
+[TRACE] Validating outputs/js-hermes-demo/17.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/17.fuzz has potential error!
+error message:
+/tmp/temp1711253385.5741968.js:24:4: error: ';' expected
+```javascript
+   ^
+
+[TRACE] Validating outputs/js-hermes-demo/18.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/18.fuzz failed validation with error message: Uncaught ReferenceError: Property 'require' doesn't exist
+    at global (/tmp/temp1711253385.5741968.js:1:12)
+
+[TRACE] Validating outputs/js-hermes-demo/19.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/19.fuzz has potential error!
+error message:
+/tmp/temp1711253385.5741968.js:10:105: error: non-terminated template literal
+Note Hermes has only been tested with JavaScript in ES6, and ES6 support is still in very early stages. 
+                                                                                                        ^
+/tmp/temp1711253385.5741968.js:8:3: note: template literal started here
+```
+  ^
+/tmp/temp1711253385.5741968.js:10:105: error: invalid expression
+Note Hermes has only been tested with JavaScript in ES6, and ES6 support is still in very early stages. 
+                                                                                                        ^
+
+[TRACE] Validating outputs/js-hermes-demo/20.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/20.fuzz has potential error!
+error message:
+/tmp/temp1711253385.5741968.js:15:1: error: non-terminated template literal
+
+^
+/tmp/temp1711253385.5741968.js:10:21: note: template literal started here
+  expect(data).toBe(`const jsp = jest.genMockFromModule("file:///home/hermes/facebook_react_native_new/RNTester/hermes/javascript");
+                    ^
+/tmp/temp1711253385.5741968.js:15:1: error: invalid expression
+
+^
+
+[TRACE] Validating outputs/js-hermes-demo/21.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/21.fuzz has potential error!
+error message:
+/tmp/temp1711253385.5741968.js:17:22: error: ')' expected at end of function call
+document.write(await a());
+              ~~~~~~~^
+
+[TRACE] Validating outputs/js-hermes-demo/22.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/22.fuzz has potential error!
+error message:
+/tmp/temp1711253385.5741968.js:4:9: error: ';' expected
+  await f;
+        ^
+
+[TRACE] Validating outputs/js-hermes-demo/23.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/23.fuzz has potential error!
+error message:
+/tmp/temp1711253385.5741968.js:9:56: error: '}' expected at end of substition in template literal
+  const source = `const test = ${JSON.stringify("asdf");}`;
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+
+[TRACE] Validating outputs/js-hermes-demo/24.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/24.fuzz has potential error!
+error message:
+/tmp/temp1711253385.5741968.js:5:8: error: ';' expected after class property
+    arr:[number|string,number];
+    ~~~^
+
+[TRACE] Validating outputs/js-hermes-demo/25.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/25.fuzz failed validation with error message: Uncaught ReferenceError: Property 'require' doesn't exist
+    at global (/tmp/temp1711253385.5741968.js:1:12)
+
+[TRACE] Validating outputs/js-hermes-demo/26.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/26.fuzz has potential error!
+error message:
+/tmp/temp1711253385.5741968.js:30:2: error: ';' expected
+`hermes-engine@0.46.0`:
+ ^
+
+[TRACE] Validating outputs/js-hermes-demo/27.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/27.fuzz has potential error!
+error message:
+/tmp/temp1711253385.5741968.js:35:119: error: ']' expected at end of array literal '[...'
+const newArr = [...new Uint8Array([...new Uint8Array([...new Uint8Array([...new Int16Array(10).values()])]).values()]);
+               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+
+[TRACE] Validating outputs/js-hermes-demo/28.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/28.fuzz has potential error!
+error message:
+/tmp/temp1711253385.5741968.js:17:1: error: non-terminated template literal
+
+^
+/tmp/temp1711253385.5741968.js:16:3: note: template literal started here
+```
+  ^
+/tmp/temp1711253385.5741968.js:17:1: error: invalid expression
+
+^
+
+[TRACE] Validating outputs/js-hermes-demo/29.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/29.fuzz has potential error!
+error message:
+/tmp/temp1711253385.5741968.js:8:10: error: ';' expected
+- Hermes JS debugger:
+         ^
+
+[TRACE] Validating outputs/js-hermes-demo/30.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/30.fuzz failed validation with error message: Uncaught ReferenceError: Property 'require' doesn't exist
+    at global (/tmp/temp1711253385.5741968.js:1:12)
+
+[TRACE] Validating outputs/js-hermes-demo/31.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/31.fuzz has potential error!
+error message:
+/tmp/temp1711253385.5741968.js:24:9: error: ';' expected after class property
+    [""].length = 6;
+    ~~~~^
+
+[TRACE] Validating outputs/js-hermes-demo/32.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/32.fuzz has potential error!
+error message:
+/tmp/temp1711253385.5741968.js:33:15: error: '(' expected at start of function parameter list
+function objOf<T>(obj = {}) {}
+~~~~~~~~~~~~~~^
+
+[TRACE] Validating outputs/js-hermes-demo/33.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/33.fuzz has potential error!
+error message:
+/tmp/temp1711253385.5741968.js:37:31: error: ')' expected at end of parenthesized expression
+  console.log('parse', (await parse(require.resolve('react-native'), x, true)));
+                       ~~~~~~~^
+
+[TRACE] Validating outputs/js-hermes-demo/34.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/34.fuzz has potential error!
+error message:
+/tmp/temp1711253385.5741968.js:22:1: error: non-terminated template literal
+
+^
+/tmp/temp1711253385.5741968.js:20:3: note: template literal started here
+```
+  ^
+/tmp/temp1711253385.5741968.js:22:1: error: invalid expression
+
+^
+
+[TRACE] Validating outputs/js-hermes-demo/35.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/35.fuzz has potential error!
+error message:
+/tmp/temp1711253385.5741968.js:9:1: error: invalid statement encountered.
+class NativeModule {
+^~~~~~~~~~~~~~~~~~~~
+Emitted 1 errors. exiting.
+
+[TRACE] Validating outputs/js-hermes-demo/36.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/36.fuzz has potential error!
+error message:
+/tmp/temp1711253385.5741968.js:31:3: error: '}' expected at end of block
+  
+  ^
+/tmp/temp1711253385.5741968.js:5:14: note: block starts here
+(async () => {
+             ^
+
+[TRACE] Validating outputs/js-hermes-demo/37.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/37.fuzz failed validation with error message: Uncaught ReferenceError: Property 'require' doesn't exist
+    at global (/tmp/temp1711253385.5741968.js:1:12)
+
+[TRACE] Validating outputs/js-hermes-demo/38.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/38.fuzz has potential error!
+error message:
+/tmp/temp1711253385.5741968.js:12:1: error: invalid expression
+*/
+^
+
+[TRACE] Validating outputs/js-hermes-demo/39.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/39.fuzz has potential error!
+error message:
+/tmp/temp1711253385.5741968.js:55:47: error: non-terminated template literal
+- [Optional chaining with nullish coalescing](
+                                              ^
+/tmp/temp1711253385.5741968.js:44:3: note: template literal started here
+```
+  ^
+/tmp/temp1711253385.5741968.js:55:47: error: invalid expression
+- [Optional chaining with nullish coalescing](
+                                              ^
+
+[TRACE] Validating outputs/js-hermes-demo/40.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/40.fuzz has potential error!
+error message:
+/tmp/temp1711253385.5741968.js:3:7: error: ';' expected
+await fs.promises.writeFile(`${__dirname}/es6.out.js`, 'console.log(function() {});');
+      ^
+
+[TRACE] Validating outputs/js-hermes-demo/41.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/41.fuzz has potential error!
+error message:
+/tmp/temp1711253385.5741968.js:2:1: error: invalid expression (possible JSX: pass -parse-jsx to parse)
+<fim_middle>
+^
+
+[TRACE] Validating outputs/js-hermes-demo/42.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/42.fuzz has potential error!
+error message:
+/tmp/temp1711253385.5741968.js:8:51: error: ')' expected at end of function call
+.then(content => { return document.write(content)}});
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+
+[TRACE] Validating outputs/js-hermes-demo/43.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/43.fuzz has potential error!
+error message:
+/tmp/temp1711253385.5741968.js:43:49: error: non-terminated template literal
+- It does not use Object creation, which is slow
+                                                ^
+/tmp/temp1711253385.5741968.js:31:3: note: template literal started here
+```
+  ^
+/tmp/temp1711253385.5741968.js:43:49: error: invalid expression
+- It does not use Object creation, which is slow
+                                                ^
+
+[TRACE] Validating outputs/js-hermes-demo/44.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/44.fuzz failed validation with error message: Uncaught ReferenceError: Property 'require' doesn't exist
+    at global (/tmp/temp1711253385.5741968.js:1:12)
+
+[TRACE] Validating outputs/js-hermes-demo/45.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/45.fuzz has potential error!
+error message:
+/tmp/temp1711253385.5741968.js:9:5: error: ';' expected
+You need to download Hermes before starting running the code.
+    ^
+
+[TRACE] Validating outputs/js-hermes-demo/46.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/46.fuzz failed validation with error message: Uncaught ReferenceError: Property 'require' doesn't exist
+    at global (/tmp/temp1711253385.5741968.js:1:12)
+
+[TRACE] Validating outputs/js-hermes-demo/47.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/47.fuzz has potential error!
+error message:
+/tmp/temp1711253385.5741968.js:4:24: error: async functions are unsupported
+const evaluateNative = async () => {
+                       ^~~~~~~~~~~~~
+Emitted 1 errors. exiting.
+
+[TRACE] Validating outputs/js-hermes-demo/48.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/48.fuzz has potential error!
+error message:
+/tmp/temp1711253385.5741968.js:7:82: error: ';' expected
+If you are able to run the example, you should be able to see both a file and a `readFile` function that works in both runtimes (with and without Hermes).
+                                                                                 ^
+
+[TRACE] Validating outputs/js-hermes-demo/49.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/49.fuzz has potential error!
+error message:
+/tmp/temp1711253385.5741968.js:22:4: error: non-terminated template literal
+```
+   ^
+/tmp/temp1711253385.5741968.js:22:3: note: template literal started here
+```
+  ^
+/tmp/temp1711253385.5741968.js:22:4: error: invalid expression
+```
+   ^
+
+[TRACE] Validating outputs/js-hermes-demo/50.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/50.fuzz has potential error!
+error message:
+/tmp/temp1711253385.5741968.js:16:1: error: non-terminated template literal
+
+^
+/tmp/temp1711253385.5741968.js:15:3: note: template literal started here
+```
+  ^
+/tmp/temp1711253385.5741968.js:16:1: error: invalid expression
+
+^
+
+[TRACE] Validating outputs/js-hermes-demo/51.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/51.fuzz has potential error!
+error message:
+/tmp/temp1711253385.5741968.js:15:19: error: ';' expected
+                                        console.log(`obj.arr[${i + 1}] = undefined`);
+                                                     ^
+
+[TRACE] Validating outputs/js-hermes-demo/52.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/52.fuzz has potential error!
+error message:
+/tmp/temp1711253385.5741968.js:17:1: error: non-terminated template literal
+
+^
+/tmp/temp1711253385.5741968.js:11:3: note: template literal started here
+```
+  ^
+/tmp/temp1711253385.5741968.js:17:1: error: invalid expression
+
+^
+
+[TRACE] Validating outputs/js-hermes-demo/53.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/53.fuzz failed validation with error message: Uncaught ReferenceError: Property 'require' doesn't exist
+    at global (/tmp/temp1711253385.5741968.js:1:12)
+
+[TRACE] Validating outputs/js-hermes-demo/54.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/54.fuzz failed validation with error message: Uncaught ReferenceError: Property 'require' doesn't exist
+    at global (/tmp/temp1711253385.5741968.js:1:12)
+
+[TRACE] Validating outputs/js-hermes-demo/55.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/55.fuzz has potential error!
+error message:
+/tmp/temp1711253385.5741968.js:20:7: error: invalid expression (possible JSX: pass -parse-jsx to parse)
+      <Text testID="Hello">{JSON.stringify(this.state.data, null, 2)}</Text>
+      ^
+
+[TRACE] Validating outputs/js-hermes-demo/56.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/56.fuzz failed validation with error message: Uncaught ReferenceError: Property 'require' doesn't exist
+    at global (/tmp/temp1711253385.5741968.js:1:12)
+
+[TRACE] Validating outputs/js-hermes-demo/57.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/57.fuzz has potential error!
+error message:
+/tmp/temp1711253385.5741968.js:20:1: error: non-terminated template literal
+
+^
+/tmp/temp1711253385.5741968.js:18:3: note: template literal started here
+```
+  ^
+/tmp/temp1711253385.5741968.js:20:1: error: invalid expression
+
+^
+
+[TRACE] Validating outputs/js-hermes-demo/58.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/58.fuzz has potential error!
+error message:
+/tmp/temp1711253385.5741968.js:30:1: error: non-terminated template literal
+
+^
+/tmp/temp1711253385.5741968.js:23:3: note: template literal started here
+```
+  ^
+/tmp/temp1711253385.5741968.js:30:1: error: invalid expression
+
+^
+
+[TRACE] Validating outputs/js-hermes-demo/59.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/59.fuzz failed validation with error message: Uncaught ReferenceError: Property 'require' doesn't exist
+    at global (/tmp/temp1711253385.5741968.js:1:12)
+
+[TRACE] Validating outputs/js-hermes-demo/60.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/60.fuzz has potential error!
+error message:
+/tmp/temp1711253385.5741968.js:5:14: error: async functions are unsupported
+const test = async () => {
+             ^~~~~~~~~~~~~
+Emitted 1 errors. exiting.
+
+[TRACE] Validating outputs/js-hermes-demo/61.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/61.fuzz failed validation with error message: Uncaught ReferenceError: Property 'require' doesn't exist
+    at global (/tmp/temp1711253385.5741968.js:1:12)
+
+[TRACE] Validating outputs/js-hermes-demo/62.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/62.fuzz has potential error!
+error message:
+/tmp/temp1711253385.5741968.js:11:1: error: invalid expression
+}
+^
+
+[TRACE] Validating outputs/js-hermes-demo/63.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/63.fuzz has potential error!
+error message:
+/tmp/temp1711253385.5741968.js:38:1: error: non-terminated template literal
+
+^
+/tmp/temp1711253385.5741968.js:36:3: note: template literal started here
+```
+  ^
+/tmp/temp1711253385.5741968.js:38:1: error: invalid expression
+
+^
+
+[TRACE] Validating outputs/js-hermes-demo/64.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/64.fuzz has potential error!
+error message:
+/tmp/temp1711253385.5741968.js:5:1: error: non-terminated template literal
+
+^
+/tmp/temp1711253385.5741968.js:3:3: note: template literal started here
+```
+  ^
+/tmp/temp1711253385.5741968.js:5:1: error: invalid expression
+
+^
+
+[TRACE] Validating outputs/js-hermes-demo/65.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/65.fuzz has potential error!
+error message:
+/tmp/temp1711253385.5741968.js:33:6: error: ';' expected
+- ```npx -p hermes-engine yarn test # or npx -p hermes-engine tsc```
+     ^
+
+[TRACE] Validating outputs/js-hermes-demo/66.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/66.fuzz has potential error!
+error message:
+/tmp/temp1711253385.5741968.js:20:1: error: non-terminated template literal
+
+^
+/tmp/temp1711253385.5741968.js:13:1: note: template literal started here
+`}</pre>
+^
+/tmp/temp1711253385.5741968.js:20:1: error: invalid expression
+
+^
+
+[TRACE] Validating outputs/js-hermes-demo/67.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/67.fuzz has potential error!
+error message:
+/tmp/temp1711253385.5741968.js:81:56: error: invalid expression
+    SampleModel.prototype.className = getClassFromName(
+                                                       ^
+
+[TRACE] Validating outputs/js-hermes-demo/68.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/68.fuzz failed validation with error message: Uncaught ReferenceError: Property 'require' doesn't exist
+    at global (/tmp/temp1711253385.5741968.js:1:12)
+
+[TRACE] Validating outputs/js-hermes-demo/69.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/69.fuzz has potential error!
+error message:
+/tmp/temp1711253385.5741968.js:31:1: error: non-terminated template literal
+
+^
+/tmp/temp1711253385.5741968.js:28:3: note: template literal started here
+```
+  ^
+/tmp/temp1711253385.5741968.js:31:1: error: invalid expression
+
+^
+
+[TRACE] Validating outputs/js-hermes-demo/70.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/70.fuzz failed validation with error message: Uncaught ReferenceError: Property 'require' doesn't exist
+    at global (/tmp/temp1711253385.5741968.js:1:12)
+
+[TRACE] Validating outputs/js-hermes-demo/71.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/71.fuzz failed validation with error message: Uncaught ReferenceError: Property 'require' doesn't exist
+    at global (/tmp/temp1711253385.5741968.js:1:12)
+
+[TRACE] Validating outputs/js-hermes-demo/72.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/72.fuzz has potential error!
+error message:
+/tmp/temp1711253385.5741968.js:14:1: error: non-terminated template literal
+
+^
+/tmp/temp1711253385.5741968.js:13:3: note: template literal started here
+```
+  ^
+/tmp/temp1711253385.5741968.js:14:1: error: invalid expression
+
+^
+
+[TRACE] Validating outputs/js-hermes-demo/73.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/73.fuzz has potential error!
+error message:
+/tmp/temp1711253385.5741968.js:18:25: error: async functions are unsupported
+    test('Hello world', async () => {
+                        ^~~~~~~~~~~~~
+Emitted 1 errors. exiting.
+
+[TRACE] Validating outputs/js-hermes-demo/74.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/74.fuzz has potential error!
+error message:
+/tmp/temp1711253385.5741968.js:3:1: error: invalid statement encountered.
+class aClass {
+^~~~~~~~~~~~~~
+/tmp/temp1711253385.5741968.js:8:47: error: async functions are unsupported
+console.dir({a: 1, b: aClass, c: () => {}, d: async () => {
+                                              ^~~~~~~~~~~~~
+Emitted 2 errors. exiting.
+
+[TRACE] Validating outputs/js-hermes-demo/75.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/75.fuzz failed validation with error message: Uncaught ReferenceError: Property 'require' doesn't exist
+    at global (/tmp/temp1711253385.5741968.js:1:12)
+
+[TRACE] Validating outputs/js-hermes-demo/76.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/76.fuzz has potential error!
+error message:
+/tmp/temp1711253385.5741968.js:71:6: error: non-terminated template literal
+     
+     ^
+/tmp/temp1711253385.5741968.js:35:15: note: template literal started here
+        code: `
+              ^
+/tmp/temp1711253385.5741968.js:71:6: error: invalid expression
+     
+     ^
+
+[TRACE] Validating outputs/js-hermes-demo/77.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/77.fuzz has potential error!
+error message:
+/tmp/temp1711253385.5741968.js:16:1: error: non-terminated template literal
+
+^
+/tmp/temp1711253385.5741968.js:10:3: note: template literal started here
+```
+  ^
+/tmp/temp1711253385.5741968.js:16:1: error: invalid expression
+
+^
+
+[TRACE] Validating outputs/js-hermes-demo/78.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/78.fuzz has potential error!
+error message:
+/tmp/temp1711253385.5741968.js:10:18: error: ';' expected
+let text = await fetch();
+                 ^
+
+[TRACE] Validating outputs/js-hermes-demo/79.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/79.fuzz has potential error!
+error message:
+/tmp/temp1711253385.5741968.js:79:18: error: non-terminated string
+    fs.readFile('
+                 ^
+/tmp/temp1711253385.5741968.js:79:17: note: string started here
+    fs.readFile('
+                ^
+/tmp/temp1711253385.5741968.js:79:18: error: ')' expected at end of function call
+    fs.readFile('
+               ~~^
+
+[TRACE] Validating outputs/js-hermes-demo/80.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/80.fuzz failed validation with error message: Uncaught ReferenceError: Property 'require' doesn't exist
+    at global (/tmp/temp1711253385.5741968.js:1:12)
+
+[TRACE] Validating outputs/js-hermes-demo/81.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/81.fuzz failed validation with error message: Uncaught ReferenceError: Property 'require' doesn't exist
+    at global (/tmp/temp1711253385.5741968.js:1:12)
+
+[TRACE] Validating outputs/js-hermes-demo/82.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/82.fuzz has potential error!
+error message:
+/tmp/temp1711253385.5741968.js:26:1: error: non-terminated template literal
+
+^
+/tmp/temp1711253385.5741968.js:19:3: note: template literal started here
+```
+  ^
+/tmp/temp1711253385.5741968.js:26:1: error: invalid expression
+
+^
+
+[TRACE] Validating outputs/js-hermes-demo/83.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/83.fuzz failed validation with error message: Uncaught ReferenceError: Property 'require' doesn't exist
+    at global (/tmp/temp1711253385.5741968.js:1:12)
+
+[TRACE] Validating outputs/js-hermes-demo/84.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/84.fuzz has potential error!
+error message:
+/tmp/temp1711253385.5741968.js:10:6: error: ';' expected
+Test Hermes: Error: Hermes's stack is not yet implemented for async functions and for Intl API. Use the optional argument withLegacyReactMode=true to emulate old RN behavior.
+     ^
+
+[TRACE] Validating outputs/js-hermes-demo/85.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/85.fuzz has potential error!
+error message:
+/tmp/temp1711253385.5741968.js:97:28: error: ';' expected
+const hermesEngine = await hermes.setup({
+                           ^
+
+[TRACE] Validating outputs/js-hermes-demo/86.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/86.fuzz failed validation with error message: Uncaught ReferenceError: Property 'require' doesn't exist
+    at global (/tmp/temp1711253385.5741968.js:1:12)
+
+[TRACE] Validating outputs/js-hermes-demo/87.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/87.fuzz has potential error!
+error message:
+/tmp/temp1711253385.5741968.js:9:35: error: non-terminated string
+"function greet(greeting, name?) {
+                                  ^
+/tmp/temp1711253385.5741968.js:9:1: note: string started here
+"function greet(greeting, name?) {
+^
+/tmp/temp1711253385.5741968.js:10:5: error: ')' expected at end of function call
+    if (name) {
+    ^
+/tmp/temp1711253385.5741968.js:8:33: note: location of '('
+  const func = new vm.HermesFunc(
+                                ^
+
+[TRACE] Validating outputs/js-hermes-demo/88.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/88.fuzz has potential error!
+error message:
+/tmp/temp1711253385.5741968.js:14:19: error: async functions are unsupported
+    rl.on('line', async word => {
+                  ^~~~~~~~~~~~~~~
+Emitted 1 errors. exiting.
+
+[TRACE] Validating outputs/js-hermes-demo/89.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/89.fuzz failed validation with error message: /tmp/temp1711253385.5741968.js:8:11: warning: Direct call to eval(), but lexical scope is not supported.
+const b = eval('1');  
+          ^~~~~~~~~
+Uncaught ReferenceError: Property 'require' doesn't exist
+    at global (/tmp/temp1711253385.5741968.js:1:12)
+
+[TRACE] Validating outputs/js-hermes-demo/90.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/90.fuzz failed validation with error message: /tmp/temp1711253385.5741968.js:14:14: warning: Direct call to eval(), but lexical scope is not supported.
+let result = eval(data, { async: false }); 
+             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/tmp/temp1711253385.5741968.js:14:14: warning: Extra eval() arguments are ignored
+let result = eval(data, { async: false }); 
+             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Uncaught ReferenceError: Property 'require' doesn't exist
+    at global (/tmp/temp1711253385.5741968.js:1:12)
+
+[TRACE] Validating outputs/js-hermes-demo/91.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/91.fuzz failed validation with error message: Uncaught ReferenceError: Property 'require' doesn't exist
+    at global (/tmp/temp1711253385.5741968.js:1:12)
+
+[TRACE] Validating outputs/js-hermes-demo/92.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/92.fuzz has potential error!
+error message:
+/tmp/temp1711253385.5741968.js:4:34: error: ')' expected at end of function call
+print( fs.readFileSync('foo.js' );  
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+
+[TRACE] Validating outputs/js-hermes-demo/93.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/93.fuzz failed validation with error message: Uncaught ReferenceError: Property 'require' doesn't exist
+    at global (/tmp/temp1711253385.5741968.js:1:12)
+
+[TRACE] Validating outputs/js-hermes-demo/94.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/94.fuzz has potential error!
+error message:
+/tmp/temp1711253385.5741968.js:17:5: error: ';' expected
+npx hermes -h
+    ^
+
+[TRACE] Validating outputs/js-hermes-demo/95.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/95.fuzz has potential error!
+error message:
+/tmp/temp1711253385.5741968.js:18:52: error: ';' expected
+const [data] = anotherPromise[Symbol.asyncIterator]:()=>anotherPromise;
+                                                   ^
+
+[TRACE] Validating outputs/js-hermes-demo/96.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/96.fuzz failed validation with error message: Uncaught ReferenceError: Property 'require' doesn't exist
+    at global (/tmp/temp1711253385.5741968.js:1:12)
+
+[TRACE] Validating outputs/js-hermes-demo/97.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/97.fuzz failed validation with error message: Uncaught ReferenceError: Property 'require' doesn't exist
+    at global (/tmp/temp1711253385.5741968.js:1:12)
+
+[TRACE] Validating outputs/js-hermes-demo/98.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/98.fuzz failed validation with error message: Uncaught ReferenceError: Property 'require' doesn't exist
+    at global (/tmp/temp1711253385.5741968.js:1:12)
+
+[TRACE] Validating outputs/js-hermes-demo/99.fuzz ...
+[VERBOSE] outputs/js-hermes-demo/99.fuzz failed validation with error message: Uncaught ReferenceError: Property 'require' doesn't exist
+    at global (/tmp/temp1711253385.5741968.js:1:12)
+

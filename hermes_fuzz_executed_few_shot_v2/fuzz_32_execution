@@ -1,0 +1,19 @@
+'use strict';
+let myFunction = Array.prototype.some.call(Array(23), function(_x) { return _x; });
+ 
+'use strict';
+let myFunction = Array.prototype.some.call(['a', 'b'], 'a');  
+```
+
+
+
+Execution Output ------------------:
+test.js:8:1: error: non-terminated template literal
+
+^
+test.js:6:3: note: template literal started here
+```
+  ^
+test.js:8:1: error: invalid expression
+
+^

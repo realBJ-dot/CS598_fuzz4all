@@ -1,0 +1,11 @@
+const fs = require('fs');
+
+let obj = fs['readFileSync']("http://localhost:8081/file.txt");
+let blob = {
+  data: obj,
+  url: "file://" + decodeURIComponent(window.decodeURIComponent(encodeURIComponent(window.window.location.href)/decodeURIComponent(window.window.location.pathname)+"?"+Date.now()))
+};
+let fileData = window.fetch(blob.url, { method: "GET" });
+fileData.then(function(response) {
+  console.log("file was retrieved: " + response.headers.get("content-type"));
+});

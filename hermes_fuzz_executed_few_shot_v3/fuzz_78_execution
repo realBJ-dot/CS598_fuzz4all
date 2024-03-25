@@ -1,0 +1,13 @@
+'use strict';
+for (var _len7 = arguments.length, args = Array(_len7), _key7 = 0; _key7 < _len7; _key7++) {
+  args[_key7] = arguments[_key7];
+}
+export default function (num1, num2, num3) {
+  return num1 + num2 + num3;
+}
+
+
+Execution Output ------------------:
+test.js:5:1: error: 'export' statement requires module mode
+export default function (num1, num2, num3) {
+^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

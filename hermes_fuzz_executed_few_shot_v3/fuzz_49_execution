@@ -1,0 +1,14 @@
+'use strict';
+class c{}
+class d{a}
+const x = [[]];
+
+
+Execution Output ------------------:
+test.js:2:1: error: invalid statement encountered.
+class c{}
+^~~~~~~~~
+test.js:3:1: error: invalid statement encountered.
+class d{a}
+^~~~~~~~~~
+Emitted 2 errors. exiting.

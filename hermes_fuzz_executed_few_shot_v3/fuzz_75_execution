@@ -1,0 +1,11 @@
+'use strict';
+<fim_middle>for (var _i = 0, _len7 = args.length; _i < _len7; _i++) {
+    var x = args[_i];
+}
+ 
+
+
+Execution Output ------------------:
+test.js:2:1: error: invalid expression (possible JSX: pass -parse-jsx to parse)
+<fim_middle>for (var _i = 0, _len7 = args.length; _i < _len7; _i++) {
+^

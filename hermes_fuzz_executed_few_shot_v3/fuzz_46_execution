@@ -1,0 +1,24 @@
+'use strict';
+let obj = {a: 4};
+let f = obj.a;
+obj.a = 3;
+f;
+'use strict';
+let f = {a: 1, b: 2, get foo() { return this.a; }};
+let f_1 = Object.getOwnPropertyNames(f);
+f_1.indexOf('a');
+f_1[0];
+f.a;
+let g = {a: 1, b: 2};
+g.set foo(x) {
+    this.a = x;
+};
+g.get foo() { return this.a; };
+g.foo = 3;
+g.foo;
+
+
+Execution Output ------------------:
+test.js:13:7: error: ';' expected
+g.set foo(x) {
+      ^

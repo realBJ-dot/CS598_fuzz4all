@@ -7,6 +7,7 @@ from Fuzz4All.target.JAVA.JAVA import JAVATarget
 from Fuzz4All.target.QISKIT.QISKIT import QiskitTarget
 from Fuzz4All.target.SMT.SMT import SMTTarget
 from Fuzz4All.target.JSHERMES import JSHERMESTarget
+from Fuzz4All.target.JSV8 import JSV8Target
 from Fuzz4All.target.target import Target
 
 
@@ -76,5 +77,7 @@ def make_target_with_config(config_dict: Dict[str, Any]) -> Target:
         return JAVATarget(**target_compat_dict)
     elif target["language"] == "js-hermes":
         return JSHERMESTarget(**target_compat_dict)
+    elif target["language"] == "js-v8":
+        return JSV8Target(**target_compat_dict)
     else:
         raise ValueError(f"Invalid target {target['language']}")

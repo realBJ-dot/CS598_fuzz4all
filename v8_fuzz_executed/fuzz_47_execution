@@ -1,0 +1,52 @@
+'use strict';
+'use v8';
+function modifyObjectResultC;
+ 
+var origArray = new Int32Array([1, 2, 3, 4]);
+ 
+var origArrayCopy = origArray; 
+ 
+var origArrayLength = origArrayCopy.length; 
+
+ 
+var newArrayLength = modifyObjectValueB(); 
+var newArrayAfterB = new Int32Array(newArrayLength); 
+var newArrayCopiedFromA = origArrayCopy.slice(); 
+ 
+for(var i = 0; i < origArrayLength; i++) {
+    newArrayCopiedFromA[i] =  modifyObjectValueB();
+    console.log('value at index:'+ i +'is:'+ newArrayCopiedFromA[i]);
+    console.log('before shifting the array:'+ origArrayLength);
+    console.log('after shifting the array:'+ modifyObjectResultC);
+    console.log('after moving the array:'+  modifyObjectResultB);
+}
+
+ 
+origArrayCopy = newArrayCopiedFromA; 
+
+console.log('before calling length:'+ modifyObjectResultC);
+console.log('after calling length:'+ newArrayLength);
+console.log('after calling slice:'+ modifyObjectResultB);
+
+
+ 
+ 
+ 
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+ 
+
+
+ 
+
+Execution Output ------------------:
+check_v8_output.sh: 27: /home/v8/v8/output/x64.debug/d8: not found

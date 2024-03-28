@@ -1,0 +1,67 @@
+'use strict';
+'use v8';
+let x = [2, 3];
+let y = [5, 6];
+delete x[0];
+x.push(7);
+let z = x;
+console.log(z.join(','));
+ 
+'use strict';
+'use v8';
+let foo = {
+    A: 0,
+    B: 1
+}; 
+ let tobar = Object.assign({A:2}, foo);
+ console.log(typeof tobar === Object, tobar instanceof Object);
+ console.log(tobar.A, tobar.B, tobar.B.B, tobar.B.B.B, 'The final array is',...tobar);
+console.log(tobar.hasOwnProperty('A'), tobar.hasOwnProperty('A') && tobar.hasOwnProperty('B'), tobar.hasOwnProperty('A'), tobar.hasOwnProperty('B'), tobar.hasOwnProperty('length'), tobar[tobar.length - 1].A);
+
+'use strict';
+'use v8';
+ 
+class Color {
+    constructor(r, g, b) {
+        this.r = r;
+        this.g = g;
+        this.b = b;
+        this.a = 255;
+    }
+    get RGB() {
+        return {
+            r: this.r,
+            g: this.g,
+            b: this.b        
+        } 
+    }
+ }
+class Background extends Color {
+    constructor(r, g, b) {
+        super(r, g, b);
+    }
+}
+class Foreground extends Color {
+    constructor(r, g, b) {
+        super(r, g, b);
+    }
+}
+ 
+let background = new Background(0, 0, 0);    
+let foreground = new Foreground(0, 255, 0);    
+let objectWithBoth = {background, foreground};
+Object.assign(foreground, objectWithBoth);    
+console.log(Object.keys(objectWithBoth))
+console.log(objectWithBoth.hasOwnProperty('background'), objectWithBoth.hasOwnProperty('foreground'));
+console.log(objectWithBoth.toString(),...objectWithBoth);
+console.assert(false, 'The final output should be an exception for invalid object assignment from Javascript to V8');
+ 
+'use v8';
+let a = {}  
+let b = [a]  
+let c = {A: 3}  
+c.A = 99;  
+c['A'] = 'X';
+
+Execution Output ------------------:
+check_v8_output.sh: 27: /home/v8/v8/output/x64.debug/d8: not found

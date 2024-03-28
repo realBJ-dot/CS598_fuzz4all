@@ -1,0 +1,34 @@
+'use strict';
+function mutatePreviousGeneration() {
+    var x = 4;
+    var y = 3;
+    var z;
+    console.log(x);
+    z = x + y;   
+    x = y + x;   
+    y -= x;   
+    console.log(x);
+}
+mutatePreviousGeneration();
+function mutateCurrentGeneration() {
+    var x = 4;
+    var z;
+    console.log(x);
+    z = + x * y;   
+    x *= z;   
+    console.log(x);
+}
+mutateCurrentGeneration();
+ 
+
+
+
+function solve() {
+     
+}
+
+ 
+ 
+
+Execution Output ------------------:
+check_v8_output.sh: 27: /home/v8/v8/output/x64.debug/d8: not found

@@ -1,0 +1,85 @@
+'use strict';
+'use v8';
+function getFirstObjectBreak() {
+    return Object.entries? Object.entries() : Object.keys(x)[0];
+}
+let x = [0];  
+let y = { 0: 0 };  
+console.log(getFirstObjectBreak());
+console.log(x);
+ 
+'use strict';
+'use v8';
+function iterateThroughKeys(name) {
+    for (const property of Object.keys(x)) {
+        console.log(name + '.'+property);
+    }
+}
+let x = { firstName: 'Tina', lastName: 'Smith' };  
+iterateThroughKeys('x.firstName');
+console.log(x);
+ 
+'use strict';
+'use v8';
+function iterateThroughValues(name) {
+    for (const value of Object.values(x)) {
+        console.log(name + '.'+value);
+    }
+}
+let x = { firstName: 'Tina', lastName: 'Smith' };  
+iterateThroughValues('x.firstName');
+console.log(x);
+let y = { 0: 0 };  
+let z = { 0: x };  
+console.log(getFirstObjectBreak(y,z));
+console.log(z);
+console.log(x);
+let a = {
+    a: 'a',
+    b: 'b',
+    c: 'c',
+};
+ 
+'use strict';
+'use v8';
+function checkEqual(a,b) {
+    return a === b;
+}
+let x = a;
+console.log(getFirstObjectBreak(a,x));
+if (!checkEqual(getFirstObjectBreak(a,z),getFirstObjectBreak(z,a))) {
+    console.log('Invalid Reference Comparison! Try to create a new reference to z and its x properties.');
+}
+console.log(z);
+console.log('==================== END =============================');
+'use strict';
+'use v8';
+function throwUndefined(x) {
+    throw undefined;
+}
+try {
+    throwUndefined(() => {});
+} catch(e) {    
+}
+try {
+    throwUndefined(x => {});
+    console.log('Cannot catch undefined function!');
+} catch(e) {
+    console.log('Error message from catch: '+e);
+}
+ 
+'use strict';
+'use v8';
+function returnUndefined() {
+    return undefined;
+}
+let x = returnUndefined();
+let y = returnUndefined(returnUndefined());
+console.log(getFirstObjectBreak(x));
+console.log(getFirstObjectBreak(y,x));
+console.log(getFirstObjectBreak(y,y,x));
+console.log(getFirstObjectBreak(1,x,y,z));
+let z
+
+Execution Output ------------------:
+check_v8_output.sh: 27: /home/v8/v8/output/x64.debug/d8: not found

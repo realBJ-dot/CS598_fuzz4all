@@ -1,0 +1,52 @@
+'use strict';
+'use v8';
+let x = {
+};
+console.log(x === [0]);
+console.log(x === [0], x ==='0');
+console.log(typeof x!== x);
+console.log(x === x);
+'use strict';
+'use v8';
+function foo(x) {
+    'x' = x;
+    console.log('x', 'this');
+}
+foo('x');
+console.log('this', this);
+
+
+
+'use strict';
+'use v8';
+function foo() {
+}
+foo = 'foo';
+console.log('foo', foo);
+
+'use strict';
+'use v8';
+let x = function () { };
+console.log('x', x);
+let x1 = function() { 'use v8'; };
+console.log('x1', x1);
+let x2 = {};
+'use v8';
+console.log(x2);
+
+'use strict';
+'use v8';
+const foo = () => x;
+console.log(typeof foo, foo.constructor, foo);
+const bar = 'foo';
+console.log(typeof bar, bar.constructor, bar);
+const baz = 'x';
+console.log(typeof baz, baz.constructor, baz);
+console.log(baz.foo(1));
+'use strict';
+'use v8';
+console.log(x);
+
+
+Execution Output ------------------:
+check_v8_output.sh: 27: /home/v8/v8/output/x64.debug/d8: not found

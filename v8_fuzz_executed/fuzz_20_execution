@@ -1,0 +1,77 @@
+'use strict';
+var test = function (condition) {
+    if (condition) {
+        return 'hello';
+    } else {
+        return function () {
+            return'something';
+        };
+    }
+}
+var t = test(false)();
+console.log(t);
+ 
+ 
+ 
+ 
+ 
+ 
+console.log("");
+ 
+function function1() {
+    console.log("Before the first if");
+    if (function2()) {
+        console.log("First if returns");
+        return function (i){
+            console.log("Function2 returns with " + i);
+        }
+    }
+    console.log("End of if1");
+}
+ 
+console.log("");
+function function2() {
+    console.log("Before the second if");
+    if (function1()) {
+        console.log("Second if returns");
+        return true;
+    }
+    console.log("End of if2");
+}
+console.log("");
+function function3() {
+    console.log("Before the third if");
+    if (function1()) {
+        console.log("Third if returns");
+        return false;
+    }
+    console.log("End of if3");
+}
+console.log("");
+function function4() {
+    console.log("Before the forth if");
+    if (function1()) {
+        return true;
+    }
+    console.log("End of if4");
+}
+console.log("");
+function function5() {
+    console.log("Before the fifth if");
+    if (function1()) {
+        return function1();
+    }
+    console.log("End of if5");
+}
+console.log("");
+function function6() {
+    console.log("Before the sixth if");
+    if (function1()) {
+        return function1();
+    } else {
+        return function2();
+    }
+    console.
+
+Execution Output ------------------:
+check_v8_output.sh: 27: /home/v8/v8/output/x64.debug/d8: not found

@@ -1,0 +1,69 @@
+'use strict';
+let x = [0, 1]; 
+let x2 = x[0];  
+x[0] = x[1];  
+x[1] = x2;  
+console.log(x);
+console.log(x2);
+'use strict';
+const x = [0, 1];  
+const y = { 0: 1 };  
+const z = [x, y];  
+const y1 = y;  
+console.log(y === z);
+console.log(y === z [0]);
+console.log(y === z [0] === y);
+console.log(Array.isArray(z));
+'use strict';
+const x = [];  
+console.log(Array.isArray(x));
+'use strict';
+let x = [0];  
+console.log(Array.isArray(x));
+console.log(x === Array.from([x]));
+console.log(x === Array.from(x));
+'use strict';
+if (typeof document === 'undefined') {
+    document = {};   
+}
+document.createElement = function (tagName) {  
+    if (typeof tagName ==='string') {  
+        if (tagName === 'div') {  
+             return document.createElement = function (tag) {  
+                 return { __proto__: HTMLElement.prototype, tag: tag };  
+             };  
+        }  
+        if (tagName === 'img' || tagname === 'iframe' || tagname === 'audio' || tagname ==='meter' || tagname === 'video' || tagname === 'progress') {  
+            return document.createElement = tag;  
+        }  
+        if (tagName === 'button') {  
+            return {  
+               value: tagname,  
+               type: tagname   
+            };  
+        }  
+        if (tagName === 'input' && tagname === 'range' &&!document.createRange().toString().indexOf('createRange')) {  
+            return document.createElement = tag;  
+        }  
+        if (tagName === 'input' && tagname === 'color') {  
+           return document.createElement('input');  
+        }  
+    }  
+};  
+console.log(document.createElement('div'));
+console.dir(document.createElement('input')); 
+ 'use strict';
+ 'use v8'; 
+let x1 = new Int8Array(100);  
+let x2 = x1.buffer;   
+x1[0] = 250;   
+x1[1] = 255;   
+x1.set(new Uint8Array([1, 2]), 2);   
+console.log(x2);  
+let x3 = new Uint8Array(252);   
+console.log(x3); 
+console.log(x3.constructor === Uint8Array); 
+console.
+
+Execution Output ------------------:
+check_v8_output.sh: 27: /home/v8/v8/output/x64.debug/d8: not found

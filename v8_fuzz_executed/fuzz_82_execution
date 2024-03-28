@@ -1,0 +1,35 @@
+'use strict';
+'use v8';
+function mutateObject2Break() {
+    const newObj = { 0: x };
+    newObj[1] = y;
+    x.length = 0;
+    return newObj;
+}
+function deleteObject2KeyBreak() {
+    delete x[0];
+    object[0].length = 0;
+    Object.assign(newObj, x[0]);
+    return newObj;
+}
+let x = { 0: 0 };
+let y = [0];
+let object = [1].map(o => ({ 0: o }));
+newObj = object[0];
+object[0] = object[0];
+deleteObject = { 0: 0 };
+newObj = {};
+newObj[2] = 3.1;
+deleteObject[0] = parseInt(42);
+console.log(mutateObject2Break());
+console.log(deleteObject2KeyBreak());
+ 
+'use strict';
+'use  v8';
+const myObj = {};
+let myObj2 = Object.create(myObj);
+let myObj3 = new myObj();
+
+
+Execution Output ------------------:
+check_v8_output.sh: 27: /home/v8/v8/output/x64.debug/d8: not found

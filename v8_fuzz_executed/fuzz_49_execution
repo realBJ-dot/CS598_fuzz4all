@@ -1,0 +1,43 @@
+'use strict';
+'use v8';
+var x = createObject();
+modifyObjectProperty(x, 'number', 20);  
+x = x + 20;
+modifyObjectResult = x;
+function createObject() {
+    var data;
+    return data;
+}
+function modifyObjectProperty(data, key, value) {
+    var x = data.pointer,
+        y = data[key];
+    data[key] = value;
+    x[key] = y;
+    data.pointer = x;
+}
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+importScripts('v8-7.0.266.23-linux-x64.js')
+
+ 
+ 
+ 
+
+Execution Output ------------------:
+check_v8_output.sh: 27: /home/v8/v8/output/x64.debug/d8: not found

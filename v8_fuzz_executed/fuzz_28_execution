@@ -1,0 +1,23 @@
+'use strict';
+function simpleFunction2() {
+    var x = 5;
+    x += 2;
+    return x;  
+}
+var v8 = 5;
+result = simpleFunction2(5);
+console.log(result);
+'use strict';
+function simpleFunction() {
+    for (var i = 0; i < 5; i++) {
+        console.log(i);
+    }
+}
+simpleFunction();
+
+ 
+ 
+ 
+
+Execution Output ------------------:
+check_v8_output.sh: 27: /home/v8/v8/output/x64.debug/d8: not found

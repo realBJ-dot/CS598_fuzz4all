@@ -1,0 +1,17 @@
+'use strict';
+'use v8';
+const oldValue = x;  
+let x = [1, 2, 3];
+let x1 = [];
+console.log(oldValue * x1);
+ 
+'use strict';
+'use v8';
+const oldValue = x;  
+let x = ['Apple', 'Banana', 'Watermelon'];
+let x1 = ['Cherry'];
+console.log(oldValue * x1);
+
+
+Execution Output ------------------:
+check_v8_output.sh: 27: /home/v8/v8/output/x64.debug/d8: not found

@@ -1,0 +1,112 @@
+'use strict';
+'use v8';
+let foo = Symbol.for('foo.bar');
+let bar = Symbol.for('bar.foo');
+const obj = { [foo]: 'a', [bar]: 'b' };
+console.log(obj);  
+ 
+'use strict';
+'use v8';
+function simpleScopeFunction() {
+    let s = 'foo';
+    function anonymous() {
+        let s = foo;
+        console.log(s);
+        anonymous();
+        s += 'z';
+        console.log(s);
+    }
+    anonymous();
+}
+basicScopeFunction();
+function basicScopeFunction() {
+    console.log(foo);
+    foo = 'bar';
+    console.log(foo);
+    foo = 'baz';
+    console.log(foo);
+    let s = foo;
+    console.log(s);
+}
+simpleScopeFunction();
+simpleScopeFunction();
+ 
+'use strict';
+'use v8';
+function simpleScope() {
+    function simpleFunction() {
+        console.log(foo);
+        foo = 'bar';
+        console.log(foo);
+        foo = 'baz';
+        console.log(foo);
+        let s = foo;
+        console.log(s);
+        s = 'new';
+        console.log(foo);
+    }
+    simpleFunction();
+    simpleFunction();
+}
+simpleScope();
+ 
+'use strict';
+'use v8';
+function createVariables() {
+    let a;
+    function createB() {
+        const b = 'two';
+        function createC() {
+            const c = 'three';
+            return (function() {
+                function doSomething(a) {
+                    return a + b + c;
+                }
+                console.log(doSomething(a));
+                return (function() {
+                    const i = 12;
+                    return (function() {
+                        function foo(b, c) {
+                            return [function() {
+                                const d = 20;
+                                return (function() {
+                                    return (function () {
+                                        const g = 'hi' + b;
+                                        return function () {
+                                            console.log(g);
+                                        };
+                                    });
+                                })();
+                            }, function() {
+                                return (function() {
+                                    return (function() {
+                                        const h = d + c;
+                                        return function() {
+                                            console.log(h);
+                                        };
+                                    })();
+                                })();
+                            }];
+                        }
+                        console.log(foo(c, i));
+                    })();
+                });
+            })();
+        }
+        b = 'twenty';
+        return createC();
+    };
+    return createB();
+}
+const object = createVariables();
+const result = object();
+console.log(result);
+ 
+'use strict';
+'use v8';
+function f1(x) {
+    return function () {
+        const y = x +'
+
+Execution Output ------------------:
+check_v8_output.sh: 27: /home/v8/v8/output/x64.debug/d8: not found

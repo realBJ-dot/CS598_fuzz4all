@@ -1,0 +1,39 @@
+'use strict';
+
+function simpleFunction(x) {
+    var z = 30;
+    x++;
+    var t;
+    eval('t = window.setTimeout("function(){z*=z+x}");');
+    setTimeout(t, 30);  
+    return z;  
+}
+var result = simpleFunction(30);
+console.log(result);
+
+ 
+
+ 
+
+function helloWorld() {
+  var str = "Hello World!";
+  return str;
+}
+var message = helloWorld();  
+
+ 
+
+var name = "John";
+var age = 18;
+ 
+var agesOver18 = age >18?true:false; 
+if (agesOver18!= false) {
+    console.log('You are over 18!'); 
+}
+ console.log(agesOver18?name+' is over 18':name+' is not over 18');
+
+
+
+
+Execution Output ------------------:
+check_v8_output.sh: 27: /home/v8/v8/output/x64.debug/d8: not found

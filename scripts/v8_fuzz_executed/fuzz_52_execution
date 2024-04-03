@@ -1,0 +1,44 @@
+'use strict';
+'use v8';
+function mutateObject(p) {
+    const newValue = x;
+    const newValueInGlobal = x1;
+    deleteObjectValue();
+    return newValue + newValueInGlobal;
+}
+function deleteObjectValue() {
+    x = undefined;
+}
+let x = 100;
+let x1 = 100;
+console.log(mutateObject(15));
+ 
+'use strict';
+'use v8';
+class Object {
+    constructor(first) {
+        this.first = first;
+        this.second = second;
+        this.third = third;
+        return this;
+    }
+    sayHello() {
+        return 'Hello Object' + this.first + this.second + this.third;
+    }
+}
+let obj1 = new Object('I');
+obj1.sayHello();
+ 
+ 
+'use strict';
+'use v8';
+function add(n1, n2) {
+    return n1 + n2;
+}
+console.log(add.apply(null, 52));
+ 
+ 
+
+
+Execution Output ------------------:
+check_v8_output.sh: 27: /home/v8/v8/output/x64.debug/d8: not found

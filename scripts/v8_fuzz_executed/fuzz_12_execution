@@ -1,0 +1,56 @@
+'use strict';
+function mutatesObject() {
+    var obj = {};
+    obj.name = "John";
+    obj[9] = "M";
+    obj.name.toUpperCase();  
+}
+mutatesObject();
+ 
+function createFunction() {
+    return function (name) {
+        return name.toUpperCase;
+    };
+}
+var capitalize = createFunction();
+var upperCased = capitalize("John");
+console.log(upperCased());
+ 
+ 
+const arr = [1, 2, 3, 4, 5, 6, 7,8,9,10];
+const middle = arr.length / 2; 
+let pos = idxOf(arr, middle);
+function idxOf(arr, elem){
+    for(var idx = 0;idx < arr.length;idx++){
+        if(arr[idx] === elem){return idx;}
+    }
+}
+ 
+const arr = [1, 2, 3, 4, 5, 6, 7,8,9,10];
+const middle = arr.length / 2; 
+var num = idxOf(arr, middle);
+ 
+const arr = [1, 5, 8, 5, 5];
+var max = largestElement(arr);
+console.log(max);
+function largestElement(arr){
+    var maxElement = arr[0];
+    for (var i = 1; i < arr.length; ++i){
+        if(arr[i] > maxElement){
+            maxElement = arr[i];
+        }
+    }
+    console.log(maxElement);
+    return maxElement;
+}
+ 
+ 
+ 
+ 
+ 
+ 
+'use strict';
+
+
+Execution Output ------------------:
+check_v8_output.sh: 27: /home/v8/v8/output/x64.debug/d8: not found

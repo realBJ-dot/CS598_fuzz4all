@@ -1,0 +1,9 @@
+'use strict';
+<fim_middle>function obj(o, r) {}
+obj = function obj(o, t) {   };
+
+
+Execution Output ------------------:
+test.js:2:1: error: invalid expression (possible JSX: pass -parse-jsx to parse)
+<fim_middle>function obj(o, r) {}
+^

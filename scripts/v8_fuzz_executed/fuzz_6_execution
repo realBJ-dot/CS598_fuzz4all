@@ -1,0 +1,15 @@
+'use strict';
+function complexNumber() {
+    var x = 2;
+    var y = 1;
+    var z;
+    z = x - y;
+    z = z * -x;
+    c = c / z;
+    console.log(c * z);
+}
+complexNumber();
+
+
+Execution Output ------------------:
+check_v8_output.sh: 27: /home/v8/v8/output/x64.debug/d8: not found

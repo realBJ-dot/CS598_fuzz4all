@@ -1,0 +1,16 @@
+'use strict';
+'use v8';
+deleteArrayValue();
+console.log(typeof 10);
+console.log(typeof '10');
+console.log(typeof []);
+console.log(typeof [], isNaN);
+ 
+ 
+ 
+<fim_middle> 
+ 
+
+
+Execution Output ------------------:
+check_v8_output.sh: 27: /home/v8/v8/output/x64.debug/d8: not found

@@ -1,0 +1,30 @@
+'use strict';
+'use v8';
+var modifyObjectResultB = 20 + modifyObjectValueA(); 
+console.log(modifyObjectResultA);
+ 
+'use strict';
+'use v8';
+function modifyObjectValueB() {
+    var x = 20;
+     
+     
+    var modifyMe = x;
+    modifyMe = +modifyMe * 2;
+    return modifyMe;
+}
+var modifyObjectResultB;
+modifyObjectResultB = modifyObjectValueB()
+console.log(modifyObjectResultB);
+ 
+'use strict';
+
+'use v8';
+var obj = {
+    a: 20,
+    x: +modifyObjectResultB
+}
+console.log(obj[x]);
+
+Execution Output ------------------:
+check_v8_output.sh: 27: /home/v8/v8/output/x64.debug/d8: not found

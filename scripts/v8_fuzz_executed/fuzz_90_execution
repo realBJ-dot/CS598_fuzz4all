@@ -1,0 +1,33 @@
+'use strict';
+'use v8';
+function badReuseBreak3() {
+    let y = { 0: 0 };
+    return Object.getPrototypeOf(y);   
+}
+ 
+ 
+let badReuseBreak3Value = badReuseBreak3();
+badReuseBreak3Value.__proto__ = { 3: 4 };  
+badReuseBreak3Value.__proto__.__proto__ = { 5: 6 };  
+badReuseBreak3Value.__proto__.__proto__.__proto__ = { 7: 8 };  
+badReuseBreak3Value.__proto__.__proto__.__proto__.__proto__ = { 9: 10 };  
+let goodReuseBreak3Value = {0: 0};
+goodReuseBreak3Value.__proto__ = Object.getPrototypeOf(badReuseBreak3Value); 
+goodReuseBreak3Value.__proto__.__proto__ = Object.getPrototypeOf(badReuseBreak3Value); 
+goodReuseBreak3Value.__proto__.__proto__.__proto__ = Object.getPrototypeOf(badReuseBreak3Value); 
+goodReuseBreak3Value.__proto__.__proto__.__proto__.__proto__ = Object.getPrototypeOf(badReuseBreak3Value); 
+goodReuseBreak3Value.__proto__.__proto__.__proto__.__proto__.__proto__ = Object.getPrototypeOf(badReuseBreak3Value);  
+let third;
+third.__proto__ = goodReuseBreak3Value;  
+console.log(third instanceof third.constructor);
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+Execution Output ------------------:
+check_v8_output.sh: 27: /home/v8/v8/output/x64.debug/d8: not found

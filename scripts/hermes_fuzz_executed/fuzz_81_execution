@@ -1,0 +1,16 @@
+'use strict';
+for (const entry of args) {
+  if (entry === null) break;
+}
+ 
+'use strict';
+function doSomething() {
+  
+
+Execution Output ------------------:
+test.js:8:3: error: '}' expected at end of block
+  
+  ^
+test.js:7:24: note: block starts here
+function doSomething() {
+                       ^

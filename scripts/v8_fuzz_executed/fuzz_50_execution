@@ -1,0 +1,84 @@
+'use strict';
+'use v8';
+function mutateTypedArray(p) {
+    const newValue = x;  
+    let newValueInGlobal = x; 
+    x = undefined;
+    let newValueInGlobal1 = x;
+    let newValueInGlobal2 = x1;
+    let newValueInGlobal3 = x2;
+    x = undefined;
+    x1 = undefined;
+    x2 = undefined;
+    console.log(newValue);
+    console.log(newValueInGlobal);
+    console.log(newValueInGlobal1);
+    console.log(newValueInGlobal2);
+    console.log(newValueInGlobal3);
+    let newValue2 = x;
+    let newValue3 = x1;
+    let newValue4 = x2;
+    x = undefined;
+    x1 = undefined;
+    x2 = undefined;
+    return newValue2 * newValue3 * newValue4;
+}
+ 
+'use strict';
+'use v8';
+function complexFunc(p) {
+    var newValue = x;
+    if (newValue == null) {
+        newValue = x1;   
+    }
+    if (newValue === null) {
+        newValue = x2;
+    }
+    if (newValue == undefined) {
+        newValue = x2;
+    }
+    if (newValue === undefined) {
+        newValue = x1; 
+    }
+    return newValue * newValue;
+
+}
+ 
+'use strict';
+'use v8';
+function isNonfiniteValue(newValue, x, x1){
+    if (newStateValue == 0 || newValue == -0  || newValue == NaN || newValue == x || newValue == x1) {
+        return false;
+    }
+    if (isFinite(newValue)) {
+        return true;
+    }
+    return false;
+}
+ 
+'use strict';
+'use v8';
+function nonFiniteTest(p) {
+    var newValue = x;
+    if (newValue == -0 || newValue == -0.0 || newValue == -0.00001 || NaN) {
+        return 'Not Nan';
+    }
+    if (isFinite(newValue)) {
+        return 'isFinite';
+    }
+    return 'notfinite';
+}
+ 
+let arr = [];
+'use strict';
+'use v8';
+let func = function (p) {
+    if (arr.length == 0 || arr.length > 1) {
+        return arr.length;
+    }
+    return 0;
+}
+/* please create a program which takes the number as an argument and computes the product of all the digits in the given number as a result.
+
+Execution Output ------------------:
+check_v8_output.sh: 27: /home/v8/v8/output/x64.debug/d8: not found

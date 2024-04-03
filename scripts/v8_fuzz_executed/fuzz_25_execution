@@ -1,0 +1,102 @@
+'use strict';
+function simpleFunction()
+{
+    setTimeout(function()
+    {   
+        x = 50;
+    }, 100);
+    var x=50;
+    return x;
+}
+var result;
+result = simpleFunction();
+console.log(result);
+function simpleFunction()
+{
+    var x = 5;
+    setTimeout(function()
+    {   
+        x += 10;
+    }, 50);
+    return x;
+}
+var result;
+result = simpleFunction();
+console.log(result);
+function simpleFunction()
+{
+    var x = 5;
+    setTimeout(function()
+    {  
+        return ++x;
+    }, 50);
+    return x;
+}
+var result;
+result = simpleFunction();
+console.log(result);
+function simpleFunction()
+{
+    var x = 0;
+    setTimeout(function()
+    {  
+        return --x;    
+    }, 100);
+    return x;
+}
+var result;
+result = simpleFunction();
+console.log(result);
+function simpleFunction()
+{
+    var x = 0;
+    setTimeout(function()
+    {  
+        return ++x + ++ --x -- --x;
+    }, 100);
+    return x;
+}
+var result;
+result = simpleFunction();
+console.log(result);
+function simpleFunction()
+{
+    var x = 0;
+    var i=0;
+    var j=0;
+    setTimeout(function()
+    {  
+        while(i<10 && j<5)
+        {
+            i += i++;
+            j += ++j;
+        }
+    }, 100);
+    return x,i,j;
+}
+var result;
+result = simpleFunction();
+console.log(result);
+ 
+'use strict';
+setTimeout(function()
+{
+    var i;
+    console.log('Start processing 10 documents in sequential loop...\n');
+    for(i = 0; i<10; i++)
+    {
+        setTimeout(function()
+        {
+            printOutput(i);
+        }, 1000 * i);
+    }
+    console.log('\n\nExecution complete...');
+}, 1000);
+function printOutput(i)
+{
+    console.log('#' + i + '. Processing Document #' + i + '\n');
+}
+
+
+Execution Output ------------------:
+check_v8_output.sh: 27: /home/v8/v8/output/x64.debug/d8: not found

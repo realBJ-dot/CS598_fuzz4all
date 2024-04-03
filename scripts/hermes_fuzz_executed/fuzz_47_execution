@@ -1,0 +1,60 @@
+'use strict';
+f;
+'a' in {};
+'a' in [0];
+'a' in null;
+```
+The result:
+```javascript
+"use strict";
+console.log(f);
+Object.keys(obj);
+Object.keys();
+Object.prototype.hasOwnProperty.call(obj, "a");
+Object.prototype.hasOwnProperty.call([0], "0")
+"use strict";
+"a" in {};
+"a" in [0];
+"a" in null;
+```
+
+# How to use in browser
+Hermes works in the browser by compiling and running React code as a Web Worker. The browser runtime is based on the Chrome DevTools JavaScript console and the DevTools JavaScript debugger. Hermes is intended to be used in all modern JavaScript environments, and will provide support for the following:
+ - Mozilla Firefox, Chrome, Safari, Opera, Edge, IE11, IEX.js
+ - IE8+.
+
+The Hermes code is compiled to ECMAScript (JS) and can be used without a runtime. However, by default the Hermes code will use the Node.js runtime. However, you can also use the Node.js runtime to start a runtime session on the server, and pass the compiled JS to the worker. The following is an example of how to use the Hermes runtime in a simple Web Worker application:
+```javascript
+ 
+ 
+const Hermes = require("hermes-engine");
+
+ 
+const worker = await Hermes.run("./dist-browser/hermes-worker.js");
+
+ 
+ 
+const response = await worker.helloWorld("World");
+```
+# How to use in Node.js
+Hermes currently only works in Node.js, which supports the V8 JavaScript engine, and runs Web Workers. Since Hermes is written in ES2017, which is supported by Node.js, you can also use Hermes in JavaScript projects. You can also write in ES2017 using your preferred JS engine. For example, you can use the JavaScript code to create Node.js run-time environments from within a Node.js application:
+```javascript
+function startHermesRuntime() {
+    const Hermes = require('hermes-engine');
+    return Hermes.run("./dist-browser/hermes-worker.js");
+}
+
+startHermesRuntime()
+  .then(async worker => {
+        console.log(await worker.helloWorld("World"));
+    });
+```
+# Why not just to run the browser directly?
+The browsers have a number of limitations. One of them is that they run in an isolated environment, and also don't allow to create a virtual machine (VM) for the application. It is possible to use a different browser engine, but then you have to implement the browser VM yourself, which is quite laborious. As an alternative, Node.js can be used as a Web server, which directly runs the application code without a virtual machine. However, there is a bug in Chrome 61 that makes it hard to use that environment. In that case, use the [Node.js Web Worker version](https: 
+# How to configure
+The default configuration has
+
+Execution Output ------------------:
+test.js:8:4: error: ';' expected
+```javascript
+   ^

@@ -1,0 +1,42 @@
+'use strict';
+const obj0 = {a: 4, b: undefined}
+const fn = function () {
+}
+const obj1 = {a: 'hello world', b: obj0}
+const fn1 = function ( a, [b,, c = obj1.b, d = obj1.c, e] = ['hello world']) {
+}
+const obj2 = {a: 4, b: obj1, c: [obj2]};
+const fn2 = function ([a,, b,, c] = [4, [obj1, obj2, obj0], obj1, obj1, obj0]) {
+}
+const obj3 = {0: obj1};
+const fn3 = function (...[a,, b,, c] = [4, [obj1, obj2, obj1], obj1, obj1, obj1]) {
+}
+const func1 = Function.call( func1, [ 4, [obj1, obj2, obj1], obj1, obj1, obj1] );
+const func2 = Function.call( func2, [ 4, obj2, obj1, obj1, obj1] );
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+'use strict';
+function f([a, b, c = 3, d]) {
+}
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+Execution Output ------------------:
+test.js:12:26: error: rest elemenent may not have a default initializer
+const fn3 = function (...[a,, b,, c] = [4, [obj1, obj2, obj1], obj1, obj1, obj1]) {
+                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -1,0 +1,17 @@
+'use strict';
+'use v8';
+var modifyObjectResultC;
+modifyObjectResultC = 0;
+var x = (400 + -150) * 2;  
+var y = +x * 2;  
+var z = y / 4;  
+modifyObjectResultC = z - 30;  
+console.log(modifyObjectResultC);
+console.log("-----------");
+console.log(modifyObjectResultB);
+console.log(modifyObjectResultC);
+debugger;
+
+
+Execution Output ------------------:
+check_v8_output.sh: 27: /home/v8/v8/output/x64.debug/d8: not found

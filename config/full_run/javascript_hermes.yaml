@@ -43,10 +43,10 @@ target:
   path_documentation: config/documentation/javascript/javascript_hermes.md
   # path to the example code using the feature of the target system
   # (Relative to the root of the fuzzing framework)
-  path_example_code:
+  path_example_code: config/examples/promise.js 
   # path to the command to push the llm to generate the input for the
   # target system using the given feature
-  trigger_to_generate_input: "/* Please create a very short program which uses Javascript and Hermes features in a complex way */"
+  trigger_to_generate_input: "/* Please create a very short Javascript program which uses Hermes supported features in a complex way */"
   # hint to give to the llm to generate the input for the target system
   input_hint: "'use strict';"
   # path to the hand-written prompt to give to the llm

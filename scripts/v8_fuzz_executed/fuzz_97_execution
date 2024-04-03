@@ -1,0 +1,30 @@
+'use strict';
+'use v8';
+function badReuseBreak2() {
+    let z = {...new Array(2)};  
+    return z;
+    z.__proto__ = z; 
+}
+let z  = {...new Array(2)}; 
+console.log(badReuseBreak2());
+'use v8';
+'use strict';
+function badReuseBad() {
+    let z = {...new Array(2)}; 
+    return z[0] + z[0];
+}
+let z  = {...new Array(2)}; 
+console.log(badReuseBad());
+'use v8';
+'use strict';
+function badReuseBad2() {
+    let z = {...new Array(3)};
+    return z;
+    z.__proto__ = z;
+}
+let z  = {...new Array(2)}; 
+console.log(badReuseBad2());
+
+
+Execution Output ------------------:
+check_v8_output.sh: 27: /home/v8/v8/output/x64.debug/d8: not found

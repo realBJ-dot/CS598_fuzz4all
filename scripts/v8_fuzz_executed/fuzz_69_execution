@@ -1,0 +1,31 @@
+'use strict';
+function mutateArray(p) {
+    const newArr = x;
+    newArr[0] = 1;
+    return 2;
+}
+ 
+'use strict';
+function deleteArrayObject(p) {
+    x = [];
+    return 2;
+}
+ 
+'use strict';
+function executeCode(p) {
+    V8API_ExecuteScript("1+1");
+    return 2;
+}
+'use v8';
+let x = [];
+let y = V8API_NewArray();
+let z = V8API_NewObject();
+console.log(v8API_NewObject());
+console.log(V8API_GetArrayLength(y));
+console.log(V8API_GetArrayLength(z));
+console.log(V8API_GetArrayLength(x));
+console.log(executeCode(1));
+V8API_DeleteValueFromArray(y, 0);
+
+Execution Output ------------------:
+check_v8_output.sh: 27: /home/v8/v8/output/x64.debug/d8: not found

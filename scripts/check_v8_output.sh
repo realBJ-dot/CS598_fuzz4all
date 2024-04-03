@@ -1,11 +1,11 @@
-EXECUTION_RES_DIR="hermes_fuzz_executed"
+EXECUTION_RES_DIR="v8_fuzz_executed"
 mkdir -p $EXECUTION_RES_DIR
 
 
-FUZZ_DIR="../outputs/js-hermes-demo-few-shot-v3"
-LOG_FILE="${FUZZ_DIR}/log.txt"
+FUZZ_DIR="../outputs/js-v8-demo"
+LOG_FILE="${FUZZ_DIR}/log_validation.txt"
 
-PATTERN="\[VERBOSE\] outputs/js-hermes-demo-few-shot-v3/\K[^ ]+.fuzz(?= has potential error!)"
+PATTERN="\[VERBOSE\] outputs/js-v8-demo/\K[^ ]+.fuzz(?= failed validation with error message)"
 
 # Search for the pattern in the file
 # Process each matching line
@@ -24,7 +24,7 @@ grep -Po "$PATTERN" "$LOG_FILE" | while read -r name; do
         cp "$ORIG_PATH" test.js
 
         # Execute test.js with hermes and capture the output
-        EXECUTION_OUTPUT=$(hermes test.js 2>&1)
+        EXECUTION_OUTPUT=$(/home/v8/v8/output/x64.debug/d8 test.js 2>&1)
 
         # Write both the content of [name].fuzz and the execution output into [name]_execution
         {

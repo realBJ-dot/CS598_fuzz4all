@@ -1,0 +1,56 @@
+'use strict';
+
+
+const globalNamespace = window;
+
+ 
+let anotherGlobalNamespace = undefined; 
+
+const obj = {};
+const obj2 = {
+  prop: 2
+};
+const obj3 = obj2.createProxy();
+
+ 
+const tempGlobalVariable = "MyTempVar";
+ 
+var tempGlobalVariable;
+
+console.log('Another global namespace is : ', anotherGlobalNamespace);  
+console.log('Obj in global namespace: ', obj);
+ 
+let tempGlobalObject = new Map();
+ 
+let anotherTempGlobalObject = {};
+
+
+console.log('Obj in global object namespace: ', obj);
+ 
+console.log('Obj in global object', objInGlobalObject);
+ 
+
+console.log('Global objects are used: ', typeof globalNamespace);
+console.log('Global objects are not used: ', typeof tempGlobalVariable);
+console.log('Global objects are not used: ', typeof tempGlobalObject);
+console.log('Global objects are not used: ', typeof anotherGlobalNamespace);
+
+const objInGlobalObject = new Proxy(obj, {create: function (target, prop, desc) {
+  console.log('We can create in the global object : ', prop);
+  let objInGlobalObject = new Object();
+  objInGlobalObject.value = 3;
+   
+  objInGlobalObject.createProxy = "global proxy";
+  return objInGlobalObject;
+   
+}
+});
+
+console.log('Object from global objects : ', objInGlobalObject);
+console.log('Proxy object created : ', objInGlobalObject.createProxy);
+console.log('Proxy object created : ', objInGlobalObject.value);
+console.log('Global object is used : ', typeof objInGlobalObject);
+
+
+Execution Output ------------------:
+check_v8_output.sh: 27: /home/v8/v8/output/x64.debug/d8: not found

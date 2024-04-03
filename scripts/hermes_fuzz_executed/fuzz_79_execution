@@ -1,0 +1,21 @@
+'use strict';
+(function(global, __filename, __dirname, __dirname, __filename, __dirname, __filename, __dirname, __filename, __dirname, __filename, __dirname) {};
+
+ 
+
+ 
+
+ 
+ 
+ 
+
+var r = /foo/x;
+global.__hermes.runtime.throw(r);
+
+ 
+
+
+Execution Output ------------------:
+test.js:2:147: error: ')' expected at end of parenthesized expression
+(function(global, __filename, __dirname, __dirname, __filename, __dirname, __filename, __dirname, __filename, __dirname, __filename, __dirname) {};
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^

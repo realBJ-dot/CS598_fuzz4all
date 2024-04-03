@@ -1,0 +1,32 @@
+'use strict';
+'use v8';
+function badReuseBreak() {
+    let x = [0];  
+    let y = { 0: 0 };  
+    return [x, y];
+}
+let x = [0];  
+let y = { 0: 0 };  
+ 
+console.log(badReuseBreak());
+
+ 
+let x;  
+let y;  
+ 
+function badReuseBreak() {
+}  
+function goodReuseBreak() {
+}
+
+ 
+ 
+var x;
+var y;
+ 
+console.log(badReuseBreak());
+console.log(goodReuseBreak());
+
+
+Execution Output ------------------:
+check_v8_output.sh: 27: /home/v8/v8/output/x64.debug/d8: not found

@@ -1,0 +1,15 @@
+'use strict';
+const obj = {a: 4, b: 'world'};
+return f(obj.a, obj.b);  
+```
+
+```
+$ node -v
+v10.15.0
+```
+
+
+Execution Output ------------------:
+test.js:7:3: error: ';' expected
+$ node -v
+  ^

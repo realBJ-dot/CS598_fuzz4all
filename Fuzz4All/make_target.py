@@ -6,8 +6,8 @@ from Fuzz4All.target.GO.GO import GOTarget
 from Fuzz4All.target.JAVA.JAVA import JAVATarget
 from Fuzz4All.target.QISKIT.QISKIT import QiskitTarget
 from Fuzz4All.target.SMT.SMT import SMTTarget
-from Fuzz4All.target.JSHERMES import JSHERMESTarget
-from Fuzz4All.target.JSV8 import JSV8Target
+from Fuzz4All.target.JSHERMES.JSHERMES import JSHERMESTarget
+from Fuzz4All.target.JSV8.JSV8 import JSV8Target
 from Fuzz4All.target.target import Target
 
 

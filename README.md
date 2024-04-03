@@ -43,16 +43,12 @@ pip install -e .
 Next, we need to quickly configure the environmental variables. Here are the default parameters:
 
 ```bash
-export FUZZING_BATCH_SIZE=30
-export FUZZING_MODEL="bigcode/starcoderbase"
+export FUZZING_BATCH_SIZE=5
+export FUZZING_MODEL="bigcode/starcoderbase-1b"
 export FUZZING_DEVICE="gpu"
 ```
 
 The exact parameters will depend on the machine you are running `Fuzz4All` on.
-
-> [!Note]
-> Currently `Fuzz4All` only supports starcoderbase and starcoderbase-1b models. However, one can easily modify 
-> the source code to include and use other models. See `model.py` for more detail.
 
 To use the autoprompting mechanism of `Fuzz4All` via GPT-4, please also export your openai key
 
@@ -77,9 +73,7 @@ python Fuzz4All/fuzz.py --config {config_file.yaml} main_with_config \
                         --model_name {model_name} \
                         --target {target_name}
 ```
-
-where `{config_file.yaml}` is the config file you want to use, `{batch_size}` is the batch size you want to use, 
-`{model_name}` is the model name you want to use, and `{target_name}` is the target binary you want to fuzz.
+In our project, you could test it by running using our config yaml file, e.g. in config/full_run/javascript_v8.yaml. 
 
 > [!Note]
 > you will neede to build/download your own binary ({target_name}) for fuzzing
@@ -90,8 +84,8 @@ specific API/library documentation you want the model to generate prompts for. P
 <details><summary>You should see similar outputs to the following: </summary> 
 
 ```
-BATCH_SIZE: 30
-MODEL_NAME: bigcode/starcoderbase
+BATCH_SIZE: 5
+MODEL_NAME: bigcode/starcoderbase 1b
 DEVICE: gpu
 ...
 === Target Config ===
@@ -166,7 +160,7 @@ as well as how to produce the complete results from our paper
 
 ## 🐛 Bugs Found
 
-We have included a complete list of bugs found by `Fuzz4All` under `bugs/` folder.
+We have included our execution results in hermes_fuzz_executed and v8_fuzz_executed directories.
 
 ## 📝 Citation
 

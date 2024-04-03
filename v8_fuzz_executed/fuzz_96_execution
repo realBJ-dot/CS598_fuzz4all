@@ -1,8 +1,0 @@
-'use strict';
-'use v8';
-let z  = {...new Array(2)}; 
-console.log(badReuseBreak());  
-
-
-Execution Output ------------------:
-check_v8_output.sh: 27: /home/v8/v8/output/x64.debug/d8: not found

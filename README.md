@@ -73,7 +73,9 @@ python Fuzz4All/fuzz.py --config {config_file.yaml} main_with_config \
                         --model_name {model_name} \
                         --target {target_name}
 ```
-In our project, you could test it by running using our config yaml file, e.g. in config/full_run/javascript_v8.yaml. 
+The config files we used for JavaScript engines can be found under config/full_run: `javascript_hermes.yaml` and `javascript_v8.yaml`
+We included the scripts we used to fuzz V8 and Hermes: `scripts/js-hermes.sh` and `scripts\js-v8.sh`. To uses these scripts, you might need to update the output path and path to V8/Hermes binary.
+We also included the scripts that execute each test that was logged as having potenial error and record the execution output: `scripts\check_hermes_output.sh` and `scripts\check_v8_output.sh`. Please update the path to the log file before executing these scripts.
 
 > [!Note]
 > you will neede to build/download your own binary ({target_name}) for fuzzing
@@ -160,7 +162,7 @@ as well as how to produce the complete results from our paper
 
 ## 🐛 Bugs Found
 
-We have included our execution results in hermes_fuzz_executed and v8_fuzz_executed directories.
+We have included some of our execution results: `\hermes_fuzz_executed`.
 
 ## 📝 Citation
 

@@ -43,12 +43,12 @@ target:
   path_documentation: config/documentation/sql/sql_innodb.md
   # path to the example code using the feature of the target system
   # (Relative to the root of the fuzzing framework)
-  path_example_code: config/examples/promise.js
+  path_example_code:
   # path to the command to push the llm to generate the input for the
   # target system using the given feature
-  trigger_to_generate_input: "/* Please create a very short program which uses SQL features in a complex way */"
+  trigger_to_generate_input: "/* Given no other table exists, please create a very short program which uses SQL features in a complex way. Be sure to use ENGINE=InnoDB. */"
   # hint to give to the llm to generate the input for the target system
-  input_hint: "CREAT TABLE user;"
+  input_hint: "USE sampleDB;"
   # path to the hand-written prompt to give to the llm
   # (Relative to the root of the fuzzing framework)
   path_hand_written_prompt:

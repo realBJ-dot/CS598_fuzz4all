@@ -21,11 +21,11 @@ class SQLINNODBTarget(Target):
 
     def wrap_prompt(self, prompt: str) -> str:
         return (
-            f"// {prompt}\n{self.prompt_used['separator']}\n{self.prompt_used['begin']}"
+            f"-- {prompt}\n{self.prompt_used['separator']}\n{self.prompt_used['begin']}"
         )
 
     def wrap_in_comment(self, prompt: str) -> str:
-        return f"// {prompt}"
+        return f"-- {prompt}"
 
     def filter(self, code: str) -> bool:
         code = code.replace(self.prompt_used["begin"], "").strip()
@@ -47,12 +47,12 @@ class SQLINNODBTarget(Target):
     def write_back_file(self, code):
         try:
             with open(
-                "/tmp/temp{}.js".format(self.CURRENT_TIME), "w", encoding="utf-8"
+                "/tmp/temp{}.sql".format(self.CURRENT_TIME), "w", encoding="utf-8"
             ) as f:
                 f.write(code)
         except:
             pass
-        return "/tmp/temp{}.js".format(self.CURRENT_TIME)
+        return "/tmp/temp{}.sql".format(self.CURRENT_TIME)
 
     def validate_individual(self, filename) -> (FResult, str):
         try:
@@ -64,7 +64,7 @@ class SQLINNODBTarget(Target):
         try:
             exit_code = subprocess.run(
                 #need to change file position
-                f"/home/v8/v8/out/x64.debug/d8 /tmp/temp{self.CURRENT_TIME}.js",
+                f"sudo mysql -u CS598 --password=test1234 < /tmp/temp{self.CURRENT_TIME}.sql",
                 shell=True,
                 capture_output=True,
                 encoding="utf-8",
@@ -85,7 +85,7 @@ class SQLINNODBTarget(Target):
                 ],
                 shell=True,
             )  # kill all tests thank you
-            return FResult.TIMED_OUT, "js"
+            return FResult.TIMED_OUT, "sql"
         except UnicodeDecodeError as ue:
             return FResult.FAILURE, "decoding error"
         if exit_code.returncode == 1:

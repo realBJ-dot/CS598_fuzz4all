@@ -1,0 +1,46 @@
+USE sampleDB;
+SET AUTOCOMMIT=0;
+START TRANSACTION;
+
+-- Create a simple sequence to enable a fast INSERT
+INSERT INTO testCart (date, user_name, qtyOnHand, price) VALUES ('2016-09-06', 'james', 5, 5000);
+
+INSERT INTO testCart (date, user_name, qtyOnHand, price) VALUES ('2016-09-05', 'james', 15, 2500);
+
+INSERT INTO testCart (date, user_name, qtyOnHand, price) VALUES ('2016-09-05', 'james', 1, 500);
+
+COMMIT;
+SELECT * FROM testCart;
+
+-- Dumping data for table testCart
+-- Dumping structure for table testCart
+DROP TABLE IF EXISTS `testCart`;
+CREATE TABLE `testCart` (
+  `date` date NOT NULL,
+  `user_name` varchar(255) NOT NULL,
+  `qtyOnHand` integer NOT NULL,
+  `price` integer NOT NULL,
+  PRIMARY KEY (`date`,`user_name`)
+) ENGINE=InnoDB;
+
+INSERT INTO testCart VALUES('2016-09-05','michael','5',3000);
+
+INSERT INTO testCart VALUES('2016-09-05','michael','1',1000);
+
+INSERT INTO testCart VALUES('2016-09-05','michael','1',1);
+
+INSERT INTO testCart VALUES('2016-09-05','michael','5',3000);
+
+INSERT INTO testCart VALUES('2016-09-05','michael','1',1000);
+
+INSERT INTO testCart VALUES('2016-09-05','michael','1',1);
+
+INSERT INTO testCart VALUES('2016-09-05','michael','5',3000);
+
+INSERT INTO testCart VALUES('2016-09-05','michael','1',1000);
+
+INSERT INTO testCart VALUES('2016-09-05','michael','1',1);
+
+INSERT INTO testCart VALUES('2016-09-06','michael','1',1000);
+
+INSERT INTO

@@ -1,0 +1,11 @@
+USE sampleDB;
+SHOW TABLES;
+SHOW DATABASES;
+SHOW TABLES in sampleDB;
+SHOW CREATE TABLE testStock;
+-- http: 
+# http: 
+# http: 
+# http: 
+
+-- 2016-12-04

@@ -1,0 +1,9 @@
+USE sampleDB;
+CREATE TABLE IF NOT EXISTS testCart
+(
+ product       INT,
+ qtyOnHand     INT,
+ amount        DECIMAL(18, 2),
+ date          DATE,
+ PRIMARY KEY(product)
+) ENGINE=InnoDB;

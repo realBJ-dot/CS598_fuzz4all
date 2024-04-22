@@ -1,0 +1,5 @@
+USE sampleDB;
+SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
+-- 1.   Print all the columns in the stocks table that are NOT null for the table.
+-- 2.   Add a new column that holds the price for the item on sale at a given price.
+-- 3.   Remove the column that holds the price for the item on sale at a given price.

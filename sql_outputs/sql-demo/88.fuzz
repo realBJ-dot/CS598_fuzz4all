@@ -1,0 +1,33 @@
+USE sampleDB;
+INSERT INTO testStore(code, codeChar, company)
+VALUES (1, 'C', 'Coca-Cola'),
+(2, 'CO', 'Kettle'),
+(3, 'KET', 'Kettle'),
+(4, 'KETT', 'Kettle');
+-- Show the table that just created, from the sampleDB database.
+SHOW TABLES FROM sampleDB;
+-- How many records were inserted?
+SELECT COUNT(*) FROM teststore;
+-- What is the name of the primary key?
+SELECT KEY_NAME FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE
+WHERE table_schema = 'testDB' AND table_name = 'testStore' AND column_name = 'code';
+-- Show and explain the schema
+EXPLAIN (VERBOSE, COSTS OFF) CREATE TABLE test_table(
+  id           INT AUTO_INCREMENT,
+  typeId       INT,
+  PRIMARY KEY (id)
+);
+EXPLAIN (VERBOSE, COSTS OFF) SHOW CREATE TABLE test_table;
+-- You may be wondering why we don't have to use AUTO_INCREMENT when creating a primary key? AUTO_INCREMENT is a feature of the MySQL database server and has nothing to do with relational databases; what it is is simply a feature that allows a table to have a sequential auto-incrementing counter, not the primary key!
+-- Create a unique constraint on the database so that there is only one copy of each row inserted.
+INSERT INTO testStore(code, codeChar, company)
+VALUES (3, 'KET', 'Kettle'),
+(3, 'KETT', 'Kettle'),
+(3, 'KETE', 'Kettle');
+-- Show the contents of the database that we added
+SHOW TABLE STATUS FROM testStore;
+-- Give the column names as well as the data types of the columns
+SHOW COLUMNS FROM testStore;
+-- Sort the records by the "company" column
+SELECT * FROM teststore
+ORDER BY company ASC;

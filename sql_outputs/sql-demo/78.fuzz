@@ -1,0 +1,15 @@
+USE sampleDB;
+
+CREATE TABLE IF NOT EXISTS testStock
+(
+ code         INT,
+ codeChar     CHAR(64),
+ name         VARCHAR(100),
+ price        VARCHAR(100),
+ priceChange  DOUBLE,
+ purchase     VARCHAR(10),
+ sales        INT,
+ salesLast    INT,
+ salesChange  INT,
+ PRIMARY KEY(code)
+);

@@ -1,0 +1,352 @@
+[TRACE] Validating outputs/sql-demo/0.fuzz ...
+[VERBOSE] outputs/sql-demo/0.fuzz failed validation with error message: mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 1064 (42000) at line 3: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+
+[TRACE] Validating outputs/sql-demo/1.fuzz ...
+[VERBOSE] outputs/sql-demo/1.fuzz is safe
+[TRACE] Validating outputs/sql-demo/2.fuzz ...
+[VERBOSE] outputs/sql-demo/2.fuzz failed validation with error message: mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 1049 (42000) at line 3: Unknown database 'sampleDb'
+
+[TRACE] Validating outputs/sql-demo/3.fuzz ...
+[VERBOSE] outputs/sql-demo/3.fuzz failed validation with error message: mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 1007 (HY000) at line 3: Can't create database 'sampleDB'; database exists
+
+[TRACE] Validating outputs/sql-demo/4.fuzz ...
+[VERBOSE] outputs/sql-demo/4.fuzz failed validation with error message: mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 1050 (42S01) at line 3: Table 'sampleTable' already exists
+
+[TRACE] Validating outputs/sql-demo/5.fuzz ...
+[VERBOSE] outputs/sql-demo/5.fuzz failed validation with error message: mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 1048 (23000) at line 9: Column 'capital' cannot be null
+
+[TRACE] Validating outputs/sql-demo/6.fuzz ...
+[VERBOSE] outputs/sql-demo/6.fuzz failed validation with error message: mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 1064 (42000) at line 2: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'UNIQUE
+) ENGINE=InnoDB' at line 5
+
+[TRACE] Validating outputs/sql-demo/7.fuzz ...
+[VERBOSE] outputs/sql-demo/7.fuzz is safe
+[TRACE] Validating outputs/sql-demo/8.fuzz ...
+[VERBOSE] outputs/sql-demo/8.fuzz failed validation with error message: mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 1050 (42S01) at line 2: Table 'users' already exists
+
+[TRACE] Validating outputs/sql-demo/9.fuzz ...
+[VERBOSE] outputs/sql-demo/9.fuzz failed validation with error message: mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 1054 (42S22) at line 2: Unknown column 'firstname' in 'field list'
+
+[TRACE] Validating outputs/sql-demo/10.fuzz ...
+[VERBOSE] outputs/sql-demo/10.fuzz is safe
+[TRACE] Validating outputs/sql-demo/11.fuzz ...
+[VERBOSE] outputs/sql-demo/11.fuzz is safe
+[TRACE] Validating outputs/sql-demo/12.fuzz ...
+[VERBOSE] outputs/sql-demo/12.fuzz failed validation with error message: mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 1072 (42000) at line 2: Key column 'comment_id' doesn't exist in table
+
+[TRACE] Validating outputs/sql-demo/13.fuzz ...
+[VERBOSE] outputs/sql-demo/13.fuzz is safe
+[TRACE] Validating outputs/sql-demo/14.fuzz ...
+[VERBOSE] outputs/sql-demo/14.fuzz is safe
+[TRACE] Validating outputs/sql-demo/15.fuzz ...
+[VERBOSE] outputs/sql-demo/15.fuzz failed validation with error message: mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 1305 (42000) at line 3: FUNCTION sampleDB.TABLE_ROWS does not exist
+
+[TRACE] Validating outputs/sql-demo/16.fuzz ...
+[VERBOSE] outputs/sql-demo/16.fuzz failed validation with error message: mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 1064 (42000) at line 2: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '<PASSWORD>', '<EMAIL>');
+
+DROP TABLE `comments` INSEX' at line 3
+
+[TRACE] Validating outputs/sql-demo/17.fuzz ...
+[VERBOSE] outputs/sql-demo/17.fuzz failed validation with error message: mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 1064 (42000) at line 6: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+
+[TRACE] Validating outputs/sql-demo/18.fuzz ...
+[VERBOSE] outputs/sql-demo/18.fuzz is safe
+[TRACE] Validating outputs/sql-demo/19.fuzz ...
+[VERBOSE] outputs/sql-demo/19.fuzz failed validation with error message: mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 1364 (HY000) at line 4: Field 'content' doesn't have a default value
+
+[TRACE] Validating outputs/sql-demo/20.fuzz ...
+[VERBOSE] outputs/sql-demo/20.fuzz is safe
+[TRACE] Validating outputs/sql-demo/21.fuzz ...
+[VERBOSE] outputs/sql-demo/21.fuzz failed validation with error message: mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 1054 (42S22) at line 5: Unknown column 'p.comments' in 'where clause'
+
+[TRACE] Validating outputs/sql-demo/22.fuzz ...
+[VERBOSE] outputs/sql-demo/22.fuzz failed validation with error message: mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 1170 (42000) at line 2: BLOB/TEXT column 'author' used in key specification without a key length
+
+[TRACE] Validating outputs/sql-demo/23.fuzz ...
+[VERBOSE] outputs/sql-demo/23.fuzz failed validation with error message: mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 1064 (42000) at line 2: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(first_name VARCHAR(50), last_name VARCHAR(50))' at line 1
+
+[TRACE] Validating outputs/sql-demo/24.fuzz ...
+[VERBOSE] outputs/sql-demo/24.fuzz failed validation with error message: mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 1064 (42000) at line 6: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '*' at line 1
+
+[TRACE] Validating outputs/sql-demo/25.fuzz ...
+[VERBOSE] outputs/sql-demo/25.fuzz is safe
+[TRACE] Validating outputs/sql-demo/26.fuzz ...
+[VERBOSE] outputs/sql-demo/26.fuzz failed validation with error message: mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 1064 (42000) at line 7: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+
+[TRACE] Validating outputs/sql-demo/27.fuzz ...
+[VERBOSE] outputs/sql-demo/27.fuzz is safe
+[TRACE] Validating outputs/sql-demo/28.fuzz ...
+[VERBOSE] outputs/sql-demo/28.fuzz failed validation with error message: mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 1064 (42000) at line 6: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '"sampleOther"' at line 1
+
+[TRACE] Validating outputs/sql-demo/29.fuzz ...
+[VERBOSE] outputs/sql-demo/29.fuzz is safe
+[TRACE] Validating outputs/sql-demo/30.fuzz ...
+[VERBOSE] outputs/sql-demo/30.fuzz failed validation with error message: mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 1050 (42S01) at line 3: Table 'comments' already exists
+
+[TRACE] Validating outputs/sql-demo/31.fuzz ...
+[VERBOSE] outputs/sql-demo/31.fuzz failed validation with error message: mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 1064 (42000) at line 2: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DEFAULT 0
+)' at line 8
+
+[TRACE] Validating outputs/sql-demo/32.fuzz ...
+[VERBOSE] outputs/sql-demo/32.fuzz failed validation with error message: mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 1054 (42S22) at line 2: Unknown column 'user_id' in 'where clause'
+
+[TRACE] Validating outputs/sql-demo/33.fuzz ...
+[VERBOSE] outputs/sql-demo/33.fuzz failed validation with error message: mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 1146 (42S02) at line 18: Table 'sampleDB.tablelist' doesn't exist
+
+[TRACE] Validating outputs/sql-demo/34.fuzz ...
+[VERBOSE] outputs/sql-demo/34.fuzz failed validation with error message: mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 1051 (42S02) at line 3: Unknown table 'sampleDB.comments'
+
+[TRACE] Validating outputs/sql-demo/35.fuzz ...
+[VERBOSE] outputs/sql-demo/35.fuzz failed validation with error message: mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 1064 (42000) at line 2: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 2
+
+[TRACE] Validating outputs/sql-demo/36.fuzz ...
+[VERBOSE] outputs/sql-demo/36.fuzz failed validation with error message: mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 1050 (42S01) at line 2: Table 'users' already exists
+
+[TRACE] Validating outputs/sql-demo/37.fuzz ...
+[VERBOSE] outputs/sql-demo/37.fuzz failed validation with error message: mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 1051 (42S02) at line 2: Unknown table 'sampleDB.comments'
+
+[TRACE] Validating outputs/sql-demo/38.fuzz ...
+[VERBOSE] outputs/sql-demo/38.fuzz failed validation with error message: mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 1051 (42S02) at line 2: Unknown table 'sampleDB.comments'
+
+[TRACE] Validating outputs/sql-demo/39.fuzz ...
+[VERBOSE] outputs/sql-demo/39.fuzz failed validation with error message: mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 1064 (42000) at line 2: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE comment <= 1000' at line 1
+
+[TRACE] Validating outputs/sql-demo/40.fuzz ...
+[VERBOSE] outputs/sql-demo/40.fuzz failed validation with error message: mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 1146 (42S02) at line 2: Table 'sampleDB.comments' doesn't exist
+
+[TRACE] Validating outputs/sql-demo/41.fuzz ...
+[VERBOSE] outputs/sql-demo/41.fuzz failed validation with error message: mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 1305 (42000) at line 3: PROCEDURE sampleDB.populateComments does not exist
+
+[TRACE] Validating outputs/sql-demo/42.fuzz ...
+[VERBOSE] outputs/sql-demo/42.fuzz failed validation with error message: mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 1064 (42000) at line 24: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'IF NOT EXISTS all_admin_threads AS
+SELECT *
+FROM
+	messages,
+	comments
+WHERE
+  	t' at line 1
+
+[TRACE] Validating outputs/sql-demo/43.fuzz ...
+[VERBOSE] outputs/sql-demo/43.fuzz failed validation with error message: mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 1136 (21S01) at line 20: Column count doesn't match value count at row 1
+
+[TRACE] Validating outputs/sql-demo/44.fuzz ...
+[VERBOSE] outputs/sql-demo/44.fuzz is safe
+[TRACE] Validating outputs/sql-demo/45.fuzz ...
+[VERBOSE] outputs/sql-demo/45.fuzz failed validation with error message: mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 1064 (42000) at line 4: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '```' at line 1
+
+[TRACE] Validating outputs/sql-demo/46.fuzz ...
+[VERBOSE] outputs/sql-demo/46.fuzz failed validation with error message: mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 1050 (42S01) at line 2: Table 'users' already exists
+
+[TRACE] Validating outputs/sql-demo/47.fuzz ...
+[VERBOSE] outputs/sql-demo/47.fuzz is safe
+[TRACE] Validating outputs/sql-demo/48.fuzz ...
+[VERBOSE] outputs/sql-demo/48.fuzz failed validation with error message: mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 1054 (42S22) at line 4: Unknown column 'id' in 'where clause'
+
+[TRACE] Validating outputs/sql-demo/49.fuzz ...
+[VERBOSE] outputs/sql-demo/49.fuzz is safe
+[TRACE] Validating outputs/sql-demo/50.fuzz ...
+[VERBOSE] outputs/sql-demo/50.fuzz failed validation with error message: mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 1054 (42S22) at line 3: Unknown column 'post_name' in 'field list'
+
+[TRACE] Validating outputs/sql-demo/51.fuzz ...
+[VERBOSE] outputs/sql-demo/51.fuzz failed validation with error message: mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 1064 (42000) at line 2: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'IF EXISTS `contentIndex`' at line 1
+
+[TRACE] Validating outputs/sql-demo/52.fuzz ...
+[VERBOSE] outputs/sql-demo/52.fuzz failed validation with error message: mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 1064 (42000) at line 2: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'TEMP TABLE tempPosts AS 
+SELECT * from posts WHERE content = content' at line 1
+
+[TRACE] Validating outputs/sql-demo/53.fuzz ...
+[VERBOSE] outputs/sql-demo/53.fuzz is safe
+[TRACE] Validating outputs/sql-demo/54.fuzz ...
+[VERBOSE] outputs/sql-demo/54.fuzz is safe
+[TRACE] Validating outputs/sql-demo/55.fuzz ...
+[VERBOSE] outputs/sql-demo/55.fuzz failed validation with error message: mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 1064 (42000) at line 2: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE admin = TRUE' at line 1
+
+[TRACE] Validating outputs/sql-demo/56.fuzz ...
+[VERBOSE] outputs/sql-demo/56.fuzz failed validation with error message: mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 1050 (42S01) at line 14: Table 'posts' already exists
+
+[TRACE] Validating outputs/sql-demo/57.fuzz ...
+[VERBOSE] outputs/sql-demo/57.fuzz failed validation with error message: mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 1054 (42S22) at line 2: Unknown column 'category' in 'field list'
+
+[TRACE] Validating outputs/sql-demo/58.fuzz ...
+[VERBOSE] outputs/sql-demo/58.fuzz failed validation with error message: mysql: [Warning] Using a password on the command line interface can be insecure.
+sh: 1: -rf: not found
+ERROR 1064 (42000) at line 16: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '--END OF PROGRAM 8' at line 1
+
+[TRACE] Validating outputs/sql-demo/59.fuzz ...
+[VERBOSE] outputs/sql-demo/59.fuzz is safe
+[TRACE] Validating outputs/sql-demo/60.fuzz ...
+[VERBOSE] outputs/sql-demo/60.fuzz failed validation with error message: mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR at line 3: Unknown command '\i'.
+
+[TRACE] Validating outputs/sql-demo/61.fuzz ...
+[VERBOSE] outputs/sql-demo/61.fuzz is safe
+[TRACE] Validating outputs/sql-demo/62.fuzz ...
+[VERBOSE] outputs/sql-demo/62.fuzz failed validation with error message: mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 1146 (42S02) at line 4: Table 'sampleDB.table0' doesn't exist
+
+[TRACE] Validating outputs/sql-demo/63.fuzz ...
+[VERBOSE] outputs/sql-demo/63.fuzz failed validation with error message: mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 1051 (42S02) at line 2: Unknown table 'sampleDB.person'
+
+[TRACE] Validating outputs/sql-demo/64.fuzz ...
+[VERBOSE] outputs/sql-demo/64.fuzz is safe
+[TRACE] Validating outputs/sql-demo/65.fuzz ...
+[VERBOSE] outputs/sql-demo/65.fuzz failed validation with error message: mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 1064 (42000) at line 27: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 3
+
+[TRACE] Validating outputs/sql-demo/66.fuzz ...
+[VERBOSE] outputs/sql-demo/66.fuzz failed validation with error message: mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 1064 (42000) at line 3: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'TYPE store_type AS ENUM('Hydro', 'Restaurant')' at line 1
+
+[TRACE] Validating outputs/sql-demo/67.fuzz ...
+[VERBOSE] outputs/sql-demo/67.fuzz failed validation with error message: mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 1824 (HY000) at line 5: Failed to open the referenced table 'store'
+
+[TRACE] Validating outputs/sql-demo/68.fuzz ...
+[VERBOSE] outputs/sql-demo/68.fuzz is safe
+[TRACE] Validating outputs/sql-demo/69.fuzz ...
+[VERBOSE] outputs/sql-demo/69.fuzz failed validation with error message: mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 1146 (42S02) at line 6: Table 'sampleDB.orders2' doesn't exist
+
+[TRACE] Validating outputs/sql-demo/70.fuzz ...
+[VERBOSE] outputs/sql-demo/70.fuzz is safe
+[TRACE] Validating outputs/sql-demo/71.fuzz ...
+[VERBOSE] outputs/sql-demo/71.fuzz failed validation with error message: mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 1054 (42S22) at line 4: Unknown column 'stockID' in 'where clause'
+
+[TRACE] Validating outputs/sql-demo/72.fuzz ...
+[VERBOSE] outputs/sql-demo/72.fuzz failed validation with error message: mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 1054 (42S22) at line 15: Unknown column 'price' in 'field list'
+
+[TRACE] Validating outputs/sql-demo/73.fuzz ...
+[VERBOSE] outputs/sql-demo/73.fuzz is safe
+[TRACE] Validating outputs/sql-demo/74.fuzz ...
+[VERBOSE] outputs/sql-demo/74.fuzz failed validation with error message: mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 1146 (42S02) at line 3: Table 'sampleDB.inventory' doesn't exist
+
+[TRACE] Validating outputs/sql-demo/75.fuzz ...
+[VERBOSE] outputs/sql-demo/75.fuzz failed validation with error message: mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 1231 (42000) at line 2: Variable 'sql_mode' can't be set to the value of 'NO_AUTO_CREATE_USER'
+
+[TRACE] Validating outputs/sql-demo/76.fuzz ...
+[VERBOSE] outputs/sql-demo/76.fuzz failed validation with error message: mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 1146 (42S02) at line 6: Table 'sampleDB.stocks' doesn't exist
+
+[TRACE] Validating outputs/sql-demo/77.fuzz ...
+[VERBOSE] outputs/sql-demo/77.fuzz failed validation with error message: mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 1231 (42000) at line 2: Variable 'sql_mode' can't be set to the value of 'FORCE_TRANS_TABLES=OFF'
+
+[TRACE] Validating outputs/sql-demo/78.fuzz ...
+[VERBOSE] outputs/sql-demo/78.fuzz is safe
+[TRACE] Validating outputs/sql-demo/79.fuzz ...
+[VERBOSE] outputs/sql-demo/79.fuzz failed validation with error message: mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 1064 (42000) at line 7: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.TABLES' at line 1
+
+[TRACE] Validating outputs/sql-demo/80.fuzz ...
+[VERBOSE] outputs/sql-demo/80.fuzz is safe
+[TRACE] Validating outputs/sql-demo/81.fuzz ...
+[VERBOSE] outputs/sql-demo/81.fuzz failed validation with error message: mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 1366 (HY000) at line 11: Incorrect integer value: 'stockId2' for column 'code' at row 1
+
+[TRACE] Validating outputs/sql-demo/82.fuzz ...
+[VERBOSE] outputs/sql-demo/82.fuzz failed validation with error message: mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 1064 (42000) at line 10: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ON (code = 1)' at line 3
+
+[TRACE] Validating outputs/sql-demo/83.fuzz ...
+[VERBOSE] outputs/sql-demo/83.fuzz failed validation with error message: mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 1064 (42000) at line 2: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '<fim_middle>CREATE TABLE IF NOT EXISTS testStore
+(
+ code         INT AUTO_INCREM' at line 1
+
+[TRACE] Validating outputs/sql-demo/84.fuzz ...
+[VERBOSE] outputs/sql-demo/84.fuzz is safe
+[TRACE] Validating outputs/sql-demo/85.fuzz ...
+[VERBOSE] outputs/sql-demo/85.fuzz is safe
+[TRACE] Validating outputs/sql-demo/86.fuzz ...
+[VERBOSE] outputs/sql-demo/86.fuzz is safe
+[TRACE] Validating outputs/sql-demo/87.fuzz ...
+[VERBOSE] outputs/sql-demo/87.fuzz failed validation with error message: mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 1064 (42000) at line 2: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DROP TABLE `testStore`.' at line 2
+
+[TRACE] Validating outputs/sql-demo/88.fuzz ...
+[VERBOSE] outputs/sql-demo/88.fuzz failed validation with error message: mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 1146 (42S02) at line 2: Table 'sampleDB.testStore' doesn't exist
+
+[TRACE] Validating outputs/sql-demo/89.fuzz ...
+[VERBOSE] outputs/sql-demo/89.fuzz is safe
+[TRACE] Validating outputs/sql-demo/90.fuzz ...
+[VERBOSE] outputs/sql-demo/90.fuzz failed validation with error message: mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 1064 (42000) at line 13: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'stmt' at line 1
+
+[TRACE] Validating outputs/sql-demo/91.fuzz ...
+[VERBOSE] outputs/sql-demo/91.fuzz is safe
+[TRACE] Validating outputs/sql-demo/92.fuzz ...
+[VERBOSE] outputs/sql-demo/92.fuzz failed validation with error message: mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 1136 (21S01) at line 9: Column count doesn't match value count at row 1
+
+[TRACE] Validating outputs/sql-demo/93.fuzz ...
+[VERBOSE] outputs/sql-demo/93.fuzz failed validation with error message: mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 1146 (42S02) at line 23: Table 'mysql.testCart' doesn't exist
+
+[TRACE] Validating outputs/sql-demo/94.fuzz ...
+[VERBOSE] outputs/sql-demo/94.fuzz is safe
+[TRACE] Validating outputs/sql-demo/95.fuzz ...
+[VERBOSE] outputs/sql-demo/95.fuzz failed validation with error message: mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 1050 (42S01) at line 4: Table 'test' already exists
+
+[TRACE] Validating outputs/sql-demo/96.fuzz ...
+[VERBOSE] outputs/sql-demo/96.fuzz failed validation with error message: mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 1824 (HY000) at line 4: Failed to open the referenced table 'testTable1'
+
+[TRACE] Validating outputs/sql-demo/97.fuzz ...
+[VERBOSE] outputs/sql-demo/97.fuzz failed validation with error message: mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 1050 (42S01) at line 2: Table 'testCart' already exists
+
+[TRACE] Validating outputs/sql-demo/98.fuzz ...
+[VERBOSE] outputs/sql-demo/98.fuzz is safe
+[TRACE] Validating outputs/sql-demo/99.fuzz ...
+[VERBOSE] outputs/sql-demo/99.fuzz failed validation with error message: mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 1054 (42S22) at line 6: Unknown column 'user_name' in 'field list'
+

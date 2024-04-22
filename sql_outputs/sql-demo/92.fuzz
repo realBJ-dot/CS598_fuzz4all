@@ -1,0 +1,21 @@
+USE sampleDB;
+INSERT INTO testCart VALUES(24, 10, 19.990, CURRENT_DATE); 
+ 
+SELECT * FROM testCart;
+-- Please create a mutated program that adds a new record to the table
+-- If you change the number on line 7 to 23, then you should get the following result.
+ 
+USE sampleDB;
+INSERT INTO testCart VALUES(24, 10, 19.990); 
+ 
+USE sampleDB;
+UPDATE testCart SET qtyOnHand = 15 WHERE product = 24; 
+ 
+USE sampleDB;
+DELETE FROM testCart WHERE product = 24; 
+ 
+USE sampleDB;
+DROP TABLE IF EXISTS testCart;
+INSERT INTO testCart VALUES(24, 10, 19.99) ON DUPLICATE KEY UPDATE qtyOnHand=qtyOnHand+15; 
+ 
+DROP TABLE testCart;

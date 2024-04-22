@@ -1,0 +1,3 @@
+USE sampleDB;
+DELETE FROM comments WHERE `user_id` = 1;
+DELETE user WHERE `name` = 'Bob'; 

@@ -1,0 +1,6 @@
+USE sampleDB;
+INSERT INTO comments(author, content, post) VALUES("Mary", "How are you", 10);
+INSERT INTO comments(author, content, post) VALUES("John", "Good day", 6);
+INSERT INTO comments(author, content, post) VALUES("Mary", "How are you", 10);
+SELECT c.author, c.content, p.author FROM comments c, posts p WHERE p.comments=c.id;
+SHOW TRIGGERS;

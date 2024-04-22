@@ -1,0 +1,8 @@
+USE sampleDB;
+CREATE TABLE IF NOT EXISTS testStore
+(
+ code         INT,
+ codeChar     CHAR(64),
+ company      VARCHAR(100),
+ PRIMARY KEY(code)
+);

@@ -1,0 +1,40 @@
+USE sampleDB;
+SHOW VARIABLES WHERE variable_name="thread_cache";
+UPDATE comments SET author="William" WHERE post=10;
+SELECT * FROM comments;
+-- Create a database "sampleOther" and then "use" it
+CREATE DATABASE "sampleOther";
+USE sampleOther;
+SHOW DATABASES;
+-- How to create tables
+-- (A table is created as an ordinary table with 0 columns and 0 rows. Table rows can hold different columns) 
+CREATE TABLE users(user_id int auto_increment not null, username varchar(30) not null, password_hash varchar(80), profile_picture varchar(200), primary key(user_id) );
+CREATE TABLE comments(comment_id int auto_increment not null, message text not null, user_id int not null, primary key(comment_id) );
+SHOW create table users
+SHOW create table comments
+-- The next shows all tables for the current database which would be one of the options to create a table
+SHOW TABLES 
+SHOW FULL TABLES
+-- Create a primary key (if not a primary key already exists) in the first table
+ALTER TABLE users
+ADD user_id int auto_increment not null, ADD primary key(user_id);
+SHOW table user_id;
+-- To show information about the first table, use 
+DESCRIBE user_id
+DESCRIBE users;
+-- Indexes
+-- In MySQL an index (an ordered tree) can be created by referencing the columns on the table. 
+-- Indexes are not created automatically when the first column(s) of the table are created (i.e. when a column is created) or when the data of the table is modified (a column is deleted or re-added) and are only automatically created when the data is added.
+CREATE INDEX profile_picture_index ON users(profile_picture);
+SHOW INDEX FROM users
+SHOW INDEX FROM comments;
+SHOW COLUMNS FROM users;
+SHOW COLUMNS FROM comments;
+-- In fact, the creation of the index is done directly in MySQL, so if you add a column to the existing table and then modify it, it will automatically be recreated.
+-- Modifying a column also creates an index. If the index already exists, MySQL only marks that the column's data was touched, not the type of the column.
+ALTER TABLE users MODIFY message varchar(200);
+SHOW COLUMNS FROM users;
+-- You need a suitable column, even if it's a text field. Otherwise, you might end up with unwanted indexes which might slow down your query.
+CREATE TABLE photos(photo_id int not null auto_increment primary key, photo_filename varchar(200) not null, filetype varchar(5) not null, isPrivate bool not null, user_id int references users(user_id) );
+DESCRIBE photos;
+SHOW INDEX FROM photos;

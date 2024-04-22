@@ -1,0 +1,7 @@
+USE sampleDB;
+CREATE TEMP TABLE tempPosts AS 
+SELECT * from posts WHERE content = content;
+INSERT INTO tempPosts SELECT content, content, content, content, content, content, content from posts;
+SELECT * FROM tempPosts;
+DROP TABLE tempPosts;
+DROP INDEX `contentIndex;`

@@ -1,0 +1,96 @@
+USE sampleDB;
+
+-- CREATE new table
+CREATE TABLE IF NOT EXISTS testTable2 (
+	id int,
+	age int,
+	name varchar(50),
+	CONSTRAINT testTable2_ibfk_1 FOREIGN KEY (id) REFERENCES testTable1 (id)
+);
+
+DROP TABLE IF EXISTS testTable1;
+
+-- CREATE new table
+CREATE TABLE IF NOT EXISTS testTable1(
+	id int(11) unsigneged NOT NULL auto_increment,
+	name VARCHAR(25),
+	address text,
+	city VARCHAR(25),
+	year VARCHAR(5),
+	primary key(id)
+)
+ENGINE=INNODB;
+
+-- INSERT records
+INSERT INTO testTable1
+(
+	id,
+	name,
+	address,
+	city,
+	year
+)
+VALUES
+	(
+		1001,
+		"Gaurav",
+		"New Delhi",
+		"Gamli",
+		"2000"	
+	),
+	(
+		1002,
+		"Paul",
+		"Gaurav",
+		"Gamli",
+		"2000"	
+	),
+	(
+		1003,
+		"Maria",
+		"Gaurav",
+		"Gamli",
+		"2000"
+	),
+	(
+		1004,
+		"Maria",
+		"Gaurav",
+		"Gamli",
+		"2000"
+	),
+	(
+		1004,
+		"Maria",
+		"Gaurav",
+		"Gamli",
+		"2000"
+	),
+	(
+		1004,
+		"Maria",
+		"Gaurav",
+		"Gamli",
+		"2000"
+	),
+	(
+		1004,
+		"Maria",
+		"Gaurav",
+		"Gamli",
+		"2000"
+	),
+	(
+		1004,
+		"Maria",
+		"Gaurav",
+		"Gamli",
+		"2000"
+	),
+	(
+		1005,
+		"Paul",
+		"New Delhi",
+		"Bhuj",
+		"2000"
+	);

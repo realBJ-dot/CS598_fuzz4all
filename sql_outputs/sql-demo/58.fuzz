@@ -1,0 +1,16 @@
+USE sampleDB;
+\!rm -rf sampleDB/backup
+-- Run the backup script in order to back up the entire database.
+-- END OF Q3
+-- END OF Q3
+-- Please use INSERT statements and use the DML commands to insert 
+-- records in the database. 
+-- END OF Q4
+USE sampleDB;
+USE sampleDB;
+-- INSERT statements in a transaction 
+-- and use the DML commands to insert and update 
+-- the database. 
+-- END OF Q5
+-- End of assignment 6
+--END OF PROGRAM 8

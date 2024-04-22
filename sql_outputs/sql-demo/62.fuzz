@@ -1,0 +1,31 @@
+USE sampleDB;
+-- BEGIN OF Q2
+-- INSERT INTO table0 (name, phone) VALUES ('Vivien', '+4915052650005');
+INSERT INTO table0 (name, phone) VALUES ('Vivien', '+4915052650005');
+-- END OF Q2
+-- BEGIN OF Q3
+-- SELECT * FROM table0 WHERE name='Vivien';
+SELECT * FROM table0 WHERE name='Vivien';
+-- END OF Q3
+-- BEGIN OF Q4
+SELECT * FROM table0 ORDER BY name;
+-- END OF Q4
+-- BEGIN OF Q5
+-- EXCLUSIVE MODE
+ 
+COMMIT;
+ 
+
+
+-- END OF Q3
+-- BEGIN OF Q4
+SELECT DISTINCT name FROM table0 ORDER BY name;
+-- END OF Q4
+-- BEGIN OF Q5
+-- Exclusive
+ 
+ROLLBACK;
+ 
+
+-- END OF Q2
+-- BEGIN OF Q1

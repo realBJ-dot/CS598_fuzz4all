@@ -1,0 +1,57 @@
+USE sampleDB;
+CREATE TABLE IF NOT EXISTS comments (
+post          int(11)          NOT NULL AUTO_INCREMENT,
+thread        varchar(30)      DEFAULT NULL,
+content       varchar(100)     DEFAULT NULL,
+author        varchar(60)      DEFAULT NULL,
+created_on    datetime        DEFAULT CURRENT_TIMESTAMP,
+PRIMARY KEY(post)
+) ENGINE=InnoDB;
+CREATE TABLE IF NOT EXISTS messages (
+id            int(11)          NOT NULL AUTO_INCREMENT,
+author        varchar(60)      DEFAULT NULL,
+thread        varchar(30)      DEFAULT NULL,
+content       text(1000),
+created_on    datetime        DEFAULT CURRENT_TIMESTAMP,
+PRIMARY KEY(id)
+);
+INSERT INTO messages
+VALUES (1, 'admin', 'All right', 'Are we ready?', '2018-01-01 01:00:00'),
+       (2, 'admin', 'All right', 'Are we ready?', '2018-01-02 01:00:00'),
+       (3, 'admin', 'Good afternoon', 'Where can I find the database?', '2018-01-04 01:00:00'),
+       (4, 'admin', 'Help', 'How can I access this message?', '2018-01-05 01:00:00');
+ 
+CREATE VIEW IF NOT EXISTS all_admin_threads AS
+SELECT *
+FROM
+	messages,
+	comments
+WHERE
+  	thread    = 'admin';
+ 
+CREATE VIEW IF NOT EXISTS all_admin_messages AS
+SELECT *
+FROM
+	messages,
+	comments
+WHERE
+  	author    = 'admin';
+DELETE FROM comments WHERE thread = 'admin';
+ 
+CREATE VIEW IF NOT EXISTS unvoted_users AS
+SELECT DISTINCT
+	author
+FROM
+	comments
+WHERE (content IS NULL OR content = 'Vote') AND author NOT IN
+	(SELECT votes_for, votes_against FROM votes WHERE post=comments.post);
+ 
+CREATE VIEW IF NOT EXISTS posts_by_id AS
+SELECT *
+FROM
+	comments
+WHERE author NOT IN
+	(SELECT author FROM comments
+		ORDER BY votes_for DESC, votes_against DESC LIMIT 5);
+ 
+CREATE VIEW IF NOT

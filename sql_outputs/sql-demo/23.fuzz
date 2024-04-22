@@ -1,0 +1,4 @@
+USE sampleDB;
+ALTER TABLE users MODIFY (first_name VARCHAR(50), last_name VARCHAR(50));
+INSERT INTO users(`nick`, `first_name`, `last_name`) VALUES ('james', 'James', 'Knight');
+SELECT * FROM users;

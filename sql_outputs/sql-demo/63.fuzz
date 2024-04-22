@@ -1,0 +1,11 @@
+USE sampleDB;
+DROP TABLE person; -- Table has been removed.
+
+-- BEGIN USER CREATE TABLE
+CREATE TABLE T_sample(Person_id integer not null primary key, Age integer, GENDER ENUM('MALE','FEMALE')); -- END USER CREATE TABLE
+
+-- BEGIN USER CREATE SEQUENCE
+CREATE SEQUENCE S_sample, -- END USER CREATE SEQUENCE
+
+-- BEGIN USER CREATE FUNCTION 
+CREATE FUNCTION fName() RETURNS varchar(4) -- END USER CREATE FUNCTION 

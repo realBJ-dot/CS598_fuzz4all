@@ -1,0 +1,2609 @@
+[VERBOSE] -- MySQL is an open-source relational database management system (RDBMS) that operates using Structured Query Language (SQL). It allows for the creation, modification, and extraction of data from relational databases and controls user access. Besides, MySQL interfaces with an operating system to implement a database in a computer's storage system, manage users, enable network access, and ensures database integrity and backups.
+
+MySQL, which can be used for free under the GNU General Public Licence, was initially owned by the Swedish company MySQL AB, now under Oracle Corporation, following Sun Microsystems' acquisition. Later, the original creator, Widenius, forked the MySQL project to establish MariaDB.
+
+MySQL is commonly used with other software to facilitate applications requiring relational database functionality. It's part of the LAMP web application software stack, and many database-driven web applications and popular websites use it, including Facebook and Twitter. 
+
+Written in C and C++, MySQL can work on a wide range of system platforms, including Linux, macOS, and Microsoft Windows. The MySQL server software and client libraries use dual-licensing distribution, i.e., GPL version 2 or a proprietary license. 
+
+Users can receive support from its official manual, IRC channels, forums, or via paid support from Oracle's MySQL Enterprise products. It has generally been well-received, noted for its high performance and strong support and documentation.
+/* Given no other table exists, please create a very short program which uses SQL features in a complex way. Be sure to use ENGINE=InnoDB. */
+USE sampleDB;
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+
+SHOW engine;
+SHOW variables;
+INSERT INTO USERS (USER_ID, USERNAME, PASSWORD) VALUES ('101', 'foo', '123456');
+SELECT PASSWORD_HASH();
+USE;
+SHOW status;
+ 
+FLUSH PRIVILEGES;
+SHOW STATUS LIKE "%db_version";
+ALTER DATABASE sampleDB DEFAULT CHARACTER SET = utf8mb4;
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+
+
+CREATE TABLE `users` (
+  `email` varchar(100) NOT NULL,
+  `firstname` varchar(100) NOT NULL,
+  `lastname` varchar(100) NOT NULL,
+  PRIMARY KEY (`email`)
+) ENGINE=InnoDB;
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+
+USE sampleDb;
+CREATE TABLE test(col1 INT NOT NULL, col2 TEXT);
+ 
+
+SELECT * FROM test;
+ 
+```
+
+## Further reading:
+
+* [MySQL Reference Documentation](http: 
+
+## License
+
+This book is covered under the Apache License 2.0. See the `LICENSE` file in the source repository.
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+
+create database sampleDB;
+use sampleDB;
+delete FROM employee;
+delet FROM job;
+DELETE FROM salary;
+use employee;
+delete FROM employee;
+
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+
+CREATE TABLE sampleTable (id int(11), name varchar(100), email char(50), phone char(10), score float, address text);
+INSERT INTO sampleTable (id, name, email, phone, score, address)
+VALUES (1, '<NAME>', '<EMAIL>', '0618559230', 9.80,'seoul, korea'),
+        (2, '<NAME>', '<EMAIL>', '0629799019', 7.15, 'nairobi, Kenya'),
+        (3, '<NAME>', '<EMAIL>', '0610151711', 9.00, 'paris, France');
+
+ 
+
+ 
+DROP TABLE IF EXISTS mysql2test;
+CREATE TABLE mysql2test (value varchar(5));
+SELECT * INTO mysql2test FROM mysql2test2;
+
+DROP TABLE IF EXISTS mysql2test2;
+
+[VERBOSE] ========== sample =========
+[VERBOSE] -- MySQL is an open-source relational database management system (RDBMS) that operates using Structured Query Language (SQL). It allows for the creation, modification, and extraction of data from relational databases and controls user access. Besides, MySQL interfaces with an operating system to implement a database in a computer's storage system, manage users, enable network access, and ensures database integrity and backups.
+
+MySQL, which can be used for free under the GNU General Public Licence, was initially owned by the Swedish company MySQL AB, now under Oracle Corporation, following Sun Microsystems' acquisition. Later, the original creator, Widenius, forked the MySQL project to establish MariaDB.
+
+MySQL is commonly used with other software to facilitate applications requiring relational database functionality. It's part of the LAMP web application software stack, and many database-driven web applications and popular websites use it, including Facebook and Twitter. 
+
+Written in C and C++, MySQL can work on a wide range of system platforms, including Linux, macOS, and Microsoft Windows. The MySQL server software and client libraries use dual-licensing distribution, i.e., GPL version 2 or a proprietary license. 
+
+Users can receive support from its official manual, IRC channels, forums, or via paid support from Oracle's MySQL Enterprise products. It has generally been well-received, noted for its high performance and strong support and documentation.
+/* Given no other table exists, please create a very short program which uses SQL features in a complex way. Be sure to use ENGINE=InnoDB. */
+USE sampleDB;
+CREATE TABLE `users` (
+  `email` varchar(100) NOT NULL,
+  `firstname` varchar(100) NOT NULL,
+  `lastname` varchar(100) NOT NULL,
+  PRIMARY KEY (`email`)
+) ENGINE=InnoDB;
+-- Please create a semantically equivalent program to the previous generation
+USE sampleDB;
+
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+CREATE TABLE `countries` (
+  `country_id` int(11) NOT NULL AUTO_INCREMENT,
+  `country_name` varchar(128) NOT NULL,
+  `iso_code` char(2) NOT NULL,
+  `capital` text NOT NULL,
+  PRIMARY KEY (`country_id`)
+) ENGINE=InnoDB;
+INSERT INTO `countries` (`country_id`,`country_name`,`iso_code`,`capital`) VALUES
+(1,'England','GB',NULL),
+-- You may need to specify the field to automatically insert 
+-- an automatic value for the newly inserted values of a new field.
+(2,'Germany','DE',NULL),
+-- This example only illustrates the creation of foreign key references, 
+-- but the same feature may be applied to other tables, so we could easily add a column to our users table with 'id' primary key in any case.
+(3,'Canada','CA',NULL);
+ 
+-- You may need to specify the field to automatically insert 
+-- an automatic value for the newly inserted values of a new field.
+USE sampleDB;
+CREATE TABLE IF NOT EXISTS `employees` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `first_name` varchar(255) NOT NULL,
+  `last_name` varchar(255) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `address` text NOT NULL,
+  `salary` decimal(10,2) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB;
+use sampleDB;
+INSERT INTO employees (`id`, `first_name`, `last_name`, `email`, `address`, `salary`) VALUES
+(1,'Daniel','Batist','<EMAIL>','London',144450.00),
+(2,'Tommy','Batist','<EMAIL>','Berlin',75055.00),
+(3,'Kim','Ban','<EMAIL>','Berlin',22423.00),
+(4,'David','Batist','<EMAIL>','Paris',76595.00),
+(5,'Steve','Batist','<EMAIL>','Paris',62950.0
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+CREATE TABLE IF NOT EXISTS users(
+  email varchar(100) NOT NULL,
+  firstname varchar(100) NOT NULL,
+  lastname varchar(100) NOT NULL,
+  PRIMARY KEY (email) UNIQUE
+) ENGINE=InnoDB;
+ 
+USE sampleDB;
+INSERT INTO `users` VALUES ('<EMAIL>', 'Vasya', 'Babkin', '<EMAIL>'), ('<EMAIL>', 'Marina', 'Marianovska', '<EMAIL>'), ('<EMAIL>', 'Maria', 'Sabkinska', '<EMAIL>');
+UPDATE `users` SET `email` = '<EMAIL>', `firstname` = 'Hanna', `lastname` = 'Hugues' WHERE `userid`=2;
+SELECT u.`email`, u.`firstname`, u.`lastname` 
+  FROM `users` u 
+  INNER JOIN user_login l ON u.`email` = l.`email`
+  ORDER BY l.`id` ASC;
+
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+CREATE TABLE `posts` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `author` varchar(100) NOT NULL,
+  `subject` varchar(100) NOT NULL,
+  `content` text,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB;
+
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+CREATE TABLE `users` (
+  `email` varchar(100) NOT NULL,
+  `firstname` varchar(100) NOT NULL,
+  `lastname` varchar(100) NOT NULL,
+  PRIMARY KEY (`email`)
+) ENGINE=MyISAM;
+
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+SELECT "select", `firstname`, "from" users;
+
+CREATE TABLE users (
+  email char(255) PRIMARY KEY NOT NULL,
+  firstname varchar(100) NOT NULL,
+  lastname varchar(100) NOT NULL
+);
+
+Select * From users;
+
+
+[VERBOSE] ========== sample =========
+[VERBOSE] -- MySQL is an open-source relational database management system (RDBMS) that operates using Structured Query Language (SQL). It allows for the creation, modification, and extraction of data from relational databases and controls user access. Besides, MySQL interfaces with an operating system to implement a database in a computer's storage system, manage users, enable network access, and ensures database integrity and backups.
+
+MySQL, which can be used for free under the GNU General Public Licence, was initially owned by the Swedish company MySQL AB, now under Oracle Corporation, following Sun Microsystems' acquisition. Later, the original creator, Widenius, forked the MySQL project to establish MariaDB.
+
+MySQL is commonly used with other software to facilitate applications requiring relational database functionality. It's part of the LAMP web application software stack, and many database-driven web applications and popular websites use it, including Facebook and Twitter. 
+
+Written in C and C++, MySQL can work on a wide range of system platforms, including Linux, macOS, and Microsoft Windows. The MySQL server software and client libraries use dual-licensing distribution, i.e., GPL version 2 or a proprietary license. 
+
+Users can receive support from its official manual, IRC channels, forums, or via paid support from Oracle's MySQL Enterprise products. It has generally been well-received, noted for its high performance and strong support and documentation.
+/* Given no other table exists, please create a very short program which uses SQL features in a complex way. Be sure to use ENGINE=InnoDB. */
+USE sampleDB;
+CREATE TABLE `posts` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `author` varchar(100) NOT NULL,
+  `subject` varchar(100) NOT NULL,
+  `content` text,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB;
+/* Given no other table exists, please create a very short program which uses SQL features in a complex way. Be sure to use ENGINE=InnoDB. */
+USE sampleDB;
+
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+CREATE TABLE `tag` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `title` varchar(100) NOT NULL,
+  `description` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB;
+
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+CREATE TABLE `people` (
+  `firstname` varchar(20) NOT NULL,
+  `lastname` varchar(20) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  PRIMARY KEY (`firstname`,`lastname`)
+) ENGINE=InnoDB;
+
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+CREATE TABLE `comments` (
+  `post_id` bigint(20) NOT NULL,
+  `comment_author` varchar(100) NOT NULL,
+  `comment_content` text NOT NULL,
+  `comment_date` timestamp NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`post_id`, `comment_id`),
+  UNIQUE KEY `UNIQ_C204A294A76ED395` (`comment_author`)
+) ENGINE=InnoDB;
+
+-- Use the following command to list all tables
+show tables;
+
+-- Use the following command to list all views
+show views;
+
+-- Use the following command to list all the columns
+show columns from posts;
+SHOW COLUMNS FROM `posts`;
+
+-- Use the following command to list all the columns in a database table
+SHOW COLUMNS FROM `posts`;
+
+-- Use the following command to list all the columns whose data type is TEXT
+SHOW COLUMNS WHERE `TYPE` = 'TEXT';
+
+-- Use the following command to list all the columns whose data type is LONGTEXT
+SHOW COLUMNS WHERE `TYPE` = 'LONGTEXT';
+
+-- Use the following command to list all the columns whose data type is MEDIUMTEXT
+SHOW COLUMNS WHERE `TYPE` = 'MEDIUMTEXT';
+
+-- Use the following command to list all the columns whose data type is LONGTEXT
+SHOW COLUMNS WHERE `TYPE` = 'TEXT';
+
+-- Use the following command to list all table constraints
+show tables like 'blog_%';
+
+-- Use the following SQL command to list the constraints on a table
+ALTER TABLE `user`
+    ADD CONSTRAINT `user_username_uniq` UNIQUE KEY `username_uniq` (`username`);
+
+-- Use the following SQL command to drop view 'user_view' and its constraints
+DROP VIEW user_view;
+
+SHOW CREATE TABLE posts; 
+SHOW CREATE TABLE user_view_table; 
+  `id` BIGINT(20) NOT NULL AUTO_INCREMENT,
+  `author` VARCHAR(100) NOT NULL,
+  `subject` VARCHAR(100) NOT NULL,
+  `content` TEXT NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE = INNODB;
+DROP TABLE posts;
+-- USE sampleDB;
+-- DROP TABLE posts;
+
+ALTER TABLE `posts` CHANGE COLUMN `content` `content` LONGTEXT;
+ALTER TABLE `comments` CHANGE COLUMN `comment_content` `comment_content` LONGTEXT;
+--ALTER TABLE `comments` CHANGE COLUMN `comment_date` `comment_date` TIMESTAMP NULL DEFAULT NULL AFTER `post_id`;
+
+
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+CREATE TABLE `images` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `fileName` varchar(255) NOT NULL,
+  `url` varchar(255) NOT NULL,
+  `width` int(11) NOT NULL,
+  `height` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB;
+
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+CREATE TABLE `comments` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `author` varchar(100) NOT NULL,
+  `post` bigint(20) NOT NULL,
+  `content` varchar(500) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `pid` (`post`)
+) ENGINE=InnoDB;
+-- Add an index on both `author` and `post` columns
+CREATE INDEX ix_author_post 
+  ON `comments` (`author`, `post`);
+
+[VERBOSE] ========== sample =========
+[VERBOSE] -- MySQL is an open-source relational database management system (RDBMS) that operates using Structured Query Language (SQL). It allows for the creation, modification, and extraction of data from relational databases and controls user access. Besides, MySQL interfaces with an operating system to implement a database in a computer's storage system, manage users, enable network access, and ensures database integrity and backups.
+
+MySQL, which can be used for free under the GNU General Public Licence, was initially owned by the Swedish company MySQL AB, now under Oracle Corporation, following Sun Microsystems' acquisition. Later, the original creator, Widenius, forked the MySQL project to establish MariaDB.
+
+MySQL is commonly used with other software to facilitate applications requiring relational database functionality. It's part of the LAMP web application software stack, and many database-driven web applications and popular websites use it, including Facebook and Twitter. 
+
+Written in C and C++, MySQL can work on a wide range of system platforms, including Linux, macOS, and Microsoft Windows. The MySQL server software and client libraries use dual-licensing distribution, i.e., GPL version 2 or a proprietary license. 
+
+Users can receive support from its official manual, IRC channels, forums, or via paid support from Oracle's MySQL Enterprise products. It has generally been well-received, noted for its high performance and strong support and documentation.
+/* Given no other table exists, please create a very short program which uses SQL features in a complex way. Be sure to use ENGINE=InnoDB. */
+USE sampleDB;
+CREATE TABLE `comments` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `author` varchar(100) NOT NULL,
+  `post` bigint(20) NOT NULL,
+  `content` varchar(500) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `pid` (`post`)
+) ENGINE=InnoDB;
+-- Add an index on both `author` and `post` columns
+CREATE INDEX ix_author_post 
+  ON `comments` (`author`, `post`);
+-- Please create a mutated program that modifies the previous generation
+USE sampleDB;
+
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+ 
+SELECT TABLE_ROWS(comments);
+
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+INSERT INTO `users` (`user_id`, `user_name`, `user_pass`, `user_mail`)
+VALUES
+  (1, 'test.doe', <PASSWORD>', '<EMAIL>');
+
+DROP TABLE `comments` INSEX;
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+UPDATE `comments` SET `content`='Something new' WHERE `author`='Sacha' AND `post`=10;
+-- Make the previous modification valid again
+UPDATE `comments` SET `content`='Something better' WHERE `content`='Something else' AND `author`='Sacha' AND `post`=10;
+-- Drop an index using the MySQL command line tool
+DROP INDEX ix_author_post;
+-- Get the status of a particular database
+SHOW DATABASES;
+-- Show which tables exist in sampleDB's `comments` table
+SHOW TABLES FROM sampleDB.comments;
+-- Show the columns under table `comments` in sampleDB
+SHOW COLUMNS FROM `sampleDB`.comments;
+-- Delete a row or rows from the `comments` table with an index on author and post
+DELETE FROM `comments` WHERE (`author` = 'Sacha' OR `post` = 10);
+SHOW TABLE STATUS LIKE 'comments';
+-- Show the indexes on the `comments` table
+SHOW INDEX FROM `comments`;
+
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+INSERT INTO comments(author, content, post) VALUES("William", "Hello World!", 10);
+INSERT INTO comments(author, content, post) VALUES("John", "Greetings", 5);
+ 
+SELECT * FROM comments;
+
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+-- INSERT several comment objects
+INSERT INTO `comments` (`author`, `post`, `content`) VALUES ('author 1', 3, 'This is the first comment.' );
+INSERT INTO `comments` (`author`, `post`) VALUES ('author 2', 4);
+INSERT INTO `comments` (`author`, `post`) VALUES ('author 3', 4);
+INSERT INTO `comments` (`author`, `post`) VALUES ('author 4', 15);
+INSERT INTO `comments` (`author`, `post`) VALUES ('author 5', 6);
+INSERT INTO `comments` (`author`, `post`) VALUES ('author 6', 7);
+-- Use a WHERE condition to limit the output.
+SELECT id, author, post, content
+FROM comments
+WHERE post=7;
+ 
+UPDATE comments
+SET content = 'This is a modified comment'
+WHERE author = 'author 3';
+-- In a similar way, remove unwanted rows from the database.
+DELETE FROM comments
+WHERE author!= 'author 4' AND author!= 'author 6';
+ 
+ 
+-- Select users from the table
+SELECT *
+FROM userTable;
+-- Please modify a simple INSERT statement.
+INSERT INTO userTable (firstname, lastname, email)
+VALUES ('Sally', 'Smith', '<EMAIL>');
+INSERT INTO userTable (lastname, email)
+VALUES ('Jones', '<EMAIL>');
+-- Please modify a SELECT query to sort by email.
+SELECT *
+FROM userTable ORDER BY email;
+-- Please modify a single row in the database.
+UPDATE userTable
+SET email='<EMAIL>'
+WHERE firstname ='sally';
+-- Finally, delete some rows.
+SELECT *
+FROM userTable
+WHERE lastname = 'Smith';
+DELETE FROM userTable
+WHERE lastname = 'Smith';
+-- If a non-unique index is on two or more columns, please also use unique index.
+-- Please modify a table without a unique index.
+SELECT *
+FROM userTable ORDER BY email;
+-- Please modify a table with a unique index on email.
+ 
+UPDATE userTable
+SET email='<EMAIL>' WHERE firstname ='sally';
+
+UPDATE userTable
+SET email='<EMAIL>' WHERE firstname ='sally';
+
+UPDATE userTable
+SET email='<EMAIL>' WHERE first
+[VERBOSE] ========== sample =========
+[VERBOSE] -- MySQL is an open-source relational database management system (RDBMS) that operates using Structured Query Language (SQL). It allows for the creation, modification, and extraction of data from relational databases and controls user access. Besides, MySQL interfaces with an operating system to implement a database in a computer's storage system, manage users, enable network access, and ensures database integrity and backups.
+
+MySQL, which can be used for free under the GNU General Public Licence, was initially owned by the Swedish company MySQL AB, now under Oracle Corporation, following Sun Microsystems' acquisition. Later, the original creator, Widenius, forked the MySQL project to establish MariaDB.
+
+MySQL is commonly used with other software to facilitate applications requiring relational database functionality. It's part of the LAMP web application software stack, and many database-driven web applications and popular websites use it, including Facebook and Twitter. 
+
+Written in C and C++, MySQL can work on a wide range of system platforms, including Linux, macOS, and Microsoft Windows. The MySQL server software and client libraries use dual-licensing distribution, i.e., GPL version 2 or a proprietary license. 
+
+Users can receive support from its official manual, IRC channels, forums, or via paid support from Oracle's MySQL Enterprise products. It has generally been well-received, noted for its high performance and strong support and documentation.
+/* Given no other table exists, please create a very short program which uses SQL features in a complex way. Be sure to use ENGINE=InnoDB. */
+USE sampleDB;
+INSERT INTO comments(author, content, post) VALUES("William", "Hello World!", 10);
+INSERT INTO comments(author, content, post) VALUES("John", "Greetings", 5);
+SELECT * FROM comments;
+/* Given no other table exists, please create a very short program which uses SQL features in a complex way. Be sure to use ENGINE=InnoDB. */
+USE sampleDB;
+
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+INSERT INTO comments(author, content, post) VALUES ("William", "Hello World!", 10);
+INSERT INTO comments(author, content, post) VALUES ("John", "Greetings", 5);
+SELECT * FROM comments;
+
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+INSERT INTO comments(author, content, post) VALUES("Mary", "How are you", 10);
+INSERT INTO comments(author, content, post) VALUES("John", "Good day", 6);
+INSERT INTO comments(author, content, post) VALUES("Mary", "How are you", 10);
+SELECT c.author, c.content, p.author FROM comments c, posts p WHERE p.comments=c.id;
+SHOW TRIGGERS;
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+CREATE TABLE IF NOT EXISTS comments_old(
+
+-- create the comments table
+  author TEXT,
+  content TEXT,
+  post INT,
+  PRIMARY KEY(author,post)
+);
+INSERT INTO comments_old(author, content, post) VALUES("William", "Hello World!", 5);
+USE comments_old;
+SELECT * FROM comments;
+
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+ALTER TABLE users MODIFY (first_name VARCHAR(50), last_name VARCHAR(50));
+INSERT INTO users(`nick`, `first_name`, `last_name`) VALUES ('james', 'James', 'Knight');
+SELECT * FROM users;
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+INSERT INTO comments(author, content, post) VALUES("Jane", "Hello World!", 5);
+INSERT INTO comments(author, content, post) VALUES("Anja", "Greetings", 10);
+SELECT * FROM comments;
+
+*-- SQL statement to insert and read data. --*
+
+
+[VERBOSE] ========== sample =========
+[VERBOSE] -- MySQL is an open-source relational database management system (RDBMS) that operates using Structured Query Language (SQL). It allows for the creation, modification, and extraction of data from relational databases and controls user access. Besides, MySQL interfaces with an operating system to implement a database in a computer's storage system, manage users, enable network access, and ensures database integrity and backups.
+
+MySQL, which can be used for free under the GNU General Public Licence, was initially owned by the Swedish company MySQL AB, now under Oracle Corporation, following Sun Microsystems' acquisition. Later, the original creator, Widenius, forked the MySQL project to establish MariaDB.
+
+MySQL is commonly used with other software to facilitate applications requiring relational database functionality. It's part of the LAMP web application software stack, and many database-driven web applications and popular websites use it, including Facebook and Twitter. 
+
+Written in C and C++, MySQL can work on a wide range of system platforms, including Linux, macOS, and Microsoft Windows. The MySQL server software and client libraries use dual-licensing distribution, i.e., GPL version 2 or a proprietary license. 
+
+Users can receive support from its official manual, IRC channels, forums, or via paid support from Oracle's MySQL Enterprise products. It has generally been well-received, noted for its high performance and strong support and documentation.
+/* Given no other table exists, please create a very short program which uses SQL features in a complex way. Be sure to use ENGINE=InnoDB. */
+USE sampleDB;
+INSERT INTO comments(author, content, post) VALUES ("William", "Hello World!", 10);
+INSERT INTO comments(author, content, post) VALUES ("John", "Greetings", 5);
+SELECT * FROM comments;
+-- Please create a mutated program that modifies the previous generation
+USE sampleDB;
+
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+UPDATE comments SET content = content + 1 WHERE post = 11;
+SELECT * FROM comments;
+-- Please run the mutated program and check the database to see if your code updated the result
+ 
+
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+UPDATE comments SET content="Hello World update";
+SELECT * FROM comments;
+SELECT DISTINCT author FROM comments;
+SELECT DISTINCT author FROM comments ORDER BY author;
+SELECT COUNT(*) FROM comments;
+DROP DATABASE;
+
+-- We can connect to an MySql database by specifying the path to the user database.
+mysql> HOST="localhost"; PORT="3306"; DB="sampledb"; USER="root"; PASS="";
+mysql> SELECT * FROM information_schema.tables;
+
+DROP TABLE IF EXISTS comments;
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+ALTER TABLE comments MODIFY author VARCHAR(10);
+SELECT * FROM comments;
+
+
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+SHOW VARIABLES WHERE variable_name="thread_cache";
+UPDATE comments SET author="William" WHERE post=10;
+SELECT * FROM comments;
+-- Create a database "sampleOther" and then "use" it
+CREATE DATABASE "sampleOther";
+USE sampleOther;
+SHOW DATABASES;
+-- How to create tables
+-- (A table is created as an ordinary table with 0 columns and 0 rows. Table rows can hold different columns) 
+CREATE TABLE users(user_id int auto_increment not null, username varchar(30) not null, password_hash varchar(80), profile_picture varchar(200), primary key(user_id) );
+CREATE TABLE comments(comment_id int auto_increment not null, message text not null, user_id int not null, primary key(comment_id) );
+SHOW create table users
+SHOW create table comments
+-- The next shows all tables for the current database which would be one of the options to create a table
+SHOW TABLES 
+SHOW FULL TABLES
+-- Create a primary key (if not a primary key already exists) in the first table
+ALTER TABLE users
+ADD user_id int auto_increment not null, ADD primary key(user_id);
+SHOW table user_id;
+-- To show information about the first table, use 
+DESCRIBE user_id
+DESCRIBE users;
+-- Indexes
+-- In MySQL an index (an ordered tree) can be created by referencing the columns on the table. 
+-- Indexes are not created automatically when the first column(s) of the table are created (i.e. when a column is created) or when the data of the table is modified (a column is deleted or re-added) and are only automatically created when the data is added.
+CREATE INDEX profile_picture_index ON users(profile_picture);
+SHOW INDEX FROM users
+SHOW INDEX FROM comments;
+SHOW COLUMNS FROM users;
+SHOW COLUMNS FROM comments;
+-- In fact, the creation of the index is done directly in MySQL, so if you add a column to the existing table and then modify it, it will automatically be recreated.
+-- Modifying a column also creates an index. If the index already exists, MySQL only marks that the column's data was touched, not the type of the column.
+ALTER TABLE users MODIFY message varchar(200);
+SHOW COLUMNS FROM users;
+-- You need a suitable column, even if it's a text field. Otherwise, you might end up with unwanted indexes which might slow down your query.
+CREATE TABLE photos(photo_id int not null auto_increment primary key, photo_filename varchar(200) not null, filetype varchar(5) not null, isPrivate bool not null, user_id int references users(user_id) );
+DESCRIBE photos;
+SHOW INDEX FROM photos;
+
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+UPDATE comments SET content = "How is it going now" WHERE post = 5;
+UPDATE comments SET content = "I am so excited" WHERE post = 2;
+SHOW TABLES;
+[VERBOSE] ========== sample =========
+[VERBOSE] -- MySQL is an open-source relational database management system (RDBMS) that operates using Structured Query Language (SQL). It allows for the creation, modification, and extraction of data from relational databases and controls user access. Besides, MySQL interfaces with an operating system to implement a database in a computer's storage system, manage users, enable network access, and ensures database integrity and backups.
+
+MySQL, which can be used for free under the GNU General Public Licence, was initially owned by the Swedish company MySQL AB, now under Oracle Corporation, following Sun Microsystems' acquisition. Later, the original creator, Widenius, forked the MySQL project to establish MariaDB.
+
+MySQL is commonly used with other software to facilitate applications requiring relational database functionality. It's part of the LAMP web application software stack, and many database-driven web applications and popular websites use it, including Facebook and Twitter. 
+
+Written in C and C++, MySQL can work on a wide range of system platforms, including Linux, macOS, and Microsoft Windows. The MySQL server software and client libraries use dual-licensing distribution, i.e., GPL version 2 or a proprietary license. 
+
+Users can receive support from its official manual, IRC channels, forums, or via paid support from Oracle's MySQL Enterprise products. It has generally been well-received, noted for its high performance and strong support and documentation.
+/* Given no other table exists, please create a very short program which uses SQL features in a complex way. Be sure to use ENGINE=InnoDB. */
+USE sampleDB;
+UPDATE comments SET content = "How is it going now" WHERE post = 5;
+UPDATE comments SET content = "I am so excited" WHERE post = 2;
+SHOW TABLES;
+/* Given no other table exists, please create a very short program which uses SQL features in a complex way. Be sure to use ENGINE=InnoDB. */
+USE sampleDB;
+
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+ 
+CREATE TABLE comments
+(
+     post INT(11) NOT NULL,
+     subject VARCHAR(20) NOT NULL,
+     content TEXT NOT NULL,
+     created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+ 
+LOAD DATA LOCAL INFILE 'd:\dbDumps\sampleComments.txt' INTO TABLE comments;
+SELECT * FROM comments;
+
+INSERT INTO comments(post, subject, content)
+VALUES (1, 'PHP', 'Hello to all');
+ 
+ 
+SELECT * from comments;
+ 
+ 
+UPDATE comments SET subject = 'Hello' WHERE post = 2 AND subject = 'How are you';
+UPDATE comments SET content = 'Good bye' WHERE post = 5 OR post = 7;
+ 
+ 
+DELETE FROM comments WHERE post = 6 OR post = 8;
+ 
+ 
+SELECT * from comments;
+ALTER TABLE comments DROP `content` CHECK,
+ADD PRIMARY KEY (post, subject);
+ 
+ 
+SHOW FULL COLUMNS FROM comments;
+DROP TABLE comments;
+QUIT;
+
+
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+CREATE TABLE items (
+    itemId INT AUTO_INCREMENT,
+    code VARCHAR(10) NOT NULL,
+    name VARCHAR(50) NULL,
+    image VARCHAR(255) NULL,
+    price INT(11) NULL,
+    PRIMARY KEY (itemId),
+    DEFAULT 0
+);
+INSERT INTO items (code, name, price) VALUES ('SKY123', 'Sunglasses', 300),('SK1233', 'Women\'s Wear', 540),('J3234', 'Milk Tea', 200);
+CREATE TABLE comments (
+    commentId INT AUTO_INCREMENT,
+    post INT NOT NULL,
+    content VARCHAR(50),
+    createdDate DATETIME,
+    PRIMARY KEY (commentId)
+);
+UPDATE comments SET content = "How is it going now" WHERE post = 5;
+UPDATE comments SET content = "I am so excited" WHERE post = 2;
+SHOWTables;
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+DELETE FROM comments WHERE `user_id` = 1;
+DELETE user WHERE `name` = 'Bob'; 
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+ 
+DROP TABLE users; 
+DROP TABLE posts; 
+DROP TABLE comments;
+
+-- Use ALTER and INSERT commands to modify table contents. There's also a command to "ADD" information to a database. 
+-- Be sure to use ENGINE=InnoDB.
+
+USE sampleDB;
+
+CREATE TABLE users (id INT NOT NULL PRIMARY KEY, name VARCHAR(32) NOT NULL, password VARCHAR(128), role VARCHAR(32), create_time DATETIME NOT NULL, delete_time DATETIME) ENGINE=InnoDB;
+
+INSERT INTO users VALUES (1, "jennice","admin","ADMIN","2000-04-01 01:15:33","2000-04-01 01:15:33");
+
+SELECT * FROM users;
+
+SELECT * FROM tablelist;
+
+SELECT id,name from users;
+
+INSERT INTO users VALUES (0, "chen","<PASSWORD>");
+
+SELECT * FROM users;
+
+UPDATE users SET role="member" WHERE id=0;
+
+SELECT * FROM users;
+
+/* As we know, one might consider the whole database as a source of unpredictable and unintended data. For example, our server-side program can read user data from any table, including the data for our comments table, and add or delete records in the users table. To avoid such situations, MySQL will prevent unauthorized access to the server and give an error message. */
+
+/* Be sure to use ENGINE=InnoDB. You can use DELETE and UPDATE to make modifications to tables */
+SELECT * FROM users WHERE id = 0 AND role="Member";
+
+DELETE FROM users WHERE id = 0;
+
+SELECT * FROM users;
+
+UPDATE users SET role="ADMIN" WHERE id = 0;
+
+SELECT * FROM users;
+
+/* MySQL creates indexes automatically for unindexed tables. Indexes keep a record of the most recent data that may have been retrieved and can't be deleted. Indexes also help speed up operations by making the database efficient. It's a best practice though. 
+MySQL does not create indexes for foreign-key constraints, such as those found in many relational database management systems. */
+
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+SHOW TABLES;
+DROP TABLE comments;
+SHOW TABLES;
+
+[VERBOSE] ========== sample =========
+[VERBOSE] -- MySQL is an open-source relational database management system (RDBMS) that operates using Structured Query Language (SQL). It allows for the creation, modification, and extraction of data from relational databases and controls user access. Besides, MySQL interfaces with an operating system to implement a database in a computer's storage system, manage users, enable network access, and ensures database integrity and backups.
+
+MySQL, which can be used for free under the GNU General Public Licence, was initially owned by the Swedish company MySQL AB, now under Oracle Corporation, following Sun Microsystems' acquisition. Later, the original creator, Widenius, forked the MySQL project to establish MariaDB.
+
+MySQL is commonly used with other software to facilitate applications requiring relational database functionality. It's part of the LAMP web application software stack, and many database-driven web applications and popular websites use it, including Facebook and Twitter. 
+
+Written in C and C++, MySQL can work on a wide range of system platforms, including Linux, macOS, and Microsoft Windows. The MySQL server software and client libraries use dual-licensing distribution, i.e., GPL version 2 or a proprietary license. 
+
+Users can receive support from its official manual, IRC channels, forums, or via paid support from Oracle's MySQL Enterprise products. It has generally been well-received, noted for its high performance and strong support and documentation.
+/* Given no other table exists, please create a very short program which uses SQL features in a complex way. Be sure to use ENGINE=InnoDB. */
+USE sampleDB;
+UPDATE comments SET content = "How is it going now" WHERE post = 5;
+UPDATE comments SET content = "I am so excited" WHERE post = 2;
+SHOW TABLES;
+/* Given no other table exists, please create a very short program which uses SQL features in a complex way. Be sure to use ENGINE=InnoDB. */
+USE sampleDB;
+
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+CREATE TABLE blog_views(
+  id tinyint(4) NOT NULL AUTO_INCREMENT;
+  date_format date NOT NULL DEFAULT CURRENT_DATE; 
+  comment_count int DEFAULT "0";
+  PRIMARY KEY (id)
+) ENGINE=MyISAM;
+BEGIN;
+DELETE FROM comments WHERE post = 2;
+INSERT INTO comments(post, content) VALUES (2, "Hello world!");
+COMMIT;
+SHOW TABLES;
+
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+CREATE TABLE users (
+   user_id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+   username VARCHAR(20) NOT NULL UNIQUE,
+   password VARCHAR(16)
+);
+INSERT INTO users (username, password) VALUES ('Admin', 0);
+GRANT ALL PRIVILEGES ON sampleDB.* TO 'Admin'@'%' IDENTIFIED BY 'password';
+SHOW TABLES;
+GRANT ALL PRIVILEGES ON `sampleDB`.* TO 'Admin'@'%' IDENTIFIED BY 'password';
+SHOW TABLES;
+
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+DROP TABLE comments;
+SHOW TABLES;
+
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+DROP TABLE comments;
+SHOW TABLES;
+
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+DELETE WHERE comment <= 1000;
+SHOW TABLES;
+
+-- 2.2. CREATE
+CREATE TABLE books (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    title ENVARCHAR(40), 
+    author ENVARCHAR(200) NOT NULL UNIQUE, 
+    year DECIMAL(4, 2) NOT NULL UNIQUE,
+    genre ENVARCHAR(20)
+);
+ 
+SHOW TABLES;
+
+-- 2.3. INSERT
+USE sampleDB;
+INSERT INTO books (title, author, year, genre) VALUES 
+('The Complete MySQL Workshop', '<NAME>, <NAME>', 2017, 'Programming'),
+    ('Hurricane Electric', '<NAME>, <NAME>', 2010, 'Sports');
+SELECT * FROM books ORDER BY id DESC, title, id;
+
+-- 2.4. ALTER
+ALTER TABLE books MODIFY author ENVARCHAR(30);
+DROP TABLE books;
+CREATE TABLE books(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    title ENVARCHAR(40), 
+    author ENVARCHAR(30) NOT NULL UNIQUE, 
+    year DECIMAL(4, 2) NOT NULL UNIQUE,
+    genre ENVARCHAR(20)
+);
+INSERT INTO books (title, author, year, genre) VALUES 
+('The Complete MySQL Workshop', '<NAME>, <NAME>', 2017, 'Programming'),
+    ('Hurricane Electric', '<NAME>, <NAME>', 2010, 'Sports');
+SELECT * FROM books ORDER BY id DESC, title, id;
+ALTER TABLE books MODIFY year DECIMAL(4, 2);
+SELECT * FROM books ORDER BY id DESC, title, id;
+ALTER TABLE books MODIFY genre ENVARCHAR(4);
+SELECT * FROM books ORDER BY id DESC, title, id;
+SELECT * FROM books LIMIT 3;
+
+-- 2.5. DROP
+DROP TABLE books;
+SHOW TABLES;
+
+
+-- 2.6. DATABASE
+
+# database names:
+# 1, sampleDB
+
+# 3. Create user <USERNAME>
+CREATE USER user1@localhost IDENTIFIED BY '<PASSWORD>';
+
+# 4. Gain access to database
+GRANT ALL PRIVILEGES ON *.* TO user1@localhost;
+
+# 5. Access the database
+USE sampleDB;
+SHOW DATABASES;
+
+# 6. Drop access and drop database from local
+EXIT;
+DROP DATABASE IF EXISTS sampleDB;
+
+# 7. Drop database from external
+DROP DATABASE sampleDB;
+
+[VERBOSE] ========== sample =========
+[VERBOSE] -- MySQL is an open-source relational database management system (RDBMS) that operates using Structured Query Language (SQL). It allows for the creation, modification, and extraction of data from relational databases and controls user access. Besides, MySQL interfaces with an operating system to implement a database in a computer's storage system, manage users, enable network access, and ensures database integrity and backups.
+
+MySQL, which can be used for free under the GNU General Public Licence, was initially owned by the Swedish company MySQL AB, now under Oracle Corporation, following Sun Microsystems' acquisition. Later, the original creator, Widenius, forked the MySQL project to establish MariaDB.
+
+MySQL is commonly used with other software to facilitate applications requiring relational database functionality. It's part of the LAMP web application software stack, and many database-driven web applications and popular websites use it, including Facebook and Twitter. 
+
+Written in C and C++, MySQL can work on a wide range of system platforms, including Linux, macOS, and Microsoft Windows. The MySQL server software and client libraries use dual-licensing distribution, i.e., GPL version 2 or a proprietary license. 
+
+Users can receive support from its official manual, IRC channels, forums, or via paid support from Oracle's MySQL Enterprise products. It has generally been well-received, noted for its high performance and strong support and documentation.
+/* Given no other table exists, please create a very short program which uses SQL features in a complex way. Be sure to use ENGINE=InnoDB. */
+USE sampleDB;
+UPDATE comments SET content = "How is it going now" WHERE post = 5;
+UPDATE comments SET content = "I am so excited" WHERE post = 2;
+SHOW TABLES;
+/* Given no other table exists, please create a very short program which uses SQL features in a complex way. Be sure to use ENGINE=InnoDB. */
+USE sampleDB;
+
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+SELECT comments.post, comments.content FROM comments ORDER BY comments.post DESC;
+
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+ 
+CALL populateComments();
+ 
+INSERT INTO comments (poster, content) VALUES ("John", "It's now over night since I've been reading about this post. Just look at how old it is.");
+ 
+INSERT INTO comments (poster, content) VALUES ("William", "It's a long way from ready for action. I need to finish building the application. Thank you");
+INSERT INTO comments (poster, content) VALUES ("Andy", "Just a little bit. Not as bad");
+UPDATE comments SET content = "It is going to rain" WHERE post = 13;
+SELECT poster, sum(rating)
+  FROM comments, (SELECT COUNT(*) FROM comments WHERE (comment = "I am so excited" OR comment = "I am so nice") AND (rating < 6))
+  WHERE comments.post = comments.id
+  AND comments.post = SELECT id FROM comments ORDER BY (rating DESC);
+SELECT poster, count(comment)
+  FROM comments, (SELECT COUNT(*) FROM comments WHERE (comment = "It is going to rain"))
+  WHERE comments.post = comments.id
+  AND comments.post = SELECT id FROM comments ORDER BY count DESC;
+
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+CREATE TABLE IF NOT EXISTS comments (
+post          int(11)          NOT NULL AUTO_INCREMENT,
+thread        varchar(30)      DEFAULT NULL,
+content       varchar(100)     DEFAULT NULL,
+author        varchar(60)      DEFAULT NULL,
+created_on    datetime        DEFAULT CURRENT_TIMESTAMP,
+PRIMARY KEY(post)
+) ENGINE=InnoDB;
+CREATE TABLE IF NOT EXISTS messages (
+id            int(11)          NOT NULL AUTO_INCREMENT,
+author        varchar(60)      DEFAULT NULL,
+thread        varchar(30)      DEFAULT NULL,
+content       text(1000),
+created_on    datetime        DEFAULT CURRENT_TIMESTAMP,
+PRIMARY KEY(id)
+);
+INSERT INTO messages
+VALUES (1, 'admin', 'All right', 'Are we ready?', '2018-01-01 01:00:00'),
+       (2, 'admin', 'All right', 'Are we ready?', '2018-01-02 01:00:00'),
+       (3, 'admin', 'Good afternoon', 'Where can I find the database?', '2018-01-04 01:00:00'),
+       (4, 'admin', 'Help', 'How can I access this message?', '2018-01-05 01:00:00');
+ 
+CREATE VIEW IF NOT EXISTS all_admin_threads AS
+SELECT *
+FROM
+	messages,
+	comments
+WHERE
+  	thread    = 'admin';
+ 
+CREATE VIEW IF NOT EXISTS all_admin_messages AS
+SELECT *
+FROM
+	messages,
+	comments
+WHERE
+  	author    = 'admin';
+DELETE FROM comments WHERE thread = 'admin';
+ 
+CREATE VIEW IF NOT EXISTS unvoted_users AS
+SELECT DISTINCT
+	author
+FROM
+	comments
+WHERE (content IS NULL OR content = 'Vote') AND author NOT IN
+	(SELECT votes_for, votes_against FROM votes WHERE post=comments.post);
+ 
+CREATE VIEW IF NOT EXISTS posts_by_id AS
+SELECT *
+FROM
+	comments
+WHERE author NOT IN
+	(SELECT author FROM comments
+		ORDER BY votes_for DESC, votes_against DESC LIMIT 5);
+ 
+CREATE VIEW IF NOT
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+CREATE TABLE IF NOT EXISTS `posts` (
+  `id` INT(2) NOT NULL AUTO_INCREMENT,
+  `content` VARCHAR(128) NOT NULL,
+  PRIMARY KEY(`id`) 
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+INSERT INTO `posts` VALUES(2,'This is my first post');
+SELECT * FROM `posts`;
+DESC posts;
+CREATE TABLE test (
+  id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  name VARCHAR(100) NOT NULL
+)ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+CREATE TABLE IF NOT EXISTS `comments` (
+  `id` int(4) NOT NULL AUTO_INCREMENT,
+  `comment` text NOT NULL,
+  `post` int(5) NOT NULL,
+  PRIMARY KEY(`id`) 
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+INSERT INTO `comments` VALUES(1,'I have a great experience with MySQL.',2);
+SELECT * FROM `comments`;
+UPDATE comments SET comment = 'Holy smokes!' WHERE post = '2';
+UPDATE comments SET comment = 'This is better for me.' WHERE post = '1';
+SELECT * FROM `comments`;
+DESC comments;
+SELECT COUNT(*) FROM `posts`;
+SHOW INDEXFROM post, comment;
+SHOW CREATE TABLE COMMENT;
+CREATE TABLE IF NOT EXISTS `comments2` (
+  `id` int(4) NOT NULL AUTO_INCREMENT,
+  `comment` text NOT NULL,
+  `post` int(5) NOT NULL,
+  PRIMARY KEY(`id`) 
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+SHOW INDEXFROM post, comment;
+SELECT post, `comment` FROM comments, comments2;
+-- 2nd solution from https: 
+SELECT id, comment, `post` FROM comments, comments2 
+	WHERE comments.post = comments2.post;
+-- 3rd solution from http: 
+SELECT comments2.id, comments.comment, comments.post FROM comments, comments2 
+	WHERE comments.post = comments2.post AND comments.post = 2;
+-- 4th solution from https: 
+SELECT * FROM comments ORDER BY  comment ASC 
+	, post;
+WITH post_comments AS (
+	SELECT comment, id, post
+	FROM comments ORDER BY  comment ASC
+	, post
+)
+SELECT comments.comment
+	, (CASE 
+		WHEN comments.post = post.id THEN post.content 
+		ELSE comments2.id END) AS comment_id
+	, (CASE 
+		WHEN comments.post = post.
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+UPDATE comments SET content = "How is it going now" WHERE post = 5;
+UPDATE comments SET content = "I am so excited" WHERE post = 2;
+SHOW TABLES;
+[VERBOSE] ========== sample =========
+[VERBOSE] -- MySQL is an open-source relational database management system (RDBMS) that operates using Structured Query Language (SQL). It allows for the creation, modification, and extraction of data from relational databases and controls user access. Besides, MySQL interfaces with an operating system to implement a database in a computer's storage system, manage users, enable network access, and ensures database integrity and backups.
+
+MySQL, which can be used for free under the GNU General Public Licence, was initially owned by the Swedish company MySQL AB, now under Oracle Corporation, following Sun Microsystems' acquisition. Later, the original creator, Widenius, forked the MySQL project to establish MariaDB.
+
+MySQL is commonly used with other software to facilitate applications requiring relational database functionality. It's part of the LAMP web application software stack, and many database-driven web applications and popular websites use it, including Facebook and Twitter. 
+
+Written in C and C++, MySQL can work on a wide range of system platforms, including Linux, macOS, and Microsoft Windows. The MySQL server software and client libraries use dual-licensing distribution, i.e., GPL version 2 or a proprietary license. 
+
+Users can receive support from its official manual, IRC channels, forums, or via paid support from Oracle's MySQL Enterprise products. It has generally been well-received, noted for its high performance and strong support and documentation.
+/* Given no other table exists, please create a very short program which uses SQL features in a complex way. Be sure to use ENGINE=InnoDB. */
+USE sampleDB;
+UPDATE comments SET content = "How is it going now" WHERE post = 5;
+UPDATE comments SET content = "I am so excited" WHERE post = 2;
+SHOW TABLES;
+/* Given no other table exists, please create a very short program which uses SQL features in a complex way. Be sure to use ENGINE=InnoDB. */
+USE sampleDB;
+
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+SHOW FIELDS FROM comments;
+ 
+```
+
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+CREATE TABLE users (id INT PRIMARY KEY AUTO_INCREMENT, user_fname VARCHAR(32), user_lname VARCHAR(32) UNIQUE, user_login VARCHAR(32), user_pass VARCHAR(32), user_date DATE NOT NULL, user_age INT NOT NULL, user_email VARCHAR(64));
+INSERT INTO users (user_fname, user_lname, user_login, user_pass, user_date, user_age, user_email) VALUES ('Max', 'Barkhouse', 'beng', '<PASSWORD>', '1981-01-16', 29, '<EMAIL>');
+
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+SHOW TABLES;
+ 
+-- Drop the table.
+DROP TABLE IF EXISTS users;
+
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+SET @a:=1;
+SELECT @a;  
+UPDATE comments SET content = "MySQL is fantastic. I wish I knew this." WHERE id = @a;  
+UPDATE comments SET content = "MySQL was great and I wish I knew this too." WHERE id = 1;
+SHOW TABLES;
+ 
+SHOW VARIABLES WHERE VARIABLE_NAME = 'innodb_ft_enabled';
+SHOW WARNINGS;
+
+-- MySQL Workbench
+--
+-- MySQL Database Designer by MariaDB
+--
+-- ------------------------------------------------------
+-- MySQL : Free Databases (localhost)
+-- ------------------------------------------------------
+-- Database created by MariaDB on Fri Feb  1 17:42:26 2017
+-- ------------------------------------------------------
+CREATE user 'root'@'localhost' identified by 'root';
+GRANT ALL PRIVILEGES ON sampleDB.* TO 'root'@'localhost';
+# create table 'comments' with id as int, content as varchar(128)
+# set character set as utf8
+
+CREATE DATABASE sampleDB;
+
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+ 
+USE sampleDB;
+CREATE INDEX `contentIndex` ON posts(content);
+
+[VERBOSE] ========== sample =========
+[VERBOSE] -- MySQL is an open-source relational database management system (RDBMS) that operates using Structured Query Language (SQL). It allows for the creation, modification, and extraction of data from relational databases and controls user access. Besides, MySQL interfaces with an operating system to implement a database in a computer's storage system, manage users, enable network access, and ensures database integrity and backups.
+
+MySQL, which can be used for free under the GNU General Public Licence, was initially owned by the Swedish company MySQL AB, now under Oracle Corporation, following Sun Microsystems' acquisition. Later, the original creator, Widenius, forked the MySQL project to establish MariaDB.
+
+MySQL is commonly used with other software to facilitate applications requiring relational database functionality. It's part of the LAMP web application software stack, and many database-driven web applications and popular websites use it, including Facebook and Twitter. 
+
+Written in C and C++, MySQL can work on a wide range of system platforms, including Linux, macOS, and Microsoft Windows. The MySQL server software and client libraries use dual-licensing distribution, i.e., GPL version 2 or a proprietary license. 
+
+Users can receive support from its official manual, IRC channels, forums, or via paid support from Oracle's MySQL Enterprise products. It has generally been well-received, noted for its high performance and strong support and documentation.
+/* Given no other table exists, please create a very short program which uses SQL features in a complex way. Be sure to use ENGINE=InnoDB. */
+USE sampleDB;
+CREATE INDEX `contentIndex` ON posts(content);
+-- Please create a mutated program that modifies the previous generation
+USE sampleDB;
+
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+-- INSERT new blog content
+INSERT INTO posts (post_name, content) VALUES ('First post', 'Content');
+
+COMMIT;
+
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+DROP INDEX IF EXISTS `contentIndex`;
+ALTER TABLE posts MODIFY content VARCHAR(100);
+-- END of example02_07.sql
+
+-- end of file
+
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+CREATE TEMP TABLE tempPosts AS 
+SELECT * from posts WHERE content = content;
+INSERT INTO tempPosts SELECT content, content, content, content, content, content, content from posts;
+SELECT * FROM tempPosts;
+DROP TABLE tempPosts;
+DROP INDEX `contentIndex;`
+
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+SELECT * FROM posts;
+
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+UPDATE posts SET content = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut mi in enim scelerisque dapibus. Aenean dapibus nisi at turpis accumsan placerat. Donec id nulla lorem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut mi in enim scelerisque dapibus. Aenean dapibus nisi at turpis accumsan placerat. Donec id nulla lorem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.' WHERE content = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut mi in enim scelerisque dapibus. Aenean dapibus nisi at turpis accumsan placerat. Donec id nulla lorem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.';
+-- If this statement fails, you are probably missing the required table.
+-- Please run the SQL specified in the MySQL Workbench wizard above,
+-- then run this program in the command line.
+USE sampleDB;
+SELECT content FROM posts;
+-- END OF Q2-- MySQL Workbench SQL --*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*/
+-- END OF Q2
+[VERBOSE] ========== sample =========
+[VERBOSE] -- MySQL is an open-source relational database management system (RDBMS) that operates using Structured Query Language (SQL). It allows for the creation, modification, and extraction of data from relational databases and controls user access. Besides, MySQL interfaces with an operating system to implement a database in a computer's storage system, manage users, enable network access, and ensures database integrity and backups.
+
+MySQL, which can be used for free under the GNU General Public Licence, was initially owned by the Swedish company MySQL AB, now under Oracle Corporation, following Sun Microsystems' acquisition. Later, the original creator, Widenius, forked the MySQL project to establish MariaDB.
+
+MySQL is commonly used with other software to facilitate applications requiring relational database functionality. It's part of the LAMP web application software stack, and many database-driven web applications and popular websites use it, including Facebook and Twitter. 
+
+Written in C and C++, MySQL can work on a wide range of system platforms, including Linux, macOS, and Microsoft Windows. The MySQL server software and client libraries use dual-licensing distribution, i.e., GPL version 2 or a proprietary license. 
+
+Users can receive support from its official manual, IRC channels, forums, or via paid support from Oracle's MySQL Enterprise products. It has generally been well-received, noted for its high performance and strong support and documentation.
+/* Given no other table exists, please create a very short program which uses SQL features in a complex way. Be sure to use ENGINE=InnoDB. */
+USE sampleDB;
+UPDATE posts SET content = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut mi in enim scelerisque dapibus. Aenean dapibus nisi at turpis accumsan placerat. Donec id nulla lorem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut mi in enim scelerisque dapibus. Aenean dapibus nisi at turpis accumsan placerat. Donec id nulla lorem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.' WHERE content = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut mi in enim scelerisque dapibus. Aenean dapibus nisi at turpis accumsan placerat. Donec id nulla lorem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.';
+-- If this statement fails, you are probably missing the required table.
+-- Please run the SQL specified in the MySQL Workbench wizard above,
+-- then run this program in the command line.
+SELECT content FROM posts;
+-- END OF Q2-- MySQL Workbench SQL --*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*/
+-- END OF Q2
+-- Please create a semantically equivalent program to the previous generation
+USE sampleDB;
+
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+UPDATE users SET username WHERE admin = TRUE;
+-- INSERT, UPDATE, and DELETE
+-- Create a program that:
+-- 1. Finds all users (students and teachers) who have a username beginning
+--    with "a".
+-- 2. Finds all users who have a username in the format aaa (aaa
+--    represents a string of at least 2 letters).
+-- 3. Finds all users who have a username of "abc".
+-- 4. Finds all users who have at least one non-letter username
+-- 5. Finds all users who have a username ending in either ".com" or ".net".
+--
+-- Try to complete the task without specifying which queries are important and
+-- which can be ignored. Remember that it's very important that you
+-- be able to explain your results to your cohort.
+--
+-- If a query does not produce the results you expect, try to explain the
+-- cause and fix the problem immediately
+--
+-- END OF Q3
+SELECT users.id, users.username, users.email,
+CASE WHEN usertype = "student" THEN "Student" ELSE "Teacher" END AS usertype
+FROM users
+WHERE users.username like "%a%"
+OR users.username like "aaa%"
+OR users.username = "abc"
+UNION
+SELECT users.id, users.username, users.email,
+CASE WHEN usertype = "student" THEN "Student" ELSE "Teacher
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+
+-- You can define as much of the above table structure as you'd like here, or leave off.
+-- However, you need to make sure:
+-- - the fields inside this table (column names and types) match up in every row of the data (rows = rows in this table)
+-- - the fields are ordered in some way
+-- - there are no duplicate entries
+/* 
+You'll want to look at your database and your table definitions carefully in order to design a good table structure. Some common problems are:
+- your data can be mixed with others
+- your database might not support indices which are usually required for faster searching
+- the fields you are trying to represent are all of same type, and will probably be more efficient to store as an int
+*/
+CREATE TABLE posts (
+  pid int(11) NOT NULL AUTO_INCREMENT,
+  content int(11) DEFAULT NULL,
+  PRIMARY KEY (pid)
+);
+
+
+
+--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*/
+-- BEGINNING OF Q3
+--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*/
+
+CREATE TABLE comments (
+  pid int
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+SELECT category, COUNT(*) FROM posts GROUP BY category;--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*/
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+\!rm -rf sampleDB/backup
+-- Run the backup script in order to back up the entire database.
+-- END OF Q3
+-- END OF Q3
+-- Please use INSERT statements and use the DML commands to insert 
+-- records in the database. 
+-- END OF Q4
+USE sampleDB;
+USE sampleDB;
+-- INSERT statements in a transaction 
+-- and use the DML commands to insert and update 
+-- the database. 
+-- END OF Q5
+-- End of assignment 6
+--END OF PROGRAM 8
+
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+-- END OF Q1
+
+[VERBOSE] ========== sample =========
+[VERBOSE] -- MySQL is an open-source relational database management system (RDBMS) that operates using Structured Query Language (SQL). It allows for the creation, modification, and extraction of data from relational databases and controls user access. Besides, MySQL interfaces with an operating system to implement a database in a computer's storage system, manage users, enable network access, and ensures database integrity and backups.
+
+MySQL, which can be used for free under the GNU General Public Licence, was initially owned by the Swedish company MySQL AB, now under Oracle Corporation, following Sun Microsystems' acquisition. Later, the original creator, Widenius, forked the MySQL project to establish MariaDB.
+
+MySQL is commonly used with other software to facilitate applications requiring relational database functionality. It's part of the LAMP web application software stack, and many database-driven web applications and popular websites use it, including Facebook and Twitter. 
+
+Written in C and C++, MySQL can work on a wide range of system platforms, including Linux, macOS, and Microsoft Windows. The MySQL server software and client libraries use dual-licensing distribution, i.e., GPL version 2 or a proprietary license. 
+
+Users can receive support from its official manual, IRC channels, forums, or via paid support from Oracle's MySQL Enterprise products. It has generally been well-received, noted for its high performance and strong support and documentation.
+/* Given no other table exists, please create a very short program which uses SQL features in a complex way. Be sure to use ENGINE=InnoDB. */
+USE sampleDB;
+-- END OF Q1
+/* Given no other table exists, please create a very short program which uses SQL features in a complex way. Be sure to use ENGINE=InnoDB. */
+USE sampleDB;
+
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+
+\i 07aSampleQ2.sql
+ 
+
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+-- BEGIN OF Q2
+-- INSERT INTO table0 (name, phone) VALUES ('Vivien', '+4915052650005');
+INSERT INTO table0 (name, phone) VALUES ('Vivien', '+4915052650005');
+-- END OF Q2
+-- BEGIN OF Q3
+-- SELECT * FROM table0 WHERE name='Vivien';
+SELECT * FROM table0 WHERE name='Vivien';
+-- END OF Q3
+-- BEGIN OF Q4
+SELECT * FROM table0 ORDER BY name;
+-- END OF Q4
+-- BEGIN OF Q5
+-- EXCLUSIVE MODE
+ 
+COMMIT;
+ 
+
+
+-- END OF Q3
+-- BEGIN OF Q4
+SELECT DISTINCT name FROM table0 ORDER BY name;
+-- END OF Q4
+-- BEGIN OF Q5
+-- Exclusive
+ 
+ROLLBACK;
+ 
+
+-- END OF Q2
+-- BEGIN OF Q1
+
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+DROP TABLE person; -- Table has been removed.
+
+-- BEGIN USER CREATE TABLE
+CREATE TABLE T_sample(Person_id integer not null primary key, Age integer, GENDER ENUM('MALE','FEMALE')); -- END USER CREATE TABLE
+
+-- BEGIN USER CREATE SEQUENCE
+CREATE SEQUENCE S_sample, -- END USER CREATE SEQUENCE
+
+-- BEGIN USER CREATE FUNCTION 
+CREATE FUNCTION fName() RETURNS varchar(4) -- END USER CREATE FUNCTION 
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+CREATE TABLE IF NOT EXISTS customer ( 
+	customerID INT AUTO_INCREMENT NOT NULL, 
+	city VARCHAR(24) NOT NULL, 
+	country VARCHAR(32) NOT NULL, 
+	CONSTRAINT pk_customer PRIMARY KEY (customerID)
+);
+-- END OF Q2
+ 
+ 
+ 
+USE sampleDB;
+CREATE TABLE IF NOT EXISTS stock ( 
+	stockID INT AUTO_INCREMENT NOT NULL, 
+	date DATE NOT NULL, 
+	quantity INT NOT NULL, 
+	stock_code VARCHAR(24) NOT NULL, 
+	constraint pk_stock PRIMARY KEY (stockID)
+);
+ 
+ 
+USE sampleDB;
+CREATE TABLE IF NOT EXISTS stock_history ( 
+	stockID INT NOT NULL, 
+	quantity INT NOT NULL, 
+	stock_code VARCHAR(24) NOT NULL, 
+	date DATE NOT NULL, 
+	CONSTRAINT fk_stock_hist_stock_id FOREIGN KEY (stockID) REFERENCES stock (stockID) 
+	ON DELETE CASCADE 
+	ON UPDATE RESTRICT
+);
+
+ 
+ 
+-- BEGIN: Query 6
+USE sampleDB;
+ALTER TABLE stock_history
+ADD CONSTRAINT fk_stock_hist_stock_id_pk PRIMARY KEY (stockID);
+-- END: Query 6
+ 
+/* BEGIN: Query 8
+USE sampleDB;
+CREATE TABLE IF NOT EXISTS store ( 
+	storeID INT AUTO_INCREMENT NOT NULL, 
+	city VARCHAR(24) NOT NULL, 
+	country VARCHAR(32) NOT NULL, 
+	CONSTRAINT pk_store PRIMARY KEY (storeID)
+);
+CREATE TABLE IF NOT EXISTS orders2 ( 
+	ordersID INT AUTO_INCREMENT NOT NULL, 
+	date DATE NOT NULL, 
+	quantity INT NOT NULL, 
+	customerID INT NOT NULL, 
+	storeID INT NOT NULL, 
+	CONSTRAINT pk_orders2 PRIMARY KEY (ordersID)
+);
+CREATE TABLE
+[VERBOSE] ========== sample =========
+[VERBOSE] -- MySQL is an open-source relational database management system (RDBMS) that operates using Structured Query Language (SQL). It allows for the creation, modification, and extraction of data from relational databases and controls user access. Besides, MySQL interfaces with an operating system to implement a database in a computer's storage system, manage users, enable network access, and ensures database integrity and backups.
+
+MySQL, which can be used for free under the GNU General Public Licence, was initially owned by the Swedish company MySQL AB, now under Oracle Corporation, following Sun Microsystems' acquisition. Later, the original creator, Widenius, forked the MySQL project to establish MariaDB.
+
+MySQL is commonly used with other software to facilitate applications requiring relational database functionality. It's part of the LAMP web application software stack, and many database-driven web applications and popular websites use it, including Facebook and Twitter. 
+
+Written in C and C++, MySQL can work on a wide range of system platforms, including Linux, macOS, and Microsoft Windows. The MySQL server software and client libraries use dual-licensing distribution, i.e., GPL version 2 or a proprietary license. 
+
+Users can receive support from its official manual, IRC channels, forums, or via paid support from Oracle's MySQL Enterprise products. It has generally been well-received, noted for its high performance and strong support and documentation.
+/* Given no other table exists, please create a very short program which uses SQL features in a complex way. Be sure to use ENGINE=InnoDB. */
+USE sampleDB;
+CREATE TABLE IF NOT EXISTS customer ( 
+	customerID INT AUTO_INCREMENT NOT NULL, 
+	city VARCHAR(24) NOT NULL, 
+	country VARCHAR(32) NOT NULL, 
+	CONSTRAINT pk_customer PRIMARY KEY (customerID)
+);
+-- END OF Q2
+CREATE TABLE IF NOT EXISTS stock ( 
+	stockID INT AUTO_INCREMENT NOT NULL, 
+	date DATE NOT NULL, 
+	quantity INT NOT NULL, 
+	stock_code VARCHAR(24) NOT NULL, 
+	constraint pk_stock PRIMARY KEY (stockID)
+);
+CREATE TABLE IF NOT EXISTS stock_history ( 
+	stockID INT NOT NULL, 
+	quantity INT NOT NULL, 
+	stock_code VARCHAR(24) NOT NULL, 
+	date DATE NOT NULL, 
+	CONSTRAINT fk_stock_hist_stock_id FOREIGN KEY (stockID) REFERENCES stock (stockID) 
+	ON DELETE CASCADE 
+	ON UPDATE RESTRICT
+);
+-- BEGIN: Query 6
+ALTER TABLE stock_history
+ADD CONSTRAINT fk_stock_hist_stock_id_pk PRIMARY KEY (stockID);
+-- END: Query 6
+/* BEGIN: Query 8
+CREATE TABLE IF NOT EXISTS store ( 
+	storeID INT AUTO_INCREMENT NOT NULL, 
+	city VARCHAR(24) NOT NULL, 
+	country VARCHAR(32) NOT NULL, 
+	CONSTRAINT pk_store PRIMARY KEY (storeID)
+);
+CREATE TABLE IF NOT EXISTS orders2 ( 
+	ordersID INT AUTO_INCREMENT NOT NULL, 
+	date DATE NOT NULL, 
+	quantity INT NOT NULL, 
+	customerID INT NOT NULL, 
+	storeID INT NOT NULL, 
+	CONSTRAINT pk_orders2 PRIMARY KEY (ordersID)
+);
+CREATE TABLE
+-- Please create a semantically equivalent program to the previous generation
+USE sampleDB;
+
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+CREATE TABLE IF NOT EXISTS employee ( 
+       empID INT AUTO_INCREMENT NOT NULL, 
+       firstname VARCHAR(40) NOT NULL, 
+	   lastname VARCHAR(40) NOT NULL, 
+	   salary DECIMAL(30, 20) NOT NULL, 
+	   managerID INT NOT NULL, 
+	   CONSTRAINT pk_employee PRIMARY KEY(empID) 
+ );
+UPDATE employee SET managerID=5;
+-- END: Query 8 
+CREATE TABLE IF NOT EXISTS employee2 ( 
+       empID INT AUTO_INCREMENT NOT NULL, 
+       firstname VARCHAR(40) NOT NULL, 
+	   lastname VARCHAR(40) NOT NULL, 
+	   CONSTRAINT pk_employee PRIMARY KEY(empID) 
+ );
+CREATE TABLE order_detail2 ( 
+	order_id INT NOT NULL, 
+	productID INT NOT NULL, 
+	product_name varchar(200) NOT NULL, 
+	product_desc varchar(200) NULL, 
+	unit_price decimal(12, 8) NOT NULL, 
+	quantity INT NOT NULL, 
+	CONSTRAINT pk_order2 PRIMARY KEY (order_id)
+);
+INSERT INTO employee VALUES
+	-- BEGIN: Query 9
+(7), (8), (9), (10), (11), (12),
+-- END: Query 9
+/* BEGIN: Query 10
+ALTER TABLE employee
+ADD CONSTRAINT
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+
+CREATE TYPE store_type AS ENUM('Hydro', 'Restaurant');
+
+CREATE TABLE IF NOT EXISTS customer ( 
+	customerID INT AUTO_INCREMENT NOT NULL, 
+	city VARCHAR(24) NOT NULL, 
+	country VARCHAR(32) NOT NULL, 
+	CONSTRAINT pk_customer PRIMARY KEY (customerID)
+);
+
+CREATE TABLE IF NOT EXISTS cart ( 
+	cart_id INT AUTO_INCREMENT NOT NULL, 
+	user_id INT NOT NULL, 
+	order_id INT NOT NULL, 
+	CONSTRAINT pk PRIMARY KEY (cart_id)
+);
+
+CREATE TABLE IF NOT EXISTS order_items ( 
+	order_id INT NOT NULL, 
+	order_item_id INT AUTO_INCREMENT, 
+	order_qty INT NOT NULL, 
+	price INT NOT NULL, 
+	CONSTRAINT fk PRIMARY KEY (order_id),
+	CONSTRAINT fk_order_items PRIMARY KEY (order_item_id)
+);
+
+CREATE TABLE IF NOT EXISTS store ( 
+	storeID INT AUTO_INCREMENT NOT NULL, 
+	city VARCHAR(24) NOT NULL, 
+	country VARCHAR(32) NOT NULL, 
+	CONSTRAINT pk_store PRIMARY KEY (storeID)
+);
+
+CREATE TABLE IF NOT EXISTS orders2 ( 
+	ordersID INT AUTO_INCREMENT NOT NULL, 
+	date DATE NOT NULL, 
+	quantity INT NOT NULL, 
+	customerID
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+DROP TABLE IF EXISTS orders2;
+DROP TABLE IF EXISTS store;
+DROP TABLE IF EXISTS customer;
+CREATE TABLE IF NOT EXISTS store_products ( 
+	storeID INT NOT NULL, 
+	productsID INT NOT NULL, 
+	quantity INT NOT NULL, 
+	CONSTRAINT fk_products_store_id FOREIGN KEY (storeID) REFERENCES store (storeID), 
+	CONSTRAINT fk_products_products_id FOREIGN KEY (productsID) REFERENCES product (productsID) 
+	ON DELETE CASCADE 
+	ON UPDATE RESTRICT
+);
+CREATE TABLE IF NOT EXISTS orders ( 
+	ordersID INT AUTO_INCREMENT NOT NULL, 
+	date DATE NOT NULL, 
+	quantity INT NOT NULL, 
+	customerID INT NOT NULL, 
+	orderlineID INT NOT NULL, 
+	storeID INT NOT NULL, 
+	CONSTRAINT pk_orders PRIMARY KEY (ordersID)
+);
+CREATE TABLE IF NOT EXISTS order_lines ( 
+	orderlineID INT AUTO_INCREMENT NOT NULL, 
+	productID INT NOT NULL, 
+	quantity INT NOT NULL, 
+	CONSTRAINT pk_order_lines PRIMARY KEY (orderlineID)
+);
+-- END OF Q8
+CREATE TABLE IF NOT EXISTS order_lines_2 ( 
+	orderlineID INT UNIQUE NOT NULL, 
+	productID INT UNIQUE NOT NULL, 
+	quantity INT NOT NULL, 
+	CONSTRAINT fk_orderline_order_lines FOREIGN KEY (orderlineID
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+CREATE TABLE IF NOT EXISTS orders3 ( 
+	ordersID INT AUTO_INCREMENT NOT NULL, 
+	date DATE NOT NULL, 
+	quantity INT NOT NULL, 
+	customerID INT NOT NULL, 
+	storeID INT NOT NULL, 
+	CONSTRAINT pk_orders3 PRIMARY KEY (ordersID)
+);
+CREATE TABLE IF NOT EXISTS stock1 ( 
+	stockID INT AUTO_INCREMENT NOT NULL, 
+	date DATE NOT NULL, 
+	quantity INT NOT NULL, 
+	stock_code VARCHAR(24) NOT NULL, 
+	CONSTRAINT pk_stock1 PRIMARY KEY (stockID)
+);
+ 
+ 
+-- 1.	For each item, print the price of the first stock in the list.
+-- 2.	For each item, add it to the inventory if the price is less than 0.
+-- 3.	For each item, subtract it from the inventory if it is greater than the item price.
+-- End of your Program
+
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+ALTER TABLE stock
+ADD COLUMN name VARCHAR(24) DEFAULT 'N/A' AFTER stock_code;
+ALTER TABLE stock
+ADD COLUMN expiry_date DATE DEFAULT '2019-01-19' AFTER stock_code;
+ALTER TABLE orders2
+ADD COLUMN description VARCHAR(672) DEFAULT 'N/A' AFTER storeID;
+ALTER TABLE orders2
+ADD COLUMN expiry_date DATE DEFAULT '2019-01-19';
+EXEC insert_into_table
+UPDATE stock
+SET name = 'Tiger'
+WHERE stock_code = 'TW';
+UPDATE stock
+SET expiry_date = '2017-12-12';
+UPDATE orders2
+SET description = 'Order from Tampines and the Prairies', expiry_date = '2019-03-14';
+EXEC insert_into_table
+INSERT INTO orders2 (date, quantity, customerID, storeID)
+VALUES ('2018-04-14', 12, 1000, 300),
+       ('2018-04-16', 24, 1000, 400);
+EXEC insert_into_table
+UPDATE orders2
+SET description = 'Order from Barrow', expiry_date = '2019
+[VERBOSE] ========== sample =========
+[VERBOSE] -- MySQL is an open-source relational database management system (RDBMS) that operates using Structured Query Language (SQL). It allows for the creation, modification, and extraction of data from relational databases and controls user access. Besides, MySQL interfaces with an operating system to implement a database in a computer's storage system, manage users, enable network access, and ensures database integrity and backups.
+
+MySQL, which can be used for free under the GNU General Public Licence, was initially owned by the Swedish company MySQL AB, now under Oracle Corporation, following Sun Microsystems' acquisition. Later, the original creator, Widenius, forked the MySQL project to establish MariaDB.
+
+MySQL is commonly used with other software to facilitate applications requiring relational database functionality. It's part of the LAMP web application software stack, and many database-driven web applications and popular websites use it, including Facebook and Twitter. 
+
+Written in C and C++, MySQL can work on a wide range of system platforms, including Linux, macOS, and Microsoft Windows. The MySQL server software and client libraries use dual-licensing distribution, i.e., GPL version 2 or a proprietary license. 
+
+Users can receive support from its official manual, IRC channels, forums, or via paid support from Oracle's MySQL Enterprise products. It has generally been well-received, noted for its high performance and strong support and documentation.
+/* Given no other table exists, please create a very short program which uses SQL features in a complex way. Be sure to use ENGINE=InnoDB. */
+USE sampleDB;
+CREATE TABLE IF NOT EXISTS orders3 ( 
+	ordersID INT AUTO_INCREMENT NOT NULL, 
+	date DATE NOT NULL, 
+	quantity INT NOT NULL, 
+	customerID INT NOT NULL, 
+	storeID INT NOT NULL, 
+	CONSTRAINT pk_orders3 PRIMARY KEY (ordersID)
+);
+CREATE TABLE IF NOT EXISTS stock1 ( 
+	stockID INT AUTO_INCREMENT NOT NULL, 
+	date DATE NOT NULL, 
+	quantity INT NOT NULL, 
+	stock_code VARCHAR(24) NOT NULL, 
+	CONSTRAINT pk_stock1 PRIMARY KEY (stockID)
+);
+-- 1.	For each item, print the price of the first stock in the list.
+-- 2.	For each item, add it to the inventory if the price is less than 0.
+-- 3.	For each item, subtract it from the inventory if it is greater than the item price.
+-- End of your Program
+-- Please create a mutated program that modifies the previous generation
+USE sampleDB;
+
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+
+DROP TABLE IF EXISTS orders3;
+DROP TABLE IF EXISTS stock1;
+CREATE TABLE IF NOT EXISTS orders3 ( 
+	ordersID INT AUTO_INCREMENT NOT NULL, 
+	date DATE NOT NULL, 
+	quantity INT NOT NULL, 
+	customerID INT NOT NULL, 
+	storeID INT NOT NULL, 
+	CONSTRAINT pk_orders3 PRIMARY KEY (ordersID)
+);
+CREATE TABLE IF NOT EXISTS stock1 ( 
+	stockID INT AUTO_INCREMENT NOT NULL, 
+	date DATE NOT NULL, 
+	quantity INT NOT NULL, 
+	stock_code VARCHAR(24) NOT NULL, 
+	CONSTRAINT pk_stock1 PRIMARY KEY (stockID)
+);
+-- 1.	For each item, print the price of the first stock in the list.
+-- 2.	For each item, add it to the inventory if the price is less than 0.
+-- 3.	For each item, subtract it from the inventory if it is greater than the item price.
+-- End of your Program
+-- Please create an iterative program that adds to the previous generation
+USE sampleDB;
+
+DROP TABLE IF EXISTS orders3;
+DROP TABLE IF EXISTS stock1;
+CREATE TABLE IF NOT EXISTS orders3 ( 
+	ordersID INT AUTO_INCREMENT NOT NULL, 
+	date DATE NOT NULL, 
+	quantity INT NOT NULL, 
+	customerID INT NOT NULL, 
+	storeID INT NOT NULL, 
+	CONSTRAINT pk_orders3 PRIMARY KEY (ordersID)
+);
+CREATE TABLE IF NOT EXISTS stock1 ( 
+	stockID INT AUTO_INCREMENT NOT NULL, 
+	date DATE NOT NULL, 
+	quantity INT NOT NULL, 
+	stock_code VARCHAR(24) NOT NULL, 
+	CONSTRAINT pk_stock1 PRIMARY KEY (stockID)
+);
+-- 1.	For each item, print the price of the first stock in the list.
+-- 2.	For each item, add it to the inventory if the price is less than 0.
+-- 3.	For each item, subtract it from the inventory if it is greater than the item price.
+-- End of your Program
+-- Please create a recursive program that uses the
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+-- INSERT INTO orders3 VALUES(2, '01/06/19', 3, 4, 0);
+-- INSERT INTO orders3 VALUES(3, '05/01/19', 10, 1, 2);
+UPDATE orders3 SET inventory = inventory + quantity WHERE stockID = stock.stockID AND price >= 0;
+UPDATE orders3 SET inventory = inventory - quantity WHERE quantity > stock.stockID;
+
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+-- Create and initialize a new table in order to hold a new batch of order information
+CREATE TABLE IF NOT EXISTS orders3 ( 
+	ordersID INT AUTO_INCREMENT NOT NULL, 
+	date DATE NOT NULL, 
+	quantity INT NOT NULL, 
+	customerID INT NOT NULL, 
+	storeID INT NOT NULL, 
+	CONSTRAINT pk_orders3 PRIMARY KEY (ordersID)
+);
+
+-- Write a program that inserts the 3rd stock into the table where price < 0 and stores 
+-- the new values in an appropriately modified table.
+
+SELECT date, price 
+FROM stock1
+WHERE price < 0
+AND storeID = 9;
+INSERT INTO orders3 (ordersID, date, quantity, customerID, storeID)
+SELECT generate_series(ordersID,10), '2010-09-06', quantity, customerID, storeID
+FROM (
+	SELECT 
+	generate_series(price,30), 
+	DATE('2010-09-06')
+) AS tempTable;
+
+
+-- Select all rows into 2 sheets, and 1 sheet with 1 row with the column names
+-- Sort the orders by date, ascending, then by order number.
+-- For each order, modify the price to be $ 1.50. Then save the updated value in a 
+-- sheet. Save the column names from the first sheet in a separate file.
+-- Then sort all 2 sheets according to the same criteria, and save them in a third 
+-- sheet, also save the column names in a separate file.
+-- Finally merge the two sheets according to the date and order IDs, to get 
+-- a sheet with date and order IDs on each row, a sheet with column names
+-- on each row, and a sorted sheet with both column names and orders. Print this sheet.
+-- Create a function named count_distinct_orders that counts the number of orders
+-- per date, storing the results in a result table, and returns a table with the date
+-- and the number as results. Make sure to use an inner join with an additional
+-- select statement that returns the column
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
+-- 1.   Print all the columns in the stocks table that are NOT null for the table.
+-- 2.   Add a new column that holds the price for the item on sale at a given price.
+-- 3.   Remove the column that holds the price for the item on sale at a given price.
+
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+REPLACE INTO orders3 (date, quantity,customerID,storeID) VALUES ('2019-01-02', 10,'2','1'),('2019-03-03', 5,'3','1'),('2019-04-03', 30,'1','2'),('2019-06-07',3,'1','2');	-- Insert values of the table
+SELECT itemID, item_code, item_desc, stock.quantity*item_price - stock.quantity*inventory.quantity AS minus
+FROM orders3 INNER JOIN inventory ON orders3.itemID = inventory.itemID INNER JOIN stock ON inventory.stockID = stock.stockID
+ORDER BY itemID; 
+
+ 
+USE sampleDB;
+SELECT date, itemID, item_code, item_desc, SUM(price*quantity) AS price, AVG(price) AS avg
+FROM orders3 INNER JOIN inventory ON orders3.itemID = inventory.itemID
+GROUP BY date,itemID,item_code,item_desc
+ORDER BY price DESC;
+
+REPLACE INTO orders3 (date, quantity,customerID,storeID) VALUES ('2019-01-02', 10,'2','1'),('2019-03-03', 5,'3','1'),('2019-04-03', 30,'1','2'),('2019-06-07',3,'1','2');	-- Insert values of the table
+  INSERT INTO orders3 (date, quantity,customerID,storeID) VALUES ('2019-04-09', 10,'2','1'),('2019-06-22', 5,'3','1');	-- Insert values of the table
+ 
+ -- 1.	For each item, print the price of the first stock in the list.
+ --
+[VERBOSE] ========== sample =========
+[VERBOSE] -- MySQL is an open-source relational database management system (RDBMS) that operates using Structured Query Language (SQL). It allows for the creation, modification, and extraction of data from relational databases and controls user access. Besides, MySQL interfaces with an operating system to implement a database in a computer's storage system, manage users, enable network access, and ensures database integrity and backups.
+
+MySQL, which can be used for free under the GNU General Public Licence, was initially owned by the Swedish company MySQL AB, now under Oracle Corporation, following Sun Microsystems' acquisition. Later, the original creator, Widenius, forked the MySQL project to establish MariaDB.
+
+MySQL is commonly used with other software to facilitate applications requiring relational database functionality. It's part of the LAMP web application software stack, and many database-driven web applications and popular websites use it, including Facebook and Twitter. 
+
+Written in C and C++, MySQL can work on a wide range of system platforms, including Linux, macOS, and Microsoft Windows. The MySQL server software and client libraries use dual-licensing distribution, i.e., GPL version 2 or a proprietary license. 
+
+Users can receive support from its official manual, IRC channels, forums, or via paid support from Oracle's MySQL Enterprise products. It has generally been well-received, noted for its high performance and strong support and documentation.
+/* Given no other table exists, please create a very short program which uses SQL features in a complex way. Be sure to use ENGINE=InnoDB. */
+USE sampleDB;
+SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
+-- 1.   Print all the columns in the stocks table that are NOT null for the table.
+-- 2.   Add a new column that holds the price for the item on sale at a given price.
+-- 3.   Remove the column that holds the price for the item on sale at a given price.
+-- Please create a mutated program that modifies the previous generation
+USE sampleDB;
+
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+SET sql_mode = 'STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION';
+CREATE TABLE items (
+  id INTEGER PRIMARY KEY,
+  quantity INTEGER,
+  name VARCHAR,
+  category VARCHAR,
+  description TEXT,
+  price FLOAT
+);
+INSERT INTO items (quantity, name, category, description, price)
+VALUES (12, 'Carrot', 'Fruits', 'Carrots are good', 24),
+       (30, 'Pit Stop Watch', 'Tools', 'A pit stop watch is a good way to track the progress of a project.', 32),
+       (2, 'Bird Fang', 'Animals', 'A bird fang is a good way to keep the cat away.', 42),
+       (19, 'Book', 'Science', 'A book is a good way to record the experience of someone.', 15),
+       (24, 'Iphone', 'Electronics', 'iOS takes up lesser space with cheaper', 36),
+       (22, 'Dog', 'Animals', 'A dog is a good way to eat something with some of it.', 15),
+       (27, 'Cat', 'Animals', 'A cat is a good way to look at your body.', 27),
+       (35, 'Car', 'Vehicles', 'A car is considered a vehicle when it is moving or used to move.', 16),
+       (3, 'Milk Pot', 'Drinks', 'A milk pot is a good way to save and recuperate.', 10),
+       (16, 'Toilet Paper', 'Paper', 'Toilet paper is a good way to save all the foods.', 11);
+LOCK TABLES items WRITE, items_categories WRITE;
+ALTER TABLE items ADD COLUMN cost_per_item FLOAT;
+UPDATE items SET cost_per_item = price * 0.95;
+LOCK TABLES items_categories UPDATE;
+UPDATE items_categories SET cost_per_item = (cost_per_item * quantity)/100;
+UNLOCK TABLES, items_categories;
+DROP TABLE items_categories;
+UNLOCK TABLES;
+CREATE TABLE items_categories (
+  id INTEGER NOT NULL PRIMARY KEY,
+  name VARCHAR,
+  PRIMARY KEY (id)
+);
+INSERT INTO items_categories (name) VALUE ('Clothing'),('Tools'), ('Electronics');
+ 
+USE sampleDB;
+LOCK TABLES items WRITE, items_categories WRITE;
+LOCK TABLES items_categories WRITE;
+INSERT INTO items (quantity, name, category, description, price)
+
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+-- 1.   Print all the columns in the stocks table that are NOT null for the table.
+-- 2.   Add a new column that holds the price for the item on sale at a given price.
+-- 3.   Remove the column that holds the price for the item on sale at a given price.
+-- Use an ENGINE=InnoDB query.
+SELECT * FROM stocks WHERE price IS NULL;
+INSERT INTO price (stock_id, item_id, price) VALUES (3812, 2, 100.00);
+USE sampleDB;
+-- Modify the program.
+SELECT name, age FROM employees;
+-- 1.   Print all the columns in the customers table.
+-- 2.   Print all the columns in the customers table that are 'Married'
+SELECT email, phone FROM customers WHERE married = 'Yes';
+SELECT first_name, last_name FROM customers ORDER BY id ASC;
+-- 1.   Print all the columns in the customers table.
+-- 2.   Print all the columns in the customers table that are 'Married' and have married for more than 30 years
+SELECT id, first_name, last_name, married FROM customers
+WHERE married = 'Yes' AND age > 30;
+-- 1.   Print all the columns in the customers table.
+-- 2.   Print all the columns in the customers table
+--   that are 'Married', 'Single', and have married for more than 30 years
+SELECT first_name, last_name, married FROM customers WHERE married = 'Yes' OR married = 'Single' AND age > 30;
+USE sampleDB;
+-- 3.   Remove the customer that has the id of 2312.
+DELETE FROM customers WHERE id = 2312;
+-- 1.   Print all the columns in the customers table
+--   that have 'Mali' as a first name or 'Married' for more than 10 years
+SELECT first_name, last_name, married FROM customers
+WHERE  first_name = 'Mali' OR married = 'Yes' AND age > 10;
+-- 1.   Print all the columns in the customers table that
+--   have not been purchased prior to 69
+SELECT id, first_name, last_name FROM (SELECT id, first_name, last_name FROM (SELECT id, first_name, last_name FROM customers) where last_name IS NULL and MONTH(birth_date) < 69 ) WHERE id NOT IN (SELECT id FROM orderDetail
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+SET sql_mode = 'FORCE_TRANS_TABLES=OFF';
+
+-- Drop the stocks table.
+DROP TABLE stocks;
+
+-- Create a table and insert some dummy data.
+CREATE TABLE stocks (
+    stockId int(11) NOT NULL,
+    name varchar(50) NOT NULL,
+    salePrice int(11) NOT NULL,
+    PRIMARY KEY (stockId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO stocks (name, salePrice)
+VALUES ("AAPL", 117.25),
+       ("BBBY", 96.45),
+       ("MSFT", 89.09),
+       ("GOOG", 106.10),
+       ("TSLA", 104.15);
+
+-- Select just the non-null columns from the table.
+SELECT *
+FROM stocks
+WHERE name IS NOT NULL;
+
+-- Select just the non-null columns from the table.
+SELECT name, salePrice
+FROM stocks
+WHERE salePrice IS NOT NULL;
+
+-- Select just the non-null columns from the table.
+SELECT stockId, salePrice
+FROM stocks
+WHERE salePrice IS NOT NULL;
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+
+CREATE TABLE IF NOT EXISTS testStock
+(
+ code         INT,
+ codeChar     CHAR(64),
+ name         VARCHAR(100),
+ price        VARCHAR(100),
+ priceChange  DOUBLE,
+ purchase     VARCHAR(10),
+ sales        INT,
+ salesLast    INT,
+ salesChange  INT,
+ PRIMARY KEY(code)
+);
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+
+CREATE TABLE stocks (
+`item` VARCHAR(100),
+`price` DOUBLE
+);
+SHOW TABLES FROM information_schema.TABLES;
+
+ALTER TABLE stocks ADD COLUMN price2 DOUBLE;
+
+ALTER TABLE stocks MODIFY price2 DOUBLE;
+
+ALTER TABLE stocks DROP COLUMN price;
+
+SELECT * FROM stocks;
+
+SELECT * FROM stocks WHERE price > 20000;
+
+ 
+
+# +
+CREATE TABLE employees (
+ID INT,
+firstname VARCHAR(50),
+lastname VARCHAR(50),
+salary DOUBLE,
+
+CONSTRAINT empNumberCheck CHECK (salary >= 250000)
+);
+
+SELECT * FROM employees;
+
+# -
+
+SELECT employees.ID, salaries.ID, firstname, lastname
+FROM salaries INNER JOIN employees ON salaries.ID = employees.ID
+WHERE employees.salary >= 0025000;
+
+SELECT employees.ID, salaries.ID, firstname, lastname
+FROM salaries INNER JOIN employees ON salaries.ID = employees.ID
+AND salaries.salary >= 0250000;
+
+
+
+[VERBOSE] ========== sample =========
+[VERBOSE] -- MySQL is an open-source relational database management system (RDBMS) that operates using Structured Query Language (SQL). It allows for the creation, modification, and extraction of data from relational databases and controls user access. Besides, MySQL interfaces with an operating system to implement a database in a computer's storage system, manage users, enable network access, and ensures database integrity and backups.
+
+MySQL, which can be used for free under the GNU General Public Licence, was initially owned by the Swedish company MySQL AB, now under Oracle Corporation, following Sun Microsystems' acquisition. Later, the original creator, Widenius, forked the MySQL project to establish MariaDB.
+
+MySQL is commonly used with other software to facilitate applications requiring relational database functionality. It's part of the LAMP web application software stack, and many database-driven web applications and popular websites use it, including Facebook and Twitter. 
+
+Written in C and C++, MySQL can work on a wide range of system platforms, including Linux, macOS, and Microsoft Windows. The MySQL server software and client libraries use dual-licensing distribution, i.e., GPL version 2 or a proprietary license. 
+
+Users can receive support from its official manual, IRC channels, forums, or via paid support from Oracle's MySQL Enterprise products. It has generally been well-received, noted for its high performance and strong support and documentation.
+/* Given no other table exists, please create a very short program which uses SQL features in a complex way. Be sure to use ENGINE=InnoDB. */
+USE sampleDB;
+CREATE TABLE IF NOT EXISTS testStock
+(
+ code         INT,
+ codeChar     CHAR(64),
+ name         VARCHAR(100),
+ price        VARCHAR(100),
+ priceChange  DOUBLE,
+ purchase     VARCHAR(10),
+ sales        INT,
+ salesLast    INT,
+ salesChange  INT,
+ PRIMARY KEY(code)
+);
+/* Given no other table exists, please create a very short program which uses SQL features in a complex way. Be sure to use ENGINE=InnoDB. */
+USE sampleDB;
+
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+SHOW TABLES;
+SHOW DATABASES;
+SHOW TABLES in sampleDB;
+SHOW CREATE TABLE testStock;
+-- http: 
+# http: 
+# http: 
+# http: 
+
+-- 2016-12-04
+
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+CREATE TABLE IF NOT EXISTS testEmployee
+(
+ id         INT,
+ firstname  VARCHAR(100),
+ lastname   VARCHAR(100),
+ city       VARCHAR(100),
+ PRIMARY KEY(id)
+);
+INSERT IGNORE INTO testStock(code, codeChar, name, price, priceChange, purchase) VALUES('stockId', 'STOCK!', 'Example Stock', '80.00', '1.20', 'C');
+INSERT INTO testStock(code, codeChar, name, price, priceChange, purchase) VALUES('stockId2', 'STOCK!', 'Example Stock', '80.00', '1.20', 'N');
+INSERT INTO testStock(code, codeChar, name, price, priceChange, purchase) VALUES('stockId3', 'STOCK!', 'Example Stock', '67.00', '0.70', 'O');
+INSERT INTO testStock(code, codeChar, name, price, priceChange, purchase) VALUES('stockId4', 'STOCK!', 'Example Stock', '85.00', '0.60', 'N');
+INSERT INTO testStock(code, codeChar, name, price, priceChange, purchase) VALUES('stockId5', 'STOCK!', 'Example Stock', '86.00', '0.40', 'O');
+INSERT INTO testStock(code, codeChar, name, price, priceChange, purchase) VALUES('stockId6', 'STOCK!', 'Example Stock', '80.00', '0.30', 'F');
+INSERT INTO testStock(code, codeChar, name, price, priceChange, purchase) VALUES('stockId7', 'STOCK!', 'Example Stock', '91.00', '1.20', 'I');
+INSERT INTO testStock(code, codeChar, name, price, priceChange, purchase) VALUES('stockId8', 'STOCK!', 'Example Stock', '82.00', '-1.20', 'G');
+CREATE TABLE IF NOT EXISTS testEmployees(id INT AUTO_INCREMENT, firstname VARCHAR(100), lastname VARCHAR(100), city VARCHAR(100), PRIMARY KEY(id, city)) ;
+INSERT INTO testEmployees(id, firstname, lastname, city) VALUES(0, 'First', 'Last', 'New York');
+INSERT INTO testEmployees(id, firstname, lastname, city) VALUES(1, 'First1', 'Last1', 'Puerto Rico');
+INSERT INTO testEmployees(id, firstname
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+INSERT INTO testStock (codeChar, code, name, price, priceChange, purchase, sales, salesChange)
+VALUES ('abc', 1, 'abc', '0.01', 1, 'today', 2, -1)
+;
+USE sampleDB;
+SELECT *
+FROM testStock
+;
+USE sampleDB;
+SELECT *
+FROM testStock
+ON (code = 1)
+;
+USE sampleDB;
+SELECT *
+FROM testStock
+WHERE code IS NULL
+;
+USE sampleDB;
+SELECT code, SUM(sales) AS totalSales, AVG(salesChange) AS avgPriceChange 
+FROM testStock
+GROUP BY code
+HAVING totalSales > 0
+ORDER BY totalSales DESC
+;
+USE sampleDB;
+SELECT code, codeChar, name, price, priceChange, purchase, COUNT(*) AS totalPurchase, COUNT(sale) AS totalSale
+FROM testStock s
+JOIN stockQuote s2 ON s.code = s2.code
+GROUP BY code, codeChar, name, price, priceChange, purchase
+HAVING AVG(priceChange) >= 0.01 AND SUM(sale) >= 10
+ORDER BY priceChange DESC
+;
+USE sampleDB;
+INSERT INTO stockQuote (code, quoteChange, time_date)
+VALUES ('ABC', 1, '5/8/92')
+, ('ABC', 1, '5/4/90')
+, ('ABC', 1, '5/7/92')
+, ('XYZ', 1, '5/4/90')
+, ('XYZ', 1, '5/7/92')
+, ('XYZ', 1, '5/8/92')
+, ('ABC', 1, '5/4/90')
+, ('ABC', 1, '5/6/90')
+, ('XYZ', 1, '5/4/90')
+, ('ABC', 1, '5/9/90')
+, ('ABC', 1, '5/4/90')
+, ('XYZ', 1, '5/4/90')
+, ('XYZ', 1, '5/4/90')
+, ('XYZ', 1, '5/4/90')
+, ('ABC', 1, '5/4/90')
+, ('ABC', 1, '5/4/90')
+, ('ABC', 1, '5/4/90')
+, ('XYZ', 1, '5/4/
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+<fim_middle>CREATE TABLE IF NOT EXISTS testStore
+(
+ code         INT AUTO_INCREMENT,
+ name         VARCHAR(100),
+ primary key (code)
+);
+--INSERT INTO testStock (codeString, codeChar, name, price, priceChange, purchase, sales, salesLast, salesChange) values ("2000-05-01", "161-1628", "Red", "4.85", "0.3", "3", "12", "6", "-1");
+--INSERT INTO testStock (codeString, codeChar, name, price, priceChange, purchase, sales, salesLast, salesChange) values ("2000-05-01", "1607", "Olive", "5.65", "0.3", "56", "72", "39", "-0");
+--INSERT INTO testStore (name) values ("Vogue");
+--INSERT INTO testStore (name) values ("Rim");
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+CREATE TABLE IF NOT EXISTS testStore
+(
+ code         INT,
+ codeChar     CHAR(64),
+ company      VARCHAR(100),
+ PRIMARY KEY(code)
+);
+
+[VERBOSE] ========== sample =========
+[VERBOSE] -- MySQL is an open-source relational database management system (RDBMS) that operates using Structured Query Language (SQL). It allows for the creation, modification, and extraction of data from relational databases and controls user access. Besides, MySQL interfaces with an operating system to implement a database in a computer's storage system, manage users, enable network access, and ensures database integrity and backups.
+
+MySQL, which can be used for free under the GNU General Public Licence, was initially owned by the Swedish company MySQL AB, now under Oracle Corporation, following Sun Microsystems' acquisition. Later, the original creator, Widenius, forked the MySQL project to establish MariaDB.
+
+MySQL is commonly used with other software to facilitate applications requiring relational database functionality. It's part of the LAMP web application software stack, and many database-driven web applications and popular websites use it, including Facebook and Twitter. 
+
+Written in C and C++, MySQL can work on a wide range of system platforms, including Linux, macOS, and Microsoft Windows. The MySQL server software and client libraries use dual-licensing distribution, i.e., GPL version 2 or a proprietary license. 
+
+Users can receive support from its official manual, IRC channels, forums, or via paid support from Oracle's MySQL Enterprise products. It has generally been well-received, noted for its high performance and strong support and documentation.
+/* Given no other table exists, please create a very short program which uses SQL features in a complex way. Be sure to use ENGINE=InnoDB. */
+USE sampleDB;
+CREATE TABLE IF NOT EXISTS testStore
+(
+ code         INT,
+ codeChar     CHAR(64),
+ company      VARCHAR(100),
+ PRIMARY KEY(code)
+);
+/* Given no other table exists, please create a very short program which uses SQL features in a complex way. Be sure to use ENGINE=InnoDB. */
+USE sampleDB;
+
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+DROP TABLE testStore; 
+
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+CREATE TABLE IF NOT EXISTS testSales
+(
+ code          INT,
+ name          VARCHAR(64),
+ location      CHAR(32),
+ quantity      INT,
+ PRIMARY KEY(code)
+);
+
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+RENAME TABLE `testStore` to `test`.
+DROP TABLE `testStore`.
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+INSERT INTO testStore(code, codeChar, company)
+VALUES (1, 'C', 'Coca-Cola'),
+(2, 'CO', 'Kettle'),
+(3, 'KET', 'Kettle'),
+(4, 'KETT', 'Kettle');
+-- Show the table that just created, from the sampleDB database.
+SHOW TABLES FROM sampleDB;
+-- How many records were inserted?
+SELECT COUNT(*) FROM teststore;
+-- What is the name of the primary key?
+SELECT KEY_NAME FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE
+WHERE table_schema = 'testDB' AND table_name = 'testStore' AND column_name = 'code';
+-- Show and explain the schema
+EXPLAIN (VERBOSE, COSTS OFF) CREATE TABLE test_table(
+  id           INT AUTO_INCREMENT,
+  typeId       INT,
+  PRIMARY KEY (id)
+);
+EXPLAIN (VERBOSE, COSTS OFF) SHOW CREATE TABLE test_table;
+-- You may be wondering why we don't have to use AUTO_INCREMENT when creating a primary key? AUTO_INCREMENT is a feature of the MySQL database server and has nothing to do with relational databases; what it is is simply a feature that allows a table to have a sequential auto-incrementing counter, not the primary key!
+-- Create a unique constraint on the database so that there is only one copy of each row inserted.
+INSERT INTO testStore(code, codeChar, company)
+VALUES (3, 'KET', 'Kettle'),
+(3, 'KETT', 'Kettle'),
+(3, 'KETE', 'Kettle');
+-- Show the contents of the database that we added
+SHOW TABLE STATUS FROM testStore;
+-- Give the column names as well as the data types of the columns
+SHOW COLUMNS FROM testStore;
+-- Sort the records by the "company" column
+SELECT * FROM teststore
+ORDER BY company ASC;
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+CREATE TABLE IF NOT EXISTS testCart
+(
+ product       INT,
+ qtyOnHand     INT,
+ amount        DECIMAL(18, 2),
+ date          DATE,
+ PRIMARY KEY(product)
+) ENGINE=InnoDB;
+
+[VERBOSE] ========== sample =========
+[VERBOSE] -- MySQL is an open-source relational database management system (RDBMS) that operates using Structured Query Language (SQL). It allows for the creation, modification, and extraction of data from relational databases and controls user access. Besides, MySQL interfaces with an operating system to implement a database in a computer's storage system, manage users, enable network access, and ensures database integrity and backups.
+
+MySQL, which can be used for free under the GNU General Public Licence, was initially owned by the Swedish company MySQL AB, now under Oracle Corporation, following Sun Microsystems' acquisition. Later, the original creator, Widenius, forked the MySQL project to establish MariaDB.
+
+MySQL is commonly used with other software to facilitate applications requiring relational database functionality. It's part of the LAMP web application software stack, and many database-driven web applications and popular websites use it, including Facebook and Twitter. 
+
+Written in C and C++, MySQL can work on a wide range of system platforms, including Linux, macOS, and Microsoft Windows. The MySQL server software and client libraries use dual-licensing distribution, i.e., GPL version 2 or a proprietary license. 
+
+Users can receive support from its official manual, IRC channels, forums, or via paid support from Oracle's MySQL Enterprise products. It has generally been well-received, noted for its high performance and strong support and documentation.
+/* Given no other table exists, please create a very short program which uses SQL features in a complex way. Be sure to use ENGINE=InnoDB. */
+USE sampleDB;
+CREATE TABLE IF NOT EXISTS testCart
+(
+ product       INT,
+ qtyOnHand     INT,
+ amount        DECIMAL(18, 2),
+ date          DATE,
+ PRIMARY KEY(product)
+) ENGINE=InnoDB;
+-- Please create a mutated program that modifies the previous generation
+USE sampleDB;
+
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+
+CREATE TABLE IF NOT EXISTS testCartMutated
+(
+ product       INT,
+ qtyOnHand     INT,
+ amount        DECIMAL(18, 2),
+ date          DATE,
+ PRIMARY KEY(product)
+) ENGINE=InnoDB;
+
+PREPARE stmt FROM 'UPDATE testCart SET amount=amount +? WHERE product=?';
+DEALLOCATE stmt;
+DESCRIBE product;
+DELETE FROM testCartMutated WHERE product=1000;
+UPDATE testCartMutated SET qtyOnHand=qtyOnHand - 10 WHERE product=1000;
+SELECT * FROM testCartMutated WHERE product=1000;
+SELECT COUNT(*) FROM (SELECT product,amount from testCart where qtyOnHand<>0 and amount>
+(SELECT AVG(amount) FROM testCart GROUP BY product));
+COMMIT;
+
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+CREATE TABLE IF NOT EXISTS testCart
+(
+ product       INT,
+ qtyOnHand     INT,
+ amount        DECIMAL(18, 2),
+ date          DATE
+);
+
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+INSERT INTO testCart VALUES(24, 10, 19.990, CURRENT_DATE); 
+ 
+SELECT * FROM testCart;
+-- Please create a mutated program that adds a new record to the table
+-- If you change the number on line 7 to 23, then you should get the following result.
+ 
+USE sampleDB;
+INSERT INTO testCart VALUES(24, 10, 19.990); 
+ 
+USE sampleDB;
+UPDATE testCart SET qtyOnHand = 15 WHERE product = 24; 
+ 
+USE sampleDB;
+DELETE FROM testCart WHERE product = 24; 
+ 
+USE sampleDB;
+DROP TABLE IF EXISTS testCart;
+INSERT INTO testCart VALUES(24, 10, 19.99) ON DUPLICATE KEY UPDATE qtyOnHand=qtyOnHand+15; 
+ 
+DROP TABLE testCart;
+
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+-- please make use of the new table and the new indexes
+CREATE TABLE IF NOT EXISTS testCart2
+(
+ product       INT,
+ qtyOnHand     INT,
+ amount        DECIMAL(18, 2),
+ date          DATE,
+ PRIMARY KEY(product)
+) ENGINE=InnoDB;
+-- please see it work
+-- select * from testCart where amount > 100 ORDER BY product;
+-- select * from testCart where date > '1993-10-01' ORDER BY product;
+-- select * from testCart2 where amount > 100 ORDER BY product;
+-- use MySQL to execute the sql queries on the previous table
+-- select * from testCart order by amount;
+-- select * from testCart order by product;
+-- use MySQL to execute the sql queries on the new table
+-- select * from testCart2 order by amount;
+-- select * from testCart2 order by product;
+-- now let's update qtyOnHand for all products > 100
+USE mysql;
+INSERT INTO testCart VALUES (412,49,2668.05,'1994-10-01');
+INSERT INTO testCart VALUES (524,35,2398.09,'2000-10-05');
+INSERT INTO testCart VALUES (617,8,99.82,'1992-10-30');
+INSERT INTO testCart VALUES (344,21,1465.60,'1990-10-01');
+INSERT INTO testCart VALUES (632,65,1154.66,'1995-10-30');
+INSERT INTO testCart VALUES (40,31,81.54,'1993-10-01');
+UPDATE testCart SET amount=amount+50 WHERE amount>100;
+USE sampleDB;
+DELIMITER $$
+-- the next two lines of sql are for inserting new records into
+-- the previously created table
+INSERT INTO testCart
+(product, qtyOnHand, amount, date)
+values(591,220,4255.22,'2011-10-09');
+INSERT INTO testCart
+(product, qtyOnHand, amount, date)
+values(132,69,1332.24,'1995-10-09');
+
+UPDATE testCart SET date=2000 WHERE product=250;
+
+-- please see the updates in the testCart table
+-- where product=591 ORDER BY date DESC;
+select product, amount from testCart where amount < 105
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+DELETE FROM testCart WHERE date > '2016-09-05';
+UPDATE testCart SET qtyOnHand = 22 WHERE DATE('2016-09-05') < date;
+UPDATE testCart SET amount = '135.99' WHERE date = '2016-09-05';
+SELECT date, qtyOnHand, amount FROM testCart;
+ ;
+ ;
+ ;
+ ;
+
+-- Dump completed on 2019-10-16 15:07:52
+
+[VERBOSE] ========== sample =========
+[VERBOSE] -- MySQL is an open-source relational database management system (RDBMS) that operates using Structured Query Language (SQL). It allows for the creation, modification, and extraction of data from relational databases and controls user access. Besides, MySQL interfaces with an operating system to implement a database in a computer's storage system, manage users, enable network access, and ensures database integrity and backups.
+
+MySQL, which can be used for free under the GNU General Public Licence, was initially owned by the Swedish company MySQL AB, now under Oracle Corporation, following Sun Microsystems' acquisition. Later, the original creator, Widenius, forked the MySQL project to establish MariaDB.
+
+MySQL is commonly used with other software to facilitate applications requiring relational database functionality. It's part of the LAMP web application software stack, and many database-driven web applications and popular websites use it, including Facebook and Twitter. 
+
+Written in C and C++, MySQL can work on a wide range of system platforms, including Linux, macOS, and Microsoft Windows. The MySQL server software and client libraries use dual-licensing distribution, i.e., GPL version 2 or a proprietary license. 
+
+Users can receive support from its official manual, IRC channels, forums, or via paid support from Oracle's MySQL Enterprise products. It has generally been well-received, noted for its high performance and strong support and documentation.
+/* Given no other table exists, please create a very short program which uses SQL features in a complex way. Be sure to use ENGINE=InnoDB. */
+USE sampleDB;
+DELETE FROM testCart WHERE date > '2016-09-05';
+UPDATE testCart SET qtyOnHand = 22 WHERE DATE('2016-09-05') < date;
+UPDATE testCart SET amount = '135.99' WHERE date = '2016-09-05';
+SELECT date, qtyOnHand, amount FROM testCart;
+ ;
+ ;
+ ;
+ ;
+-- Dump completed on 2019-10-16 15:07:52
+-- Please create a semantically equivalent program to the previous generation
+USE sampleDB;
+
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+
+
+create table test (
+    id int unsigned not null auto_increment primary key,
+    date date
+);
+
+insert into test (date) values ('2002-07-01');
+insert into test (date) values ('2015-06-02');
+insert into test (date) values ('2016-07-03');
+insert into test (date) values ('2016-09-05');
+insert into test (date) values ('2016-08-26');
+
+-- Dump completed on 2019-10-16 15:07:52
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+
+-- CREATE new table
+CREATE TABLE IF NOT EXISTS testTable2 (
+	id int,
+	age int,
+	name varchar(50),
+	CONSTRAINT testTable2_ibfk_1 FOREIGN KEY (id) REFERENCES testTable1 (id)
+);
+
+DROP TABLE IF EXISTS testTable1;
+
+-- CREATE new table
+CREATE TABLE IF NOT EXISTS testTable1(
+	id int(11) unsigneged NOT NULL auto_increment,
+	name VARCHAR(25),
+	address text,
+	city VARCHAR(25),
+	year VARCHAR(5),
+	primary key(id)
+)
+ENGINE=INNODB;
+
+-- INSERT records
+INSERT INTO testTable1
+(
+	id,
+	name,
+	address,
+	city,
+	year
+)
+VALUES
+	(
+		1001,
+		"Gaurav",
+		"New Delhi",
+		"Gamli",
+		"2000"	
+	),
+	(
+		1002,
+		"Paul",
+		"Gaurav",
+		"Gamli",
+		"2000"	
+	),
+	(
+		1003,
+		"Maria",
+		"Gaurav",
+		"Gamli",
+		"2000"
+	),
+	(
+		1004,
+		"Maria",
+		"Gaurav",
+		"Gamli",
+		"2000"
+	),
+	(
+		1004,
+		"Maria",
+		"Gaurav",
+		"Gamli",
+		"2000"
+	),
+	(
+		1004,
+		"Maria",
+		"Gaurav",
+		"Gamli",
+		"2000"
+	),
+	(
+		1004,
+		"Maria",
+		"Gaurav",
+		"Gamli",
+		"2000"
+	),
+	(
+		1004,
+		"Maria",
+		"Gaurav",
+		"Gamli",
+		"2000"
+	),
+	(
+		1005,
+		"Paul",
+		"New Delhi",
+		"Bhuj",
+		"2000"
+	);
+
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+CREATE TABLE `testCart` (
+  `date` varchar(10) DEFAULT NULL,
+  `qtyOnHand` int(11) DEFAULT NULL,
+  `amount` decimal(12) DEFAULT NULL,
+  PRIMARY KEY (`date`),
+  UNIQUE KEY `date_UNIQUE` (`date`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+--
+-- MySQL dump 10.13  Distrib 5.7.13, for Linux (x86_64)
+--
+-- Host: localhost    Database: mydata
+-- ------------------------------------------------------
+-- Server version	5.7.13-0ubuntu0.18.04.1
+
+ ;
+ ;
+ ;
+ ;
+ ;
+ ;
+ ;
+ ;
+ ;
+ ;
+
+--
+-- Table structure for table `products`
+--
+
+DROP TABLE IF EXISTS `products`;
+ ;
+ ;
+CREATE TABLE `products` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `sku` varchar(10) NOT NULL,
+  `price` varchar(10) DEFAULT NULL,
+  `unitPrice` varchar(10) DEFAULT NULL,
+  `available_qty` varchar(10) DEFAULT NULL,
+  `manufacturerName` varchar(10) DEFAULT NULL,
+  `manufacturerId` int(11) DEFAULT NULL,
+  `stockLevel` varchar(10) DEFAULT NULL,
+  `location` varchar(10) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+ ;
+
+--
+-- Dumping data for table `products
+[VERBOSE] ========== sample =========
+[VERBOSE] ========== sample =========
+[VERBOSE] USE sampleDB;
+SET AUTOCOMMIT=0;
+START TRANSACTION;
+
+-- Create a simple sequence to enable a fast INSERT
+INSERT INTO testCart (date, user_name, qtyOnHand, price) VALUES ('2016-09-06', 'james', 5, 5000);
+
+INSERT INTO testCart (date, user_name, qtyOnHand, price) VALUES ('2016-09-05', 'james', 15, 2500);
+
+INSERT INTO testCart (date, user_name, qtyOnHand, price) VALUES ('2016-09-05', 'james', 1, 500);
+
+COMMIT;
+SELECT * FROM testCart;
+
+-- Dumping data for table testCart
+-- Dumping structure for table testCart
+DROP TABLE IF EXISTS `testCart`;
+CREATE TABLE `testCart` (
+  `date` date NOT NULL,
+  `user_name` varchar(255) NOT NULL,
+  `qtyOnHand` integer NOT NULL,
+  `price` integer NOT NULL,
+  PRIMARY KEY (`date`,`user_name`)
+) ENGINE=InnoDB;
+
+INSERT INTO testCart VALUES('2016-09-05','michael','5',3000);
+
+INSERT INTO testCart VALUES('2016-09-05','michael','1',1000);
+
+INSERT INTO testCart VALUES('2016-09-05','michael','1',1);
+
+INSERT INTO testCart VALUES('2016-09-05','michael','5',3000);
+
+INSERT INTO testCart VALUES('2016-09-05','michael','1',1000);
+
+INSERT INTO testCart VALUES('2016-09-05','michael','1',1);
+
+INSERT INTO testCart VALUES('2016-09-05','michael','5',3000);
+
+INSERT INTO testCart VALUES('2016-09-05','michael','1',1000);
+
+INSERT INTO testCart VALUES('2016-09-05','michael','1',1);
+
+INSERT INTO testCart VALUES('2016-09-06','michael','1',1000);
+
+INSERT INTO
+[VERBOSE] ========== sample =========

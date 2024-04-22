@@ -1,0 +1,6 @@
+USE sampleDB;
+DROP INDEX IF EXISTS `contentIndex`;
+ALTER TABLE posts MODIFY content VARCHAR(100);
+-- END of example02_07.sql
+
+-- end of file

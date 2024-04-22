@@ -1,0 +1,17 @@
+USE sampleDB;
+
+USE sampleDb;
+CREATE TABLE test(col1 INT NOT NULL, col2 TEXT);
+ 
+
+SELECT * FROM test;
+ 
+```
+
+## Further reading:
+
+* [MySQL Reference Documentation](http: 
+
+## License
+
+This book is covered under the Apache License 2.0. See the `LICENSE` file in the source repository.

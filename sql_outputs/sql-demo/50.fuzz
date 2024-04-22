@@ -1,0 +1,5 @@
+USE sampleDB;
+-- INSERT new blog content
+INSERT INTO posts (post_name, content) VALUES ('First post', 'Content');
+
+COMMIT;

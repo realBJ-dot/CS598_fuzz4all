@@ -1,0 +1,33 @@
+USE sampleDB;
+CREATE TABLE IF NOT EXISTS employee ( 
+       empID INT AUTO_INCREMENT NOT NULL, 
+       firstname VARCHAR(40) NOT NULL, 
+	   lastname VARCHAR(40) NOT NULL, 
+	   salary DECIMAL(30, 20) NOT NULL, 
+	   managerID INT NOT NULL, 
+	   CONSTRAINT pk_employee PRIMARY KEY(empID) 
+ );
+UPDATE employee SET managerID=5;
+-- END: Query 8 
+CREATE TABLE IF NOT EXISTS employee2 ( 
+       empID INT AUTO_INCREMENT NOT NULL, 
+       firstname VARCHAR(40) NOT NULL, 
+	   lastname VARCHAR(40) NOT NULL, 
+	   CONSTRAINT pk_employee PRIMARY KEY(empID) 
+ );
+CREATE TABLE order_detail2 ( 
+	order_id INT NOT NULL, 
+	productID INT NOT NULL, 
+	product_name varchar(200) NOT NULL, 
+	product_desc varchar(200) NULL, 
+	unit_price decimal(12, 8) NOT NULL, 
+	quantity INT NOT NULL, 
+	CONSTRAINT pk_order2 PRIMARY KEY (order_id)
+);
+INSERT INTO employee VALUES
+	-- BEGIN: Query 9
+(7), (8), (9), (10), (11), (12),
+-- END: Query 9
+/* BEGIN: Query 10
+ALTER TABLE employee
+ADD CONSTRAINT

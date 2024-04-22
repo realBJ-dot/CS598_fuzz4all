@@ -1,0 +1,2 @@
+USE sampleDB;
+DROP TABLE testStore; 

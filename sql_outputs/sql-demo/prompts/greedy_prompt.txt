@@ -1,0 +1,7 @@
+-- MySQL is an open-source relational database management system (RDBMS) that organizes data into tables where data may be related to each other. It uses Structured Query Language (SQL) for creating, modifying, and extracting data from the database. MySQL is free and open-source software under the GNU General Public License, but also available under proprietary licenses. It was originally owned by the Swedish company MySQL AB, then acquired by Sun Microsystems, and now owned by Oracle Corporation. 
+
+MySQL is often used with other programs to implement applications that need relational database capability. It is a component of the LAMP web application software stack, which includes Linux, Apache, MySQL, Perl/PHP/Python. It is used by many database-driven web applications and popular websites like Facebook, Twitter, and YouTube.
+
+MySQL is written in C and C++, and works on many system platforms. It uses dual-licensing distribution, offered under GPL version 2 or a proprietary license. Support can be obtained from the official manual, IRC channels, forums, and Oracle's paid support via its MySQL Enterprise products. It has received positive reviews for its performance, developer interfaces, and documentation.
+/* Given no other table exists, please create a very short program which uses SQL features in a complex way. Be sure to use ENGINE=InnoDB. */
+USE sampleDB;

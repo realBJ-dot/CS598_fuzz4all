@@ -1,0 +1,9 @@
+USE sampleDB;
+
+create database sampleDB;
+use sampleDB;
+delete FROM employee;
+delet FROM job;
+DELETE FROM salary;
+use employee;
+delete FROM employee;

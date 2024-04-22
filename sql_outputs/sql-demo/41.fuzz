@@ -1,0 +1,17 @@
+USE sampleDB;
+ 
+CALL populateComments();
+ 
+INSERT INTO comments (poster, content) VALUES ("John", "It's now over night since I've been reading about this post. Just look at how old it is.");
+ 
+INSERT INTO comments (poster, content) VALUES ("William", "It's a long way from ready for action. I need to finish building the application. Thank you");
+INSERT INTO comments (poster, content) VALUES ("Andy", "Just a little bit. Not as bad");
+UPDATE comments SET content = "It is going to rain" WHERE post = 13;
+SELECT poster, sum(rating)
+  FROM comments, (SELECT COUNT(*) FROM comments WHERE (comment = "I am so excited" OR comment = "I am so nice") AND (rating < 6))
+  WHERE comments.post = comments.id
+  AND comments.post = SELECT id FROM comments ORDER BY (rating DESC);
+SELECT poster, count(comment)
+  FROM comments, (SELECT COUNT(*) FROM comments WHERE (comment = "It is going to rain"))
+  WHERE comments.post = comments.id
+  AND comments.post = SELECT id FROM comments ORDER BY count DESC;

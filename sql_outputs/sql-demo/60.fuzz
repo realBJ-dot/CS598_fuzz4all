@@ -1,0 +1,4 @@
+USE sampleDB;
+
+\i 07aSampleQ2.sql
+ 

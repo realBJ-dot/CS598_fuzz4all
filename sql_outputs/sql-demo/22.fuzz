@@ -1,0 +1,12 @@
+USE sampleDB;
+CREATE TABLE IF NOT EXISTS comments_old(
+
+-- create the comments table
+  author TEXT,
+  content TEXT,
+  post INT,
+  PRIMARY KEY(author,post)
+);
+INSERT INTO comments_old(author, content, post) VALUES("William", "Hello World!", 5);
+USE comments_old;
+SELECT * FROM comments;

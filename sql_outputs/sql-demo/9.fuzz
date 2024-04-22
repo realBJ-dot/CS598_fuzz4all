@@ -1,0 +1,11 @@
+USE sampleDB;
+SELECT "select", `firstname`, "from" users;
+
+CREATE TABLE users (
+  email char(255) PRIMARY KEY NOT NULL,
+  firstname varchar(100) NOT NULL,
+  lastname varchar(100) NOT NULL
+);
+
+Select * From users;
+

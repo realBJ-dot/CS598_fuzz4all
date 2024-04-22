@@ -1,0 +1,45 @@
+USE sampleDB;
+-- please make use of the new table and the new indexes
+CREATE TABLE IF NOT EXISTS testCart2
+(
+ product       INT,
+ qtyOnHand     INT,
+ amount        DECIMAL(18, 2),
+ date          DATE,
+ PRIMARY KEY(product)
+) ENGINE=InnoDB;
+-- please see it work
+-- select * from testCart where amount > 100 ORDER BY product;
+-- select * from testCart where date > '1993-10-01' ORDER BY product;
+-- select * from testCart2 where amount > 100 ORDER BY product;
+-- use MySQL to execute the sql queries on the previous table
+-- select * from testCart order by amount;
+-- select * from testCart order by product;
+-- use MySQL to execute the sql queries on the new table
+-- select * from testCart2 order by amount;
+-- select * from testCart2 order by product;
+-- now let's update qtyOnHand for all products > 100
+USE mysql;
+INSERT INTO testCart VALUES (412,49,2668.05,'1994-10-01');
+INSERT INTO testCart VALUES (524,35,2398.09,'2000-10-05');
+INSERT INTO testCart VALUES (617,8,99.82,'1992-10-30');
+INSERT INTO testCart VALUES (344,21,1465.60,'1990-10-01');
+INSERT INTO testCart VALUES (632,65,1154.66,'1995-10-30');
+INSERT INTO testCart VALUES (40,31,81.54,'1993-10-01');
+UPDATE testCart SET amount=amount+50 WHERE amount>100;
+USE sampleDB;
+DELIMITER $$
+-- the next two lines of sql are for inserting new records into
+-- the previously created table
+INSERT INTO testCart
+(product, qtyOnHand, amount, date)
+values(591,220,4255.22,'2011-10-09');
+INSERT INTO testCart
+(product, qtyOnHand, amount, date)
+values(132,69,1332.24,'1995-10-09');
+
+UPDATE testCart SET date=2000 WHERE product=250;
+
+-- please see the updates in the testCart table
+-- where product=591 ORDER BY date DESC;
+select product, amount from testCart where amount < 105

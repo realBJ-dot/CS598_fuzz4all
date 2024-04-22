@@ -1,0 +1,4 @@
+USE sampleDB;
+UPDATE comments SET content = "How is it going now" WHERE post = 5;
+UPDATE comments SET content = "I am so excited" WHERE post = 2;
+SHOW TABLES;

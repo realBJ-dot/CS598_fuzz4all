@@ -1,0 +1,18 @@
+USE sampleDB;
+REPLACE INTO orders3 (date, quantity,customerID,storeID) VALUES ('2019-01-02', 10,'2','1'),('2019-03-03', 5,'3','1'),('2019-04-03', 30,'1','2'),('2019-06-07',3,'1','2');	-- Insert values of the table
+SELECT itemID, item_code, item_desc, stock.quantity*item_price - stock.quantity*inventory.quantity AS minus
+FROM orders3 INNER JOIN inventory ON orders3.itemID = inventory.itemID INNER JOIN stock ON inventory.stockID = stock.stockID
+ORDER BY itemID; 
+
+ 
+USE sampleDB;
+SELECT date, itemID, item_code, item_desc, SUM(price*quantity) AS price, AVG(price) AS avg
+FROM orders3 INNER JOIN inventory ON orders3.itemID = inventory.itemID
+GROUP BY date,itemID,item_code,item_desc
+ORDER BY price DESC;
+
+REPLACE INTO orders3 (date, quantity,customerID,storeID) VALUES ('2019-01-02', 10,'2','1'),('2019-03-03', 5,'3','1'),('2019-04-03', 30,'1','2'),('2019-06-07',3,'1','2');	-- Insert values of the table
+  INSERT INTO orders3 (date, quantity,customerID,storeID) VALUES ('2019-04-09', 10,'2','1'),('2019-06-22', 5,'3','1');	-- Insert values of the table
+ 
+ -- 1.	For each item, print the price of the first stock in the list.
+ --

@@ -1,0 +1,42 @@
+USE sampleDB;
+--
+-- MySQL dump 10.13  Distrib 5.7.13, for Linux (x86_64)
+--
+-- Host: localhost    Database: mydata
+-- ------------------------------------------------------
+-- Server version	5.7.13-0ubuntu0.18.04.1
+
+ ;
+ ;
+ ;
+ ;
+ ;
+ ;
+ ;
+ ;
+ ;
+ ;
+
+--
+-- Table structure for table `products`
+--
+
+DROP TABLE IF EXISTS `products`;
+ ;
+ ;
+CREATE TABLE `products` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `sku` varchar(10) NOT NULL,
+  `price` varchar(10) DEFAULT NULL,
+  `unitPrice` varchar(10) DEFAULT NULL,
+  `available_qty` varchar(10) DEFAULT NULL,
+  `manufacturerName` varchar(10) DEFAULT NULL,
+  `manufacturerId` int(11) DEFAULT NULL,
+  `stockLevel` varchar(10) DEFAULT NULL,
+  `location` varchar(10) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+ ;
+
+--
+-- Dumping data for table `products

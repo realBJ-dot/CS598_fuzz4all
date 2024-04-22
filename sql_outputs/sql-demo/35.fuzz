@@ -1,0 +1,12 @@
+USE sampleDB;
+CREATE TABLE blog_views(
+  id tinyint(4) NOT NULL AUTO_INCREMENT;
+  date_format date NOT NULL DEFAULT CURRENT_DATE; 
+  comment_count int DEFAULT "0";
+  PRIMARY KEY (id)
+) ENGINE=MyISAM;
+BEGIN;
+DELETE FROM comments WHERE post = 2;
+INSERT INTO comments(post, content) VALUES (2, "Hello world!");
+COMMIT;
+SHOW TABLES;

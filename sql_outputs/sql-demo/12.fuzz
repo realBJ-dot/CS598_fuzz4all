@@ -1,0 +1,61 @@
+USE sampleDB;
+CREATE TABLE `comments` (
+  `post_id` bigint(20) NOT NULL,
+  `comment_author` varchar(100) NOT NULL,
+  `comment_content` text NOT NULL,
+  `comment_date` timestamp NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`post_id`, `comment_id`),
+  UNIQUE KEY `UNIQ_C204A294A76ED395` (`comment_author`)
+) ENGINE=InnoDB;
+
+-- Use the following command to list all tables
+show tables;
+
+-- Use the following command to list all views
+show views;
+
+-- Use the following command to list all the columns
+show columns from posts;
+SHOW COLUMNS FROM `posts`;
+
+-- Use the following command to list all the columns in a database table
+SHOW COLUMNS FROM `posts`;
+
+-- Use the following command to list all the columns whose data type is TEXT
+SHOW COLUMNS WHERE `TYPE` = 'TEXT';
+
+-- Use the following command to list all the columns whose data type is LONGTEXT
+SHOW COLUMNS WHERE `TYPE` = 'LONGTEXT';
+
+-- Use the following command to list all the columns whose data type is MEDIUMTEXT
+SHOW COLUMNS WHERE `TYPE` = 'MEDIUMTEXT';
+
+-- Use the following command to list all the columns whose data type is LONGTEXT
+SHOW COLUMNS WHERE `TYPE` = 'TEXT';
+
+-- Use the following command to list all table constraints
+show tables like 'blog_%';
+
+-- Use the following SQL command to list the constraints on a table
+ALTER TABLE `user`
+    ADD CONSTRAINT `user_username_uniq` UNIQUE KEY `username_uniq` (`username`);
+
+-- Use the following SQL command to drop view 'user_view' and its constraints
+DROP VIEW user_view;
+
+SHOW CREATE TABLE posts; 
+SHOW CREATE TABLE user_view_table; 
+  `id` BIGINT(20) NOT NULL AUTO_INCREMENT,
+  `author` VARCHAR(100) NOT NULL,
+  `subject` VARCHAR(100) NOT NULL,
+  `content` TEXT NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE = INNODB;
+DROP TABLE posts;
+-- USE sampleDB;
+-- DROP TABLE posts;
+
+ALTER TABLE `posts` CHANGE COLUMN `content` `content` LONGTEXT;
+ALTER TABLE `comments` CHANGE COLUMN `comment_content` `comment_content` LONGTEXT;
+--ALTER TABLE `comments` CHANGE COLUMN `comment_date` `comment_date` TIMESTAMP NULL DEFAULT NULL AFTER `post_id`;
+

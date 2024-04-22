@@ -1,0 +1,29 @@
+USE sampleDB;
+UPDATE users SET username WHERE admin = TRUE;
+-- INSERT, UPDATE, and DELETE
+-- Create a program that:
+-- 1. Finds all users (students and teachers) who have a username beginning
+--    with "a".
+-- 2. Finds all users who have a username in the format aaa (aaa
+--    represents a string of at least 2 letters).
+-- 3. Finds all users who have a username of "abc".
+-- 4. Finds all users who have at least one non-letter username
+-- 5. Finds all users who have a username ending in either ".com" or ".net".
+--
+-- Try to complete the task without specifying which queries are important and
+-- which can be ignored. Remember that it's very important that you
+-- be able to explain your results to your cohort.
+--
+-- If a query does not produce the results you expect, try to explain the
+-- cause and fix the problem immediately
+--
+-- END OF Q3
+SELECT users.id, users.username, users.email,
+CASE WHEN usertype = "student" THEN "Student" ELSE "Teacher" END AS usertype
+FROM users
+WHERE users.username like "%a%"
+OR users.username like "aaa%"
+OR users.username = "abc"
+UNION
+SELECT users.id, users.username, users.email,
+CASE WHEN usertype = "student" THEN "Student" ELSE "Teacher

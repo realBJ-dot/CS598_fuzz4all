@@ -1,0 +1,56 @@
+USE sampleDB;
+CREATE TABLE IF NOT EXISTS `posts` (
+  `id` INT(2) NOT NULL AUTO_INCREMENT,
+  `content` VARCHAR(128) NOT NULL,
+  PRIMARY KEY(`id`) 
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+INSERT INTO `posts` VALUES(2,'This is my first post');
+SELECT * FROM `posts`;
+DESC posts;
+CREATE TABLE test (
+  id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  name VARCHAR(100) NOT NULL
+)ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+CREATE TABLE IF NOT EXISTS `comments` (
+  `id` int(4) NOT NULL AUTO_INCREMENT,
+  `comment` text NOT NULL,
+  `post` int(5) NOT NULL,
+  PRIMARY KEY(`id`) 
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+INSERT INTO `comments` VALUES(1,'I have a great experience with MySQL.',2);
+SELECT * FROM `comments`;
+UPDATE comments SET comment = 'Holy smokes!' WHERE post = '2';
+UPDATE comments SET comment = 'This is better for me.' WHERE post = '1';
+SELECT * FROM `comments`;
+DESC comments;
+SELECT COUNT(*) FROM `posts`;
+SHOW INDEXFROM post, comment;
+SHOW CREATE TABLE COMMENT;
+CREATE TABLE IF NOT EXISTS `comments2` (
+  `id` int(4) NOT NULL AUTO_INCREMENT,
+  `comment` text NOT NULL,
+  `post` int(5) NOT NULL,
+  PRIMARY KEY(`id`) 
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+SHOW INDEXFROM post, comment;
+SELECT post, `comment` FROM comments, comments2;
+-- 2nd solution from https: 
+SELECT id, comment, `post` FROM comments, comments2 
+	WHERE comments.post = comments2.post;
+-- 3rd solution from http: 
+SELECT comments2.id, comments.comment, comments.post FROM comments, comments2 
+	WHERE comments.post = comments2.post AND comments.post = 2;
+-- 4th solution from https: 
+SELECT * FROM comments ORDER BY  comment ASC 
+	, post;
+WITH post_comments AS (
+	SELECT comment, id, post
+	FROM comments ORDER BY  comment ASC
+	, post
+)
+SELECT comments.comment
+	, (CASE 
+		WHEN comments.post = post.id THEN post.content 
+		ELSE comments2.id END) AS comment_id
+	, (CASE 
+		WHEN comments.post = post.

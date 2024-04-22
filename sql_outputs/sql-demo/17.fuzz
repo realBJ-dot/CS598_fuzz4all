@@ -1,0 +1,17 @@
+USE sampleDB;
+UPDATE `comments` SET `content`='Something new' WHERE `author`='Sacha' AND `post`=10;
+-- Make the previous modification valid again
+UPDATE `comments` SET `content`='Something better' WHERE `content`='Something else' AND `author`='Sacha' AND `post`=10;
+-- Drop an index using the MySQL command line tool
+DROP INDEX ix_author_post;
+-- Get the status of a particular database
+SHOW DATABASES;
+-- Show which tables exist in sampleDB's `comments` table
+SHOW TABLES FROM sampleDB.comments;
+-- Show the columns under table `comments` in sampleDB
+SHOW COLUMNS FROM `sampleDB`.comments;
+-- Delete a row or rows from the `comments` table with an index on author and post
+DELETE FROM `comments` WHERE (`author` = 'Sacha' OR `post` = 10);
+SHOW TABLE STATUS LIKE 'comments';
+-- Show the indexes on the `comments` table
+SHOW INDEX FROM `comments`;

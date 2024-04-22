@@ -1,0 +1,53 @@
+USE sampleDB;
+INSERT INTO testStock (codeChar, code, name, price, priceChange, purchase, sales, salesChange)
+VALUES ('abc', 1, 'abc', '0.01', 1, 'today', 2, -1)
+;
+USE sampleDB;
+SELECT *
+FROM testStock
+;
+USE sampleDB;
+SELECT *
+FROM testStock
+ON (code = 1)
+;
+USE sampleDB;
+SELECT *
+FROM testStock
+WHERE code IS NULL
+;
+USE sampleDB;
+SELECT code, SUM(sales) AS totalSales, AVG(salesChange) AS avgPriceChange 
+FROM testStock
+GROUP BY code
+HAVING totalSales > 0
+ORDER BY totalSales DESC
+;
+USE sampleDB;
+SELECT code, codeChar, name, price, priceChange, purchase, COUNT(*) AS totalPurchase, COUNT(sale) AS totalSale
+FROM testStock s
+JOIN stockQuote s2 ON s.code = s2.code
+GROUP BY code, codeChar, name, price, priceChange, purchase
+HAVING AVG(priceChange) >= 0.01 AND SUM(sale) >= 10
+ORDER BY priceChange DESC
+;
+USE sampleDB;
+INSERT INTO stockQuote (code, quoteChange, time_date)
+VALUES ('ABC', 1, '5/8/92')
+, ('ABC', 1, '5/4/90')
+, ('ABC', 1, '5/7/92')
+, ('XYZ', 1, '5/4/90')
+, ('XYZ', 1, '5/7/92')
+, ('XYZ', 1, '5/8/92')
+, ('ABC', 1, '5/4/90')
+, ('ABC', 1, '5/6/90')
+, ('XYZ', 1, '5/4/90')
+, ('ABC', 1, '5/9/90')
+, ('ABC', 1, '5/4/90')
+, ('XYZ', 1, '5/4/90')
+, ('XYZ', 1, '5/4/90')
+, ('XYZ', 1, '5/4/90')
+, ('ABC', 1, '5/4/90')
+, ('ABC', 1, '5/4/90')
+, ('ABC', 1, '5/4/90')
+, ('XYZ', 1, '5/4/

@@ -1,0 +1,27 @@
+USE sampleDB;
+
+-- You can define as much of the above table structure as you'd like here, or leave off.
+-- However, you need to make sure:
+-- - the fields inside this table (column names and types) match up in every row of the data (rows = rows in this table)
+-- - the fields are ordered in some way
+-- - there are no duplicate entries
+/* 
+You'll want to look at your database and your table definitions carefully in order to design a good table structure. Some common problems are:
+- your data can be mixed with others
+- your database might not support indices which are usually required for faster searching
+- the fields you are trying to represent are all of same type, and will probably be more efficient to store as an int
+*/
+CREATE TABLE posts (
+  pid int(11) NOT NULL AUTO_INCREMENT,
+  content int(11) DEFAULT NULL,
+  PRIMARY KEY (pid)
+);
+
+
+
+--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*/
+-- BEGINNING OF Q3
+--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*/
+
+CREATE TABLE comments (
+  pid int

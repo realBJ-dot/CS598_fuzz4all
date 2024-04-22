@@ -1,0 +1,9 @@
+USE sampleDB;
+UPDATE posts SET content = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut mi in enim scelerisque dapibus. Aenean dapibus nisi at turpis accumsan placerat. Donec id nulla lorem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut mi in enim scelerisque dapibus. Aenean dapibus nisi at turpis accumsan placerat. Donec id nulla lorem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.' WHERE content = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut mi in enim scelerisque dapibus. Aenean dapibus nisi at turpis accumsan placerat. Donec id nulla lorem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.';
+-- If this statement fails, you are probably missing the required table.
+-- Please run the SQL specified in the MySQL Workbench wizard above,
+-- then run this program in the command line.
+USE sampleDB;
+SELECT content FROM posts;
+-- END OF Q2-- MySQL Workbench SQL --*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*/
+-- END OF Q2

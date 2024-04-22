@@ -1,0 +1,2 @@
+USE sampleDB;
+SELECT category, COUNT(*) FROM posts GROUP BY category;--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*/

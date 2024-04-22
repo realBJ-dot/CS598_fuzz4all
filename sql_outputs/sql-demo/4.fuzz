@@ -1,0 +1,16 @@
+USE sampleDB;
+
+CREATE TABLE sampleTable (id int(11), name varchar(100), email char(50), phone char(10), score float, address text);
+INSERT INTO sampleTable (id, name, email, phone, score, address)
+VALUES (1, '<NAME>', '<EMAIL>', '0618559230', 9.80,'seoul, korea'),
+        (2, '<NAME>', '<EMAIL>', '0629799019', 7.15, 'nairobi, Kenya'),
+        (3, '<NAME>', '<EMAIL>', '0610151711', 9.00, 'paris, France');
+
+ 
+
+ 
+DROP TABLE IF EXISTS mysql2test;
+CREATE TABLE mysql2test (value varchar(5));
+SELECT * INTO mysql2test FROM mysql2test2;
+
+DROP TABLE IF EXISTS mysql2test2;

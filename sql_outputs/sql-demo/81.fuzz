@@ -1,0 +1,21 @@
+USE sampleDB;
+CREATE TABLE IF NOT EXISTS testEmployee
+(
+ id         INT,
+ firstname  VARCHAR(100),
+ lastname   VARCHAR(100),
+ city       VARCHAR(100),
+ PRIMARY KEY(id)
+);
+INSERT IGNORE INTO testStock(code, codeChar, name, price, priceChange, purchase) VALUES('stockId', 'STOCK!', 'Example Stock', '80.00', '1.20', 'C');
+INSERT INTO testStock(code, codeChar, name, price, priceChange, purchase) VALUES('stockId2', 'STOCK!', 'Example Stock', '80.00', '1.20', 'N');
+INSERT INTO testStock(code, codeChar, name, price, priceChange, purchase) VALUES('stockId3', 'STOCK!', 'Example Stock', '67.00', '0.70', 'O');
+INSERT INTO testStock(code, codeChar, name, price, priceChange, purchase) VALUES('stockId4', 'STOCK!', 'Example Stock', '85.00', '0.60', 'N');
+INSERT INTO testStock(code, codeChar, name, price, priceChange, purchase) VALUES('stockId5', 'STOCK!', 'Example Stock', '86.00', '0.40', 'O');
+INSERT INTO testStock(code, codeChar, name, price, priceChange, purchase) VALUES('stockId6', 'STOCK!', 'Example Stock', '80.00', '0.30', 'F');
+INSERT INTO testStock(code, codeChar, name, price, priceChange, purchase) VALUES('stockId7', 'STOCK!', 'Example Stock', '91.00', '1.20', 'I');
+INSERT INTO testStock(code, codeChar, name, price, priceChange, purchase) VALUES('stockId8', 'STOCK!', 'Example Stock', '82.00', '-1.20', 'G');
+CREATE TABLE IF NOT EXISTS testEmployees(id INT AUTO_INCREMENT, firstname VARCHAR(100), lastname VARCHAR(100), city VARCHAR(100), PRIMARY KEY(id, city)) ;
+INSERT INTO testEmployees(id, firstname, lastname, city) VALUES(0, 'First', 'Last', 'New York');
+INSERT INTO testEmployees(id, firstname, lastname, city) VALUES(1, 'First1', 'Last1', 'Puerto Rico');
+INSERT INTO testEmployees(id, firstname

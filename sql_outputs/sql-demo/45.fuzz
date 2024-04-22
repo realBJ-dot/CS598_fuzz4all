@@ -1,0 +1,4 @@
+USE sampleDB;
+SHOW FIELDS FROM comments;
+ 
+```

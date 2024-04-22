@@ -1,0 +1,56 @@
+USE sampleDB;
+-- INSERT several comment objects
+INSERT INTO `comments` (`author`, `post`, `content`) VALUES ('author 1', 3, 'This is the first comment.' );
+INSERT INTO `comments` (`author`, `post`) VALUES ('author 2', 4);
+INSERT INTO `comments` (`author`, `post`) VALUES ('author 3', 4);
+INSERT INTO `comments` (`author`, `post`) VALUES ('author 4', 15);
+INSERT INTO `comments` (`author`, `post`) VALUES ('author 5', 6);
+INSERT INTO `comments` (`author`, `post`) VALUES ('author 6', 7);
+-- Use a WHERE condition to limit the output.
+SELECT id, author, post, content
+FROM comments
+WHERE post=7;
+ 
+UPDATE comments
+SET content = 'This is a modified comment'
+WHERE author = 'author 3';
+-- In a similar way, remove unwanted rows from the database.
+DELETE FROM comments
+WHERE author!= 'author 4' AND author!= 'author 6';
+ 
+ 
+-- Select users from the table
+SELECT *
+FROM userTable;
+-- Please modify a simple INSERT statement.
+INSERT INTO userTable (firstname, lastname, email)
+VALUES ('Sally', 'Smith', '<EMAIL>');
+INSERT INTO userTable (lastname, email)
+VALUES ('Jones', '<EMAIL>');
+-- Please modify a SELECT query to sort by email.
+SELECT *
+FROM userTable ORDER BY email;
+-- Please modify a single row in the database.
+UPDATE userTable
+SET email='<EMAIL>'
+WHERE firstname ='sally';
+-- Finally, delete some rows.
+SELECT *
+FROM userTable
+WHERE lastname = 'Smith';
+DELETE FROM userTable
+WHERE lastname = 'Smith';
+-- If a non-unique index is on two or more columns, please also use unique index.
+-- Please modify a table without a unique index.
+SELECT *
+FROM userTable ORDER BY email;
+-- Please modify a table with a unique index on email.
+ 
+UPDATE userTable
+SET email='<EMAIL>' WHERE firstname ='sally';
+
+UPDATE userTable
+SET email='<EMAIL>' WHERE firstname ='sally';
+
+UPDATE userTable
+SET email='<EMAIL>' WHERE first

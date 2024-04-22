@@ -1,0 +1,5 @@
+USE sampleDB;
+UPDATE comments SET content = content + 1 WHERE post = 11;
+SELECT * FROM comments;
+-- Please run the mutated program and check the database to see if your code updated the result
+ 

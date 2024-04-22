@@ -1,0 +1,5 @@
+USE sampleDB;
+SHOW TABLES;
+ 
+-- Drop the table.
+DROP TABLE IF EXISTS users;

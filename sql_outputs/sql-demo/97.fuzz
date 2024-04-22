@@ -1,0 +1,8 @@
+USE sampleDB;
+CREATE TABLE `testCart` (
+  `date` varchar(10) DEFAULT NULL,
+  `qtyOnHand` int(11) DEFAULT NULL,
+  `amount` decimal(12) DEFAULT NULL,
+  PRIMARY KEY (`date`),
+  UNIQUE KEY `date_UNIQUE` (`date`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;

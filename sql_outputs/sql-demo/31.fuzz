@@ -1,0 +1,21 @@
+USE sampleDB;
+CREATE TABLE items (
+    itemId INT AUTO_INCREMENT,
+    code VARCHAR(10) NOT NULL,
+    name VARCHAR(50) NULL,
+    image VARCHAR(255) NULL,
+    price INT(11) NULL,
+    PRIMARY KEY (itemId),
+    DEFAULT 0
+);
+INSERT INTO items (code, name, price) VALUES ('SKY123', 'Sunglasses', 300),('SK1233', 'Women\'s Wear', 540),('J3234', 'Milk Tea', 200);
+CREATE TABLE comments (
+    commentId INT AUTO_INCREMENT,
+    post INT NOT NULL,
+    content VARCHAR(50),
+    createdDate DATETIME,
+    PRIMARY KEY (commentId)
+);
+UPDATE comments SET content = "How is it going now" WHERE post = 5;
+UPDATE comments SET content = "I am so excited" WHERE post = 2;
+SHOWTables;

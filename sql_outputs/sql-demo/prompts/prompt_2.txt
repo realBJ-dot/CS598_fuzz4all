@@ -1,0 +1,11 @@
+-- MySQL is an open-source relational database management system (RDBMS) used to organize data into structured tables and manage user access to the database. Co-founded by Michael Widenius, its name is derived from "My", the name of his daughter and "SQL", which stands for Structured Query Language, a programming language used to manipulate data in the database. 
+
+MySQL operates under the terms of the GNU General Public License and is available under various proprietary licenses. Initially owned by the Swedish company MySQL AB, it was later acquired by Sun Microsystems, now owned by Oracle Corporation. When Oracle acquired Sun in 2010, Widenius created a fork of MySQL, called MariaDB.
+
+Often used with other programs to facilitate applications requiring relational database functionality, MySQL forms part of various web application software stacks, notably LAMP (Linux, Apache, MySQL, Perl/PHP/Python). It is widely used by database-driven web applications such as Drupal, Joomla, phpBB, and WordPress, as well as popular websites like Facebook, Twitter, and YouTube.
+
+Written in C and C++, it operates on numerous system platforms ranging from Linux, macOS, and Microsoft Windows to FreeBSD, Oracle Solaris, and more. The MySQL server software and the client libraries use dual-licensing distribution under GPL version 2 or a proprietary license, with support available via the official manual, IRC channels, forums and through Oracle's MySQL Enterprise products.
+
+MySQL is acclaimed for its performance, well-built developer interfaces, and comprehensive documentation. It is recognized as being fast, stable, and capable of supporting multiple users and threads.
+/* Given no other table exists, please create a very short program which uses SQL features in a complex way. Be sure to use ENGINE=InnoDB. */
+USE sampleDB;

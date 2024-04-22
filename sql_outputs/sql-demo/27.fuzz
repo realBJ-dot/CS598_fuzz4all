@@ -1,0 +1,4 @@
+USE sampleDB;
+ALTER TABLE comments MODIFY author VARCHAR(10);
+SELECT * FROM comments;
+

@@ -1,0 +1,2 @@
+USE sampleDB;
+SELECT comments.post, comments.content FROM comments ORDER BY comments.post DESC;

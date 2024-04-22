@@ -1,0 +1,3 @@
+USE sampleDB;
+DROP TABLE comments;
+SHOW TABLES;

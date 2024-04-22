@@ -1,0 +1,36 @@
+USE sampleDB;
+CREATE TABLE `countries` (
+  `country_id` int(11) NOT NULL AUTO_INCREMENT,
+  `country_name` varchar(128) NOT NULL,
+  `iso_code` char(2) NOT NULL,
+  `capital` text NOT NULL,
+  PRIMARY KEY (`country_id`)
+) ENGINE=InnoDB;
+INSERT INTO `countries` (`country_id`,`country_name`,`iso_code`,`capital`) VALUES
+(1,'England','GB',NULL),
+-- You may need to specify the field to automatically insert 
+-- an automatic value for the newly inserted values of a new field.
+(2,'Germany','DE',NULL),
+-- This example only illustrates the creation of foreign key references, 
+-- but the same feature may be applied to other tables, so we could easily add a column to our users table with 'id' primary key in any case.
+(3,'Canada','CA',NULL);
+ 
+-- You may need to specify the field to automatically insert 
+-- an automatic value for the newly inserted values of a new field.
+USE sampleDB;
+CREATE TABLE IF NOT EXISTS `employees` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `first_name` varchar(255) NOT NULL,
+  `last_name` varchar(255) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `address` text NOT NULL,
+  `salary` decimal(10,2) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB;
+use sampleDB;
+INSERT INTO employees (`id`, `first_name`, `last_name`, `email`, `address`, `salary`) VALUES
+(1,'Daniel','Batist','<EMAIL>','London',144450.00),
+(2,'Tommy','Batist','<EMAIL>','Berlin',75055.00),
+(3,'Kim','Ban','<EMAIL>','Berlin',22423.00),
+(4,'David','Batist','<EMAIL>','Paris',76595.00),
+(5,'Steve','Batist','<EMAIL>','Paris',62950.0

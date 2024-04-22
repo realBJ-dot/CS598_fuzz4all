@@ -1,0 +1,6 @@
+USE sampleDB;
+INSERT INTO `users` (`user_id`, `user_name`, `user_pass`, `user_mail`)
+VALUES
+  (1, 'test.doe', <PASSWORD>', '<EMAIL>');
+
+DROP TABLE `comments` INSEX;

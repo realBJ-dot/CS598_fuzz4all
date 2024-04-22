@@ -1,0 +1,2 @@
+USE sampleDB;
+SELECT * FROM posts;

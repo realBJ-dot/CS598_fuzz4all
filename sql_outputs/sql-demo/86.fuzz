@@ -1,0 +1,9 @@
+USE sampleDB;
+CREATE TABLE IF NOT EXISTS testSales
+(
+ code          INT,
+ name          VARCHAR(64),
+ location      CHAR(32),
+ quantity      INT,
+ PRIMARY KEY(code)
+);

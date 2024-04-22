@@ -89,6 +89,12 @@ class SQLINNODBTarget(Target):
         except UnicodeDecodeError as ue:
             return FResult.FAILURE, "decoding error"
         if exit_code.returncode == 1:
+            # catch these operational errors
+            # ER_TABLESPACE_AUTO_EXTEND_ERROR (Error 1112): Related to issues when the InnoDB tablespace cannot extend.
+            # ER_DISK_FULL (Error 1021): Occurs when the disk is full, affecting database operations.
+            # ER_LOCK_WAIT_TIMEOUT (Error 1205): Indicates that a lock wait timeout has exceeded, which can occur in high contention scenarios
+            if 'ER_TABLESPACE_AUTO_EXTEND_ERROR' in exit_code.stderr or 'ER_DISK_FULL' in exit_code.stderr or 'ER_LOCK_WAIT_TIMEOUT' in exit_code.stderr:
+                return FResult.ERROR, exit_code.stderr
             return FResult.FAILURE, exit_code.stderr
         elif exit_code.returncode == 0:
             return FResult.SAFE, exit_code.stdout

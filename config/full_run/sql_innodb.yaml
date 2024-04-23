@@ -46,7 +46,7 @@ target:
   path_example_code:
   # path to the command to push the llm to generate the input for the
   # target system using the given feature
-  trigger_to_generate_input: "/* Given no other table exists, please create a very short program which uses SQL features in a complex way. Be sure to use ENGINE=InnoDB. */"
+  trigger_to_generate_input: "/* Please create a very short program which uses SQL features in a complex way. Be sure to use ENGINE=InnoDB.You need to create new tables to perform operations and drop them after finishing. */"
   # hint to give to the llm to generate the input for the target system
   input_hint: "USE sampleDB;"
   # path to the hand-written prompt to give to the llm

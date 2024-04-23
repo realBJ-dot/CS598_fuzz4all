@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS persons;
+CREATE TABLE persons (id INT PRIMARY KEY, name VARCHAR(200), age INT);
+INSERT INTO persons (id, name, age) VALUES(1, '<NAME>', 4);
+INSERT INTO persons (id, name, age) VALUES(2, '<NAME>', 5);
+INSERT INTO persons (id, name, age) VALUES(3, '<NAME>', 6);
+SELECT * FROM persons;
+SELECT * FROM persons ORDER BY age;
+DROP TABLE IF EXISTS persons;
+DROP DATABASE sampleDB;

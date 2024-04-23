@@ -1,13 +1,6 @@
-USE sampleDB;
-UPDATE comments SET content="Hello World update";
-SELECT * FROM comments;
-SELECT DISTINCT author FROM comments;
-SELECT DISTINCT author FROM comments ORDER BY author;
-SELECT COUNT(*) FROM comments;
-DROP DATABASE;
-
--- We can connect to an MySql database by specifying the path to the user database.
-mysql> HOST="localhost"; PORT="3306"; DB="sampledb"; USER="root"; PASS="";
-mysql> SELECT * FROM information_schema.tables;
-
-DROP TABLE IF EXISTS comments;
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IfExistsAndCreateDrop;
+DROP TABLE IF EXISTS `IfExistsAndCreateDrop`;
+CREATE TABLE IfExistsAndCreateDrop (`ID` INT(11) UNSIGNEDZ PRIMARY KEY AUTO_INCREMENT);
+CREATE TABLE IF NOT EXISTS `IfExistsAndCreateDrop`;
+ 

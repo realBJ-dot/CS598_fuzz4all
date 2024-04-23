@@ -1,0 +1,33 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS users
+( user_id  int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+ email            varchar(100),
+ pass             varchar(100)   DEFAULT NULL,
+ created_date     timestamp DEFAULT '0000-00-00 00:00:00',
+ PRIMARY KEY (user_id)
+-- The following columns could have been created manually:
+,phone                   varchar(20)    DEFAULT NULL,
+ created_date           Date           DEFAULT CURRENT_DATE, 
+);
+INSERT INTO users(user_id, email, pass, created_date) VALUES(5823, '<EMAIL>', '<PASSWORD>', '1980-11-15 20:06:21');
+INSERT INTO users(user_id, email, pass, created_date) VALUES(5824, '<EMAIL>', '<PASSWORD>! ', '1980-06-15 18:48:00');
+SELECT * FROM users;
+ -- We will create another query and query table to demonstrate
+ -- how to sort the results of SELECT statement
+ CREATE DATABASE IF NOT EXISTS smallDB; USE smallDB;
+# The next commands will generate table of people, sorted by age in
+# ascending order. It is shown to demonstrate how to create ORDER BY
+# clause in SQL.
+ #
+CREATE TABLE people(name VARCHAR(200), dob DATE);
+#
+INSERT INTO people (name, dob) VALUES ('Bhavin', '15-08-1981');
+INSERT INTO people (name, dob) VALUES ('Ramesh', '15-08-1981');
+INSERT INTO people (name, dob) VALUES ('Ramesh', '15-07-1980');
+INSERT INTO people (name, dob) VALUES ('Nithinagar', '15-09-1980');
+INSERT INTO people (name, dob) VALUES ('Karthik', '21-06-1985');
+INSERT INTO people (name, dob) VALUES ('Saihar', '15-03-1990');
+#
+CREATE TABLE orders(OrderID int(10) UNSIGNED, OrderDate date, CustomerID int(10) UNSIGNED, CustomerName varchar(500));
+#
+INSERT INTO orders(OrderID, OrderDate,

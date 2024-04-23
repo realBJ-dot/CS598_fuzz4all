@@ -1,0 +1,17 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS books(
+ book_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+ book_author_id INT(8) NOT NULL,
+ book_title text,
+ book_price decimal(15(2),2) DEFAULT 0.00,
+ book_isbn text,
+ FOREIGN KEY (book_author_id) REFERENCES author (author_id)
+);
+INSERT INTO books VALUES(1,1,'The Hobbit',75.50,'978-2066508-33-0',123456789);
+INSERT INTO books VALUES(2,1,'The Shining',100.00,'978-2066508-33-0',123456789);
+INSERT INTO books VALUES(3,3,'The Titans',75.50,'978-2066508-33-0',123456789);
+INSERT INTO books VALUES(4,2,'The Hitchhiker\'s Guide to the Galaxy',80.50,'978-1565926-40-0',123456789);
+INSERT INTO books VALUES(5,3,'The Lord of the Rings',100.00,'978-4540729-2-0',123456789);
+INSERT INTO books VALUES(6,2,'The Hitchhiker\'s Guide to the Galaxy',100.00,'978-1565926-40-0',123456789);
+DROP TABLE books;
+DROP DATABASE sampleDB;

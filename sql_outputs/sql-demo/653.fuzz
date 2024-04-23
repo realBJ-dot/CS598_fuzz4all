@@ -1,0 +1,21 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP PROCEDURE IF EXISTS getStudentsFromCourse;
+DELIMITER |
+CREATE PROCEDURE getStudentsFromCourse(nCourse INT)
+BEGIN
+SELCT SubjectName FROM Course WHERE CourseID = nCourse;
+END; |
+DELIMITER ;
+DROP TABLE IF EXISTS Subject;
+DROP TABLE IF EXISTS Course;
+DROP DATABASE sampleDB;
+<commit_msg>Added instructions for MySQL client (#1)<commit_after># Lab 20: Learning the MySQL Client
+
+MySQL can be installed on Unix-like operating systems but can be also used using Microsoft Windows. However, MySQL is still supported by multiple database systems and so, using a Linux-based operating system is recommended. Here is the link to the official installation instructions:
+
+https: 
+
+You will need MySQL working on your device in order to run the project. It will be available under an open-source licens that allows it to be used by developers. Please select the appropriate option for your device and follow the instructions specific for your operating system. Follow the instructions for the operating system you will be working with on the corresponding link.
+
+## 2.x
+

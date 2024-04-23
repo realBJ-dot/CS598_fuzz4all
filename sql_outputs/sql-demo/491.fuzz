@@ -1,0 +1,20 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE mytable( myid int, title varchar(255));
+INSERT INTO mytable(myid, title)
+    SELECT 
+        (CASE WHEN myid =1
+            THEN 100
+            ELSE myid
+            END), 
+        (CASE WHEN myid =1
+            THEN 'abc'
+            ELSE 'xyz'
+            END) 
+        FROM mytable LIMIT 1;
+INSERT INTO mytable(myid, title) VALUES(5,'abc');
+INSERT INTO mytable(myid, title) VALUES(4,'def ghi');
+INSERT INTO mytable(myid, title) VALUES(3,'lmn');
+SELECT * FROM mytable ;
+DROP TABLE mytable;
+DROP DATABASE sampleDB;
+-- End

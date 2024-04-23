@@ -1,0 +1,6 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS mytable;
+CREATE TABLE mytable (
+        year20 varchar(10)
+, year20b varchar(10)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

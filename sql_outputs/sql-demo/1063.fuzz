@@ -1,0 +1,19 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+SET GLOBAL sql_mode=ANSI_QUOTES;
+CREATE TABLE `worker` (
+  `no_worker` int(11) NOT NULL AUTO_INCREMENT,
+  `nama_lengkap` varchar(30) NOT NULL,
+  `kode_lokasi` varchar(30) NOT NULL,
+  `username` varchar(30) NOT NULL,
+  `password` varchar(30) NOT NULL,
+  `tgl_masuk` datetime NOT NULL,
+  `id_level` smallint(6) NOT NULL,
+  `id_status` smallint(6) NOT NULL,
+  `id_kota_asal` smallint(6) NOT NULL,
+  `id_kota_tujuan` smallint(6) NOT NULL,
+  `no_tlp` mediumint(7) NOT NULL,
+  PRIMARY KEY (`no_worker`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+SELECT @username='';select @username=username();INSERT INTO `worker` (`no_worker`, `nama_lengkap`, `kode_lokasi`, `username`, `password`, `tgl_masuk`, `id_level`, `id_status`, `id_kota_asal`, `id_kota_tujuan`, `no_tlp`) VALUES
+(1, 'Marta', '<PASSWORD>', '<PASSWORD>', '<PASSWORD>', '2000-05-13 13:54:48', 1, 1, 1, 1, 2, 9999),
+(2, 'Amanda', 'd4fe2dd93a9d27192df185f7e275951c9f20cb60645974028a7f0b30e5f5901936', '<PASSWORD>', '1', '2000-05-13 

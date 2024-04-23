@@ -1,33 +1,20 @@
-USE sampleDB;
-CREATE TABLE IF NOT EXISTS employee ( 
-       empID INT AUTO_INCREMENT NOT NULL, 
-       firstname VARCHAR(40) NOT NULL, 
-	   lastname VARCHAR(40) NOT NULL, 
-	   salary DECIMAL(30, 20) NOT NULL, 
-	   managerID INT NOT NULL, 
-	   CONSTRAINT pk_employee PRIMARY KEY(empID) 
- );
-UPDATE employee SET managerID=5;
--- END: Query 8 
-CREATE TABLE IF NOT EXISTS employee2 ( 
-       empID INT AUTO_INCREMENT NOT NULL, 
-       firstname VARCHAR(40) NOT NULL, 
-	   lastname VARCHAR(40) NOT NULL, 
-	   CONSTRAINT pk_employee PRIMARY KEY(empID) 
- );
-CREATE TABLE order_detail2 ( 
-	order_id INT NOT NULL, 
-	productID INT NOT NULL, 
-	product_name varchar(200) NOT NULL, 
-	product_desc varchar(200) NULL, 
-	unit_price decimal(12, 8) NOT NULL, 
-	quantity INT NOT NULL, 
-	CONSTRAINT pk_order2 PRIMARY KEY (order_id)
-);
-INSERT INTO employee VALUES
-	-- BEGIN: Query 9
-(7), (8), (9), (10), (11), (12),
--- END: Query 9
-/* BEGIN: Query 10
-ALTER TABLE employee
-ADD CONSTRAINT
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users(username varchar(25), Firstname VARCHAR(30)) ENGINE=InnoDB;
+INSERT INTO Users(username,Firstname) VALUES('Test','1'),('Admin','2'),('Guest','3'),('Super','4');
+
+-- Please create a very short query which uses SQL features in a complex way. Be sure to use ENGINE=InnoDB. You should only use sampleDB as the database and assume no other table exist. You need to create new tables to perform operations. In the end, drop all tables you created.
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users(username varchar(25), Firstname VARCHAR(30)) ENGINE=InnoDB;
+INSERT INTO Users(username,Firstname) VALUES('Admin','Admin'), ('Guest','Guest'), ('Super','Super');
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users(username char(20) NOT NULL, Password char(100) NOT NULL, Firstname VARCHAR(30) NOT NULL) ENGINE=InnoDB;
+INSERT INTO Users(username,Password,Firstname) VALUES('Administrator','Pass', 'Administrator'), ('Guest','1234', 'Guest'), ('Super','0123', 'Super');
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users(username char(10), Firstname VARCHAR(30), Address VARCHAR(30) NOT NULL) ENGINE=InnoDB;
+INSERT INTO Users(username,Firstname,Address) VALUES('Administrator','Administrator','Prairie View'), ('Guest','Guest','Chicago'), ('Super','Super','Riverside');
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE User(username char(10), Password char(100), Firstname VARCHAR(30));
+INSERT INTO User(username,Password,Firstname) VALUES('Administrator', 'Password','Administrator'), ('Guest', '1234', 'Guest'), ('Guest2', '1234', 'Guest');
+CREATE TABLE IF NOT EXISTS Users(Firstname CHAR(20), Lastname CHAR(20), Username CHAR(20) NOT NULL, Password CHAR(100) NOT NULL);
+INSERT INTO Users(Firstname,Lastname,Username,

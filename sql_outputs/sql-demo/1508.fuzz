@@ -1,0 +1,5 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE users_details;
+CREATE TABLE users_details(user_id INTEGER, phone VARCHAR(50) UNIQUE, age INTEGER);
+INSERT INTO users_details(user_id, phone, age) VALUES (23434, 63642642, 865357), (43434, 636744, 825356), (44334, 63674367, 736356);
+DROP TABLE users_details;

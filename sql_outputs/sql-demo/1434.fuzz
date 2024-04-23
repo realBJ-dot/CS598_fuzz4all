@@ -1,0 +1,16 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+CREATE TABLE IF NOT EXISTS `products` (
+  `product_id` int(10) NOT NULL,
+  `name` varchar(100),
+  `price` money,
+  `discount` smallint(6)
+)ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO products (product_id, name,cost,discount) VALUES (1,"Evernote 6.8",50000,6);
+INSERT INTO products (product_id, name,cost,discount) VALUES (2,"IPad Pro 128GB",2000000,5);
+INSERT INTO products (product_id, name,cost,discount) VALUES (3,"Samsung Galaxy Tab S20",990000,8);
+INSERT INTO products (product_id, name,cost,discount) VALUES (4,"Sugar Cane 400ml",17000,9);
+
+SHOW Create Table products;
+SELECT * FROM `products`;

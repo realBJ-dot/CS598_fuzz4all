@@ -1,0 +1,8 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+INSERT INTO users (userId, firstName, lastName) VALUES ('a', 'John', 'Doe');
+INSERT INTO users (userId, firstName, lastName) VALUES ('b', 'Robert', 'Smith');
+INSERT INTO users (userId, firstName, lastName) VALUES ('c', 'Catherine', 'Miller');
+DROP TABLE users;
+SELECT role FROM users;
+SELECT DISTINCT role FROM users;
+SHOW CREATE TABLE users;

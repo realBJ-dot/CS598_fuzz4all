@@ -1,0 +1,9 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employees_positions;
+CREATE TABLE employees_positions(
+    employee_emp_no  INT UNSIGNED,
+    employee_position INT UNSIGNED);
+UPDATE employees_positions
+    INNER JOIN employees_positions on employees_positions.employee_position = employees_positions.employee_position;
+DROP TABLE employees_positions;
+COMMIT;

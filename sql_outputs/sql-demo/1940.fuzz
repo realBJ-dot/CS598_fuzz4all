@@ -1,0 +1,12 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS people (name STRING);
+CREATE TABLE IF NOT EXISTS personas (id STRING PRIMARY KEY, age INT, first_name STRING, last_name STRING);
+UPDATE personas SET age = age + 30;
+SELECT id FROM people;
+UPDATE personas SET age = age + 30;
+SELECT id FROM people;
+USE employees_salary_by_salary;
+SELECT SQL_CALC_FOUND_ROWS emp_salary FROM `personas` WHERE age = 30;
+SELECT SQL_CALC_FOUND_ROWS emp_salary FROM `personas` WHERE age = 30;
+SELECT SQL_CALC_FOUND_ROWS emp_salary FROM `personas` WHERE age = 30;
+DROP TABLE personas CASCADE;

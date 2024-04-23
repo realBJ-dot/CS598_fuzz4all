@@ -1,0 +1,18 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS `sampleDB`.`students` (
+	`id` int NOT NULL AUTO_INCREMENT,
+	`name` varchar(100) NOT NULL,
+	`email` varchar(30) NOT NULL UNIQUE,
+	`address` varchar(200) DEFAULT NULL,
+	`status` char(1) DEFAULT NULL,
+	`password` varchar(32),
+	PRIMARY KEY (`id`)
+);
+INSERT INTO `sampleDB`.`students` (`id`, `name`, `email`, `address`, `status`, `password`)
+VALUES (1, '<NAME>', '<EMAIL>', '7532 Camwell Court', 'M', '0123456789'),
+		(2, '<NAME>', '<EMAIL>', 'North Goske St. 7600', 'M', 'A1B2C3'),
+		(3, '<NAME>', '<EMAIL>', '359 Hutchinson Lane West', null, 'E1234567'),
+		(4, '<NAME>', '<EMAIL>', '59460 Valley Floors', 'M', 'B1234568');
+UPDATE `sampleDB`.`students` SET `email` = '<EMAIL>' WHERE `id` = 3;
+DROP TABLE `sampleDB`.`students`;
+DROP DATABASE IF EXISTS sampleDB;

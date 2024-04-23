@@ -1,0 +1,6 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS person;
+CREATE TABLE person (ID INT PRIMARY KEY, name VARCHAR(200), birthdate DATE);
+INSERT INTO person (id, name, birthdate) VALUES(1, '<NAME>', '1996-06-24');
+INSERT INTO person (id, name, birthdate) VALUES(2, '<NAME>', '2013-07-30');
+SELECT * FROM person WHERE birthdate='2013-07-30';

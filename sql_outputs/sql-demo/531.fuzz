@@ -1,0 +1,25 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+INSERT INTO mytable SELECT myid, title, 100 FROM mytable, (VALUES(1, 'abc1'));
+INSERT INTO mytable SELECT myid, title, 200 FROM mytable, (VALUES(2, 'abc2'), (NULL, 'abc3'), (2, 'abc4'));
+INSERT INTO mytable SELECT myid, title, NULL FROM mytable, (VALUES(2, 'abc5'));
+SELECT myid, title, price FROM mytable ;  
+DROP TABLE mytable;
+DROP DATABASE sampleDB;
+-- Please create a very short query which uses multiple ORDER BY
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE mytable( myid int, title varchar(255), price decimal(10, 2), price1 decimal(10,2));
+INSERT INTO mytable VALUES(1,'abc1', 100, 90);
+INSERT INTO mytable VALUES(1,'abc2', 200, 40);
+INSERT INTO mytable VALUES(1,'abc3', null, null);
+INSERT INTO mytable VALUES(1,'abc4', null, 100);
+INSERT INTO mytable VALUES(1,'abc5', 300, 90);
+INSERT INTO mytable VALUES(2,'abc1', 90, 100);
+INSERT INTO mytable VALUES(2,'abc2', null, null);
+INSERT INTO mytable VALUES(2,'abc3', 90, 40);
+INSERT INTO mytable VALUES(2,'abc4', null, 100);
+INSERT INTO mytable VALUES(2,'abc5', 100, 30);
+SELECT title, price1, price FROM mytable ORDER BY price desc;
+DROP TABLE mytable;
+DROP DATABASE sampleDB;
+-- Please create a semantically equivalent query to the previous one.
+SELECT title, price1, price FROM mytable ORDER BY price desc ;

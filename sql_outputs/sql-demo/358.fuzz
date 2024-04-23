@@ -1,0 +1,40 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users(Id INTEGER PRIMARY KEY AUTO_INCREMENT,Name VARCHAR(32));
+CREATE TABLE Album(Id INTEGER PRIMARY KEY AUTO_INCREMENT, TrackID INTEGER);
+
+INSERT INTO Users (Name) VALUES ('John'), ('Joe');
+--
+-- Please also note that this was executed in two different ways.
+SELECT id, name FROM Users;
+--
+-- Please also note that this is the same behavior as this version of the query.
+SELECT * from Users;
+--
+-- Please make changes to the DB to allow the SELECT statement to work properly using the following UPDATE statement.
+UPDATE Albums SET TrackID = 113 WHERE TrackID = 116;
+SELECT TrackID from Albums;
+--
+-- Please make sure that the previous SELECT query still works without the need for a JOIN.
+--
+UPDATE Users SET Name = 'Jeff';
+SELECT id, Name FROM Users;
+SELECT TrackID, Id, Name FROM Users JOIN Albums WHERE Id = Users.Id;
+--
+-- Please create a fully semantic equivalent program by performing the following operation.
+ALTER TABLE Albums ADD COLUMN TrackID INTEGER;
+INSERT INTO Album SELECT * FROM Users;
+ALTER TABLE Users DROP COLUMN TrackID;
+--
+-- For the following INSERT statement, please use a SELECT in a JOIN instead.
+INSERT INTO Users (Name) SELECT UserName FROM Users WHERE UserName = 'Jeff';
+--
+-- Please complete the statement INSERT INTO Users (Name) SELECT UserName FROM Users WHERE UserName = 'Joe';
+--
+-- Please perform the correct DELETE statement as well
+DELETE FROM User WHERE UserName = 'Jeff';
+--
+-- Please update the SELECT in the WHERE clause of the following UPDATE.
+UPDATE Users SET Name = 'Ricky' WHERE UserName = 'Rudy' OR UserName = 'Taty';
+--
+-- Please change the SET to the VALUES statement.
+UPDATE Users SET Name = 'Ricky', Age = 38 WHERE UserName = 'Rudy' OR UserName = 'Taty';

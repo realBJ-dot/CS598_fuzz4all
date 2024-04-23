@@ -1,0 +1,12 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+#
+# Example 23:
+#
+DROP TABLE IF EXISTS dept_manager;
+CREATE TABLE `dept_manager` (
+  `deptno` int(11) NOT NULL,
+  `manager` int(11) NOT NULL,
+  PRIMARY KEY (`deptno`,`manager`),
+  CONSTRAINT `deptmanager_ibfk_1` FOREIGN KEY (`deptno`) REFERENCES `dept` (`deptno`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `deptmanager_ibfk_2` FOREIGN KEY (`manager`) REFERENCES `staff` (`staffno`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1

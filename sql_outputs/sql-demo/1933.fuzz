@@ -1,0 +1,4 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+USE employees; UPDATE employees_salary_by_salary Set employee_salary = employee_salary + 10000 where employee_salary = 6000; 
+
+\q

@@ -1,0 +1,12 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS Mutated (id INT AUTO_INCREMENT PRIMARY KEY, price DECIMAL(10,2) UNIQUE);
+UPDATE Mutated SET price = 100 WHERE price = 99.8;
+SELECT price FROM Mutated;
+DELETE FROM Mutated WHERE price = 99.8;
+SELECT price FROM Mutated;
+DROP TABLE Mutated;
+DROP DATABASE sampleDB;
+--
+-- Please create a query which displays an existing table:
+SELECT * FROM Mutated;
+--

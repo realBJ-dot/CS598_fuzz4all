@@ -1,0 +1,20 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS products (
+    id                int auto_increment,
+    name              varchar(30) not null,
+    description       text,
+    price             decimal(11,2) not null,
+    product_category  varchar(30) not null,
+    PRIMARY KEY (id)
+);
+SELECT
+id, name
+FROM products;
+DROP TABLE IF EXISTS products;
+DROP DATABASE IF EXISTS sampleDB;
+
+--
+--
+-- 
+-- END OF FILE
+--

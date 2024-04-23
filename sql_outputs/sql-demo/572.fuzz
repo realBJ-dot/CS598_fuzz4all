@@ -1,0 +1,8 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP DATABASE sampleDB;
+DROP TABLE Mutated;
+DROP DATABASE sampleDB;
+```
+I had another problem, the database kept stopping accepting queries even though I added more RAM and changed the limits, but at the end the server couldn't start (error 23). Finally I found out that I had to create a log database and disable it completely, as my server is still running but the log database is gone, so I deleted it and it is okay now, no problem.
+
+A nice way to perform operations is to execute a script at server startup and then change the database at a later time to perform the same tasks as if it used only a single database.

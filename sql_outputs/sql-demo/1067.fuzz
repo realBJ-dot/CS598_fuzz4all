@@ -1,0 +1,33 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+SET GLOBAL sql_mode=ANSI_QUOTES;
+CREATE TABLE employee (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `first_name` varchar(250) NOT NULL,
+  `last_name` varchar(250) NOT NULL,
+  `gender` varchar(30) DEFAULT NULL,
+  `birthdate` date NOT NULL,
+  `joining_date` date NOT NULL,
+  `phone` char(12) NOT NULL,
+  `email` varchar(125) NOT NULL,
+  `salary` decimal(10,2) NOT NULL,
+  `gender_id` int(11) DEFAULT NULL,
+  `position_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+SET GLOBAL sql_mode=ANSI_QUOTES;
+CREATE TABLE employee (
+  `no_ktp` int(11) NOT NULL AUTO_INCREMENT,
+  `nama` varchar(500) NOT NULL,
+  `id_role` int(11) DEFAULT NULL,
+  `alamat` varchar(100) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `id_kota_asal` int(11) DEFAULT NULL,
+  `id_kota_tujuan` int(11) DEFAULT NULL,
+  `id_provinsi` int(11) DEFAULT NULL,
+  `telepon` varchar(15) DEFAULT NULL,
+  `pendidikan` varchar(50) DEFAULT NULL,
+  `pengalaman` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`no_ktp`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+*/

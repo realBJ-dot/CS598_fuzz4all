@@ -1,0 +1,3 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+UPDATE car SET price = (price*2);
+DROP DATABASE IF EXISTS sampleDB;

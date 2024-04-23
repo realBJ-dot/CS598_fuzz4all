@@ -1,0 +1,8 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS user; CREATE TABLE user(id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, username VARCHAR(20) UNIQUE,
+password VARCHAR(15) NOT NULL); INSERT INTO user (username, password) VALUES ('admin', '<PASSWORD>');
+INSERT INTO user (id, username) VALUES (1, 'Admin');
+SELECT User.username AS name, User.password FROM User
+WHERE id = 1;
+
+*/

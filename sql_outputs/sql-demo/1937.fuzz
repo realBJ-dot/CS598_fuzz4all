@@ -1,0 +1,9 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+SELECT IFNULL(employee_salary, 0) + 5000 AS salary, employee_salary,
+	IFNULL(emp_salary, 0) + 19000 AS salary
+FROM employees_salary_by_salary;
+DROP DATABASE sampleDB;
+
+SELECT IFNULL(employee_salary, 0) + 5000 AS salary, employee_salary,
+	IFNULL(emp_salary, 0) + 19000 AS salary
+FROM employees_salary_by_salary;

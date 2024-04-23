@@ -1,0 +1,31 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+create table Employee( firstname varchar(50), lastname varchar(50), address varchar(100) );
+create table Person( firstname varchar(50), lastname varchar(50), address varchar(100), employeeId int );
+insert into Employee values ("Jose","Batista","Calle 4829");
+insert into Employee values ("Pedro","Garcia","Calle 4830");
+insert into Employee values ("Nicolás","Pujol","Calle 4831");
+insert into Person values ("Jose","Batista","Calle 4832",2);
+insert into Person values ("Pedro","Garcia","Calle 4833",3);
+insert into Person values ("Nicolás","Pujol","Calle 4834", NULL);
+ 
+create table Person2( firstname varchar(50), lastname varchar(50), address varchar(100), employeeId int );
+insert into Person2 values ("Jose","Batista","Calle 4835",2);
+insert into Person2 values ("Pedro","Garcia","Calle 4836",3);
+insert into Person2 values ("Nicolás","Pujol","Calle 4837", NULL);
+ 
+#
+-- Your first project is the creation of a program
+DROP TABLE IF EXISTS Person;
+DROP TABLE IF EXISTS Employee;
+DROP TABLE IF EXISTS Person2;
+DROP DATABASE IF EXISTS myprogram
+create database IF NOT EXISTS myprogram; use myprogram;
+create table Person( firstname varchar(50), lastname varchar(50), address varchar(100) );
+create table Employee( firstname varchar(50), lastname varchar(50), address varchar(100) );
+insert into Employee values ("Jose","Batista","Calle 4835");
+insert into Employee values ("Pedro","Garcia","Calle 4836");
+insert into Employee values ("Nicolás","Pujol","Calle 4837");
+create table Person2( firstname varchar(50), lastname varchar(50), address varchar(100), employeeId int );
+insert into Person2 values ("Jose","Batista","Calle 4835",4);
+insert into Person2 values ("Pedro","Garcia","Calle 4836",2);
+insert into Person2

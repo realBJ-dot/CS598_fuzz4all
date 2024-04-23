@@ -1,0 +1,24 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS Mutated;
+CREATE TABLE Mutated (id INT AUTO_INCREMENT PRIMAIY KEY, price DECIMAL(10,2) UNIQUE);
+UPDATE Mutated SET price_changed = (price + 2);
+UPDATE Mutated SET price_changed = price_changed + 1 WHERE id = 2;
+UPDATE Mutated SET price_changed = price_changed + 1 WHERE id = 2 AND id = 2;
+UPDATE Mutated SET price_changed = price_changed - 1 WHERE id = 2;
+UPDATE Mutated SET price_changed = price_changed - price WHERE id = 2;
+UPDATE Mutated SET price_changed = price_changed - price WHERE id = 2 AND id = 2;
+UPDATE Mutated SET price_changed = price_changed + (price_changed + price) WHERE id = 2;
+DROP TABLE Mutated;
+DROP DATABASE sampleDB;
+
+
+
+
+
+
+
+
+
+
+
+-- http: 

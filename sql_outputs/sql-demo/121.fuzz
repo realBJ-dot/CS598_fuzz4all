@@ -1,0 +1,16 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users(username char(20) PRIMARY KEY, FirstName VARCHAR(30)) ENGINE=InnoDB;
+INSERT INTO Users(username,Firstname) VALUES('Test','Test'),('Admin','Admin'),('Guest','Guest'),('Super','Super');
+</pre></p>
+<p>The script will be stored in a file called createDatabase.sql. </p>
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p class="navigation">← <a title="Back to how to execute the sample script in MySQL Studio Community" href="howToUseExecuteSampleScriptForMySQLStudioCommunity.html">Back to how to execute the sample script in MySQL Studio Community</a> | <a title="Back to step 5 of 5" href="installingAndConfiguringMySQLStudioCommunity.html">Next step</a> → </p>
+<p>&nbsp;</p>
+<hr />
+<p>&nbsp;</p>
+<p class="copyright" align="center">Copyright © 2018-2021 MySQL, Inc. Proudly powered by MySQL, Inc. Community&nbsp;edition: <a href="https://blog.mysql.com/2021/10/mysql-community-edition-mysql-studio-community-now-free/" rel="nofollow">mysql.com</a></p>
+<p>&nbsp;</p>
+</body>
+</html>

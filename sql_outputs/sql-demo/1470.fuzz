@@ -1,0 +1,40 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- Your query here
+DELIMITER ;;
+CREATE PROCEDURE sample_proc(IN n int)
+BEGIN
+        IF n >= 11 THEN
+                SELECT COUNT(*) FROM sampleDB.users_details;
+        END IF;
+END
+;;
+DELIMITER ;
+-- Please create a very short query which uses SQL features in a complex way. Be sure to use ENGINE=InnoDB. You shouldn't use sampleDB as the database and assume all tables exist. This query will select the users that lives in San Francisco
+-- and the average number that his/her phone number has
+DROP DATABASE IF EXISTS sampleDB; USE sampleDB;
+-- Your query here
+/* Your query here */
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- Your query here
+INSERT INTO users_details(user_id, phone, age) VALUES ('23434', '63642642', '865355');
+CALL sample_proc(11);
+-- Please create a semantically equivalent application to the previous generation
+DROP DATABASE IF EXISTS sampleDB; USE sampleDB;
+-- Your query here
+INSERT INTO users_details(user_id, phone, age) VALUES ('23434', '63642642', '865355');
+CALL sample_proc(11);
+-- Please modify the first query to select all users (not just the one that lives in Los Angeles)
+-- and the average number that his/her phone number has. You can just use same query than the one where previous gen query was written.
+-- Hint: you should use ENGINE=InnoDB in order to achieve the desired result
+DROP DATABASE IF EXISTS sampleDB; USE sampleDB;
+-- Your query here
+DELIMITER ;;
+CREATE PROCEDURE sample_proc(IN n int)
+BEGIN
+        IF n >= 11 THEN
+                SELECT DISTINCT phone FROM sampleDB.users_details;
+        END IF;
+END
+;;
+DELIMITER ;
+-- Please create a very short query which uses SQL features in a complex way. Be sure to use ENGINE=InnoDB. You shouldn't use sampleDB as the database and assume all tables exist.

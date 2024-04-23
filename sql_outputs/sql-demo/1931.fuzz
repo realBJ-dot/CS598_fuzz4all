@@ -1,0 +1,32 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employees_salary_by_salary;
+CREATE TABLE employees_salary_by_salary (
+    employee_salary	INT UNSIGNED,
+    emp_salary		INT UNSIGNED,
+ 	PRIMARY KEY (employee_salary, emp_salary));
+INSERT INTO employees_salary_by_salary VALUES
+(15, 10000),
+(25, -10000),
+(5, 10000),
+(10, 10000),
+(30, 10000),
+(20, 10000),
+(21, -10000),
+(40, -10000);
+
+-- SELECT DISTINCT will produce a set of unique tuples in a column. SELECT DISTINCT is not present in SELECT
+SELECT ID, Name FROM employees_salary_by_salary;
+
+-- INSERT INTO is used to insert records of values into a table. This is how we can insert 1 row into employee_salary_by_salary.
+INSERT INTO employees_salary_by_salary VALUES (25, 1);
+
+
+
+-- UPDATE is a state change as to an existing record in a data store and can be used for many different kinds of changes and operations.
+UPDATE employees_salary_by_salary SET emp_salary = emp_salary + 6000;
+
+15 * 6000 + 1 = 16000;
+UPDATE employees_salary_by_salary SET employee_salary=employee_salary+7000;
+UPDATE employees_salary_by_salary SET ID= ID+2;
+
+SELECT ID, Name FROM employees_salary_by_salary;

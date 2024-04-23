@@ -1,0 +1,11 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE mytable( myid int, title varchar(255));
+INSERT INTO mytable(myid, title) VALUES(1,'abc');
+INSERT INTO mytable(myid, title) VALUES(2,'def');
+INSERT INTO mytable(myid, title) VALUES(3,'ghi');
+SELECT myid AS ID, title FROM mytable ORDER BY ID ASC;
+DROP TABLE mytable;
+DROP DATABASE sampleDB;
+GRANT ALL PRIVILEGES ON `sampledb`.* TO 'demoUser'@'localhost' IDENTIFIED BY 'demoPassword' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+show grants for 'demoUser'@'localhost';

@@ -1,0 +1,47 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Person (First_name TEXT, Last_name TEXT);
+ALTER TABLE Person ADD Address_line1 TEXT;
+-- Please create a mutated program that performs the following operations:
+-- (1). Add a new row with a non-null default
+-- (2). Delete the row with default
+-- (3). Update first_name column to first_name_new with new_varchar value
+-- (4). Update last_name column to last_name_new with new_varchar value
+-- You should create a database called sampleDB and add a new table with the above schema (person and employee)
+-- Create and execute a new table query using alter statement. Assume you already know sampleDB.Person table structure.
+-- Drop all tables you created
+-- Create a new table with the same schema and do above operations on it
+BEGIN
+
+    ALTER TABLE person_address_line1 ADD address_type TEXT NULL DEFAULT NULL;
+    ALTER TABLE person_address_line4 ADD address_type TEXT NULL DEFAULT NULL;
+    ALTER TABLE person_address_line3 ADD address_type text NULL DEFAULT NULL;
+    ALTER TABLE person_address_line1 REMOVE address_type;
+    ALTER TABLE employee_address_type REMOVE address_type;
+
+    DROP TABLE IF EXISTS person_address_line1;
+    DROP TABLE IF EXISTS person_address_line2;
+    DROP TABLE IF EXISTS person_address_line3;
+    DROP TABLE IF EXISTS person_address_line4;
+    DROP TABLE IF EXISTS employee_address_type;
+
+    -- INSERT
+    INSERT INTO person (First_name, Last_name) VALUES ('John', 'Doe');
+    INSERT INTO employee (First_name, Last_name) VALUES ('John', 'Doe');
+
+    -- DELETE
+    DELETE FROM person WHERE first_name = 'John' AND last_name = 'Doe';
+    DELETE FROM employee WHERE first_name = 'John' AND last_name = 'Doe';
+
+    -- UPDATE
+    UPDATE employee SET First_name = 'NewFirst' WHERE first_name = 'John';
+    UPDATE person SET first_name = 'NewFirst' WHERE first_name = 'John';
+    UPDATE employee SET First_name = 'NewFirst' WHERE First_name = 'John';
+    UPDATE person SET first_name = 'NewFirst' WHERE First_name = 'John';
+
+
+    -- You should be able to drop the above tables in your database (sampleDB), as this will also destroy any data you have in them
+    DROP TABLE IF EXISTS person;
+    DROP TABLE IF EXISTS employee;
+
+END;
+GO

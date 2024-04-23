@@ -1,0 +1,26 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+INSERT INTO User VALUES (3, 'Brian', 4), (4, 'Joe', 1);
+-- Now modify the generated User table
+UPDATE User SET SSN = 23456 WHERE FirstName = 'Brian';
+-- Make sure to specify foreign key constraint. This is the only way to remove or
+-- destroy the relationships between the two tables
+ALTER TABLE User ADD CONSTRAINT FK CONSTRAINT fk_User_Employee FOREIGN KEY (EmployeeID) REFERENCES Employee(EmployeeID);
+ALTER TABLE User DROP CONSTRAINT fk_User_Employee;
+-- Make sure to use SHOW FIELDS OPTION so you can see the added columns when
+-- you perform an update
+ALTER TABLE User ADD FirstName varchar(21) NOT NULL AFTER EmployeeID;
+ALTER TABLE User ADD Address VARBINARY(45) AFTER FirstName;
+UPDATE User SET Address = '4294967295' WHERE EmployeeID = 4;
+-- Create a mutated view in MySQL called UsersView which will fetch all records in
+-- the User table and the Employee table and print out the employees' id only
+--
+-- DROP VIEW IF EXISTS UsersView;
+-- CREATE VIEW IF NOT EXISTS UsersView AS SELECT * FROM User;
+CREATE OR REPLACE FUNCTION UsersView() RETURNS table (EmployeeID integer)
+BEGIN
+    SELECT EmployeeID INTO @usersView FROM User;
+    RETURN;
+END;
+SELECT * FROM viewUsers();
+
+DROP FUNCTION UsersView();

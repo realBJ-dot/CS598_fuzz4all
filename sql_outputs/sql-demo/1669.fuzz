@@ -1,0 +1,18 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ALTER TABLE `staff` add `staffDescription` TEXT NULL AFTER `activeStaff`;
+UPDATE `staff`
+	SET `staffDescription` =
+		'As you would normally expect, there is still a record of staff who cannot attend any class this year. However, they have been able to bring their staff back by using the application and are now in the classroom and the attending room. The staff have decided a change has occurred to their records and they will be notified as necessary. There is no need to send an email after these changes have been made.'
+		;
+
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+UPDATE `staff`
+	SET `staffDescription` =
+		'I am currently in the final year of Computer Science. I am currently enrolled in the MCA Program. As part of my work experience, I have been working on the project for the second year at NUS. One of my major interests is to learn about Linux, the Internet, and many more important, I intend to create a website for a company I would be working for. Anyone out there who is interested in me to look into this and learn more can reach me there and find out more about the project.
+'
+		;
+
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+UPDATE `staff`
+	SET `staffDescription` = 
+		'You found the way out. You will be able to use any database you wish. I have recently started working on another website which

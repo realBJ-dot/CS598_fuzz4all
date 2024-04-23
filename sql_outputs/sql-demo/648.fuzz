@@ -1,0 +1,31 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE Subject;
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE Subject;
+CREATE TABLE Student (ID INT PRIMARY KEY, SNAME VARCHAR(1000), SGRADE VARCHAR(255));
+INSERT INTO Student VALUES (1, 'Vini', '0-0');
+INSERT INTO Student VALUES (2,'Rafaela', '0-2');
+INSERT INTO Student VALUES (3,'Samantha', '0-2');
+
+
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE Student;
+CREATE TABLE Enrollment (ID INT PRIMARY KEY, SNAME VARCHAR(1000), EMAIL VARCHAR(1000), STUDENT_ID INT);
+INSERT INTO Enrollment VALUES (2, 'Rafaela', '<EMAIL>', 1);
+INSERT INTO Enrollment VALUES (3, 'Chris', '<EMAIL>', 1);
+INSERT INTO Enrollment VALUES (4, 'Samy', '<EMAIL>', 2);
+INSERT INTO Enrollment VALUES (5, 'John', '<EMAIL>', 2);
+INSERT INTO Enrollment VALUES (1, 'Vini', '<EMAIL>', 3);
+INSERT INTO Enrollment VALUES (6, '<NAME>', '<EMAIL>', 4);
+INSERT INTO Enrollment VALUES (1, 'Samy', '<EMAIL>', 1);
+INSERT INTO Enrollment VALUES (7, 'John', '<EMAIL>', 1);
+
+-- After changing the schema, check the data.
+
+SELECT sname AS 'Student Name',
+email AS 'Student Email',
+COUNT(*)
+FROM enrollments
+GROUP BY email
+ORDER BY COUNT(*) DESC;

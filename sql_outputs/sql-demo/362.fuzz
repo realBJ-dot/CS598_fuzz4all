@@ -1,0 +1,7 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users(
+  Name VARCHAR(32) NOT NULL
+);
+INSERT INTO Users (Name) VALUES ('John'), ('Joe');
+UPDATE Users set Name = 'Jeff';
+DELETE FROM Users WHERE User is null;

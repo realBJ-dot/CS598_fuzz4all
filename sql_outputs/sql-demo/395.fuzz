@@ -1,0 +1,5 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS Users CASCADE
+DROP TABLE IF EXISTS Contact CASCADE
+ALTER database DB_NAME CHARACTER SET 'utf8' COLLATE 'utf8_unicode_ci'
+-- Please create a real-world program, with appropriate input, database, views, and outputs.

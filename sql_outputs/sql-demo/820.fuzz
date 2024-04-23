@@ -1,0 +1,13 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS users;
+CREATE TABLE users (user_name varchar(30), user_pwd varchar(30));
+-- Please drop the table. There are no errors when you use "DROP TABLE tablename".
+-- But you can't use "DROP TABLE IF EXISTS tablename" because it will not work
+ DROP TABLE users;
+-- Please create a program that is equivalent to the previous generation
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS users;
+CREATE TABLE users (user_name varchar(30), user_pwd varchar(30));
+DROP TABLE users;
+DROP DATABASE IF EXISTS sampleDB;
+```

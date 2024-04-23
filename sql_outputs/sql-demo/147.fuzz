@@ -1,0 +1,11 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE Users_2;
+-- Please create a mutated program that creates a new table in DB
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users_3 (email varchar(50) PRIMARY KEY);
+-- Please create a mutated program that performs a bulk insert on DB
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+INSERT INTO Users_3(email) VALUES ('<EMAIL>'),('<EMAIL>'),('<EMAIL>'),('<EMAIL>');
+
+-- Your code goes here:
+SELECT * FROM Users_3;

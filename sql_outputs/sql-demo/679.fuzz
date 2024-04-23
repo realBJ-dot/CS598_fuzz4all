@@ -1,0 +1,14 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+drop table IF EXISTS Student, Teacher; CREATE TABLE Student (First_Name VARCHAR(20), Last_Name CHAR(20), Grade INT); CREATE TABLE Teacher (First_Name VARCHAR(20), Last_Name CHAR(20)); INSERT INTO Student (First_Name, Last_Name, Grade) VALUES ('John', 'Smith', 8); INSERT INTO Student (First_Name, Last_Name, Grade) VALUES ('Jane', 'Lee', 9); INSERT INTO Teacher (First_Name, Last_Name) VALUES ('Tom', 'Stark');
+UPDATE Student SET Grade=4 WHERE Last_Name='Smith';
+UPDATE Student SET Grade=5 WHERE Last_Name='Lee';
+UPDATE Teacher SET First_Name='Dick', Last_Name='Clark' WHERE First_Name='Tom';
+SELECT * FROM Student;
+SELECT * FROM Teacher;
+SELECT * FROM Student, Teacher WHERE Student.First_Name=Teacher.First_Name;
+DROP DATABASE IF EXISTS sampleDB;
+-- Please create a small test program that counts the number of unique values in a character set. Don't use a table. It's easier to work with a table of data if each character has a separate row. Please use engine=InnoDB.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+SELECT COUNT(*) FROM character_set_client; DROP DATABASE IF EXISTS sampleDB;
+SELECT COUNT(DISTINCT Username) FROM Users;
+SELECT COUNT(*) FROM character_set_server;

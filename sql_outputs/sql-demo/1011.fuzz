@@ -1,0 +1,30 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employees;
+CREATE TABLE employees
+(
+emp_no        INT(3) UNSIGNED      NOT NULL,
+emp_name      VARCHAR(20)          NOT NULL,
+emp_title     CHAR(10),
+from_date     DATE,
+to_date       DATE,
+job_title     CHAR(10),
+salary        DECIMAL(9,2),
+mgr           INT(3) UNSIGNED,
+hire_date     DATE,
+comm_rat      DECIMAL(3,1),
+DEPT_NO       INT(3),
+PRIMARY KEY(DEPT_NO, emp_no)
+);
+-- Please create a program that prints each department's manager's name.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS dept_emp;
+DROP TABLE IF EXISTS dept_manager;
+SET @query = "SELECT DISTINCT DEPT_NO, CONCAT(first_name,'', last_name) AS Manager
+             FROM  dept_emp
+             INNER JOIN
+             (SELECT DEPT_NO,emp_no
+             FROM employees
+             WHERE job_title = 'HR Manager')  a
+             ON a.emp_no = dept_emp.emp_no ";
+EXEC (@query);
+-- Please modify the program in such a way that the employees of each department report their titles, salary averages, company names and department names in a table (see tables above). Make it work even better.

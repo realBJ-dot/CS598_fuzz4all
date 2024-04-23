@@ -1,0 +1,43 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE person (
+    personID INT NOT NULL AUTO_INCREMENT, 
+        firstname VARCHAR(45) PRIMARY KEY, 
+        lastname, 
+        age,
+        gender, 
+    FOREIGN KEY (courseID) REFERENCES course (`courseID`),
+    PRIMARY KEY (courseNum));
+CREATE TABLE course (
+    courseID INT NOT NULL AUTO_INCREMENT, 
+        courseNum, 
+        courseName, 
+        teacherID, 
+        classroomID, 
+        termID, 
+        roomID,
+        PRIMARY KEY (courseNum), 
+        FOREIGN KEY (teacherID) REFERENCES person (personID), 
+        FOREIGN KEY (classroomID) REFERENCES course (classroomID), 
+        FOREIGN KEY (termID) REFERENCES course (classroomID));
+-- Please create a very short query which uses SQL features in a complex way. Be sure to use ENGINE=InnoDB. You should only use your database for the operations and assume no table other than person exist. Be sure to have a look of the example before creating a new table
+SELECT COUNT(*) AS CITY FROM City WHERE City.cityID = 1;
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB; CREATE TABLE IF NOT EXISTS person (
+    personID INT NOT NULL AUTO_INCREMENT, 
+        firstname VARCHAR(45), 
+        lastname, 
+        age,
+        gender, 
+    FOREIGN KEY (classID) REFERENCES classroom (`classID`),
+    KEY (classID), PRIMARY KEY (courseID));
+CREATE TABLE IF NOT EXISTS teacher (
+    teacherID INT NOT NULL AUTO_INCREMENT,
+        faculty, 
+        address, 
+        country, 
+        teacherID, 
+    FOREIGN KEY (faculty) REFERENCES classroom (`classID`), 
+    FOREIGN KEY (faculty) REFERENCES faculty (`faculty`), 
+    FOREIGN KEY (classroomID) REFERENCES classroom (`classID`), 
+    FOREIGN KEY (classroomID) REFERENCES classroom (`classID`), 
+    PRIMARY KEY (teacherID));
+-- Please create a very short query which uses SQL features in a complex way.

@@ -1,0 +1,29 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+DROP TABLE Person;
+-- Please create a semantically equivalent query to the previous one
+DROP TABLE Person;
+CREAte TABLE Person (id INT NOT NULL auto_increment PRIMARY KEY, fname VARCHAR(50), lname VARCHAR(50), salary FLOAT, comment TEXT);
+-- Please create a semantically equivalent SQL statement to the previous one
+SELECT fname, lname, salary, comment FROM Person;
+#
+# You have been tasked with generating and querying an entire database table using multiple different query formats, using multiple different dialects.
+-- Please go through queries listed below and answer all questions accordingly. You can get help with the following as well:
+-- 1. https: 
+-- 2. https: 
+-- For more queries and queries you can check out on your own.
+DROP KEYSPACE IF EXISTS mysql;
+DROP KEYSPACE IF EXISTS sampleDB;
+CREATE KEYSPACE IF NOT EXISTS mysql WITH REPLICATION ={
+    'class':'SimpleStrategy','replication_factor':1 };
+CREATE TABLE IF NOT EXISTS sampleDB.sampleTable (id INT NOT NULL PRIMARY KEY, fname VARCHAR(50), lname VARCHAR(50), salary FLOAT, date_inserted TIMESTAMP DEFAULT CURRENT_TIMESTAMP);
+-- Please create a semantically equivalent query with MySQL in-memory engine to the previous one
+SELECT id, fname, lname, salary, date_inserted FROM sampleDB.sampleTable;
+INSERT INTO `testDB`.`sampleTable` (`id`, `fname`, `lname`, `salary`, `date_inserted`) VALUES ('1', 'Taylor', 'Blake', 5000.222, '2017-01-26 01:01:17');
+SELECT * FROM mysql.testDB.sampleTable;
+--
+-- Please create a semantically equivalent query with MySQL in-memory engine to the previous one
+-- Please go through queries listed below and answer all questions accordingly. You can get help with the following as well:
+-- 1. https: 
+-- 2. https: 
+SELECT c.id, c.fname, c.lname, c.salary, c.date_inserted FROM mysql.testDB.sampleTable c WHERE (c

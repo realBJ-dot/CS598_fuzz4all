@@ -1,0 +1,21 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+ 
+USE sampleDB;
+
+ 
+ALTER TABLE employee CHANGE COLUMN EmpName Designation VARCHAR(20); INSERT INTO employee
+(EmpID, EmpName, Designation, Salary)
+VALUES
+(11, 'Natalie', 'Manager', 200000),
+(6022, 'Terry', 'Senior Analyst', 2000000);
+
+-- Please explain to another student how they can use the new column in their program
+SELECT * FROM employee
+WHERE EmpID > 20 AND (
+    SELECT EmpName
+    FROM employee
+    WHERE EmpID = 11
+);
+DROP TABLE IF EXISTS employee CASCADE;
+DROP DATABASE IF EXISTS sampleDB;

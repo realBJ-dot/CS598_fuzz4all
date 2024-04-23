@@ -1,0 +1,29 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS Student;
+CREATE TABLE Student (First_Name VARCHAR(20), Last_Name CHAR(20),
+Grade INT);
+INSERT INTO Student (First_Name, Last_Name, Grade) VALUES ('John', 'Smith', 8);
+INSERT INTO Student (First_Name, Last_Name, Grade) VALUES ('Jane', 'Lee', 9);
+INSERT INTO Student (First_Name, Last_Name, Grade) VALUES ('Tom', 'Stark', 10);
+SELECT * FROM Student;
+UPDATE Student SET Grade = 8.0 WHERE Grade = 8.0;
+SELECT * FROM Student;
+DROP TABLE Student;
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS Student;
+CREATE TABLE Student (First_Name VARCHAR(20), Last_Name CHAR(20),
+Grade INT);
+INSERT INTO Student (First_Name, Last_Name, Grade) VALUES ('John', 'Smith', 8.0);
+INSERT INTO Student (First_Name, Last_Name, Grade) VALUES ('Jane', 'Lee', 9);
+INSERT INTO Student (First_Name, Last_Name, Grade) VALUES ('Tom', 'Stark', 10);
+SELECT * FROM Student;
+CREATE PROCEDURE addGrade(In_studentID int, in_grade double) RETURNS text
+BEGIN
+UPDATE Grade SET Grade = Grade + in_grade WHERE Student_ID = In_studentID;
+RETURN 'Success';
+END
+
+DROP PROCEDURE addGrade;
+EXEC addGrade(2, 2.0);
+SELECT * FROM Student;

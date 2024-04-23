@@ -1,0 +1,6 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+TRUNCATE Person;
+INSERT INTO Person VALUES(1, 'Taylor', 'Blake', 5000.222, 'Hi there');
+#
+# The mutated program is now valid, at least as long as only one table remains.
+DROP DATABASE sampleDB;

@@ -1,0 +1,24 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users
+(
+    User_id INT NOT NULL AUTO_INCREMENT,
+    firstName TEXT,
+    LastName TEXT,
+    password TEXT,
+    PRIMARY KEY (User_id)
+);
+CREATE TABLE Contact
+(
+    Contact_id INT NOT NULL AUTO_INCREMENT,
+    firstName TEXT,
+    email TEXT,
+    contactType TEXT,
+    firstMessage TEXT,
+    secondMessage TEXT,
+    thirdMessage TEXT,
+    dateCreation DATETIME,
+    dateModification DATETIME,
+    PRIMARY KEY (Contact_id),
+    FOREIGN KEY (ContactId) REFERENCES Users (User_id) ON UPDATE CASCADE
+);
+ALTER DATABASE sampleDB CHARACTER SET utf8 COLLATE utf8_unicode_ci

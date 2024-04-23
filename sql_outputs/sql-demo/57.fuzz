@@ -1,2 +1,27 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users(username char(20) PRIMARY KEY, FirstName VARCHAR(30)) ENGINE=InnoDB;
+INSERT INTO Users(username,Firstname) VALUES('Test','Test'),('Admin','Admin'),('Guest','Guest'),('Super','Super');
+ 
+DELETE FROM Users WHERE username='Test';
+ 
+DELETE FROM Users;
+DROP DATABASE sampleDB;
 USE sampleDB;
-SELECT category, COUNT(*) FROM posts GROUP BY category;--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*/
+ 
+DESCRIBE USERS;
+ 
+UPDATE Users SET Firstname='Admin' WHERE username='Admin';
+ 
+SELECT * FROM Users;
+ 
+INSERT INTO Users VALUES('Test','Test'),('Admin','Admin'),('Admin','Admin'),('Admin','Admin'),('Guest','Guest'),('Super','Super');
+DELETE FROM Users;
+ROLLBACK;
+ 
+ROLLBACK;
+ 
+TRUNCATE TABLE Users;
+ 
+DESCRIBE USERS;
+ 
+ROLLBACK;

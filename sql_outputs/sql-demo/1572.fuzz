@@ -1,0 +1,23 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `sampleDB`.`users`;
+CREATE TABLE IF NOT EXISTS `sampleDB`.`users` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `Name` varchar(16) NOT NULL UNIQUE,
+  `Password` varchar(32) NOT NULL UNIQUE,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `users_Name` (`Name`)
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+  
+
+INSERT INTO `sampleDB`.`users` (`Name`, `Password`)
+VALUES
+  ('root', '<PASSWORD>'),
+  ('root', '<PASSWORD>'),
+  ('root', '<PASSWORD>'),
+  ('root', '<PASSWORD>'),
+  ('root', '<PASSWORD>'),
+  ('root', '<PASSWORD>'),
+  ('root', '<PASSWORD>'),
+  ('root', '<PASSWORD>'),
+  ('root', '<PASSWORD>');
+

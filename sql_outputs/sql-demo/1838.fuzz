@@ -1,0 +1,29 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS names;
+CREATE TABLE names(name varchar(20), address VARCHAR(25));
+INSERT INTO names VALUES('<NAME>','Somewhere in the world');
+INSERT INTO names VALUES('<NAME>','Somewhere in my country');
+INSERT INTO names VALUES('<NAME>','Somewhere else');
+UPDATE names SET address='Another place in the world' WHERE name='<NAME>';
+SELECT * FROM names;
+-- Please create a program that accepts a name.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS names(name varchar(20), address VARCHAR(25));
+UPDATE names SET address='Another place in the world' WHERE name='<NAME>';
+SELECT * FROM names;
+-- Please write a simple SELECT statement that uses a join. Please create a table named contacts
+-- with two columns. The first column is the name and address for each contact. The second column is the
+-- name for each person in the contacts table. The third column contains your name in the
+-- name column. Note that it would be very difficult to implement a full-featured join in your own code.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS contacts(name varchar(20), address VARCHAR(25));
+INSERT INTO contacts VALUES('<NAME>','Somewhere in the world');
+INSERT INTO contacts VALUES('<NAME>','Somewhere in my country');
+INSERT INTO contacts VALUES('<NAME>','Somewhere else');
+SELECT contacts.name FROM contacts LEFT JOIN names ON contacts.name=names.name;
+SELECT contacts.address FROM contacts LEFT JOIN names ON contacts.name=names.name
+-- Please write a simple SELECT statement that uses a UNION. Please create a table named contacts
+-- with two columns. The first column is the name and address for each contact. The second column is the
+-- name for each person in the contacts table. The third column contains your name in the
+-- name column. Note that it would be very difficult to implement a full-featured union in your own code.
+CREATE

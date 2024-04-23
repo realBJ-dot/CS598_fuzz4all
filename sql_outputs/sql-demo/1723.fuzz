@@ -1,0 +1,8 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP table user
+-- For MySQL, you can use a command like this in the terminal to generate a sequence of keys (i.e., primary keys) for a new table. This is a sequence in the actual database that can be used for other tables to reference.
+ALTER TABLE user AUTO_INCREMENT = 3;
+SELECT * from user;
+# Output should be like:  (empty for the mutated user table)
+DROP DATABASE IF EXISTS sampleDB;
+SELECT * from user;

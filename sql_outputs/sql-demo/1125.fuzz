@@ -1,0 +1,29 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- CREATE TABLE using the ALTER keyword
+-- For inserting a series of data, you'll need to use IN and ADD
+-- For DDL statements that do not create tables, you can skip table creation using the CREATE directive
+
+-- It would be recommended to perform basic insert, select, update and delete operations using INSERT queries and use ALTER syntax only if you need to edit existing rows
+INSERT INTO employees (emp_id, name_en, name_hi) values 
+(1, 'Shankari A', 'शान्डिरी गुरु'), 
+(2, 'Rajat A', 'दर्ता गुरु'),
+(3, 'Parthasarathy A', 'परिचय गुरु'),
+(4, 'Hariharan A', 'हरिंगारी गुरु'),
+(5, 'Mayank J', 'मंगलपु गुरु'),
+(6, '<NAME>', '<NAME>ुरु'), 
+(7, 'Manohar', '<NAME>ुरु'),
+(8, '<NAME>', '<NAME>ुरु'), 
+(9, 'Himanshu', '<NAME>ुरु'),
+(10, 'Pratap Sharma', '<NAME>ुरु'),
+(11, 'Sree Kaur A', '<NAME>ुरु'),
+(12, 'Vasun Shah A', '<NAME>ुरु'),
+(13, 'Rupali Sharma', '<NAME>ुरु'), 
+(14, 'Ashwini', '<NAME>ुरु'), 
+(15, 'Parthasarathy Sharma', '<NAME>ुरु');
+
+INSERT INTO employees (emp_id, name_en, name_hi) values 
+(1001, 'Abhinav Kumrane', 'बिज्ञणकर्ती कुमीन'),
+(1002, 'Ajay', 'अजय'),
+(1003, 'Avish', 'एवंस्थको'),
+(1004, 'Abhinav', 'बिज्ञणकर्ती'),
+(1005, 'Kiran',

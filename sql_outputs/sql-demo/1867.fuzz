@@ -1,0 +1,9 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE employee(id int, name varchar(20), email varchar(50), dept varchar(20), PRIMARY KEY (id))
+INSERT INTO employee VALUES(1, 'rashmi', '<EMAIL>', 'Engineering')
+SELECT * from employee
+-- Drop the created database
+USE mysql; DROP DATABASE IF EXISTS `sampleDB`;
+*/
+DROP DATABASE IF EXISTS `sampleDB`;
+-- DROP DATABASE IF EXISTS `DBMS`;

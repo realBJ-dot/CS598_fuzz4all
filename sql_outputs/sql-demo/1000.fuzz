@@ -1,0 +1,32 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employees;
+DROP TABLE IF EXISTS dept_manager;
+DROP TABLE IF EXISTS dept_emp;
+DROP TABLE IF EXISTS dept;
+DROP TABLE IF EXISTS staff;
+DROP TABLE IF EXISTS salaries;
+DROP TABLE IF EXISTS employees;
+DROP TABLE IF EXISTS salaries;
+-- Please create a new table and add data
+CREATE TABLE employees(emp_no int PRIMARY KEY, emp_name varchar(100), emp_title varchar(30), salary double);
+INSERT INTO employees(emp_no, emp_name, emp_title, salary)
+VALUES(1,'Emmanuel', 'CEO',50000.00),
+(2,'Mark','CTO',30000.00),
+(3,'Mike', 'CFO', 250000.00);
+-- Please drop your table and see its modifications in sampleDB.
+DROP TABLE IF EXISTS employees;
+-- Please create a second table with another column
+CREATE TABLE employees(emp_no int PRIMARY KEY, username varchar(100), emp_name varchar(100), emp_title varchar(30), manager varchar(100), salary double);
+INSERT INTO employees(emp_no, username, emp_name, emp_title, manager, salary)
+VALUES(1,'Emmanuel', 'Emmanuel','CEO', 10000.00,30000.00),
+(2,'Mark','Mark','CTO', 10000.00,20000.00),
+(3,'Mike', 'Mike','CFO', 80000.00,20000.00);
+-- Please drop your table and add another column in that table.
+DROP TABLE IF EXISTS employees;
+ALTER TABLE employees ADD department varchar(20) NULL;
+-- Please remove all duplicates from the manager column.
+UPDATE employees SET manager = manager1 WHERE manager = manager2 AND manager = manager3;
+-- Please create a fourth table and add data
+CREATE TABLE employees(emp_no int PRIMARY KEY, username varchar(100), emp_name varchar(100), emp_title varchar(30), manager varchar(100), department varchar(20), salary double);
+INSERT INTO employees(emp_no, username, emp_name, emp_title, manager, department, salary)
+VALUES(1,'

@@ -1,0 +1,6 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS users(user_id INT PRIMARY KEY AUTO_INCREMENT, first_name TEXT, last_name TEXT, email TEXT, created_at TIMESTAMP NULL);
+CREATE UNIQUE INDEX IF NOT EXISTS usersnameonemail ON users (email);-- DROP INDEX usersnameonemail;
+
+drop database sampleDB;
+create table orders (order_id int primary key auto_increment, order_date varchar(15), user_id int, item_name varchar(60)) ENGINE=InnoDB DEFAULT CHARSET=utf8;

@@ -1,0 +1,29 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users_2 (username varchar(20), FirstName  varchar(30));
+INSERT INTO Users(username, FirstName) VALUE('<NAME>', 'Joseph');
+UPDATE Users set FirstName = 'Marie' where username='<NAME>';
+DROP TABLE Users_2
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users_1 (LastName VARCHAR(30) PRIMARY KEY);
+INSERT INTO Users_1 (LastName) VALUE('Lo')
+INSERT INTO Users_1 (LastName) VALUE('Bezuszka')
+UPDATE Users_1 set LastName = 'Biezen' where LastName = 'Bia';
+DROP TABLE Users_2
+insert into Users (username, FirstName) values ('<NAME>', 'Alexander')
+insert into Users (username, FirstName) values ('<NAME>', 'Catarina')
+insert into Users (username, FirstName) values ('<NAME>', 'Angela')
+insert into Users (username, FirstName) values ('<NAME>', 'Hans')
+insert into Users (username, FirstName) values ('<NAME>', 'Jayla')
+insert into Users (username, FirstName) values ('<NAME>', 'Cara')
+insert into Users (username, FirstName) values ('<NAME>', 'Tomasz')
+insert into Users (username, FirstName) values ('<NAME>', 'Leonarda')
+insert into Users (username, FirstName) values ('<NAME>', 'Adrian')
+insert into Users (username, FirstName) values ('<NAME>', 'Apollo')
+insert into Users (username, FirstName) values ('<NAME>', 'Ravana')
+insert into Users (username, FirstName) values ('<NAME>', 'Peter')
+select * from Users order by FirstName
+ 
+INSERT INTO Users (USERNAME, FIRSTNAME, MIDDLENAME, LASTNAME)
+SELECT User, LEFT(Firstname,1) as Firstname, SUBSTRING(Firstname,1,1) as Middlefirst, Lastname
+FROM Users
+ORDER BY User

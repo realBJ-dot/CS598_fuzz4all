@@ -1,0 +1,26 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS person_tmp;
+CREATE TABLE person_tmp (id INT PRIMARY KEY, name VARCHAR(200), age INT);
+INSERT INTO person_tmp (id, name, age) VALUES(3, '<NAME>', 31);
+INSERT INTO person_tmp (id, name, age) VALUES(4, '<NAME>', 25);
+SELECT * FROM person_tmp;
+SELECT * FROM person_tmp ORDER BY age;
+-- MySQL and Oracle have different way of managing queries. You can use select query with LIMIT keyword.
+SELECT * FROM person_tmp LIMIT 3;
+-- MySQL supports multiple queries in one INSERT statement, they have to be separated by semi-colon.
+INSERT INTO person_tmp (id, name, age) VALUES(3, '<NAME>', 31);
+INSERT INTO person_tmp (id, name, age) VALUES(4, '<NAME>', 25);
+INSERT INTO person_tmp (id, name, age) VALUES(5, '<NAME>', 29);
+SELECT * FROM person_tmp;
+ 
+ 
+CREATE TABLE IF NOT EXISTS test (name VARCHAR(100), price INT(100));
+INSERT INTO test (name, price) VALUES('<NAME>','$122');
+INSERT INTO test (name, price) VALUES('<NAME>','$230');
+INSERT INTO test (name, price) VALUES('<NAME>','$370');
+INSERT INTO test (name, price) VALUES('<NAME>','$100');
+INSERT INTO test (name, price) VALUES('<NAME>','$230');
+INSERT INTO test (name, price) VALUES('<NAME>','$370');
+
+SELECT * FROM test;
+SELECT * FROM test ORDER BY name;

@@ -1,0 +1,12 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+select count(*) AS n from departments;
+select count(*) over (PARTITION BY departmentName ORDER BY departmentName) AS n from departments;
+select departmentName,departmentId,count(employeeId) AS n
+from employees
+where departmentId in (
+	-- Please modify the below lines
+	select id from departments
+		WHERE departmentName = 'Sales'
+)
+group by departmentName
+order by N desc;

@@ -1,0 +1,33 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP VIEW IF EXISTS new;
+
+-- Please create a SQL query which calculates the sum of salary on all employees leaving Paris
+select id, id * salary from Employees where location='Paris' group by id
+-- Please create a SQL query which displays the number of employees in each department
+select dname, count(*) as Employee
+from Employees, Departments
+where Employees.department = Departments.department
+group by dname
+-- Create a SQL query which returns only the last name of employees without the first name
+select distinct last_name from Employees;
+-- Please create a query which finds all the employees whose first name contains 'M' in their last name
+select * from Employees where last_name like 'M%'; 
+-- Please create a query that finds all the employees the manager of any employee is the boss of. (Hint: Make sure the last_name column contains the manager's last name).
+-- Select the manager's last name from Employees as the manager from the query above
+
+-- Write an SQL query that retrieves all departments except 'Sales'.
+-- Select the name of each department from the Departments table
+SELECT DISTINCT Department, CONCAT('d-', Department) 
+FROM Departments 
+WHERE Department NOT IN ('Sales');
+-- In addition, you are required to write a query which returns all departments where 'Sales' is in the last_name of all employees.
+-- SELECT DISTINCT Department, CONCAT('d-', Department) FROM Departments 
+-- WHERE (SELECT CONCAT('*', LastName, '*') FROM Employees WHERE (
+-- LastName=CONCAT(FirstName, 'd-', LastName))) = Department;
+-- Please modify the provided SQL query to check if all employees in a department have a last_name starting with 'R'. The output of the query should be 'First name = R and Last name = Rao', 'First name = Rao and Last name = R'. Please create and use a small sample database.
+SELECT * FROM Employees 
+WHERE (SELECT CONCAT('*', LastName, '*') FROM Employees WHERE (
+LastName=CONCAT(FirstName, 'd-', LastName)) IN 
+SELECT CONCAT('d-', Department) FROM Departments)) = Department;
+-- In the query above, firstname should contain 'M' and lastname should not. If they contain other letters, you may ignore them.
+-- Please modify the provided SQL query to check if all employees in a department have a last_name ending with 'io'. The output of the query should be 'First name = Moufikio-Habir and Last name = <EMAIL>', 'First name = <EMAIL>io-Habir and Last name = Mouf

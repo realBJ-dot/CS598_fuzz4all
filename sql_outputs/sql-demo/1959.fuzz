@@ -1,0 +1,19 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP DATABASE IF EXISTS sampleDB2;
+CREATE DATABASE IF NOT EXISTS sampleDB2; USE sampleDB2;
+INSERT INTO employees_salary_by_salary(employee_salary, emp_salary) VALUES ('2012-06-04', 100000);
+SELECT employee_salary + 5000 FROM employees_salary_by_salary;
+DROP DATABASE IF EXISTS sampleDB;
+DROP DATABASE IF EXISTS sampleDB2;
+-- Please create an easy way to generate a unique password for a given user. You need to implement a user validation database table and create an SQL program that verifies the user login credentials. You also have to be able to change your password (through some kind of security mechanism) during program run time. Implement the same functionality in Python as well.
+-- Now go ahead and create a table with a password field which has to be unique. When anybody tries to access the table to see the users of that database, have those users logged in themselves. Do not allow those users to change their password.
+USE sampleDB -- You create a table sampleDB.user_pass as shown in the below SQL Script.
+CREATE TABLE IF NOT EXISTS user_pass (
+  id INTEGER NOT NULL AUTO_INCREMENT,
+  username TEXT,
+  password VARCHAR(15),
+  PRIMARY KEY(id));
+  
+-- Now go over database and create a user login table. Use username and password as primary key.
+-- Create a simple SQL program in which a logged in user logs you out.
+-- Now run that sql script in MySQL. You need to see how multiple connections are handled. If you run the sample program in Python, then look at the number of database connections in Python interpreter.

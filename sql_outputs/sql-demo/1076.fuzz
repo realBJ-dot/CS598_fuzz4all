@@ -1,0 +1,16 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE tampil(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_kota INT
+);
+CREATE TABLE `tampil_kota AS` (
+  `id` INTEGER,
+  `nama_kota` VARCHAR(128),
+  `provinsi` VARCHAR(256),
+  `koordinat` MEDIUMTEXT
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+INSERT INTO `tampil_kota` (`id`, `nama_kota`, `provinsi`, `koordinat`) VALUES
+(1, 'Tanjung Karang', 'Provinsi Jawa Tengah', '{\"latitude\": -1.0040344,\"longitude\": 116.4007242}'),
+(2, 'Tegalrejo', 'Provinsi Jawa Tengah', '{\"latitude\": -1.0033728,\"longitude\": 116.4007653}'),
+(4, 'Tanjung Rejo', 'Provinsi Jawa Tengah', '{\"latitude\": -1.0067686,\"longitude\": 116.4003160}');
+COMMIT;

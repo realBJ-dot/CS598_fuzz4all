@@ -1,0 +1,26 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ALTER TABLE user_db_skills MODIFY label varchar(16);  
+-- Please create a more complex query and modify it
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE user_db_skills;
+SET GLOBAL innodb_lock_wait_timeout = 5;  
+INSERT INTO user_db_skills VALUES ('Developer'), ('Software Engineer'), ('Data Analyst');
+ALTER TABLE user_db_skills ADD CONSTRAINT CHK_label CHECK LABEL(label), ADD CONSTRAINT CHK_label2 SIZE 3;
+ 
+DELETE FROM user_db_skills WHERE label = ‘Developer’;  
+ALTER TABLE user_db_skills ADD FULLTEXT INDEX (`label`), ADD FULLTEXT INDEX (`label`  ), ADD FULLTEXT INDEX (`label`, `label2`);  
+-- Add a new index to SKILLS
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE if NOT EXISTS skills_db_skills (
+label VARCHAR(20), PRIMARY KEY (label)
+);
+CREATE TABLE if NOT EXISTS skills_db_skill_history (
+label VARCHAR(20), change_amount DECIMAL(5, 2), PRIMARY KEY (label)
+) engine = innodb;
+ 
+INSERT INTO skills_db_skills VALUES ('Developer'), ('Software Engineer'), ('Data Analyst'), ('Engineer'), ('Lawyer');
+ 
+ 
+ 
+/* INSERT INTO skill_change_log SELECT *, 'added'

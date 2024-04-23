@@ -1,7 +1,25 @@
-USE sampleDB;
-CREATE TABLE `people` (
-  `firstname` varchar(20) NOT NULL,
-  `lastname` varchar(20) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  PRIMARY KEY (`firstname`,`lastname`)
-) ENGINE=InnoDB;
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS Users (New_Name INTEGER AUTO_INCREMENT PRIMARY KEY UNIQUE NOT NULL);
+INSERT INTO Users(ID, Name, User_id) VALUES(1,'Hemant', 1337);
+UPDATE Users SET User_id= 3345 WHERE ID = 1;
+DELETE FROM Users WHERE ID = 1;
+INSERT INTO Users(ID, Name, User_id) VALUES(2,'Sneha', 2345);
+UPDATE Users SET User_id = 4354 WHERE ID = 2;
+DELETE FROM Users WHERE ID = 2;
+-- Here create an update where the existing table is updated to add a new column called User_id. The only difference is the UPDATE clause.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS Users (ID INTEGER AUTO_INCREMENT PRIMARY KEY, Name TEXT, User_id INTEGER);
+INSERT INTO Users(Name, User_id) VALUES('<NAME>', 666);
+UPDATE Users SET User_id = 1 WHERE ID=1;
+UPDATE Users SET User_id = 2 WHERE ID=2;
+UPDATE Users SET User_id = 3 WHERE ID=3;
+UPDATE Users SET User_id = 5 WHERE ID=4;
+-- Here drop the users table by using the RENAME command. If the user had created an auto increment col in the user table which had this value at the creation, then you are required to use this id to update the user name.
+DROP SEQUENCE IF EXISTS Users_ID_seq;
+DROP TABLE IF EXISTS Users CASCADE;
+-- Please write a query to select the total records of every table in the database called sampleDB. You can ignore the tables you created.
+SELECT COUNT(*) FROM information_schema.tables;
+-- Please write a program to select all the rows where emailId!= (SELECT EmailId FROM Employees WHERE EmployeeID=(SELECT EmployeeID FROM Employees))
+SELECT * FROM Employees AS e, Employees AS e_new
+WHERE e.EmailId!= (SELECT EmailId FROM Employees WHERE e_new.ID = e.EmployeeID);
+

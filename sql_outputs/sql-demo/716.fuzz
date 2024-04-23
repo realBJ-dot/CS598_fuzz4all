@@ -1,0 +1,29 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+INSERT INTO `Lecture` (`Course_Code`, `Course_Name`) VALUES ("A01", "Information Systems"); -- please run these lines to see the changes.
+INSERT INTO `Lecture` (`Course_Code`, `Course_Name`) VALUES ("A02", "Web Services");
+INSERT INTO `Lecture` (`Course_Code`, `Course_Name`) VALUES ("A04", "Machine Learning");
+INSERT INTO `Lecture` (`Course_Code`, `Course_Name`) VALUES ("A0401", "Machine Learning Algorithms");
+DROP TABLE IF EXISTS `Lecture`;
+ 
+-- If your database is empty in sampleDB, you should run the next query to create some rows.
+-- Then insert the following values into sampleDB before running the query. Be sure to use ENGINE = InnoDB.
+-- A01 is a valid lecture Code.
+-- A10 is a second lecture Code.
+INSERT INTO `Lecture` (`Course_Code`, `Course_Name`) VALUES ("A01", "Information Systems");
+INSERT INTO `Lecture` (`Course_Code`, `Course_Name`) VALUES ("A02", "Web Services");
+INSERT INTO `Lecture` (`Course_Code`, `Course_Name`) VALUES ("A10", "Machine Learning");
+DROP TABLE IF EXISTS `Lecture`;
+
+-- Please create a mutated program that displays course Codes A0402 through A0409 in the course Codes A0410 through A0419 in the Lecture table.
+-- Please make sure you use ENGINE = InnoDB. You should use sampleDB as the database.
+ALTER USER 'root'@'%' IDENTIFIED BY '<PASSWORD>';
+-- Please note that if the MySQL root user was created without a password, you should use the command to see the password change.
+USE sampleDB;
+SHOW GRANTS FOR 'root'@'%';
+DROP TABLE IF EXISTS `Lecture`;
+DROP DATABASE IF EXISTS sampleDB;
+
+-- Please write a query that adds two rows into Lecture table as mentioned in Sample DB contents.
+-- You need to use ENGINE = InnoDB and if necessary, change sampleDB password.
+
+-- Please write a

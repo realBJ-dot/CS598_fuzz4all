@@ -1,0 +1,31 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS users(
+	roleId INT NOT NULL,
+	userId INT NOT NULL,
+	CONSTRAINT fk_userId FOREIGN KEY(userId) REFERENCES users(userId) ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT fk_roleId FOREIGN KEY(roleId) REFERENCES users(roleId) ON DELETE CASCADE ON UPDATE CASCADE,
+	PRIMARY KEY(roleId, userId)
+);
+DESCRIBE users;
+GRANT ALL PRIVILEGES ON sampleDB.* TO 'root'@'%';
+DESCRIBE sampleDB.users;
+UPDATE users SET roleId = 1 WHERE userId=1;
+DESCRIBE users;
+ -- Please create a very short query which uses SQL features in a complex way. Be sure to use ENGINE=InnoDB. You should only use sampleDB as the database and assume no other table exist. You need to create new tables to perform operations. In the end, drop all tables you created.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS users(
+	userId INT NOT NULL PRIMARY KEY,
+	name VARCHAR(10) DEFAULT 'root',
+	PASSWORD_HASH  VARCHAR(720) DEFAULT NULL,
+	ROLE INT DEFAULT 2
+);
+DESCRIBE users;
+CREATE TABLE IF NOT EXISTS permissions(
+	roleId INT NOT NULL,
+	userId INT NOT NULL,
+	CONSTRAINT fk_userId FOREIGN KEY(userId) REFERENCES users(userId) ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT fk_roleId FOREIGN KEY(roleId) REFERENCES users(userId) ON DELETE CASCADE ON UPDATE CASCADE,
+	PRIMARY KEY(roleId, userId)
+);
+DESCRIBE users;
+DESCRIBE permissions;

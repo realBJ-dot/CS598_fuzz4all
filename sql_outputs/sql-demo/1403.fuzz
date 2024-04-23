@@ -1,0 +1,9 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS `books` (
+  `author_id` INT(10) UNSIGNED,
+  `booktitle` VARCHAR(255)
+);
+INSERT INTO `books` (`author_id`, `booktitle`)
+VALUES (10, 'MySQL Bible'); -- Please use your script as the new mutated script
+DROP TABLE IF EXISTS `books`; -- Please drop the old table
+SELECT * FROM `books`;

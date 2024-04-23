@@ -1,0 +1,41 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+INSERT INTO Users_2 VALUES ('John','John'),('Smith','Smith');
+INSERT INTO Users_2 VALUES ('Jane','Jane'),('Walter','Walter'),('Jim','Jim');
+DO
+	DELETE FROM Users_2 where User_id <4;
+COMMIT;
+SELECT * FROM Users_2;
+SELECT * FROM Users_2 order by User_id desc;
+SELECT * FROM Users_2 order by User_id ASC;
+SELECT * FROM Users_2 order by User_id desc limit 2;
+SELECT * FROM Users_2 order by User_id ASC limit 2;
+CREATE TABLE Users_3
+(Username char(30) PRIMARY KEY,FirstName varchar(30),LastName varchar(30));
+CREATE TABLE Users_3_2
+(
+Username char(30) PRIMARY KEY,
+FirstName varchar(30),
+LastName varchar(30),
+Age int(11),
+Gender enum ('M','F','NULL'),
+Salary money(10,2));
+CREATE TABLE Users_4
+(Username char(30),FirstName char(30),LastName char(30));
+CREATE TABLE Users_5
+(Username char(30) PRIMARY KEY,FirstName varchar(30) UNIQUE,LastName varchar(30),Age int(11));
+use sampleDB;
+SELECT * FROM Users_3;
+INSERT INTO Users_3 VALUES ('Jane','Smith','Jack'),('John','Smith','Jones'),('Jim','Smith','Jimothy'),('Jane','Walter','Walter'),('Jane','Smith','Jack'),('Jim','Smith','Jimothy');
+SELECT * FROM Users_3 where User_id <2;
+SELECT * FROM Users_3 order by Username ;
+SELECT * FROM Users_3 order by User_id desc;
+SELECT * FROM Users_3 where Salary > 5000;
+SELECT * FROM Users_3 where Age between 20 and 29;
+SELECT * FROM Users_3 where ( Age > 18 ) and ( ( Salary < 5000 ) or ( Salary > 5000)) and (Username in ('Jim','Jimothy'));
+SELECT * FROM Users_3 where City in ('NY','NJ');
+SELECT * FROM Users_3 where Salary >= 5000;
+update users_3 set username = 'New_User', username_1 = 'New_User_1';
+rollback;
+
+DROP DATABASE IF EXISTS sampleDB;
+--

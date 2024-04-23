@@ -1,0 +1,32 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employee_salary_by_time;
+CREATE TABLE employee_salary_by_time (
+    employee_salary	DECIMAL(18,0),
+    emp_salary		decimal(18,0),
+    emp_date		date,
+    PRIMARY KEY (employee_salary, emp_salary, emp_date));
+UPDATE employee_salary_by_time SET emp_salary = emp_salary + 6000;
+SELECT emp_salary FROM employee_salary_by_time;
+-- Please create a mutated program that modifies the former one using a temporary table. This is a bit clunky though for humans and may not even be possible using a table in a temporary table.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employee_salary_by_salary;
+CREATE TABLE employee_salary_by_salary (
+    employee_salary	DECIMAL(18,0),
+    emp_salary		decimal(18,0),
+    PRIMARY KEY (employee_salary, emp_salary));
+UPDATE employee_salary_by_salary SET emp_salary = emp_salary + 6000;
+SELECT emp_salary FROM employee_salary_by_salary;
+-- Please create a mutated program that modifies the former one using a temporary table. This is a bit clunky though for humans and may not even be possible using a table in a temporary table.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employees_salary_by_salary;
+CREATE TABLE employees_salary_by_salary (
+    employee_salary	DECIMAL(18,0),
+    emp_salary		decimal(18,0),
+    PRIMARY KEY (employee_salary, emp_salary));
+UPDATE employees_salary_by_salary SET emp_salary = emp_salary + 6000;
+SELECT emp_salary FROM employees_salary_by_salary;
+-- Please create a program to update the employee_salary_by_salary table in the above tables to replace 15000 with 18000.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employees_salary_by_salary;
+CREATE TABLE employees_salary_by_salary (
+    employee_salary	DECIMAL(18,0),

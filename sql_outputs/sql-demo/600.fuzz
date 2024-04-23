@@ -1,0 +1,55 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+CREATE TABLE IF NOT EXISTS Mutated (
+	"ID" INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	"Name" VARCHAR(100),
+	"Age" INT
+);
+
+CREATE TABLE IF NOT EXISTS StudentsMutated (
+	"ID" INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	"Name" VARCHAR(100),
+	"Age" INT,
+	"Mutated" VARCHAR(100)
+);
+
+CREATE TABLE IF NOT EXISTS StudentsMutatedBy (
+	"ID" INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	"Name" VARCHAR(100),
+	"Age" INT,
+	"Mutated" VARCHAR(100),
+	"MutatedBy" VARCHAR(100)
+);
+
+ 
+SELECT * FROM MUTATED;
+
+ 
+
+-- You will need to include the "mysql.h" header.
+INSERT INTO StudentsMutated (Name,Age) VALUES ('Jacob',50);
+INSERT INTO StudentsMutatedBy (Name,Age,Mutated) VALUES ('John',80,'Newly mutated to Karen');
+UPDATE Mutated SET MutatedBy='Karen' WHERE "Name" = 'Jacob';
+
+--- SELECT MUTED BY --
+SELECT * FROM StudentsMutatedBy;
+
+-- You might use this for this task also. Do NOT use other query in the UPDATE stmt.
+UPDATE S.StudentsMutatedBy 
+SET 
+	S.StudentsMutatedBy.Mutated="'Taylor'" 
+	WHERE 
+	S.StudentsMutatedBy.MutatedBy='<NAME>';
+
+-- You might use this for this task also. Do NOT use other query in the UPDATE stmt.
+DELETE 
+FROM S.StudentsMutatedBy 
+WHERE 
+	S.StudentsMutatedBy.Mutated<>'Newly mutated to Karen'
+AND 
+	S.StudentsMutatedBy.MutatedBy='%';
+
+-- You might use this for this task also. Do NOT use other query in the UPDATE stmt.
+UPDATE Mutated
+SET MutatedBy=(SELECT * FROM StudentsMutatedBy WHERE Mutated = MutatedBy LIMIT 1)
+WHERE Mutated = 'Jacob';

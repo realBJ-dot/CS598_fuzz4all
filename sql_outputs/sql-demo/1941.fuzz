@@ -1,0 +1,13 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS employees_salary_by_salary (employee_salary    INT UNSIGNED NOT NULL, emp_salary    INT UNSIGNED NOT NULL, PRIMARY KEY (employee_salary, emp_salary));
+UPDATE employees_salary_by_salary SET emp_salary = emp_salary + 6000;
+SELECT emp_salary + 5000 FROM employees_salary_by_salary;
+-- Please modify the semantical semantically equivalent program you just created. Create a derived table where you have the field salary and your field is based on a subquery to select from the employees table.
+CREATE DATABASE IF NOT EXISTS sampleDB;
+USE sampleDB;
+CREATE TABLE IF NOT EXISTS employees_salary_by_salary (employee_salary INT UNSIGNED NOT NULL, emp_salary INT UNSIGNED NOT NULL, PRIMARY KEY (employee_salary, emp_salary));
+SELECT employee_salary
+FROM employees_salary_by_salary
+WHERE (SELECT COUNT(*) > 1
+            FROM employees_salary_by_salary e
+            INNER JOIN employees e2 ON employee_salary = e2.employee_salary) = 1;

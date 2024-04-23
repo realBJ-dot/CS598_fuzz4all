@@ -1,0 +1,22 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS Employees (
+  id INT UNSIGNED NOT NULL PRIMARY KEY,
+  name char (50),
+  last_name char (50),
+  job char (50),
+  department char (50)
+);
+INSERT INTO Employees VALUES(1, 'Joshua', 'Roberts', 'Admin', 'Admin');
+INSERT INTO Employees VALUES(10, 'Bob', 'Lobos', 'Engine', 'Engine');
+INSERT INTO Employees VALUES(200, 'John', 'Doe', 'Engine', 'Engine');
+INSERT INTO Employees VALUES(205, 'Henry', 'Ford', 'Engine', 'Engine');
+INSERT INTO Employees VALUES(264, 'Thomas', 'Lee', 'Tech Support', 'Tech Support');
+INSERT INTO Employees VALUES(270, 'Kostas', 'Mertens', 'Engine', 'Engine');
+INSERT INTO Employees VALUES(274, 'Mike', 'Gibbs', 'Developer', 'Developer');
+INSERT INTO Employees VALUES(277, 'Anna', 'Jung', 'Engine', 'Engine');
+INSERT INTO Employees VALUES(278, 'Terry', 'Rice', 'Developer', 'Developer');
+INSERT INTO Employees VALUES(293, 'John', 'Doe', 'Engine', 'Engine');
+INSERT INTO Employees VALUES(200, 'John', 'Doe', 'Engine', 'Engine');
+UPDATE Employees SET department = 'Engineering' WHERE id = 8;
+UPDATE Employees SET department = 'Engineering' WHERE id = 8;
+DELETE FROM Employees WHERE name = 'John'; */

@@ -1,0 +1,5 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+SELECT * FROM person;
+#
+-- Finally, to drop all tables you created, simply delete the respective query.
+DROP TABLE Person;

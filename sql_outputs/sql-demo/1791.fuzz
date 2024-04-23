@@ -1,0 +1,36 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE car (name varchar(50), price decimal(15,2));
+INSERT INTO car (name, price) 
+ VALUES 
+  ('Buick',98760), 
+  ('Ford',25000), 
+  ('Subaru',89000),
+  ('Mercedes-Benz',66780);
+UPDATE car 
+    SET price = 109999 
+    WHERE name = 'Volvo';
+SELECT * FROM car;
+
+-- Please create a mutated program that returns the sum of price columns in the car table.
+CREATE TABLE car (name varchar(50), price decimal(15,2));
+INSERT INTO car (name, price) 
+ VALUES 
+  ('Buick',98760), 
+  ('Ford',25000), 
+  ('Subaru',89000),
+  ('Mercedes-Benz',66780);
+SELECT sum(price) FROM car;
+
+-- Please create a mutated program that updates the car price of all objects.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE car (name varchar(50), price decimal(15,2));
+INSERT INTO car (name, price) 
+ VALUES 
+  ('Buick',98760), 
+  ('Ford',25000), 
+  ('Subaru',89000),
+  ('Mercedes-Benz',66780);
+UPDATE car 
+    SET price = 99999 
+    WHERE name = 'Volvo';
+SELECT * FROM car;

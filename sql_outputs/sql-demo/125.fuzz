@@ -1,0 +1,23 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users(username char(20) PRIMARY KEY, FirstName VARCHAR(30)) ENGINE=InnoDB;
+INSERT INTO Users(username,Firstname) VALUES('Test','Test'),('Admin','Admin'),('Guest','Guest'),('Super','Super');
+```
+
+
+# [PHP5](https: 
+
+PHP is a server-side scripting language, meaning it is interpreted from the request information. PHP runs on most modern web servers and is part of an important set of tools to boost Internet service-oriented applications, from the worlds of Java, ASP, Ruby on Rails and MySQL. PHP is open-source software under the GNU General Public License.
+
+
+# [Python](https: 
+
+Python is a programming language developed by the British machine language programmer <NAME>. Originally developed in 1989 with an emphasis on numerical computing, Python has become one of the most popular programming languages in the world. In 1991, it was announced by the international organization Forerunner. Python is the second most popular programming language under the GNU General Public License. Python has become one of the fastest-growing programming languages, and used in a wide variety of application domains and is now used in many large-scale software projects. In 2003 Python became the base of nearly every project running in the world
+
+
+# [SQL](https: 
+
+SQL (Structured Query Language) is a language designed for accessing data relational databases within an application using structured queries. Data is retrieved from these databases or accessed using procedures or functions. SQL can be used for any kind of applications where data is stored in a database, as well as in database applications designed to access or store data. Since data needs to be managed, a relational database is the basic unit used to build a database. To create databases and tables, relational databases need a schema. A **schema** is an organized collection of tables which store a collection of related data entities that are all identified by an **IDENTITY constraint**.
+
+> Schema = data entity collection - constraints - relationships that identify data entity collection
+
+Once the schema has been created, **INSERT**, **DELETE**, **UPDATE** and **SELECT** commands are used

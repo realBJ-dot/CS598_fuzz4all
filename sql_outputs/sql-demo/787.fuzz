@@ -1,0 +1,14 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TEMPORARY TABLE tempTable LIKE FirstAndSecondTable USING ENGINE=InnoDB;
+
+INSERT INTO tempTable SELECT * FROM FirstAndSecondTable;
+SELECT COUNT(data) FROM tempTable;
+DROP TABLE tempTable;
+--
+-- This is just for your information, the above statement has no effect.
+CREATE TABLE IF NOT EXISTS FCT1(
+  fct1_id INT NOT NULL AUTO_INCREMENT,
+  fct1_data1 VARCHAR(300),
+  fct1_data2 VARCHAR(300),
+  PRIMARY KEY (fct1_id)
+);

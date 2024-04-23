@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- Create a new table in the previous generation
+DROP TABLE IF EXISTS car;
+CREATE TABLE car (name CHAR(5), price LONG);
+INSERT INTO car VALUES ('Benz', 999.00);
+-- Update a column in the previous generation
+ALTER TABLE car ADD COLUMN color CHAR(1); 
+UPDATE car SET color='White'; 
+-- Drop the previous generation
+DROP DATABASE IF EXISTS sampleDB;

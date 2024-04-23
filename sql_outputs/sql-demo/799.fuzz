@@ -1,0 +1,55 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+SELECT * INTO OUTFILE '/tmp/query.sql' LINES TERMINATED BY "\n";
+LOAD DATA LOCAL INFILE '/tmp/query.sql' 
+    STARTING LINE 1
+INTO TABLE mytable2;
+
+SELECT COUNT(*) FROM mytable2;
+DROP TABLE IF EXISTS mytable2;
+
+-- -- Please create this program first, then create additional tables. In the end, drop all of them.
+-- -- See this link for more information: http: 
+-- CREATE DATABASE IF NOT EXISTS someDB;
+
+-- CREATE TABLE IF NOT EXISTS someTable LIKE someTable;
+-- use someDB;
+
+-- SELECT * INTO OUTFILE '/tmp/sampleData.sql' LINES TERMINATED BY "$;" FROM someTable;
+
+-- LOAD DATA LOCAL INFILE '/tmp/sampleData.sql'
+--         LINES TERMINATED BY "$;"
+--       FROM someTable
+--     INTO TABLE someTable;
+
+-- -- You should now have 5 rows in your newly created tables and 5 columns. You need to fill the newly created tables
+-- # -- with some real data.
+-- INSERT INTO someTable(someCol1)
+--         VALUES ('Hello');
+
+-- INSERT INTO someTable(someCol2)
+--         VALUES (2.1);
+
+-- INSERT INTO someTable(someCol3)
+--         VALUES (true);
+
+-- INSERT INTO someTable(someCol4)
+--         VALUES ('Hello,');
+
+-- -- SELECT * FROM someTable;
+
+-- -- You can also create a table in which you specify several rows at once.
+
+-- INSERT INTO someTable (someCol1, someCol2)
+--   VALUES ('Hello', 2.2),
+--   ('Hello this', 2.3); 
+
+-- SELECT * FROM someTable;
+
+-- IF EXISTS (SELECT table_name FROM information_schema.tables WHERE table_schema = DATABASE() AND table_name ='someTable') THEN
+--  DROP TABLE IF EXISTS someTable;
+-- END IF;
+
+
+-- SELECT COUNT(*) FROM someTable;
+
+DROP DATABASE IF EXISTS someDB;

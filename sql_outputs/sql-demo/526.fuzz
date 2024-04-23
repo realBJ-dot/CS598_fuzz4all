@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP DATABASE sampleDB;
+-- Test your code
+DROP DATABASE sampleDB;
+-- Try to modify program above to perform SQL operations
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+UPDATE mytable SET price = price * 2 WHERE myid > 1;
+SELECT myid, title, price FROM mytable ;  
+DROP TABLE mytable;
+DROP DATABASE sampleDB;

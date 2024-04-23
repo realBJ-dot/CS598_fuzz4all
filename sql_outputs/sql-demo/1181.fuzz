@@ -1,0 +1,8 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+INSERT INTO users(first_name, last_name)
+VALUES
+    ('Jim', 'Farrar'),
+    ('Tim', 'Cole'),
+    ('Nina', 'Ferdinand');
+GRANT ALL PRIVILEGES ON sampleDB.* TO 'jim';
+FLUSH PRIVILEGES;

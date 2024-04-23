@@ -1,0 +1,12 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS job_positions;
+CREATE TABLE job_positions
+(
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    position char(50) NOT NULL UNIQUE
+);
+DROP TABLE IF EXISTS employees_positions;
+-- Write INSERT statement for the table with above created
+/* create a table with key=employee-id, value=position
+create a table with key=employee-id, value=position
+write an update statement for the above created

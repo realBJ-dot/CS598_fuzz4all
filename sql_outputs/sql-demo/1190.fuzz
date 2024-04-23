@@ -1,0 +1,15 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS users (
+    id                int auto_increment,
+    first_name        varchar(25) not null,
+    last_name         varchar(30) not null,
+    balance           decimal(11, 2) not null,
+    PRIMARY KEY (id)
+);
+UPDATE users SET balance = 100 WHERE id = 2;
+SELECT balance FROM users WHERE id=2  ;
+DROP TABLE users ;
+DROP DATABASE IF EXISTS sampleDB ;
+SELECT COUNT(*) FROM information_schema.COLUMNS WHERE COLUMN_NAME=%s AND TABLE_SCHEMA=%s;
+SELECT * FROM information_schema.COLUMNS WHERE TABLE_NAME = %s AND TABLE_SCHEMA = %s;
+SELECT * FROM information_schema.PRIMARY_KEY_COLUMNS where TABLE_NAME = %s AND table_schema = %s;

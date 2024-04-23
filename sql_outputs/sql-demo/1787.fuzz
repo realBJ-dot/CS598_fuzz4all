@@ -1,0 +1,19 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE car (name varchar(50), price decimal(15,2));
+
+INSERT INTO car (name, price) 
+ VALUES 
+  ('Buick',50000), 
+  ('Ford',60000), 
+  ('Volvo',40000);
+
+
+ 
+
+
+
+
+
+
+
+DROP DATABASE IF EXISTS sampleDB;

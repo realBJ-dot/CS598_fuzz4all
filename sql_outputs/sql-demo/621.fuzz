@@ -1,0 +1,8 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- Create a sample table for the mutated table
+DROP TABLE IF EXISTS MutatedSample;
+CREATE TABLE MutatedSample (IDINT NUMERIC, Student INT, Mutated INT, Syllable INT);
+-- Update the data in the mutated table. MutatedInt is defined as INT
+INSERT INTO MutatedSample VALUES (3, 2, 1, 1);
+SELECT * FROM MutatedSample;
+SELECT IDINT FROM MutatedSample WHERE MUTATED = 1 AND SYLLABE = 1;

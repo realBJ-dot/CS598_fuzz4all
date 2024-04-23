@@ -1,0 +1,19 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ 
+CREATE TABLE IF NOT EXISTS Address (
+	ADDRESS_ID BIGINT PRIMARY KEY,
+	CITY VARCHAR(20),
+	STATE VARCHAR(20),
+	ZIPCODE BIGINT
+);
+INSERT INTO Address VALUES (1, 'Tokyo', 'Tokyo', 127); INSERT INTO Address VALUES (2, 'Mexico City', 'Mexico City', 701); INSERT INTO Address VALUES (3, 'Paris', 'France', 75000); INSERT INTO Address VALUES (4, 'Houston', 'Texas', 77015); INSERT INTO Address VALUES (5, 'New York City', 'New York', 110000); INSERT INTO Address VALUES (6, 'Chicago', 'Illinois', 70606); INSERT INTO Address VALUES (7, 'New Bedfordshire', 'New Bedfordshire', 79455); INSERT INTO Address VALUES (8, 'Amsterdam', NULL, 84023);
+SELECT * FROM Address; SELECT * FROM Person;
+UPDATE Person SET First_name = 'John', Last_name = 'Doe' WHERE First_name like 'John'; SELECT * FROM Person; UPDATE Person SET First_name = 'John', Last_name = 'Doe' WHERE First_name like 'Doe'; SELECT * FROM Person; SELECT * FROM Address;
+DROP TABLE IF EXISTS Address;
+#
+ 
+SELECT * FROM Address JOIN (
+	SELECT * FROM Person
+	JOIN Employees AS Employess ON Address.CITY=Employess.CITY
+) AS Employess ON Address.CITY=Employess.CITY;
+/* Join the data on the "CITY" column

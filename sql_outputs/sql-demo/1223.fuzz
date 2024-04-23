@@ -1,0 +1,23 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS users (
+    name          varchar(20) not null,
+    age           int          not null,
+    PRIMARY KEY (name)
+);
+INSERT INTO users (name, age) VALUES ('<NAME>', 24),
+                                ('<NAME>', 25),
+                                ('<NAME>', 23),
+                                ('<NAME>', 60),
+                                ('<NAME>', 56),
+                                ('<NAME>', 39),
+                                ('<NAME>', 39),
+                                ('<NAME>', 18),
+                                ('<NAME>', 26),
+                                ('<NAME>', 25);
+SELECT
+  name, age
+FROM users;
+ 
+SELECT
+  name
+FROM users where balance <= 5000;

@@ -1,0 +1,9 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+UPDATE Users_3 SET City = \"<NAME>\" WHERE Id = 4;
+DROP TABLE Users_3;
+
+-- The following query is only valid in current MySQL version
+# SELECT Id, Email FROM Users_new;
+# # # # # # # # # # # #
+# # # # # # # # # # # # # # # # # # # # # # # # # #
+# # # # # # # # # # # # # # # # # # # # # # # # #

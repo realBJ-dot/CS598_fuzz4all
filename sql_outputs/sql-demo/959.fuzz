@@ -1,0 +1,15 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+UPDATE users SET firstname = 'Roman', lastname = 'Ivanov' WHERE user_name = 'admin';
+UPDATE users SET firstname = 'Rome', lastname = 'Roman' WHERE user_name = 'roman';
+-- Please modify the previous genereated program to
+-- Create a new table and perform operations.
+CREATE TABLE IF NOT EXISTS users(user_name varchar(45) PRIMARY KEY, firstname varchar(60), lastname varchar(60), username varchar(45), password varchar(45));
+-- This should not alter the previous data.
+-- Please create a very short query which uses SQL features in a complex way. Be sure to use ENGINE=InnoDB. You should only use sampleDB as the database and assume no other table exist. You need to create new tables to perform operations. In the end, drop all tables you created.
+DROP DATABASE IF EXISTS sampleDB;
+create database if not exists sampledb;use sampledb;
+# MySQL is an open-source relational database management system (RDBMS) that allows users to create, modify and extract data from a structured relational database using the Structured Query Language (SQL). It works harmoniously with an operating system to structure and manage a relational database, control user access, and execute other tasks like network access and testing database integrity. MySQL, named after co-founder Michael Widenius's daughter, My, and SQL, is widely used with other programs to implement applications that require database functionality. It serves as an element of the LAMP web application software stack, where LAMP stands for Linux, Apache, MySQL, Perl/PHP/Python, and is used in many database-driven web applications and popular websites such as Facebook and YouTube.
+
+Written in C and C++, MySQL supports a variety of system platforms from Linux, macOS, Microsoft Windows to even the Symbian OS. It offers dual-licensing i.e., GPL version 2 or a proprietary license.
+
+Support for MySQL is provided through the official manual, various IRC channels, forums, and additionally, Oracle offers paid support via its MySQL Enterprise products. It is known for its exceptional performance in average scenarios and has been appraised as a fast, stable and true multi-user, SQL database server. Furthermore, it is also available under the MariaDB fork developed in 2010 when Oracle acquired Sun Microsystems, the then owner of MySQL AB.

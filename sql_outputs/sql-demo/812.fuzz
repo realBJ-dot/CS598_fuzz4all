@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+GRANT usage, SELECT ON ALL TABLES TO'sampleDB';
+GRANT EXECUTE ON ALL FUNCTIONS TO'sampleDB';
+# Create a new table to demonstrate how to create indexes
+CREATE TABLE demo_indexes (a int, b varchar(30), c date, d DATETIME);
+use sampleDB
+CREATE INDEX idx_demo_indexes_a ON demo_indexes(a);
+CREATE INDEX idx_demo_indexes_b ON demo_indexes(b);
+CREATE INDEX idx_demo_indexes_c ON demo_indexes(c);
+CREATE INDEX idx_demo_indexes_d ON demo_indexes(d);

@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP DATABASE sampleDB;
+ 
+INSERT INTO users (username, password) VALUES ('user', '<PASSWORD>')
+ 
+INSERT INTO users (username, password) VALUES ('user1', '<PASSWORD>'),
+                           ('user2', '<PASSWORD>');
+ 
+INSERT INTO users (username, password, points) VALUES ('user3', '<PASSWORD>', 1000),
+                                                   ('user4', '<PASSWORD>',

@@ -1,0 +1,5 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE user(id INT PRIMARY KEY AUTO_INCREMENT, username VARCHAR(20) UNIQUE,
+password VARCHAR(15) NOT NULL);
+ALTER TABLE user MODIFY id INT;
+ALTER TABLE user MODIFIY username VARCHAR(20);<commit_msg>Revert "Fixing sql query example to use modified table"<commit_after>

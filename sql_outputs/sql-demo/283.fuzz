@@ -1,0 +1,5 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS employee ( `EmpID` INT(4) NOT NULL AUTO_INCREMENT, `EmpName` TEXT NOT NULL, `Designation` TEXT NOT NULL, `Salary` DECIMAL(10, 4), KEY (`EmpID`));
+SELECT EMPID FROM employee; -- This should only return the employee id 07
+INSERT INTO employee (EmpID, EmpName, Designation, Salary) VALUES(07, "<NAME>", "System Administrator", 150000); -- Modify
+DELETE FROM employee WHERE EmpID = 09;

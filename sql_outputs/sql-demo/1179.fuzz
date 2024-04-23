@@ -1,0 +1,21 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS users(user_id INT PRIMARY KEY AUTO_INCREMENT, first_name MEDIUMTEXT, last_name TEXT, email TEXT, created_at TIMESTAMP NULL);
+-- Please create a mutated program which modifies the users table.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS users(user_id INT PRIMARY KEY AUTO_INCREMENT, first_name MEDIUMTEXT, last_name TEXT, email TEXT, created_at TIMESTAMP NULL);
+CREATE TABLE IF NOT EXISTS users(user_id INT PRIMARY KEY AUTO_INCREMENT, first_name MEDIUMTEXT, last_name TEXT, email TEXT, created_at TIMESTAMP NULL);
+CREATE TABLE IF NOT EXISTS users(user_id INT PRIMARY KEY AUTO_INCREMENT, first_name MEDIUMTEXT, last_name TEXT, email TEXT, created_at TIMESTAMP NULL);
+ 
+-- Please create a mutation which attempts to modify the users table.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS users(user_id INT PRIMARY KEY AUTO_INCREMENT, first_name MEDIUMTEXT, last_name TEXT, email TEXT, created_at TIMESTAMP NULL);
+CREATE TABLE IF NOT EXISTS users(user_id INT PRIMARY KEY AUTO_INCREMENT, first_name MEDIUMTEXT, last_name TEXT, email TEXT, created_at TIMESTAMP NULL);
+CREATE TABLE IF NOT EXISTS users(user_id INT PRIMARY KEY AUTO_INCREMENT, first_name MEDIUMTEXT, last_name TEXT, email TEXT, created_at TIMESTAMP NULL);
+SELECT * FROM users;
+ 
+SELECT * FROM users;
+ 
+--- Please create a simple SQL server and client.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS users(user_id INT PRIMARY KEY AUTO_INCREMENT, first_name MEDIUMTEXT, last_name TEXT, email TEXT, created_at TIMESTAMP NULL);
+-- Create a table named orders

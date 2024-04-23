@@ -1,0 +1,20 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- your mutated code here
+DROP DATABASE IF EXISTS sampleDB;
+
+</pre>
+
+<!--
+<p><strong>Some things that will save you later!</strong></p>
+
+<ul>
+<li>Install MySQL <a href="http://dev.mysql.com/downloads/mysql/">through their download page</a></li>
+<li>Learn how to work with MySQL 8 using <a href="https://www.codecademy.com/learn/learn-mysql8">codecademy</a></li>
+<li>Download and try <a href="https://dev.mysql.com/doc/refman/8.0/en/getting-started.html#getting-started.download">MySQL Workbench</a> locally</li>
+<li>Learn about other <a href="https://www.mariadb.com/kb/en/mariadb-features/">MySQL 8 features</a></li>
+<li><a href="http://codeigniter.com/user_guide/database/query_language/query_functions.html">MySQL built-in functions</a> that are useful for manipulating data in your database</li>
+<li><a href="http://www.codeincomplete.com/blog/archives/8.html">Learn about MySQL JOIN statements</a></li>
+<li><a href="http://www.codeincomplete.com/blog/archives/13.html#comments">Learn about using MySQL in codeigniter</a></li>
+<li>How to keep your code in sync with your database using <a href="http://benfuller-labs.com/dev-mysql.html">Dev MySQL</a>, <a href="http://github.com/renearg/dev-mysql/wiki">its Wiki</a>, and <a href="http://github.com/renearg/dev-mysql/releases">official Releases link</a></li>
+</ul>
+-->

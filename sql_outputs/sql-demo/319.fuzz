@@ -1,0 +1,8 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+Create table if not exists `contact` (`id` int primary key auto_increment, `first_name` varchar(20) not null, `last_name` varchar(20) not null, `email_address` varchar(50), `number_phone` bigint);
+
+INSERT INTO `contact`(`first_name`, `last_name`, `email_address`, `number_phone`) values(44,55,6863416286342323,145324528); 
+
+-- Now change the primary key constraint to primary_key
+ALTER TABLE `user` CHANGE `id` `id` int(5) auto_increment primary key;

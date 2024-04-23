@@ -1,12 +1,15 @@
-USE sampleDB;
-CREATE TABLE blog_views(
-  id tinyint(4) NOT NULL AUTO_INCREMENT;
-  date_format date NOT NULL DEFAULT CURRENT_DATE; 
-  comment_count int DEFAULT "0";
-  PRIMARY KEY (id)
-) ENGINE=MyISAM;
-BEGIN;
-DELETE FROM comments WHERE post = 2;
-INSERT INTO comments(post, content) VALUES (2, "Hello world!");
-COMMIT;
-SHOW TABLES;
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users (ID INT AUTO_INCREMENT PRIMARY KEY, UserName VARCHAR(250), Password VARCHAR(250));
+CREATE TABLE Users2(ID INT PRIMARY KEY AUTO_INCREMENT, UserName VARCHAR(250), Password VARCHAR(250));
+CREATE TABLE Users3 (ID INT, UserName VARCHAR(250), Password VARCHAR(250));
+CREATE TABLE Users4 (ID INT AUTO_INCREMENT, UserName VARCHAR(250), Password VARCHAR(250));
+INSERT INTO Users VALUES(1, 'user1', 'user1');
+INSERT INTO Users VALUES(2, 'user2', 'user2');
+INSERT INTO Users VALUES(3, 'user3', 'user3');
+INSERT INTO Users VALUES(4, 'user4', 'user4');
+INSERT INTO Users VALUES(5, 'user5', 'user5');
+INSERT INTO Users VALUES(6, 'user6', 'user6');
+INSERT INTO Users VALUES(7, 'user7', 'user7');
+INSERT INTO Users VALUES(8, 'user8', 'user8');
+INSERT INTO Users VALUES(9, 'user9', 'user9');
+INSERT INTO Users2 VALUES(99, 'user99', 'user99');

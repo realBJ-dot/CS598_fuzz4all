@@ -1,0 +1,13 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE `sampleDB`.`departments` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `departmentName` varchar(30) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+INSERT INTO `sampleDB`.`departments` (`id`, departmentName)
+VALUES (-1, 'Not assigned to any department'),
+       (1, 'IT'),
+       (3, 'Operations'),
+       (4, 'Admin');
+DROP TABLE `sampleDB`.`departments`;
+CREATE

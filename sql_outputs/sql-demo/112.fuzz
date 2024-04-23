@@ -1,0 +1,33 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users(username char(20) PRIMARY KEY, FirstName VARCHAR(30)) ENGINE=InnoDB;
+INSERT INTO Users(username,Firstname) VALUES('Test','Test'),('Admin','Admin'),('Guest','Guest'),('Super','Super');
+
+-- This example can be used to create a unique column using the KEY clause
+CREATE TABLE Albums(id INT UNSIGNED UNIQUE, album_name VARCHAR(50), PRIMARY KEY (id));
+INSERT INTO Albums VALUES (1, 'A'), (1, 'B'), (2, 'K');
+
+CREATE TABLE Users(username char(20), FirstName CHAR(15), Age CHAR);
+INSERT INTO Users VALUES('Test','Test', '29'),('Admin','Admin', '37');
+
+CREATE TABLE Albums(id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT, album_name VARCHAR(50));
+INSERT INTO Albums VALUES (1, 'A'), (2, 'B'), (3, 'K');
+
+-- This example shows how to select users whose names start with A
+
+SELECT * FROM Users WHERE 
+Username like 'A%;' 
+ORDER BY Username;
+
+-- This example shows how to select users whose names start with A that do not have 20 as their suffix, as in the previous example
+
+SELECT * FROM Users WHERE
+Username like 'A%' 
+AND FirstName <> '20'
+ORDER BY Username;
+
+-- This example displays the user's details, including both their first name and last name.
+SELECT Users.username, Users.FirstName 
+FROM Users 
+INNER JOIN Albums 
+ON Users.username=Albums.username;
+

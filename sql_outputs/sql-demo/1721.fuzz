@@ -1,0 +1,8 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- Create a second user in the db
+CREATE USER 'admin2' PASSWORD '<PASSWORD>';
+--- Modify the program to add new users using INSET into the user table
+-- Please use multiple statements and statements in which the column and value of newly added users are compared.
+-- 1 User with admin, password
+-- 2 User with admin2 password 
+DROP DATABASE IF EXISTS `user`;

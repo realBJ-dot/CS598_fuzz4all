@@ -1,36 +1,3 @@
-USE sampleDB;
- 
-CREATE TABLE comments
-(
-     post INT(11) NOT NULL,
-     subject VARCHAR(20) NOT NULL,
-     content TEXT NOT NULL,
-     created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
-);
- 
-LOAD DATA LOCAL INFILE 'd:\dbDumps\sampleComments.txt' INTO TABLE comments;
-SELECT * FROM comments;
-
-INSERT INTO comments(post, subject, content)
-VALUES (1, 'PHP', 'Hello to all');
- 
- 
-SELECT * from comments;
- 
- 
-UPDATE comments SET subject = 'Hello' WHERE post = 2 AND subject = 'How are you';
-UPDATE comments SET content = 'Good bye' WHERE post = 5 OR post = 7;
- 
- 
-DELETE FROM comments WHERE post = 6 OR post = 8;
- 
- 
-SELECT * from comments;
-ALTER TABLE comments DROP `content` CHECK,
-ADD PRIMARY KEY (post, subject);
- 
- 
-SHOW FULL COLUMNS FROM comments;
-DROP TABLE comments;
-QUIT;
-
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE Users;
+DROP DATABASE IF EXISTS sampleDB;

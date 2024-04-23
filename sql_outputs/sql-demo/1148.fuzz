@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+INSERT INTO users (user_id, first_name, last_name, email, created_at) values (1, 'Rahul', '<NAME>', '<EMAIL>', '2020-12-08 12:51:09');
+INSERT INTO users (user_id, first_name, last_name, email, created_at) values (2, 'Manu', '<NAME>', '<EMAIL>', '2020-12-08 18:22:54');
+INSERT INTO users (user_id, first_name, last_name, email, created_at) values (1, 'Rahul', '<NAME>', '<EMAIL>', '2020-12-21 06:38:09');
+INSERT INTO users (user_id, first_name, last_name, email, created_at) values (3, 'Kshantam', 'Barthel', '<EMAIL>', '2020-12-22 12:32:27');
+INSERT INTO users (user_id, first_name, last_name, email, created_at) values (2, 'Sushant', 'Raparaswamy', '<EMAIL>', '2020-12-27 13:50:38');
+INSERT INTO users (user_id, first_name, last_name, email, created_at) values (1, 'Rahul', '<NAME>', '<EMAIL>', '2021-01-06 08:48:24');
+INSERT INTO users (user_id, first_name, last_name, email, created_at) values (1, 'Rahul', '<NAME>', '<EMAIL>', '2021-01-06 15:44:23');
+INSERT INTO users (user_id, first_name, last_name, email, created_at) values (2, 'Rahul', '<NAME>', '<EMAIL>', '2021-01-06 22:50:03');
+INSERT INTO users (user_id, first_name, last_name, email, created_at) values

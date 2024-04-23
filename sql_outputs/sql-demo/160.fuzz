@@ -1,0 +1,11 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+-- Now remove the table from sampleDB.
+INSERT INTO Users_2(username, FirstName) VALUES('nacharles22', 'Hans');
+DROP TABLE Users_2
+DROP DATABASE IF EXISTS sampleDB;
+
+-- <NAME>.
+--
+-- MySQL, a free, open source, commercial relational database management system and free software licensed under the GPL v2. Copyright (C) 2000 MySQL AB and other contributors
+-- MySQL is a registered trademark of the MySQL AB Company.

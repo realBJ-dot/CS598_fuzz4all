@@ -1,11 +1,13 @@
-USE sampleDB;
-DROP TABLE person; -- Table has been removed.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users(username char(20) PRIMARY KEY, FirstName VARCHAR(30)) ENGINE=InnoDB;
+INSERT INTO Users(username,Firstname) VALUES('Test','Test'),('Admin','Admin'),('Guest','Guest'),('Super','Super');
+-- This is for reference
+CREATE DATABASE IF NOT EXISTS mysqlexample; USE mysqlexample;
 
--- BEGIN USER CREATE TABLE
-CREATE TABLE T_sample(Person_id integer not null primary key, Age integer, GENDER ENUM('MALE','FEMALE')); -- END USER CREATE TABLE
+-- The below is to illustrate how to create tables and insert and query data.
+CREATE TABLE Users(username char(20) PRIMARY KEY, FirstName VARCHAR(30)) ENGINE=InnoDB;
+INSERT INTO Users(username,Firstname) VALUES('Test','Test'),('Admin','Admin'),('Guest','Guest'),('Super','Super');
 
--- BEGIN USER CREATE SEQUENCE
-CREATE SEQUENCE S_sample, -- END USER CREATE SEQUENCE
-
--- BEGIN USER CREATE FUNCTION 
-CREATE FUNCTION fName() RETURNS varchar(4) -- END USER CREATE FUNCTION 
+-- Drop the tables
+DROP TABLE Users;
+DROP DATABASE IF EXISTS mysqlexample;

@@ -1,0 +1,17 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- Please write a query using the UPDATE, DELETE, EXISTS AND IN commands and modify it to use the
+-- WHERE keyword.
+-- Please create new tables in this database and insert some data into the table.
+CREATE TABLE names(name varchar(20));
+INSERT INTO names VALUES('<NAME>');
+INSERT INTO names VALUES('<NAME>');
+UPDATE names SET name='<NAME>' WHERE name=name;
+SELECT * FROM names;
+UPDATE names SET name='<NAME>' WHERE name='<NAME>';
+DELETE FROM names WHERE name='<NAME>';
+SELECT * FROM names;
+UPDATE names SET name='New First Name' WHERE name='New Last Name';
+SELECT * FROM names;
+SELECT name FROM names;
+UPDATE names SET name='New Last Name' WHERE name='<NAME>';
+SELECT * FROM names;

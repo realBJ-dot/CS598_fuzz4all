@@ -1,0 +1,6 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+UPDATE users SET balance = 100000, first_name = 'John', last_name = 'Doe';
+INSERT INTO users (id, first_name, last_name, balance) 
+   SELECT id+1, first_name, last_name, balance 
+   FROM users 
+   WHERE balance = (SELECT avg (balance) FROM users);

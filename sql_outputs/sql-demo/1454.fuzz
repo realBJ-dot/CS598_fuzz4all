@@ -1,0 +1,38 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS users_details;
+ 
+CREATE TABLE IF NOT EXISTS users(
+  `userId` int(5) NOT NULL AUTO_INCREMENT,
+  `userName` varchar(50),
+  `pwd` varchar(50),
+  `userType` bit(1),
+  `created_at` date,
+  `updated_at` date,
+  PRIMARY KEY (`userId`)
+);
+CREATE TABLE IF NOT EXISTS users_details(
+  `userId` int(5) NOT NULL AUTO_INCREMENT,
+  `userName` varchar(50),
+  `pwd` varchar(50),
+  `userType` bit(1),
+  PRIMARY KEY (`userId`)
+);
+INSERT INTO users(userName,pwd,userType,created_at,userType)
+VALUES
+('admin','<PASSWORD>','admin','2018-04-07','1'),
+('test3','<PASSWORD>','admin','2018-04-07','0');
+INSERT INTO users_details(userName,pwd,userType)
+VALUES
+('admin','<PASSWORD>','admin'),
+('test3','<PASSWORD>','admin'),
+('test2','<PASSWORD>','admin'),
+('test','<PASSWORD>','admin'),
+('demo','<PASSWORD>d692635026<PASSWORD>','admin'),
+('test4','a15bb558f755ac60c762119f9c836844','admin');
+INSERT INTO users
+VALUES
+(2,'admin','test','1','2018-04-07','-999'),
+(3,'demo','test','0','2018-04-08','-999'),
+(4,'test4','test','1','2018-04-07','1');
+COMMIT;

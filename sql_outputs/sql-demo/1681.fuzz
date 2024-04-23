@@ -1,0 +1,27 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `employee`;
+CREATE TABLE `employee` (
+	id int(20) NOT NULL AUTO_INCREMENT,
+	name text NOT NULL,
+	email text NOT NULL,
+	`salary` int(20) NOT NULL,
+	empgrade text NOT NULL,
+	PRIMARY KEY (`id`)
+);
+SELECT name, salary, empgrade FROM `employee` WHERE empgrade IN('S');
+-- Hint.
+-- You won’t need to alter the previous table in any way.
+-- Please create a program that reads in some data from a text file `employees.txt` and appends the records it receives (one record at a time) to the existing `employees` table.
+-- Be sure to only add a new column to the table if it doesn’t already exist.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `staff`;
+CREATE TABLE `staff` (
+	`id` int(50) NOT NULL AUTO_INCREMENT,
+	`name` text NOT NULL,
+	`salary` int(50) NOT NULL,
+	PRIMARY KEY (`id`)
+);
+-- How about the ID, and Name, but with the E-mail Addresses appended?
+-- It’s almost possible using JOIN’s. Make sure the table have columns in it for each of the columns in the table we would like to create a JOIN on. Then add the code.
+-- Hint.
+-- We will need to change the table we are given to have a column and an ID that gets populated as an

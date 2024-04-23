@@ -1,0 +1,44 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS users2(
+	userId INT NOT NULL PRIMARY KEY,
+	name VARCHAR(10) DEFAULT 'root',
+	PASSWORD_HASH  VARCHAR(720) DEFAULT NULL
+);
+DESCRIBE users2;
+ALTER TABLE users2 ADD COLUMN password VARCHAR(720); USE sampleDB;
+DESCRIBE users2;
+-- You can now create a view
+USE sampleDB; CREATE OR REPLACE VIEW usersView AS SELECT * FROM users; DESC usersView;
+# Note that the view does not include the password column as it is not included in the schema
+USE sampleDB; CREATE OR REPLACE VIEW usersView2 AS SELECT * FROM users; DESC usersView2;
+SHOW TABLE STATUS LIKE 'users';
+SHOW TABLE STATUS LIKE 'user1';
+USE sampleDB; SELECT * FROM usersView; SHOW TABLE STATUS LIKE 'users';
+SHOW TABLE STATUS LIKE 'user1';
+# Show me the password from user1 in the main users database
+SHOW VARIABLES LIKE 'authuser';
+USE sampleDB; ALTER VIEW usersView ADD COLUMN password1 VARCHAR(720);
+SHOW VARIABLES LIKE 'authuser';
+# View the change in usersView2
+SELECT * FROM usersView2;
+SHOW TABLE STATUS LIKE 'user1';
+SHOW TABLE STATUS LIKE 'user2';
+USE sampleDB; UPDATE usersView2 SET password1 = <PASSWORD>();
+SHOW TABLE STATUS LIKE 'user1';
+SHOW TABLE STATUS LIKE 'user2';
+USE sampleDB; ALTER VIEW usersView DROP COLUMN password;
+USE sampleDB; ALTER VIEW usersView2 DROP COLUMN password;
+DROP VIEW usersView2;
+DROP VIEW usersView;
+USE sampleDB;
+SELECT COUNT(*) FROM users;
+SHOW VARIABLES LIKE 'user';
+DELETE FROM permissions WHERE roleId=1 AND userId=2;
+SHOW VARIABLES LIKE 'user';
+-- You should now have a view that does contain the password, but no password1 column
+USE sampleDB; SHOW VARIABLES LIKE 'user';
+# Drop user
+USE sampleDB; SHOW VARIABLES LIKE 'user';
+DROP USER 1;
+SHOW VARIABLES LIKE 'user';
+-- You should now

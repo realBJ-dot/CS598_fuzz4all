@@ -1,0 +1,49 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+#
+# A normal MySQL user lacks all necessary privileges to the database server, and it can create a security hole.
+# You can find the credentials for the database "sampleDB" using one of the following instructions.
+CONNECT 'localhost'@'%';
+USE sampleDB; SHOW GRANTS FOR 'root'@'%';
+SHOW GRANT FOR'sampleDB'@'%';
+DELIMITER
+#
+# If you can see that you can create a database, you can also add user privileges to a new database with SQL statements. Here we create a new database and set some privileges.
+DELIMITER
+CREATE DATABASE IF NOT EXISTS 'MyDB' DEFAULT CHARACTER SET ascii;
+DELIMITER
+--
+-- Create a new superuser in the database 'MyDB'.
+USE MyDB;
+#
+# Now that we have "SuperAdmin" as a SQL authentication user, we can create a table so we can use that superuser to execute all the statements for this database.
+#
+USE MyDB
+DROP DATABASE IF EXISTS MyDB;
+
+USE MyDB;
+#
+# We must create a user named 'SuperUser' so that a user can access this database.
+CREATE USER'superUser' IDENTIFIED BY 'Admin123';
+
+#
+# Now execute all the CREATE statement below so that users can use this database.
+# User permissions can be granted upon creating a database.
+#
+# As we are using the "SuperUser" as a command line user here, we can create a new database so that we do not need to worry about the port number.
+
+#
+# We will need to login to the MySQL console to perform all these CREATE statements.
+#
+CONNECT'superUser'@'%';
+--
+CREATE DATABASE MyDB DEFAULT CHARSET=unicode;
+
+#
+# Connect to the MySQL database server on port 3306 using a command line client.
+#
+# At this point the MySQL server should say "Welcome to MySQL". Now add and execute all the statements we created earlier.
+#
+DROP USER'superUser';
+DROP DATABASE IF EXISTS MyDB;
+#
+# It is best practice to drop your database before proceeding. In order to do so, make a copy of the sampleDB database, and

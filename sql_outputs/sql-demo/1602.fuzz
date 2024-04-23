@@ -1,0 +1,15 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `sampleDB`.`employees`;
+CREATE TABLE `sampleDB`.`employees` (
+	`id` int NOT NULL AUTO_INCREMENT,
+	`employeeID` int NOT NULL,
+	`employeeName` varchar(20) NOT NULL,
+	`employeeDepartment` varchar(50) DEFAULT NULL,
+	`hireDate` date,
+	`managerID` int,
+	`salary` decimal(10,2),
+	PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- Please drop the original table. It should be empty.
+DROP TABLE `sampleDB`.`employees`;
+USE sampleDB;

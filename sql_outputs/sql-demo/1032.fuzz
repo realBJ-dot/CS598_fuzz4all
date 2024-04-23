@@ -1,0 +1,16 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+UPDATE employee SET employee.address2 = 'New York' WHERE employee.address = 'California';
+UPDATE employee2 SET employee2.address2 = 'California' WHERE employee2.address = 'New York';
+UPDATE employee3 SET employee3.address2 = 'New York' WHERE employee3.address = 'New York';
+UPDATE employee4 SET address3 = 'California' WHERE address = 'New York';
+UPDATE employee6 SET address1 = 'California' WHERE address1 = 'California';
+UPDATE employee7 SET address3 = 'California' WHERE address3 = 'California';
+UPDATE employee8 SET address = 'New York' WHERE address = 'California';
+UPDATE employee9
+-- The name "address" would be used in a "JOIN" clause.
+SET address2= 'California' WHERE employee.address = 'California';
+UPDATE employee1 SET address = 'newYork' WHERE address = 'NewYork';
+UPDATE employee2 SET address = 'newYork' WHERE address = 'NewYork';
+UPDATE employee4 SET address = 'Houston' WHERE address = 'Houston';
+UPDATE employee5 SET address = 'Houston' WHERE address = 'Houston';
+SELECT * FROM employee;

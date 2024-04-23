@@ -1,0 +1,27 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+INSERT INTO user (id, name, passwd) VALUES (0, 'admin', '<PASSWORD>'), (1,'someperson1', '<PASSWORD>');
+INSERT INTO person (id, name) VALUES (0, 'person'), (1, 'fred'), (2, 'amy'), (3, 'john'), (4, 'bob'), (5, 'jill'), (6, 'alice');
+INSERT INTO post (id, content) VALUES (0, 'hello world!'), (1, 'I am a mutation'), (2, '';
+insert into address (id, city, streetNumber) values (1, 'Wolfsburg', 3), (2, 'Cologne', 2), (3, 'Aachen', 2), (4, 'Hamburg', 8), (5, 'Braunschweig', 2), (6, 'Augsburg', 2), (7, 'Aachen', 2), (8, 'Aachen', 2), (9, 'Düsseldorf', 2), (10, 'München', 2);
+ 
+UPDATE person set name = 'Updated Person' where name = 'bob';
+ 
+UPDATE person set name = 'Updated Person'
+WHERE name IN('amy','bob');
+ 
+UPDATE person set name = 'Updated Person'
+INNER JOIN person2
+ON person.id = person2.id
+WHERE person.id IN (5);
+ 
+UPDATE person set name = 'Updated Person'
+INNER JOIN person2
+ON person.id = person2.id
+WHERE name IN ('amy','bob')
+ORDER BY name;
+ 
+UPDATE person set name ='myupdate'
+WHERE name ='something old';
+ 
+UPDATE person set name ='myupdate'
+WHERE name ='something other';

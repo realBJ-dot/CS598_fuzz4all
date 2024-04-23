@@ -1,0 +1,15 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE sampleTable(fname varchar(20));
+INSERT INTO sampleTable VALUES('<NAME>');
+CREATE TABLE sampleTable(lname varchar(20));
+INSERT INTO sampleTable VALUES('<NAME>');
+DELETE FROM sampleTable WHERE fname='<NAME>';
+-- Please specify the result set format for the new data you are inserting
+-- In MySQL you can use the format "INSERT INTO tablename() VALUES()"
+-- Please modify the program to show the result.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE sampleTable(fname VARCHAR(20));
+INSERT INTO sampleTable VALUES('<NAME>');
+CREATE TABLE sampleTable(lname VARCHAR(20));
+INSERT INTO sampleTable VALUES('<NAME>');
+DELETE FROM sampleTable WHERE fname='<NAME>';

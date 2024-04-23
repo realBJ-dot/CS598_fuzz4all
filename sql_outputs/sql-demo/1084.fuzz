@@ -1,0 +1,2 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE USER 'john'; CREATE USER 'doe'; CREATE USER'scott'; GRANT all PRIVILEGES ON ALL TABLES IN SCHEMA `sample_` to `john`; GRANT all PRIVILEGES ON ALL TABLES IN SCHEMA `sample_` to `doe`; GRANT all PRIVILEGES ON ALL TABLES IN SCHEMA `sample_` to `scott`; GRANT view on sample_db_info to `john`; GRANT select on sample_db_info to 'john'; GRANT select on sample_db_info to 'doe'; DROP USER `doe`; DROP USER `john`; DROP USER `scott`;

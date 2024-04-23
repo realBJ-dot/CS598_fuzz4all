@@ -1,0 +1,37 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- Hint: You can use ENGINE=InnoDB/MYISAM to get the best performance for performance tests
+CREATE TABLE IF NOT EXISTS persons (
+  personID INT NOT NULL AUTO_INCREMENT, 
+    lastname VARCHAR(45) NULL DEFAULT NULL, 
+    firstname VARCHAR(45) NOT NULL,
+    age INT NOT NULL, 
+    gender ENUM('male', 'female') NULL DEFAULT NULL, 
+  PRIMARY KEY (`personID`));
+
+INSERT INTO person
+   (lastname,firstname,age,gender)
+
+VALUES 
+  ('Mendoza', 'John',55,'Male'), 
+  ('Mendoza', 'Jane',55,'Female'); 
+
+INSERT INTO course
+        (lastname,firstname,courseNum,teacherID,classroomID,termID,roomNum); 
+
+VALUES 
+    ('<NAME>', 'John', '212111', 625, 72, 1); 
+
+INSERT INTO course
+    (firstname,lastname,courseNum,teacherID,classroomID,termID,roomNum) 
+    
+VALUES 
+    ('Alban', 'Jake', '241312', 640, 101, 12), 
+    ('Hans', 'Max', '224234', 555, 77, 1), 
+    ('Vincent', 'Joel', '243241', 654, 22, 13); 
+
+SELECT * FROM persons;
+SELECT * FROM course; 
+
+-- Please verify that you have created all tables.
+SHOW TABLES;
+

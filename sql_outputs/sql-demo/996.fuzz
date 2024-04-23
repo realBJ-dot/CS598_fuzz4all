@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+ 
+CREATE TABLE employees (eId INT, first_name VARBINARY(100), last_name VARBINARY(100), gender CHAR(1), hire_date DATETIME, office_location VARBINARY(100), CONSTRAINT employees_pk PRIMARY KEY (eId));
+INSERT INTO employees (eId,first_name,last_name,gender,hire_date,office_location) VALUES('0404681','Raphael','Vaillant','M',2008-06-03 18:38:38.142213,'Nairobi');
+INSERT INTO employees VALUES('126067','Raphael','Hobbes','M',2012-02-07 18:38:38.142213,'Lagos');
+INSERT INTO employees VALUES('1260678452','Billy','Hobbes','M',2012-02-07 18:38:38.142213,'Beaumont');
+INSERT INTO employees (eId,first_name,last_name,gender,hire_date,office_location) VALUES('124509', 'Douglas', 'Taylor', 'M', 2013-06-04 20:09:52.903689, 'Belane');
+INSERT INTO employees (eId,first_name,last_name,gender,hire_date,office_location) VALUES('1260671', 'Douglas', 'Taylor', 'M', 2012-02-07 18:38:38.142213, 'Beaumont');
+INSERT INTO employees (eId,first_name,last_name,gender,hire_date,office_location) VALUES('923033', 'Douglas', 'Taylor', 'M', 2009-06-05 1

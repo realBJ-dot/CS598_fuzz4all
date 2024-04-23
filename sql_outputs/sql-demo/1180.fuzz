@@ -1,0 +1,23 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+INSERT INTO users(first_name, last_name)
+VALUES
+    ('Jim', 'Farrar'),
+    ('Tim', 'Cole'),
+    ('Nina', 'Ferdinand');
+FLUSH PRIVILEGES;
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+INSERT INTO users(first_name, last_name)
+
+SELECT first_name, last_name
+FROM users;
+FLUSH PRIVILEGES;
+-- Please create a new table in MySQL using UNION and VALUES queries. You need only to create one table. The values of every row of the table (first-name and last-name) should come from users table.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+INSERT INTO users(first_name, last_name)
+UNION SELECT first_name, last_name
+FROM users;
+DROP TABLE users;
+DROP DATABASE sampleDB;

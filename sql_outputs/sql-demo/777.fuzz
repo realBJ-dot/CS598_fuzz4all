@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS `TableWithID` ( `id` INT(11) NOT NULL PRIMARY KEY, `data` VARCHAR(300) CHARACTER SET UTF8);
+DROP TABLE `TableWithID`; CREATE TABLE `TableWithID` ( `id` INT(11) NOT NULL PRIMARY KEY, `data` VARCHAR(300) CHARACTER SET UTF8, `name` VARCHAR(100) CHARACTER SET UTF8);
+INSERT INTO `TableWithID` ( `DATA`, `NAME`) VALUES ('New Name', 'Name'); INSERT INTO `TableWithID` ( `DATA`, `ID`) VALUES ('New Name', 4);
+
+UPDATE `TableWithID` SET `name`='Old Name' WHERE `id` = 4
+
+DELETE FROM `TableWithID` where id=4 ; SELECT name, id FROM sampleDB.TableWithID WHERE name = 'Name'; DROP TABLE `TableWithID`; DROP TABLE `FirstAndSecondTable`;
+*/
+```

@@ -1,0 +1,14 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS idseq (`id` INT(11) NOT NULL AUTO_INCREMENT, `seq` INT(11) NOT NULL, PRIMARY KEY (`id`));
+-- Here is the code which reads all record from table firstTable
+ -- First, select * from `FirstTable`
+ -- Now join the temporary table with the main table using an intertable using `seq` as the join key
+ SELECT s.id `id`, data
+ FROM `FirstTable` s
+    LEFT JOIN idseq i ON s.id = i.id;
+*/
+
+ 
+
+
+

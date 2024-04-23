@@ -1,0 +1,24 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP DATABASE IF EXISTS `user`;
+CREATE TABLE user(user_name VARCHAR(20), password VARCHAR(15)); ALTER TABLE user MODIFY user_name VARCHAR(20) UNIQUE; ALTER TABLE user MODIFY password VARCHAR(15) NOT NULL;
+SELECT COUNT(*) FROM user;
+
+-- MySQL is a relational database management system. MySQL supports a large number of database engines. The primary database engine of mysql is called InnoDB. InnoDB (version 3.22.4+) supports a wide variety of storage engines such as MyISAM and InnoDB-Btree. The main differences between MySQL and other database engines are that it is written in SQL statements to interact directly with the database engine, which facilitates the development of database software without programming or using a complicated database coding language. Furthermore, it allows you to use MySQL in a distributed manner. MySQL is a relational database management system. It is a multitenant database server that supports highly available distributed storage of several databases. MySQL can be configured to run in distributed mode in a server cluster to improve scalability and performance. All features of MySQL are supported, but this makes the software very heavy and difficult to maintain. The main reasons are lack of transactionality and consistency in transactions, the many restrictions on concurrent modification, and low consistency guarantees.
+
+* Note: In our project sampleDB, we have set the root user to password. We are storing password in a file called.my.cnf.
+
+* We have also added more features as mentioned above like multi-user, encryption, partitioning table etc.
+
+-- More information about:
+create database if not exists sampledatabase if not exists dbname then use dbname
+
+-- 
+select database();
+drop database;
+drop table;
+-- ALTER TABLE `product` MODIFY `category_name` VARCHAR(50);
+-- # ALTER TABLE `food` MODIFY `description` VARCHAR(500);
+-- ALTER TABLE `food` MODIFY `details` MEDIUMTEXT;
+-- ALTER TABLE `user` MODIFY `password` VARCHAR(15);
+-- ALTER TABLE `user` MODIFY `username` VARCHAR(20);
+

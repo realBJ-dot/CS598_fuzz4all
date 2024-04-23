@@ -1,0 +1,44 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS users(
+	userId INT NOT NULL PRIMARY KEY,
+	email VARCHAR(225) DEFAULT '<EMAIL>',
+	PASSWORD_HASH  VARCHAR(720) DEFAULT <PASSWORD>',
+	ROLE INT DEFAULT 2
+);
+DESCRIBE users;
+-- Please create a semantically equivalent program to the previous one, but using stored procedures
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS users(
+	userId INT NOT NULL PRIMARY KEY,
+	email VARCHAR(225) DEFAULT '<EMAIL>',
+	PASSWORD_HASH  VARCHAR(720) DEFAULT NULL,
+	ROLE INT DEFAULT 2,
+	CONSTRAINT pk_userId PRIMARY KEY(userId)
+);
+DESCRIBE users;
+--Please create a program using a stored procedure.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+CREATE PROCEDURE add_student(@username nvarchar(255), @age INT, @gender nchar(1) DEFAULT 'F',
+                               @course nvarchar(30))
+AS
+BEGIN
+	INSERT INTO students (username, age, gender, course) 
+	VALUES(@username, @age, @gender, @course);
+END;
+
+DECLARE @studentID INT;
+EXEC add_Student '<NAME>', 18, 'M', 'COMP5300';
+EXEC add_Student 'Kristine', 18, 'M', 'COMP5300';
+EXEC add_Student 'Steven', 17, 'F', 'COMP4300';
+
+EXECUTE spAddStudent '<NAME>', 18, 'M', 'COMP7300';
+EXECUTE spAddStudent 'Daniel', 18, 'F', 'COMP4343';
+
+SELECT studentId FROM students WHERE (course like '%COMP%3%5%4300%')
+DECLARE @studentID INT;
+SELECT @studentID=userId FROM users WHERE userName='Joseph';
+SELECT @studentId;
+
+-- Use @studentId as value to add a student to a course
+DECLARE @studentID INT

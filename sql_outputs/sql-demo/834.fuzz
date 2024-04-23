@@ -1,0 +1,9 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS person;
+CREATE TABLE IF NOT EXISTS person (ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY, lastName VARCHAR(255), firstName VARCHAR(255), birthday DATE, sex TINYINT(1), city VARCHAR(255), country VARCHAR(255));
+INSERT INTO person (ID, lastName, firstName, birthday, sex, city, country) VALUES (1, 'Smith', 'Bob', '09-09-1989', 4, 'Amsterdam', 'Netherlands');
+INSERT INTO person (ID, lastName, firstName, birthday, sex, city, country) VALUES (2, 'Jones', 'Chuck', '18-08-1992', 1, 'Paris', 'France');
+SELECT * FROM person WHERE lastName='Jones';
+SELECT * FROM person WHERE ID=1;
+DROP TABLE IF EXISTS person;
+SELECT * FROM person WHERE sex=4;

@@ -1,0 +1,17 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS book(
+ book_id INT,
+ book_issn INT,
+ book_publication_date text,
+ book_price INT
+);
+INSERT INTO book VALUES(1,'978-0-8466-2297-7',2009,'$12.00');
+INSERT INTO book VALUES(2,'978-0-8466-2159-7',2009,'$52.00');
+INSERT INTO book VALUES(3,'978-0-8466-2317-9',2011,'$72.00');
+ALTER TABLE book ADD CONSTRAINT uk_book_issn UNIQUE(book_issn);
+ALTER TABLE book ADD CONSTRAINT book_issn_fk FOREIGN KEY (book_issn) REFERENCES bibl(bibl_isbn);
+ALTER TABLE book MODIFY book_id INT(4);
+ALTER TABLE book ENGINE=MyISAM;
+DROP TABLE book;
+DROP DATABASE sampleDB;
+-- Please create a very short query which uses all of the features of a relational database management system as a simple proof of concept. You should only use the sampleDB as the database and assume no other table exist. You need to create new tables to perform operations. In the end, drop all tables you created. This is the kind of queries that usually involve multiple tables.

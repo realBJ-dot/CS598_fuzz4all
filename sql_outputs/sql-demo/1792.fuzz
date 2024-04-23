@@ -1,0 +1,8 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+REPLACE INTO car (name, price) 
+  VALUES 
+   ('GMC',30000);
+INSERT INTO car (name, price) 
+  VALUES 
+   ('Mazda',50000);
+DROP DATABASE IF EXISTS sampleDB;

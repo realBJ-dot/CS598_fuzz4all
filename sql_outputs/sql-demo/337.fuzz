@@ -1,0 +1,11 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS User;
+DROP DATABASE IF EXISTS SampleDB;
+-- Please create a query which works on all available CPUs and stores the result in a temporary table
+CREATE DBCC MEMORYSTATUS (1, 1, 1, 1, 0) ROUND 0 ROWS 0; CREATE TABLE User(Id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, FirstName VARCHAR(128), LastName VARCHAR(128)); CREATE TABLE Test(Id INT PRIMARY KEY AUTO_INCREMENT, Name VARCHAR(128)); INSERT INTO User (FirstName, LastName) VALUES ('John', 'Doe'), ('Joe', 'Bird'); INSERT INTO Test (Name) VALUES ('Bob'),( 'Alice'); SELECT * FROM User; DROP TABLE Test; DROP TABLE User; RESTORE DATABASE sampleDB;
+-- Please create a query which works on the default database only and stores the result in a temporary table
+CREATE SERVER default_server_id WITH PASSWORD '<PASSWORD>'; -- 060104_SampleServerAdmin@060104_SampleServerAdmin
+USE default_server_id;
+CREATE DATABASE IF NOT EXISTS sampleDB;  CREATE TABLE ServerStatus( ServerID   CHAR(4) NOT NULL, StartTime MDY HH24, ServerStatus VARCHAR(51) NOT NULL); CREATE TABLE User(Id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, FirstName VARCHAR(128), LastName VARCHAR(128)); CREATE TABLE Test(Id INT PRIMARY KEY AUTO_INCREMENT, Name VARCHAR(128)); INSERT INTO User (FirstName, LastName) VALUES ('John', 'Doe'), ('Joe', 'Bird'); INSERT INTO Test (Name) VALUES ('Bob'),( 'Alice'); SELECT * FROM User, ServerStatus WHERE ServerStatus='Running'; EXECUTE( 'EXECUTE dbcc logoff 0', 1 ) CALL dbcc releasememory;
+-- Please create a query that is based on an InnoDB table and stores the result in a temporary table
+USE sampleDB; CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;  SELECT COUNT(*) AS CountFromUser, count(*) AS CountFromTest FROM User, Test; CREATE TABLE UserWithMemoryStatus(Id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, FirstName VARCHAR(128), LastName VARCHAR(12

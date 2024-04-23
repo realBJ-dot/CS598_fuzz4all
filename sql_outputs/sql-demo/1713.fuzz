@@ -1,0 +1,29 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ 
+CREATE TABLE IF NOT EXISTS contacts (
+    name           varchar(250),
+    email          varchar(250),
+    phone          varchar(250),
+    constraint contacts_pk primary key (name,phone)
+);
+INSERT INTO contacts(name,email,phone) VALUES ("<NAME>", "<EMAIL>", "(555) 999-9988");
+INSERT INTO contacts(name,email,phone) VALUES ("<NAME>.", "<EMAIL>", "(555) 999-9991");
+INSERT INTO contacts(name,email,phone) VALUES ("<NAME>", "<EMAIL>", "(555) 999-9999");
+INSERT INTO contacts(name,email,phone) VALUES ("<NAME>", "<EMAIL>", "(555) 999-9999");
+INSERT INTO contacts(name,email,phone) VALUES ("<NAME>.", "<EMAIL>", "(555) 999-9999");
+SELECT * FROM contacts;
+ 
+SELECT name,email,phone FROM contacts ORDER BY names ASC;
+SELECT * FROM contacts ORDER BY phone DESC;
+-- 2-5 hours is required to read through the chapter.
+-- https: 
+-- https: 
+-- https: 
+-- https: 
+-- https: 
+-- https: 
+-- https: 
+-- https: 
+-- Please refer to the notes of the course. They are very helpful. 
+-- https: 
+-- https

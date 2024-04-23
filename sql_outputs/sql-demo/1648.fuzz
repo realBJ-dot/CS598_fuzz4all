@@ -1,0 +1,35 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `sampleDB`.`teacher`;
+CREATE TABLE `sampleDB`.`teacher` (
+  `id` serial NOT NULL AUTO_INCREMENT,
+  `teacherName` varchar(255) NOT NULL,
+  `teacherCode` varchar(20) NOT NULL,
+  `teacherPosition` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+DROP TABLE IF EXISTS `sampleDB`.`attendance`;
+CREATE TABLE `sampleDB`.`attendance` (
+  `id` serial NOT NULL AUTO_INCREMENT,
+  `student_id` int(11) NOT NULL,
+  `teacher_id` int(11) NOT NULL,
+  `date_of_attendance` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+DROP TABLE IF EXISTS `sampleDB`.`course`;
+CREATE TABLE `sampleDB`.`course` (
+	`id` serial NOT NULL AUTO_INCREMENT,
+	`courseName` varchar(255) NOT NULL,
+	`courseCode` varchar(20) NOT NULL,
+	PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- INSERT INTO database(id, studentCode, teacherCode) VALUES (0, '12345', '65432');
+INSERT INTO database(id, studentCode, teacherCode) VALUES (1, '78543', '32189');
+INSERT INTO database(id, studentCode, teacherCode) VALUES (2, '45789', '89067');
+INSERT INTO database(id, studentCode, teacherCode) VALUES (3, '87654', '98765');
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `sampleDB`.`attendance`;
+CREATE TABLE `sampleDB`.`attendance` (
+	`id` serial NOT NULL AUTO_INCREMENT,
+	`student_id` int(11) NOT NULL,
+	`teacher_id` int(11) NOT NULL,
+	`date

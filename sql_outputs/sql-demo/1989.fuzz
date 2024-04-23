@@ -1,0 +1,28 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS departments_salary;
+CREATE table departments_salary
+        ( d_department CHAR(4);
+          d_salary DECIMAL(12,2) );
+INSERT INTO departments_salary
+              ( d_department, d_salary )
+VALUES
+              ( 'SAL', 1000000 ),
+--              ('MED', 3000000 ),
+--              ('ENG', 9000000 );
+              ('SAL', 1300000 ),
+--              ('MED', 5000000 ),
+--              ('ENG', 10000000 );
+SELECT d_department, d_salary FROM departments_salary;
+DROP DATABASE IF EXISTS sampleDB;
+---@author: <NAME>, KBC-2105
+ 
+USE sampleDB;
+CREATE TABLE employees_salary_by_salary
+        ( employee_salary DECIMAL(12,2));
+SELECT employee_salary FROM employees_salary_by_salary;
+-- The query below should print "No one has a salary greater than 80 thousand" as the third row
+-- of an empty rowset.
+
+SELECT employee_salary, 0 AS n FROM employees_salary_by_salary
+WHERE employee_salary > 2000000 AND employee_salary <= 8000000;
+DROP DATABASE IF EXISTS sampleDB;

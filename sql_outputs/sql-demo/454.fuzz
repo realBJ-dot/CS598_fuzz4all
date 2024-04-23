@@ -1,0 +1,43 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+CREATE TABLE employee (
+	id int auto_increment,
+    first_name varchar(30),
+    last_name varchar(30),
+    salary int,
+    PRIMARY KEY (id)
+);
+
+ 
+DELIMITER $$
+CREATE PROCEDURE do_Insert(IN emp_id  int, IN emp_name varchar(30), IN emp_salary int)
+BEGIN
+	INSERT INTO employee(id, first_name, last_name,salary) VALUES (NULL, emp_name, emp_name, emp_salary );
+END
+$$
+DELIMITER ;
+ 
+DELIMITER $$
+CREATE PROCEDURE do_delete(IN employee_id int)
+BEGIN
+	DELETE FROM employee WHERE id = employee_id;
+END
+$$
+DELIMITER ;
+ 
+DELIMITER $$
+CREATE PROCEDURE salary_Range (IN from_salary_range int, IN to_salary_range int)
+BEGIN
+SELECT e.id, e.first_name, e.last_name, e.salary
+FROM employee as e
+WHERE e.salary BETWEEN from_salary_range AND to_salary_range
+ORDER BY e.salary
+END
+$$
+DELIMITER ;
+
+-- You can also find the source code of this task here: https: 
+
+-- To learn more about how to define stored procedures, queries, and procedures, please visit the official SQL tutorial at: https: 
+
+DROP DATABASE IF EXISTS sampleDB;

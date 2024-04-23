@@ -1,0 +1,5 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- your mutated code here
+DROP DATABASE IF EXISTS sampleDB;
+```
+

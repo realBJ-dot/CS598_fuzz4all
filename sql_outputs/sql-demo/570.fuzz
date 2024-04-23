@@ -1,0 +1,15 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS Mutated (id INT AUTO_INCREMENT PRIMARY KEY, price DECIMAL(10,2) UNIQUE);
+SELECT price from mutated where id = 2;
+UPDATE mutated set price = 80 where id = 2;
+UPDATE mutated set price = 10 where id = 2;
+DROP TABLE Mutated;
+DROP DATABASE sampleDB;
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS Mutated (id INT AUTO_INCREMENT PRIMARY KEY, price DECIMAL(10,2) UNIQUE);
+SELECT price from mutated where id = 2;
+UPDATE mutated set price = 80 where id = 2;
+UPDATE mutated set price = 10 where id = 2;
+DROP TABLE Mutated;
+DROP DATABASE sampleDB;

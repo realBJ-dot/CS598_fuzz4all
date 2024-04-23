@@ -1,0 +1,17 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employees_salaries;
+CREATE TABLE employees_salaries (
+   employee_salary INT UNSIGNED,
+   PRIMARY KEY (employee_salary));
+UPDATE employees_salaries
+SET employee_salary = employee_salary + 10, employee_salary = employee_salary + 10
+WHERE employee_salary = (
+   SELECT MAX(salary) FROM employees_salary
+   WHERE employee_salary!= employee_salary);
+DROP TABLE EMPLOYEES_SALARIES;
+
+-- MySQL is a web application server software written by Sun Microsystems, a member of Oracle. In fact, MySQL is one of the key database technology of Oracle Database product line.
+
+MySQL is installed in many operating systems to allow multiple users to access the same database simultaneously. Users can login to a MySQL server and run SQL statements against the database. Users can access the MySQL server from clients. MySQL can also connect to MySQL database servers using its own protocols (e.g. TCP/IP) rather than having to configure a TCP/IP server with your database cluster.
+
+Written in C and C++, MySQL supports a variety of system platforms from Linux, macOS, Microsoft Windows to even the Symbian OS. It offers dual-licensing i.e., GPL version 2 or a proprietary license.

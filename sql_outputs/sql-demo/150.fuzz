@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+create table Users_2 (username char(20) PRIMARY KEY, FirstName VARCHAR(30));
+Insert into Users_2 values ('Bob', 'Robert',  '<EMAIL>', '333', '123', '456','789');
+UPDATE Users_2 set is_admin = 100 where username = 'Alice';
+-- Please write a query to retrieve the first name of every User that is an Administrator.
+ 
+CREATE table Users(username char(20) PRIMARY KEY, password char(20), FirstName VARCHAR(30), Admin char(20));
+INSERT INTO Users(username, password, FirstName, Admin) VALUES ('Bob', 'Bob', 'Bob', '0');
+INSERT INTO Users(username, password, FirstName, Admin) VALUES ('Alice', 'Alice', 'Mike', '1');
+SELECT * from Users where Admin = '1';

@@ -1,0 +1,6 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- Using the MySQL shell, make the INSERT to person_tmp statement as equivalent to the following statement:
+TRUNCATE TABLE person_tmp;
+INSERT INTO person_tmp (name, age) VALUES ('<NAME>', 31), ('<NAME>', 25);
+-- Please create a program which insert rows to person_tmp before you run a query like
+SELECT * FROM person_tmp ORDER BY age DESC LIMIT 10;

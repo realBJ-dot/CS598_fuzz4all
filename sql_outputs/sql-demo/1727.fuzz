@@ -1,0 +1,27 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP DATABASE IF EXISTS user;
+CREATE TABLE user(user_name VARCHAR(20), password VARCHAR(15));
+INSERT INTO user (user_name, password) VALUES ('user', '<PASSWORD>');
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP DATABASE IF EXISTS user;
+DROP TABLE user;
+-- Please create a program which checks whether users exists or not. In this case, assuming a table named 'user'.
+
+-- Query to return records from 'user' in 'user' table.
+SELECT * FROM user WHERE user_name = 'user';
+-- Query to return all rows from 'user' in 'user' table.
+SELECT * FROM user;
+-- Query to get row count from 'user' in 'user' table.
+SELECT count(*) FROM user;
+-- Query to get record count matching a given condition from 'user' in 'user' table. There is a case when the condition to be matched is same as user_name.
+SELECT * FROM user WHERE user_name='user';
+-- Please create a program which prints the list of all tables in database named'sampleDB'
+SELECT * FROM information_schema.TABLES WHERE TABLE_SCHEMA='sampleDB';
+-- Please create a program which creates a user named 'user', password is '<PASSWORD>'
+INSERT INTO user (user_name, password) VALUES ('user', '<PASSWORD>');
+-- Please create a program which generates a table named 'table_1' and contains rows consisting of random integers from 1 to 10.
+-- Select 10 rows from the table 'table_1'.
+CREATE TABLE table_1 ( col1 int DEFAULT NULL );
+INSERT INTO table_1 ( col1 ) SELECT ROUND( RAND() * 20)+1 FROM generatedKeys();
+-- Select 1.5 rows from the table 'table_1'.
+SELECT ROUND( RAND() * 20), col1 FROM table_1 LIMIT 1.5;

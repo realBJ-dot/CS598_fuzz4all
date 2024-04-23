@@ -1,0 +1,8 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+SELECT SUBJECT_NAME FROM Subject;
+SELECT SUBJECT_NAME FROM sampledb.Subject;
+SELECT * FROM subject;
+SELECT * FROM sampledb.subject;
+DROP DATABASE IF EXISTS sampleDB;
+
+We will be using MySQL, PHP and Python for some of the challenges that we encounter while building different applications.

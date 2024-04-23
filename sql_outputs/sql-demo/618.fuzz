@@ -1,0 +1,42 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS StudentsMutated;
+CREATE TABLE StudentsMutated (IDINT INT, Student INT, Mutated INT);
+INSERT INTO StudentsMutated VALUES (1,1,1);
+INSERT INTO StudentsMutated VALUES (2,2,0);
+INSERT INTO StudentsMutated VALUES (3,1,0);
+SELECT COUNT(*) FROM StudentsMutated;
+
+DROP TABLE IF EXISTS Mutated;
+DROP TABLE IF EXISTS Students;
+DROP TABLE IF EXISTS StudentsMutated;
+
+DELIMITER $$
+CREATE PROCEDURE TestMutated(INT ID)
+BEGIN
+DECLARE mutated INT DEFAULT 0;
+DECLARE s INT DEFAULT NULL;
+DECLARE IDMutated INT DEFAULT 0;
+DECLARE IDStudent INT DEFAULT 0;
+DECLARE IDStudentMutated INT DEFAULT 0;
+DECLARE IDCollege INT DEFAULT 0;
+SET MUTATED = 0;
+SET COLLEGE = NULL;
+SET IDStudent = 1;
+SET Student = 1;
+
+DECLARE mutatedCursor CURSOR FOR
+SELECT Students
+FROM Students
+WHERE ID < ID;
+DECLARE CONTINUE HANDLER FOR NOT FOUND SET IDStudent = 0;
+
+DECLARE mutatedStudentCursor CURSOR FOR SELECT StudentID FROM StudentsMutated WHERE StudentID = Student;
+DECLARE CONTINUE HANDLER FOR NOT FOUND SET Student = 0;
+
+DECLARE IDCollegeCursor CURSOR FOR
+SELECT Collegues.CollegeID
+FROM Students
+INNER JOIN StudentsCollegues
+ON Students.StudentID = StudentsCollegues.StudentID
+INNER JOIN Collegues
+ON StudentsCollegues.CollegeID = Colleg

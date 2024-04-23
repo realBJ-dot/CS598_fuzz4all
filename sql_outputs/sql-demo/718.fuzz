@@ -1,0 +1,16 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `Lecture`;
+CREATE TABLE `Lecture` (
+	`Lecture_ID` INT NOT NULL,
+	`Course_Code` VARCHAR(40) NOT NULL,
+	`Course_Name` VARCHAR(255) NULL,
+	PRIMARY KEY (`Course_Code`)
+);
+INSERT INTO Lecture VALUES
+(1, 'CS2031', "Computer Science 2031"),
+(2, 'CS2041', "Computer Science 2041"),
+(3, 'CS2043', "Computer Science 2043"),
+(4, 'CS2044', "Computer Science 2044"),
+(5, 'MATH306', "Math 306"),
+(6, 'MATH307', "Math 307"),
+(7, 'MATH311', "Math 311");

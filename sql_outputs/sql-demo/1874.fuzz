@@ -1,0 +1,33 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS johndoe;
+DROP TABLE IF EXISTS johnsmith;
+DROP TABLE IF EXISTS mark;
+DROP TABLE IF EXISTS jonathan;
+DROP TABLE IF EXISTS janedoe;
+CREATE TABLE johndoe
+(
+    key INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    value char(50) NOT NULL
+);
+INSERT
+INSERT
+INSERT
+INSERT
+INSERT
+INSERT
+INSERT
+INSERT
+SELECT * FROM employees_positions;
+DROP TABLE IF EXISTS jonathan;
+DROP TABLE IF EXISTS jonathan_emp;
+
+CREATE TABLE jonathan_emp
+(
+    id INT NOT NULL,
+    pos_id int not null
+)
+ENGINE = MYISAM;
+ALTER TABLE jonathan_emp 
+ADD CONSTRAINT jonathan
+FOREIGN KEY (pos_id)
+REFERENCES job_positions (id);

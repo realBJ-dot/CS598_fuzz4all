@@ -1,0 +1,25 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS person;
+CREATE TABLE person (id INT, name VARCHAR(200), birthdate DATE, PRIMARY KEY(id));
+
+INSERT INTO person (id, name, birthdate) VALUES(1, '<NAME>', '1982-08-15'), (2, '<NAME>', '2010-08-15');
+UPDATE person SET birthdate='2001-08-15' WHERE id=1;
+DELETE FROM person WHERE id=1;
+DROP TABLE IF EXISTS person;
+DROP DATABASE IF EXISTS sampleDB;
+ 
+CREATE TABLE test(id INTEGER, name TEXT, birthdate DATE, PRIMARY KEY (id, birthdate));
+
+ 
+SELECT count(*) FROM test;
+TRUNCATE test;
+SELECT count(*) FROM test;
+
+-- There are several versions of PHP that are available. I recommend that you use version 5.4.16 as this is the default version on Debian. There were some minor issues with PHP 7 and MySQL 5.7 that needed to be worked around.
+
+php -d default_socket=/usr/local/mysql/mysql.sock
+php -f 07-mysql-04-simple-update.php<fim_middle>CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE test_tbl (id INT, name TEXT, birthdate DATE, PRIMARY KEY (id, birthdate), UNIQUE(name));
+INSERT INTO test_tbl (id, name, birthdate) VALUES(3, "<NAME>", '2011-05-23');
+INSERT INTO test_tbl (id, name, birthdate) VALUES(2, "<NAME>", '2010-01-26');
+INSERT INTO test_tbl (id, name, birth

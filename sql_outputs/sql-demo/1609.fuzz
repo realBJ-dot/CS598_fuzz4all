@@ -1,0 +1,49 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `sampleDB`.`departments`;
+CREATE TABLE `sampleDB`.`departments` (
+	`id` int NOT NULL,
+	`departmentName` varchar(30) DEFAULT NULL,
+	PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+DROP TABLE `sampleDB`.`departments`;
+USE sampleDB;
+DROP TABLE `sampleDB`.`departments`;
+CREATE TABLE `sampleDB`.`departments` (
+	`id` int NOT NULL,
+	`departmentName` text,
+	PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- Please drop the original table. It should be empty.
+DROP TABLE `sampleDB`.`departments`;
+USE sampleDB;
+DROP TABLE `sampleDB`.`departments`;
+CREATE TABLE `sampleDB`.`departments` (
+	`id` int NOT NULL,
+	`departmentName` VARCHAR(30) DEFAULT NULL,
+	PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+ 
+DROP TABLE `sampleDB`.`departments`;
+
+USE sampleDB;
+DROP TABLE IF EXISTS `sampleDB`.`employees`;
+CREATE TABLE `sampleDB`.`employees` (
+	`id` int NOT NULL AUTO_INCREMENT,
+	`employeeId` int(11) DEFAULT NULL,
+	`firstName` varchar(30) NOT NULL,
+	`lastName` varchar(30) NOT NULL,
+	`email` varchar(30) DEFAULT NULL,
+	PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- Please drop the original table. It should be empty.
+DROP TABLE IF EXISTS `sampleDB`.`employees`;
+-- Create a very short query which uses SQL features in a complex way. Be sure to use ENGINE=InnoDB. You should only use sampleDB as the database and assume no other table exist. You need to create new tables to perform operations. In the end, drop all tables you created.
+
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `sampleDB`.`departments`;
+CREATE TABLE `sampleDB`.`departments` (
+	`id` int NOT NULL AUTO_INCREMENT,
+	`departmentName` VARCHAR(30) DEFAULT NULL,
+	PRIMARY KEY (`id`)
+) ENGINE

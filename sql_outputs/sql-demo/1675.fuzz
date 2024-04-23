@@ -1,0 +1,26 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `staff`;
+DROP TABLE IF EXISTS `emp`;
+-- create new tables
+CREATE TABLE `staff` (
+	`ID` int(11) NOT NULL AUTO_INCREMENT,
+	`staff_name` text NOT NULL,
+	`grade` text NOT NULL,
+	`empgrade` varchar(10) NOT NULL,
+	FOREIGN KEY (`empgrade`) REFERENCES `emp` (`empgrade`) ON DELETE CASCADE
+	PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- insert rows
+INSERT INTO `staff` values('101', 'Jayesh', '8th', ''),('102', 'Jayashree', '4th', '8th'),('103', 'Akshat', '5th', '4th'),('104', 'Amit', '6th', '8th'),('105', 'Akshat', '5th', '4th');
+SELECT * FROM `staff`;
+USE `sampleDB`
+-- create a derived table and add 2 rows
+CREATE TABLE IF NOT EXISTS `dept` (
+	`depid` INT NOT NULL AUTO_INCREMENT,
+	`dept` VARCHAR(10) NOT NULL UNIQUE,
+	UNIQUE (`dept`)
+) ENGINE=Innodb ;
+insert INTO `dept` value(1, 'Computer Science'), (2, 'Physics'), (3, 'Civil Engineering'), (4, 'Architecture'), (5, 'Engineering'), (6, 'Biological Engineering'), (7, 'Biomedical Technology');
+-- modify a row in a table
+UPDATE `dept` SET `dept` = 'B.E' WHERE `dept` = 'Computer Science';
+-- Now create some table

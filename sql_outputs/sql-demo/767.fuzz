@@ -1,0 +1,16 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+CREATE TEMPORARY TABLE IF NOT EXISTS `FirstAndSecondTable` ( `id` INT(11) NOT NULL PRIMARY KEY, `data` VARCHAR(300) CHARACTER SET UTF8);
+
+SELECT * FROM `FirstAndSecondTable` LIMIT 5;
+
+INSERT INTO `FirstAndSecondTable` (`id`, `data`) VALUES (1, "a");
+INSERT INTO `FirstAndSecondTable` (`id`, `data`) VALUES (2, "b");
+INSERT INTO `FirstAndSecondTable` (`id`, `data`) VALUES (3, "c");
+INSERT INTO `FirstAndSecondTable` (`id`, `data`) VALUES (4, "d");
+INSERT INTO `FirstAndSecondTable` (`id`, `data`) VALUES (5, "e");
+SELECT * FROM `FirstAndSecondTable` LIMIT 5;
+*/
+
+DROP TABLE IF EXISTS `FirstAndSecondTable`;
+ 

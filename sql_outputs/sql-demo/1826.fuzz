@@ -1,0 +1,18 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS employee(name varchar(10));
+INSERT INTO employee(name) VALUES ('<NAME>');
+INSERT INTO employee(name) VALUES ('<NAME>');
+INSERT INTO employee(name) VALUES ('<NAME>');
+INSERT INTO employee(name) VALUES ('<NAME>');
+DROP DATABASE IF EXISTS sampleDB;
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS employee(name varchar(10), address varchar(100), SalaryReal double, SalaryMoney double);
+CREATE TABLE IF NOT EXISTS projects(name varchar(10), address varchar(100), SalaryReal double);
+CREATE TABLE IF NOT EXISTS projects_employees(projects_id int, employees_id int);
+INSERT INTO employee(name, address, SalaryReal, SalaryMoney) VALUES ('<NAME>', '', 7772.98, 7772.98);
+INSERT INTO employee(name, address, SalaryReal, SalaryMoney) VALUES ('<NAME>', '54 West 50th St. Westwood', 6022.44, 34995.99 );
+INSERT INTO employee(name, address, SalaryReal, SalaryMoney) VALUES ('<NAME>', '301 E Main St Moffat Rd', 3641.32, 15076.58) ;
+INSERT INTO projects(name, address, SalaryReal) VALUES ('House Repair', 'Chicago ', 5000.00) ;
+INSERT INTO projects(name, address, SalaryReal) VALUES ('Office Building Project', 'Nashville-Davidson ', 6000.00);
+INSERT INTO employee_projects (employee_id,projects

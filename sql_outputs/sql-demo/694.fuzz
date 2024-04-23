@@ -1,0 +1,8 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS student;
+CREATE TABLE student(ID INT UNSIGNED AUTO_INCREMENT, FIRST_NAME VARCHAR(20),
+LAST_NAME CHAR(20), GRADE INT)ENGINE=INNODB; INSERT INTO student VALUES(1,'John', 'Smith', 8); INSERT INTO student VALUES(2,'Jane', 'Lee', 9); INSERT INTO Student_Graded VALUES(1,2);
+DROP TABLE IF EXISTS student_graded;
+CREATE TABLE student_graded(student_first_name VARCHAR(20), student_last_name CHAR(20), grade INT);
+DROP INDEX IF EXISTS student_first_name;
+DROP INDEX IF EXISTS student_last_name;

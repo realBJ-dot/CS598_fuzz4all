@@ -1,0 +1,48 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS users (
+
+u_name varch(40),
+u_city varch(40),
+u_state varchar(2),
+u_zip int,
+u_birthdate date,
+
+PRIMARY KEY (u_name));
+
+
+ 
+USE sampleDB;
+DESCRIBE users;
+CREATE TABLE IF NOT EXISTS users (
+u_name varch(40),
+u_city varch(40),
+u_state varchar(2),
+u_zip int,
+u_birthdate date,
+UNIQUE (u_name),
+
+PRIMARY KEY (u_name));
+ 
+USE sampleDB;
+DESCRIBE users;
+DROP DATABASE IF EXISTS sampleDB;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

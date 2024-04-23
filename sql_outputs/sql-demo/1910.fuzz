@@ -1,0 +1,54 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- DROP TABLE IF EXISTS employees_salary;
+DROP TABLE IF EXISTS employees_salary;
+CREATE TABLE employees_salary (
+    employee_salary        INT UNSIGNED,
+    PRIMARY KEY (employee_salary));
+SELECT DATABASE();
+-- DROP TABLE IF EXISTS employees_salary;
+DROP TABLE IF EXISTS employees_salary;
+CREATE TABLE employees_salary (
+    employee_salary        INT UNSIGNED,
+    PRIMARY KEY (employee_salary));
+SELECT DATABASE();
+-- Drop table in sampleDB which is called employees_salary
+DROP TABLE IF EXISTS employees_salary;
+CREATE TABLE employees_salary (
+    employee_salary        INT UNSIGNED,
+    PRIMARY KEY (employee_salary));
+SELECT DATABASE();
+-- Dropping the table
+ALTER TABLE employees_salary
+    ADD PRIMARY KEY (employee_salary); 
+ALTER TABLE employees_salary
+    MODIFY employee_salary INT UNSIGNED NOT NULL; 
+USE sampleDB;
+-- INSERT some data using your SQL editor of choice
+-- In case it is not working right away, restart your web server and try selecting the table then creating it again using the schema changes of my previous query
+ALTER TABLE employees_salary
+    MODIFY employee_salary INT UNSIGNED;
+SELECT * FROM employees_salary;
+-- Dropping table
+DROP TABLE IF EXISTS employees_salary;
+-- You should now be able to query employees_salary by running the previous query
+-- You should see a 1 in employee_salary
+USE sampleDB;
+DESC employees_salary;
+ 
+ALTER TABLE IF EXISTS employees_salary
+    ADD UNIQUE key (employee_salary);
+-- Again, try using your MySQL editor, or again using the previously created query... or create a mutation script
+-- This will help you understand what is happening and whether you did everything as expected.
+ALTER TABLE employees_salary
+    MODIFY employee_salary INT UNSIGNED;
+-- Create a table in sampleDB which is called employees_salary
+DROP TABLE IF EXISTS employees_salary;
+CREATE TABLE employees_salary (
+    employee_salary        INT UNSIGNED,
+    PRIMARY KEY (employee_salary)); 
+SELECT DATABASE();
+ALTER TABLE employees_salary
+    MODIFY employee_salary INT UNSIGNED NOT NULL;
+ALTER TABLE employees_salary
+    ADD UNIQUE key (employee_salary);
+-- You should now be able to query employees_salary

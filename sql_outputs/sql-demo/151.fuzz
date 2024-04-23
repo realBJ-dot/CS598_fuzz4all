@@ -1,0 +1,54 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users (UserName, FirstName, LastName);
+INSERT INTO Users VALUES('john', 'John', 'Smith');
+INSERT INTO Users VALUES('jane', 'Jane', 'Doe');
+INSERT INTO Users VALUES('jill', 'Jill', 'White');
+SELECT * from Users;
+-- Please modify the second table to show the data
+ALTER TABLE Users
+-- Modify the User to show the firstName values
+UPDATE Users SET FirstName = 'Dave'
+-- Update the User to show the FirstName values
+UPDATE Users, Users2
+  SET Users.FirstName = Users2.FirstName
+  WHERE Users.UserName = Users2.UserName
+-- Create a table where the data is a combination of the data in the two tables
+CREATE TABLE Users(UserName varchar(10), FirstName varchar(30));
+INSERT INTO Users VALUES('john', 'John');
+INSERT INTO Users VALUES('jane', 'Jane');
+INSERT INTO Users VALUES('jill', 'Jill');
+CREATE TABLE Users2(UserName varchar(10), FirstName varchar(30));
+INSERT INTO Users2 VALUES('john', 'Michael');
+INSERT INTO Users2 VALUES('jane','Bill');
+INSERT INTO Users2 VALUES('jill', 'Amy');
+-- Create a table where the data is a combination of the data in the two tables and where the result of the expression  is the concatentation
+-- and the other expression is the concatentation of the two substrings
+CREATE TABLE users(
+UserName1 text,
+UserName2 text,
+FirstName1 text,
+FirstName2 text,
+LastName text
+);
+
+-- Create a table where the data is like this
+-- https: 
+CREATE TABLE users (
+user_name varchar(20) NOT NULL,
+first_name  varchar(30) NOT NULL,
+last_name text
+);
+insert into users values
+
+insert into users values
+(first_name,'Sudheendra',last_name),(firstname,'Krit',last_name),(firstname,'Vaghas',last_name);
+-- https: 
+-- For each 2 values compare the result
+select username
+from users
+where   first_name='smith' and last_name='johnson' or ( first_name = 'Sudheendra' and last_name is 'Johsnot'),
+-- https: 
+-- For each row compare the results
+select first_name
+from users
+where  first_

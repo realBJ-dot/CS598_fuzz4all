@@ -1,0 +1,30 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS users_details(
+  `userId` int(5) NOT NULL AUTO_INCREMENT,
+  `username` varchar(20),
+  `pwd` varchar(30),
+  `firstName` varchar(20),
+  `Lastname` varchar(50),
+  `userType` int(1),
+  `isAdmin` bit(1),
+  `created_at`date,
+  `updated_at`date,
+  PRIMARY KEY (`userId`)
+);
+SET GLOBAL query_log = '';
+SET GLOBAL max_allowed_packet=18000072;
+-- Please modify the given program to use the sampleDB instead of creating a test table in that database. If possible, use the full query to insert records in data_to_insert.txt.
+DECLARE testTABLE CURSOR FOR SELECT userId AS "userId" FROM users_details;
+DECLARE CONTINUE HANDLER FOR NOT FOUND SET @counter = @counter + 1;
+set server output on;
+OPEN testTABLE;
+PRINT @counter;
+FETCH testTABLE INTO :row;
+
+FETCH testTABLE INTO :row;
+
+
+
+
+
+

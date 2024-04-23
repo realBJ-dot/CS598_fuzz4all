@@ -1,9 +1,6 @@
-USE sampleDB;
-CREATE TABLE IF NOT EXISTS testCart
-(
- product       INT,
- qtyOnHand     INT,
- amount        DECIMAL(18, 2),
- date          DATE,
- PRIMARY KEY(product)
-) ENGINE=InnoDB;
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users(username char(20), Firstname VARCHAR(30), Lastname CHAR) ENGINE=InnoDB DEFAULT CHARSET=UTF8;
+INSERT INTO Users(username, Firstname, Lastname) VALUES('Teste','teste','test'),('Admin','Teste','tesn'),('Guest','Teste','tesn'),('Super','Teste','tesn');
+ 
+ 
+

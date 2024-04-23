@@ -1,0 +1,21 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+INSERT INTO Person VALUES ('Samuel', 'Taylor');
+-- Please create a mutated program that inserts two rows into the sampleDB database.
+INSERT INTO Person VALUES ('Andrew', 'William');
+INSERT INTO Person VALUES ('Ted', 'Moore');
+-- Please create a mutated program that returns only 'ANDYWAMIL'. Be sure to use ENGINE=InnoDB.
+SELECT First_name, Last_name FROM Person WHERE Last_name = 'William';
+-- Please create a mutated program that returns the Last_name of all the employees of the 'SampleDB' database.
+SELECT Last_name FROM Employee  WHERE SQL IN ('Engine=InnoDB') AND SQL = 'ENGINE';
+-- Please create a mutated program that adds two rows and a constraint into the 'Person' table in 'SampleDB' database only if they do not already exist.
+ALTER TABLE Person
+ADD Name varchar(45) NOT NULL UNIQUE; ALTER TABLE Person ADD CONSTRAINT Person_fk
+FOREIGN KEY (First_name) REFERENCES Person;
+--- Please create a mutated program that add a constraint where Last_name is the primary key for Person table.
+ALTER TABLE Person
+ADD CONSTRAINT Person_pk
+PRIMARY KEY (First_name); ALTER TABLE Person MODIFY First_name varchar(45);
+--- Please create a mutated program that removes Last_name of all employees from 'SampleDB' database.
+DELETE FROM Person WHERE Last_name = 'William';
+--- Please create a mutated program that removes all rows from the Person table where Last_name is 'William'.
+DELETE FROM Person WHERE Last_name = 'William'; ALTER TABLE Person MODIFY Last_name varchar(45);

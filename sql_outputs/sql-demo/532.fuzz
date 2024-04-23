@@ -1,0 +1,36 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE mytable( myid int, title varchar(255), price decimal(10,2) );
+INSERT INTO mytable VALUES(1,'abc1', 100);
+INSERT INTO mytable VALUES(2,'abc2', null);
+INSERT INTO mytable VALUES(2,'abc3', 200);
+INSERT INTO mytable VALUES(2,'abc4', null);
+INSERT INTO mytable VALUES(2,'abc5', null);
+SELECT myid, title, price FROM mytable ;
+SELECT * FROM mytable LIMIT 2 ;  
+DROP TABLE mytable;
+DROP DATABASE sampleDB;
+ 
+
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE mytable( myid int, title varchar(255), price decimal(10,2) );
+INSERT INTO mytable VALUES(1,'abc1', 100);
+INSERT INTO mytable VALUES(2,'abc2', null);
+INSERT INTO mytable VALUES(2,'abc3', 200);
+INSERT INTO mytable VALUES(2,'abc4', null);
+INSERT INTO mytable VALUES(2,'abc5', null);
+SELECT myid, title, price FROM mytable ;
+SELECT * FROM mytable ;
+DROP TABLE mytable;
+DROP DATABASE sampleDB;
+
+```
+
+![img](/assets/posts/mysql/00-create-drop-table.png){:class="img-responsive"}
+
+## References
+- [MySQL Docs](https: 
+- [MySQL tutorial](https: 
+- [MySQL Community Tutorial](https: 
+- [How to create a dynamic, interactive SQL shell using MariaDB Client](https: 
+- [[mysql] mysql安装](https: 
+- [MySQL 常见错误

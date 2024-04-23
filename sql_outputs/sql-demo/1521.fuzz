@@ -1,0 +1,7 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE users;
+CREATE TABLE users(id INTEGER, fname VARCHAR(50), lname VARCHAR(50), user_type INTEGER);
+INSERT INTO users (id, fname, lname, user_type) VALUES (2, 'Rahul', 'Kumar', 1);
+DROP TABLE users;
+INSERT INTO users (fname, user_type) VALUES ('Shreyas', 0);
+INSERT INTO users (fname, user_type) VALUES ('Shreyas', 1);

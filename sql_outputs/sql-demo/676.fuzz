@@ -1,0 +1,9 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+SELECT First_Name FROM Student WHERE Last_Name = "Smith";
+SELECT Last_Name FROM Student WHERE First_Name = 'Tom';
+SELECT First_Name, Last_Name, Grade FROM Student WHERE Grade = 9;
+UPDATE Student SET Grade = 10 WHERE Grade = 9;
+SELECT First_Name, Last_Name, Grade FROM Student WHERE Grade = 10;
+SELECT First_Name, Last_Name, Grade FROM Student WHERE Grade = 10;
+DROP DATABASE IF EXISTS sampleDB;

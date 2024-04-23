@@ -1,0 +1,4 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users(username char(20) PRIMARY KEY, FirstName VARCHAR(30), MiddleName VARCHAR(30), LastName VARCHAR(20)) ENGINE=InnoDB;
+INSERT INTO Users(username,Firstname,MiddleName,lastname) VALUES('Test','Test','Test1234','Gurgaon'),('Admin','Admin','Admin','Admin'),('System','System','System','System'),('Super','Super','Super2847','Doklam'),('User','User','User','Doklam'),('SuperUser','SuperUser','SuperUser','Doklam');
+CREATE DATABASE IF NOT EXISTS sampleDB

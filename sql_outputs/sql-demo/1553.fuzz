@@ -1,0 +1,13 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP DATABASE IF EXISTS sampleDB;
+-- The same mutated program but now using an alter command. Alter will alter a table based on the alteration command used.
+CREATE DATABASE IF NOT EXISTS sampleDB; ALTER DATABASE sampleDB MODIFY name="New Name"; SHOW DATABASES; DROP DATABASE IF EXISTS sampleDB;
+-- This is where we go long and use a table to make something unique. 
+UPDATE person.person set birthday = 2001-01-01;
+USE person.person;
+SELECT * FROM person.person;
+DROP TABLE IF EXISTS person.person;
+-- Once again, this command will use the first table in our sampleDB
+
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP DATABASE IF EXISTS sampleDB;

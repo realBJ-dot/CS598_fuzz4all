@@ -1,0 +1,26 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS Mutated;
+-- Please use ENGINE=InnoDB as the new table engine for the second mutation
+CREATE TABLE Mutated (IDINT NUMERIC, Student INT, Mutated INT);
+CREATE TABLE Students_Mutated (IDINT NUMERIC, Mutated INT);
+INSERT INTO Students_Mutated VALUES (1,0);
+INSERT INTO Students_Mutated VALUES (2,1);
+INSERT INTO Students_Mutated VALUES (3,0);
+INSERT INTO Mutated VALUES (1,1,0);
+INSERT INTO Mutated VALUES (2,2,1);
+INSERT INTO Mutated VALUES (3,3,0);
+-- Please remove all indexes from the Students and Mutated tables
+DROP INDEX student_mutated_idx;
+DROP INDEX student_mutated_idx;
+DROP INDEX student_mutated_idx;
+---- Please modify the program so that the two new tables Students and Students_Mutated are merged in a single compound index
+UPDATE student_mutated SET Student_Mutated = 1 WHERE 1=1;
+UPDATE student_mutated SET Student_Mutated = 1 WHERE 1=1;
+UPDATE student_mutated SET Student_Mutated = 1 WHERE 1=1;
+ALTER TABLE Students_Mutated ADD UNIQUE (Mutated, Student);
+UPDATE mutated SET Mutated = 0 WHERE Mutated=0;
+-- Please run it, you should get an empty result!
+-- Now lets make a new table with unique IDs
+CREATE TABLE Students (IDNUM NUMERIC, NAME TEXT);
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS

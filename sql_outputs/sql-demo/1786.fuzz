@@ -1,0 +1,12 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- The previous generation, MSSQL, is based upon an older version of MSSQL Server.
+DROP TABLE IF EXISTS test4;
+CREATE TABLE test4 (ID INT NOT NULL, Name VARCHAR(16) NOT NULL, Age INT NOT NULL);
+INSERT INTO test4 (ID, Name, Age) VALUES (1, 'Pratik', 23);
+INSERT INTO test4 (ID, Name, Age) VALUES (2, 'Pakistani', 3);
+INSERT INTO test4 (ID, Name, Age) VALUES (3, 'Pratik', 23);
+INSERT INTO test4 (ID, Name, Age) VALUES (4, 'Pratik', 16);
+INSERT INTO test4 (ID, Name, Age) VALUES (5, 'Priya', 15);
+DROP TABLE IF EXISTS test4;
+DROP DATABASE IF EXISTS sampleDB;
+DROP DATABASE IF EXISTS sampleDB;

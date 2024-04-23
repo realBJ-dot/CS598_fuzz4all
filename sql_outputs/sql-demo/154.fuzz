@@ -1,0 +1,12 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ALTER TABLE Users_2 MODIFY username char(30);
+ALTER TABLE Users_2 MODIFY FirstName VARCHAR(15);
+DROP TABLE Users_2;
+
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users_2(username char(20));
+INSERT INTO Users_2 (username) VALUES ("Joe");
+SELECT username FROM Users_2;
+UPDATE Users_2 SET FirstName = "John" WHERE username = "Joe";
+SELECT username, FirstName FROM Users_2;
+DROP TABLE Users_2;

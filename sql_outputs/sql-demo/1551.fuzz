@@ -1,0 +1,12 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+DROP TABLE IF EXISTS table10;
+CREATE TABLE table10 (ID INT, name VARCHAR(20));
+INSERT INTO table10 (ID, name) VALUES (12, 'table10_001');
+SELECT * FROM table10;
+
+ SELECT * FROM table10 WHERE ID = 12;
+
+SELECT Name, ID from table10;
+
+DROP DATABASE sampleDB;

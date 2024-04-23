@@ -1,0 +1,17 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS customers;
+CREATE TABLE customers (
+id INT NOT NULL AUTO_INCREMENT,
+customerID INT NOT NULL,
+firstName VARCHAR(20) NOT NULL,
+lastName VARCHAR(25) NOT NULL,
+isFullTimeEmployee TINYINT(1) NOT NULL,
+isLead TINYINT(1),
+isVIP TINYINT(1) NOT NULL,
+PRIMARY KEY (id),
+UNIQUE KEY customers_customerID (customerID)
+);
+-- Please create a query which uses UNION rather than JOIN to do a natural join for two tables.
+SELECT * FROM customers c1 JOIN customers INNER JOIN customers c2 WHERE c1.isLead = 1 AND c2.isLead = 1;
+-- Please write a semantcal equivalent query for the above
+SELECT * FROM customers c1 INNER JOIN customers INNER JOIN customers WHERE c1.isLead = 1 AND c2.isLead = 1;

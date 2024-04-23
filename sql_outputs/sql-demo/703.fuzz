@@ -1,0 +1,21 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS Student;
+CREATE TABLE Student (First_Name  VARCHAR(20), Last_Name CHAR(20), Grade BOOLEAN);
+INSERT INTO Student (First_Name, Last_Name, Grade) VALUES ('John',  'Smith',     true);
+INSERT INTO Student (First_Name, Last_Name, Grade) VALUES ('Jane',   'Lee',       false);
+INSERT INTO Student (First_Name, Last_Name, Grade) VALUES ('Tom',    'Stark',     true);
+UPDATE
+  Student
+SET
+  Grade = false
+WHERE
+  Grade = true;
+SELECT
+  First_Name,
+  Last_Name,
+  Grade
+FROM Student
+WHERE
+  Grade >= 7
+ORDER BY
+  First_Name;

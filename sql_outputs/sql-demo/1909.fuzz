@@ -1,0 +1,18 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employees_salary;
+CREATE TABLE employees_salary (
+   employee_salary        INT UNSIGNED,
+   PRIMARY KEY (employee_salary));
+USE sampleDB;
+INSERT INTO employees_salary VALUES (2500);
+-- Create a table in sampleDB which is called employees_salary
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employees_salary;
+CREATE TABLE employees_salary (
+    employee_salary        INT UNSIGNED,
+    PRIMARY KEY (employee_salary));
+
+ 
+
+SELECT DATABASE();
+ 

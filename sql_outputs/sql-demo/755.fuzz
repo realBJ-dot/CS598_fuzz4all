@@ -1,0 +1,7 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS `FirstAndSecondTable2` ( `id` INT(11) NOT NULL, `data` VARCHAR(300) CHARACTER SET UTF8);
+SELECT COUNT(*) FROM FirstAndSecondTable2; DROP TABLE IF EXISTS FirstAndSecondTable2, FirstAndSecondTable;
+    */
+
+
+```

@@ -1,0 +1,18 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- Please write a single-value query and show the result.
+USE sqlTest; SELECT * FROM names WHERE name='New First Name' LIMIT 1;
+UPDATE names
+SET name='<NAME>'
+WHERE name=name;
+SELECT * FROM names;
+-- Please create a query that shows the result of the previous query as well as the result of the following query, as well as a query that is designed to test the effectiveness of indexes and the presence or absence of records in a table, as well as a query that retrieves the result of the `name` column.
+USE sqlTest; SELECT * FROM names WHERE name='New First Name' LIMIT 1;
+UPDATE names
+SET name='<NAME>'
+WHERE name=name;
+SELECT * FROM names;
+-- You may need to add the following two clauses to your query to test performance.
+ 
+SELECT * FROM names LIMIT 3;
+-- Please create a query that uses the EXPLAIN command in order to see the structure of your query.
+SELECT * FROM names LIMIT 3;

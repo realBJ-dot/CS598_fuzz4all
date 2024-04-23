@@ -1,0 +1,11 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+CREATE TABLE IF NOT EXISTS `books` (
+  `author_id` INT(10) UNSIGNED,
+  `booktitle` VARCHAR(255)
+);
+
+INSERT INTO `books` (`author_id`, `booktitle`)
+VALUES (1, 'MySQL for Python Developers'), (2, 'MySQL Bible'), (3, 'PHP for Web Developers'), ('5', 'Hello, SQL!');
+
+SELECT * FROM `books`;

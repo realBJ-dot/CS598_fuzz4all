@@ -1,0 +1,36 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- Create your tables as instructed
+CREATE TABLE employee (
+	id int NOT NULL AUTO_INCREMENT,
+	name varchar(20) NOT NULL,
+	departmentId int NOT NULL,
+	PRIMARY KEY (`id`),
+    FOREIGN KEY (`departmentId`) REFERENCES (id)
+), role (
+    id int NOT NULL AUTO_INCREMENT,
+    title varchar(30) NOT NULL,
+    salary decimal NOT NULL,
+    departmentId int NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (`departmentId`) REFERENCES (id)
+);
+select * from role;
+select * from employee;
+ 
+CREATE TABLE IF NOT EXISTS employee_department(
+id int NOT NULL AUTO_INCREMENT,
+empid int,
+deptid int,
+PRIMARY KEY (id),
+FOREIGN KEY (empid) REFERENCES (id),
+FOREIGN KEY (deptid) REFERENCES (id));
+DROP TABLE IF EXISTS emps;
+CREATE TABLE IF NOT EXISTS emps (id int NOT NULL AUTO_INCREMENT, fname varchar(30), lname varchar(30), mgrId int, deptId int, PRIMARY KEY (id));
+COPY emps (id, fname, lname, mgrId, deptId) FROM '/tmp/emps';
+ 
+SELECT * FROM emps WHERE mgrId = 5;  
+
+ 
+SELECT e.id, d.id as departmentId, d.departmentName FROM emps e LEFT JOIN employee_department ed ON e.id = empId LEFT JOIN departments d ON depid = departmentid WHERE e.deptId = d.id;
+DROP TABLE IF EXISTS salaries;
+CREATE TABLE

@@ -1,0 +1,32 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- Please comment out all the other statements above
+CREATE TABLE Users_2(username char(20) PRIMARY KEY, FirstName VARCHAR(30));
+ALTER TABLE Users_2 ADD password VARCHAR(255);
+-- Please explain the following and use the comments for the reasoning
+DELETE FROM Users_2
+DELETE FROM Users_2 WHERE password IS 0
+DELETE FROM Users_2 WHERE FirstName = ''
+DELETE FROM Users_2 WHERE FirstName='Raghu'
+
+
+Create table in MySQL
+
+CREATE TABLE `UserAccounts` (
+  `id` INT(11) NOT NULL,
+  `UserId` INT(11) NOT NULL,
+  `Password` VARCHAR(32) NOT NULL,
+  `AccountActivationKey` INT(11) DEFAULT '0',
+  `AccountType` VARCHAR(17) DEFAULT '0',
+  `LockedUntil` TIMESTAMP NULL DEFAULT NULL,
+  `LastLogin` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `UserGroupName` VARCHAR(19) NOT NULL,
+  `UserFullName` VARCHAR(50) DEFAULT NULL,
+  `UserName` VARCHAR(19) NOT NULL,
+  `Avatar` VARCHAR(25) DEFAULT NULL,
+  `Bio` TEXT DEFAULT NULL,
+  `LastIpAddress` VARCHAR(45) DEFAULT NULL,
+  `LastActivityDate` DATETIME DEFAULT NULL,
+  `DateJoined` TIMESTAMP NULL NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  KEY `id` (`id`),
+  KEY `UserId` (`UserId`)
+)

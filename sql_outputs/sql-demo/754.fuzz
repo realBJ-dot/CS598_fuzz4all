@@ -1,0 +1,31 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS `FirstAndSecondTable` ( `personId` INT(11) NOT NULL PRIMARY KEY, `firstname` VARCHAR(30) CHARACTER SET UTF8, `lastname` VARCHAR(30) CHARACTER SET UTF8);
+ *
+ * We will test both the SQL statements and then move to use the data within the temporary table.
+
+Note that it is not possible to use a "FOR UPDATE" command in MySQL 5.5 or earlier versions before 10.0.5. In MySQL 10.0.5 MySQL uses SQL_ATTR_READ_DEFAULT_LENGTH and will fall back to the standard character length for ASCII strings. This will allow the temporary table to work with any string type of data. */
+CREATE TEMPORARY TABLE IF NOT EXISTS TestDB.tmp (id INT);
+
+
+INSERT INTO TestDB.tmp values(7);
+
+UPDATE t1 SET s = s + 10 where s = 4;
+
+INSERT INTO TestDB.tmp SELECT `id`, `id` + 10 FROM TestDB.tmp;
+
+UPDATE TestDB.tmp SET id = `id` + 10 WHERE id = 7;
+
+UPDATE t1 SET s = s - 20 where s = 30;
+-- Please read all the previous commands to execute and to understand what they are doing in each case.
+-- Then, let's recreate the above data to try the UPDATE command.
+UPDATE TestDB.tmp SET id = `id` + 10, s = s + 20 WHERE id = 7;
+
+DROP TABLE TestDB.tmp;
+DROP DATABASE IF EXISTS sampleDB;
+-- Please read all the commands you created to understand what they have to do. Once you have understood their actions, run them.
+-- We need to stop the server properly, otherwise we will get some of the temporary table data. Then, restart the server before continuing.
+mysqladmin stop sampleDB;
+mysql -uroot -p < file1.sql;
+mysql -uroot -p < file2.sql;
+
+

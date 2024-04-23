@@ -1,0 +1,2 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- INSERT INTO `sampleDB`.`cars` (`id`, `Make`, `Model`, `Color`, `Price`, `Year`) VALUES (2, 'Honda', 'Civic', 'Black', 11000, 0);

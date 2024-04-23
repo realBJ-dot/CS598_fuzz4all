@@ -1,0 +1,17 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ 
+create table t1 (t1_key int(11) unsigned, data_type enum('a','b','c','d','e','f','g','h','i','j','k'), t1_field boolean, t1_field1 decimal(8,5), data_type1 enum('first data type','second data type','third data type'), data_type2 enum('first second data type'));
+insert into t1 (t1_key, data_type, data_type1) values (10, 'a', 'first data type');
+delete from t1 where t1_key = 10;
+ 
+INSERT INTO t1 VALUES (20, 'b', 'first second data type'), (30, 'b', 'First second data type');
+ 
+explain select t1_key, t1_field1 from t1 where t1_field;
+INSERT INTO t1 (t1_key, t1_field1) VALUES (20, 'first second data type');
+ 
+explain select distinct t1_key, t1_field, t1_field1 from t1 left join t1 on t1_key = t1.t1_key left join t1 on t1_key = t1.t1_key left join t1 on t1_key = t1.t1_key inner join t1 on t1_key = t1.t1_key order by t1_key asc;
+ 
+# UNION selects all columns from all selected table or union-all selects all columns from all table.
+# UNION query produces multiple result sets, because of multi-join.
+explain select distinct t1_key, t1_field, t1_field1 from t1 left outer join t1 on t1_key = t1.t1_key  inner union all select distinct t1_key, t1_field, t1_field1 from t1 inner join t1 on t1_key = t1.t1_key order by t1_key asc;
+explain select distinct t1_key, t1_field, t1_field1 from t1 left outer join t1 on t1_key = t1.t1_key inner union all select distinct t1_key, t1_field, t1_field1 from t1 inner join t1 on t1_key = t1.t1_key left outer join t1 on t1_key = t1.t1_key order by t1_key asc

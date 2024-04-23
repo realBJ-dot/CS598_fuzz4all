@@ -1,0 +1,20 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS user;
+CREATE TABLE user(id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, username VARCHAR(20) UNIQUE,
+password VARCHAR(15) NOT NULL);
+INSERT INTO user (username, password) VALUES ('admin', '<PASSWORD>')
+-- Please create a very short query which uses SQL features in a complex way. You
+-- should use ENGINE=INNODB to create and use another table for data storage. Also,
+-- your queries should contain the data manipulation operations only.
+-- Afterwards, drop both tables created by the previous query.
+CREATE DATABASE IF NOT EXISTS sampleDB2; USE sampleDB2;
+DROP TABLE IF EXISTS user;
+DROP TABLE IF EXISTS user1;
+DROP TABLE IF EXISTS user2;
+
+-- MySQL is an open-source relational database management system (RDBMS) that allows users to create, modify and extract data from a structured relational database using the Structured Query Language (SQL); it works harmoniously with an operating system to structure and manage a relational database, control user access, and execute other tasks like network access and testing database integrity.
+
+-- MySQL is a relational database management system (RDBMS). MySQL is a cross-platform open source relational database management system developed by Verizon Systems and released under the GNU General Public License (GPL) v2.0. MySQL is also a commercial product developed by MySQL AB.
+-- MySQL is an open-source relational database management system (RDBMS). MySQL is an open-source relational database management system (RDBMS) that allows users to create, modify and extract data froma structured relational database using SQL. It works harmoniously with an operating system to structure and manage a relational database, control user access, and execute other tasks like network access and testing database integrity.
+
+-- MySQL is an open-source relational database management system (RDBMS) that allows users

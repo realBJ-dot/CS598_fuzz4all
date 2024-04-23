@@ -1,0 +1,15 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS person_tmp (id INT PRIMARY KEY, name VARCHAR(200), age INT);
+INSERT INTO person_tmp VALUES(3, '<NAME>', 31);
+INSERT INTO person_tmp VALUES(4, '<NAME>', 25);
+SELECT id, name, age FROM person_tmp ORDER BY age DESC;
+SELECT id, name, age FROM person_tmp ORDER BY age ASC;
+
+ 
+
+DROP TABLE IF EXISTS person_tmp;
+
+SELECT * FROM person_tmp;
+SELECT name, id FROM person_tmp;
+SELECT name, id FROM person_tmp ORDER BY id DESC;
+DROP TABLE IF EXISTS person_tmp;

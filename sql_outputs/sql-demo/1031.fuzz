@@ -1,0 +1,24 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+SET character_set_client = "utf8";
+SET character_code = "utf8";
+SET collation_connection = "utf8_general_ci";
+ CREATE TABLE employee10 (
+   empID INT PRIMARY KEY AUTO_INCREMENT,
+   empName VARCHAR(50) NOT NULL,
+   empSal INT NULL
+ )ENGINE=MEMORY;
+INSERT INTO employee10 VALUES ('9999989','<NAME>',120000),('9999993','<NAME>',124000),('9999996','<NAME>',110000),('9999998','<NAME>',146000),('9999999','<NAME>',90000);
+
+#
+
+INSERT IGNORE INTO employee10 VALUES ('2','Aleksii','515000');
+
+#
+
+SELECT * FROM employee10;
+
+#
+
+SELECT empName FROM employee10 WHERE empSal>500000;
+
+DROP DATABASE IF EXISTS sampleDB;

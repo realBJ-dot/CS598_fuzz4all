@@ -1,0 +1,52 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS users;
+CREATE TABLE IF NOT EXISTS users (
+    id                int auto_increment,
+    first_name        varchar(30) not null,
+    last_name         varchar(30) not null,
+    balance           decimal(11, 2) not null,
+    PRIMARY KEY (id)
+);
+ 
+DELETE FROM users WHERE id= 1;
+SELECT
+id,first_name
+FROM users;
+--
+-- Please create your own program to delete all users with balance <= 10. Be sure to use ENGINE=InnoDB.
+DELETE FROM users WHERE balance<=10;
+SELECT 
+id,first_name
+FROM users;
+--
+-- Delete every row from the users table and replace it with a zero based column. Be sure to use ENGINE=InnoDB.
+DELETE FROM users;
+CREATE TABLE IF NOT EXISTS users (
+    balance            decimal(11, 2) not null,
+    PRIMARY KEY (balance)
+);
+SELECT 
+id,first_name
+FROM users;
+--
+-- Create a very short query which uses SQL
+ 
+DROP TABLE IF EXISTS users;
+--
+-- Create a mutated table that adds a unique constraint to id column. Be sure to use ENGINE=InnoDB.
+-- Insert into users values (100), (200), (300), (400);
+-- ALTER TABLE users AUTO_INCREMENT = 1;
+-- ALTER TABLE users MODIFY id int auto_increment;
+--
+-- Add a column on id in the users table. Be sure to use ENGINE=InnoDB.
+-- Update id in the users table to use the auto generated ID.
+--
+-- Add a UNIQUE id column to users table. Be sure to use ENGINE=InnoDB.
+-- INSERT INTO users (id) VALUES (900);
+-- UPDATE users SET id = 900 WHERE id = 100;
+-- DROP TABLE IF EXISTS users;
+--
+-- Update id in the users table. Be sure to use ENGINE=InnoDB.
+-- INSERT INTO users (id) VALUES (100),
+--                      (200),
+--                      (300),

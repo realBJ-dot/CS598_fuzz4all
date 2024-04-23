@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+INSERT INTO users_2 VALUES("John","Joe");
+SELECT username, FirstName
+FROM users_2
+UNION ALL
+DELETE from users_2;
+select username, FirstName
+from users_2
+where username="Braad";
+DROP DATABASE sampleDB

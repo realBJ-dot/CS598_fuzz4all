@@ -1,0 +1,9 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS users (
+	userId INT NOT NULL PRIMARY KEY,
+	name VARCHAR(30) DEFAULT 'root',
+	ROLE INT DEFAULT 2
+);
+DESCRIBE users;
+-- Please create a semantically equivalent program to the MySQL SELECT statement
+SELECT * FROM users;

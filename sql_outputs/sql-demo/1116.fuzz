@@ -1,0 +1,32 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+create table table1 (
+  "id" int primary key auto_increment,
+  "x" int(5),
+  "y" int(5)
+);
+INSERT INTO table1 values (20,13,86);
+
+*-- SQL injections is one of the most common and dangerous SQL injections. Please make sure that you create a database with sufficient privileges and test the database for several different attacks. For instance: CREATE DATABASE?with?? as test. Be sure and test the database without these attack vectors. Also you must ensure that the data you want to use do get modified properly (the query shouldn't contain a table name). If you get the query wrong, it might not be the same database of course, so be careful. Last but not least, don't create databases in your production environment, so that only your devs can access it.--*/
+
+CREATE DATABASE IF NOT EXISTS?? as test; USE test;
+GRANT ALL privileges on *.* to?test@localhost?port=3306;
+
+GRANT SELECT,INSERT,DELETE,UPDATE,UPDATE STATISTICS,CREATE TEMPORARY TABLES,EXECUTE ON sampleDB.* to?test@localhost?port=3306?max_allowed_packet=0;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

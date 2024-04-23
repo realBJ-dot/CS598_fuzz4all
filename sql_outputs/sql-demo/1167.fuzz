@@ -1,0 +1,8 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+  
+CREATE VIEW IF NOT EXISTS first_names WHERE user_first_name = 'John';
+  
+ CREATE OR REPLACE VIEW IF NOT EXISTS first_names
+ SELECT * FROM users
+ WHERE user_first_name = 'Jane';
+SELECT * FROM users ORDER BY user_last_name ASC, user_first_name DESC;

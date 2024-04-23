@@ -1,0 +1,17 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS Users CASCADE;
+ 
+CREATE VIEW view_usersAsOne AS SELECT u.username FROM sampleDB.Users AS u;
+ 
+CREATE DATABASE IF NOT EXISTS  sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS Users CASCADE;
+ 
+CREATE TABLE Users(username char(20) PRIMARY KEY, FirstName VARCHAR(30), Id INT(5) AUTO_INCREMENT,Phone VARCHAR(15));
+ 
+CREATE TABLE Users(id INT, username char(20) PRIMARY KEY, FirstName VARCHAR(30), Phone VARCHAR(15));
+CREATE TABLE Users_contact(username char(20) PRIMARY KEY, FirstName VARCHAR(30));
+CREATE TABLE Users_contact(user_id INT, username char(20) ),
+CREATE TABLE Users_contact(user_id INT, username char(20) );
+ALTER TABLE Users ADD CONSTRAINT primary FOREIGN KEY(username) REFERENCES Users (username);
+ALTER TABLE Users ADD CONSTRAINT foreign FOREIGN KEY(user_id) REFERENCES Users_contact(user_id);
+/* MySQL - Create table with default value feature. You should only use sampleDB as the database and assume no other table exist. In the end

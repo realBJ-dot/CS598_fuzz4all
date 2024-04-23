@@ -1,0 +1,20 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS `sampleDB`.`cars` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `Make` varchar(20) NOT NULL,
+  `Model` varchar(10) NOT NULL,
+  `Color` varchar(8) NOT NULL,
+  `Price` float NOT NULL,
+  `Year` int NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `cars_Make_Model_Color` (`Make`,`Model`,`Color`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- Please create a query that retrieves and print the information in "sampleDB.cars"
+INSERT INTO `sampleDB`.`cars`(`id`,`Make`,`Model`,`Color`,`Price`,`Year`) VALUES (1,'Honda','Civic','black',3,2013);
+select Make, Model as 'Model', Color from sampleDB.cars;
+ 
+SELECT Make, Model, Color from sampleDB.cars ORDER BY Model, Color;
+ 
+ALTER TABLE sampleDB.cars ADD CONSTRAINT uk_sampleDB_cars UNIQUE ( Model, Color );
+ALTER TABLE sampleDB.cars MODIFY Color varchar(40);
+SELECT Color, COUNT(Color) as 'Count' FROM sampleDB.cars GROUP BY 1;

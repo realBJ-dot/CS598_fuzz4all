@@ -1,0 +1,33 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employees;
+DROP TABLE IF EXISTS workers;
+CREATE TABLE employees(
+	`id` int NOT NULL AUTO_INCREMENT,
+	`staffID` int NOT NULL,
+	`name` varchar(255) NOT NULL,
+	`code` int NOT NULL,
+	PRIMARY KEY (`id`),
+	FOREIGN KEY (`staffID`) REFERENCES `staff` (`id`)
+);
+CREATE TABLE workers(
+	`id` int NOT NULL AUTO_INCREMENT,
+	`staffID` int NOT NULL,
+	`name` varchar(255) NOT NULL,
+	`code` int NOT NULL,
+	PRIMARY KEY (`id`),
+	FOREIGN KEY (`staffID`) REFERENCES `staff` (`id`)
+);
+SHOW CREATE TABLE employees;
+SHOW CREATE TABLE workers;
+SELECT * FROM employees;
+SELECT * FROM workers;
+SELECT a.code AS staff, e.staffID, workers.name AS worker
+FROM employees e
+JOIN workers w ON e.staffID=w.id
+ORDER BY employees.staffID;
+SELECT a.code AS staff, e.staffID, workers.name AS worker
+FROM employees e
+JOIN workers w ON e.staffID=w.id
+ORDER BY a.code;
+INSERT INTO employees(staffID, name, code) VALUES (1, '<NAME>', random()%50000 + 1);
+INSERT INTO employees(staffID, name, code) VALUES (2,

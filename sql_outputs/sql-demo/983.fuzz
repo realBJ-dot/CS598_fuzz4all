@@ -1,0 +1,33 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ALTER TABLE employees ADD CONSTRAINT employees_pk PRIMARY KEY (emp_no);
+ALTER TABLE dept_emp ADD CONSTRAINT dept_emp_pk PRIMARY KEY (dept_no, emp_no);
+ALTER TABLE dept ADD CONSTRAINT dept_pk PRIMARY KEY (dept_no);
+ALTER TABLE staff ADD CONSTRAINT staff_PK PRIMARY KEY (emp_no);
+ALTER TABLE department_manager ADD CONSTRAINT department_manager_pk PRIMARY KEY (dm_no, emp_no);
+ALTER TABLE dept_manager ADD CONSTRAINT dept_manager_pk PRIMARY KEY (dept_no, emp_no);
+ALTER TABLE salary ADD CONSTRAINT salary_pk PRIMARY KEY (emp_no, position); 
+ALTER TABLE salaries ADD CONSTRAINT salaries_pk PRIMARY KEY (emp_no, salary);
+
+-- Please create a mutated program which adds 2 columns to the table dept. You can consider these for all operations that will be performed on this table. Make sure to add a foreign key constraint to the table dept_emp that allows linking between the table empolyees and the table dept. You must have an initial value for these new column beforehand for all column name, the name of the foreign key column and the first value of foreign key column. You do not need to add the constraint for the column emp_no as the table is being added in the begining. 
+CREATE DATABASE IF NOT EXISTS sampleDB;
+USE sampleDB;
+ALTER TABLE dept 
+ADD COLUMN dept_name VARCHAR(50) NULL AFTER dept_no, 
+ADD CONSTRAINT dept_fk 
+FOREIGN KEY (dept_no)
+REFERENCES dept (dept_no)
+ON DELETE CASCADE;
+
+-- Please create a mutated program which modifies the above program to use all tables as the database for its own work and to drop the database when the program has finished.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP DATABASE sampleDB;
+
+-- Please create a program called find_salary.sql, which queries the table salary for each row for employee whose salary was greater than 5000.
+
+-- Please create a program called view_salary.sql that queries the table salary and presents salaries according to their employees.
+
+-- Please create a program called view_department_manager.sql that queries the table department_manager to display the department managers for each department that has a salary > 50,000.
+
+-- Please create a program called view_employees_salary_hist from employees_salary_hist.
+
+-- Please create a program called view_department_manager

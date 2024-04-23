@@ -1,0 +1,18 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+*
+ALTER TABLE `FirstAndSecondTable` ADD UNIQUE(`id`);*/
+INSERT INTO table1 (id, data)
+VALUES ('1', 'a'), ('2', 'b');
+ 
+SELECT id,  * FROM FirstAndSecondTable;
+DROP TABLE table1;
+
+ 
+SELECT * FROM  FirstAndSecondTable;
+INSERT INTO FirstAndSecondTable(id, data)
+VALUES ('3','b');
+ 
+DELETE FROM FirstAndSecondTable WHERE id = '3'; 
+DELEte FROM FirstAndSecondTable;
+DROP TABLE FirstAndSecondTable;
+DROP DATABASE;

@@ -1,0 +1,16 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS example (col1 int, col2 text, col3 varchar(200));
+CREATE TABLE testTable3(col1 int, col2 int);
+ 
+DROP TABLE IF EXISTS testTable3; USE sampleDB;
+-- In our sample program, you will need a new table for the result
+CREATE TABLE resultTable3(col1 int, col2 int);
+CREATE TABLE IF NOT EXISTS resultTable4(col1 int, col2 text, col3 int, col4 text, col5 int, col6 int);
+ 
+SELECT DATABASE() as DATABASE, USER() as USER FROM information_schema.tables WHERE table_schema='sampleDB' AND table_name='example';
+SELECT sampleDB.example.col1, sampleDB.example.col2, sampleDB.example.col3 FROM sampleDB.example LEFT JOIN sampleDB.testTable3 ON sampleDB.example.col1 = sampleDB.testTable3.col1 LEFT JOIN sampleDB.resultTable3 ON sampleDB.example.col1 = sampleDB.resultTable3.col1;
+SELECT sampleDB.testTable3.col1, sampleDB.testTable3.col2 FROM sampleDB.testTable3 LEFT JOIN sampleDB.resultTable3 ON sampleDB.testTable3.col1 = sampleDB.resultTable3.col1;
+SELECT sampleDB.testTable3.col1, sampleDB.testTable3.col2, sampleDB.resultTable4.col5, sampleDB.resultTable4.col1, sampleDB.resultTable4.col3, sampleDB.resultTable4.col4 FROM sampleDB.testTable3 LEFT JOIN sampleDB.resultTable3 ON sampleDB.testTable3.col1 = sampleDB.resultTable3.col1 LEFT JOIN sampleDB.resultTable4 ON sampleDB.testTable3.col1 = sampleDB.resultTable4.col6;
+DROP TABLE IF EXISTS sampleDB.example, IF EXISTS sampleDB.testTable3, IF EXISTS sampleDB.resultTable3, IF EXISTS sampleDB2.testTable3, IF EXISTS sampleDB2.resultTable3, IF EXISTS sampleDB2.example;
+CREATE DATABASE sampleDB2; USE sampleDB2;
+CREATE TABLE IF NOT EXISTS example2 (col1 int, col2 text, col3

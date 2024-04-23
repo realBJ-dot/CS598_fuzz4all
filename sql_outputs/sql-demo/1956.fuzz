@@ -1,0 +1,16 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+INSERT INTO employees_salary_by_salary(employee_salary, emp_salary) VALUES ('2012-06-04', 100000);
+UPDATE employees_salary_by_salary SET employee_salary='2013-06-04' WHERE employee_salary='2012-06-04';
+UPDATE employees_salary_by_salary, employees_salary_by_salary SET employees_salary_by_salary.employee_salary='2013-09-04' WHERE employees_salary_by_salary.employee_salary='2012-06-04';
+SELECT *FROM employees_salary_by_salary;
+DROP DATABASE IF EXISTS sampleDB;
+-- Please find the difference between the following SQL queries in terms of their performance.
+SELECT employee_salary FROM employees_salary_by_salary WHERE employee_salary!= '2012-06-04';
+SELECT employee_salary + 5000 FROM employees_salary_by_salary WHERE employee_salary NOT IN ('2012-06-04');
+SELECT employee_salary - 5000 FROM employees_salary_by_salary WHERE employee_salary IN ('2012-06-04','2013-06-04');
+ 
+SELECT employee_salary + 5000 FROM employees_salary_by_salary WHERE employee_salary IN ('2012-06-04','2013-06-04');
+SELECT employee_salary + 5000 - 20000 FROM employees_salary_by_salary WHERE employee_salary IN ('2012-06-04','2013-06-04');
+SELECT employee_salary + 5000 - 20000 FROM employees_salary_by_salary WHERE employee_salary='2013-06-04';
+SELECT employee_salary + 5000 * 55.25 FROM employees_salary_by_salary, employee_salary_by_salary WHERE employee_salary='2013-06-04';
+SELECT employee_salary + 2150 + 5 * 7.04 FROM employees_salary_by_salary WHERE employee_

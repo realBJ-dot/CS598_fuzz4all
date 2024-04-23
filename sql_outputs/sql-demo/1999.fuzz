@@ -1,0 +1,5 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employees_salary_by_salary;
+CREATE TABLE employees_salary_by_salary
+            ( employee_salary DECIMAL(12,2) NOT NULL )
+            ENGINE=InnoDB;

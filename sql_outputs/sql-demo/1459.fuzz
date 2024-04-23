@@ -1,0 +1,42 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS users_details;
+set autocommit = 1;
+SELECT * FROM users;
+SELECT * FROM users;
+SELECT * FROM users_details;
+SELECT * FROM users_details;
+select * from users_details;
+select * from users_details;
+SELECT * FROM users_details;
+SELECT * FROM users_details;
+SELECT * FROM users_details;
+DESC users;
+DESC users_details;
+DESC sampleDB.users;
+DESC sampleDB.users_details;
+select * from users;
+select * from users_details;
+use sampleDB;
+select * from users
+select * from users;
+SELECT * FROM users;
+SELECT * FROM users_details; 
+SELECT * FROM users_details;  
+CREATE TABLE IF NOT EXISTS users (first_name    VARCHAR(45), 
+                           middle_name   VARCHAR(45), 
+                           last_name     VARCHAR(45), 
+                           nickname      VARCHAR(64), 
+                           avatar        VARCHAR(100), 
+                           gender        CHAR(1), 
+                           birthday      TIMESTAMP, 
+                           location      MEDIUMINT(6), 
+                           state_country CHAR(3), 
+                           is_admin      CHAR(1));
+create table users_details (id INT PRIMARY KEY AUTO_INCREMENT, user_id BIGINT, user_type INT, first_name VARCHAR(45),middle_name VARCHAR(45), last_name VARCHAR(45), nickname VARCHAR(64), gender CHAR(1), birthday TIMESTAMP);
+describe users_details;
+describe users_details;
+Desc users_details;
+-- Add some users to be visible into the new table.
+insert into users (first_name,middle_name,last_name, nickname, avatar, gender, birthday) values ('Sammy','Jones', 'King', 'Sammy', 'http://p.yimg.com/50/images/82136332.jpg', 'M', '2011-02-17 04:02:15');
+insert into users (first_name,middle_name,last_name, nickname, avatar, gender, birthday) values ('Rick','Green','Jr', 'Bobby', 'http://www.rockout.com/images/2/2/7/3/35357685/rockout-logo.png', 'M', '2011-10-23 03:29:46');
+insert into users (first_name,middle_name,last_name, nickname, avatar, gender, birthday) values ('Tim','Oliver', 'Walker', 'Jim', 'http: 

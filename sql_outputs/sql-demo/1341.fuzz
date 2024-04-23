@@ -1,0 +1,36 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS author(
+ author_id INT(8) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+ author_name text UNIQUE
+);
+INSERT INTO author VALUES(1,'Alice');
+INSERT INTO author VALUES(2,'Bob');
+INSERT INTO author VALUES(3,'Charlie');
+ALTER TABLE author MODIFY author_id INT(8);
+ALTER TABLE author ENGINE=InnoDB;
+DROP TABLE author;
+DROP DATABASE sampleDB;
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS author(
+ author_id INT(8) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+ author_name text UNIQUE,
+ email text UNIQUE
+);
+INSERT INTO author VALUES(1,'Alice', '<EMAIL>');
+INSERT INTO author VALUES(2,'Bob', '<EMAIL>');
+INSERT INTO author VALUES(3,'Charlie', '<EMAIL>');
+ALTER TABLE author MODIFY email(200);
+ALTER TABLE author MODIFY author_id INT(8) NOT NULL;
+ALTER TABLE author ENGINE=InnoDB;
+DROP TABLE author;
+DROP DATABASE sampleDB;
+ 
+ CREATE OR REPLACE OR REPLACE TABLE sampleDB.'book' (
+  'book_id' SERIAL(1) NOT NULL,
+  'book_title' VARCHAR(120) NOT NULL,
+  'book_author' VARCHAR(30) NOT NULL DEFAULT 'unknown author',
+  'book_publish_year' INT NOT NULL,
+  PRIMARY KEY('book_id'),
+  FOREIGN KEY('book_author') REFERENCES sampleDB.author('author_name')
+ ) ;

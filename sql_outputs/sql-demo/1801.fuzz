@@ -1,0 +1,16 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- Create a new table in the previous generation
+DROP TABLE IF EXISTS car;
+CREATE TABLE car (name CHAR(5), price LONG, color CHAR(1));
+INSERT INTO car VALUES ('Benz', 999.00, 'Black');
+-- Update a column in the previous generation
+ALTER TABLE car ADD COLUMN width INT;
+ALTER TABLE car ADD COLUMN height INT;
+UPDATE car SET width='45', height=34;
+-- Insert/insert and update all tables
+ALTER TABLE car ADD COLUMN color CHAR(200);
+UPDATE car SET color="Black";
+INSERT INTO car VALUES ('Hyundai', 999.00, 'White');
+UPDATE car SET color="Blue";
+-- Drop the previous generation
+DROP DATABASE IF EXISTS sampleDB;

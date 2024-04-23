@@ -1,0 +1,19 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS contact(
+`id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'primary key',
+`full_name` varchar(60) NOT NULL COMMENT 'name of person',
+`address` text COMMENT'special address',
+`city` varchar(30) NOT NULL COMMENT 'city name',
+`state` varchar(2) NOT NULL COMMENT'state or province code',
+`zip_code` char(5) NOT NULL COMMENT 'zip code in US',
+`email` varchar(100) NOT NULL COMMENT 'email address',
+`phone_number` char(6) NOT NULL COMMENT 'phone number',
+FOREIGN KEY (`phone_number`) REFERENCES contact(`phone_number`) ON DELETE CASCADE,
+PRIMARY KEY (`id`)
+ENGINE=InnoDB
+DEFAULT CHARACTER SET=utf8
+COLLATE=utf8_general_ci
+;
+ALTER TABLE contact MODIFY status tinyint(1);
+ALTER TABLE contact MODIFY first_name varchar(30);
+ALTER TABLE contact MODIFY last_name varchar(30);

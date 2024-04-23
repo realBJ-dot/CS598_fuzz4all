@@ -1,0 +1,17 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS user;
+CREATE TABLE IF NOT EXISTS user (id INT PRIMARY KEY, "name" VARCHAR(200), "last-name" VARCHAR(200));
+INSERT INTO user (id, "name", "last-name") VALUES (10, 'John', 'Smith');
+INSERT INTO user (id, "name", "last-name") VALUES (20, 'Paul', 'Jones');
+SELECT id, "name", "last-name" FROM user WHERE name = "John";
+DROP TABLE IF EXISTS user;
+DROP DATABASE IF EXISTS sampleDB;
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS user1;
+DROP TABLE IF EXISTS user2;
+DROP TABLE IF EXISTS user3;
+DROP TABLE IF EXISTS user4;
+DROP TABLE IF EXISTS user5;
+CREATE TABLE IF NOT EXISTS user1 (id INT PRIMARY KEY, "first-name" VARCHAR(200), "last-name" VARCHAR(200), "date" DATE);
+CREATE TABLE IF NOT EXISTS user2 (id INT PRIMARY KEY, "first-name" VARCHAR(200), "last-name" VARCHAR(

@@ -1,0 +1,12 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE salaries(salID int AUTO_INCREMENT PRIMARY KEY, name varchar(20), rate DECIMAL(5,2)) ENGINE=InnoDB;
+INSERT INTO salaries(name, rate) VALUES ('<NAME>', 71);
+INSERT INTO salaries(name, rate) VALUES ('<NAME>', 62);
+INSERT INTO salaries(name, rate) VALUES ('<NAME>', 83);
+INSERT INTO salaries(name, rate) VALUES ('<NAME>', 19);
+-- Please create two new rows into the new table
+INSERT INTO employees(emp_no, emp_name, hire_date) VALUES(10, '<NAME>', '1993-11-06'), (12, '<NAME>', '1992-09-04'), (12, '<NAME>', '1992-09-04'), (14, '<NAME>', '1991-12-01'), (14, '<NAME>', '1992-08-17'), (18, '<NAME>', '1992-09-08'), (20, '<NAME>', '1993-06-14');
+SELECT * FROM employees;
+-- Please create a new table called address
+CREATE TABLE address(ad_id int AUTO_INCREMENT PRIMARY KEY, address_line1 varchar(120), address_line2 varchar(120), city varchar(10), state varchar(2), zip varchar(9), phone varchar(20), employee_id int);
+INSERT INTO address (address_line1, address_line2, city, state, zip, phone, employee_id) VALUES ('20100 Dana Point Blvd.', 'Suite B', 'Hayward', 'CA', '92343', (1010), 12), ('10200 Bridgetown Pl.', 'Suite 4', 'Bristol', 'CO', '02524', (1441), 112), ('9600 Northfield Ln', 'Suite F', 'Huntsville', 'AL', '66123', (7), 112), ('7400 Chambers St', 'Suite C', 'Chattanooga', 'TN', '37305', (2364), 41), ('

@@ -1,0 +1,25 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS users(
+	userId INT NOT NULL PRIMARY KEY,
+	name VARCHAR(10) DEFAULT 'root',
+	PASSWORD_HASH  VARCHAR(720) DEFAULT NULL,
+	ROLE INT DEFAULT 2
+);
+DESCRIBE users;
+-- Please create a semantically equivalent program to the MySQL SELECT statement using the FULLTEXT keyword of MySQL's FULLTEXT_FULL index.
+USE sampleDB;
+CREATE TABLE IF NOT EXISTS users(
+	userId INT NOT NULL PRIMARY KEY,
+	name VARCHAR(30) DEFAULT 'root'
+);
+USE sampleDB;
+CREATE TABLE IF NOT EXISTS users(
+	userId INT NOT NULL PRIMARY KEY,
+	name VARCHAR(50) DEFAULT 'root'
+);
+USE sampleDB;
+CREATE TABLE IF NOT EXISTS users(
+	userId INT NOT NULL PRIMARY KEY,
+	name VARCHAR(30) DEFAULT 'root'
+);
+ALTER TABLE users ADD FULLTEXT INDEX fulltext_idx (name);

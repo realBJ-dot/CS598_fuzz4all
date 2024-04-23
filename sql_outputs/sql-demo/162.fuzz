@@ -1,0 +1,34 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE Users_2;
+ALTER TABLE Users_2 ADD achar char(5);
+ALTER TABLE Users_2 ADD achar2 char(10);
+ALTER TABLE Users_2 MODIFY achar char(100);
+USE sampleDB;
+DROP TABLE sampleTable;
+ 
+CREATE TABLE sampleTable(user_id INT, name CHAR(10), dept CHAR(6));
+ALTER TABLE sampleTable ADD COLUMN userdate DATE;
+INSERT INTO sampleTable values(1,'<NAME>', 'Research and Development');
+INSERT INTO sampleTable values(2,'<NAME>', 'Research and Development');
+INSERT INTO sampleTable values(3,'<NAME>', 'Research and Development');
+ALTER TABLE sampleTable MODIFY COLUMN userdate DATE;
+-- Drop column usecase
+ALTER TABLE sampleTable MODIFY COLUMN user_id VARCHAR(10) NOT NULL;
+DROP TABLE sampleTable;
+ALTER TABLE sampleTable ADD CONTEXT username_context;
+CREATE TABLE Users_SQL(username char(20) PRIMARY KEY, FirstName VARCHAR(30));
+DROP TABLE Users_SQL;
+ALTER TABLE Users_SQL ADD achar char(5);
+ALTER TABLE Users_SQL ADD achar2 char(10);
+ALTER TABLE Users_SQL MODIFY achar char(100);
+USE sampleDB;
+CREATE TABLE Users_XML(User_id INT PRIMARY KEY, Firstname VARCHAR(30), Lastname VARCHAR(30));
+SELECT user_id, FirstName, Lastname from Users_XML;
+SELECT User_id, Firstname, Lastname FROM Users_XML;
+DROP TABLE Users_XML;
+ALTER TABLE Users_SQL ADD CONSTRAINT user_constraint FOREIGN KEY (username) REFERENCES Users_SQL(username);
+ALTER TABLE Users_SQL ADD CONSTRAINT admin_constraint FOREIGN KEY (username) REFERENCES Users_SQL(username);
+
+
+GRANT ALL PRIVILEGES ON DB_NAME.* TO 'usernmae'@'address';
+DROP Database sampleDB;

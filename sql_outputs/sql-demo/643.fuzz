@@ -1,0 +1,32 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+INSERT INTO sampleDB.Subject VALUES (4, 'CHEMISTRY');
+CREATE TABLE Student (ID INT PRIMARY KEY, SEX INT, STUDENT_NAME VARCHAR(255));
+INSERT INTO Student VALUES (1, 'Male', '<NAME>');
+INSERT INTO Student VALUES (2, 'Female', '<NAME>');
+CREATE TABLE StudentRoll(ID INT PRIMARY KEY, SEX INT, STUDENT_NAME VARCHAR(255), ROLL INT);
+INSERT INTO StudentRoll VALUES (1, 'Female', '<NAME>', 2);
+INSERT INTO StudentRoll VALUES (2, 'Male', '<NAME>', 1);
+-- Please create a similar database and table scheme to the preceding one.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE subject(ID INT PRIMARY KEY, SUBJECT_NAME VARCHAR(255));
+INSERT INTO sampleDB.subject VALUES (1, 'MATH');
+INSERT INTO sampleDB.subject VALUES (4, 'CHEMISTRY');
+CREATE TABLE result(ID INT PRIMARY KEY, MID INT, SCORE INT);
+INSERT INTO sampleDB.result VALUES (1, 1, 90);
+INSERT INTO sampleDB.result VALUES (2, 1, 80);
+INSERT INTO sampleDB.result VALUES (3, 1, 70);
+INSERT INTO sampleDB.result VALUES (4, 2, 90);
+INSERT INTO sampleDB.result VALUES (5, 2, 80);
+INSERT INTO sampleDB.result VALUES (6, 2, 70);
+INSERT INTO sampleDB.result VALUES (7, 1, 80);
+INSERT INTO sampleDB.result VALUES (8, 1, 90);
+INSERT INTO sampleDB.result VALUES (9, 2, 90);
+INSERT INTO sampleDB.result VALUES (10, 2, 80);
+INSERT INTO sampleDB.result VALUES (11, 2, 70);
+INSERT INTO sampleDB.result VALUES (12, 3, 90);
+INSERT INTO sampleDB.result VALUES (13, 3, 80);
+INSERT INTO sampleDB.result VALUES (14, 3, 70);
+
+SELECT SCORE FROM sampleDB.result where SCORE < 70 ORDER BY SCORE desc LIMIT 3;
+SELECT SCORE FROM sampleDB.result where ID=1 ORDER BY SCORE desc LIMIT 1;
+-- Please describe a query on how to sort the results of the previous query by

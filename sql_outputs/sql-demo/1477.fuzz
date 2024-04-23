@@ -1,0 +1,7 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS users_details (user_id INTEGER, phone VARCHAR(50) UNIQUE, sex varchar(255));
+INSERT INTO users_details(user_id, phone, sex) VALUES (23434, 63642642, 'M');
+-- Please write a very fast SQL statement (a single query to access 3 columns. You can also use this statement to test whether the MySQL database is running and healthy. If the database is healthy, it will write the current time to the “time_running” column, followed by line breaks.)
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS users_details (user_id INTEGER, phone VARCHAR(50) UNIQUE, sex text);
+INSERT INTO users_details(user_id, phone, sex) VALUES (23434, 63642642, 'M');

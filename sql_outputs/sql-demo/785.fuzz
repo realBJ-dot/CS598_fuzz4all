@@ -1,0 +1,3 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS `FirstAndSecondTable` ( `id` INT(11) NOT NULL PRIMARY KEY, `data` TEXT CHARACTER SET UTF8);
+-- Please create a query which is semantically equivalent to the program on the previous generation. Your answer to this query should be similar to the ones from the previous question. */

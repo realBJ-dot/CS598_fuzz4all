@@ -1,0 +1,15 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+# You should see a column 'user_id'
+DROP TABLE IF EXISTS users;
+DROP DATABASE IF EXISTS sampleDB;
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS users(user_id INT, first_name TEXT, last_name TEXT, email TEXT, created_at TIMESTAMP NULL);  
+SELECT * FROM users;
+-- Now, create another table
+DROP TABLE IF EXISTS users;
+CREATE TABLE IF NOT EXISTS users(user_id INT PRIMARY KEY AUTO_INCREMENT, first_name TEXT, last_name TEXT, email TEXT, created_at TIMESTAMP NULL);  
+INSERT INTO users (user_id, first_name, last_name, email, created_at) VALUES (1, "John", "Smith", "<EMAIL>", '2019-03-14 00:00:00');
+INSERT INTO users (user_id, first_name, last_name, email, created_at) VALUES (2, "Danny", "Jones", "<EMAIL>", '2019-03-14 00:00:00');
+INSERT INTO users (user_id, first_name, last_name, email, created_at) VALUES (3, "Paul", "Jones", "<EMAIL>", '2019-03-14 00:00:00');
+SELECT * FROM users;

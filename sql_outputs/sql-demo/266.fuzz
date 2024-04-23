@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ 
+INSERT INTO `student`
+VALUES(NULL, 'Kristen', '<EMAIL>', 'CSE');
+INSERT INTO `student`
+VALUES(NULL, 'Jeff', '<EMAIL>', 'CSE');
+INSERT INTO `student`
+VALUES(NULL, 'Daniela', '<EMAIL>', 'CSE');
+INSERT INTO `student`
+VALUES(NULL, 'Jason', '<EMAIL>', 'CSE');

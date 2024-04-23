@@ -1,0 +1,2 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users (username char(20) PRIMARY KEY, FirstName VARCHAR(30));

@@ -1,0 +1,29 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE Users_2;
+CREATE TABLE Users(
+username varchar(20),
+firstname char(30),
+lastname char(30),
+primary key (username)
+
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+update Users set firstname='test',lastname='lastname' where firstname='test';
+select * from Users where firstname='test';
+DROP TABLE Users;
+
+
+-- 
+
+-- MySQL - Tutorial Part 2 & 3
+-- https: 
+
+-- Use MySQL commands to create and drop databases.
+--   CREATE USER 'exampleUser'@'%' IDENTIFIED BY '<PASSWORD>!';
+--   GRANT ALL PRIVILEGES ON DATABASE_NAME.* TO 'exampleUser'@'%' IDENTIFIED BY 'examplePassword'!
+--   FLUSH PRIVILEGES;
+-- 
+-- Create a database called employee, with the "ALL PRIVILEGES" grant option, so that the "exampleUser" user can create tables with these privileges, and then drop that database.
+--
+SET NAMES utf8;
+CREATE DATABASE employee CHARACTER SET utf8 COLLATE utf8_general_ci;
+GRANT ALL PRIVILEGES ON employee.* TO 'employee'@'%' IDENTIFIED by 'examplePassword'!

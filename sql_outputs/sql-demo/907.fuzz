@@ -1,0 +1,22 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- Now create an empty table
+CREATE TABLE IF NOT exists students(student_id INT, first_name VARCHAR(100), last_name VARCHAR(100), school_year INT, grade VARCHAR(20));
+-- And update it with some data
+INSERT INTO students(student_id, first_name, last_name, school_year, grade) VALUES(12345, 'Ronald', 'Evans', 201912, 'A+');
+INSERT INTO students(student_id, first_name, last_name, school_year, grade) VALUES(99999, 'Marie', 'Garcia', 202005, 'B');
+SELECT student_id, first_name, last_name, school_year, grade
+FROM students
+WHERE grade = 'A+';
+DROP TABLE IF EXISTS students;
+DROP DATABASE IF EXISTS sampleDB;
+-- Please recreate the SQL that I used previously to reproduce the results using the above table
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS students;
+CREATE TABLE IF NOT EXISTS students(student_id INT, first_name VARCHAR(100), last_name VARCHAR(100), school_year INT, grade VARCHAR(20));
+INSERT INTO students(student_id, first_name, last_name, school_year, grade) VALUES(12345, 'Ronald', 'Evans', 201912, 'A+');
+INSERT INTO students(student_id, first_name, last_name, school_year, grade) VALUES(99999, 'Marie', 'Garcia', 202005, 'B');
+SELECT student_id, first_name, last_name, school_year, grade
+FROM students
+WHERE grade = 'A+';
+DROP TABLE IF EXISTS students;
+DROP DATABASE IF EXISTS sampleDB;

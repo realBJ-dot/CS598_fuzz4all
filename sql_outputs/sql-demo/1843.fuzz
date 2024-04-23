@@ -1,0 +1,33 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- Please write a query using the UPDATE, DELETE, EXISTS AND IN commands and modify it to use
+-- the WHERE keyword. Your goal should be to modify the name of the FIRST name to New
+-- First Name, and the LAST name to New Last Name.
+SELECT * from names;
+UPDATE names SET name='New First Name' WHERE name="<NAME>";
+SELECT * from names;
+UPDATE names SET name='New Last Name' WHERE name="<NAME>";
+-- You should drop the name table once you know how to drop tables.
+DROP TABLE names;
+SELECT * FROM names;
+-- Please create a query with the help of SELECT ALL commands that uses the WHERE
+-- and EXISTS commands to modify the previous two queries and run the query to
+-- understand when the new name is equal to the previous name.
+SELECT name FROM names WHERE name="New Last Name";
+SELECT name FROM names WHERE name="New First Name";
+-- Please create new tables in this database and perform the SQL query that displays
+-- the full name of every name in the names table. Make sure to use ENGINE=InnoDB.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE names(name varchar(20));
+INSERT INTO names VALUES ('<NAME>');
+INSERT INTO names VALUES ('<NAME>');
+INSERT INTO names VALUES ('<NAME>');
+CREATE TABLE names_f(name varchar(20));
+INSERT INTO names_f VALUES ('<NAME>');
+INSERT INTO names_f VALUES('New First Name');
+INSERT INTO names_f VALUES('<NAME>');
+-- Please try to find out how many times that name occurs in the users table.
+SELECT COUNT(*) FROM users WHERE first_name = "<NAME>";
+-- Please make a new TABLE users_first_names
+CREATE TABLE users_first_names(user_id INT, first_name VARCHAR(20), last_name VARCHAR(20));
+-- For each of the NAME values in the names table insert a record in this table.
+INSERT INTO users_first_names(user_id, first_name,last_name

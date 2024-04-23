@@ -1,0 +1,8 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS person;
+CREATE TABLE person( firstname VARRINT(10), lastname VARCHAR(200) PRIMARY KEY, birthdate DATE);
+INSERT INTO person (firstname, lastname, birthdate) VALUES('Kate', '<NAME>', '1996-06-24');
+INSERT INTO person (firstname, lastname, birthdate) VALUES('Steven', '<NAME>', '2013-07-30');
+SELECT lastname FROM person WHERE birthdate='1996-06-24';
+DROP TABLE IF EXISTS person;
+DROP DATABASE IF EXISTS sampleDB;

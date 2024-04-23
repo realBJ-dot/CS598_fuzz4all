@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `sampleDB`.`departments`;
+CREATE TABLE `sampleDB`.`departments` (
+	`department` varchar(30) NOT NULL,
+	`employeesSum` int NOT NULL,
+	PRIMARY KEY (`department`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+USE sampleDB;
+INSERT INTO departments (department, employeesSum) INTO TABLE=records WHERE department = 'IT dept' AND employeesSum >= 1000;
+SELECT COUNT(*) FROM departments;

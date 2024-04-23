@@ -1,0 +1,32 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `staff`;
+CREATE TABLE `staff` (
+	`staffId` int(11) NOT NULL AUTO_INCREMENT,
+	`staffName` varchar(255) NOT NULL,
+	`staffGrade` varchar(10) NOT NULL,
+	`staffCode` varchar(20) NOT NULL,
+	PRIMARY KEY (`staffId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+DROP TABLE IF EXISTS `staffName`;
+CREATE TABLE `staffName` (
+	`id` serial NOT NULL AUTO_INCREMENT,
+	`name` varchar(255) NOT NULL,
+	PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `staff`;
+CREATE TABLE `staff` (
+	`staffId` int(11) NOT NULL AUTO_INCREMENT,
+	`staffName` varchar(255) NOT NULL,
+	`staffGrade` varchar(10) NOT NULL,
+	`staffCode` varchar(20) NOT NULL,
+	PRIMARY KEY (`staffId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+DROP TABLE IF EXISTS `staffEmail`;
+CREATE TABLE `staffEmail` (
+	`staffId` int(11) NOT NULL AUTO_INCREMENT,
+	`email` varchar(255) NOT NULL,
+	PRIMARY KEY (`staffId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+DROP TABLE

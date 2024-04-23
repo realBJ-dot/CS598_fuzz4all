@@ -1,0 +1,7 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS user_db_personalities (
+name VARCHAR(32), age INT UNSIGNED, phone VARCHAR(21), email VARCHAR(32), PRIMARY KEY (name)
+);
+CREATE TABLE IF NOT EXISTS user_db_personality_history (
+name VARCHAR(32), old_level INT UNSIGNED, new_level INT UNSIGNED, PRIMARY KEY (name)
+) engine = innodb; 

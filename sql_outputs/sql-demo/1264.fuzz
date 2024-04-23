@@ -1,0 +1,9 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS articles (
+	articleId INT NOT NULL,
+	author VARCHAR(75) DEFAULT 'root' NOT NULL,
+	title VARCHAR(255) DEFAULT 'title' NOT NULL,
+	content TEXT DEFAULT 'content' NOT NULL,
+	PRIMARY KEY (articleId)
+)ENGINE=InnoDB;
+DESCRIBE articles;

@@ -1,0 +1,11 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+UPDATE Person SET First_name = 'John', Last_name = 'Doe' WHERE First_name like 'Jacques';
+SELECT * FROM Person;
+
+UPDATE Employee SET Manager_id = 10 WHERE (Manager_id = 2 AND Manager_id = 3) AND First_name = 'John';
+
+SELECT * FROM Person;
+
+# Dropping sampleDB
+DROP DATABASE IF EXISTS sampleDB;

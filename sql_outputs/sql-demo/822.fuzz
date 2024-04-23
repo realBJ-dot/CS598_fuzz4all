@@ -1,0 +1,18 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE users (user_name varchar(30), user_pwd varchar(30));
+USE sampleDB;
+DROP TABLE IF EXISTS users;
+CREATE TABLE users (user_name varchar(30), user_pwd varchar(30));
+INSERT INTO users
+VALUES ('Bob', 'Bob');
+INSERT INTO users
+VALUES ('John', 'John');
+-- The next statement will return no results as all rows were inserted!
+SELECT * FROM users WHERE user_name = 'Bob';
+  
+ SELECT * FROM users WHERE user_name = 'Bob';
+-- Use IN and NOT IN to select all rows whose user_name field is not Bob and Jane but neither Alice, Mary, Jack or Eddie.
+-- Note the quotes in the 'IN' clause will change the interpretation of the literal value.
+SELECT * FROM users WHERE user_name IN ('Bob', 'Jane', 'Alice', 'Mary', 'Jack', 'Eddie');
+\q
+

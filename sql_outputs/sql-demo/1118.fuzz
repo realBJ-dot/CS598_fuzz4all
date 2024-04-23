@@ -1,0 +1,2 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+create table table1 ( a date);

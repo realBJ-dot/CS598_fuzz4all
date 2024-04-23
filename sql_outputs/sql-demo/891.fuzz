@@ -1,0 +1,16 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS user;
+CREATE TABLE IF NOT EXISTS user (name VARCHAR(200), last_name VARCHAR(200), phone CHAR(10), address CHAR(200), email CHAR(200));
+INSERT INTO user (name, last_name, phone, address, email) VALUES ('John','Smith', '989-098-098', 'Boston, MA', '<EMAIL>');
+INSERT INTO user (name, last_name, phone, address, email) VALUES ('Mike','Kowalewski', '899-089-089', 'Boston, MA', '<EMAIL>');
+INSERT INTO user (name, last_name, phone, address, email) VALUES ('Mike','Graham', '909-090-090', 'Boston, MA', '<EMAIL>');
+SELECT * FROM user;
+DROP TABLE IF EXISTS user;
+DROP DATABASE IF EXISTS sampleDB;
+-- Please create a query using SQL features in a complex way (like JOIN operator) and in a way which you would not use in real life. Create a table user which contains all the employees to demonstrate how it would look like in memory. Add a column of employee number in the same table. For now, you can insert employee data into that column. Insert also an employee number 1 in the same table. Then select these two rows and their details. Finally sum up the employee numbers.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS user;
+CREATE TABLE IF NOT EXISTS user (employee_number INT, name VARCHAR(200), last_name VARCHAR(200), phone CHAR(10), address CHAR(200), email CHAR(200));
+INSERT INTO user (employee_number, name, last_name, phone, address, email) VALUES (1, 'John', 'Smith', '989-098-098', 'Boston, MA', '<EMAIL>');
+INSERT INTO user (employee_number, name, last_name, phone, address, email) VALUES (2, 'Mike', 'Kowalewski', '899-089-089', 'Boston, MA', '<EMAIL>');
+INSERT INTO user (employee_number, name, last_name, phone, address, email) VALUES

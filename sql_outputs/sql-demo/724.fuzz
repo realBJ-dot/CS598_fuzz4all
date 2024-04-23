@@ -1,0 +1,2 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+UPDATE `firstTable` SET `field2`='2000/01/22' WHERE `field1`='2001/01/23';

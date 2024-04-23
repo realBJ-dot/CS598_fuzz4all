@@ -1,0 +1,6 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- Please remove the row(s) selected and show the result.
+DELETE FROM names WHERE name='New First Name and New Last Name';
+SELECT * FROM names;
+SELECT name FROM names;
+DROP DATABASE IF EXISTS sampleDB;

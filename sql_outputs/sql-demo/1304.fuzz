@@ -1,0 +1,22 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS users(
+	userId INT PRIMARY KEY,
+	username varchar(500),
+	type int
+);
+DESCRIBE users;
+INSERT INTO users(userId, username, type) VALUES (1, 'admin', 1);
+DESCRIBE users;
+ALTER TABLE users ADD COLUMN role INT DEFAULT 2;
+DESCRIBE tables users;
+DESCRIBE users;
+ALTER TABLE users DROP COLUMN type;
+DESCRIBE tables users;
+DESCRIBE users;
+ALTER TABLE users ADD CONSTRAINT fk_role INT FOREIGN KEY (role) REFERENCES users(userId)
+ON DELETE CASCADE ON UPDATE CASCADE;
+DESCRIBE tables users;
+DESCRIBE users;
+INSERT INTO permissions SELECT * FROM users WHERE userName='admin' AND role=1;
+DESCRIBE tables permissions;
+DESCRIBE permissions;

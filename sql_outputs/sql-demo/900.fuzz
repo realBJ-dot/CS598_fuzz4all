@@ -1,0 +1,18 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS user;
+CREATE TABLE IF NOT EXISTS user (id INT, user_name VARCHAR(200), user_last_name VARCHAR(200), user_phone CHAR(100));
+INSERT INTO user (user_name, user_last_name, user_phone) VALUES ('John', 'Smith', '989-098-098');
+SELECT id, user_name, phone
+FROM user WHERE id >=10;
+DROP TABLE IF EXISTS user;
+DROP DATABASE IF EXISTS sampleDB;
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS user;
+CREATE TABLE IF NOT EXISTS user (id INT, user_name VARCHAR(200), user_last_name VARCHAR(200), user_phone CHAR(100));
+INSERT INTO user (user_name, user_last_name, user_phone) VALUES ('John', 'Smith', '989-098-098');
+INSERT INTO user (user_name, user_last_name, user_phone) VALUES ('John', 'Cassil', '787-989-098');
+INSERT INTO user (user_name, user_last_name, user_phone) VALUES ('John', 'Vincent', '434-589-098');
+INSERT INTO user (user_name, user_last_name, user_phone) VALUES ('John', 'Pierre', '787-989-123');
+INSERT INTO user (user_name, user_last_name, user_phone) VALUES ('John', 'Tony', '787-989-234');
+INSERT INTO user (user_name, user_last_name, user_

@@ -1,0 +1,50 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- We will now populate several tables. This might take a few minutes. In order to avoid losing the query and making the exercise more difficult, we will assume you have a working MySQL database server with a database called sampleDB.
+-- We are inserting data from the previous database. We are also modifying data using the ALTER command.
+DROP TABLE IF EXISTS country;
+DROP TABLE IF EXISTS continent;
+CREATE TABLE country (
+  name char (5),
+  capital char (8));
+CREATE TABLE continent (
+  name char (8),
+  country char (5)
+);
+INSERT INTO country VALUES ('Afghanistan', 'Kabul');
+INSERT INTO continent VALUES ('Asia', 'Asia');
+INSERT INTO country VALUES ('Albania', 'Tirana');
+COMMIT;
+ALTER TABLE country CHANGE name name_orig name char (15);
+ALTER TABLE continent CHANGE name name_orig name char (15);
+-- Now we will drop the tables and create sampleDB. Feel free to edit these queries and create your own queries:
+DROP TABLE IF EXISTS country;
+DROP TABLE IF EXISTS continent;
+CREATE TABLE country (
+  name char (5),
+  capital char (8));
+CREATE TABLE continent (
+  name char (8),
+  country char (5)
+);
+ALTER TABLE country ADD name_orig char (15);
+ALTER TABLE country ADD capital_orig char (15);
+ALTER TABLE continent ADD name_orig char (15);
+ALTER TABLE continent ADD country_orig char (15);
+DROP TABLE IF EXISTS country_orig;
+DROP TABLE IF EXISTS continent_orig;
+-- Finally drop all tables for ease of cleanup.
+DROP TABLE IF EXISTS country;
+DROP TABLE IF EXISTS continent;
+-- And finally use sampleDB to drop the sampleDB database.
+DROP DATABASE IF EXISTS sampleDB;
+
+
+ 
+ 
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB;
+USE sampleDB;
+
+CREATE TABLE sampleDB.employee (
+    eid INT NOT NULL AUTO_INCREMENT,
+   

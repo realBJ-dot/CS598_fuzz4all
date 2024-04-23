@@ -1,0 +1,17 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DELETE FROM Student WHERE First_Name = 'John';
+SELECT First_Name, Last_Name, Grade FROM Student;
+DROP DATABASE IF EXISTS sampleDB;
+-- Please create a program that updates all records in the Student table to a new record
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+UPDATE Student SET Grade=8 WHERE Grade=9;
+SELECT First_Name, Last_Name, Grade FROM Student;
+DELETE FROM Student;
+DELETE FROM Student WHERE First_Name = 'Jane';
+SELECT Grade FROM Student;
+DROP DATABASE IF EXISTS sampleDB;
+-- Please create a program that modifies the same records in the Student table
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+UPDATE Student SET first_name ='Tom' WHERE first_name<>'John' AND Last_Name = 'Stark';
+SELECT * FROM Student;
+DROP DATABASE IF EXISTS sampleDB;

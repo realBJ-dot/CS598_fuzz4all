@@ -1,0 +1,6 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- We will first create a sample table, `departments` and then we will fill this table with employees and store it in the `employees` table. By default, the `departments` table has a foreign key constraint that refers to the `employees` table using the `REFERENCES` keyword.
+CREATE TABLE IF NOT EXISTS departments (id      INT     AUTO_INCREMENT, 
+                                               title   VARCHAR(255), 
+                                               PRIMARY KEY (id)
+#You need to add a constraint for each field i.e., `foreign key(column) references table(column)`. You can add a constraint of the `UNIQUE KEY` type

@@ -1,0 +1,6 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `person`;
+DROP TABLE IF EXISTS `course`;
+ ;
+ ;
+ ;

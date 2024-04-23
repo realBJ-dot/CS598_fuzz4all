@@ -1,0 +1,15 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS author (
+ author_id INT NOT NULL AUTO_INCREMENT,
+ first_name TEXT,
+ last_name TEXT,
+ birth_year INT,
+ gender ENUM('male', 'female'),
+ PRIMARY KEY (author_id)
+);
+INSERT INTO author (first_name, last_name, birth_year, gender)
+VALUES ('Alex', 'Bachmann', 1980, 'female'), ('Donald', 'Duck', 2000, 'female'), ('Sam', 'Scott', 1985,'male');
+ALTER TABLE author MODIFY author_id INT(8);
+ALTER TABLE author ENGINE=InnoDB;
+DROP TABLE author;
+DROP DATABASE sampleDB;

@@ -1,0 +1,30 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+INSERT INTO Users 
+	( first_name, last_name, password) 
+	VALUES
+	("Michael", "Widenius"),
+	("Michael", "Widenius", "password"),
+	("Louis", "Ransom", "password");
+-- If you want to insert multiple values to your table, use an alternative query in order to achieve the same (see below for more).
+CREATE TABLE Users
+(
+    User_id INT NOT NULL AUTO_INCREMENT,
+    full_name TEXT,
+    PRIMARY KEY (User_id)
+);
+CREATE TABLE Contact
+(
+    Contact_id INT NOT NULL AUTO_INCREMENT,
+    full_name TEXT,
+    first_name TEXT,
+    email TEXT,
+    contact_type TEXT,
+    first_message TEXT,
+    second_message TEXT,
+    third_message TEXT,
+    date_creation DATETIME,
+    date_modified DATETIME,
+    PRIMARY KEY (Contact_id),
+    FOREIGN KEY (Contact_id) REFERENCES Users (User_id) ON UPDATE CASCADE
+);
+ALTER DATABASE sampleDB CHARACTER SET utf8 COLLATE utf8_unicode_ci

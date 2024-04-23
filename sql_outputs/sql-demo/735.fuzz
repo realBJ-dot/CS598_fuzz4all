@@ -1,0 +1,5 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ -- ALTER TABLE `FirstTable` MODIFY `FirstColumn` VARCHAR (20) NULL;
+ 
+-- ALTER TABLE `SecondTable` MODIFY `SecondColumn` INTEGER NULL;
+ 

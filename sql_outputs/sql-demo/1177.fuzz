@@ -1,0 +1,28 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS users(user_id INT PRIMARY KEY AUTO_INCREMENT, first_name MEDIUMTEXT, last_name TEXT, created_at TIMESTAMP NULL);
+
+CREATE TABLE IF NOT EXISTS blogs(blog_id INT PRIMARY KEY AUTO_INCREMENT, blog_name TEXT, blog_url TEXT, created_at TIMESTAMP NULL);
+
+CREATE TABLE IF NOT EXISTS users_blogs(user_id INT NOT NULL, blog_id INT NOT NULL, PRIMARY KEY user_id, blog_id),
+
+USE sampleDB;
+INSERT INTO users(first_name, last_name, email, created_at) VALUES ("John", "Doe", "<EMAIL>", "2019-09-13 20:22:44");
+INSERT INTO users(first_name, last_name, email, created_at) VALUES ("Mary", "Moe", "<EMAIL>", "2019-09-13 20:23:42");
+INSERT INTO blog
+(blog_name, blog_url, created_at)
+VALUES
+('Technology','http://techcrunch.com','2019-09-17 20:35:42'),
+('History','http://history.wsj.com','2019-09-17 20:28:05'),
+('Business','http://business.wsj.com','2019-09-17 20:27:04'),
+('Life','http://life.wsj.com','2019-09-17 20:27:14'),
+('Politics','http://politics.wsj.com','2019-09-17 20:27:09'),
+
+-- Now drop all tables if you want to start over
+USE sampleDB;
+
+DROP DATABASE sampleDB;
+
+ 
+SELECT DATABASE();
+DROP DATABASE sampleDB;
+

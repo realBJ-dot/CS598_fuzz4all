@@ -1,0 +1,17 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE `worker` (
+  `worker.no_worker` INT,
+  `nama_lengkap` VARCHAR(50),
+  `kode_lokasi` VARCHAR(50),
+  `username` VARCHAR(50),
+  `password` VARCHAR(50),
+  `tgl_masuk` DATETIME,
+  `id_level` INT,
+  `id_status` INT,
+  `id_kota_asal` INT,
+  `id_kota_tujuan` INT,
+  `no_tlp` INT
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+ALTER TABLE `worker` CHANGE COLUMN `no_worker` `id_worker` INT, CHANGE COLUMN `kode_lokasi` `id_kota_asal` INT;
+ALTER TABLE `worker` CHANGE COLUMN `kode_lokasi` `id_kota_tujuan` INT;
+ALTER TABLE `worker` CHANGE COLUMN `tgl_masuk` `tgl_masuk` DATETIME;

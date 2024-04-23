@@ -1,0 +1,52 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Subjects (id  int PRIMARY KEY, name VARCHAR NOT NULL);
+INSERT INTO Subjects (id, name) VALUES (1, 'Math');
+CREATE TABLE Subjects (id  int PRIMARY KEY, name VARCHAR NOT NULL);
+INSERT INTO Subjects (id, name) VALUES (2, 'Mathematics');
+CREATE TABLE Subjects (id  int PRIMARY KEY, name VARCHAR NOT NULL);
+INSERT INTO Subjects (id, name) VALUES (3, 'English');
+CREATE TABLE Subjects (id  int PRIMARY KEY, name VARCHAR NOT NULL);
+INSERT INTO Subjects (id, name) VALUES (4, 'Science and Technology');
+CREATE TABLE Subjects (id  int PRIMARY KEY, name VARCHAR NOT NULL);
+INSERT INTO Subjects (id, name) VALUES (5, 'Physics');
+CREATE TABLE Subjects (id  int PRIMARY KEY, name VARCHAR NOT NULL);
+INSERT INTO Subjects (id, name) VALUES (6, 'History');
+CREATE TABLE Subjects (id  int PRIMARY KEY, name VARCHAR NOT NULL);
+INSERT INTO Subjects (id, name) VALUES (7, 'Biology');
+CREATE TABLE Subjects (id  int PRIMARY KEY, name VARCHAR NOT NULL);
+INSERT INTO Subjects (id, name) VALUES (8, 'Politics');
+CREATE TABLE Subjects (id  int PRIMARY KEY, name VARCHAR NOT NULL);
+INSERT INTO Subjects (id, name) VALUES (9, 'Commerce');
+CREATE TABLE Subjects (id  int PRIMARY KEY, name VARCHAR NOT NULL);
+
+-- Please write the query to create a tree that contains all the name of students. You need to create a new table, and insert the data using the INSERT Statement. You should use ENGINE=INNODB. In the end, drop the created tables. */
+
+Create Database IF NOT EXISTS students; USE students;
+CREATE TABLE student (
+	s_no int not null,
+	name varchar not null
+	foreign key(s_no) references student(s_no)
+);
+ 
+Insert Into student values(1,'Chaitanya');
+Insert Into student values(2,'Anna');
+Insert Into student values(3,'Jay');
+Insert Into student values(4,'Mahendra');
+ 
+drop table student;
+Create Database IF NOT EXISTS students; USE students;
+
+select s_no from student;
+select name from student;
+select s_no from student;
+SELECT * FROM student;
+select name from student;
+select s_no from student;
+select s_no from student;
+select name from student;
+select s_no from student;
+select name from student;
+select s_no from student;
+select name from student;
+
+alter table student

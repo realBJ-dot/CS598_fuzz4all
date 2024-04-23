@@ -1,0 +1,5 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS mytable;
+CREATE TABLE mytable (
+        myint int
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

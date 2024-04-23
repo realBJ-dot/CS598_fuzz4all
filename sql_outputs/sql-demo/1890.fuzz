@@ -1,0 +1,48 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employees_positions;
+CREATE TABLE IF NOT EXISTS employees_positions(
+    employee_emp_no  INT UNSIGNED NOT NULL,
+    employee_position INT UNSIGNED,
+    PRIMARY KEY (employee_emp_no, employee_position));
+DROP TABLE employees_positions;
+-- Create a new temporary table
+CREATE TABLE IF NOT EXISTS employees_positions (
+   employee_emp_no  INT UNSIGNED NOT NULL,
+   employee_position INT UNSIGNED,
+   PRIMARY KEY (employee_emp_no, employee_position));
+INSERT INTO employees_positions(employee_emp_no, employee_position)
+    VALUES(1, 1);
+INSERT INTO employees_positions(employee_emp_no, employee_position)
+    VALUES(1, 5);
+INSERT INTO employees_positions(employee_emp_no, employee_position)
+    VALUES(1, 9);
+INSERT INTO employees_positions(employee_emp_no, employee_position)
+   VALUES(2, 3);
+INSERT INTO employees_positions(employee_emp_no, employee_position)
+   VALUES(2, 6);
+INSERT INTO employees_positions(employee_emp_no, employee_position)
+   VALUES(2, 10);
+-- Do some work using the temporary table
+SELECT employee_position FROM employees_positions WHERE employee_emp_no = 1;
+-- Remove the temporary table
+DROP TABLE employees_positions;
+-- Use a temporary table to update multiple records at once
+DROP TABLE IF EXISTS employees_positions;
+CREATE TABLE IF NOT EXISTS employees_positions(
+    employee_emp_no  INT UNSIGNED NOT NULL,
+    employee_position INT UNSIGNED,
+    PRIMARY KEY (employee_emp_no, employee_position));
+INSERT INTO employees_positions(employee_emp_no, employee_position)
+    VALUES(1, 1);
+INSERT INTO employees_positions(employee_emp_no, employee_position)
+    VALUES(1, 5);
+INSERT INTO employees_positions(employee_emp_no, employee_position)
+    VALUES(1, 9);
+INSERT INTO employees_positions(employee_emp_no, employee_position)
+   VALUES(2, 3);
+INSERT INTO employees_positions(employee_emp_no, employee_position)
+   VALUES(2, 6);
+INSERT INTO employees_positions(employee_emp_no, employee_position)
+   VALUES(2, 10);
+-- Please remove the IF EXISTS from the creation query and do the following using a temporary table:
+SELECT employee_position FROM employees_positions WHERE employee_

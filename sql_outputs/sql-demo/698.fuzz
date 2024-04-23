@@ -1,0 +1,18 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS Student;
+CREATE TABLE Student (First_Name  VARCHAR(20), Last_Name CHAR(20),
+  Grade   INT);
+INSERT INTO Student (First_Name, Last_Name, Grade) VALUES ('John',   'Smith',     8);
+INSERT INTO Student (First_Name, Last_Name, Grade) VALUES ('Jane',   'Lee',       9);
+INSERT INTO Student (First_Name, Last_Name, Grade) VALUES ('Tom',    'Stark',     5);
+SELECT
+First_Name,
+Last_Name,
+Grade
+FROM Student
+WHERE
+Grade >= 7
+ORDER by first_Name;
+
+
+-- 

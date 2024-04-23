@@ -1,0 +1,32 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS `cars` (
+`color` CHAR(10) NOT NULL,
+`Make` VARCHAR(50) NOT NULL,
+`Model` VARCHAR(10) NOT NULL,
+`price` REAL NOT NULL,
+`year` INT NOT NULL,
+PRIMARY KEY (`id`)
+) ENGINE=InnoDB
+
+ 
+SELECT * FROM `cars`;
+SELECT COUNT(*) AS row_count FROM `cars`;
+
+ 
+SELECT Model, color FROM `cars` WHERE color = 'blue';
+
+ 
+SELECT id, Make, price FROM `cars` WHERE color = 'blue' ORDER BY Make ASC, price DESC, Color DESC;
+
+ 
+SELECT Make, Model FROM `cars` WHERE Model > 'L';
+SELECT Make, Model FROM `cars` WHERE Color = 'Blue';
+SELECT color FROM `cars` ORDER BY Make DESC LIMIT 1 OFFSET 2;
+
+ 
+SELECT Make, COUNT(price) AS cost FROM `cars` GROUP BY Make;
+SELECT color, COUNT(*) AS model_count FROM `cars` GROUP BY color;
+SELECT Make, COUNT(Model) AS Models FROM `cars` GROUP BY Make;
+
+ 
+/* 6. You will also sometimes encounter `HAVING` clauses to make it so that a filter is applied after a sort has been applied. These are often used by the database managers to provide suggestions for additional options to filter. For example, if you are ordering in descending order and then filter for all cars on your car list, you can change

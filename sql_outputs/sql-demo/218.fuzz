@@ -1,0 +1,31 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP DATABASE IF EXISTS sampleDB2; USE sampleDB;
+DROP DATABASE IF EXISTS sampleDB2; USE sampleDB;
+DROP DATABASE IF EXISTS sampleDB3; USE sampleDB;
+CREATE TABLE T01 (t01_id INTEGER PRIMARY KEY, v01_text TEXT);
+INSERT INTO T01 VALUES (1,'Hello World!');
+INSERT INTO T01 VALUES (2,'Hello Rocks!');
+INSERT INTO T01 VALUES (3,'Hello World!');
+DROP TABLE T01;
+CREATE TABLE T02 (t02_id INTEGER PRIMARY KEY, v02_text TEXT);
+INSERT INTO T02 VALUES (4,'How to code in Python! You won\'t understand this in a few hours!');
+INSERT INTO T02 VALUES (5,'I need to do some research');
+INSERT INTO T02 VALUES (7,'Hello World!');
+DROP TABLE T02;
+USE sampleDB;
+-- Please write a query that uses two tables stored in separate databases and performs an update/delete of the rows to the correct database.
+SELECT t01_text FROM T01;
+SELECT t01_text FROM T02;
+USE sampleDB;
+update T01 set t01_text = CONCAT('update ',v01_text) where t01_id=3;
+select t01_text from T01;
+use sampleDB2;
+delete from T02;
+select t01_text from T02;
+USE sampleDB;
+select t01_text from T01;
+ 
+CREATE TABLE T01 (t01_id INTEGER PRIMARY KEY, v01_text TEXT, INDEX(v01_text));
+SELECT t01_text, COUNT(*) FROM T01 GROUP BY t01_text;
+SELECT v01_text, COUNT(*) FROM sampleDB_T01 GROUP BY v01_text;
+DROP TABLE T01;

@@ -1,0 +1,15 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS book(
+ book_id INT NOT NULL AUTO_INCREMENT,
+ book_isbn INT NOT NULL,
+ book_title text NOT NULL,
+ book_publication_date text NOT NULL,
+ book_price INT NOT NULL,
+ KEY book_fk1(book_isbn),
+ KEY book_fk2(book_title)
+);
+
+ALTER TABLE book MODIFY book_id INT FIRST;
+ALTER TABLE book ENGINE=MyISAM;
+DROP TABLE book;
+DROP DATABASE sampleDB;

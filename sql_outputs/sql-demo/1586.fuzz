@@ -1,0 +1,18 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS customers (
+    id int NOT NULL AUTO_INCREMENT,
+    customer_id int NOT NULL DEFAULT 0,
+    customer_firstname varchar(50) charset utf8, 
+    customer_lastname varchar(50) charset utf8,
+    is_fulltime_employee tinyint(1) NOT NULL DEFAULT 0,
+    is_lead tinyint(1),
+    is_vip tinyint(1) NOT NULL DEFAULT 0,
+    PRIMARY KEY (id),
+    UNIQUE KEY customer_id (customer_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+SELECT id FROM customers;
+DROP TABLE IF EXISTS employees;
+CREATE TABLE IF NOT EXISTS employees (
+    id int NOT NULL AUTO_INCREMENT,
+    'employeeID' int NOT NULL,
+    'firstName' varchar

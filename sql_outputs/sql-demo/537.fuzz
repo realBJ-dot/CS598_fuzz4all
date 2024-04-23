@@ -1,0 +1,21 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ 
+
+ 
+
+UPDATE invoices SET price_in_usd=price*1.13 WHERE invoices.paid=0 ;
+
+ 
+UPDATE products SET price=price*1.13 WHERE products.price is NULL;
+
+ 
+UPDATE orders SET paid=paid*1.05 ;
+
+ 
+UPDATE customer SET price_paid_today=(price*1.05*paid)/(orders.paid*1.10) WHERE paid = 1;
+
+ 
+UPDATE invoices_products SET date_paid=date(current_timestamp()) WHERE paid = 1;
+
+ 
+UPDATE invoices_orders SET paid_today=1 WHERE paid = 

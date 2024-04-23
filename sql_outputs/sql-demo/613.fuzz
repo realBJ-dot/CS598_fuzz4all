@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IfNotExists (ID INT NOT NULL UNIQUE, name CHAR(50), color CHAR(10), PRIMARY KEY (ID));
+CREATE TABLE ifNotExists (ID INT NOT NULL UNIQUE, name CHAR(50), color CHAR(10), PRIMARY KEY (ID));
+INSERT INTO IfNotExists VALUES (25,'Mara','Green'),('Mara','Green');
+INSERT INTO IfNotExists VALUES (25,'Mara','Green');
+SELECT color, COUNT(*) FROM IfNotExists;
+-- Drop any table you did not need
+DROP TABLE IfExists;
+DROP TABLE ifExists;
+DROP DATABASE IF EXISTS sampleDB;

@@ -1,0 +1,4 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE Users; INSERT INTO Users (Name) VALUES ('John'), ('Joe'); UPDATE Users set Name = 'Jeff';
+DROP TABLE Users;
+

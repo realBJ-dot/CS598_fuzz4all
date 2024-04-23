@@ -1,0 +1,17 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- SELECT * from employees ORDER BY employeeID ASC;
+UPDATE employees SET employeeID = employeeID + 1 WHERE employeeID = 2;
+DELETE FROM employees WHERE employeeID > 10;
+UPDATE employees SET isFullTimeEmployee = '1' WHERE employeeID = 3;
+INSERT INTO employees (`employeeID`, `firstName`, `lastName`, `isFullTimeEmployee`, `isLead`, `managerID`, `departmentID`) 
+VALUES (9, 'Bob', 'Bobber', 1, 0, 3, 0);
+INSERT INTO employees (`employeeID`, `firstName`, `lastName`, `isFullTimeEmployee`, `isLead`, `managerID`, `departmentID`) 
+VALUES (5, 'Bob', 'Bobber', 1, 0, 9, 0);
+INSERT INTO employees (`employeeID`, `firstName`, `lastName`, `isFullTimeEmployee`, `isLead`, `managerID`, `departmentID`) 
+VALUES (8, 'Bob', 'Bobber', 1, 0, 8, 0);
+INSERT INTO employees (`employeeID`, `firstName`, `lastName`, `isFullTimeEmployee`, `isLead`, `managerID`, `departmentID`) 
+VALUES (7, 'Bob', 'Bobber', 1, 0, null, 0);
+INSERT INTO employees (`employeeID`, `firstName`, `lastName`, `isFullTimeEmployee`, `isLead`, `managerID`, `departmentID`) 
+VALUES (6, 'Bob', 'Bobber', 1, 0, null, 0);
+INSERT INTO employees (`employeeID`, `firstName`, `lastName`, `isFullTimeEmployee`, `isLead`, `managerID`, `departmentID`) 
+VALUES (4, 'John', 'Smith', 1, 1, null, 0);

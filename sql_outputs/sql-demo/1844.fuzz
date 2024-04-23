@@ -1,0 +1,15 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+INSERT INTO names VALUES('<NAME>');
+INSERT INTO names VALUES('<NAME>');
+UPDATE names SET name='<NAME>' WHERE name='<NAME>';
+ 
+DROP TABLE IF EXISTS names;
+ 
+CREATE TABLE IF NOT EXISTS names1(name varchar(20));
+CREATE TABLE IF NOT EXISTS names2(name varchar(20));
+INSERT INTO names2 VALUES('<NAME>');
+INSERT INTO names1 SELECT name FROM names2;
+UPDATE names1 SET name=name WHERE name='<NAME>';
+SELECT * FROM names1;
+DROP TABLE IF EXISTS names2;
+DROP TABLE IF EXISTS names1;

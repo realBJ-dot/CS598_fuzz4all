@@ -1,0 +1,15 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE employees(
+    employee_emp_no    INT UNSIGNED  NOT NULL,
+    employee_sal_ario DECIMAL        NOT NULL,
+    PRIMARY KEY (employee_emp_no));
+USE sampleDB;
+CREATE TABLE employees(
+    employee_emp_no    INT UNSIGNED  NOT NULL,
+    employee_sal_ario DECIMAL        NOT NULL,
+    PRIMARY KEY (employee_emp_no));
+USE sampleDB;
+SELECT employee_sal_ario from employees LIMIT 1;
+DELETE FROM employees ORDER BY employee_emp_no;
+-- Please answer the questions below:
+SELECT COUNT(*) FROM employees; SELECT COUNT(*) FROM employees_positions LIMIT 1;

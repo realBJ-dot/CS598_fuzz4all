@@ -1,8 +1,3 @@
-USE sampleDB;
-CREATE TABLE IF NOT EXISTS testStore
-(
- code         INT,
- codeChar     CHAR(64),
- company      VARCHAR(100),
- PRIMARY KEY(code)
-);
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users(username char(20) PRIMARY KEY, FirstName VARCHAR(30)) ENGINE=InnoDB;
+INSERT INTO Users(username,Firstname) VALUES('Test','Test'),('Admin','Admin'),('Guest','Guest'),('Super','Super');

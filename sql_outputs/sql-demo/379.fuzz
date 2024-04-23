@@ -1,0 +1,19 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- Use the following table to store information about the names of employees in the database
+CREATE TABLE employees(
+    emp_id INT AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(200) NULL,
+    last_name VARCHAR(200) NULL,
+    position_id CHAR(20),
+    manager_id INT NULL 
+);
+DROP TABLE employees;
+DROP DATABASE sampleDB;
+```
+
+## Using MySQL
+
+To use MySQL on a local machine you need to have a MySQL server installed locally (the steps to do that varies depending on the operating system, but I've provided the commands needed for Ubuntu).
+
+You can connect to the MySQL server by using the standard MySQL command `$ mysql -h <host_ip> -u <user> -p`, or by using the MySQL Workbench.
+

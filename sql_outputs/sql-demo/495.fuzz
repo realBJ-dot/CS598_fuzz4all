@@ -1,0 +1,69 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+CREATE TABLE mytable( myid int, title varchar(255));
+INSERT INTO mytable(myid, title) VALUES(1,'abc');
+INSERT INTO mytable(myid, title) VALUES(2,'def');
+INSERT INTO mytable(myid, title) VALUES(3,'ghi');
+SELECT * FROM mytable ;
+DROP TABLE mytable;
+DROP DATABASE sampleDB;
+ 
+```
+---
+
+# SQL 语法
+## 表结构
+**建表**
+```sql
+ CREATE TABLE tablename
+(
+  column1
+  primary key,
+  column2 varchar(255),
+  column3 BLOB
+)
+ENGINE=InnoDB DEFAULT CHARSET=utf8;
+```
+
+## 查询数据
+```sql
+SELECT column1, column2, column3 FROM tablename where column1=4;
+SELECT `column1`,`column2`,`column3` FROM `tablename` ;
+```
+
+
+## 分区
+
+**新建表空间**
+```sql
+ CREATE TABLESPACE tablespace_id
+ENGINE=InnoDB  DEFAULT CHARSET=utf8  COMPRESSION=LZ4;
+```
+将表写入表空间中
+```sql
+ INSERT INTO TABLESPACE tablespace_id
+ENGINE=InnoDB  DEFAULT CHARSET=utf8  COMPRESSION=LZ4
+ VALUES ();
+```
+
+使用表空间进行数据存储
+```sql
+ INSERT INTO TABLESPACE tablespace_id ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='data'
+ VALUES ();
+```
+
+查找表空间
+```
+ SHOW TABLESPACES;
+SHOW CREATE TABLESPACE tablespace_id;
+SHOW KEY FROM mytable;
+SHOW STATUS LIKE "data";
+SHOW INDEX FROM mytable;
+```
+**删除表空间**
+```sql
+DROP TABLESPACE tablespace_id ;
+```
+
+# 索引
+索引有以下三种类型

@@ -1,0 +1,27 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE mytable( myid int, title varchar(255) )ENGINE=InnoDB ;
+INSERT INTO mytable( myid, title) VALUES(0, 'abc');
+INSERT INTO mytable( myid, title) VALUES(1, 'def');
+INSERT INTO mytable( myid, title) VALUES(2, 'ghi');
+SELECT * FROM mytable ;
+-- Please explain how your program compares with what you wrote in RPGM12.
+ 
+SHOW MASTER STATUS;
+SHOW DATABASES;
+SHOW TABLES IN astronomers;
+SELECT * FROM astronomers WHERE SAT_SCORE > 100 ;
+-- You need to create the new table if needed or refer to the old table. You can see what columns are included in this table by examining its columns.
+CREATE TABLE Astronomers(
+    AstronomyID int(11) NOT NULL AUTO_INCREMENT,
+    FirstName varchar(50),
+    LastName varchar(50),
+    SAT_Score int(11),
+    SAT_Name varchar(50),
+    SALT_Name varchar(50),
+    AstronomyRank int(64),
+    AstronomyYear int(11),
+    PRIMARY KEY(AstronomyID)
+);
+INSERT INTO Astronomers(FirstName,LastName,SAT_Score,SAT_Name,SALT_Name,AstronomyRank,AstronomyYear) VALUES('Brian','Harris',6,'G', 'J','2006','2006');
+INSERT INTO Astronomers(FirstName,LastName,SAT_Score,SAT_Name,SALT_Name,AstronomyRank,AstronomyYear) VALUES('Jayce','Hawley',5,'G', 'J','2006','2006');
+INSERT INTO Astronomers(FirstName,LastName,SAT_Score,SAT_Name,SALT_Name,AstronomyRank,AstronomyYear) VALUES('Charles','Shapira',9,'G', 'J','200

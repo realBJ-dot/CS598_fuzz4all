@@ -1,0 +1,35 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+SET GLOBAL max_allowed_packet=500M;; CREATE TABLE IF NOT EXISTS students(
+studentid VARCHAR(10),
+firstname VARCHAR(25),
+lastname VARCHAR(25),
+admissiondate INT
+);
+LOAD DATA INFILE './students.dat' IGNORE INTO TABLE students;
+INSERT INTO students VALUES ('00001','Martin','Martin','1999-05-04');
+INSERT INTO students VALUES ('00277','Yevgeniy','Petrov','1995-02-09');
+INSERT INTO students VALUES ('00037','Ivan','Petrov','1989-12-09');
+INSERT INTO students VALUES ('00054','Marijoan','Angelov','1993-11-17');
+LOAD DATA INFILE './students.dat' IGNORE INTO TABLE students
+SET AUTOCOMMIT=0;; INSERT INTO students VALUES ('00220','Ivan','Petrov','1994-05-10');
+ALTER TABLE students ADD UNIQUE INDEX(ID);
+COMMIT;
+DROP DATABASE IF EXISTS table_sampleDB
+-- Please create a semantically equivalent program to the table_sampleDB.
+USE table_sampleDB; SELECT * FROM students
+ALTER TABLE students ADD UNIQUE INDEX(ID);
+-- MySQLi is a C client library written in PHP and MySQLi is intended to be used primarily by developers. It is not designed or intended for use by database programmers and requires a server to be running. It is not designed for massive data loads as the PHP version.
+ 
+-- Please create a semantically equivalent program.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ 
+-- Please create a semantically equivalent program.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+SET GLOBAL max_allowed_packet=500M;
+
+CREATE TABLE classrooms (
+category_id INT,
+category_name VARCHAR(10)
+);
+
+INSERT INTO classrooms VALUES

@@ -1,0 +1,7 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS users (
+	userId CHAR(5) NOT NULL,
+	role char(1) DEFAULT 'a' NOT NULL PRIMARY KEY (userId)
+);
+-- The role column should be left NULL, as it can't be derived in other places, such as in a WHERE or JOIN condition.
+-- You should drop all CREATE and DROP statements to accomplish this task.

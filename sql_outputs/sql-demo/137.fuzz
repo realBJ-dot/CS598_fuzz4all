@@ -1,0 +1,26 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users_2(username char(20) PRIMARY KEY, FirstName VARCHAR(30)) ENGINE=InnoDB;
+ ;
+ -- Please create a statement which uses the SELECT statement
+ # In this type of statement, "AS" keyword must be present between column selection and "FROM" keyword and will select result column as a new variable.
+SELECT * FROM Users_2;
+# Create a simple structure which has a PRIMARY KEY and has a unique constraint on its columns, and then add a foreign key relationship between two tables using the use of the ALTER statement
+
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ALTER TABLE Users_2 ADD CONSTRAINT FK_Users_2 FOREIGN KEY(username) REFERENCES Users(username);
+ ;
+ -- Please create a simple structure using the MODIFY statement that only modifies the table so far
+-- Now, to delete, you only need 1 line of code
+DELETE FROM Users_2 WHERE FirstName = 'Tom';
+ ;
+ -- Please create a simple select statement using the UNION ALL statement
+-- Create a simple SELECT statement which uses UNION
+ -- You just need to create a new table which will contain the results of multiple UNION statements (with the UNION ALL keyword). You can use a SELECT statement as one of its parts
+ -- There, results of UNION statements must not be stored in the same table by their type. Therefore, the SELECT statement must use the UNION keyword to form a unioned value set.
+ -- In the end, you need to drop the temporary table created in the previous step (the first one) and the newly created table created during UNION
+ ;
+ ;
+ ;
+ ;
+ DROP TABLE IF EXISTS Users_2;
+ ;

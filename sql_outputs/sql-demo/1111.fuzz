@@ -1,0 +1,16 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS table1( column1 INT, column2 INT, PRIMARY KEY (column1) );
+INSERT INTO table1( column1, column2 ) VALUES( 1, 1 ), ( 2, 2 );
+DROP TABLE table1;
+-- Select statements use the same notation as above, but without creating any tables. You can, however, easily select a single column, for example:
+SELECT column1
+FROM table1
+WHERE column1 = 1;
+DROP TABLE table1;
+-- You don't need to create a database first, but you do anyway – you can simply create tables in your other databases, but in that case you will also have to use the USE keyword before the table name.
+DROP DATABASE IF EXISTS sampleDB; USE mysql;
+create table table2( col1 int, col2 int);
+INSERT INTO table2( col1, col2 ) VALUES( 1, 1 );
+SELECT *
+FROM table2;
+-- In this case, we do not have to create the table first.

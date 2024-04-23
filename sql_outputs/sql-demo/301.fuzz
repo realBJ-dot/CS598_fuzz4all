@@ -1,0 +1,7 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS employee ( `EmpID` INT(4) NOT NULL AUTO_INCREMENT, `EmpName` TEXT NOT NULL, KEY (`EmpID`));
+INSERT INTO employee (`EmpID`, `EmpName`) VALUES ('15', '<NAME>');
+SELECT * FROM employee;
+DROP TABLE IF EXISTS employee CASCADE;
+#
+#

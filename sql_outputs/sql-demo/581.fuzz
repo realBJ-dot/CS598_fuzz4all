@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+SET @myid=1;
+INSERT INTO Mutated VALUES(@myid,-2 @myid, 2,4,@myid);
+SELECT price FROM Mutated WHERE id = 2;
+SELECT price FROM Mutated WHERE id = -2;
+SELECT price FROM Mutated WHERE id = 2 AND id = -2;
+DROP TABLE Mutated;
+SELECT price FROM Mutated WHERE price < 50.12345678;
+DROP TABLE Mutated;
+DROP DATABASE sampleDB;

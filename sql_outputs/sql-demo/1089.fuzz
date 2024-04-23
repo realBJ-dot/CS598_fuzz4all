@@ -1,0 +1,6 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ 
+CREATE TABLE IF NOT EXISTS weekdays (id INT AUTO_INCREMENT, value INT);
+ 
+INSERT INTO weekdays (id,value) VALUES (1, 1);
+INSERT INTO weekdays

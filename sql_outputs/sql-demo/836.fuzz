@@ -1,0 +1,15 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS person;
+ 
+CREATE TABLE person (ID INT PRIMARY KEY, address VARCHAR(200), birthdate DATE);
+INSERT INTO person (id, address, birthdate) VALUES(1, 'The City of Los Angeles', '1996-06-24');
+INSERT INTO person (id, address, birthdate) VALUES(2, 'The City of San Diego', '2015-08-01');
+
+DELETE FROM person WHERE birthdate='2013-07-30';
+UPDATE person SET name='<NAME>', birthdate='1987-07-06' WHERE birthdate='1987-07-06' AND id=1;
+
+
+-- 1. Write code to retrieve all records from the "person" table.
+ 
+ 
+-- 4. Write a query which finds the date of the 2nd employee in the "person" table.

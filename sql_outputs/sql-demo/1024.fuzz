@@ -1,0 +1,4 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+#
+# Please use a schema to perform operations. A schema is a collection of constraints, data definitions and indexes stored together in a table-separated data file. They are used to describe a database. A schema allows you to create tables within the specific database and also for manipulating the data within the table. You can change the schema data by updating a schema for the specific database. An existing schema can be replaced with a new schema as any table created as a result of the update will be copied. In addition, you can create new tables as a result of the schema. You can define one or more constraints on the columns involved in adding a constraint.

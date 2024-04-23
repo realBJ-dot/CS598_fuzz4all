@@ -1,0 +1,31 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+SELECT * FROM employees;
+SELECT * FROM staff;
+
+CREATE TABLE IF NOT EXISTS users ( id INT NOT NULL AUTO_INCREMENT, 
+    name VARCHAR (100), role ENUM (\"manager\", \"senior\", \"employee\"),
+    primary key(id));
+INSERT INTO users (name, role) VALUES ('<NAME>', \"manager\");
+INSERT INTO users (name, role) VALUES ('<NAME>', \"manager\");
+INSERT INTO users (name, role) VALUES ('<NAME>', \"manager\");
+INSERT INTO users (name, role) VALUES ('<NAME>', \"senior\");
+INSERT INTO users (name, role) VALUES ('<NAME>', \" senior\");
+INSERT INTO users (name, role) VALUES ('<NAME>', \"senior\");
+INSERT INTO users (name, role) VALUES ('<NAME>', \"senior\");
+INSERT INTO users (name, role) VALUES ('<NAME>', \"senior\");
+INSERT INTO users (name, role) VALUES ('<NAME>', \"employee\");
+INSERT INTO users (name, role) VALUES ('<NAME>', \"emploee\");
+INSERT INTO users (name, role) VALUES ('<NAME>', \"manager\");
+INSERT INTO users (name, role) VALUES ('<NAME>', \"manager\");
+INSERT INTO users (name, role) VALUES ('<NAME>', \"manager\");
+INSERT INTO users (name, role) VALUES ('<NAME>', \"manager\");
+INSERT INTO users (name, role) VALUES ('<NAME>', \"manager\");
+INSERT INTO users (name, role) VALUES ('<NAME>', \"manager\");
+CREATE TABLE IF NOT EXISTS dept_emp ( deptnum INT NOT NULL, empnum INT NOT NULL, PRIMARY KEY (deptnum, empnum));
+ 
+CREATE TABLE IF NOT EXISTS dept ( dptemp INT NOT NULL PRIMARY KEY, dptint INT NOT NULL);
+ 
+INSERT INTO dept (dptemp, dptint) VALUES (101, 20000);
+INSERT INTO dept (dptemp, dptint) VALUES (102, 4000);
+INSERT INTO dept (dptemp, dptint) VALUES (101, 1000);
+INSERT INTO dept (dptemp, dptint) VALUES (101, 

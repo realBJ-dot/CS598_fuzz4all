@@ -1,5 +1,19 @@
-USE sampleDB;
-INSERT INTO comments(author, content, post) VALUES("William", "Hello World!", 10);
-INSERT INTO comments(author, content, post) VALUES("John", "Greetings", 5);
- 
-SELECT * FROM comments;
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users (
+userid INT(5) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+firstname TEXT NOT NULL,
+lastname TEXT NOT NULL,
+phone NUMBER NOT NULL,
+address TEXT NOT NULL
+);
+INSERT INTO Users (userid, firstname, lastname, phone, address) VALUES
+(0, 'Vadim', 'Grigorescu', 9374321, 'Berlin, Germany.'),
+(1, 'Anna', 'Marian', 1937459, 'Beijing, CN.'),
+(2, 'Miles', 'Briand', 9946587, 'Berlin, Germany.'),
+(3, 'Emma', 'M', 9265135, 'Croatia'),
+(4, 'Amara', 'Luc', 9099876, 'Istanbul, Turkey.');
+DROP TABLE Users;
+
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE Users;
+DROP DATABASE IF EXISTS sampleDB;

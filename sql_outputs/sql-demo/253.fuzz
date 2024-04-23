@@ -1,0 +1,45 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS `people` (
+  `personID` INT NOT NULL AUTO_INCREMENT, 
+    `lastname` VARCHAR(45) NULL DEFAULT NULL, 
+    `firstname` VARCHAR(45) NOT NULL,
+    `age` INT NOT NULL, 
+    `gender` ENUM('male', 'female') NULL DEFAULT NULL, 
+-- Make SQL a bit easier by creating a table to act as an alias to courseTable and studentTable so you do not need to make duplicate copies of courseTable and studentTable each time. 
+      FOREIGN KEY (`personID`) REFERENCES `course` (`courseID`) ON UPDATE CASCADE);
+
+ALTER TABLE `people`
+ADD UNIQUE INDEX `personid` (`personID`);
+
+ALTER TABLE `people`
+ADD UNIQUE INDEX `personid1` (`lastname`);
+
+ALTER TABLE `course`
+    ADD FOREIGN KEY (`teacherID`) REFERENCES `people` (`personID`)
+    ON UPDATE CASCADE;
+
+ALTER TABLE `course`
+    ADD FOREIGN KEY (`classroomID`) REFERENCES `people` (`personID`)
+    ON UPDATE CASCADE;
+ALTER TABLE `course`
+    ADD FOREIGN KEY (`termID`) REFERENCES `course` (`courseID`)
+    ON UPDATE CASCADE;
+
+
+CREATE INDEX courseID on course (courseID);
+
+CREATE TABLE IF NOT EXISTS `coursestudent` (
+    `courseID` INT NOT NULL,
+    `studnetID` INT NOT NULL,
+    FOREIGN KEY (`courseID`) REFERENCES `course` (`courseID`),
+    FOREIGN KEY (`studnetID`) REFERENCES `course` (`courseID`)
+);
+
+ALTER TABLE `coursestudent`
+    ADD UNIQUE INDEX `courseID1` (`courseID`);
+
+ALTER TABLE `coursestudent`
+    ADD UNIQUE INDEX `CoursestudnetID1` (`courseID`);
+ 
+ALTER TABLE `coursestudent`
+    ADD UNIQUE INDEX

@@ -1,0 +1,5 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users(fname VARCHAR(128), lname VARCHAR(128));
+INSERT INTO Users (fname, lname) VALUES ('John', 'Doe');
+SELECT * FROM Users;
+DROP DATABASE IF EXISTS sampleDB;

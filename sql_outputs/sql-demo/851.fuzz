@@ -1,0 +1,7 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS person_new;
+CREATE TABLE person_new (id INT NOT NULL AUTO_INCREMENT, name VARCHAR(200), birthdate DATE, a_fk INT, FOREIGN KEY (a_fk) REFERENCES person_old(id));
+INSERT INTO person_new (name, birthdate) VALUES('<NAME>', '1996-06-24');
+INSERT INTO person_new (name, birthdate) VALUES('<NAME>', '2018-03-20');
+DROP TABLE IF EXISTS person_old;
+DROP DATABASE IF EXISTS sampleDB;

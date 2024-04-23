@@ -1,0 +1,7 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+UPDATE Person SET First_name = 'John', Last_name = 'Doe' WHERE First_name like 'John';
+SELECT * FROM Person;
+UPDATE Person SET First_name = 'John', Last_name = 'Doe' WHERE First_name like 'Doe';
+SELECT * FROM Person;
+SELECT * FROM Employee;
+#

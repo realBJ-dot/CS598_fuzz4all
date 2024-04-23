@@ -1,0 +1,6 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ALTER TABLE contact ADD phone_number char(6);
+ALTER TABLE contact ADD unique(`phone_number`);
+ALTER TABLE contact MODIFY email_address varchar(15);
+SELECT * FROM contact;
+DROP DATABASE IF EXISTS sampleDB;

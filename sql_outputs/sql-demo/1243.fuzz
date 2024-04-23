@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS users (
+	userId CHAR(5),
+	firstName VARCHAR(255),
+	lastName VARCHAR(255),
+	role CHAR(1),
+	PRIMARY KEY (userId),
+	FOREIGN KEY (userId) REFERENCES users(userId);
+);
+-- DROP DATABASE sampleDB;

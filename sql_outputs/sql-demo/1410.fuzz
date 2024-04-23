@@ -1,0 +1,12 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS `books` (
+  `author_id` INT(10) UNSIGNED,
+  `title` VARCHAR(255),
+  `publicationdate` DATE
+);
+UPDATE  `books`
+SET `author_id` = 8
+WHERE `author_id` = 9;
+SELECT * FROM `books`;
+DROP TABLE IF EXISTS `books`;
+-- Please drop all tables you have created.

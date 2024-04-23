@@ -1,0 +1,8 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employees;
+DROP TABLE IF EXISTS employees_payroll;
+CREATE TABLE employees(empid varchar(4) PRIMARY KEY, name varchar(20));
+CREATE TABLE employees_payroll(empID varchar(4) Foreign Key REFERENCES employees(empID))ENGINE=InnoDB;
+# Please enter a value for empid and then perform a create statement (i.e., create entry in employees table)
+INSERT INTO employees VALUES("1","<NAME>"),("2","<NAME>"),("3","<NAME>"),("4","<NAME>");
+# Please do the same for name (i.e., update

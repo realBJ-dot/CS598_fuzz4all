@@ -1,0 +1,11 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+INSERT INTO `FirstTable` VALUES ('Aaa'), ('Bbb'), ('Ccc');
+SELECT * FROM `FirstTable`;
+SELECT name, score FROM `FirstTable` ORDER BY score DESC LIMIT 5;
+UPDATE `FirstTable` SET score = 100 WHERE name = 'Xyz';
+SELECT id, score FROM `FirstTable`;
+SHOW TABLES;
+DROP DATABASE IF EXISTS `sampleDB`;
+DROP DATABASE IF EXISTS `anotherDB`;
+DROP DATABASE IF EXISTS `yetAnotherDB`;
+;

@@ -1,0 +1,9 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+INSERT INTO mytable VALUES(1,'abc1', 100.00);
+INSERT INTO mytable VALUES(2,'abc2', null.00);
+INSERT INTO mytable VALUES(2,'abc3', 900.00);
+INSERT INTO mytable VALUES(2,'abc4', null.00);
+INSERT INTO mytable VALUES(2,'abc5', null.00);
+SELECT myid, title,  price+100 FROM mytable WHERE price IS null;
+DROP TABLE mytable;
+DROP DATABASE sampledb;

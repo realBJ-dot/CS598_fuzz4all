@@ -1,20 +1,14 @@
-USE sampleDB;
-
-CREATE TABLE IF NOT EXISTS testCartMutated
-(
- product       INT,
- qtyOnHand     INT,
- amount        DECIMAL(18, 2),
- date          DATE,
- PRIMARY KEY(product)
-) ENGINE=InnoDB;
-
-PREPARE stmt FROM 'UPDATE testCart SET amount=amount +? WHERE product=?';
-DEALLOCATE stmt;
-DESCRIBE product;
-DELETE FROM testCartMutated WHERE product=1000;
-UPDATE testCartMutated SET qtyOnHand=qtyOnHand - 10 WHERE product=1000;
-SELECT * FROM testCartMutated WHERE product=1000;
-SELECT COUNT(*) FROM (SELECT product,amount from testCart where qtyOnHand<>0 and amount>
-(SELECT AVG(amount) FROM testCart GROUP BY product));
-COMMIT;
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users(username char(20), FirstName VARCHAR(30)) ENGINE=InnoDB;
+INSERT INTO Users(username,Firstname) VALUES('Test','Test'),('Admin','Admin'),('Guest','Guest'),('Super','Super');
+ 
+ 
+    SELECT Users FROM Users WHERE FirstName='Test';
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users(username char(20), FirstName VARCHAR(30)) ENGINE=InnoDB;
+INSERT INTO Users(username,Firstname) VALUES('Test','Test'),('Admin','Admin'),('Guest','Guest'),('Super','Super');
+ 
+    CREATE TABLE `Users` (
+    `username` char(20),
+    PRIMARY KEY (`username`)
+    ) ENGINE=InnoDB;

@@ -1,0 +1,8 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employee;
+CREATE TABLE employee(email char(10));
+INSERT INTO employee(email) VALUES ('<EMAIL>');
+INSERT INTO employee(email) VALUES ('<EMAIL>');
+INSERT INTO employee(email) VALUES ('<EMAIL>');
+INSERT INTO employee(email) VALUES ('<EMAIL>');
+DROP DATABASE IF EXISTS sampleDB;

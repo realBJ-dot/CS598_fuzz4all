@@ -1,0 +1,4 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- Your query here
+CREATE TABLE IF NOT EXISTS users_details(user_id INTEGER, phone VARCHAR(50) UNIQUE, age INTEGER);
+INSERT INTO users_details(user_id, phone, age) VALUES ('23434', '63642642', '865355');

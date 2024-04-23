@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- Create a sample table for the mutated table
+DROP TABLE IF EXISTS MutatedSample;
+CREATE TABLE MutatedSample (IDINT NUMERIC, Student INT, Mutated INT);
+-- Update the data in the mutated table. MutatedInt is defined as INT
+UPDATE MutatedSample SET MUTATED = 1 WHERE Mutation = 0 AND (NOT (IDINT = 3)) AND Student = 2;
+SELECT * FROM MutatedSample;
+SELECT Mutated FROM MutatedSample;
+DROP TABLE MutatedSample;
+DROP DATABASE IF EXISTS sampleDB;

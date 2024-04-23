@@ -1,0 +1,39 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `sampleDB`.`employees`;
+CREATE TABLE `sampleDB`.`employees` (
+	`id` int NOT NULL AUTO_INCREMENT,
+	`employeeName` varchar(30) NOT NULL,
+	`departmentName` varchar(20) NOT NULL,
+	PRIMARY KEY (`id`),
+	FOREIGN KEY (`departmentName`) REFERENCES `sampleDB`.`departments`(`departmentName`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+INSERT INTO `sampleDB`.`employees` (`id`, `employeeName`, `departmentName`) 
+VALUES (1, 'Ashish', 'development'), (2, 'Deepak', 'development'), (3, 'Sahni', 'operations'), (4, 'Raghav', 'operations');
+DROP TABLE IF EXISTS `sampleDB`.`projects`;
+CREATE TABLE `sampleDB`.`projects` (
+	`id` int NOT NULL AUTO_INCREMENT,
+	`projectName` varchar(30) NOT NULL,
+	PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+INSERT INTO `sampleDB`.`projects` (`id`, `projectName`)
+VALUES (1, 'MySQL Workshop'), (2, 'MyJava Workshop');
+DROP TABLE IF EXISTS `sampleDB`.`taskTypes`;
+CREATE TABLE `sampleDB`.`taskTypes` (
+	`id` int NOT NULL AUTO_INCREMENT,
+	`taskTypeName` varchar(30) NOT NULL,
+	PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+INSERT INTO `sampleDB`.`taskTypes` (`id`, `taskTypeName`)
+VALUES (1, 'Test'), (2, 'Repairs'), (3, 'Maintenance');
+DROP TABLE IF EXISTS `sampleDB`.`comments`;
+CREATE TABLE `sampleDB`.`comments` (
+	`id` int NOT NULL AUTO_INCREMENT,
+	`comment` varchar(80) NOT NULL,
+	PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+INSERT INTO `sampleDB`.`comments` (`id`, `comment`)
+VALUES (1, 'MySQL is the easiest database to work with.');
+DROP TABLE IF EXISTS `sampleDB`.`notes`;
+CREATE TABLE `sampleDB`.`notes` (
+	`id` int NOT NULL AUTO_INCREMENT,
+	

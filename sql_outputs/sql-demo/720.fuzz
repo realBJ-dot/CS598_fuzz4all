@@ -1,0 +1,14 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ 
+INSERT INTO `FirstTable` VALUES (1, "name1");
+INSERT INTO `SecondTable` VALUES (1, "name2");
+INSERT INTO `SecondTable` VALUES (2, "name3");
+SELECT 1 INTO NEW.NEWCOL1 FROM `FirstTable`;
+SELECT 2 INTO NEW.NEWCOL2 FROM `FirstTable`;
+SELECT 3 INTO NEW.NEWCOL3 FROM `FirstTable`;
+SELECT 3 INTO NEW.NEWCOL3 FROM `SecondTable`;
+SELECT 1 INTO NEW.NEWCOL1 FROM `FirstTable`;
+SELECT COUNT(*) into `COUNT1` from `SecondTable`;
+SELECT DISTINCT `SecondTable`.`ID3` INTO `COUNT1` FROM `FirstTable`, `SecondTable` WHERE `FirstTable`.`ID1` = `SecondTable`.`ID1`;
+DROP DATABASE IF EXISTS `sampleDB`;
+SELECT * FROM `FirstTable`;

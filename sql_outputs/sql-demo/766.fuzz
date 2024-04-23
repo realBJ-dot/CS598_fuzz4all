@@ -1,0 +1,8 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TEMPORARY TABLE IF NOT EXISTS `FirstAndSecondTable` ( `id` TINYINT(4) UNSIGNED NOT NULL PRIMARY KEY, `data` TEXT CHARACTER SET UTF8);
+-- Now insert 3 rows using some data which will be reused all the time, without affecting subsequent values.
+INSERT INTO `FirstAndSecondTable` VALUES (1,'hello'), (2,'world'), (3,'howdy'), (4,'what'), (5,'are'), (6,'u');
+SHOW DATA STATUS LIKE 'FirstAndSecondTable';
+SELECT * FROM `FirstAndSecondTable`;
+DROP TABLE `FirstAndSecondTable`;
+*/

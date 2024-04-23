@@ -1,0 +1,45 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+INSERT INTO users(first_name, last_name)
+VALUES
+    ('Jim', 'Farrar'),
+    ('Tim', 'Cole'),
+    ('Nina', 'Ferdinand');
+INSERT INTO users(phone_number)
+VALUES
+    ('604-628-1543'),
+    ('604-447-7623'),
+    ('604-055-0805');
+INSERT INTO products(name)
+VALUES
+    ('Batman'),
+    ('Superman');
+INSERT INTO users_products(first_name, last_name, email, product_name)
+VALUES
+    ('Jim', 'Farrar', '<EMAIL>', 'Batman'),
+    ('Jim', 'Farrar', '<EMAIL>', 'Superman');
+SELECT * FROM users;
+SELECT * FROM users_products;
+DROP TABLE users; DROP TABLE users_products; DROP DATABASE IF EXISTS sampleDB;
+ 
+CREATE TABLE address
+(
+    id INT NOT NULL AUTO_INCREMENT,
+    street VARCHAR,
+    city VARCHAR,
+    state CHARACTER,
+    postal_code INT,
+    PRIMARY KEY(id)
+);
+ 
+INSERT INTO address(street, city, state, postal_code)
+VALUES
+    ('323 N Moscow St', 'Seahawken', 'WA', '98133'),
+    ('323 N Moscow St', 'Seahawken', 'MD', '98133'),
+    ('526 New City Rd', 'New England', 'CA', '44332'),
+    ('123 00th Ave', 'Vancouver', 'BC', 'V5Z 2C1');
+ 
+SELECT * FROM address;
+SELECT * FROM address WHERE postal_code >= 98100;
+DROP TABLE address;
+ 
+CREATE TABLE address(id INT NOT NULL AUTO_INCREMENT, street VARCHAR, city VARCHAR, state CHARACTER, postal_

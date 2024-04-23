@@ -1,0 +1,24 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+ 
+select a.* from employees a left join dept_emp b on a.staff_id=b.staff_id ;
+
+
+
+
+select * from employees e, salary_history h where e.dept_no=h.emp_dept_no and h.year>=2010 and h.salary>1000000 and h.salary<2000000 ;
+
+insert ignore into employees (staff_id, emp_no, first_name, last_name, sex, birth_year, hire_date, sal, comm, dept_no)
+values(1,"2617", "Shaylee", "Wong", "M", "1964", "01-09-1980",300000, "60%");
+
+insert into dept_emp (dept_no, emp_no, dept_id, from_date, to_date)
+value(100,1,"HR","01-09-2009","25-09-2009");
+
+insert into dept_emp (dept_no, emp_no, dept_id, from_date, to_date)
+value(100,1,"HR","01-09-2009","29-09-2009");
+
+insert into dept_emp (dept_no, emp_no, dept_id, from_date, to_date)
+value(100,1,"HR","01-09-2009","23-10-2009");
+
+insert into dept_emp (dept_no, emp_no, dept_id, from_date, to_date)
+value(200,1,"SAL","01-09-2009","29-09-2009");

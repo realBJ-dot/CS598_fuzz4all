@@ -1,5 +1,24 @@
-USE sampleDB;
-SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
--- 1.   Print all the columns in the stocks table that are NOT null for the table.
--- 2.   Add a new column that holds the price for the item on sale at a given price.
--- 3.   Remove the column that holds the price for the item on sale at a given price.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users(username char(20) PRIMARY KEY, FirstName VARCHAR(30)) ENGINE=InnoDB;
+INSERT INTO Users(username,Firstname) VALUES('Test','Test'),('Admin','Admin'),('Guest','Guest'),('Super','Super');
+
+-- Insert 3 rows of data into users table.
+Insert into Orders insert row 2016, 100, 2000, 'test', '15185', 12.5012;
+Insert into Orders insert row 2016, 100, 2000, 'test', '15186', 12.5012;
+Insert into Orders insert row 2016, 100, 2000, 'test', '15187', 12.5012;
+
+-- Perform insert-into on first 5 records of Users table.
+Delete from Users
+From Orders
+Limit 5;
+
+-- Perform SQL queries.
+mysql> select * from Users where FirstName=firstname order by FirstName;
++-----------+----------+-------+
+|        | username | FirstName|
++-----------+----------+-------+
+| Test | Test | Test |
+| admin | Admin | Admin |
+| Guest | Guest | Guest |
+| Super | Super | Super |
++-----------+----------+-------+

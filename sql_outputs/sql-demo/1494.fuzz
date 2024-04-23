@@ -1,0 +1,9 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+CREATE TABLE foo(a BLOB);
+INSERT INTO foo VALUES (NULL), (NULL);
+SELECT BINARY a FROM foo ORDER BY a LIMIT 5; -- result should be: 00 00 00 00 00
+SELECT * FROM foo ORDER BY a DESC LIMIT 5; -- result should be: 00 00 00 00 00
+ORDER BY a ASC, a DESC;  -- result should be: 00 00 00 00 00 00
+SELECT HEX(3+ABS(0)) FROM foo; -- should result the hexadecimal number 7f
+SELECT * FROM foo WHERE a @> (3+ABS(0)); -- should result "3+ABS(0)" as a string

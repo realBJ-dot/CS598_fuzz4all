@@ -1,0 +1,14 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+SELECT * FROM mytable;
+SELECT myid, title FROM mytable WHERE myid=1;
+DELETE FROM mytable;
+DROP TABLE mytable;
+DROP DATABASE sampleDB;
+-- Please create a program for adding new users:
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE users( userid varchar(7), pass varchar(255) );
+INSERT INTO users(userid, pass) VALUES('student','abc');
+
+SELECT * FROM users;
+DROP TABLE users;
+DROP DATABASE sampleDB;

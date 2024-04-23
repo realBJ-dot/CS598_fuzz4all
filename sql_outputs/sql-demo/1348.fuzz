@@ -1,0 +1,15 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS posts(
+ post_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+ post_title text
+);
+INSERT INTO posts VALUES(1,'Alice\'s favorite color is blue');
+INSERT INTO posts VALUES(2,'Alice is the only user in the system');
+INSERT INTO posts VALUES(3,'Alice\'s favorite color is red');
+ALTER TABLE posts ADD KEY(author_id);
+INSERT INTO posts VALUES(4,'Alice is not interested in the posts from Bob');
+ALTER TABLE posts ADD CONSTRAINT FK FOREIGN_KEY REFERENCES author(author_id);
+ALTER TABLE posts ENGINE=InnoDB;
+DROP TABLE author;
+DROP TABLE posts;
+DROP DATABASE sampleDB;

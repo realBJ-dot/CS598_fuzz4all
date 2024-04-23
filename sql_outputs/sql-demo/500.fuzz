@@ -1,0 +1,41 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS my_table( myid int, title varchar(255));
+INSERT INTO mytable(myid, title) VALUES(1,'abc');
+INSERT INTO mytable(myid, title) VALUES(2,'def');
+INSERT INTO mytable(myid, title) VALUES(3,'ghi');
+select title from mytable;
+DROP TABLE mytable;
+DROP DATABASE sampleDB;
+-- Please use a very short query to check what happens when we comment out engine='myISAM'. Check what happens when you change the first SELECT statement to engine='INNODB'. */
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS my_table( myid int, title varchar(255));
+INSERT INTO my_table(myid, title) VALUES(1,'abc');
+INSERT INTO my_table(myid, title) VALUES(2,'def');
+INSERT INTO my_table(myid, title) VALUES(3,'ghi');
+ 
+-- Create an InnoDB database */
+DROP DATABASE IF EXISTS sampleDB;
+CREATE DATABASE sampleDB
+# Add a new column to the "my_table" table */ 
+COLLATE = COLLATE utf8_general_ci
+ENGINE = InnoDB;
+-- Insert values into the "my_table" table. */ 
+INSERT INTO myTable(myid,title) 
+VALUES (1,'my name is Mariana'),(2,'my name is Carolina'); 
+SELECT * FROM myTable; 
+# Insert values into the "my_table" table.
+INSERT INTO myTable(myid,title)
+VALUES ('555','my name is Paul');
+SELECT * FROM myTable;
+# Uncomment the third INSERT command.
+# This would update the data in the title field with data from the "myTable" table by myid values 1,555.
+# Check what it looks like */
+select title from myTable where myid=555;
+DROP TABLE myTable;
+DROP DATABASE sampleDB;
+DROP DATABASE IF EXISTS sampleDB;
+CREATE DATABASE sampleDB ENGINE=MyISAM;
+USE smpDB;
+#Add a column to the "my_table" table */ 
+ALTER TABLE my_table ADD COLUMN myname varchar(50);
+#

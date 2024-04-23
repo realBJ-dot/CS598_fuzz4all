@@ -1,0 +1,42 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- This creates a table with a primary key, an integer (not a float). A number is usually written in scientific notation (1eX).
+CREATE TABLE T_CAR_DB(
+	KEY_ID INT(2),
+	PRIMARY KEY(KEY_ID)
+)ENGINE=MyISAM;
+LOCK TABLES T_CAR_DB WRITE; -- Must be done before INSERT query to work
+INSERT INTO T_CAR_DB (KEY_ID)
+  VALUES (1);
+INSERT INTO T_CAR_DB (KEY_ID)
+  VALUES (4);
+UNLOCK TABLES;
+-- This insert works because the primary key is set. Therefore, if an ID already exists, update will fail with an error.
+UPDATE T_CAR_DB
+  SET KEY_ID = 10
+  WHERE KEY_ID = 1;
+-- This can be verified using an INSERT query. If the ID does not exist, it gets created as a new record with the PRIMARY KEY value of 10. 
+SELECT * FROM T_CAR_DB;
+UNLOCK TABLES;
+-- This works the same way but the update query will fail because the ID of the record does not change.
+UPDATE T_CAR_DB
+  SET KEY_ID = 10
+  WHERE KEY_ID = 1;
+-- This also works, however it adds a 1 to the primary key. This way every table has a different primary key. It is very useful when you have many tables that share a set of primary keys, such as a customer that has a primary key and information about their address.
+UPDATE T_CAR_DB
+  SET KEY_ID = 11 WHERE KEY_ID = 10;
+DELETE FROM T_CAR_DB WHERE KEY_ID = 10;
+-- Here we make a query asking for a DELETE statement, in this case, if we ask
+-- for more than one ID, the last statement will remove the record with the
+-- most recent primary key.
+DELETE FROM T_CAR_DB
+  WHERE KEY_ID = 10 OR KEY_ID = 11;
+SELECT * FROM T_CAR_DB;
+DROP TABLE IF EXISTS T_CAR_DB; -- Delete all tables
+-- Now create a new table from scratch. Do not use a mutated database, there will be data loss.
+CREATE TABLE T_CAR_DB(
+	KEY_ID INT(2),
+	PRIMARY KEY(KEY_ID)
+);
+-- Finally create a mutated copy of the table with a mutated primary key. The update works.
+UPDATE T_CAR_DB
+  SET KEY_ID

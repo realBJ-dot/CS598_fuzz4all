@@ -1,0 +1,31 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE mytable( myid INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, title CHAR(255));
+INSERT INTO mytable(myid, title) VALUES(1,'abc');
+INSERT INTO mytable(myid, title) VALUES(2,'def');
+INSERT INTO mytable(myid, title) VALUES(3,'ghi');
+SELECT * FROM mytable ;
+DROP TABLE mytable;
+DROP DATABASE sampleDB;
+-- Please create a query which uses SQL features in a complex way. Be sure to use ENGINE=InnoDB.
+USE sampleDB;
+CREATE TABLE t1 (id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, city CHAR(255));
+INSERT INTO t1(id, city) VALUES(1, 'Madrid');
+INSERT INTO t1(id, city) VALUES(2, 'Barcelona');
+INSERT INTO t1(id, city) VALUES(3, 'Toulouse');
+DROP TABLE t1;
+DROP DATABASE sampleDB;
+-- Please create an equivalent to the previous generation, which uses SQL commands and MySQL syntax for creating tables and inserting rows. You can use sampleDB as the database name.
+USE sampleDB;
+CREATE TABLE t1 (id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, city CHAR(255));
+INSERT INTO t1(id, city) VALUES(1, 'Madrid');
+INSERT INTO t1(id, city) VALUES(2, 'Barcelona');
+INSERT INTO t1(id, city) VALUES(3, 'Toulouse');
+DROP TABLE t1;
+DROP DATABASE sampleDB;
+-- Please perform equivalent to the previous program. Use sampleDB as the database name.
+USE sampleDB;
+CREATE TABLE t1 (id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, city CHAR(255));
+INSERT INTO t1
+SELECT name, id, city FROM table(t1);
+DROP TABLE t1;
+DROP DATABASE sampleDB;

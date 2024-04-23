@@ -1,0 +1,7 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+SET sql_mode = "NO_AUTO_VALUE_ON_ZERO";
+SET FOREIGN_KEY_CHECKS = 0;
+#
+# Here are the types of foreign key constraints. In case of unique index, it is the same as the primary key constraint. For composite keys it allows you to identify which column are the primary keys, which would allow you to create a `ON UPDATE CASCADE` rule to ensure that all rows which have the matching value in one of those columns will be affected.
+#
+# You can use the foreign key command to query a particular table through a foreign key, i.e., get some information about the column

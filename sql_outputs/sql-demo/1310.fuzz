@@ -1,0 +1,17 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS category(
+	cat_id INT NOT NULL,
+	cat_name text,
+	PRIMARY KEY (cat_id)
+);
+INSERT INTO category VALUES (6,'New York');
+INSERT INTO category VALUES (10,'California');
+INSERT INTO category VALUES (12,'Indiana');
+INSERT INTO category VALUES (19,'Washington');
+SELECT title, price FROM movie WHERE movie_name='Maddogger';
+INSERT INTO movie(movie_name, movie_director, movie_rating, movie_language, genre) VALUES ('Dune', 'Judgment', 9.3, 'Spanish', 'Action,Horror,Romance');
+DESCRIBE movie;
+DROP TABLE category;
+SELECT * FROM category;
+DROP DATABASE sampleDB;
+-- Please create a very short query which uses SQL features in a complex way. Be sure to use ENGINE=InnoDB. You should only use sampleDB as the database and assume no other table exist. You need to create new tables to perform operations. In the end, drop all tables you created.

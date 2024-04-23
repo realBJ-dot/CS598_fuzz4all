@@ -1,0 +1,37 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS Student;
+CREATE TABLE Student (First_Name  VARCHAR(20), Last_Name CHAR(20), Grade boolean);
+INSERT INTO Student (First_Name, Last_Name, Grade) VALUES ('John',  'Smith',     true);
+INSERT INTO Student (First_Name, Last_Name, Grade) VALUES ('Jane',   'Lee',       false);
+INSERT INTO Student (First_Name, Last_Name, Grade) VALUES ('Tom',    'Stark',     true);
+SELECT
+  First_Name,
+  Last_Name,
+  Grade
+FROM Student,
+  (SELECT First_Name,
+           Last_Name,
+           Grade
+  FROM Student
+) AS student2
+WHERE
+  Student.Last_Name  =  student2.Last_Name
+ORDER BY
+  Student.Last_Name;
+ 
+CREATE TABLE students (Student_ID serial, First_Name VARCHAR(20), Last_Name CHAR(20), Grade Boolean);
+
+ 
+
+CREATE VIEW studentView AS SELECT First_Name,
+Last_Name,
+Grade
+FROM Student,
+(SELECT  First_Name AS School_Student_First_Name,
+         Last_Name AS School_Student_Last_Name,
+         Grade        AS School_Student_Grade
+FROM Student
+) AS student2;
+
+/*
+* Create a new query which searches for the string “Jane” in the Students table. You should then select the values of (

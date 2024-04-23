@@ -1,0 +1,29 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employees_salary_by_salary;
+CREATE TABLE employees_salary_by_salary
+        ( employee_salary DECIMAL(12,2) NOT NULL,
+          date DATE NOT NULL ),
+
+CREATE INDEX employees_salary_index1
+        ON employees_salary_by_salary
+        (employee_salary,
+         date);
+
+SELECT employee_salary FROM employees_salary_by_salary WHERE employee_salary = 2012-06-04 AND date = DATE(2012,6,'03');
+
+
+UPDATE employees_salary_by_salary
+SET employee_salary = 2012-06-04 + employee_salary
+WHERE employee_salary = 2012-06-04 AND date = DATE(2012,6,'04')
+
+
+-- 1403 - MySQL SQL
+SELECT (2018-01-02 + 2018-02-04)/3 AS `difference of the two dates` FROM `sample_table` WHERE (2018-01-02 + 2018-02-03) = 2018-02-06   AND date > DATE(2018,01,'01') OR (date > DATE(2018,01,'01') )
+SELECT id,name,price FROM product WHERE price < 3 AND `name` = 'Product2'
+SELECT id,name,price FROM product WHERE `name` = 'Product2' AND price > 5
+SELECT *,date,price,quantity FROM `sample_table` WHERE date BETWEEN DATE(2017,06,'07') AND DATE(2017,09,'01') ORDER BY `order_number` DESC LIMIT 5
+SELECT * FROM `product` ORDER BY price ASC, `name` DESC LIMIT 5
+SELECT id,name,price FROM product LIMIT 5, 2
+SELECT id,name,price FROM product LIMIT 5, 2
+SELECT id,name,price FROM product LIMIT 5, 2
+SELECT id,name,price

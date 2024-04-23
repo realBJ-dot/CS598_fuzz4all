@@ -1,0 +1,13 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- This time, add a new country.
+INSERT INTO country VALUES ('AZERBAIJAN', 'Baku');
+-- Please add a new continent to Africa.
+INSERT INTO continent VALUES ('EUROPE', 'Europe');
+ 
+ALTER DATABASE sampleDB2 RENAME TO sampleDB;
+ALTER DATABASE sampleDB2 CHANGE country country2 country USING country AS NEW_country USING country AS NOW_country;
+ALTER DATABASE sampleDB2 CHANGE continent continent2 continent USING continent AS NEW_continent USING continent AS NOW_continent;
+ 
+ALTER DATABASE sampleDB RESET NAME;
+DROP TABLE IF EXISTS country2; DROP TABLE IF EXISTS continent2;
+DROP DATABASE IF EXISTS sampleDB2;

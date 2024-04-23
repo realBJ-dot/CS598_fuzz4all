@@ -1,0 +1,17 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS user;
+CREATE TABLE user(id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, username VARCHAR(20) UNIQUE,
+password VARCHAR(15) NOT NULL, first_name VARCHAR(50) NOT NULL, last_name VARCHAR(50) NOT NULL);
+INSERT INTO user (username, password, first_name, last_name) VALUES ('admin', '<PASSWORD>', 'Admin', 'Admin');
+CREATE TABLE user1(id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, username VARCHAR(20) UNIQUE,
+password VARCHAR(15) NOT NULL, first_name VARCHAR(50) NOT NULL, last_name VARCHAR(50) NOT NULL);
+INSERT INTO user1 (username, password, first_name, last_name) VALUES ('admin', '<PASSWORD>', 'Admin', 'Admin');
+CREATE TABLE user2(id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, username VARCHAR(20) UNIQUE,
+password VARCHAR(15) NOT NULL, first_name VARCHAR(50) NOT NULL, last_name VARCHAR(50) NOT NULL);
+INSERT INTO user2 (username, password, first_name, last_name) VALUES ('admin', '<PASSWORD>', 'Admin', 'Admin');
+
+-- CREATE TABLE user_details (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, name VARCHAR(20) NOT NULL UNIQUE, phone VARCHAR(20) NOT NULL UNIQUE);
+
+ ;
+ ;
+ ;

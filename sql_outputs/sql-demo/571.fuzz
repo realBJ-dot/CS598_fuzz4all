@@ -1,0 +1,47 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS Mutated (id INT AUTO_INCREMENT PRIMARY KEY, price DECIMAL(10,2) UNIQUE, quantity INT);
+SELECT price, quantity FROM Mutated WHERE id = 2;
+UPDATE Mutated SET price = 80 WHERE id = 2;
+UPDATE Mutated SET price = 10, quantity = 20 WHERE id = 2;
+UPDATE Mutated SET price = 15 WHERE id = 2;
+DROP TABLE Mutated;
+DROP DATABASE sampleDB;
+-----------------------------------------------
+
+# Telco Customer Reviews
+-- https: 
+ 
+DROP DATABASE IF EXISTS CovidConfirmed;
+CREATE DATABASE CovidConfirmed;
+-- Connecting using MySQL Workbench
+-- 1.
+
+# 2.
+--
+
+# Data for 2010
+-- Load the data into the database
+SET NAMES utf8mb4;
+DROP TABLE IF EXISTS tb_customer_data;
+SELECT * INTO tb_customer_data FROM
+(
+    SELECT CustomerID,
+    CONCAT_WS(' ', Name, Surname) AS FullName,
+    CAST(Day.DATE_FORMAT AS DATETIME) AS Dated,
+    CAST(Day.DATE_FORMAT AS DATE) AS Date,
+    CAST(Day.DATE_FORMAT AS TIME) AS Time,
+    CAST(Day.DATE_FORMAT AS DATETIME) AS Datetime,
+    CAST(Day.DATE_FORMAT AS TIME) AS Time_format,
+    CAST(Day.DATE_FORMAT AS DATETIME) AS Date_format,
+    CAST(Day.DATE_FORMAT AS TIME) AS Time_format,
+    SUM(TotalCharges) / COUNT(*) AS AvgCharges
+    FROM (
+        SELECT CAST('2010-07-04' AS DATETIME) AS DATE_FORMAT,
+        CAST('7:00 PM' AS TIME) AS TIME_FORMAT
+        UNION ALL
+        SELECT CAST('2010-07-04' AS DATETIME) AS DATE_FORMAT,
+        CAST('7:15 PM' AS TIME) AS TIME_FORMAT
+        UNION ALL
+        SELECT CAST('2010-07-04' AS DATETIME) AS DATE_FORMAT,
+        CAST('7:30 PM' AS TIME) AS TIME_FORMAT
+        UNION

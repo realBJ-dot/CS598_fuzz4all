@@ -1,0 +1,22 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS employee ( `EmpID` INT(4) UNSIGNED NOT NULL AUTO_INCREMENT, `EmpName` TEXT NOT NULL, `Designation` TEXT NULL DEFAULT 'Intern', `Salary` DECIMAL(10, 0) UNSIGNED DEFAULT NULL, KEY (`EmpID`));
+USE sampleDB;
+DROP TABLE IF EXISTS employee;
+ 
+USE sampleDB;
+CREATE DATABASE IF NOT EXISTS testDB; USE testDB;
+ALTER DATABASE testDB CHARACTER SET utf8 COLLATE utf8_general_ci;
+CREATE TABLE IF NOT EXISTS users ( `UserID` INT(4) UNSIGNED NOT NULL AUTO_INCREMENT, `UserID` INT(4) UNSIGNED, `Name` TEXT NOT NULL, `Age` INT(4));
+USE testDB;
+INSERT INTO users (UserID, UserID, Name, Age) VALUES (1,1, '<NAME>', 22);
+INSERT INTO users (UserID, UserID, Name, Age) VALUES (2,1, '<NAME>', 25);
+INSERT INTO users (UserID, UserID, Name, Age) VALUES (3,1, '<NAME>', 15);
+INSERT INTO users (UserID, UserID, Name, Age) VALUES (4,1, '<NAME>', 21);
+INSERT INTO users (UserID, UserID, Name, Age) VALUES (5,1, '<NAME>', 44);
+INSERT INTO users (UserID, UserID, Name, Age) VALUES (6,1, '<NAME>', 12);
+INSERT INTO users (UserID, UserID, Name, Age) VALUES (7,1, '<NAME>', 22);
+INSERT INTO users (UserID, UserID, Name, Age) VALUES (8,1, 'Abby', 40);
+INSERT INTO users (UserID, UserID, Name, Age) VALUES (9,1, '<NAME>', 16);
+INSERT INTO users (UserID, UserID, Name, Age) VALUES (10,1, 'Ali', 19);
+INSERT INTO users (UserID, UserID, Name, Age) VALUES (11,1, 'Billy', 16);
+INSERT INTO users (UserID, UserID, Name, Age) VALUES (12,1, '<NAME>', 18);

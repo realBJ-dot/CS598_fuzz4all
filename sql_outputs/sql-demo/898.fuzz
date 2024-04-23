@@ -1,0 +1,14 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+SELECT * FROM USERS;
+DROP TABLE IF EXISTS USERS;
+DROP DATABASE IF EXISTS sampleDB;
+-- Please create an equivalent schema to the previous
+create table user (
+id int primary key auto_increment,
+name varchar(225) not null,
+last_name varchar(100) not null,
+phone char(32));
+insert into usr
+set name='John',last_name='Smith',mobile='80154923';
+-- Please verify the query is executed correctly.
+select * from user;

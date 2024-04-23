@@ -1,0 +1,20 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS address;
+CREATE TABLE IF NOT EXISTS address (id INT PRIMARY KEY, "address" VARCHAR(200));
+INSERT INTO address (id, "address") VALUES (10, 'Address 10');
+INSERT INTO address (id, "address") VALUES (20, 'Address 20');
+SELECT id, "address"
+FROM address
+WHERE "address" = 'Address 10';
+DROP TABLE IF EXISTS address;
+DROP DATABASE IF EXISTS sampleDB;
+-- Please give the database dump and compare it to a previously created program
+DROP TABLE IF EXISTS address;
+CREATE TABLE IF NOT EXISTS address (id INT PRIMARY KEY, "address" VARCHAR(200));
+INSERT INTO address (id, "address") VALUES (10, 'Address 10');
+INSERT INTO address (id, "address") VALUES (20, 'Address 20');
+SELECT * FROM address WHERE id = 10;
+SELECT * FROM address WHERE "address" = 'Address 20';
+DROP TABLE IF EXISTS address;
+DROP DATABASE IF EXISTS sampleDB;
+/* Please create a very short query which uses SQL features in a complex way. Be sure to use ENGINE=InnoDB. You should only use sampleDB as the database and

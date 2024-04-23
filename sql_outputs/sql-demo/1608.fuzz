@@ -1,0 +1,38 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+DROP TABLE IF EXISTS `sampleDB`.`departments`;
+CREATE TABLE `sampleDB`.`departments` (
+	`id` int NOT NULL AUTO_INCREMENT,
+	`departmentName` varchar(30) NOT NULL,
+	PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- Please drop the original table. It should be empty.
+DROP TABLE `sampleDB`.`departments`;
+USE sampleDB;
+-- Please create a simple SELECT... FROM query which uses a JOIN. Be sure to do the join in the correct order.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+DROP TABLE IF EXISTS `sampleDB`.`departments`;
+CREATE TABLE `sampleDB`.`departments` (
+	`id` int NOT NULL AUTO_INCREMENT,
+	`departmentName` varchar(30) NOT NULL,
+	PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO `sampleDB`.`departments` (`id`, departmentName)
+VALUES (-1, 'Not assigned to any department'),
+	   (1, 'IT'),
+	   (2, 'Accounting'),
+	   (3, 'Operations'),
+	   (4, 'Admin');
+
+SELECT `departmentName` FROM `sampleDB`.`departments`;
+
+-- Please create 9 simple queries and perform the following operations:
+-- 1. Create a view `departmentName` that select all records from Department that do not belong to department 3 or 4. 
+-- 2. Create a view `departmentID` which is equal to a column with the 
+-- view departmentName.
+-- 3. Create a view `departmentNameAndID` which is similar to the previous view, the difference being that it is not in the database anymore. Only the records from departmentID would be considered.
+-- 4. Create a view `departmentNameAndID2` which is similar to the previous form but it also includes the name of the department into the record (SELECT `departmentName`, `departmentName AS `departmentNameAndID2Name` FROM `sampleDB`.`departments`).
+-- 5. Execute the query 4 twice and create a report which shows the two sets of results from the first query where ID is not 3 and ID is not 4 as well as the result from the second query.
+-- 6. Execute the query 5 twice and create a report which

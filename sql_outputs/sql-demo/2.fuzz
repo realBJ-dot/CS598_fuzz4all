@@ -1,17 +1,34 @@
-USE sampleDB;
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
 
-USE sampleDb;
-CREATE TABLE test(col1 INT NOT NULL, col2 TEXT);
+
+CREATE TABLE Employee(emp_no INTEGER PRIMARY KEY NOT NULL, first_name TEXT, last_name TEXT, addr_line TEXT);
+
+CREATE TABLE Department(dept_no INTEGER PRIMARY KEY NOT NULL, dept_name TEXT);
+
+CREATE TABLE Position(pos_no INTEGER PRIMARY KEY NOT NULL, title TEXT, salary INTEGER, dept_no INTEGER, FOREIGN KEY(dept_no) REFERENCES Department(dept_no));
  
 
-SELECT * FROM test;
+CREATE TABLE Employee_Position(emp_no INTEGER, dept_no INTEGER, pos_no INTEGER, FOREIGN KEY(emp_no) REFERENCES Employee(emp_no), FOREIGN KEY(dept_no) REFERENCES Department(dept_no), FOREIGN KEY(pos_no) REFERENCES Position(pos_no));
+
  
-```
+SELECT emp_no, first_name, last_name FROM Employee;
+SELECT emp_no, title FROM Position WHERE dept_no = 10;
+SELECT * FROM Employee_Position WHERE emp_no = 22 AND pos_no = 20;
 
-## Further reading:
+ 
+DROP TABLE Employee;
+DROP TABLE Position;
+DROP TABLE Employee_Position;
+DROP TABLE Department;
+DROP DATABASE sampleDB;
 
-* [MySQL Reference Documentation](http: 
+select *
+from emp;
 
-## License
+select *
+from employee;
 
-This book is covered under the Apache License 2.0. See the `LICENSE` file in the source repository.
+SELECT * FROM user
+
+-- MySQL's native support for Unicode is based on the popular MySQL-server library libclient/libclient_mysql.so. See the MySQL database documentation (which you should read too) for details on the library.
+-- You cannot change any data in MySQL and you cannot query it. If you want to change your MySQL data you need to move or copy the data to a new database (that stores your data). 

@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+/CREATE TABLE IF NOT EXISTS users (
+--   userId CHAR(5) NOT NULL,
+--   role CHAR(1) DEFAULT 'a' NOT NULL,
+--   PRIMARY KEY (userId)
+-- );
+DESCRIBE users;
+# Please run the script a second time and verify if users table was properly restored.
+# Please drop the table if you created already.
+DROP TABLE IF EXISTS users;

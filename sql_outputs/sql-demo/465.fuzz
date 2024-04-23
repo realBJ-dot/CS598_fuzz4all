@@ -1,0 +1,61 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS mytable;
+CREATE TABLE IF NOT EXISTS mytable
+(
+        myint INT NOT NULL,
+        CONSTRAINT myint_pk PRIMARY KEY(myint)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+DROP TABLE IF EXISTS mytable;
+CREATE TABLE IF NOT EXISTS mytable
+(
+        myint INT NOT NULL,
+        CONSTRAINT myint_pk PRIMARY KEY(myint)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- In the following program, please implement the query in the same way as the one written in previous generation.
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS mytable;
+CREATE TABLE mytable (
+        myint INT NOT NULL DEFAULT 5466
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+DROP TABLE IF EXISTS mytable;
+CREATE TABLE mytable (
+        myint INT NOT NULL DEFAULT 5466
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- In the following program, please implement the same query in a completely different way.
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS mytable;
+CREATE TABLE mytable (
+        myint INT NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+DROP TABLE IF EXISTS mytable;
+CREATE TABLE mytable (
+        myint INT NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- In the following program, please re-implement the above two queries in a different way.
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS mytable;
+CREATE TABLE mytable (
+        myint INT NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+DROP TABLE IF EXISTS mytable;
+CREATE TABLE IF NOT EXISTS mytable
+(
+        myint INT NOT NULL,
+        CONSTRAINT myint_pk PRIMARY KEY(myint)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+DROP TABLE IF EXISTS mytable;
+CREATE TABLE IF NOT EXISTS mytable
+(
+        myint INT NOT NULL,
+        CONSTRAINT myint_pk PRIMARY KEY(myint)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- If you were to use MySQL for the previous generation, what problems would you encounter?
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS mytable;
+CREATE TABLE mytable (
+        col1 INT DEFAULT NULL,
+        col2 varchar(255)

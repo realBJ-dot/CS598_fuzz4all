@@ -1,0 +1,31 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE user (id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, username VARCHAR(20) UNIQUE,
+password VARCHAR(15) NOT NULL);
+INSERT INTO user (username) VALUES ('admin01');
+-- The next step is to modify the code to reflect the newly created table to reflect what the MySQL engine should look like after the modification.
+DROP TABLE IF EXISTS user;
+CREATE TABLE user (id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, username VARCHAR(20) UNIQUE,
+password VARCHAR(15) NOT NULL);
+-- Modify your code
+-- Add a foreign key to reflect the previous table
+ALTER TABLE user ADD CONSTRAINT FK_user_user PRIMARY KEY(username) REFERENCES sampleDB.user (username);
+-- Insert another row to reflect the added foreign key
+INSERT INTO user (username) VALUES ('admin01');
+
+# The purpose of this exercise is to see the results of the commands above.
+
+-- Please change these two lines to reflect your MySQL version.
+IF EXISTS (SELECT * FROM mysql.connections WHERE user = 'root' AND Host:PORT = 'localhost:MYSQL20XX')
+DROP DATABASE sdb
+CREATE DATABASE sdb
+GRANT ALL PRIVILEGES ON sdb.* to'sampleDB'@'localhost' identified by 'test3'
+
+# Here's your first query which does something useful.
+select user.username from user where user.username='admin01'
+select * from user where user.username = 'admin01'
+-- Use the INSERT statement to insert the second user
+INSERT INTO user (username) VALUES ('admin02');
+-- Use the DELETE statement to remove the second user
+DELETE FROM user WHERE user.username = 'admin02';
+
+# Please complete this exercise without using any complex queries. Be sure to use ENGINE=InnoDB. You should only use sampleDB as the database and assume no other table exist. You need to create new tables to perform operations. In the end, drop all tables you created.

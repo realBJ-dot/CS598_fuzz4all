@@ -1,0 +1,36 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS Student;
+CREATE TABLE Student( First_name char(20), Last_name char(20));
+INSERT INTO Student VALUES ('John', 'Smith');
+INSERT INTO Student VALUES ('Jane', 'Lee');
+INSERT INTO Student VALUES ('Tom', 'Stark');
+DROP DATABASE sampleDB;
+
+* Run the query from your terminal to access the database
+mysql -u root sampleDB
+
+* Check if the table exists by selecting it (or by typing its name).
+mysql> SHOW CREATE TABLE Student;
+```
+```
+mysql> DESCRIBE Student;
++------------+--------------+------+-----+---------+-------+
+| Field      | Type         | Null | Key | Default | Extra |
++------------+--------------+------+-----+---------+-------+
+| First_Name | char(20)     | NO   |     |         |       |
+| Last_Name  | char(20)     | NO   |     |         |       |
+| Grade      | tinyint(1)  | NO   |     |         |       |
+| PRIMARY KEY | PRIMARY KEY  | PRI  |     |         |       |
++------------+--------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+```
+```
+mysql> SHOW INDEX FROM Student;
++--------------+-------+------+-----+---------+----------------+
+| Table_Name   | Non_ unique | Key_name | Seq_in_index | Column_name | Collation |
+|--------------+-------+------+-----+---------+----------------+
+| Student      |         0 | PRIMARY |    1 | First_Name | A                   |
+|--------------+-------+------+-----+---------+----------------+
++--------------+-------+------+-----+---------+----------------+
+5 rows in set (0.00 sec)
+```

@@ -1,0 +1,32 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- Please note that if sampleDB is now connected to MYSQL,
+-- the result of "show create table staff" above will return
+-- a column called "id". If this column does not exist,
+-- please create the "id" column before adding ENGINE=InnoDB to the following.
+ALTER TABLE `staff` ADD id serial PRIMARY KEY AUTO_INCREMENT;
+show create table staff;
+ALTER TABLE `staff` ENGINE=InnoDB;
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ALTER TABLE `staff` ADD id serial PRIMARY KEY AUTO_INCREMENT;
+ALTER TABLE `staff` ENGINE=InnoDB;
+show create table staff;
+DROP TABLE staff;
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `staff`;
+-- This line will WORK since id was indeed a column
+ALTER TABLE `staff` ENGINE=InnoDB;
+show create table staff;
+-- Now you can re-run our query above, which should have returned
+-- the column id instead. Remember I mentioned earlier that ENGINE=InnoDB
+-- was added automatically to our table.
+SELECT * FROM staff;
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+INSERT INTO staff VALUES ("Stefani", "X", "16617");
+show tables;
+ 
+SELECT count(*) as total_staff FROM staff;
+INSERT INTO staff (staffName, staffGrade, staffCode) VALUES ("Stefani", "X", "16617");
+show tables;
+SELECT count(*) as total_staff FROM staff;
+DROP TABLE IF EXISTS `staff`;

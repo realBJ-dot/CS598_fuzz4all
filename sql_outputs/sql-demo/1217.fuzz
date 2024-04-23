@@ -1,0 +1,47 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS users (
+    id            int auto_increment,
+    name          varchar(20) not null,
+    PRIMARY KEY (id)
+);
+INSERT INTO users (id, name)
+VALUES (1, '<NAME>'),
+        (2, '<NAME>'),
+        (3, '<NAME>'),
+        (4, '<NAME>'),
+        (5, '<NAME>'),
+        (6, '<NAME>'),
+        (7, '<NAME>'),
+        (8, '<NAME>'),
+        (9, '<NAME>');
+SELECT
+  name
+FROM users;
+-- Please create a select statement which includes a subquery. In your code, you have to use the same name(s) used for the table created above. Also, be sure to use ENGINE=InnoDB in your code so that new rows/columns are added to the table.
+USE sampleDB;
+CREATE TABLE IF NOT EXISTS salesman (
+    id            int auto_increment,
+    name          varchar(20),
+    PRIMARY KEY (id)
+);
+CREATE TABLE IF NOT EXISTS orders (
+    id            int auto_increment,
+    number        int,
+    date          date,
+    salesman_id   int,
+    PRIMARY KEY (id)
+);
+INSERT INTO salesman (id, name)
+VALUES (1, '<NAME>'),
+        (2, '<NAME>');
+BEGIN;
+    INSERT INTO orders
+        (number, date, salesman_id)
+        SELECT order_number, order_date, salesman_id
+        FROM salesman;
+COMMIT;
+SELECT o.id, o.number, o.date, o.salesman_id
+FROM orders AS o;
+-- As seen in the previous two challenges, please modify the previous query:
+-- SELECT o.id, o.date, o.salesman_id
+-- FROM salesman AS s, orders

@@ -1,0 +1,11 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `sampleDB`.`departments`;
+CREATE TABLE `sampleDB`.`departments` (
+	`id` int(11) NOT NULL auto_increment,
+	department_name varchar(30) NOT NULL,
+	PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+SET FOREIGN_KEY_CHECKS = 1;
+COMMIT;
+*/

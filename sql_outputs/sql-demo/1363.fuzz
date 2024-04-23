@@ -1,0 +1,28 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+INSERT INTO book SELECT *
+FROM bookBook WHERE book_publication_date <= YEAR(2011);
+ALTER TABLE book DROP PRIMARY KEY;
+ALTER TABLE book DROP KEY;
+DROP TABLE book;
+DROP DATABASE sampleDB;
+--Please show the syntax of following queries
+select
+book_title,
+book_price,
+book_isbn
+from
+book
+where book_isbn = "819x1673x25";
+-- Please fill in the blanks. Be sure to use sampleDB.
+create table if not exists Student(
+ student_id INT NOT NULL AUTO_INCREMENT,
+ student_name varchar(50) NOT NULL,
+ student_roll int NOT NULL,
+ student_gender varchar(20) NOT NULL,
+ NOT ENTRY KEY(student_id),
+ constraint fk_student foreign key (student_roll) REFERENCES StudentRoll() ON DELETE CASCADE
+auto_increment=1)
+ENGINE=InnoDB;
+INSERT INTO Student VALUES(1,'<NAME>',2342,'African-American','00');
+INSERT INTO Student VALUES(2,'Hemang',1234,'Asian','01');
+select * from Student;

@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS `books` (
+  `author_id` INT(10) UNSIGNED,
+  `booktitle` VARCHAR(255)
+);
+INSERT INTO `books` (`author_id`, `booktitle`)
+VALUES (1, 'MySQL Bible'), (2, 'PHP for Web Developers'), (3, 'MySQL for Python Developers');
+UPDATE `books` SET `author_id`=1 WHERE `author_id`=3;
+SELECT * FROM `books`;
+DROP TABLE `books`;

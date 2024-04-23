@@ -1,0 +1,18 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+INSERT INTO test1
+(userid, name, age)
+VALUES (1, 'Alice', 23);
+INSERT INTO test2
+(userid, name, age)
+VALUES (1, 'Bob', 23);
+
+UPDATE test1 SET
+name = 'Eve';
+UPDATE test2 SET
+name = 'Eve';
+
+DELETE FROM test2
+WHERE age = -20;
+DROP DATABASE IF EXISTS sampleDB;
+

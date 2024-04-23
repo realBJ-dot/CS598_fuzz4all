@@ -1,0 +1,4 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+update Users_2 set username = "Hulk" where username = "Joker";
+DROP TABLE Users_2;
+EXIT

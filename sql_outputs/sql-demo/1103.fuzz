@@ -1,0 +1,19 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+insert into table1 (column1, column2, column3) values (3, 10, '01 Feb 1985');
+
+-- The data type COLUMN_NAME has a very important and important purpose.
+-- All the numbers are treated as strings. If you decide to use them as integers, there may be a performance penalty.
+-- If you decide to use them as floating point numbers, you should consider the size of your columns. 
+-- As a rule of thumb, the size should be larger or equal to the string representation.
+-- A user may change COLUMN_NAME to the string representation of another value in case he/she needs to work on it. 
+-- For example, when performing the addition of two floating point numbers, the two values may be in the range of the representation.
+-- As a rule of thumb, a user may use the maximum size of the database, the number of characters in the numeric column, and/or the string length column. 
+-- Please find the following picture to have an idea of what the data types look like.
+-- In the picture, you can notice how some data types are converted to strings. 
+-- Some special characters are converted and are written at the start or end of the string.
+
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS table2;
+DROP TABLE IF EXISTS table3;
+DROP TABLE IF EXISTS table1;
+DROP DATABASE IF EXISTS sampleDB;

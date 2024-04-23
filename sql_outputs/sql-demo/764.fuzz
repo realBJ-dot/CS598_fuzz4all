@@ -1,0 +1,9 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS `FirstAndSecondTable` ( `id` INT(11) NOT NULL PRIMARY KEY, `data` VARCHAR(300) CHARACTER SET UTF8);
+COPY `FirstAndSecondTable` ( id, data) FROM '/tmp/FirstAndSecondTable.sql';
+ -- Please change the name of variable TEMP_TABLE to match the name of the temporary table.
+*/
+# Please drop the created tables
+DROP TABLE IF EXISTS `FirstAndSecondTable`;
+DROP DATABASE IF EXISTS sampleDB;
+/

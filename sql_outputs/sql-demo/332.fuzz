@@ -1,0 +1,40 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ 
+CREATE TABLE IF NOT EXISTS book (
+    bookID   INT         NOT NULL AUTO_INCREMENT,
+    bookTitle VARCHAR(30) NOT NULL,
+    PRIMARY KEY   (bookID)
+);
+ 
+
+/* 
+
+Select the number of rows in sampleDB.
+SELECT count(*) FROM sampleDB.book;
+-- This selects the number of rows in the sampleDB.
+Insert a new row in the sampleDB.
+INSERT INTO sampleDB.book(bookTitle)
+VALUES ('Learn MySQL with PHP');
+-- This inserts a new column to the book table in the sampleDB
+SELECT * FROM sampleDB.book;
+-- This should return the following information.
+--     bookID   bookTitle
+INSERT INTO sampleDB.book(bookID, bookTitle) 
+
+VALUES
+( 1, 'Learn MySQL', 
+VALUES (2,'Learn PHP'),
+(3,'Learn Python')
+
+SELECT * FROM sampleDB.book;
+-- This should return the following information.
+--     bookID   bookTitle
+INSERT INTO sampleDB.book(bookID, bookTitle) 
+
+VALUES
+( 1, 'Learn Python', 
+VALUES (2,'Learn MySQL'),
+-- Note, MySQL has an Auto Increment feature!
+VALUES (3,'Learn PHP'),
+-- You should see a new column that holds the number of the inserted row.
+SELECT * FROM sampleDB.book;

@@ -1,96 +1,25 @@
-USE sampleDB;
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users(username char (20) PRIMARY KEY, FirstName VARCHAR(30),Lastname CHAR(20)) ENGINE=InnoDB;
+INSERT INTO Users(username,Firstname,lastname) VALUES('Test','Test','Doe'),('Admin', 'Administrator', 'Admin'),('Guest', 'GUEST', 'doers'),('Super','Superman','Neo'),('Cerian','Muriel','Woodie');
 
--- CREATE new table
-CREATE TABLE IF NOT EXISTS testTable2 (
-	id int,
-	age int,
-	name varchar(50),
-	CONSTRAINT testTable2_ibfk_1 FOREIGN KEY (id) REFERENCES testTable1 (id)
-);
 
-DROP TABLE IF EXISTS testTable1;
 
--- CREATE new table
-CREATE TABLE IF NOT EXISTS testTable1(
-	id int(11) unsigneged NOT NULL auto_increment,
-	name VARCHAR(25),
-	address text,
-	city VARCHAR(25),
-	year VARCHAR(5),
-	primary key(id)
-)
-ENGINE=INNODB;
+INSERT INTO Users(username,Firstname,lastname) VALUES('Cerian', 'Muriel', 'Woodie');
 
--- INSERT records
-INSERT INTO testTable1
-(
-	id,
-	name,
-	address,
-	city,
-	year
-)
-VALUES
-	(
-		1001,
-		"Gaurav",
-		"New Delhi",
-		"Gamli",
-		"2000"	
-	),
-	(
-		1002,
-		"Paul",
-		"Gaurav",
-		"Gamli",
-		"2000"	
-	),
-	(
-		1003,
-		"Maria",
-		"Gaurav",
-		"Gamli",
-		"2000"
-	),
-	(
-		1004,
-		"Maria",
-		"Gaurav",
-		"Gamli",
-		"2000"
-	),
-	(
-		1004,
-		"Maria",
-		"Gaurav",
-		"Gamli",
-		"2000"
-	),
-	(
-		1004,
-		"Maria",
-		"Gaurav",
-		"Gamli",
-		"2000"
-	),
-	(
-		1004,
-		"Maria",
-		"Gaurav",
-		"Gamli",
-		"2000"
-	),
-	(
-		1004,
-		"Maria",
-		"Gaurav",
-		"Gamli",
-		"2000"
-	),
-	(
-		1005,
-		"Paul",
-		"New Delhi",
-		"Bhuj",
-		"2000"
-	);
+INSERT INTO Users(username,Firstname) VALUES('Super','Superman');
+
+CREATE TABLE Users(username char (20) PRIMARY KEY, FirstName VARCHAR(30),Lastname CHAR(20)) ENGINE=InnoDB;
+
+
+
+
+select username,firstname,lastname
+from Users
+where firstname like '%t%';
+
+
+
+
+select username,firstname,lastname
+from Users
+group by Firstname asc,Firstname desc;

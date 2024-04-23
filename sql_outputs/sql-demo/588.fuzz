@@ -1,0 +1,24 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+UPDATE Mutated SET MutatedName = 'Mutated Column';
+
+-- Please create a program which inserts, queries, updates and deletes records in the tables Mutated, Mutated_with_SQL
+
+-- Please create a program that inserts, selects, updates and deletes data in the Mutated table. Your user should be able to add, remove, edit and update
+-- the names of the table and all columns. A user must be able to search for records in the table. The user should be able to add, edit, remove and query in all
+-- the columns the existing records in the table have. A user must be able to create a new column and then add the column, modify and remove it while
+-- modifying the existing records.
+
+<!-- DDL commands please do not remove or change comment, we just need to have the code. It took all my time making --><fim_middle>-- table. Please note that this code was done without using any ORM
+
+-- Please create a program which can insert multiple files with different columns.
+-- As the user can upload more than one file per upload, display the file names and count them. There must be a way to display file size and MIME type of the selected files. There must also be a user that can select all the files present in a directory (directory of all the *.php files must be accessible to the user) or all the php files in a specific directory. A user should be able to drag and drop files in the window or through right click on a selection to rename them. The user should be able to display the names of the files in the dropdown menu. 
+-- As a result, a user should be able to upload a single file through a drop down to view file name, size, and extension.
+-- For users to select a file to upload, they need to know their selected directory.
+</code></pre>
+
+<p>You can find a complete example of code in our <a href='http://www.tutorialspoint.com/mysql/' target="_blank">Tutorialspoint MySQL Tutorial</a>.
+<a href='http://www.tutorialspoint.com/mysql/mysql_insert_insert.htm' target="_blank">Tutorialspoint MySQL Tutorial</a>
+</p>
+
+</body>
+</html>

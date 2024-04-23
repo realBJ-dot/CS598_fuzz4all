@@ -1,0 +1,6 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+INSERT INTO teachers (teacherName,password,teacherCode)
+VALUES
+("Tom",  "Tom", "1T0M-09" ),
+("Marc", "Marc", "1T0M-06" ),
+("Erik", "Erik", "1T0M-07" );

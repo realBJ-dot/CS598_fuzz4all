@@ -1,0 +1,12 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `sampleDB`.`professor`;
+CREATE TABLE `sampleDB`.`professor` (
+	`id` serial NOT NULL AUTO_INCREMENT,
+	`professorName` varchar(30) NOT NULL,
+	`speciality` varchar(30) NOT NULL,
+	`education` varchar(30),
+	`email` varchar(30) NOT NULL,
+	PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+SELECT * FROM `sampleDB`.`teachers` LIMIT 3;
+SHOW DATABASES;

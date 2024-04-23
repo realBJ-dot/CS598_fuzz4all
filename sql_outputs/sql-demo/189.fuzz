@@ -1,0 +1,7 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE Users_3;
+CREATE TABLE Users_3 (user_id INT,name VARCHAR (10)) ENGINE=MYISAM;
+DROP TABLE Customers_2;
+CREATE TABLE Customers_2 (customer_id INT,name VARCHAR (15) NOT NULL UNIQUE,email VARCHAR (255),address1 VARCHAR (200),address2 VARCHAR (50),city VARCHAR (50),state VARCHAR (2),zipcode INT,phone VARCHAR (15),rating INT,date DATETIME,created_at DATETIME DEFAULT NOW());
+DROP TABLE Customers_3;
+CREATE TABLE Customers_3 (customer_id INT,name VARCHAR (15) NOT NULL UNIQUE,email VARCHAR (255),address1 VARCHAR (200),address2 VARCHAR (50),city VARCHAR (50),state VARCHAR (2),zipcode INT,phone VARCHAR (15),rating INT,date DATETIME,created_at DATETIME DEFAULT NOW()) ENGINE=MYISAM;

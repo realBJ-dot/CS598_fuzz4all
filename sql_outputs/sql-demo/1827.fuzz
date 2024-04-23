@@ -1,0 +1,7 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employee;
+ALTER TABLE employee ENGINE=InnoDB;
+-- DROP TABLE employee;
+INSERT INTO employee(name) VALUES ('<NAME>');
+INSERT INTO employee(name) VALUES ('<NAME>');
+DROP DATABASE IF EXISTS sampleDB;

@@ -1,0 +1,6 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users(Id INT NOT NULL, FirstName varchar(128), LastName varchar(128));
+-- INSERT some records
+INSERT INTO Users (FirstName, LastName) VALUES ('John', 'Doe'), ('Joe', 'Bird');
+SELECT * FROM Users;
+DROP DATABASE IF EXISTS sampleDB;

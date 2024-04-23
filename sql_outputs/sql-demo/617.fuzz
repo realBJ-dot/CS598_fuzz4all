@@ -1,0 +1,12 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- First create the mutated table
+DROP TABLE IF EXISTS Mutated;
+CREATE TABLE Mutated (ID INT, Mutated INT);
+-- Now add one value in Mutated INT table
+INSERT INTO Mutated VALUES (1,0);
+-- Now update the Mutated INT
+UPDATE Mutated SET Mutated = 1 WHERE ID = 2;
+-- Now check the Mutated Int
+SELECT Mutated FROM Mutated WHERE ID = 2;
+-- Please use the above query to create a semantically equivalent program to the previous generation using SQL, PHP, Python or JavaScript.
+-- You should only use sampleDB as the database name and assume no other table exist. You need to create new tables to perform operations.

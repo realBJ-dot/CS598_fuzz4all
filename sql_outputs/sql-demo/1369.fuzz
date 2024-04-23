@@ -1,0 +1,11 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ALTER table book ENGINE=MyISAM;
+-- You may use the below mentioned code in mysql command line to query the content of the table.
+SELECT * from book;
+ 
+SELECT b.book_title from `book` b;
+ 
+SELECT * FROM book;
+ 
+DROP TABLE book;
+DROP DATABASE sampleDB;

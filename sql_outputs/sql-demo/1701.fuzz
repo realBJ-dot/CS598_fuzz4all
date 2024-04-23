@@ -1,0 +1,6 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- your mutated code here
+DROP DATABASE IF EXISTS sampleDB;
+# Please create a second mutated program that uses a different table. You need to modify the other table as well.
+# Please create another table that uses a join
+```

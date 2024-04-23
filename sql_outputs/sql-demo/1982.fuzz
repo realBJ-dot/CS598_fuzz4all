@@ -1,0 +1,14 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employee_salary;
+CREATE TABLE employee_salary
+        ( employee_salary DECIMAL )
+        ENGINE=InnoDB;
+INSERT INTO employee_salary
+              ( employee_salary )
+VALUES
+              ( 2012-06-04 );
+UPDATE employee_salary
+       SET employee_salary = employee_salary / 10;
+SELECT employee_salary FROM employee_salary;
+DROP DATABASE IF EXISTS sampleDB;
+#end

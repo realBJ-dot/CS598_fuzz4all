@@ -1,0 +1,11 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS mytable (
+    id            INT(6)  NOT NULL AUTO_INCREMENT,
+    name          VARCHAR(50)                DEFAULT NULL,
+    PRIMARY KEY(id)
+);
+ 
+INSERT INTO mytable (name) VALUES ('Name');
+ 
+ALTER TABLE mytable CHANGE name mystr Mystr, ADD CONSTRAINT a
+FOREIGN KEY (name) REFERENCES mytable (name);

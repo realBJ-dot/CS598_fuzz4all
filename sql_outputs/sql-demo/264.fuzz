@@ -1,0 +1,16 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS `teacher`
+(
+  `teacherID` INT NOT NULL AUTO_INCREMENT, 
+  `first_name` VARCHAR(45) NOT NULL, 
+  `last_name` VARCHAR(45) NOT NULL, 
+  `mailID` VARCHAR(50) NOT NULL
+);
+
+
+
+ 
+SELECT * FROM teacher;
+
+
+

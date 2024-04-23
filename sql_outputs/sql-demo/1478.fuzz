@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ALTER TABLE users_details ADD COLUMN password CHAR(50) AFTER password;
+ALTER TABLE users_details MODIFY COLUMN user_id INTEGER NOT NULL;
+ALTER TABLE users_details MODIFY COLUMN phone TEXT UNIQUE;
+ALTER TABLE users_details MODIFY COLUMN age INT;
+SHOW CREATE TABLE users_details;
+-- Please create a query that returns all persons which is of given age (20 for instance)
+SHOW CREATE TABLE users_details WHERE age = 20; ALTER TABLE users_details DROP COLUMN password; ALTER TABLE users_details DROP COLUMN user_id; 
+-- Please create such a query that returns person's name and age
+SHOW CREATE TABLE users_details AS s WHERE 20 > s.age; SHOW CREATE TABLE users_details WITH READONLY; SHOW CREATE TABLE users_details DESC;ALTER TABLE users_details DROP COLUMN password; ALTER TABLE users_details DROP COLUMN user_id;

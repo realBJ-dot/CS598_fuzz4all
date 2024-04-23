@@ -1,0 +1,14 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS user;
+CREATE TABLE IF NOT EXISTS user (id INT PRIMARY KEY, "name" VARCHAR(200), balance INT);
+INSERT INTO user (id, "name", balance) VALUES (10, 'John', 1000);
+INSERT INTO user (id, "name", balance) VALUES (20, 'Paul', 1000);
+SELECT id, "name", balance
+FROM user WHERE balance = 1000;
+UPDATE user SET balance = balance + 50 WHERE id = 20;
+UPDATE user SET balance = balance - 100 WHERE id = 10;
+UPDATE user SET balance = balance * 2 WHERE id > 10;
+UPDATE user SET balance = balance / 5 WHERE balance < 200;
+DROP TABLE IF EXISTS user;
+DROP DATABASE IF EXISTS sampleDB;
+-- Please give the database dump and compare it to a previously created program

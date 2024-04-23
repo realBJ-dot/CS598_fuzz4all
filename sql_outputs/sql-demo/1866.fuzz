@@ -1,0 +1,43 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE contacts
+(
+  id INT UNSIGNED PRIMARY KEY NOT NULL,
+  first_name varchar(20),
+  last_name varchar(20),
+  address varchar(20)
+);
+CREATE TABLE jobs
+(
+  id INT UNSIGNED PRIMARY KEY NOT NULL,
+  name varchar(20)
+);
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE employees (
+id INT UNSIGNED PRIMARY KEY NOT NULL,
+name VARCHAR (50) NOT NULL,
+job_history CHAR (20)
+);
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE jobs (
+id INT UNSIGNED PRIMARY KEY NOT NULL,
+name VARCHAR (50)
+);
+DROP TABLE IF EXISTS jobs;
+DROP TABLE IF EXISTS company_info;
+CREATE TABLE company_info
+(
+  id INT UNSIGNED PRIMARY KEY NOT NULL,
+  company_name varchar (50) NOT NULL,
+  address1 varchar (50),
+  address2 varchar (50),
+  city char (50),
+  country char (50),
+  phone_number char (8)
+);
+
+DELETE FROM company_info;
+INSERT INTO company_info VALUES 
+('ACME Co., Ltd.','125 Riverside Parkway','Houston','TX', 'USA', '972352-2087'),
+('ACME Co., Ltd.','125 Riverside Parkway','Housston','TX', 'USA', '97575-2087');
+SELECT * FROM employees;
+DROP DATABASE sampleDB;

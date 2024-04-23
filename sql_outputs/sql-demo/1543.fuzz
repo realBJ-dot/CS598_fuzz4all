@@ -1,0 +1,5 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP DATABASE sampleDB;
+```
+
+[MySQL tutorial](https: 

@@ -1,0 +1,15 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Contacts
+(
+    Contact_id INT NOT NULL AUTO_INCREMENT,
+    first_name TEXT,
+    last_name TEXT,
+    first_message TEXT,
+    second_message TEXT,
+    third_message TEXT,
+    date_creation DATETIME,
+    date_modified DATETIME,
+    FOREIGN KEY (User_id) REFERENCES Users (User_id) ON UPDATE CASCADE,
+    PRIMARY KEY (Contact_id)
+);
+DROP DATABASE IF EXISTS sampleDB;

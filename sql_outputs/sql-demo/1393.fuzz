@@ -1,0 +1,4 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP DATABASE IF EXISTS sampleDB;
+
+UPDATE DATABASE SET version = '5.5.10' WHERE name ='sampleDB';

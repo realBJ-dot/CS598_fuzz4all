@@ -1,0 +1,15 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS users (
+    id                int auto_increment,
+    first_name        varchar(30) not null,
+    last_name         varchar(30) not null,
+    balance           decimal(11, 2) not null,
+    PRIMARY KEY (id)
+);
+SELECT COUNT(*) FROM ENGINE=InnoDB;
+CALL alter_table();
+SELECT COUNT(*) FROM ENGINE=InnoDB;
+CALL alter_table();
+SELECT COUNT(*) FROM ENGINE=InnoDB;
+DROP TABLE user_account;
+DROP DATABASE IF EXISTS sampleDB;

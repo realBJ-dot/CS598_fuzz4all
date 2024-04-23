@@ -1,0 +1,35 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+CREATE TABLE IF NOT EXISTS users(
+	userId INT NOT NULL PRIMARY KEY,
+	name VARCHAR(30) DEFAULT 'root'
+); 
+ALTER TABLE user ADD FULLTEXT INDEX fulltext_idx (name);
+-- Please create two very similar but otherwise unequal programs. One should use FULLTEXT FULL and the other should NOT use FULLTEXT FULL at all and only use FULLTEXT INDEX in that case. Be careful in the second case because it has some drawbacks:
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS users(
+	userId INT NOT NULL PRIMARY KEY,
+	name VARCHAR(30) DEFAULT 'root'
+);
+USE sampleDB;
+ALTER TABLE user ADD FULLTEXT INDEX fulltext_idx (name);
+-- Please create a program that will:
+- Get all databases created by SELECT * FROM information_schema.tables WHERE TABLE_SCHEMA='sampleDB';
+- Get all tables created by selecting * from information_schema.tables WHERE TABLE_SCHEMA='sampleDB';
+- Get the contents of one of the tables with a WHERE clause WHERE table_name='users';
+
+-- Please note that it is not allowed to use a view outside a table.
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS users(
+	userId INT NOT NULL PRIMARY KEY,
+	name VARCHAR(10) DEFAULT 'root',
+	password VARCHAR(720)
+);
+
+CREATE VIEW users_view AS 
+	SELECT * FROM sampleDB.users;
+SELECT * FROM users_view;
+
+SELECT * FROM sampleDB.users WHERE name='root';
+-- Please use fulltext in any situation where the text is very complex to search. In this case, search is

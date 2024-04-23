@@ -1,0 +1,16 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE users;
+
+-- MySQL is an open-source relational database management system (RDBMS) that allows users to create, modify and extract data from a structured relational database using the Structured Query Language (SQL). It works harmoniously with an operating system to structure and manage a relational database, control user access, and execute other tasks like network access and testing database integrity.
+ 
+The official documentation that MySQL can be used with is located here:
+[https: 
+
+For more details about Oracle, please check out the official Oracle website:
+[https: 
+
+For more details on how to compile & run MySQL, please refer to this documentation:
+[http: 
+
+For more details about MySQL, Ionic, and Ionic Framework, please go to:
+[http: 

@@ -1,0 +1,52 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS users;
+DROP DATABASE sampleDB;
+-- End of test cases
+
+-- Please use the test case below to verify the results of your program. Do not modify the program in any way.
+USE mysql_sampleDB;
+SET @username = 'barty';
+SET @pwd = '<PASSWORD>';
+SELECT IF(EXISTS(INSERT INTO users (user_name, user_pwd) VALUES (@username, @pwd)),
+"The user exists in table", "The user doesn't exist in table");
+-- End of program verify
+
+USE mysql_sampleDB;
+
+--Please use the following query to verify if the database exists
+SELECT DB.NAME, TABLE_NAME FROM information_schema.tables WHERE TABLE_SCHEMA='mysql_sampleDB';
+
+-- Please run the following query and write an explanation for each question.
+CREATE TABLE IF NOT EXISTS testTable (
+	myid INT AUTO_INCREMENT PRIMARY KEY,
+	myDescription VARCHAR(1024),
+	lastUpdated DATETIME,
+	lastUserUpdated DATETIME
+);
+
+CREATE TABLE IF NOT EXISTS testChild table (
+	c_id INT AUTO_INCREMENT PRIMARY KEY,
+	c_desc VARCHAR(1024),
+	parent_id INTEGER,
+	CONSTRAINT fkTest_Parent
+	FOREIGN KEY (parent_id)
+	REFERENCES testTable(myid)
+);
+
+SELECT * FROM testTable;
+
+DELETE FROM testChild WHERE c_id LIKE '1%';
+
+-- Please run the following command and modify your query if necessary.
+SELECT COUNT(*) FROM testChild WHERE parent_id = (SELECT myid FROM testTable WHERE myDescription = '2');
+
+-- Please ask Barty create the following commands, then describe the output produced.
+-- SELECT myid FROM testTable WHERE myDescription = '2';
+-- INSERT INTO testChild (parent_id, c_desc) VALUES(2, 'barty');
+-- SHOW TABLE STATUS LIKE 'testChild';
+SELECT CATEGORY,SUM(price) AS AMOUNT FROM ORDERS
+GROUP BY CATEGORY
+ORDER BY AMOUNT DESC
+LIMIT 2;
+
+select * from user where user_pwd = 'b';

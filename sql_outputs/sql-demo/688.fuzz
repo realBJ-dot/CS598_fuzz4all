@@ -1,0 +1,33 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS Student;
+DROP TABLE IF EXISTS Subject;
+CREATE TABLE Student (
+  First_Name VARCHAR(20), Last_Name CHAR(20), Grade INT, Primary Key (First_Name, Last_Name)
+);
+CREATE TABLE Subject (
+  Subject_Id INT NOT NULL primary key auto_increment,
+  Name VARCHAR(20) UNIQUE,
+  FOREIGN KEY (Subject_Id) REFERENCES Student (Subject_Id)
+);
+INSERT INTO Subject (Name) VALUES ('Physics');
+INSERT INTO Subject (Name) VALUES ('Chemistry');
+INSERT INTO Student (First_Name,Last_Name, Class) VALUES ('Drew','Stark', 'Physics');
+INSERT INTO Student (First_Name,Last_Name, Class) VALUES ('Jhon','Hill', 'Physics');
+INSERT INTO Student (First_Name,Last_Name, Class) VALUES ('Jim','Miller', 'Physics');
+INSERT INTO Student (First_Name,Last_Name, Class) VALUES ('Albert','Einstein', 'Physics');
+INSERT INTO Student (First_Name,Last_Name, Class) VALUES ('Charlie','Bender','Physics');
+Insert into Subject (Name) values ('Engineering');
+Insert into Subject (Name) values ('Social Studies');
+Insert into Subject (Name) values ('Business');
+Insert into Subject (Name) values ('Engineering');
+Insert into Subject (Name) values ('Business');
+Insert into Student (First_Name,Last_Name, Class) values ('Mark','Spencer', 'Engineering');
+Insert into Student (First_Name, Last_Name, Class) values ('Billy', 'Harrison', 'Engineering');
+Insert into Student (First_Name, Last_Name,Class) values ('Sue', 'Green', 'Engineering');
+Insert into Student (First_Name, Last_Name,Class) values ('Sara', 'Johnson', 'Engineering');
+Insert into Student (First_Name, Last_Name,Class) values ('Kevin', 'Stark', 'Engineering');
+Insert into Subject (Name) values ('Biology');
+Insert into Subject (Name) values ('Politics');
+Insert into Subject (Name) values ('Physics');
+Insert into Subject (Name) values ('Engineering');
+Insert into

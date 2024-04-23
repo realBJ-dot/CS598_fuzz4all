@@ -1,0 +1,13 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS Student_1;
+CREATE TABLE Student_1 (First_Name VARCHAR(20), Last_Name CHAR(20), Grade INT);
+INSERT INTO Student_1 (First_Name, Last_Name, Grade) VALUES ('John', 'Smith', 8);
+INSERT INTO Student_1 (First_Name, Last_Name, Grade) VALUES ('Tom', 'Stark', 5);
+ALTER TABLE Student_1 CHANGE First_Name First_Name VARCHAR(20);
+ALTER TABLE Student_1 CHANGE Last_Name Last_Name CHAR(20);
+ALTER TABLE Student_1 ADD PRIMARY KEY (First_Name, Last_Name);
+ALTER TABLE Student_1 ADD CONSTRAINT stu_fname UNIQUE (First_Name);
+ALTER TABLE Student_1 ADD CONSTRAINT stu_lname UNIQUE (Last_Name);
+-- INSERT INTO Student (first_name, last_name, grade) VALUES ('John', 'Smith', 5);
+ALTER TABLE Student ADD CONSTRAINT stu_grade_gt_5 primary key (First_Name, Last_Name, Grade)
+ALTER TABLE Student ADD CONSTRAINT stu_grade_lt_5_desc primary key (First_Name, Last_Name, Grade)

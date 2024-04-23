@@ -1,0 +1,28 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employees;
+CREATE TABLE employees
+(
+  id INT UNSIGNED PRIMARY KEY NOT NULL,
+  name char (50) NOT NULL,
+  last_name char (50),
+  job char (50),
+  department char (50)
+);
+UPDATE employees
+SET last_name = 'Yang', department = 'Engineering'
+WHERE id = 8;
+UPDATE employees
+SET last_name = 'Shou'
+WHERE id = 2 AND job = 'Engineer';
+-- Write CREATE TABLE statement for a database which has data of the form employee-id:first-name:last-name:job:department.
+-- After querying the database, list the contents (displaying employees' ID, FIRST NAME, LAST NAME, JOB, DEPARTMENT)
+
+ 
+ 
+ 
+ 
+ 
+
+/* create a table with key=id, value=name
+create a table with key=id, value=name
+create a table with key=code, value=

@@ -1,0 +1,23 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+INSERT INTO employees(firstname, lastname, salary) VALUES ("John-Smith", "Doe", 98765),
+    ("Jane", "Doe", 1000),
+    ("Mary-Smith", "Smith", 57654),
+    ("David", "Williams", 42424);
+ 
+CREATE TABLE IF NOT EXISTS employees (
+  emp_no int, 
+  first_name varchar(13), 
+  last_name varchar(13),
+  gender char(1), 
+  hire_date date, 
+  sal_date date);
+INSERT INTO employees (emp_no, first_name, last_name, gender, hire_date, sal_date) VALUES (1111, "Glenn", "Bacon", "M", '2000-07-28', '2002-04-01');
+INSERT INTO employees
+  (emp_no, first_name, last_name, gender, hire_date, sal_date)
+  VALUES (2112, "Tina", "Williams", "F", '2002-10-22', '1998-07-07'),
+    (1113, "Lance", "Jones", "M", '2002-12-01', '1995-07-03'),
+    (1114, "Nancy", "Bacon", "F", '2003-03-01', '2001-08-01'),
+    (1212, "John", "Smith", "M", '2003-11-24', '2000-01-01'),
+    (2213, "Marian", "Miller", "F", '2004-01-22', '2003-07-12'),
+    (1213, "Susan", "Jones", "F", '2004-04-18', '2005-07-13')
+    INTO employees(emp_no, first_name, last_name, gender, hire_date, sal_date);

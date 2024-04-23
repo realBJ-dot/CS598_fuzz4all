@@ -1,0 +1,44 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP DATABASE IF EXISTS sampleDB;
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP DATABASE IF EXISTS sampleDB;
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP DATABASE IF EXISTS sampleDB;
+
+CREATE TABLE IF NOT EXISTS `books`;
+INSERT INTO `books` (`AuthorID`, `Booktitle`)
+VALUES (5, '<NAME>!');
+
+select id, name from category LIMIT 10;
+select name from category LIMIT 10;
+
+SELECT *
+FROM `books`
+WHERE `AuthorID` IN (5, 10);
+
+UPDATE `books`
+SET `Booktitle` = 'The Hitchhiker\'s Guide to the Galaxy'
+WHERE `Booktitle` = 'Go MySQL!';
+
+delete from `books`;
+
+select * from books;
+create table `categories`(
+    `id` INT
+    AUTO_INCREMENT,
+    `name` VARCHAR(30)
+    UNIQUE NOT NULL
+)ENGINE = InnoDB DEFAULT CHARSET=utf8;
+
+insert into categories
+(id, name)
+values (1,'Programming Languages'),
+(2,'Data Types'),
+(3,'Functions and Procedures'),
+(4,'Tables and Indexes'),
+(5,'Joins');
+
+select * from `categories`;
+
+show columns from `books`;
+

@@ -1,0 +1,13 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `sampleDB`.`cars`;
+CREATE TABLE IF NOT EXISTS `sampleDB`.`cars` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `Make` varchar(20) NOT NULL,
+  `Model` varchar(10) NOT NULL,
+  `Color` varchar(8) NOT NULL,
+  `Price` float NOT NULL,
+  `Year` int NOT NULL,
+  `Owner` varchar(16),
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `cars_Make_Model_Color` (`Make`,`Model`,`Color`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

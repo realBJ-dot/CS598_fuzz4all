@@ -1,0 +1,43 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS users_details(
+  `userId` int(5) NOT NULL AUTO_INCREMENT,
+  `userName` varchar(20),
+  `pwd` varchar(30),
+  `firstName` varchar(20),
+  `LastName` varchar(50),
+  `userType` int(1),
+  `isAdmin` bit(1),
+  `created_at` date,
+  `updated_at` date, 
+  PRIMARY KEY (`userId`)
+);
+
+
+-- You will have to provide queries (Create Table and DML in one query)
+
+-- Now create a table to track the amount of products purchased
+CREATE TABLE IF NOT EXISTS usersPurchases(
+  `userName` varchar(20) NOT NULL,
+  `productName` varchar(100) NOT NULL,
+  `quantity` int(6) NOT NULL,
+  `amount` decimal(12,2) NOT NULL,
+  `transactionId` varchar(30) NOT NULL,
+  PRIMARY KEY (`userName`, `productName`),
+  INDEX productIndex (productName)
+);
+
+-- Now create a table to create the purchase orders and hold the details of the products ordered
+CREATE TABLE IF NOT EXISTS purchaseTable(
+  `purchaseId` int(3) NOT NULL AUTO_INCREMENT,
+  `transactionId` varchar(30) NOT NULL,  
+  `userName` varchar(20),
+  `productName` varchar(100),
+  `quantity` int(6),
+  `price` float,
+  `date` date,
+  PRIMARY KEY (`purchaseId`)
+);
+--  -- Let's create a table tracking the stock available
+CREATE TABLE IF NOT EXISTS stockTable(
+  `stockId` int(3) NOT NULL AUTO_INCREMENT,
+  `productId

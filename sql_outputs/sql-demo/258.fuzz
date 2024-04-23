@@ -1,0 +1,7 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS `student` (
+  `studentID` INT NOT NULL AUTO_INCREMENT, 
+    `studentName` VARCHAR(30) NOT NULL, 
+    `courseID` INT, 
+        PRIMARY KEY (`studentID`, `courseID`), 
+    FOREIGN KEY (`studentID`, `courseID`) REFERENCES `student` (`studentID`));

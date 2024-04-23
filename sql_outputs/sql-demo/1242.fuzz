@@ -1,0 +1,11 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+SELECT userId, role FROM users WHERE role = 'a'; 
+mysql> select role from users where userid='b';
+ERROR 1139 (22007): Incorrect table name '(null)'. You have an error in your SQL syntax; check the manual to figure out what you meant.
+
+SELECT userId, role FROM users WHERE role = 'a';
+-- Select all column names of users table
+
+SELECT DISTINCT userId, role FROM users;
+-- Delete all rows from users table
+DROP DATABASE sampleDB;

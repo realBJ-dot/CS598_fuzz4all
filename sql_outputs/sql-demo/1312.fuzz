@@ -1,0 +1,11 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS category(cat_id INT, cat_name text);
+UPDATE category c set c.cat_name = cat_name;
+REPLACE category c2(cat_id INT, cat_name text);
+```
+
+## **The End**
+
+Happy Programming :-)
+
+---

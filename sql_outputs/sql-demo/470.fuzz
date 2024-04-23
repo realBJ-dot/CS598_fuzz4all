@@ -1,0 +1,7 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+CREATE TABLE mytable (
+    mytext text NOT NULL UNIQUE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+ 
+DROP TABLE IF EXISTS sampleDB.user; DROP TABLE IF EXISTS sampleDB.userlog; DROP TABLE IF EXISTS sampleDB.post; DROP TABLE IF EXISTS sampleDB.postlog;

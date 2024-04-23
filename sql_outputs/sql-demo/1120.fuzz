@@ -1,0 +1,9 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+create table table1 (
+col1 INTEGER AUTO_INCREMENT PRIMARY KEY,
+col2 CHAR(100) NOT NULL UNIQUE,
+col3 MEDIUMTEXT DEFAULT NULL,
+col4 MEDIUMBLOB DEFAULT NULL
+);
+insert into table1 values(0,'column 1',0x12,0x2321);
+select * from table1;

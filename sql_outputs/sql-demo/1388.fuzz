@@ -1,0 +1,43 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS book(
+ book_id INT NOT NULL AUTO_INCREMENT,
+ book_title text NOT NULL,
+ book_isbn INT NOT NULL,
+ book_publication_date text NOT NULL,
+ book_price INT NOT NULL,
+ CONSTRAINT book_pk PRIMARY KEY(book_id)
+);
+ALTER TABLE book MODIFY book_id INT FIRST;
+CREATE INDEX book_text ON book(book_title(6));
+ALTER TABLE book ENGINE=MyISAM;
+SELECT * FROM book, book WHERE book.book_isbn=book.book_isbn AND book.book_isbn=2013119565;
+SELECT * FROM book WHERE book.book_publication_date like %10:00;
+SELECT * FROM book WHERE book.book_publication_date > '20:00 03/31/1999' AND book.book_publication_date < '2018-12-30' AND book.book_price < 49999.99;
+DROP DATABASE sampleDB;
+-- Please create a query similar to the first generation to query a table named book like that in SQLite that queries the contents in the previous database. You should query the book table from the sampleDB database and sort the records in ascending order based on the book title. */
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS test1(
+ id INT NOT NULL AUTO_INCREMENT,
+ name text NOT NULL,
+ email text NOT NULL,
+ address text NOT NULL,
+ phone text NOT NULL,
+ CONSTRAINT test1_pk PRIMARY KEY(id)
+);
+ALTER TABLE test1 MODIFY id INT FIRST;
+CREATE INDEX uk_test1 ON test1(email(3));
+ALTER TABLE test1 ENGINE=MyISAM;
+DROP TABLE test1;
+DROP DATABASE sampleDB;
+-- Please create an efficient query similar to the previous. */
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE test1;
+CREATE TABLE IF NOT EXISTS user(
+ userid INT NOT NULL AUTO_INCREMENT,
+ firstname text NOT NULL,
+ lastname text NOT NULL,
+ address text NOT NULL,
+ email text NOT NULL,
+ phone text NOT NULL,
+ gender text NOT NULL,
+ CONSTRAINT user_pk PRIMARY

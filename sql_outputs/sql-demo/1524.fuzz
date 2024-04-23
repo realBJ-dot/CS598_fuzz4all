@@ -1,0 +1,31 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE users;
+CREATE TABLE users(id INTEGER, fname VARCHAR(50), lname VARCHAR(50), user_type INTEGER);
+INSERT INTO users (id, fname, lname, user_type) VALUES (20, 'Sanket', 'Sharma', 1);
+DROP TABLE users;
+ 
+SELECT id, fname, lname FROM users WHERE id BETWEEN 10 AND 20;
+
+-- Please complete code by showing the result.
+SELECT id, fname, lname FROM users WHERE id BETWEEN 10 AND 20;
+CREATE TABLE IF NOT EXISTS users(username varchar(10), password varchar(20));
+USE sampleDB;
+-- If the table "user" doesn't exist, create it with the fields username and password of type varchar(10) and password(20).
+SELECT id, fname, lname FROM users WHERE id BETWEEN 10 AND 20;
+
+-- If the table "user" exists, create a user whose ID is 30. Give the user password "<PASSWORD>" and password "password".
+SELECT id, fname, lname FROM users WHERE id BETWEEN 10 AND 20;
+DROP TABLE IF EXISTS users;
+CREATE TABLE users(username varchar(10), password varchar(20));
+USE sampleDB;
+-- If the table "user" exists, change its password from "password" to "<PASSWORD>". Give the user ID 30 and password "<PASSWORD>".
+SELECT id, fname, lname FROM users WHERE id BETWEEN 10 AND 20;
+DROP TABLE IF EXISTS users;
+CREATE TABLE users(username varchar(10), password varchar(20));
+USE sampleDB;
+-- If the table "user" exists, give the user ID 40 password "<PASSWORD>".
+SELECT id, fname, lname FROM users WHERE id BETWEEN 10 AND 20;
+DROP TABLE IF EXISTS users;
+CREATE TABLE users(id INT, password LARGEVARY);
+USE sampleDB;
+-- In the table "users", create a new data in the field password by giving it a longer string

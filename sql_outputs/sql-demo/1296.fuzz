@@ -1,0 +1,49 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS UsersPermissions;
+CREATE TABLE IF NOT EXISTS UsersPermissions(
+	roleId INT NOT NULL,
+	userId INT NOT NULL,
+	CONSTRAINT fk_roleId FOREIGN KEY(roleId) REFERENCES users(userId) ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT fk_userId FOREIGN KEY(userId) REFERENCES users(userId) ON DELETE CASCADE ON UPDATE CASCADE,
+	PRIMARY KEY(roleId, userId)
+);
+DESCRIBE sampleDB.UsersPermissions;
+
+CREATE TABLE IF NOT EXISTS Products(
+	productId INT AUTO_INCREMENT NOT NULL,
+	productCategoryId INT NOT NULL,
+	productName VARCHAR(200) NOT NULL,
+	price DOUBLE DEFAULT NULL,
+	productCode VARCHAR(50) NULL,
+	CONSTRAINT fk_productCategoryId FOREIGN KEY(productCategoryId) REFERENCES ProductsCategories(productCategoryId) ON DELETE CASCADE ON UPDATE CASCADE,
+	PRIMARY KEY(productId)
+);
+DESCRIBE Products;
+CREATE TABLE IF NOT EXISTS ProductsCategories(
+	productCategoryId INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+	productCategoryIdName VARCHAR(50) NULL
+);
+DESCRIBE Products;
+-- Please create a program which creates new records in a table that is named SalesOrders. You should include 3 columns in the new table. Use auto-incremented integer.
+
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS SalesOrders(
+	salesOrderId INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+	salesOrderNumber CHAR(12) NOT NULL,
+	customerName VARCHAR(50),
+	customerAddress VARCHAR(50),
+	paymentAmount DOUBLE DEFAULT NULL,
+	orderStatus INT DEFAULT 1
+);
+DESCRIBE SalesOrders;
+DESCRIBE ProductsCategories;
+
+-- Please create a sample table that has the following columns: product_id, product_category_id, description and cost.
+
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS ProductTableWithConstraints(
+	productID INT NOT NULL,
+	productCategoryId INT NOT NULL,
+	productDescription VARCHAR(50) NOT NULL,
+	productCost DOUBLE DEFAULT NULL,
+	CONSTRAINT fk_categoryId FOREIGN KEY(productCategoryId)

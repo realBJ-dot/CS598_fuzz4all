@@ -1,0 +1,16 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+INSERT INTO `pro_table` (`category_name`, `sub_category_name`) VALUES ('Crocodiles', 'Frogs');
+ALTER TABLE `products` ADD `description` varchar(1024) AFTER `cost`; ALTER TABLE `pro_table` DROP COLUMN `category_name`; ALTER TABLE `products` MODIFY COLUMN `category_name` varchar(1024) NOT NULL;
+SELECT `products`.*, `pro_table`.`category_name`,`pro_table`.`sub_category_name`
+FROM `products`
+LEFT JOIN `pro_table` ON `pro_table`.`category_name` = `products`.`category_name`;
+-- Please create a mutated program that uses all available data from the 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+SELECT ROWID, `name`, `cost`,`category_name`,`sub_category_name`,`description`
+FROM `products`;
+DROP TABLE `products`;
+DROP TABLE `pro_table`;
+ALTER DATABASE sampleDB;
+
+ 
+

@@ -1,0 +1,27 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS person_tmp;
+CREATE TABLE person_tmp (id INT PRIMARY KEY, name VARCHAR(200), age INT);
+INSERT INTO person_tmp (id, name, age) VALUES(3, '<NAME>', 28);
+INSERT INTO person_tmp (id, name, age) VALUES(4, '<NAME>', 22);
+DROP TABLE IF EXISTS person_tmp;
+DROP DATABASE IF EXISTS sampleDB;
+INSERT INTO person_tmp (id, name, age) VALUES(3, '<NAME>', 26);
+INSERT INTO person_tmp (id, name, age) VALUES(5, '<NAME>', 23);
+DROP DATABASE IF EXISTS database;
+ 
+CREATE DATABASE IF NOT EXISTS database; USE database;
+DROP TABLE IF EXISTS person_tmp;
+CREATE TABLE person_tmp (id INT PRIMARY KEY, name VARCHAR(100), age INT);
+DROP TABLE IF EXISTS person_tmp;
+DROP DATABASE IF EXISTS database;
+INSERT INTO person_tmp (id, name, age) VALUES(999, 'Kalle', 33);
+INSERT INTO person_tmp (id, name, age) VALUES(888, 'Gina', 22);
+DROP TABLE IF EXISTS person_tmp;
+DROP DATABASE IF EXISTS database;
+ 
+CREATE DATABASE IF NOT EXISTS database; USE database;
+DROP TABLE IF EXISTS person_tmp;
+CREATE TABLE person_tmp (id INT PRIMARY KEY, name VARCHAR(200), age INT);
+INSERT INTO person_tmp (id, name, age) VALUES(999, 'Meier', 33);
+DROP TABLE IF EXISTS person_tmp;
+DROP DATABASE IF EXISTS database;

@@ -1,0 +1,23 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS employees_salary_by_salary (
+    employee_salary	INT UNSIGNED, 
+    emp_salary		INT UNSIGNED,
+    PRIMARY KEY (employee_salary, emp_salary));
+UPDATE employees_salary_by_salary SET emp_salary = emp_salary + 6000;
+SELECT (SELECT COUNT(*) FROM employees_salary_by_salary WHERE employee_salary=emp_salary);
+-- Please create a valid program for updating a column in a table without changing its value
+DROP TABLE IF EXISTS people;
+CREATE TABLE people (
+    person_id	INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    person_name CHAR(30) NOT NULL UNIQUE
+);
+
+select * from people where person_name = 'Joe' update people set person_name = 'Joe - Updated' where person_id = 1;
+select * from people where person_id = 1;
+-- Please create a valid program to add a FOREIGN KEY
+DROP DATABASE IF EXISTS p1; USE p1;
+CREATE TABLE IF NOT EXISTS users (user_id	INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, user_name CHAR(30) UNIQUE, password CHAR(30), foreign key(user_name) references users(user_name));<commit_msg>Updated MySQL exercise notes<commit_after>-- MySQL is an open-source relational database management system (RDBMS) that allows users to create, modify and extract data from a structured relational database using the Structured Query Language (SQL). It works harmoniously with an operating system to structure and manage a relational database, control user access, and execute other tasks like network access and testing database integrity.
+
+MySQL, named after co-founder Michael Widenius's daughter, My, and SQL, is widely used with other programs to implement applications that require database functionality. It serves as an element of the LAMP web application software stack, where LAMP stands for Linux, Apache, MySQL, Perl/PHP/Python, and is used in many database-driven web applications and popular websites such as Facebook and YouTube.
+
+Written in C and C++, MySQL supports a variety of system platforms from Linux, macOS, Microsoft Windows to even

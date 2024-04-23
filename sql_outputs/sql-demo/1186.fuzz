@@ -1,0 +1,4 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+SELECT * FROM users;
+DROP DATABASE sampleDB;

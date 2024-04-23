@@ -1,31 +1,4 @@
-USE sampleDB;
--- BEGIN OF Q2
--- INSERT INTO table0 (name, phone) VALUES ('Vivien', '+4915052650005');
-INSERT INTO table0 (name, phone) VALUES ('Vivien', '+4915052650005');
--- END OF Q2
--- BEGIN OF Q3
--- SELECT * FROM table0 WHERE name='Vivien';
-SELECT * FROM table0 WHERE name='Vivien';
--- END OF Q3
--- BEGIN OF Q4
-SELECT * FROM table0 ORDER BY name;
--- END OF Q4
--- BEGIN OF Q5
--- EXCLUSIVE MODE
- 
-COMMIT;
- 
-
-
--- END OF Q3
--- BEGIN OF Q4
-SELECT DISTINCT name FROM table0 ORDER BY name;
--- END OF Q4
--- BEGIN OF Q5
--- Exclusive
- 
-ROLLBACK;
- 
-
--- END OF Q2
--- BEGIN OF Q1
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users(username char(20) PRIMARY KEY, FirstName VARCHAR(30)) ENGINE=InnoDB;
+INSERT INTO Users(username, FirstName) VALUES ('Super', 'Super'), ('Test', 'Test'), ('Admin', 'Admin'), ('Guest', 'Guest');
+-- Please create a very short query which uses SQL features in a complex way. Be sure to use ENGINE=InnoDB. You should only use sampleDB as the database and assume no other table exist. You need to create new tables to perform operations. In the end, drop all tables you created. 

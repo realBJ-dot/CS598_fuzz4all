@@ -1,0 +1,17 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Department (ID INT PRIMARY KEY, DEPARTMENT_NAME VARCHAR(50), DEPARTMENT_LOC VARCHAR(50));
+
+DROP TABLE Student; DROP TABLE Department; use sampleDB;
+
+
+*-- Install MySQl on Ubuntu
+```bash
+sudo apt install mysql-server mariadb-server 
+# Install MariaDB
+sudo apt install mariadb-client
+# Install MySQL
+sudo apt install mysql-server
+```
+## References
+
+- https: 

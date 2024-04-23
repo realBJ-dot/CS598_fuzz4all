@@ -1,0 +1,28 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users
+(
+    User_id INT PRIMARY KEY AUTO_INCREMENT,
+    first_name TEXT,
+    last_name TEXT,
+    password TEXT,
+);
+CREATE TABLE Contact
+(
+    Contact_id INT PRIMARY KEY AUTO_INCREMENT,
+    first_name TEXT,
+    email TEXT,
+    contact_type TEXT,
+    first_message TEXT,
+    second_message TEXT,
+    third_message TEXT,
+    date_created DATETIME,
+    date_updated DATETIME,
+);
+ALTER TABLE Users
+ADD CONSTRAINT PK_Contact
+FOREIGN KEY (Contact_id) REFERENCES Contact (Contact_id);
+ALTER TABLE Users
+ADD CONSTRAINT PK_Users
+FOREIGN KEY (User_id) REFERENCES Users (User_id);
+
+

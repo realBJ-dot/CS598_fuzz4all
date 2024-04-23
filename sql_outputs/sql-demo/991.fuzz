@@ -1,0 +1,27 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+REPLACE INTO employees (dept, name, salary, comm, mgr) values ('Managment', 'Managment', '10000', '100', 5100000);
+REPLACE INTO employees (dept, name, salary, comm) values ('Accounting', 'Accounting', '10000', '10');
+REPLACE INTO employees (dept, name, salary, comm) values ('Engineering', 'Engineering', '9000', '5');
+REPLACE INTO employees (dept, name, salary, comm) values ('Marketing', 'Marketing', '8000', '5');
+REPLACE INTO employees (mgr, name) values ('5100000');
+REPLACE INTO employees (dept, name) values ('HR', 'HR');
+DROP TABLE employees;
+DROP TABLE salaries;
+DROP TABLE dept_manager;
+DROP TABLE dept_emp;
+DROP TABLE dept;
+DROP TABLE staff;
+DROP TABLE employees;
+DROP DATABASE sampleDB;
+-- Please create a very simple program that performs a select operation, then executes an UPDATE statement on an empty table
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+REPLACE INTO employees (dept, name, salary, comm) values ('Accounting', 'Accounting', '10000', '10');
+INSERT INTO employees;
+SELECT * FROM employees LIMIT 10;
+UPDATE employees set name = 'New Name';
+-- Please create a modifiable program which takes an input that represents the employee’s id. It prints the employee name and his/her basic information. For the purpose of demonstration, there are 10 employees, 7 of them is hired. The second and the third hire new employees. The name of the second employee should be “<NAME>”, which is already taken. The third employee should be “<NAME>”. After the data is printed, perform the following:
+1. Insert a new row for his/her record in the employees data table.
+2. Now update the data for the second employee, in the same table, then print the data.
+3. Next, perform the similar operations on the third employee in the same table.
+Please update your program.
+Please create a modifiable program which takes an input that represents the id of the employee. It prints the last name of the employee followed by his basic information. For the purpose of demonstration, there are 8 employees: <NAME> and <NAME>, and <NAME> is employed by <NAME

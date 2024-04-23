@@ -1,0 +1,27 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+INSERT INTO mytable VALUES(3, 'ghi', 500);
+SELECT myid, title, price FROM mytable ;  
+UPDATE mytable SET price = 7000 WHERE myid = 1;
+SELECT myid, title, price FROM mytable ;  
+UPDATE mytable SET myid = 1, title = 'xyz', price = 6970 WHERE myid = 2;
+INSERT INTO mytable VALUES(1, 'abc', 100);  
+SELECT myid, title, price FROM mytable ;  
+DELETE FROM mytable WHERE myid = 3;
+SELECT myid, title, price FROM mytable ;  
+DROP DATABASE sampleDB;
+-- Please create a full program that does all the above
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+INSERT INTO mytable VALUES(1, 'abc', 100);
+INSERT INTO mytable VALUES(2, 'def', 500);
+INSERT INTO mytable VALUES(3, 'ghi', 500);
+UPDATE mytable SET myid = 1, title = 'xyz', price = 6970 WHERE myid = 2;
+INSERT INTO mytable VALUES(1, 'abc', 100);  
+SELECT myid, title, price FROM mytable ;  
+DELETE FROM mytable WHERE myid = 3;
+SELECT myid, title, price FROM mytable ;  
+DROP DATABASE sampleDB;
+
+-- 11.1.2. The Database Model - MySQL Database Model Introduction
+-- MySQL is a relational database management system (RDBMS). It provides you an easy-to-use schema-style language for manipulating and analyzing data stored in relational data stores. MySQL is also an embeddable database system. Its architecture is based on standard database management system (DBMS) specifications, operating system interface specification and well specified coding conventions. MySQL provides several data types, and several SQL language constructs. Database programs and their interactions need not be written in programming languages such as DB2, APL, PL/SQL, C, but they need to conform to the database model. MySQL offers several access methods for accessing MySQL databases, including multiple independent processes (multiple nodes) and network connections.
+
+-- The MySQL database engine is very high-performance, but also is embedded into many database management programs such as Microsoft Access, Microsoft Excel, Microsoft Access, Microsoft Power

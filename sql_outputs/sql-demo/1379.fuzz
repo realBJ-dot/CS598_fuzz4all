@@ -1,0 +1,17 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+UPDATE book SET book_title = "Updated" WHERE book_isbn > 5;
+-- Please create the queries below and execute them on mySqlServer.
+
+UPDATE book SET book_title = "Updated" WHERE (book_isbn > 15);
+UPDATE book SET book_price = 50 WHERE (book_isbn > 15);
+ 
+DROP DATABASE sampleDB;
+-- Please create a query which produces "Yes" as a result for all rows.
+SELECT book_title FROM book WHERE book_isbn IN (15, 16, 20);
+-- Please create a query which sets the "book_isbn" column to "999" for all rows.
+UPDATE book SET book_isbn = 999 WHERE book_isbn > (SELECT MAX(book_isbn) FROM book);
+ 
+UPDATE book SET book_title = "New Book Title" WHERE book_isbn > 9;
+DROP DATABASE sampleDB;
+
+-- END SAMPLE

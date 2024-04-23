@@ -1,0 +1,18 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+SELECT * FROM mytable ;
+DROP TABLE mytable;
+DROP DATABASE sampleDB;
+-- Please create another semantically equivalent program to the second generation
+SELECT * FROM mytable;
+-- Please use a database which has appropriate permissions to execute this query (e.g. as a read/write DBA or database Administrator).
+-- Please create and query a database that does not have the same permissions.
+-- Do the following in the appropriate database:
+USE sampleDB;
+CREATE TABLE users ( userid int, username varchar(255), password varchar(255));
+use sampleDB;
+create table user_permissions(
+user_id int not null,
+db_id int not null,
+role_id int not null
+);
+insert into user_permissions (user_id, db_id, role_id) values (1,0,1);

@@ -1,0 +1,52 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS country;
+DROP TABLE IF EXISTS continent;
+CREATE TABLE country (
+  name char (5),
+  capital char (8));
+CREATE TABLE continent (
+  name char (8),
+  country char (5)
+);
+INSERT INTO continent VALUES ('Africa', 'Africa');
+INSERT INTO country VALUES ('AFGHANISTAN', 'Kabul');
+CREATE TABLE continent (
+  name char (8),
+  country char (5)
+);
+INSERT INTO country VALUES ('ALBANIA', 'Tirana');
+DROP TABLE IF EXISTS country;
+DROP TABLE IF EXISTS continent;
+-- Please create a program which takes three parameters:
+--   1. the length of countries in the continent.
+--   2. the length of continents.
+--   3. the number of cities in each continent.
+--    Write a query which prints the number of cities in each continent.
+-- 3. Create a database object named sampleDB containing tables for the previous exercise.
+-- 4. Create table country that has the name of each country in continent.
+-- 5. Create table continent that has the name and the name of the country in it.
+DELIMITER |
+CREATE TABLE country (
+  name char (5),
+  capital char (8));
+CREATE TABLE continent (
+  name char (8),
+  country char (5)
+);
+INSERT INTO continent VALUES ('Africa', 'Africa');
+INSERT INTO country VALUES ('AFGHANISTAN', 'Kabul');
+CREATE TABLE continent (
+  name char (8),
+  country char (5)
+);
+INSERT INTO country VALUES ('ALBANIA', 'Tirana');
+DROP TABLE IF EXISTS country;
+DROP TABLE IF EXISTS continent;
+-- Please add more tables to the database. Create a table named city for each city in each continent.
+DELIMITER |
+CREATE TABLE country (
+  name char (5),
+  capital char (8));
+CREATE TABLE continent (
+  name char (8),
+  country char

@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+Create TABLE User(
+    id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    username VARCHAR(6),
+    password VARCHAR(10));
+    */
+    DROP DATABASE sampleDB;  
+    ALTER DATABASE UserEngine change username Username char(10);
+
+DROP DATABASE sampleDB;

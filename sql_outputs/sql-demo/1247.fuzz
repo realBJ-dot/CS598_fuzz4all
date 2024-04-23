@@ -1,0 +1,8 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS users1 (
+	userId CHAR(5) NOT NULL,
+	role BOOL DEFAULT FALSE NOT NULL,
+	roleName CHAR(10) DEFAULT 'Admin' NOT NULL,
+	CONSTRAINT users1_ck1 CHECK (role IN ('a', 'b'))
+);
+DESCRIBE users1;

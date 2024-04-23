@@ -1,5 +1,42 @@
-USE sampleDB;
-SHOW TABLES;
- 
--- Drop the table.
-DROP TABLE IF EXISTS users;
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users(username char(20) PRIMARY KEY, FirstName VARCHAR(30)) ENGINE=InnoDB;
+INSERT INTO Users(username,Firstname) VALUES('Test','Test');
+<commit_msg>[FIX] mysql sample<commit_after>---
+layout: default
+title: MySQL
+parent: Apache
+nav_order: 3
+permalink: install/apache/mysql/
+last_modified_date:
+---
+
+# INSTALL
+
+## 1) Download MySQL Server
+
+MySQL community edition is supported on most operating systems but may be installed using software packages for your operating system.
+
+**Ubuntu 20.04**
+
+    wget -P /var/www/html https: 
+    tar xfz mysql-community-release-2004-19.tar.gz
+  ./mysql_install_db --user=mysql --basedir=/var/www/html --silent
+    service mysql restart
+  
+## 2) Setup MySQL Database
+
+Now you can connect to MySQL with your new MySQL user account, simply with your default password and you can see the `sampleDB`/`Users` databases.
+
+To make sure everything is working you can use the `mysql` client command.
+
+    mysql -u root -p
+
+After that you can create you first database by typing the `CREATE DATABASE` command and create tables in a database by using the `CREATE TABLE` command. Here is a very simple test table that creates a users table and inserts a new user data.
+
+    CREATE DATABASE sampleDB; USE sampleDB;
+    CREATE TABLE Users(username char(20) PRIMARY KEY, FirstName VARCHAR(30)) ENGINE=InnoDB;
+    INSERT INTO Users(username,Firstname) VALUES('Test','Test'),('Admin','Admin'),('Guest','Guest'),('Super','Super');
+
+## 3) Update MySQL Configuration
+
+MySQL uses a configuration file to define system and database permissions and options. MySQL server uses the configuration files located in the `/etc/mysql/*` and `/usr/lib/mysql/mysql.conf.d/` directories. The configuration files are used by the MySQL daemon, which is running as the `root` user by default. If you change MySQL server configuration you need to re-authenticate your

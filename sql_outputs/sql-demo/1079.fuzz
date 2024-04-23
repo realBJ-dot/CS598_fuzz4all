@@ -1,0 +1,9 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+SET GLOBAL sql_mode='STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION';
+CREATE TABLE `worker_semua` (id INT PRIMARY KEY AUTO_INCREMENT, no_worker INT, nama_lengkap DATE, kode_lokasi DATE, username DATE, password DATE, tgl_masuk DATE, id_level INT, id_status INT, id_kota_asal INT, id_kota_tujuan INT, no_tlp INT);
+CREATE TABLE `kota_asal` (id INT PRIMARY KEY AUTO_INCREMENT, kode_kota_asal INT, kode_wilayah DATE, nama_kota_asal_lama DATE, nama_kota_asal INT);
+CREATE TABLE `kota_tujuan` (id INT PRIMARY KEY AUTO_INCREMENT, kode_kota_tujuan INT, kode_wilayah DATE, nama_kota_tujuan_lama DATE, nama_kota_tujuan INT);
+CREATE TABLE `status` (id INT PRIMARY KEY AUTO_INCREMENT, id_status INT, nama_status INT);
+CREATE TABLE `level` (id INT PRIMARY KEY AUTO_INCREMENT, id_level INT, nama_level INT);
+INSERT INTO `worker`(`no_worker`, `nama_lengkap`, `kode_lokasi`, `username`, `password`, `tgl_masuk`, `id_level`, `id_status`, `id_kota_asal`, `id_kota_tujuan`, `no_tlp`) VALUES ('1', '<NAME>', 'KAB', 'admin', '<PASSWORD>', '2015-08-13 14:14:21', '5', '1', '3', null, null, '081207008484');
+INSERT INTO `worker`(`no_worker`, `nama_lengkap`, `kode_lokasi`, `username`, `password`, `tgl_masuk`, `id_level`, `id_status`, `id_kota_as

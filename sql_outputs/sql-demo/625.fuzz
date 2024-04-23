@@ -1,0 +1,5 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- The mutated column is now declared
+SHOW VARIABLES LIKE 'Mutated_';
+SELECT STUDENT FROM sampleDB.MutatedSample;
+

@@ -1,0 +1,6 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+GRANT ALL PRIVILEGES ON sampleDB.* TO 'root'@'%';*/
+
+
+DROP DATABASE IF EXISTS sampleDB;

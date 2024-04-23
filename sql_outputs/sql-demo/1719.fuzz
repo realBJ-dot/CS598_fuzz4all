@@ -1,0 +1,8 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+SELECT * from student;
+DROP TABLE IF EXISTS student;
+
+-- Please create a mutated program that uses functions
+
+-- Please create a mutated program that updates the previous generation

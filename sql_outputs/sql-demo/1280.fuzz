@@ -1,0 +1,30 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ 
+select userId, PASSWORD_HASH, name, ROLE from users INNER JOIN permissions
+on users.userId = permissions.userId AND users.ROLE = permissions.roleId
+where users.ROLE = 2;
+GRANT ALL ON sampleDB.*;
+-- Please modify the above to make it return 'root' as username.  You need to add the relevant code lines to match the output of your program.
+GRANT ALL ON sampleDB.* TO 'root'@'%';
+SET PASSWORD FOR 'root'@'%' = PASSWORD('<PASSWORD>');
+-- Please use your modified program to create a mutated program using INNER JOIN to modify the existing program using a RIGHT JOIN. When you modify, create a new table and modify it using the tables already created.
+GRANT ALL ON sampleDB.* TO 'root'@localhost;
+SET PASSWORD FOR 'root'@localhost = PASSWORD('<PASSWORD>');
+GRANT ALL ON sampleDB.*;
+UPDATE permissions SET roleId = 3 WHERE userId = 1;
+USE sampleDB;
+SELECT userId, PASSWORD_HASH, name, ROLE from users INNER JOIN permissions
+on users.userId = permissions.userId AND users.ROLE = permissions.roleId
+where users.ROLE = 3;
+USE sampleDB;
+DROP TABLE IF EXISTS roles;
+USE sampleDB;
+CREATE TABLE IF NOT EXISTS roles(
+	roleId INT NOT NULL PRIMARY KEY,
+	name VARCHAR(100) NOT NULL
+);
+DESCRIBE roles;
+GRANT ALL ON sampleDB.* TO 'root'@'%';
+-- Your database is now set up. It should not take this long to run the following query.
+SELECT COUNT(*) FROM roles;
+CREATE TABLE

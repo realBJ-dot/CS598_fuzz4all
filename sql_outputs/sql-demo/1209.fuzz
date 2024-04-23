@@ -1,0 +1,15 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+--
+-- Please create a statement of basic SQL.
+SELECT password FROM users WHERE id = 1;
+--
+-- Please create a statement for querying a single table.
+SELECT name, balance FROM users ORDER BY id DESC LIMIT 1000;
+--
+-- Please create a statement for querying a single unique table.
+SELECT name, balance FROM users ORDER BY id DESC LIMIT 1;
+--
+-- Please create a statement for querying all tables.
+SELECT name, balance FROM users ORDER BY id; 
+DROP TABLE IF EXISTS users;
+DROP DATABASE IF EXISTS sampleDB;

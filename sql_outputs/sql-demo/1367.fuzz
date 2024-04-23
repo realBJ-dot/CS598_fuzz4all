@@ -1,0 +1,37 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS author(
+ author_id INT,
+ author_handle text,
+ author_fullname text,
+ author_sex text,
+ author_birthday text,
+ PRIMARY KEY(author_id)
+);
+CREATE TABLE IF NOT EXISTS book_author(
+ author_id INT,
+ book_id INT,
+ PRIMARY KEY(book_id, author_id)
+);
+INSERT INTO author VALUES(1, 'Jason', '<NAME>', 'MALE', '1995-12-21');
+INSERT INTO author VALUES(2, 'Mark', '<NAME>', 'MALE', '1999-07-05');
+INSERT INTO author VALUES(3, 'Judicael', '<NAME>', 'FEMALE', '1995-01-01');
+INSERT INTO author VALUES(4, 'Paul', '<NAME>', 'MALE', '1990-11-23');
+INSERT INTO author VALUES(5, 'Brian', '<NAME>', 'FEMALE', '1995-11-02');
+INSERT INTO book_author VALUES(1, 1);
+INSERT INTO book_author VALUES(2, 1);
+INSERT INTO book_author VALUES(3, 2);
+INSERT INTO book_author VALUES(4, 3);
+INSERT INTO book_author VALUES(5, 4);
+ALTER TABLE book_author MODIFY author_id INT(4);
+ALTER TABLE book_author MODIFY book_id INT(4);
+ALTER TABLE author MODIFY author_id INT(4);
+ALTER TABLE author MODIFY author_fullname text;
+ALTER TABLE author MODIFY author_birthday text;
+ALTER TABLE book MODIFY book_id INT(4);
+ALTER TABLE book MODIFY book_isbn INT(4);
+ALTER TABLE book MODIFY book_publication_date text;
+ALTER TABLE book MODIFY book_price INT(4);
+ALTER TABLE book ENGINE=MyISAM;
+DROP TABLE author;
+DROP TABLE book_author;
+DROP DATABASE sampleDB;

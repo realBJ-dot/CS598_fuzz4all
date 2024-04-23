@@ -1,0 +1,9 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+SELECT * FROM grades WHERE grades.student_id = Students.Student_ID
+
+-- https: 
+
+DESCRIBE Student;
+DESC Students;
+DESC students;
+--

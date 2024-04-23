@@ -1,0 +1,16 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+create table table1 (
+    `user_id` int NOT NULL AUTO_INCREMENT,
+    `username` varchar(50) NOT NULL,
+    `password` varchar(255) NOT NULL,
+    `email` varchar(255) NOT NULL,
+    `user_type` varchar(10) NOT NULL,
+    `profile_pic` varchar(100) NULL DEFAULT NULL,
+    PRIMARY KEY (`user_id`),
+    UNIQUE KEY `user_id` (`user_id`,`username`)
+);
+flush;
+update table1 set username = 'rahil' where username = 'r';
+truncate table1;
+update table1 set username = 'rahil' where username = 'r';
+truncate table1;

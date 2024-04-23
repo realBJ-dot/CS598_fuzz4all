@@ -1,0 +1,29 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE Contact;
+ALTER TABLE Users DROP last_name
+-- Please explain your solution if you have already created a sampleDB with your current code.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users
+(
+    User_id INT NOT NULL AUTO_INCREMENT,
+    first_name TEXT,
+    last_name TEXT,
+    password TEXT,
+    PRIMARY KEY (User_id)
+);
+CREATE TABLE Contact
+(
+    Contact_id INT NOT NULL AUTO_INCREMENT,
+    first_name TEXT,
+    email TEXT,
+    contact_type TEXT,
+    first_message TEXT,
+    second_message TEXT,
+    third_message TEXT,
+    date_creation DATETIME,
+    date_modified DATETIME,
+    PRIMARY KEY (Contact_id),
+    FOREIGN KEY (Contact_id) REFERENCES Users (User_id) ON UPDATE CASCADE
+);
+ALTER TABLE Users DROP last_name;
+ALTER TABLE Contact DROP date_creation;

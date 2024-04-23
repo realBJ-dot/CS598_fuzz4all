@@ -1,0 +1,52 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users(Name VARCHAR(32));
+INSERT INTO Users (Name) VALUES ('John'), ('Joe');
+UPDATE Users set Name = 'Jeff';
+--
+DROP DATABASE sampleDB;
+
+CREATE TABLE Users(Name VARCHAR(32));
+INSERT INTO Users (Name) VALUES ('John'), ('Joe');
+UPDATE Users set Name = 'Jeff';
+
+SELECT * FROM Users;
+
+--
+-- please modify the above SQL statement with the below INSERT statement.
+--
+
+UPDATE Users set Name = 'Jeff';
+
+SELECT * FROM Users;
+
+--
+-- Please modify the above SQL statement to a multi-field UPDATE statement that is
+-- equivalent to a single-field UPDATE but that will change the name of
+-- the selected user. You can read more about this SQL update statement in
+-- the following link:
+-- https: 
+--
+
+UPDATE Users set Name = 'Jeff' WHERE Name='<NAME>';
+
+SELECT * FROM Users;
+
+--
+-- Please modify the above SQL statement to an SQL VIEW.
+--
+
+DROP VIEW IF EXISTS Users_view;
+
+CREATE VIEW Users_view AS
+SELECT * FROM Users;
+
+--
+-- Please modify the above SQL statement to create a table in MySQL and
+-- use it to create a View in MySQL. Please also modify the above SQL to
+-- select the data from the view created in MySQL and use it in the above SQL
+-- in order to show the data in the form of a table.
+--
+
+-- CREATE TABLE Customers_view (ID INT, Name VARCHAR(32)); -- MySQL View
+
+SELECT * FROM Users;

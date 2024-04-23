@@ -1,0 +1,13 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+INSERT INTO employees_salary_by_salary(employee_salary, emp_salary) VALUES ('2012-06-04', 100000);
+ 
+ROLLBACK;
+-- You will need to use the correct commands to run the statements above
+-- and to roll back if the statements above fail with an error message. You can also try the following. To run this program on Unix/Linux platforms you would need to have gcc, make, and sqlite installed.
+-- 1. cd to your project directory
+-- 2. compile using gcc -o filename_to_run
+-- 3. cd to the bin directory
+-- 4../filename_to_run<fim_middle>-- 5. exec filename_to_run
+-- 6../filename_to_run
+-- 7../testfilename.out
+ALTER DATABASE sampleDB CHARACTER SET `latin1`; DROP DATABASE IF EXISTS sampleDB;

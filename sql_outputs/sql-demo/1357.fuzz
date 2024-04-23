@@ -1,0 +1,15 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS book(
+ book_id INT,
+ book_title text,
+ book_isbn INT,
+ book_publication_date text,
+ book_price INT
+);
+INSERT INTO book VALUES(1,'A Book of Common Sense',8192,'July 1991',8.95);
+INSERT INTO book VALUES(2,'The Master Story',10452,'July 1990',4.95);
+INSERT INTO book VALUES(3,'The Psychology of Man',9067,'July 1988',4.95);
+ALTER TABLE book MODIFY book_id INT(4);
+ALTER TABLE book ENGINE=MyISAM;
+DROP TABLE book;
+DROP DATABASE sampleDB;

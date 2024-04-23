@@ -1,0 +1,16 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+create or replace table users (
+	userId INT not null primary key,
+	name varchar(30),
+	email varchar(60),
+	role int,
+	password char(60)
+);
+DESCRIBE users;
+-- Please create a semantically equivalent program to the MySQL DROP statement
+DROP TABLE users CASCADE;
+-- Please alter the previous table definition to include a NOT NULL constraint.
+-- Be sure to change all column types to NOT NULL.
+ALTER TABLE users MODIFY (role smallint unsigned not null);
+-- Please create a semantically equivalent program to the CREATE sequence syntax.
+-- Be sure to modify all database variables to the use of sequences.

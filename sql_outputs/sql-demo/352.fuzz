@@ -1,0 +1,28 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users (ID INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, Name VARCHAR(128));
+INSERT INTO Users(Name) VALUES ('John');
+INSERT INTO Users(Name) VALUES ('Joe');
+SELECT * FROM Users;
+DROP DATABASE IF EXISTS sampleDB;
+-- Write a MySQL program that finds the name of all the different authors for one of the three books "The Adventures of Sherlock Holmes and Hobbes," one of the few titles from the Bible. The program should have the following features:
+--
+-- a. Use the SQL query “SELECT DISTINCT Name FROM Users” to extract the unique names of the authors that wrote a book that the user wants.
+--
+-- b. For a specified book name, display the author’s name, last name, and date of publication.
+--
+-- c. Use the “ORDER BY” command to sort the results (sort ascending by the names).
+--
+-- d. Use the “LIMIT” command to limit the output to the first 5 rows.
+--
+-- Make sure your program uses appropriate JOIN and WHERE commands.
+ 
+create database sampleDB; use sampleDB;
+CREATE TABLE Users(id INT UNSIGNED AUTO_INCREMENT, name VARCHAR(25) UNIQUE, created DATETIME);
+CREATE TABLE Books(id INT UNSIGNED AUTO_INCREMENT, name VARCHAR(128), year_of_publication INT);
+CREATE TABLE Authors(id INT UNSIGNED AUTO_INCREMENT, name VARCHAR(25), last_name VARCHAR(25), date_of_publication DATE);
+INSERT INTO Users (ID,Name,Created Date) VALUES (1,'Jane','2017-04-09 00:00:00');
+INSERT INTO Users (ID,Name,Created Date) VALUES (2,'John','1994-10-16 00:00:00');
+INSERT INTO Users (ID,Name,Created Date) VALUES (3,'Anne','1966-04-03 00:00:00');
+INSERT INTO Users (ID,Name,Created Date) VALUES (4,'Edward','1932-10-16 00:00:00');
+
+INSERT INTO Books (ID,Name,Year of Publication) VALUES (1,'Fantastic Be

@@ -1,0 +1,30 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users
+(
+    User_email TEXT UNIQUE,
+    first_name TEXT,
+    last_name TEXT,
+    password TEXT,
+    PRIMARY KEY (User_email)
+);
+CREATE TABLE Contact
+(
+    Contact_email TEXT UNIQUE,
+    First_name TEXT,
+    Last_name TEXT,
+    contact_type TEXT,
+    First_message TEXT,
+    Second_message TEXT,
+    Third_message TEXT,
+    DATE_Creation DATETIME,
+    DATE_Modification DATETIME,
+    PRIMARY KEY (Contact_email),
+    FOREIGN KEY (Contact_email) REFERENCES Users (User_email) ON UPDATE CASCADE
+);
+
+-- TODO: add some sample SQL code to make sure we can run the program and create the database and tables.
+
+SELECT * FROM Users;
+SELECT * FROM Contact;
+
+*

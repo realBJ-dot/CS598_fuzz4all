@@ -1,0 +1,20 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users_3(ID int PRIMARY KEY, email varchar(64));
+DROP TABLE Users_3
+-- Please create a query using all table types. (Just one table, you're welcome.) You should be able to sort the results in the same manner as in sampleDB. It should produce an output similar to this:
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users_5(firstname varchar(30), lastname varchar(60), email varchar(80), PRIMARY KEY(ID, firstname, lastname));-- The firstname and lastname are from the users.CSV file.
+SELECT * FROM Users_5
+select firstname, lastname, email from users_5
+select * from users_5
+select * from users_5;
+COMMIT TRANSACTION;
+DROP DATABASE IF EXISTS sampleDB;
+ALTER DATABASE `sampleDB` CHARACTER SET UTF8mb4 COLLATE UTC_R;
+-- This is how to import csv file:
+-- CREATE DATABASE `sampleDB`
+-- CHARACTER SET utf8mb4
+-- COLLATE utf8_unicode_ci
+-- DEFAULT CHARACTER SET = utf8mb4;
+
+

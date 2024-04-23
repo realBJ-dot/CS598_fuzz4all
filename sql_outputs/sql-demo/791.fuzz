@@ -1,0 +1,14 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS `FirstAndSecondTable` ( `id` INT(11) NOT NULL PRIMARY KEY, `data` TEXT CHARACTER SET UTF8);
+DROP TABLE IF EXISTS `FirstAndSecondTable`;
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS `FirstAndSecondTable` ( `id` INT(11) NOT NULL PRIMARY KEY, `data` TEXT CHARACTER SET UTF8);
+
+ 
+
+-- You should only use sampleDB as the database and assume no other table exist.
+ 
+DROP TABLE IF EXISTS `FirstAndSecondTable`;
+USE sampleDB;
+CREATE TABLE IF NOT EXISTS `FirstAndSecondTable` ( `id` INT(11) NOT NULL PRIMARY KEY, `data` TEXT CHARACTER SET UTF8);

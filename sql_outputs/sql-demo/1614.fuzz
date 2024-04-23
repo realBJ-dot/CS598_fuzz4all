@@ -1,0 +1,14 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE department (
+id INT NOT NULL AUTO_INCREMENT,
+departmentName VARCHAR(30) NOT NULL,
+PRIMARY KEY (id)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+INSERT INTO department (id, departmentName)
+VALUES (-1, 'IT');
+INSERT INTO department (id, departmentName)
+VALUES (1, 'Accounting');
+INSERT INTO department (id, departmentName)
+VALUES (2, 'Operations');
+INSERT INTO department (id, departmentName)
+VALUES (3, 'Admin

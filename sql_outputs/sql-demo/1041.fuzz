@@ -1,0 +1,15 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+SET GLOBAL sql_mode=TRADITIONAL;
+UPDATE employee10 SET salary = 100 WHERE id = 2;
+SELECT MAX(salary) FROM employee10;
+UPDATE employee10 SET salary = 100 WHERE id = 1;
+SELECT MAX(salary) FROM employee10;
+
+update employee10 set  salary = salaries.value where  id = employees.id;
+
+
+
+
+select * from employee10;
+
+SELECT salary, COUNT(salary), COUNT(id) FROM employee10 GROUP BY salaries.value;

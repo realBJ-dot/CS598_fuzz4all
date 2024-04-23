@@ -1,0 +1,16 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+create temporary table IF NOT EXISTS `ID_Gen` ( `id` INT(11) NOT NULL PRIMARY KEY );
+select id from `ID_Gen` as ID where id < 105;
+
+You can also run UPDATE and DELETE queries using those two tables in order to maintain a consistency in the record. */
+
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS `FirstAndSecondTable` ( `id` INT(11) NOT NULL PRIMARY KEY, `data` VARCHAR(300) CHARACTER SET UTF8);
+DROP TABLE IF EXISTS `FirstAndSecondTable`;
+SET @ID_Gen_ID = 26;
+INSERT INTO `ID_Gen` ( `id` ) VALUES ( @ID_Gen_ID ');
+COMMIT;
+USE sampleDB;
+
+
+

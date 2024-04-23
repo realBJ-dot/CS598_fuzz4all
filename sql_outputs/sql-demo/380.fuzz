@@ -1,0 +1,42 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users
+(
+    User_id INT NOT NULL AUTO_INCREMENT,
+    first_name TEXT,
+    last_name TEXT,
+    password TEXT,
+    PRIMARY KEY (User_id)
+)
+ENGINE=InnoDB;
+CREATE TABLE Contacts
+(
+    Contact_id INT NOT NULL AUTO_INCREMENT,
+    first_name TEXT,
+    email TEXT,
+    contact_type TEXT,
+    first_message TEXT,
+    second_message TEXT,
+    third_message TEXT,
+    date_created DATE,
+    date_edited DATE,
+    PRIMARY KEY (Contact_id),
+    FOREIGN KEY (Contact_id) REFERENCES Users (User_id) ON UPDATE CASCADE
+)
+ENGINE=InnoDB;
+CREATE TABLE Orders
+(
+    Order_id INT NOT NULL AUTO_INCREMENT,
+    first_name TEXT,
+    last_name TEXT,
+    contact_fk INT,
+    total_amount numeric,
+    date_purchased DATE,
+    PRIMARY KEY (Order_id),
+    FOREIGN KEY (contact_fk) REFERENCES Contact (Contact_id) ON UPDATE CASCADE 
+);
+ALTER DATABASE sampleDB CHARACTER SET utf8 COLLATE utf8_unicode_ci
+DROP DATABASE IF EXISTS sampleDB;
+-- Please create a conceptual database which has the following tables and relations
+-- Users
+-- Contacts
+-- Orders

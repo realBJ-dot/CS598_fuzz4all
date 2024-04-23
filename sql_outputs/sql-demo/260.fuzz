@@ -1,0 +1,36 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE `teacher` (
+  `teacherID`  INTEGER NOT NULL,
+  `first_name` VARCHAR(45) NOT NULL,
+  `last_name`  VARCHAR(45) NOT NULL,
+  `mailID` VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS `student` (
+  `studentID` INT NOT NULL AUTO_INCREMENT,
+  `first_name` VARCHAR(45) NOT NULL,
+  `last_name` varchar(45) NOT NULL,
+  `mobile` CHAR(14) NULL,
+  `mailID` VARCHAR(50)  NULL,
+  PRIMARY KEY (`studentID`)
+);
+
+
+
+CREATE TABLE IF NOT EXISTS `student_attendance` (
+  `attendanceID` INT NOT NULL AUTO_INCREMENT,
+  `studentID` INT NOT NULL,
+  `courseID` INT NOT NULL,
+  `date` DATE NOT NULL,
+  PRIMARY KEY (`attendanceID`),
+  FOREIGN KEY (`studentID`) REFERENCES `Student` (`studentID`),
+  FOREIGN KEY (`courseID`) REFERENCES `course` (`courseID`)
+);
+
+
+CREATE TABLE IF NOT EXISTS `course` (
+  `courseID` VARCHAR(45) NOT NULL,
+  `courseName` varchar(45) NULL,
+  `department` varchar(45) NULL,
+  PRIMARY KEY (`courseID`)
+);

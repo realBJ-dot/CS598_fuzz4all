@@ -1,0 +1,8 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `Lecture`;
+CREATE TABLE `Lecture` (
+	`Lecture_ID` INT NOT NULL,
+	`Course_Code` VARCHAR(40) NOT NULL,
+	`Course_Name` VARCHAR(255) NULL,
+	PRIMARY KEY (`Course_Code`)
+);

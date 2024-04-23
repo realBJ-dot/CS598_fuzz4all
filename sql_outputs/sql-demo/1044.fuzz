@@ -1,0 +1,13 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ <commit_msg>Added new article: MySQL (1)<commit_after>title: MySQL
+description: MySQL is an open-source relational database management system (RDBMS) that allows users to create, modify and extract data from a structured relational database using the Structured Query Language (SQL). It works harmoniously with an operating system to structure and manage a relational database, control user access, and execute other tasks like network access and testing database integrity.
+
+MySQL, named after co-founder <NAME>'s daughter, My, and SQL, is widely used with other programs to implement applications that require database functionality. It serves as an element of the LAMP web application software stack, where LAMP stands for Linux, Apache, MySQL, Perl/PHP/Python, and is used in many database-driven web applications and popular websites such as Facebook and YouTube.
+
+Written in C and C++, MySQL supports a variety of system platforms from Linux, macOS, Microsoft Windows to even the Symbian OS. It offers dual-licensing i.e., GPL version 2 or a proprietary license.
+
+Support for MySQL is provided through the official manual, various IRC channels, forums, and additionally, Oracle offers paid support via its MySQL Enterprise products. It is known for its exceptional performance in average scenarios and has been appraised as a fast, stable and true multi-user, SQL database server. Furthermore, it is also available under the MariaDB fork developed in 2010 when Oracle acquired Sun Microsystems, the then owner of MySQL AB.
+
+MySQL 5 now is available as a community version which offers support for MySQL 5.0 as well as MySQL 5.1, 5.5, and MariaDB 10.3. MySQL 5 is a community supported version. If you are using a version older than this it is highly recommended to upgrade to a newer version such as MySQL 5.5.
+
+MySQL has come to be a hot database in the world, and has earned more than 250 million visits per month. By using MySQL, you have one choice, it’s a choice you must make and don’t have to worry about it later. It brings together both the best of MySQL and better than everything else in the industry. We also hope it will allow you to move your company's data to a cloud friendly server that handles all of your traffic.

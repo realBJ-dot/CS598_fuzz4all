@@ -1,0 +1,3 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+UPDATE person SET name='<NAME>' WHERE birthdate='2013-07-30';
+SELECT * FROM person WHERE birthdate='2013-07-30';

@@ -1,0 +1,9 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE mytable( myid int, title varchar(255));
+INSERT INTO mytable(myid, title) VALUES(0,'abc');
+INSERT INTO mytable(myid, title) VALUES(1,'def');
+INSERT INTO mytable(myid, title) VALUES(2,'ghi');
+DELETE c FROM mytable c;
+SELECT * FROM mytable ;
+DROP TABLE mytable;
+DROP DATABASE sampleDB;

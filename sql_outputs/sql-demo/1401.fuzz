@@ -1,0 +1,48 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS books;
+CREATE TABLE `books` (
+  `author_id` INT(10) UNSIGNED,
+  `booktitle` VARCHAR(255)
+);
+INSERT INTO `books` (`author_id`, `booktitle`)
+VALUES (42, 'SQL Bible'), (8, 'Programming MySQL');
+SELECT author_id, bookname FROM books;
+CREATE TABLE IF NOT EXISTS books (
+  `author_id` INT(10) UNSIGNED,
+  `booktitle` VARCHAR(255)
+);
+INSERT INTO books (`author_id`, `booktitle`)
+VALUES (42, 'Go MySQL!');
+SELECT author_id, bookname FROM books;
+SELECT * FROM `books`;
+SELECT * FROM books;
+DROP TABLE books;
+CREATE TABLE books (
+  `author_id` INT(10) UNSIGNED,
+  `booktitle` VARCHAR(255)
+);
+INSERT INTO books (`author_id`, `booktitle`)
+VALUES (42, 'SQL Bible'), (8, 'Programming MySQL');
+DROP TABLE IF EXISTS books;
+CREATE TABLE IF NOT EXISTS books (
+  `author_id` INT(10) UNSIGNED,
+  `booktitle` VARCHAR(255)
+);
+INSERT INTO books (`author_id`, `booktitle`)
+VALUES (42, 'Go MySQL!');
+SELECT author_id, bookname FROM books;
+SELECT * FROM `books`;
+-- CREATE TABLE bookstore (
+--   `id` INT(10) UNSIGNED,
+--   `author_id` INT(10) UNSIGNED,
+--   `title` VARCHAR(255)
+-- );
+CREATE DATABASE IF NOT EXISTS bookstore;
+
+-- INSERT INTO bookstore (`id`, `author_id`, `title`)
+-- VALUES (1, 2, 'SQL Bible'), (2, 1, 'Programming MySQL'), (3, 3, 'Go MySQL!');
+INSERT INTO bookstore (`author_id`, `title`)
+VALUES (33, 'SQL Bible'), (28,'Programming MySQL');
+
+INSERT INTO bookstore (author_id, title)
+VALUES (3

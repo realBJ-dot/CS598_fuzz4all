@@ -1,0 +1,27 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+Create table users like users; 
+Show tables like'sampleDB%';
+Show tables like 'engine%'; 
+Show tables like 'utf8%'; 
+Show tables like 'utf%'; 
+Show tables like'mysql%'; 
+Show tables like '255%'; 
+Show tables like '%mysql}'; 
+Show tables like '%database123}'; 
+Show tables like '%sampledb}';
+SHOW TABLES 
+SHOW FIELDS
+SHOW GRANTS
+SHOW STATUS
+SHOW CREATE TABLE
+SHOW FULL COLUMNS 
+SHOW TABLE STATUS
+SHOW PROCESSLIST
+Show status like '%MySQL'; 
+ 
+[mysqld]
+pidFile=/run/mysql/mysqld.pid
+port=3306
+```
+
+

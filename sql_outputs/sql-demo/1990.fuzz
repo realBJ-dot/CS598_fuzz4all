@@ -1,0 +1,18 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employees_name; DROP TABLE IF EXISTS employees_salary;
+CREATE TABLE employees_name
+        ( employee_name VARCHAR(32) )
+        ENGINE=INNODB;
+CREATE TABLE employees_salary
+        ( employee_salary DECIMAL(12,2) )
+        ENGINE=INNODB;
+INSERT INTO employees_name
+              ( employee_name )
+VALUES
+              ( 'Bob', '<EMAIL>', 'Gates', '<EMAIL>', 'Scott' );
+INSERT INTO employees_salary
+              ( employee_salary )
+VALUES
+              ( 100000.01 );
+SELECT employee_name, employee_salary 
+FROM employees_salary_by_salary;

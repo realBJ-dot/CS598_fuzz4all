@@ -1,0 +1,17 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS Lecture;
+CREATE TABLE Lecture (
+	Lecture_ID INT NOT NULL,
+	Course_Code VARCHAR(40) NOT NULL,
+	Course_Name VARCHAR(255),
+	PRIMARY KEY (Course_Code)
+);
+ALTER TABLE Lecture ADD CONSTRAINT Course_Code PRIMARY KEY (Course_Code);
+-- Now write a select query which returns the count of lectures associated with the code, where Course_Code is 'CS25'
+SELECT COUNT(*) FROM Lecture WHERE Course_Code="CS25"
+
+-- What happens if the value inserted in the primary key column is not in the required format to uniquely identify a row?
+
+-- Hint
+ALTER TABLE Lecture CHANGE Course_ID Course_ID;
+ALTER TABLE Lecture DROP PRIMARY KEY;

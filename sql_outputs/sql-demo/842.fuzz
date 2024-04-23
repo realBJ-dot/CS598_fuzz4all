@@ -1,0 +1,27 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS person (ID INTE PRIMARY KEY, name VARCHAR(200), birthdate DATE)
+    ENGINE=InnoDB;
+UPDATE person SET birthdate = '2014-08-02' WHERE name='Kostya';
+SELECT * FROM person LIMIT 1;
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS person (ID INTE PRIMARY KEY, name VARCHAR(200), birthdate DATE)
+    ENGINE=InnoDB;
+CREATE TRIGGER IF NOT EXISTS person_birth date_update
+    AFTER UPDATE on person
+    FOR EACH ROW
+    DELETE FROM person WHERE id < OLD.id;
+INSERT INTO person (id, name, birthdate) VALUES(1, '<NAME>', '1996-06-24');
+INSERT INTO person (id, name, birthdate) VALUES(2, '<NAME>', '2013-08-13');
+ 
+CREATE DATABASE IF NOT EXISTS parentageDB; USE parentageDB;
+CREATE TABLE IF NOT EXISTS parentage (ID INT PRIMARY KEY, name VARCHAR(200), father INT UNSIGNED, mother INT UNSIGNED);
+CREATE TABLE IF NOT EXISTS child (ID INT PRIMARY KEY, fatherid INT UNSIGNED, motherid INT UNSIGNED, babymum INT UNSIGNED, babysitter INT UNSIGNED);
+CREATE TABLE IF NOT EXISTS boy_child (ID INT PRIMARY KEY, father INT UNSIGNED, mother INT UNSIGNED, babymum INT UNSIGNED, babysitter INT UNSIGNED);
+CREATE TABLE IF NOT EXISTS girl_child (ID INT PRIMARY KEY, father INT UNSIGNED, mother INT UNSIGNED, babymum INT UNSIGNED, babysitter INT UNSIGNED);
+CREATE TABLE IF NOT EXISTS family (ID INT UNSIGNED PRIMARY KEY AUTO_INCREMENT, parentage_id INT, child_id INT);
+ 
+/* Now insert values in the below parentage table
+0 -> Kostya
+father -> 0
+mother

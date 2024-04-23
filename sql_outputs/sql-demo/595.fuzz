@@ -1,0 +1,30 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Mutated (
+    c1 INT NOT NULL,
+    c2 CHAR(10),
+    c3 VARCHAR(NAME),
+    c4 VARCHAR(30),
+    c5 DATE,
+    c6 TIMESTAMP
+);
+
+INSERT INTO Mutated (c1, c2, c3, c4, c5, c6)
+VALUES (1, 'alpha-', '123', 'value', '2012-01-02', '2010-03-07 12:50:53');
+
+ALTER TABLE Mutated ADD PRIMARY KEY (c1);
+
+INSERT INTO Mutated (c1, c2, c3, c4, c5, c6)
+VALUES (2, 'bravo-', '876', 'value', '2012-01-03', '2010-03-07 12:50:53');
+
+ALTER TABLE Mutated ADD PRIMARY KEY (c1);
+
+INSERT INTO Mutated (c1, c2, c3, c4, c5, c6)
+VALUES (3, 'charlie-', 'x', 'value', '2012-01-04', '2010-03-07 12:50:53');
+
+ALTER TABLE Mutated ADD PRIMARY KEY (c1);
+
+INSERT INTO Mutated (c1, c2, c3, c4, c5, c6)
+VALUES (4, 'delta-', '9', 'value3', '2012-01-01', '2010-03-07 12:50:53');
+
+ALTER TABLE Mutated ADD PRIMARY KEY (c1);
+DROP DATABASE sampleDB;

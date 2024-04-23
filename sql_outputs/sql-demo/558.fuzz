@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS Mutated (id INT AUTO_INCREMENT PRIMARY KEY, price REAL);
+UPDATE Mutated
+SET price = 2 + (price * 0.5)
+WHERE price IS NULL;
+SELECT price FROM Mutated;
+DELETE FROM Mutated WHERE price IS NULL;
+SELECT price FROM Mutated;
+DROP TABLE Mutated;
+DROP DATABASE sampleDB;

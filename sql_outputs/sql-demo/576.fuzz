@@ -1,0 +1,8 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+SELECT price FROM Mutated WHERE id = 2;
+UPDATE Mutated SET price = 80 WHERE id = 2;
+UPDATE Mutated SET price = price + price WHERE id = 2;
+UPDATE Mutated SET price = price + (price*3) WHERE id = 2;
+UPDATE Mutated SET price = price * 2 WHERE id = 2;
+DROP TABLE Mutated;
+DROP DATABASE sampleDB;

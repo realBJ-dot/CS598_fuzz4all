@@ -1,0 +1,18 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ 
+SHOW TABLES;
+ 
+-- Let's see the sampleDB table structure
+SELECT columns.column_name, columns.column_type, column_key,
+column_default, extra
+FROM information_schema.COLUMNS
+WHERE table_name = 'test3';
+-- To insert data into the table, use INSERT INTO statement
+INSERT INTO test3 SELECT userid, name, age FROM sampleDB.sampleUser;
+-- To update data, you can use UPDATE statement. Please note that a table
+-- needs to contain a primary key to be updated. In fact, a table always
+-- contains at least one row with a primary identyfier in the form of an integer
+-- in this case userid column.
+UPDATE test3 SET name = 'updated' WHERE name ='myname';
+-- To delete data, just type the query without any other information like table name
+DELETE FROM test3 WHERE name ='myname';

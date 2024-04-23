@@ -1,0 +1,12 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+SET GLOBAL sql_mode=TRADITIONAL;
+DROP TABLE IF EXISTS worker;
+create table employee(employeeID int, name varchar(30), salary decimal(10,2), department varchar(50));
+insert into employee(employeeID,name,salary,department) values (1,'Mr. <NAME>',100000,'Office Management');
+insert into employee(employeeID,name,salary,department) values (2,'Mr. <NAME>',50000,'Human Resources');
+insert into employee(employeeID,name,salary,department) values (3,'Sr. <NAME>',200000,'Sales');
+insert into employee(employeeID,name,salary,department) values (4,'<NAME>',50000,'Human Resources');
+insert into employee(employeeID,name,salary,department) values (5,'Md. <NAME>',300000,'Office Management');
+update employee set employeeID=7, salary=125000 where employeeID=1;
+update employee set employeeID=7, salary=150000 where employeeID=10;
+delete from employee where employeeID = 6;

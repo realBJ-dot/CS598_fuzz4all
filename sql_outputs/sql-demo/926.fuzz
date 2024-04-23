@@ -1,0 +1,15 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ 
+CREATE FUNCTION dbfunc (arg_array ARRAY(INT)) RETURNS ARRAY(INT) AS $$
+BEGIN
+
+RETURN arg_array * 10;
+
+END; $$
+
+ 
+UPDATE user_db_personality SET "name" = '<NAME>', level = 30, type = 3 WHERE id = 20;
+SELECT * FROM user_db_personality;
+ 
+DROP FUNCTION dbfunc;
+SELECT * FROM user_db_personality;

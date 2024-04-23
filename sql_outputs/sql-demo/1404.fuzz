@@ -1,0 +1,12 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ 
+CREATE TABLE IF NOT EXISTS `books` (
+  `author_id` INT(10) UNSIGNED,
+  `booktitle` VARCHAR(255),
+  PRIMARY KEY (`author_id`)
+) ENGINE=MEMORY;
+INSERT INTO `books` VALUES (8, 'SQL Bible'), (2, 'Programming MySQL');
+SELECT * FROM `books`;
+
+
+```

@@ -1,0 +1,71 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE employees (
+employee_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+first_name VARCHAR(24) NOT NULL,
+last_name VARCHAR(24) NOT NULL,
+gender CHAR(1) NOT NULL,
+birth_date DATE NOT NULL,
+hire_date DATE NOT NULL,
+salary FLOAT(11,2) NOT NULL
+);
+CREATE TABLE dept (
+dept_no INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+dept_name VARCHAR(10) NOT NULL
+);
+CREATE TABLE salaries (
+emp_no INT NOT NULL,
+salary FLOAT(11,2) NOT NULL,
+from_date DATE,
+to_date DATE DEFAULT NULL,
+CONSTRAINT fk_emp
+FOREIGN KEY emp_no(emp_no)
+REFERENCES employees(employee_id)
+);
+
+CREATE TABLE dept_manager (
+dept_no INT NOT NULL,
+manager_no INT NOT NULL,
+CONSTRAINT fk_dept
+FOREIGN KEY dept_no(dept_no)
+REFERENCES departments(dept_no),
+CONSTRAINT fk_manager
+FOREIGN KEY manager_no(manager_no)
+REFERENCES employees(employee_id)
+);
+
+CREATE TABLE dept_emp (
+dept_no INT NOT NULL,
+emp_no INT NOT NULL,
+from_date DATE,
+to_date DATE DEFAULT NULL,
+CONSTRAINT fk_dept
+FOREIGN KEY dept_no(dept_no)
+REFERENCES departments(dept_no),
+CONSTRAINT fk_emp
+FOREIGN KEY emp_no(emp_no)
+REFERENCES employees(employee_id)
+);
+
+CREATE TABLE staff (
+staff_no INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+first_name VARCHAR(24) NOT NULL,
+last_name VARCHAR(24) NOT NULL,
+department_no INT NOT NULL,
+MANAGER_staff_no INT DEFAULT NULL,
+CONSTRAINT fk_dept
+FOREIGN KEY department_no(department_no)
+REFERENCES departments(dept_no),
+constraints fk_manager
+FOREIGN KEY manager_no(MANAGER_staff_no)
+REFERENCES employees(employee_id)
+);
+
+
+SET autocommit = 0;
+COMMIT;
+
+-- Please create a mutated program which shows how to read in all
+-- tables of the system's current database instance. Show the
+-- following fields:  employee_id, first_name, last_name,
+-- gender, birth_date and hire_date. Show the following
+-- fields (

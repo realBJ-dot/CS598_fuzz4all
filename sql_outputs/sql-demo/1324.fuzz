@@ -1,0 +1,29 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS author(
+	author_id INT NOT NULL  PRIMARY KEY AUTO_INCREMENT,
+	author_name text
+);
+DESCRIBE author;
+INSERT INTO author VALUES('John','Albert');
+INSERT INTO author VALUES('Paul','John');
+INSERT INTO author VALUES('John','Paul');
+SELECT * FROM category;
+SELECT a.author_id,a.author_name
+FROM author a,author b,category c,book_to_category bc
+WHERE a.author_id=bc.cat_author
+AND a.author_id=b.author_id
+AND b.author_id=c.cat_id
+ORDER BY a.author_id;
+DESC author;
+--
+-- Please provide a solution to the task, by adding where clause and a GROUP By clause
+ 
+  
+CREATE DATABASE IF NOT EXISTS newDB; USE newDB; 
+CREATE TABLE IF NOT EXISTS book_info(
+	bid INT AUTO_INCREMENT PRIMARY KEY,
+	name TEXT,
+	year INT 
+)
+ 
+INSERT INTO book_info VALUES(21,'

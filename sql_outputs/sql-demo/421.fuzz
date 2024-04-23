@@ -1,0 +1,4 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DELETE FROM Person WHERE id=5;
+TRUNCATE Person;
+INSERT INTO Person VALUES(2, 'Alice', 'Doe', 24, 'Hello');

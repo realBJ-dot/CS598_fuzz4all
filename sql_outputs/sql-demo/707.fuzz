@@ -1,0 +1,21 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS Student;
+CREATE TABLE Student (First_Name  VARCHAR(20), Last_Name CHAR(20), Grade boolean);
+INSERT INTO Student (First_Name, Last_Name, Grade) VALUES ('John', 'Smith', TRUE);
+INSERT INTO Student (First_Name, Last_Name, Grade) VALUES ('Jane',  'Lee', FALSE);
+INSERT INTO Student (First_Name, Last_Name, Grade) VALUES ('Tom','Stark', TRUE);
+SELECT ( SELECT First_Name From Student WHERE Grade = TRUE ) AS Name
+FROM Student
+WHERE
+  Grade is TRUE
+ORDER BY
+  First_Name;
+SELECT
+  First_Name,
+  Last_Name,
+  Grade
+FROM Student
+WHERE
+  Grade is TRUE
+ORDER BY
+  Last_Name;

@@ -1,0 +1,22 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS `person` (
+  `personID` INT NOT NULL AUTO_INCREMENT,
+    `lastname` VARCHAR(45) NULL DEFAULT NULL, 
+    `firstname` VARCHAR(45) NOT NULL,
+    `age` INT NOT NULL, 
+    `gender` ENUM('male', 'female') NULL DEFAULT NULL, 
+  PRIMARY KEY (`personID`));
+CREATE TABLE IF NOT EXISTS `course` (
+  `courseID` INT NOT NULL AUTO_INCREMENT, 
+    `courseNum` INT NULL,
+    `courseName` VARCHAR(45) NOT NULL, 
+    `teacherID` INT, 
+    `classroomID` INT, 
+    `termID` INT, 
+    `roomNum` INT, 
+        PRIMARY KEY (`courseID`), 
+        FOREIGN KEY (`teacherID`) REFERENCES `person` (`personID`), 
+        FOREIGN KEY (`classroomID`) REFERENCES `course` (`courseID`), 
+        FOREIGN KEY (`termID`) REFERENCES `course` (`courseID`));
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;

@@ -1,0 +1,28 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS car;
+CREATE TABLE car (name CHAR(5) NOT NULL, price LONG);
+ALTER TABLE car MODIFY(price decimal(4, 2));
+INSERT INTO car VALUES ('Toyota 4', 999.99);
+--- Update a column in the previous generation
+CREATE TABLE car (name CHAR(5), color CHAR(9), price LONG);
+UPDATE car SET price=699.99 WHERE color = 'White';
+UPDATE car SET price=750.99 WHERE color = 'Red';
+*# Please create a very short query which uses SQL features in a complex way. Be sure to use ENGINE=InnoDB. You should only use sampleDB as the database and assume no other table exist. You need to create new tables to perform operations. In the end, drop all tables you created. */
+DROP TABLE IF EXISTS car;
+CREATE TABLE car (name CHAR(5), price LONG);
+INSERT INTO car VALUES ('Toyota 4', 100.00, color='White');
+ALTER TABLE car MODIFY price DECIMAL(6, 2);
+UPDATE car SET price=699.99 WHERE color = 'White';
+UPDATE car SET price=750.99 WHERE color = 'Red';
+INSERT INTO car VALUES ('BMW M1', 100.00, color='Black');
+--- Please create a short query to find the color and price of each car
+DROP TABLE IF EXISTS car;
+CREATE TABLE car (name CHAR(5), price LONG);
+INSERT INTO car VALUES ('Toyota 4', 100.00, color='White');
+INSERT INTO car VALUES ('Toyota 4', 95.99, color='White');
+INSERT INTO car VALUES ('Toyota 4', 99, color='White');
+INSERT INTO car VALUES ('BMW M1', 100.00, color='Black'); 
+--- Please create a short query to find the price of two cars that have the same name
+DROP TABLE IF EXISTS car;
+CREATE TABLE car (name CHAR(5), price LONG);
+INSERT INTO car VALUES

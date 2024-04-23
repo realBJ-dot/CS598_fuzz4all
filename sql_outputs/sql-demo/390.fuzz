@@ -1,0 +1,20 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS Contact
+(
+    Contact_id INT NOT NULL AUTO_INCREMENT,
+    first_name TEXT,
+    last_name TEXT,
+    email TEXT,
+    date_creation DATETIME,
+    date_modified DATETIME,
+    PRIMARY KEY (Contact_id),
+    FOREIGN KEY (Contact_id) REFERENCES Users (User_id)
+);<commit_msg>Updated SQL program to add new table and changed the name<commit_after>mysql
+ 
+
+MySQL, named after co-founder Michael Widenius's daughter, My, and SQL, is widely used with other programs to implement applications that require database functionality. It serves as an element of the LAMP web application software stack, where LAMP stands for Linux, Apache, MySQL, Perl/PHP/Python, and is used in many database-driven web applications and popular websites such as Facebook and YouTube.
+
+Written in C and C++, MySQL supports a variety of system platforms from Linux, macOS, Microsoft Windows to even the Symbian OS. It offers dual-licensing i.e., GPL version 2 or a proprietary license.
+
+Support for MySQL is provided through the official manual, various IRC channels, forums, and additionally, Oracle offers paid support via its MySQL Enterprise products. It is known for its exceptional performance in average scenarios and has been appraised as a fast, stable and true multi-user, SQL database server. Furthermore, it is also available under the MariaDB fork developed in 2010 when Oracle acquired Sun Microsystems, the then owner of MySQL AB.
+/* Please create a very short query which uses SQL features in a complex way. Be sure to use ENGINE=InnoDB. You should only use sampleDB as the database and assume no other table exist. You need to create new tables to perform operations. In the end, drop all tables you created

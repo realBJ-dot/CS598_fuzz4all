@@ -1,0 +1,5 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+UPDATE user_db_skills SET label = 'JavaScript' WHERE label='Python';
+USE sampleDB;
+DROP TABLE user_db_skills;
+DROP DATABASE IF EXISTS sampleDB

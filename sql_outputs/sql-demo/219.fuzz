@@ -1,0 +1,40 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `customer`; USE sampleDB;
+-- Please create an equivalent of the above query after completing the previous task in C
+CREATE DATABASE IF NOT EXISTS sampleDB; SELECT * FROM information_schema.TABLES WHERE table_schema='sampleDB' and TABLE_NAME IN ('customer', 'city');
+UPDATE customer SET city='Kolkowska' WHERE id=2; COMMIT;
+INSERT INTO customer (first_name, last_name, city) VALUES ('Jordan', 'Friedman', 'Kolkowska'); COMMIT;
+CREATE DATABASE IF NOT EXISTS sampleDB; SELECT * FROM information_schema.TABLES WHERE table_schema='sampleDB' and TABLE_NAME IN ('customer', 'city');
+CREATE DATABASE IF NOT EXISTS sampleDB; SELECT * FROM information_schema.TABLES WHERE table_schema='sampleDB' and table_name='customer';
+-- Please create an equivalent of the following query which uses the MySQL database sampleDB. Be sure to use ENGINE=InnoDB in table creation.
+CREATE DATABASE IF NOT EXISTS sampleDB; CREATE TABLE IF NOT EXISTS customer (id INT, first_name VARCHAR(255)); CREATE TABLE IF NOT EXISTS city (id INT, name VARCHAR(255)); INSERT INTO city VALUES (default, 'Westfield'); INSERT INTO customer VALUES (1, 'Johnny', 'Chang'); INSERT INTO city VALUES (2, 'New York City'); COMMIT;
+-- Please create a way to use MySQL stored procedures in a way similar to Java programs
+DELIMITER  
+CREATE PROCEDURE add (i INT)
+BEGIN
+INSERT INTO customer VALUES(id(1), i, 'Downtown');
+END 
+DELIMITER ;
+CREATE PROCEDURE get (i INT)
+BEGIN
+SELECT first_name, last_name, city FROM customer WHERE id = id(i);
+END 
+DELIMITER ;
+CALL add(1); CALL add(2); CALL add(3); DELIMITER ;
+SELECT * FROM customer;
+CALL get(2);
+DELIMITER 
+-- Please try to complete the following SQL query. Be sure to run the script 20 times, starting from a clean database.
+CREATE DATABASE IF NOT EXISTS sampleDB1; USE sampleDB1;
+CREATE DATABASE IF NOT EXISTS sampleDB2; USE sampleDB2;
+DROP PROCEDURE IF EXISTS sp1; CREATE PROCEDURE sp1(out i INT)
+BEGIN
+  IF EXISTS(SELECT 1 FROM customer WHERE id > ALL (SELECT id FROM customer)) THEN
+     
+    SET i = ALL(SELECT id FROM customer);
+    ALTER TABLE customer DROP CONSTRAINT customer_id_uniq;
+  ELSE
+    SET i = 0;
+  END IF;
+  COMMIT;
+  SELECT * from customer

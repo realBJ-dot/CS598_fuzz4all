@@ -1,0 +1,27 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+#
+# If you do not need/want to drop it, you can do so too. But do not.
+ 
+#
+#  
+DROP TABLE IF EXISTS Person;
+CREATE TABLE Person(
+    id INTEGER PRIMARY KEY,
+    first_name VARCHAR(256),
+    last_name VARCHAR(256)
+)
+#
+#  
+DROP TABLE IF EXISTS Person;
+CREATE TABLE Person(
+    id INTEGER PRIMARY KEY,
+    first_name VARCHAR(256),
+    last_name VARCHAR(256)
+);
+SELECT * FROM Person;
+#
+#
+#
+#
+

@@ -1,0 +1,14 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+<fim_middle>CREATE TABLE IF NOT EXISTS users(
+  `userId` int(5),
+  `userName` varchar(100),
+  `pwd` varchar(32),
+  `firstname` varchar(20),
+  `lastname` varchar(50),
+  `contactNo` int(11),
+  `userType` int(1),
+  `isAdmin` bit(1),
+  `created_at` timestamp,
+  `updated_at` timestamp,
+  PRIMARY KEY (`userId`)
+)ENGINE=InnoDB DEFAULT CHARSET=latin1;

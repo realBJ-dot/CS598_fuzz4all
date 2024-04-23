@@ -1,0 +1,16 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+REPLACE INTO employee10 (EmpNo, Func, Salary, Dns1, Dns2, Dns3) values
+( 1000, 'Salesperson', 60000, 'Sales Support', '786', 'Dover', '43');
+
+mysql> select * from employee10;
++----+-------+--------+-----------+-----------+----------------+
+| EmpNo| Func | Salary | Dns1      | Dns2      | Dns3           |
++----+-------+--------+-----------+-----------+----------------+
+|   1000|Salesperson| 60000 | Sales Support| None      | None           |
++----+-------+--------+-----------+-----------+----------------+
+```
+
+We can apply this same principle to INSERT, UPDATE, and DELETE statements too. The first operation in a data management language should be either SELECT or UPDATE but it is not required to use them.
+
+A common complaint with MySQL is that you can never know if data in a table will be overwritten with a newer record. We are going to learn more about how to deal with this problem in a future lesson. Here are two ways you can solve your problem effectively: (1) Make the query case insensitive i.e., use the INGRESE and ERASE statements to insert and remove records. (2) Use MERGE instead of REPLACE (for MySQL, use the UPDATENI and DELETE FROM statements).

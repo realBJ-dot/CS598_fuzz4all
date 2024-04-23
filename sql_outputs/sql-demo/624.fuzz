@@ -1,0 +1,7 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- Create a sample table for the mutated table
+DROP TABLE IF EXISTS MutatedSample;
+CREATE TABLE MutatedSample (ID INT);
+INSERT INTO MutatedSample VALUES (10);
+SELECT * FROM MutatedSample;
+SELECT ID INT FROM MutatedSample;

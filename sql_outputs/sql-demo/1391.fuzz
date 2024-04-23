@@ -1,0 +1,36 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+CREATE TABLE Authors (FirstName VARCHAR(255), LastName VARCHAR(255));
+ALTER TABLE Authors MODIFY FirstName VARCHAR(255);
+ALTER TABLE Authors MODIFY LastName VARCHAR(255);
+USE sampleDB; INSERT INTO Authors VALUES ("John", "Hancock");
+USE sampleDB; INSERT INTO Authors VALUES ("John", "Adams");
+SELECT FirstName, LastName FROM Authors WHERE FirstName="John" AND LastName = 'Hancock';
+SELECT FirstName, LastName FROM Authors WHERE FirstName="John" AND LastName="Adams";
+USE sampleDB; INSERT INTO Authors VALUES ("John", "Adams"); -- Insert data to your table
+SELECT FirstName, LastName FROM Authors;
+USE sampleDB; ALTER TABLE Authors MODIFY FirstName VARCHAR(255); -- Modify column datatype for all columns to String
+SELECT FirstName, LastName FROM Authors;
+-- Please create and test a program that stores and updates a table by using a variable in the
+-- UPDATE statement.
+USE sampleDB; INSERT INTO Authors VALUES ("John", "Adams");
+var Authors; SELECT * FROM Authors;
+UPDATE Authors SET LastName = 'Davis';
+var Authors; SELECT * FROM Authors;
+UPDATE Authors SET FirstName = 'John';
+var Authors; SELECT * FROM Authors;
+INSERT INTO Authors VALUES ("John", "Davis"); -- Insert data to your table in var Authors
+SELECT FirstName, LastName FROM Authors;
+--
+ 
+USE sampleDB; INSERT INTO Authors VALUES ("John", "Adams");
+SELECT FirstName, LastName FROM Authors;
+CREATE PROCEDURE dbo.DisplayAuthors2()
+AS
+SELECT Fi[Author].[FirstName], Fi[Author].[LastName]
+FROM [Author];
+USE sampleDB; CALL dbo.DisplayAuthors2();
+ 
+USE sampleDB; CALL dbo.DisplayAuthors2();
+USE sampleDB; DROP PROCEDURE dbo.DisplayAuthors2;
+*/

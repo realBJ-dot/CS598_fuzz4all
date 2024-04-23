@@ -1,0 +1,8 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS `products` (
+  `product_id` int(10) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100),
+  `cost` float,
+  PRIMARY KEY (`product_id`)
+)ENGINE=InnoDB DEFAULT CHARSET=latin1;
+drop database if exists sampleDB;

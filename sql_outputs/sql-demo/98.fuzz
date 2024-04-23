@@ -1,42 +1,57 @@
-USE sampleDB;
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users(username char(6) PRIMARY KEY, FirstName VARCHAR(20)) ENGINE=InnoDB;
+INSERT INTO Users(username,Firstname) VALUES('Test','Test'),('Admin','Admin'),('Guest','Guest');
+
+--MySQL and PHP work perfectly well together
+1. MySQL server start
+2.... create a database
+3.... create a table within a database
+4.... add data to the table
+5.... retrieve data from the table
+6.... drop the table
+7.... drop the database
+
+mysql>select * from Users
++------+---------+----------------+
+| username  | Firstname |
++------+---------+----------------+
+| Guest  | Guest |
+| Admin  | Admin |
+| Test  | Test |
++------+---------+----------------+
+5 rows in set (0.00 sec)
+
+mysql>show tables
++-----------+
+| Tables_in_info  |
++-----------+
+| Information_schema  |
+| Users  |
+| Users_Temp  |
+| adbusers  |
++-----------+
+7 rows in set (0.00 sec)
+ 
+mysql>create table Users (username int,Firstname varchar(30)) ENGINE=InnoDB ;
+Query OK, 0 rows affected (0.03 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+-- phpMyAdmin SQL Dump
+-- version 4.8.0.1
+-- https: 
 --
--- MySQL dump 10.13  Distrib 5.7.13, for Linux (x86_64)
---
--- Host: localhost    Database: mydata
--- ------------------------------------------------------
--- Server version	5.7.13-0ubuntu0.18.04.1
+-- Host: 127.0.0.1
+-- Generation Time: Aug 19, 2018 at 05:46 AM
+-- Server version: 10.1.32-MariaDB
+-- PHP Version: 7.1.8
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
 
  ;
  ;
  ;
- ;
- ;
- ;
- ;
- ;
- ;
- ;
-
---
--- Table structure for table `products`
---
-
-DROP TABLE IF EXISTS `products`;
- ;
- ;
-CREATE TABLE `products` (
-  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `sku` varchar(10) NOT NULL,
-  `price` varchar(10) DEFAULT NULL,
-  `unitPrice` varchar(10) DEFAULT NULL,
-  `available_qty` varchar(10) DEFAULT NULL,
-  `manufacturerName` varchar(10) DEFAULT NULL,
-  `manufacturerId` int(11) DEFAULT NULL,
-  `stockLevel` varchar(10) DEFAULT NULL,
-  `location` varchar(10) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
- ;
-
---
--- Dumping data for table `products
+/*!40101

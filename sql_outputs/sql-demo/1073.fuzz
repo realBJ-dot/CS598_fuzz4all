@@ -1,0 +1,37 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+SET GLOBAL sql_mode=ANSI_QUOTES;
+CREATE TABLE `worker AS` (
+  `no_worker` INT,
+  `nama_lengkap` VARCHAR(50),
+  `kode_lokasi` VARCHAR(50),
+  `username` VARCHAR(50),
+  `password` VARCHAR(50),
+  `tgl_masuk` DATETIME,
+  `id_level` INT,
+  `id_status` INT,
+  `id_kota_asal` INT,
+  `id_kota_tujuan` INT,
+  `no_tlp` INT
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+DROP TABLE worker;
+-- Please drop the table. We have used ENGINE=InnoDB, so it is equivalent to a table with the same syntax (with a table definition).
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+SET GLOBAL sql_mode=ANSI_QUOTES;
+CREATE TABLE `worker AS` (
+  `no_worker` INT,
+  `nama_lengkap` VARCHAR(50),
+  `kode_lokasi` VARCHAR(50),
+  `username` VARCHAR(50),
+  `password` VARCHAR(50),
+  `tgl_masuk` DATETIME,
+  `id_level` INT,
+  `id_status` INT,
+  `id_kota_asal` INT,
+  `id_kota_tujuan` INT,
+  `no_tlp` INT
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE table barang (no_nota int not null, id_user int not null, type_barang varchar(40), total_harga float not null );
+CREATE table detail_nota (id_nota int not null, id_barang int not null, jumlah int not null, description varchar(30));
+insert into detail_nota (id_nota,id_barang,jumlah) values (1,18,4);
+insert into detail_nota (id_nota,id_barang,jumlah) values (2,29,3);
+insert into detail_nota (id_nota,id_barang,jumlah) values

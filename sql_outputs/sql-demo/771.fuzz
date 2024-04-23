@@ -1,0 +1,14 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+CREATE TABLE IF NOT EXISTS `IDTable` ( `ID` INT(11) NOT NULL, `ID2` INT(11), `Description` VARCHAR(300) CHARACTER SET UTF8),
+
+USE sampleDB;
+CREATE TABLE IF NOT EXISTS `FirstAndSecondTable` ( `id` SET(INT(11), INT(56)) NOT NULL PRIMARY KEY, `data` VARCHAR(300) CHARACTER SET UTF8);
+SELECT * FROM FirstAndSecondTable, IDTable;
+SELECT * FROM FirstAndSecondTable, IDTable WHERE FirstAndSecondTable.id = IDTable.ID OR SecondAndSecondTable.id = IDTable.ID2 OR SecondAndSecondTable.id = IDTable.ID2;
+UPDATE FirstAndSecondTable
+SET data ='Data changed' WHERE id = (SELECT id FROM IDTable WHERE ID = (SELECT id FROM IDTable WHERE ID2=(SELECT id FROM IDTable WHERE data='Data changed'))));
+
+DROP TABLE IF EXISTS FirstAndSecondTable; DROP TABLE IF EXISTS IDTable;
+DROP DATABASE IF EXISTS sampleDB;
+*/

@@ -1,0 +1,23 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users
+(
+    UserID INT DEFAULT 1 AUTO_INCREMENT,
+    First_Name varchar(20),
+    Last_Name varchar(20),
+    Password varchar(20) NOT NULL,
+  PRIMARY KEY (UserID)
+);
+CREATE TABLE Contact
+(
+    ContactID INT DEFAULT 1 AUTO_INCREMENT,
+    First_Name varchar(20),
+    Email varchar(100),
+    Contact_Type varchar(10),
+    First_Message Text,
+    Second_Message Text,
+    Third_Message Text,
+    Date_Created DATETIME,
+    Date_Modified DATETIME,
+  PRIMARY KEY (ContactID),
+  FOREIGN KEY (ContactID) REFERENCES Users (UserID) ON UPDATE CASCADE
+);

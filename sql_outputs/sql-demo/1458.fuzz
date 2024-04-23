@@ -1,0 +1,40 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ 
+ 
+ALTER TABLE users_details ADD email VARCHAR(255);
+ALTER TABLE users_details MODIFY COLUMN name char(255);
+-- You can create a table using a single SELECT from a foreign table.
+CREATE TABLE users_detail (
+  id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    name CHAR(255),
+    type INT(1) DEFAULT '0',
+    email VARCHAR(255),
+  PRIMARY KEY(id),
+    FOREIGN KEY (name) REFERENCES users_details_like (name)
+);
+SELECT COUNT(*) FROM users_details;
+SET @SQL = 'INSERT INTO users_detail (id) VALUES (1);' ;
+mysql> @SQL ;
+UPDATE sampleDB.users_details SET type=1, email="<EMAIL>" WHERE id=2;
+DROP TABLE IF EXISTS users_detail;
+CREATE TABLE users_detail (
+  id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    name CHAR(255),
+    email VARCHAR(255),
+  PRIMARY KEY(id)
+);
+DROP TABLE IF EXISTS users_details_like;
+SELECT * FROM users_details_like;
+CREATE TABLE users_details_like (
+  id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    name CHAR(255),
+    type INT(1) DEFAULT '0',
+  PRIMARY KEY(id)
+);
+INSERT INTO users_details_like SELECT * FROM users_details;
+UPDATE sampleDB.users_details SET name="sample", type=0, email="sample" WHERE id=1;
+DROP TABLE IF EXISTS users_details_like;
+DROP TABLE IF EXISTS users_details;
+exit;
+ 
+DROP DATABASE sampleDB;

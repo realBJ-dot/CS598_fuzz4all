@@ -1,0 +1,25 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+-- MySQL will take your new entry and insert it into the existing table, then use the SQL to delete the record associated with the username username.
+-- Here’s an alternative one from https: 
+
+DROP TABLE IF EXISTS user;
+CREATE TABLE user(id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, username VARCHAR(20) UNIQUE,
+password VARCHAR(15) NOT NULL);
+INSERT INTO user (username, password) VALUES ('admin', '<PASSWORD>');
+UPDATE user SET username="admin2", password="<PASSWORD>" WHERE username="admin";
+-- Try changing your password again. This time it fails.
+-- Now try using ALTER to replace the username with the admin name.
+ALTER TABLE user ALTER username SET NOT NULL;
+-- Your MySQL instance will then start accepting your new username and password if you remove the password.
+-- If you need to use a certain username in your next application, use the following query to switch to that username and do any other tasks required to achieve what you want. Please change the username in the WHERE condition to match the username you used in your query.
+ALTER TABLE user ALTER username SET NOT NULL;
+DROP TABLE IF EXISTS user;
+CREATE TABLE user(id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, username VARCHAR(20) UNIQUE,
+password VARCHAR(15) NOT NULL);
+INSERT INTO user (username, password) VALUES ('kareem', '<PASSWORD>');
+-- Drop the table and try inserting using a different username. It will fail with Access denied for user.
+DROP TABLE IF EXISTS user;
+CREATE TABLE user(id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, username VARCHAR(20) UNIQUE,
+password VARCHAR(15) NOT NULL);
+INSERT INTO user (username, password) VALUES ('kareem', '<

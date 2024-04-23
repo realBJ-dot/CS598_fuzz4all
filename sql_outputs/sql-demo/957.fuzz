@@ -1,0 +1,12 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS sampleTable;
+-- CREATE NEW TABLE
+SELECT 'ALTER TABLE' AS query;
+
+-- You can use the system's database management command to modify your system tables.
+mysql> drop table sampleTable;
+mysql> drop table IF EXISTS sampleTable;
+select * from database.information_schema.columns where table_name ='sampleTable';
+ALTER TABLE `sampleTable` 
+  CHANGE `userId` `userId` INT NULL,
+  CHANGE `userLastName` `userLastName` VARCHAR(15) NULL;

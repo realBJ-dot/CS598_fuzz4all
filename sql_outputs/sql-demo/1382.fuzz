@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ALTER TABLE sampleDB.book
+	ADD FOREIGN KEY(book_isbn)
+	REFERENCES sampleDB.book
+	(book_isbn);
+ALTER TABLE sampleDB.book MODIFY book_isbn INT UNIQUE;
+CREATE INDEX book_text ON sampleDB.book(book_title(3) ASC);
+ALTER TABLE sampleDB.book ENGINE=MyISAM;
+DROP TABLE sampleDB.book;
+DROP DATABASE sampleDB;

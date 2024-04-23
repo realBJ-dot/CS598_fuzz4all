@@ -1,0 +1,29 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE users(id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, first_name VARCHAR(128), last_name VARCHAR(128));
+CREATE TABLE test(id INT PRIMARY KEY AUTO, name VARCHAR(128));
+INSERT INTO users (first_name, last_name) VALUES ('John', 'Doe'), ('Joe', 'Bird');
+INSERT INTO test (name) VALUES ('Bob'), ('Alice');
+SELECT * FROM users;
+DROP TABLE IF EXISTS test;
+DROP TABLE IF EXISTS users;
+DROP DATABASE IF EXISTS sampleDB;
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE users(id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, first_name VARCHAR(128), last_name VARCHAR(128));
+CREATE TABLE test(id INT PRIMARY KEY AUTO, name VARCHAR(128));
+CREATE TABLE production(id INT, name VARCHAR(128));
+INSERT INTO users (first_name, last_name) VALUES ('John', 'Doe'), ('Joe', 'Bird');
+INSERT INTO test (name) VALUES ('Bob'), ('Alice');
+INSERT INTO production (id, name) VALUES (1, 'One'), (2, 'Two'), (3, 'Three');
+SELECT * FROM users JOIN production USING (id);
+DROP TABLE IF EXISTS production;
+DROP TABLE IF EXISTS test;
+DROP TABLE IF EXISTS users;
+DROP DATABASE IF EXISTS sampleDB;
+-- Do NOT create a database as 'root'
+ 
+ 
+
+ 
+/* CREATE a new database using MySQL shell:
+ $ mysql -h 127.0.0.1 -u root -p

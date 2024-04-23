@@ -1,0 +1,16 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS Users (
+    ID int(11) not null primary key auto_increment,
+    Password varchar(100) default NULL,
+    Created_At TIMESTAMP default current_timestamp,
+    Last_Login TIMESTAMP,
+    FirstName varchar(100) default NULL,
+    LastName varchar(100) default NULL,
+    Title varchar(100) default NULL,
+    Organization varchar(100) default NULL
+);
+CREATE TABLE IF NOT EXISTS Users_2(
+    UserID int(11) not null primary key auto_increment,
+    Name varchar(100) default NULL,
+    User_Type enum('Admin','User','Trainee') default NULL
+);

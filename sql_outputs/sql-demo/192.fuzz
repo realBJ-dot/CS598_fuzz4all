@@ -1,0 +1,5 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE Users_3;
+
+GRANT ALL PRIVILEGES ON sampleDB.Users_3 TO 'MySQL'@'localhost' IDENTIFIED BY 'your secret password';
+FLUSH PRIVILEGES;

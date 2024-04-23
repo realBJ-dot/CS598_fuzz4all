@@ -1,0 +1,38 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE employee10(
+Id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+LastName CHAR(30) NOT NULL,
+Salary INT UNSIGNED NOT NULL,
+ManagerName CHAR(30),
+Direct ReportName CHAR(30),
+FOREIGN KEY(managerName) REFERENCES employee (LastName)
+);
+INSERT INTO employee10 (LastName,Salary,ManagerName,Direct ReportName) VALUES ('Smith', 1000, 'Bob','James');
+INSERT INTO employee10 (LastName,Salary,ManagerName,Direct ReportName) VALUES ('Jackson', 1000, 'Anthony', 'Roberts');
+SELECT * FROM employee10;
+#
+-- Please create a mutated program that inserts data into a table not in the same database as the modified query.
+#
+USE sampleDB; CREATE TABLE IF NOT EXISTS employee20 (
+Id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+LastName CHAR(30) NOT NULL,
+Salary INT UNSIGNED NOT NULL,
+ManagerName CHAR(30),
+Direct ReportName CHAR(30),
+FOREIGN KEY (managerName) REFERENCES employee10 (LastName)
+); INSERT INTO employee20 (LastName,Salary,ManagerName,Direct ReportName) VALUES ('Rogers', 1000, 'Nadime', 'Bob');
+SELECT * FROM employee20; #
+#
+-- Please create a mutated program that inserts data into an existing table in the same database as the modified query.
+#
+USE sampleDB; ALTER TABLE employee20 ADD MANAGERNAME CHAR(30);
+INSERT INTO employee20 (LastName,Salary,ManagerName,Direct ReportName) VALUES ('Stark', 1000, 'Nadime','James');
+SELECT * FROM employee20; #
+#
+-- Please create and mutate such an INSERT statement:
+USE sampleDB;CREATE TABLE IF NOT EXISTS department (
+Id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+DepartmentName CHAR(30)
+);INSERT INTO department (departmentName) values ('Sales');INSERT INTO department (departmentName) values ('Engineering'); #
+#
+#

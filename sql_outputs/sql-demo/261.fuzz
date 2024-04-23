@@ -1,0 +1,8 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE teacher(teacherID INT NOT NULL PRIMARY KEY AUTO_INCREMENT, first_name VARCHAR(45) NOT NULL, last_name VARCHAR(45), mailID VARCHAR(50));
+-- Please create a very simple query using SQL features in a complex way
+INSERT INTO teacher( first_name, mailID, last_name) VALUES ("John", "<EMAIL>","G");
+-- Please alter query 1 slightly (by changing in the values)
+INSERT INTO teacher( first_name, mailID, last_name) VALUES ("John", "<EMAIL>","A");
+-- Please show the results when you use SQL command
+SELECT teacherID,first_name,last_name,mailID FROM teacher

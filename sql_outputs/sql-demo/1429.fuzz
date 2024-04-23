@@ -1,0 +1,47 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS `products` (
+  `product_id` int(10) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100),
+  `cost` float,
+  PRIMARY KEY (`product_id`)
+)ENGINE=InnoDB;
+-- Please create an entirely new table with columns in the order 'name' and 'price'. Insert 5 rows of data in it (id,Name,Price).
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS `products` (
+  `product_id` int(10) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100),
+  `price` float,
+  PRIMARY KEY (`product_id`)
+)ENGINE=InnoDB;
+-- Please create an entirely new table with columns in the order 'name' and 'price'. Insert 5 rows of data in it (id,Name,Price).
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS `products` (
+  `product_id` int(10) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100),
+  `price` float,
+  PRIMARY KEY (`product_id`)
+)ENGINE=InnoDB DEFAULT CHARSET=latin1;
+-- Please create a query that returns all data of all products in the previous generation of the table.
+SELECT * FROM products;<commit_msg>#218 Add comments in MySql database creation<commit_after>CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB
+CREATE TABLE IF NOT EXISTS `products` (
+    `product_id` int(10) NOT NULL AUTO_INCREMENT,
+    `name` varchar(100),
+    `cost` float,
+    PRIMARY KEY (`product_id`)
+)ENGINE=InnoDB DEFAULT CHARSET=latin1;
+USE sampleDB
+CREATE TABLE IF NOT EXISTS `projects` (
+    `project_id` int(10) NOT NULL AUTO_INCREMENT,
+    `name` varchar(100),
+    `user_id` int(11),
+    PRIMARY KEY (`project_id`)
+)ENGINE=InnoDB DEFAULT CHARSET=latin1;
+USE sampleDB
+CREATE TABLE IF NOT EXISTS `users` (
+ `user_id` int(11) NOT NULL AUTO_INCREMENT,
+ `name` varchar(100),
+ `password` varchar(200)
+)ENGINE=InnoDB DEFAULT CHARSET=latin1;
+USE sampleDB
+CREATE TABLE IF NOT EXISTS `comments` (
+ `comment_id` int(11) NOT NULL AUTO_INCREMENT,

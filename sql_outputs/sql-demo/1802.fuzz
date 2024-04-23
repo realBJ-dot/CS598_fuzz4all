@@ -1,0 +1,15 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- Create a new table in the previous generation
+DROP TABLE IF EXISTS employee;
+CREATE TABLE employee (name CHAR(5), salary LONG);
+    INSERT INTO employee VALUES ('Sherlock', '100000');
+    INSERT INTO employee VALUES ('Loki', '99800');
+    INSERT INTO employee VALUES ('Han Solo', '150');
+    INSERT INTO employee VALUES ('Pippin', '89999');
+SELECT * FROM employee;
+SELECT name, salary
+FROM employee
+UNION
+SELECT name, salary
+FROM sampleDB.employee;
+DROP DATABASE IF EXISTS sampleDB;

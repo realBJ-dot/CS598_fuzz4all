@@ -1,0 +1,8 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employees_positions;
+CREATE TABLE employees_positions(employee_emp_no INT UNSIGNED  NOT NULL, employee_position INT UNSIGNED, PRIMARY KEY (employee_emp_no, employee_position));
+USE sampleDB;
+INSERT INTO employees_positions VALUES (1100, 80);
+INSERT INTO employees_positions VALUES (2000, 60);
+INSERT INTO employees_positions VALUES (7001, 90);
+INSERT INTO employees_positions VALUES (7002, 100);

@@ -1,0 +1,22 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- Write an SQL query to get the average price of a given product.
+
+ 
+CREATE TABLE IF NOT EXISTS products(
+    product_id INT UNSIGNED UNIQUE NOT NULL,
+    product_name CHARACTER(100) NOT NULL,
+    price DECIMAL(17, 2),
+    PRIMARY KEY (product_id)
+);
+
+
+ 
+
+ 
+
+ <fim_middle>DELETE FROM products WHERE product_id=(SELECT product_id FROM products WHERE product_name=\'Milk\')
+DELETE FROM products WHERE product_id=(SELECT product_id FROM products WHERE product_id=(SELECT product_id FROM products WHERE product_name=\'Milk\') AND price>3000)
+
+ 
+
+/* The demo program has multiple functions which you should complete. Use the methods called products.select

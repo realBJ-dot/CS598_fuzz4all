@@ -1,0 +1,18 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- Create a table that is named like table2 using table1 as it's primary key
+SET FOREIGN_KEY_CHECKS=0;
+create table table2(
+  id INT NOT NULL,
+  data INT NOT NULL,
+  name MEDIUMTEXT NULL,
+  constraint id_pk PRIMARY KEY (id)
+);
+SET FOREIGN_KEY_CHECKS=1; -- To make sure that our Foreign Key constraints are enforced
+INSERT INTO TABLE2 (id, data) VALUES (1,9); INSERT INTO TABLE2 (id, data) VALUES (2,10); INSERT INTO TABLE2 (id, data) VALUES (3,9);
+SELECT * FROM table2; DROP TABLE IF EXISTS SAMPLE_TABLE;
+-- As we do not need to create the database and tables, we drop it all at once
+DROP DATABASE IF EXISTS sampleDB;
+
+
+INSERT INTO TABLE2 (id, data) VALUES (4,9); INSERT INTO TABLE2 (id, data) VALUES (5,10); INSERT INTO TABLE2 (id, data) VALUES (6,9);
+SELECT * FROM table2; DROP TABLE IF EXISTS sample_table;

@@ -1,0 +1,5 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+INSERT INTO users(first_name, last_name, balance) VALUES ('Barry', 'Willis', 200);
+INSERT INTO users(first_name, last_name, balance) VALUES ('Jim', 'Brown', 900);
+INSERT INTO users(first_name, last_name, balance) VALUES ('Tina', 'Johnson', -1200);
+SELECT * FROM users;

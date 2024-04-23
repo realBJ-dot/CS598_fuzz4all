@@ -1,0 +1,24 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS person_tmp;
+ALTER TABLE person_tmp ADD FILLFACTOR INT;
+DELETE FROM person_tmp;
+insert into person_tmp
+values
+(
+    1, 'foo', '2000-01-04'
+   ),
+   (
+      2, 'bar', '2001-05-15'
+   ),
+   (
+      3, 'baz', '2001-05-25',
+      4, 'qux', '2001-05-25');
+ 
+ 
+<commit_msg>updated the query<commit_after> 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS person_tmp;
+CREATE TABLE person_tmp (id INT PRIMARY KEY, name VARCHAR(200), birthdate DATE);
+INSERT INTO person_tmp (id, name, birthdate) VALUES(3, '<NAME>', '1995-01-20');
+INSERT INTO person_tmp (id, name, birthdate) VALUES(4, '<NAME>', '2013-05-17');
+/* Please create a very short query which uses SQL features in a complex way. Be sure to use

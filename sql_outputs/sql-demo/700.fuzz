@@ -1,0 +1,29 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS Student;
+CREATE TABLE Student (First_Name  VARCHAR(20), Last_Name CHAR(20), Grade BOOLEAN);
+INSERT INTO Student (First_Name, Last_Name, Grade) VALUES ('John',  'Smith',     true);
+INSERT INTO Student (First_Name, Last_Name, Grade) VALUES ('Jane',   'Lee',       false);
+INSERT INTO Student (First_Name, Last_Name, Grade) VALUES ('Tom',    'Stark',     true);
+SELECT
+  Count(*),
+  Grade
+FROM Student
+GROUP BY
+  Grade
+ORDER BY
+  Grade DESC;
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS Student;
+CREATE TABLE Student (First_Name  VARCHAR(20), Last_Name CHAR(20), Grade BOOLEAN);
+INSERT INTO Student (First_Name, Last_Name, Grade) VALUES ('John',  'Smith',     true);
+INSERT INTO Student (First_Name, Last_Name, Grade) VALUES ('Jane',   'Lee',       false);
+INSERT INTO Student (First_Name, Last_Name, Grade) VALUES ('Tom',    'Stark',     true);
+SELECT
+  Count(*),
+  Group_concat(Grade order by Grade  SEPARATOR '|'  )
+FROM Student
+GROUP BY
+  Grade
+HAVING
+  Count(*) > 1;

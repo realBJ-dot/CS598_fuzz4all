@@ -1,0 +1,14 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS users(
+	user_id INT NOT NULL PRIMARY KEY,
+	user_email varchar(500)
+);
+DESCRIBE users;
+CREATE TABLE IF NOT EXISTS blog_posts(
+	blog_post_id INT NOT NULL PRIMARY KEY,
+	blog_post_title varchar(200),
+	blog_post_content text,
+	blog_post_author_id INT NOT NULL
+);
+DESCRIBE blog_posts;
+DESCRIBE permissions;

@@ -1,0 +1,33 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- Create a table called addresses using the sampleTable structure defined in the previous exercise.
+DROP TABLE IF EXISTS adresse1;
+CREATE TABLE adresse1 (addr1 VARCHAR(50), addr2 VARCHAR(50));
+DROP TABLE IF EXISTS addresses5;
+CREATE TABLE adresse5 (addrs1 VARCHAR(20) NOT NULL, addr2 VARCHAR(20));
+
+ 
+INSERT INTO addresses5 VALUES('Said, Mohammad', 'Hussein');
+INSERT INTO addresses5 VALUES('Said, Mohammad', 'Hussein');
+INSERT INTO addresses5 VALUES('Said, Mohammad', 'Hussein');
+INSERT INTO addresses5 VALUES('Said, Mohammad', 'Hussein');
+
+ 
+INSERT INTO adresse1 VALUES('Mohambik', 'Hussein');
+INSERT INTO adresse1 VALUES('Mohammad', 'Hussein');
+INSERT INTO adresse1 VALUES('Mohammad', 'Hussein');
+INSERT INTO adresse1 VALUES('Mohammad', 'Hussein');
+INSERT INTO adresse1 VALUES('Mohammad', 'Hussein');
+INSERT INTO adresse1 VALUES('Mohammad', 'Hussein');
+INSERT INTO adresse1 VALUES('Mohammad', 'Hussein');
+INSERT INTO adresse1 VALUES('Mohammad', 'Hussein');
+
+DROP TABLE IF EXISTS adresse1;
+DROP TABLE IF EXISTS addresses5;
+DROP DATABASE IF EXISTS sampleDB;
+
+create table if not exists person
+(
+  firstName            varchar(100) not null,
+  lastName             varchar(100) not null,
+  emp_number           int not null,
+  gender              

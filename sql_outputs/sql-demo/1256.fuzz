@@ -1,0 +1,22 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS users (
+	userId CHAR(5) NOT NULL,
+	role CHAR(1) DEFAULT 'a' NOT NULL,
+	PRIMARY KEY (userId)
+)ENGINE=InnoDB;
+DESCRIBE users;
+
+ 
+mysql> exit
+
+# Create a new database and tables via MySQL client
+mysql -u root -p    # Enter password
+mysql> CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+mysql> CREATE TABLE IF NOT EXISTS users (
+	userId CHAR(5) NOT NULL,
+	role CHAR(1) DEFAULT 'a' NOT NULL,
+	PRIMARY KEY (userId)
+)ENGINE=InnoDB;
+mysql> DESCRIBE users;
+
+```

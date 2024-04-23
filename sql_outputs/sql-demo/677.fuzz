@@ -1,0 +1,12 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ 
+DROP TABLE IF EXISTS Student;
+CREATE TABLE Student (First_Name VARCHAR(20), Last_Name CHAR(20), Grade INT);
+INSERT INTO Student (First_Name, Last_Name, Grade) VALUES ('John', 'Smith', 8);
+INSERT INTO Student (First_Name, Last_Name, Grade) VALUES ('Jane', 'Lee', 9);
+INSERT INTO Student (First_Name, Last_Name, Grade) VALUES ('Tom', 'Stark', 10);
+SELECT * FROM Student WHERE Grade IN (2, 3);
+DROP TABLE IF EXISTS Student;
+DROP DATABASE IF EXISTS sampleDB;
+
+You are to use dynamic sql to perform the following tasks: Update the grade in a specific grade level. Read in multiple records representing the student table at the same time and sum the grades.

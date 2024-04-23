@@ -1,0 +1,7 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS category(
+	cat_id INT NOT NULL  PRIMARY KEY AUTO_INCREMENT,
+	cat_name text
+);
+DESCRIBE category;
+-- Please create a program that uses both JOIN and INNER SQLEXPRESSIONS for the same data.

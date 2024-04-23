@@ -1,0 +1,6 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+REPLACE INTO car (name, price) 
+  VALUES 
+   ('Subaru',300000);
+UPDATE car set name = 'Dodge' WHERE name = 'Subaru';
+DROP DATABASE IF EXISTS sampleDB;

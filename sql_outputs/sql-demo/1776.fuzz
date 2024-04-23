@@ -1,0 +1,39 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS test4;
+CREATE TABLE test4 (id INT AUTO_INCREMENT PRIMARY KEY, userid INT UNSIGNED, name VARCHAR(50),
+age INT);
+SELECT * FROM test4;
+DROP TABLE IF EXISTS test5;
+CREATE TABLE test5 (id INT, userid INT, name VARCHAR(50),
+age INT);
+SELECT * FROM test5;
+-- Create a table of employees with the following attributes and create indexes
+-- as well as a table of employees without the id column
+CREATE TABLE employees ( first VARCHAR(50), last VARCHAR(35), email VARCHAR(35), phone INT, city VARCHAR(25), zipcode INT );
+
+-- A table of employees without the id column and add a unique index on the id column.
+CREATE TABLE employees_with_id_omitted (first VARCHAR(50), last VARCHAR(35), email VARCHAR(35), phone INT, city VARCHAR(25), zipcode INT);
+CREATE INDEX employees_with_id_omitted_uk ON employees_with_id_omitted (id);
+
+-- Please write two programs to use the employee data structure to store
+-- a list of employees from the previous exercise.
+-- (a) What is the cardinality of the employee table?
+-- (b) What is the number of rows in the employee table?
+-- (c) What is the total number of rows in the employee table?
+-- (d) What is the average and maximum number of rows on the employee table?
+-- (e) What is the number of rows that are 30 or older.
+-- (f) What is the total number of rows that are 30 or older?
+-- (g) What is the number of employees who live in Australia? Please
+-- use a WHERE statement to filter for the given geographical location.
+-- (h) What is the average of the age of the employees who live in Australia?
+-- (i) What is the minimum and maximum salary of the employees who live in Australia?
+-- (j) Write a program which will create a new table employee_summary with three columns:
+-- employee_id, total_salary, and number_of_employees. Create a SUM statement that
+-- aggregates the total_salary values over this table into a single row. The SUM
+-- statement is followed by the COUNT statement and finally the DISTINCT
+-- statement to ensure that any duplicated entries are eliminated. The statement
+-- should return a total number of employees.
+CREATE TABLE employee_summary_table (employee_id INT, total_salary INT, number_of_employees INT);
+
+
+-- You

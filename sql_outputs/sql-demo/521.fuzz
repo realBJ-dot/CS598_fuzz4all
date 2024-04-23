@@ -1,0 +1,13 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE mytable ( ID int, price decimal(10,2), FOREIGN KEY (ID) REFERENCES mytable ( myid ) ON DELETE CASCADE ON UPDATE CASCADE);
+INSERT INTO mytable values(2, 1000);
+INSERT INTO mytable values(3, 1001);
+INSERT INTO mytable values(3, 1002);
+SELECT myid, price FROM mytable  ORDER BY price;
+UPDATE mytable set price = 1002 WHERE ID = 3;
+SELECT myid, price FROM mytable  ORDER BY price;
+DROP TABLE mytable;
+DROP DATABASE sampleDB;
+
+-- 
+# MySQL Commands for Ubuntu 16.04

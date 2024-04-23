@@ -1,0 +1,17 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS users_details(
+  `userId` int(5) NOT NULL AUTO_INCREMENT,
+  `userName` varchar(20),
+  `pwd` varchar(30),
+  `firstName` varchar(20),
+  `LastName` varchar(50),
+  `userType` int(1),
+  `isAdmin` bit(1),
+  `created_at` date,
+  `updated_at` date, 
+  PRIMARY KEY (`userId`)
+);
+set autocommit = 0;
+SHOW TABLES;
+set autocommit = 1;
+DROP DATABASE IF EXISTS sampleDB;

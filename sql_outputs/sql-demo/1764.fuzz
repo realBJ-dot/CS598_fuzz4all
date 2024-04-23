@@ -1,0 +1,5 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS test1;
+CREATE TABLE test1 (id int unsigned AUTO_INCREMENT, userid int, name varchar(50),age int);
+DROP TABLE IF EXISTS test2;
+CREATE TABLE test2 (id int, userid int, name varchar(50), age int);

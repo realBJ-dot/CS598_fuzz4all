@@ -1,0 +1,4 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS user_db_personalities;
+DROP TABLE IF EXISTS user_db_personality_history;
+DROP DATABASE IF EXISTS sampleDB;

@@ -1,0 +1,21 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS user;
+CREATE TABLE user(id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, username VARCHAR(20) UNIQUE,
+password VARCHAR(15) NOT NULL);
+INSERT INTO user (username, password) VALUES ('admin', '<PASSWORD>');
+-- Please drop a table which is present.
+DROP TABLE IF EXISTS user;
+-- Please drop and recreate the table.
+DROP TABLE IF EXISTS user;
+-- Please create a new table with duplicate primary keys.
+DROP TABLE IF EXISTS user;
+CREATE TABLE user(login VARCHAR(64), date INT UNSIGNED, PRIMARY KEY(login, date));
+INSERT INTO user VALUES ('admin2',2011);
+INSERT INTO user VALUES ('admin3',2010);
+INSERT INTO user VALUES ('admin',2009);
+SELECT * FROM user;
+SELECT count(*) FROM user;
+DROP TABLE IF EXISTS user;
+-- Check why it failed. Try using a different engine.
+CREATE TABLE IF NOT EXISTS user(id INT UNSIGNED AUTO_INCREMENT, username VARCHAR(20) UNIQUE,
+password VARCHAR(15) NOT NULL, PRIMARY KEY(id, username)); INSERT INTO user VALUES(1, 'admin2', '1234');

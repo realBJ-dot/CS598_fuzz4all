@@ -1,0 +1,39 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE person (  
+  personID INT AUTO_INCREMENT,
+    lastname VARCHAR(45) NULL DEFAULT NULL, 
+    firstname VARCHAR(45) NOT NULL, 
+    age INT NOT NULL, 
+    gender ENUM('male', 'female') NULL DEFAULT NULL, 
+  PRIMARY KEY (personID));
+CREATE TABLE course (  
+  courseID INT AUTO_INCREMENT, 
+    courseNum INT NULL,
+    courseName VARCHAR(45) NOT NULL, 
+    teacherID INT, 
+    classroomID INT, 
+    termID INT, 
+    roomNum INT, 
+        PRIMARY KEY (courseID), 
+        FOREIGN KEY (teacherID) REFERENCES person (personID), 
+        FOREIGN KEY (classroomID) REFERENCES course (courseID), 
+        FOREIGN KEY (termID) REFERENCES course (courseID));
+-- Please create a MySQL query to calculate the average of the grades in a sequence of courses. We suggest you use an SQL function 'round' to round the result to 2 decimal places; however, it's entirely up to you and the programmer to figure out the tradeoffs between speed and accuracy. You should also consider some queries to calculate other averages from a sequence of data that you can construct in-line using techniques like nested aggregate functions (having the sequence of courses be the join condition). Use SQL aggregate functions whenever possible.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE person (  
+  personID INT AUTO_INCREMENT,
+    lastname VARCHAR(45) NULL DEFAULT NULL, 
+    firstname VARCHAR(45) NOT NULL, 
+    age INT NOT NULL, 
+    gender ENUM('male', 'female') NULL DEFAULT NULL, 
+  PRIMARY KEY (personID));
+CREATE TABLE course (  
+  courseID INT AUTO_INCREMENT, 
+    courseNum INT NULL,
+    courseName VARCHAR(45) NOT NULL, 
+    teacherID INT, 
+    classroomID INT, 
+    termID INT, 
+    roomNum INT, 
+        PRIMARY KEY (courseID), 
+        FOREIGN KEY

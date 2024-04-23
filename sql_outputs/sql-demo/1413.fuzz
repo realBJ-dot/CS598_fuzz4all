@@ -1,0 +1,19 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS `books` (
+  `author_id` INT(10) UNSIGNED,
+  `booktitle` VARCHAR(255)
+);
+INSERT INTO `books` (`author_id`, `booktitle`)
+VALUES (5, 'Go MySQL!');
+CREATE TRIGGER books_delete
+AFTER DELETE
+ON `books`
+FOR EACH ROW
+BEGIN
+  INSERT INTO `books` VALUES (NULL,
+    OLD.booktitle);
+END;
+SELECT * FROM `books`;
+DELIMITER ;
+DROP TRIGGER books_delete ON `books`;
+DROP DATABASE ;

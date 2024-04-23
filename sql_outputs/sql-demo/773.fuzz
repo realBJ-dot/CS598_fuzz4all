@@ -1,0 +1,13 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS `FirstAndSecondTable` ( ID INT(11) NOT NULL PRIMARY KEY, data TEXT);
+CREATE TABLE IF NOT EXISTS `TempTable` ( ID INT(11) NOT NULL PRIMARY KEY, data TEXT);
+ 
+REPLACE INTO `TempTable` SELECT * FROM `FirstAndSecondTable`;
+ 
+REPLACE INTO `FirstAndSecondTable` SELECT *, data FROM `TempTable`;
+DROP TABLE `TempTable`;
+DROP DATABASE `sampleDB`;
+
+</pre></p>
+
+<p>Thank you.</p>

@@ -1,0 +1,26 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Mutated (id INT(20), c INT(5) UNSIGNED, INDEX (id));
+CREATE TABLE Mutated (id INT(20), c INT(5) UNSIGNED);
+CREATE TABLE Mutated (id INT(20), c INT(5) UNSIGNED);
+CREATE TABLE s
+a VALUES (1);
+INSERT INTO s VALUES (1);
+-- Please create your third version, where all mutations are performed by an update instead of deleting them. You should use a SELECT or INSERT statement. The INSERT should be executed only once (per transaction). You can assume that the mutations are complete in the final state, no other rows should be added to the table.
+-- The expected result should be the 2 rows inserted.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Mutated (id INT(20), c INT(5) UNSIGNED);
+UPDATE Mutated SET Mutated.c=c+10 WHERE Mutated.id=2;
+INSERT INTO Mutated VALUES (1,7);
+DROP TABLE Mutated;
+DROP DATABASE sampleDB;
+<commit_msg>Update tutorial 26<commit_after>---
+layout: post-no-feature
+title:  "Tutorial 26 - MySQL"
+date:   2012-10-24
+category: mysql
+---
+
+<a href="../../tutorial/tutorial-mysql.html"><i class="glyphicon glyphicon-chevron-left"></i> Tutorial 26 - MySQL</a>
+
+---
+

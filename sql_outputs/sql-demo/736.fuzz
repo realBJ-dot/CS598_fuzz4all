@@ -1,0 +1,11 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ 
+CREATE TABLE IF NOT EXISTS `FirstColumn` (
+	`FirstColumn_PK` INT(4),
+	`FirstColumn_Name` VARCHAR(20)
+);
+ ;
+ ;
+ ;
+	 ;
+ ;

@@ -1,0 +1,17 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ALTER TABLE employee20 MODIFY firstName VARCHAR(450);
+ALTER TABLE employee20 MODIFY lastName VARCHAR(450);
+ALTER TABLE employee20 MODIFY dateOfBirth DATE;
+ALTER TABLE employee20 MODIFY status TINYINT(2) UNSIGNED;
+#
+
+\c sampleDB2013032222
+#
+# We need to execute this query in a different database because our sampleSQL only accepts database name as a first argument!
+SELECT * FROM employee20;
+\c $sampleDB2013032222
+
+ALTER DATABASE $sampleDB2013032222 OWNER TO root;
+
+exit;
+

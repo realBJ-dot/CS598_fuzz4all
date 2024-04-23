@@ -1,0 +1,49 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE MutationTest(
+  id int,
+  name varchar(40),
+  grade varchar(100),
+  password varchar(100)
+);
+INSERT INTO MutationTest (id,name,grade,password)
+  VALUES (10,"test2","B","test"),
+         (20,"test3","C","test"),
+         (30,"test4","B","test");
+--- In the previous program we have deleted all the data from the sample table and created no new data. This is called Data Wipe. It has multiple use-cases like:
+1. Clearing the table data if needed.
+2. Clearing the database or completely removing the sample table.
+3. Resetting the entire sample table data.
+4. Creating a sample table just like the previous generation if the data has been created.
+5. Populating an entire database with sample data.
+6. Performing a DDL operation on any of the existing tables in the database.
+If we use the previous approach for the demo, and we have no data in Mutated table, then 
+we have performed no data wipe.
+
+Now we have to create a new table for mutating the last table. Mutated table will have all the data from before.
+CREATE TABLE Mutated(
+    id int,
+    name varchar(40),
+    grade varchar(100),
+    password varchar(100)
+);
+INSERT INTO Mutated (id,name,grade,password)
+  VALUES (10,"test4","C","test"),
+         (20,"test2","B","test"),
+         (30,"test1","B","test");
+
+In this program we added two rows, named ID 30 and 20. After running the program, we can see the data in Mutated table. We have mutated the data in Mutated table
+And now we have to drop the Mutated table.
+DROP TABLE Mutated;
+--- In this program, to perform this task, we have dropped entire last table Mutated. This was done for demo and to perform an example for this program we have used Mutated table.
+Now we have to perform drop-table from before program in this case.
+
+DROP TABLEsampleDB;
+
+You are free to use MySQL but you have to comply with the license.
+
+Please submit your completed program in a proper format in our online judge.
+
+#Note
+
+You are given 30 seconds to read the question, 10 for question solution but do take note that the problem statement is very difficult and you can get a little frustrated even before trying.
+

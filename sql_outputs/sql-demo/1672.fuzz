@@ -1,0 +1,19 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `staff`;
+CREATE TABLE `staff` (
+	`id` serial NOT NULL AUTO_INCREMENT,
+	`staffName` varchar(255) NOT NULL,
+	`staffGrade` varchar(10) NOT NULL,
+	`staffCode` varchar(20) NOT NULL,
+	PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1;
+SHOW CREATE TABLE `staff`;
+ALTER TABLE `staff` ENGINE=InnoDB;
+-- Please give some examples why this is not allowed
+SET @idNumber := 50;
+INSERT INTO `staff` (`id`, `staffName`, `staffGrade`, `staffCode`) VALUES(@idNumber, '<NAME>', '5', '0005');
+SET @idNumber := 50;
+UPDATE `staff` SET `staffName` = '<NAME>', `staffGrade` = '5', `staffCode` = '0000' WHERE `staffCode` = '0000' ;
+SELECT * FROM `staff` ;
+SHOW CREATE TABLE `staff`;
+ALTER TABLE `staff` ENGINE=InnoDB;

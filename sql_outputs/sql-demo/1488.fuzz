@@ -1,0 +1,26 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE users_details;
+CREATE TABLE users_details(user_id INTEGER, phone VARCHAR(50) UNIQUE, age INTEGER);
+INSERT INTO users_details(user_id, phone, age) VALUES (23434, 63642642, 865357);
+DROP TABLE users_details;<commit_msg>Changed username to username10 from username5. Fixed username to match the other changes.<commit_after>﻿DROP DATABASE IF EXISTS sampleDB;
+CREATE DATABASE IF NOT EXISTS sampleDB;
+
+DROP DATABASE IF EXISTS username5;
+DROP DATABASE IF EXISTS username6;
+DROP DATABASE IF EXISTS username7;
+DROP DATABASE IF EXISTS username8;
+DROP DATABASE IF EXISTS username9;
+DROP DATABASE IF EXISTS sampleDB;
+
+ 
+CREATE USER 'username5'@'192.168.131.1' IDENTIFIED BY 'password';
+CREATE DATABASE sampleDB;
+CREATE DATABASE `username7` DEFAULT CHARACTER SET latin1;
+CREATE DATABASE IF NOT EXISTS sampleDB; USE `sampleDB`;
+INSERT INTO Users_Detail(user_id, phone, age) VALUES (23434, 63642642, 865357);
+COMMIT;
+ 
+CREATE USER 'username7'@'192.168.131.1' IDENTIFIED BY '<PASSWORD>';
+CREATE USER 'username8'@'192.168.131.1' IDENTIFIED BY 'password';
+CREATE DATABASE IF NOT EXISTS username5; USE sampleDB;
+DROP TABLE users_details;

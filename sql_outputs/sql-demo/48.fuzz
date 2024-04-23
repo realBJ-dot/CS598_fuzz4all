@@ -1,25 +1,6 @@
-USE sampleDB;
-SET @a:=1;
-SELECT @a;  
-UPDATE comments SET content = "MySQL is fantastic. I wish I knew this." WHERE id = @a;  
-UPDATE comments SET content = "MySQL was great and I wish I knew this too." WHERE id = 1;
-SHOW TABLES;
- 
-SHOW VARIABLES WHERE VARIABLE_NAME = 'innodb_ft_enabled';
-SHOW WARNINGS;
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users(username char(20) PRIMARY KEY, FirstName VARCHAR(30)) ENGINE=InnoDB;
+INSERT INTO Users(username,Firstname) VALUES('Test','Test'),('Admin','Admin'),('Guest','Guest'),('Super','Super');
+SELECT username,username FROM Users ORDER BY username;
+SELECT username,Sum(amount) FROM Orders Where payment_type='Credit Card' GROUP BY username;
 
--- MySQL Workbench
---
--- MySQL Database Designer by MariaDB
---
--- ------------------------------------------------------
--- MySQL : Free Databases (localhost)
--- ------------------------------------------------------
--- Database created by MariaDB on Fri Feb  1 17:42:26 2017
--- ------------------------------------------------------
-CREATE user 'root'@'localhost' identified by 'root';
-GRANT ALL PRIVILEGES ON sampleDB.* TO 'root'@'localhost';
-# create table 'comments' with id as int, content as varchar(128)
-# set character set as utf8
-
-CREATE DATABASE sampleDB;

@@ -1,0 +1,56 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS mytable2;
+CREATE TABLE mytable2 (
+        x int
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- 3. Add the MySQL database access driver to your php.ini or mysql.cnf file.
+[mysql.default]
+default-character-set=utf8
+
+[mysqld]
+# Set this to a number high enough for each unique database you have to use your connection string for
+skip-thread-db
+
+# When MySQL is used as a backend for a database, you should keep this value as '1', if you use mysqlnd.
+skip-socket
+
+default-storage-engine=InnoDB
+
+table_open_cache=10240
+#table_open_cache = 100
+#table_open_cache = 32768
+
+join_buffer=10050368
+#join_buffer = 10
+#join_buffer = 4096, only in innodb
+
+join_buffer_size=10050368
+#join_buffer_size = 1024
+#join_buffer_size = 4096, only in innodb
+
+max_clients = 10800
+#max_clients = 960
+#max_clients = 3145728
+
+query_cache_type   = 0
+
+query_cache = 10000
+#query_cache = 100
+
+read_buffer_size = 1073741824
+#read_buffer_size = 4096
+#read_buffer_size = 40960
+
+write_buffer_size = 10000000000
+#write_buffer_size = 2000000
+#write_buffer_size = 20000000
+
+# When InnoDB is used as a database, turn off the server caching (it is slow and causes problems).
+# You can turn off the caching for SELECT queries when using InnoDB, too, to improve performance of your applications.
+read_rnd_buffer_size = 0
+sort_buffer_size = 0
+#sort_buffer_size = 512
+#sort_buffer_size = 1024
+read_rnd_request_buffers = 256		# Default number of buffers allocated by the server during a query.
+#read_rnd_request_buffers = 256		# Default number of buffers used by

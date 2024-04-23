@@ -1,0 +1,55 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ -- SQL-injection attack
+ UPDATE mysupplier SET sup_name = '' WHERE supplier_id = 1;
+ INSERT INTO mysupplier VALUES(5, '<script>alert();</script>', 335);
+ 
+ -- SQL-injection attack
+UPDATE mysupplier SET
+sup_address = '<script>alert();</script>'
+ WHERE supplier_id in (select supplier_id 
+from mysupplier where
+sup_name = 'Sony';
+ 
+ DROP DATABASE sampleDB;
+ 
+
+## Database Design and Implementation
+
+1. Create the user and database
+
+**Example**
+
+ Create a database named ```mysql_crud```  with character set UTF8
+ You have to create the tables first
+
+CREATE DATABASE `sampleDB`    ;
+
+GRANT ALL PRIVILEGES ON sampleDB.*to 'admin'@'%'; -- this is the administrator priviliges
+
+CREATE USER 'admin'@'%' IDENTIFIED BY '<PASSWORD>@!';
+GRANT ALL PRIVILEGES ON sampleDB.*to 'admin'@'localhost';
+
+1. Create tables and records by creating them and inserting data
+
+For the user table
+ CREATE TABLE `users` (
+               `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+               `created_at` datetime COLLATE utf8_unicode_ci DEFAULT NULL,
+               `updated_at` datetime COLLATE utf8_unicode_ci DEFAULT NULL,
+               `deleted_at` datetime DEFAULT NULL,
+               `email` varchar(255) NOT NULL,
+               `display_name` varchar(255) NOT NULL,
+               `password` varchar(255) NOT NULL,
+               `remember_token` varchar(100) DEFAULT NULL,
+               PRIMARY KEY (`id`),
+               UNIQUE KEY `email` (`email`)
+       ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+For the employee table
+ CREATE TABLE `employees` (
+                   `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+                   `created_at` datetime COLLATE utf8_unicode_ci DEFAULT NULL,
+                   `updated_at` datetime COLLATE utf8_unicode_ci DEFAULT NULL,
+                   `deleted_at` datetime DEFAULT NULL,
+                   `name` varchar(255) NOT NULL,
+                   `

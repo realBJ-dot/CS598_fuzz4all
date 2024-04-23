@@ -1,0 +1,20 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ALTER TABLE Users ADD `Age` INT NOT NULL DEFAULT 35;
+ALTER TABLE Users ADD `Password` VARCHAR(60) NOT NULL DEFAULT 'Password';
+INSERT INTO Users(Name, Age, Password) VALUES ('Jeff', 39, 'JeffPassword');
+--
+-- If you are new to MySQL, make sure you install the MySQL community edition by visiting:
+-- http: 
+<fim_middle>
+SELECT * FROM USER;
+
+CREATE TABLE Albums (Name VARCHAR(50), Photographer VARCHAR(100));
+INSERT INTO Albums(Name, Photographer) VALUES ('Test', '<NAME>');
+
+CREATE TABLE Albums (Name VARCHAR(50), Photographer VARCHAR(100));
+INSERT INTO Albums(Name, Photographer) VALUES ('Test', '<NAME>');
+
+ALTER TABLE Users ADD `Age` INT NOT NULL DEFAULT 35;
+ALTER TABLE Users ADD `Password` VARCHAR(60) NOT NULL DEFAULT 'Password';
+UPDATE Users SET name = 'Jeff';
+ 

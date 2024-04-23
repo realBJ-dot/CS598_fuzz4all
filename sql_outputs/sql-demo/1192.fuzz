@@ -1,0 +1,45 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS students (
+    id               int auto_increment,
+    first_name       varchar(30) not null,
+    last_name        varchar(30) null default null,
+    PRIMARY KEY (id)
+);
+SET @studentID=INSERT INTO students (ID, FirstName, LastName);
+SET @id=1;
+START TRANSACTION;
+SET @studentID = INSERT INTO `students` (ID, FirstName, LastName);
+SET @studentID = INSERT INTO `students` (ID, FirstName2, LastName);
+SET @studentID = INSERT INTO `users` (`id`, `first_name`, `last_name`, `balance`);
+UPDATE `users`
+SET `balance` = `amount`
+where  Users.ID = @studentId;
+UPDATE `users`
+SET `balance` = `amount`.2
+where  Users.ID = @studentID;
+UPDATE `users`
+SET `balance` = `amount` + @studentId + 0.2
+where  Users.ID = @studentId + 0.3;
+-- Please explain in the query below whether `IF` queries with `ELSEIF`, `ELSE` and `END` statements can be used in a `SELECT` query.
+SELECT IF (first_name = '<NAME>', 1, 2);
+-- Please explain in the query below
+SELECT *
+FROM users
+WHERE balance > 20.00
+ORDER BY balance;
+-- Please explain in the query below
+SELECT *
+FROM users
+WHERE balance > 20.00
+ORDER BY last_name, first_name;
+-- Please explain in the query below
+SELECT MAX(BALANCE)
+FROM users;
+-- Please explain in the query below
+SELECT max(balance), avg(balance)
+FROM users;
+-- Please explain in the query below
+SELECT IF(balance > 200.00, 'true', 'false')
+FROM users
+-- Please explain in the query below
+SELECT IF(balance > 200.00 OR balance < 100.00, 'high','medium') FROM users;

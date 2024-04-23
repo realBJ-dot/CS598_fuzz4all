@@ -1,0 +1,28 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ -- Use a join of author table with book table.
+-- Please write a complex JOIN to find all books by author.
+
+-- Please write a complex JOIN to find all books that are written by any author.
+-- You should use an INNER JOIN.
+-- Please write a complex JOIN to find all books written by <NAME>.
+
+INSERT INTO sampleDB.author VALUES ('<NAME>', 1, '<NAME>');
+INSERT INTO sampleDB.author VALUES ('<NAME>', 1, '<NAME>');
+INSERT INTO sampleDB.author VALUES ('<NAME>', 1, '<NAME>');
+INSERT INTO sampleDB.author VALUES ('<NAME>', 1, '<NAME>');
+INSERT INTO sampleDB.author VALUES ('<NAME>', 1, 'E. D');
+INSERT INTO sampleDB.author VALUES ('<NAME>', 1, '<NAME>');
+INSERT INTO sampleDB.author VALUES ('<NAME>', 1, '<NAME>');
+INSERT INTO sampleDB.author VALUES ('<NAME>', 2, 'Wittgenstein');
+INSERT INTO sampleDB.author VALUES ('<NAME>', 1, 'E. D');
+INSERT INTO sampleDB.author VALUES ('<NAME>', 2, 'Wittgenstein');
+INSERT INTO sampleDB.author VALUES ('<NAME>', 1, '<NAME>');
+INSERT INTO sampleDB.author VALUES ('<NAME>', 1, '<NAME>');
+INSERT INTO sampleDB.author VALUES ('<NAME>', 2, 'Wittgenstein');
+INSERT INTO sampleDB.author VALUES ('<NAME>', 1, '<NAME>');
+INSERT INTO sampleDB.author VALUES ('<NAME>', 1, 'E. D');
+INSERT INTO sampleDB.author VALUES ('<NAME>', 2, 'Wittgenstein');
+INSERT INTO sampleDB.author VALUES ('<NAME>', 1, '<NAME>');
+INSERT INTO sampleDB.author VALUES ('<NAME>', 1, '<NAME>');
+INSERT INTO sampleDB.author VALUES ('<NAME>', 3, 'Wittgenstein');
+INSERT INTO sampleDB.author VALUES ('<NAME>', 1, '<NAME>');

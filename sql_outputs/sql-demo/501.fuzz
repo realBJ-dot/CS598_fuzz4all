@@ -1,0 +1,35 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE mytable( myid int, title varchar(255));
+INSERT INTO mytable(myid, title) VALUES(1,'abc');
+INSERT INTO mytable(myid, title) VALUES(2,'def');
+SELECT * FROM mytable ORDER BY myid DESC;
+-- Please create a very short program that creates and uses a database.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE mytable( myid int, title varchar(255));
+INSERT INTO mytable(myid, title) VALUES(1,'abc');
+INSERT INTO mytable(myid, title) VALUES(2,'def');
+SELECT * FROM mytable ORDER BY myid DESC;
+SELECT * FROM mytable ;
+drop table mytable ;
+DROP DATABASE sampleDB;
+
+-- Please create a program that performs an INNER JOIN on the sampleDB database with a small result set.
+CREATE DATABASE IF NOT EXISTS testDB2;USE testDB2;
+CREATE TABLE mytable2( id int, title varchar(255));
+INSERT INTO mytable2(id, title) VALUES(1,'abc');
+INSERT INTO mytable2(id,title) VALUES(2,'def');
+INSERT INTO mytable2(id,title) VALUES(3,'ghi');
+INSERT INTO mytable2(id,title) VALUES(3,'jkl');
+SELECT * FROM mytable2 INNER JOIN sampleDB ON mytable2.id=sampleDB.mytable.myid;
+-- Please create a very short program that performs a multiple JOINs and is written in a single SQL statement.
+CREATE DATABASE IF NOT EXISTS testDB; USE testDB;
+CREATE TABLE mytable( id int, title varchar(255));
+INSERT INTO mytable(id, title) VALUES(1,'abc');
+INSERT INTO mytable(id,title) VALUES(2,'def');
+INSERT INTO mytable(id,title) VALUES(3,'ghi');
+CREATE TABLE mytable2( id int, title varchar(255));
+INSERT INTO mytable2(id, title) VALUES(1,'abc');
+INSERT INTO mytable2(id,title) VALUES(2,'def');
+INSERT INTO mytable2(id,title) VALUES(3,'ghi');
+INSERT INTO mytable2(id,title) VALUES(3,'jkl');
+SELECT * FROM mytable INNER JOIN mytable2 ON mytable

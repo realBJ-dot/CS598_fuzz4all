@@ -1,0 +1,8 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employees_salary;
+CREATE TABLE employees_salary (
+    employee_salary        INT UNSIGNED,
+    PRIMARY KEY (employee_salary));
+UPDATE employees_salary SET employee_salary = 5000 WHERE employee_salary = 2500;
+INSERT INTO employees_salary (employee_salary) VALUES (2000) ON DUPLICATE KEY UPDATE employee_salary = employees_salary.employee_salary + 5000;
+INSERT INTO employees_salary (employee_salary) VALUES (2000) ON DUPLIC

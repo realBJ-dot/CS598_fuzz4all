@@ -1,0 +1,6 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users_2(username char(20) PRIMARY KEY, FirstName VARCHAR(30)) ENGINE=InnoDB;
+ ;
+ ;
+DROP TABLE IF EXISTS Users_2;
+ ;

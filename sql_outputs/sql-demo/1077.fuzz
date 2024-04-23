@@ -1,0 +1,55 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS tunjangan;
+CREATE TABLE tunjangan (
+    `id` INT,
+    `nama_jabatan` VARCHAR(50),
+    `gelar_depan` VARCHAR(50),
+    `gelar_belakang` VARCHAR(50),
+    `gaji_bersih_pokok` BIT(1),
+    `is_active` BIT(1)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE usaha (
+    `id_usaha` INT,
+    `nama` VARCHAR(50),
+    `alamat` VARCHAR(50),
+    `kode_pos` INT,
+    `jenis_usaha` VARCHAR(50),
+    `status_usaha` BIT(1)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE kota (
+    `id_kota` INT,
+    `nama_kota` VARCHAR(50),
+    `id_provinsi` INT
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+SHOW TABLES;
+CREATE TABLE `penggarage AS` (
+  `id_penggarage` INT AUTO_INCREMENT,
+  `id_pengguna` INT,
+  `id_kota` INT,
+  `tanggal_masuk` DATETIME,
+  `total_pengambilans` INT,
+  `total_selesai` INT,
+  `jumlah_tansen` INT,
+  `keterangan` VARCHAR(255),
+  PRIMARY KEY (`id_penggarage`),
+  KEY `fk_pengguna` (`id_pengguna`),
+  KEY `fk_kota` (`id_kota`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE pengguna (
+    `id_pengguna` INT,
+    `id_level` INT,
+    `username` VARCHAR(50),
+    `password` VARCHAR(50),
+    `date_created` DATETIME,
+    `date_modified` TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+ 
+CREATE TABLE table_name(
+  'column_name' type PRIMARY KEY; column_name...
+);
+
+DROP DATABASE sampleDB;

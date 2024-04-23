@@ -1,0 +1,22 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+ 
+-- INSERT DATA;
+-- DROP TABLE IF EXISTS `FirstTable`;
+-- DROP TABLE IF EXISTS `SecondTable`;
+ 
+-- SHOW TABLES;
+ 
+-- DROP DATABASE IF EXISTS `sampleDB`;
+-- DROP DATABASE IF EXISTS `anotherDB`;
+-- DROP DATABASE IF EXISTS `yetAnotherDB`;
+ 
+DROP DATABASE IF EXISTS `sampleDB`;
+ 
+DROP DATABASE IF EXISTS `anotherDB`;
+
+ ;
+ ;
+ ;
+	 ;
+ ;

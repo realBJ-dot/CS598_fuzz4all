@@ -1,0 +1,16 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS Students;
+CREATE TABLE Students(
+    First_Name VARCHAR(20),
+    Last_Name CHAR(20),
+    Grade INT NOT NULL CHECK (Grade > 7 OR Grade <=0 ),
+    Department CHAR(20));
+INSERT INTO Students (First_Name, Last_Name, Grade, Department) VALUES ('John', 'Smith', 8, 'Maths');
+INSERT INTO Students (First_Name, Last_Name, Grade, Department) VALUES ('Jane', 'Lee', 9, 'Physical');
+INSERT INTO Students (First_Name, Last_Name, Grade, Department) VALUES ('Tom', 'Stark', 5, 'Physics');
+CREATE FUNCTION Students_Count(Department CHAR(20)) RETURNS INT
+    PREPARE STATEMENT
+      SELECT COUNT(*) FROM Students WHERE Department = :Department;
+SELECT Students_Count('Maths');
+DROP TABLE Students;
+DROP DATABASE IF EXISTS sampleDB;

@@ -1,0 +1,12 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS `FirstAndSecondTable` ( `id` INT(11) NOT NULL PRIMARY KEY, `data` VARCHAR(300) CHARACTER SET UTF8, `ID` INT(11) NULL);
+INSERT INTO `FirstAndSecondTable` (`data`, `ID`) VALUES ("Test Data 1", 1);
+INSERT INTO `FirstAndSecondTable` (`data`, `ID`) VALUES ("Test Data 2", 2);
+INSERT INTO `FirstAndSecondTable` (`data`, `ID`) VALUES ("Test Data 3", 3);
+INSERT INTO `FirstAndSecondTable` (`data`, `ID`) VALUES ("Test Data 4", 4);
+INSERT INTO `FirstAndSecondTable` (`data`, `ID`) VALUES ("Test Data 5", 5);
+INSERT INTO `FirstAndSecondTable` (`data`, `ID`) VALUES ("Test Data 6", 6);
+INSERT INTO `FirstAndSecondTable` (`data`, `ID`) VALUES ("Test Data 7", 7);
+SELECT * FROM `FirstAndSecondTable` ORDER BY `id`;
+/* Here you can create views by means of SQL syntax, as I did when I explained the general syntax on the previous day.
+Note that now the view has no

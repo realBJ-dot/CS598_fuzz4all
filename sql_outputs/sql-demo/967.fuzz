@@ -1,0 +1,23 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP DATABASE IF EXISTS sampleDB;
+
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+SET PASSWORD FOR'mysql_user'@'localhost' <- new
+SET PASSWORD FOR'mysql_user'@'localhost' = PASSWORD('<PASSWORD>');  -- old
+
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP DATABASE IF EXISTS sampleDB;<commit_msg>Update 2019-01-17-SQL-Database.md<commit_after>---
+layout: post
+title:      "SQL Database "
+date:       2019-01-16 21:18:45 +0000
+permalink:  sql_database
+---
+
+
+
+
+
+Written in C and C++, MySQL supports a variety of system platforms from Linux, macOS, Microsoft Windows to even the Symbian OS. It offers dual-licensing i.e., GPL version 2 or a proprietary license.
+
+Support for MySQL is provided through the official manual, various IRC channels, forums, and additionally, Oracle offers paid support via its MySQL Enterprise products. It is known for its exceptional performance in average scenarios and has been appraised as a fast, stable and true multi-user, SQL database server. Furthermore, it is also available under the MariaDB fork developed in 2010 when Oracle acquired Sun Microsystems, the then owner of MySQL AB.
+<pre>

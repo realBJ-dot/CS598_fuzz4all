@@ -1,0 +1,7 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS user;
+CREATE TABLE IF NOT EXISTS user (user_id INT, firstname VARCHAR(200), lastname VARCHAR(200), PRIMARY KEY(user_id));
+INSERT INTO user VALUES (1, 'John', 'Smith');
+SELECT name, lastname, phone FROM user;
+DROP TABLE IF EXISTS user;
+DROP DATABASE IF EXISTS sampleDB;

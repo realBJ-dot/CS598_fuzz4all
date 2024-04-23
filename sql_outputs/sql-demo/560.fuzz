@@ -1,0 +1,25 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS Mutated (id INT AUTO_INCREMENT PRIMARY KEY, price DECIMAL(10,2), name TEXT);
+INSERT INTO Mutated(price, id, name) VALUES(80,1, "<NAME>");
+UPDATE Mutated SET price = 80 WHERE id = 1;
+UPDATE Mutated SET price = 100 WHERE id = 3;
+DELETE FROM Mutated WHERE id = 1;
+SELECT price FROM Mutated;
+SELECT price, name FROM Mutated;
+DROP TABLE Mutated;
+DROP DATABASE sampleDB;
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS Mutated (id INT AUTO_INCREMENT PRIMARY KEY, price DECIMAL(10,2), name TEXT);
+CREATE TABLE IF NOT EXISTS Users (id INT UNIQUE, name TEXT);
+INSERT INTO Mutated(price, id, name) VALUES(80,1,"<NAME>");
+INSERT INTO Users(id, name) VALUES(1,"Fredrik");
+UPDATE Mutated SET price = 80 WHERE id = 1;
+UPDATE Mutated SET price = 100 WHERE id = 3;
+UPDATE Users SET name = "Jim" WHERE id = 3;
+SELECT id, name FROM Users;
+SELECT price FROM Users;
+SELECT price, name FROM Mutated;
+DROP TABLE Mutated;
+DROP TABLE Users;
+DROP DATABASE sampleDB;

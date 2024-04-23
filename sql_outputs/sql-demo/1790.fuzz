@@ -1,0 +1,6 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+USE car;
+INSERT INTO car(name,price) VALUES ('Mazda',100000);
+SELECT * FROM car;
+DROP DATABASE IF EXISTS sampleDB;
+

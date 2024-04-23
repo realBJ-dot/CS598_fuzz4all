@@ -1,0 +1,9 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS customer; 
+-- Please write a program which uses the PHPMyAdmin or similar tool (web application) to retrieve all the data for the customers of the company. You will need to access data to perform the task and it is required to use MySQL. Please check also the documentation and use of the PHP function.
+-- Example query:   You can use JOIN syntax to add additional conditions.
+SELECT id customer, first_name, last_name, email, gender, gender, phone FROM customers INNER JOIN addresses ON customers.id = addresses.customer; 
+UPDATE addresses SET customer = 556 WHERE customer > 555
+DROP DATABASE IF EXISTS sampleDB;
+-- In the previous generation, the MySQL database server does not have an in-built database administration tool, but it is available internally as an add-on. This is a powerful tool, which will help you maintain data in a reliable, secure and performant way.
+DROP DATABASE IF EXISTS sampleDB; 

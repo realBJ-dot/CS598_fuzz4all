@@ -1,0 +1,35 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employees_positions;
+ 
+CREATE TABLE employees_positions(employee_emp_no TINYINT UNSIGNED NOT NULL, employee_position MEDIUMINT UNSIGNED NOT NULL, PRIMARY KEY (employee_emp_no, employee_position)) ENGINE=InnoDB;
+*/ Write a SQL statement which:
+  * Returns a list of databases that currently exist on your server. List results as a comma-separated list of database names.
+ 
+SELECT database() as database;
+
+CREATE TABLE IF NOT EXISTS employees
+(
+    employee INT UNSIGNED   NOT NULL AUTO_INCREMENT,
+    employee_name    VARCHAR(45)   NOT NULL,
+    employee_gender    TINYINT UNSIGNED   NOT NULL,
+    employee_photo    MEDIUMBLOB    NULL,
+    employee_salary    MEDIUMINT UNSIGNED   NOT NULL,
+    employee_address     TEXT            NULL,
+    employee_city    TINYTEXT          NULL,
+    vehicle         MEDIUMBLOB    NULL,
+    PRIMARY KEY (employee)
+)ENGINE = InnoDB;
+
+INSERT INTO employees (employee_name, employee_gender, employee_salary, employee_address, employee_city) VALUES ('Andrew', 'M', 8203068, '<NAME>','Moscow');
+
+ALTER TABLE employees ADD `employee_position` tinyint(6);
+
+ALTER TABLE employees MODIFY employee_name VARCHAR(300);
+
+ 
+ALTER TABLE employees MODIFY employee_name VARCHAR(35);
+
+ 
+UPDATE employees
+SET employee_address = 'Moscow, Napala Rhode, Bulgaria'
+WHERE employee_address!= '';

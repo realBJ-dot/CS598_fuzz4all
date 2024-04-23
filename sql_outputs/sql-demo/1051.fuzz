@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+SET GLOBAL sql_mode=TRADITIONAL;
+DROP TABLE IF EXISTS worker;
+CREATE TABLE worker (
+  id BIGINT PRIMARY KEY IDENTITY(1,1),
+  email VARCHAR(255) UNIQUE DEFAULT '',
+  phonenumber BIGINT UNIQUE DEFAULT 0,
+  salary bigint,
+  bonus bigint DEFAULT 0,
+);

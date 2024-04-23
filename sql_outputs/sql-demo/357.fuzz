@@ -1,0 +1,47 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users(Name VARCHAR(32));
+INSERT INTO Users (Name) VALUES ('John'), ('Joe');
+SELECT Name, Name IS NULL as NULL;
+ALTER TABLE Users MODIFY col1 CHAR(1);
+DROTTABLE Users;
+--
+-- Please create a very complex expression which uses SQL features
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS sampleDB.User;
+DROP TABLE IF EXISTS sampleDB.Employee;
+CREATE TABLE sampleDB.User (Id INT auto_increment NOT NULL, Name TEXT);
+CREATE TABLE sampleDB.Employee (Id INT auto_increment NOT NULL, Name TEXT);
+alter table sampleDB.User add constraint 'PK_User' PRIMARY KEY (Id);
+alter table sampleDB.Employee add constraint 'PK_Employee' PRIMARY KEY (Id);
+
+--
+-- Please create a program that checks the database structure
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+show columns from Users;
+show columns from employee;
+--
+-- Please create a program that checks the database integrity
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+select * from employee_master order by id desc limit 1; select * from employee;
+show tables;
+INSERT INTO Employee (Id, Name) VALUES (1, 'James');
+UPDATE Employee set name = 'George';
+DROP TABLE Employee;
+DROP TABLE User
+--
+-- Please create a program which performs the first-level query and then performs another level query on the same table
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+select count(*) from Users;
+select Id from sampleDB.User limit 1;
+select Id from sampleDB.User limit 1,1;
+select Name from sampleDB.User limit 1,1;
+select Name from sampleDB.User limit 1,2;
+select Name from sampleDB.User where id not in (select id from sampleDB.User) order by id;
+select Name from Users limit 1,2;
+select Name from Users limit 2,2;
+select Name from Users where id not in (select id from Users) order by id;
+select Employees.Id as ID, Employees.Name as NAME
+from sampleDB.User, Employees
+where User.Id = Employee.Id and User.Name LIKE '%g';
+COMMIT;
+ALTER DATABASE sampleDB;

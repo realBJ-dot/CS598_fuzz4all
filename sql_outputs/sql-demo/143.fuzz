@@ -1,0 +1,5 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+INSERT INTO Users_2 values('1','Hans'),(
+'maria','Maria')
+-- Please drop the old database
+DROP DATABASE sampleDB;

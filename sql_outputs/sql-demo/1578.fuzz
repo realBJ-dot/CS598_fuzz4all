@@ -1,0 +1,16 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+INSERT INTO `customers`
+SET `id`=2,
+`customerID`=200050111,
+`firstName`='Sally',
+`lastName`='Munroe',
+`isFullTimeEmployee`=0,
+`isLead`=1,
+`isVIP`=1;
+
+DELIMITER := '`';
+CREATE DATABASE IF NOT EXISTS `sampleDB`;
+USE `sampleDB`;
+-- INSERT INTO `customers` (`customerID`, `firstName`, `lastName`, `isFullTimeEmployee`, `isLead`, `isVIP`) SELECT 123 AS "customerID", 'Bob' AS "firstName", 'Smith' AS "lastName", 1 AS "isFullTimeEmployee" AS "isFullTimeEmployee", 2 AS "isLead" AS "isLead", 3 AS "isVIP" AS "isVIP";
+COMMIT;
+DELIMITER := '';

@@ -1,0 +1,11 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employees_positions;
+CREATE TABLE employees_positions(
+    employee_emp_no  INT UNSIGNED  NOT NULL,
+    employee_position INT UNSIGNED,
+    PRIMARY KEY (employee_emp_no, employee_position));
+USE sampleDB;
+DROP FOREIGN KEY IF EXISTS employees_positions_fkey;
+DROP TABLE IF EXISTS employees_positions;
+DROP DATABASE sampleDB;
+

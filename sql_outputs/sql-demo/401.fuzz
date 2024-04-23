@@ -1,0 +1,27 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+DROP TABLE IF EXISTS newEmp;
+-- INSERTs into the Employee table
+-- You can use the SELECT query to check how many records exist
+-- In order to find the actual column values, you can also use SQL query
+
+-- You can use the column names and their column numbers
+-- You can use the value from the query into a field
+INSERT INTO People (Name) VALUES ('Pilin');
+INSERT INTO People (Name) VALUES ('Josephine');
+INSERT INTO People (Name) VALUES ('Lelah');
+-- Update the person information
+UPDATE People SET Gender = 'M', Gifts = 'Gifts', Friends = 2, Profession = 'Doctor' WHERE ID = '2';
+-- In the update statement you can place a new value or put NULL
+-- In the second argument, place '=' to signify that we want to update the field
+-- If we have two columns with the same value, we can use 'SET' to combine them
+INSERT INTO People (Name, Gender, Gifts) VALUES ('Pink', 'F', 'Good luck');
+UPDATE People SET Gifts = NULL WHERE ID = '2';
+ 
+DELETE FROM People WHERE Friends > 3;
+-- DELETE all records with a column value more than 3 or less than 3
+-- In the select list place 'DISTINCT' so there will be one record for each
+WHERE (Sex = 'F' AND Friends < 3) OR ID = '3';
+-- WHERE and WHERE NOT are two ways to define your query
+-- Here is how we can do a simple IF and DELETE statement with WHERE
+UPDATE People AS p INNER JOIN Employees AS e ON p.ID = e.ID SET p.Gender = 'M' WHERE p.Gender = 'F' AND e.ID IS NULL;

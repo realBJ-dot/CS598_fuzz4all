@@ -1,0 +1,19 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+# Insert data into the database
+CREATE TABLE `employees` (
+    `employeeId` INT NOT NULL AUTO_INCREMENT,
+    `employeeFName` VARCHAR(50),
+    `employeeLName` VARCHAR(50),
+    `employeeNip` INT(11) DEFAULT NULL,
+    `employeeGender` CHARACTER(1) DEFAULT NULL,
+    `salGratuity` FLOAT DEFAULT NULL,
+    `salary` FLOAT DEFAULT NULL,
+    `departName` VARCHAR(50) DEFAULT NULL,
+    `status` TINYINT(1) DEFAULT NULL,
+    PRIMARY KEY (`employeeId`)
+    );
+#
+# Drop all tables
+DROP TABLE employees;
+DROP DATABASE IF EXISTS sampleDB;
+USE sampleDB;

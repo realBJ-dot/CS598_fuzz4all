@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS car;
+CREATE TABLE car (name CHAR(5), price LONG);
+INSERT INTO car VALUES ('Volvo', 999.00);
+INSERT INTO car VALUES ('Toyota', 100000.00);
+-- Update several columns
+UPDATE car SET color='Black', price=1000000.00 where (name='Volvo' or name='Toyota') == TRUE;
+-- Delete a row
+DELETE FROM car WHERE name='Toyota';  
+DROP TABLES car; DROP DATABASE sampleDB;

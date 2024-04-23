@@ -1,0 +1,17 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS users_details (user_id INTEGER, phone VARCHAR(50) UNIQUE, age INTEGER);
+INSERT INTO users_details(user_id, phone, age) VALUES (23434, 63642642, 865355);
+-- Please create another mutated program that does the same but using MySQL Native SQL. Be sure to use ENGINE=MyISAM for the database. You may use sampleDB as the database name if you like. You need to create a new table to perform operations. In the end, drop all tables you created.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS users_details (user_id INTEGER, phone VARCHAR(50) UNIQUE, age INTEGER);
+INSERT INTO users_details(user_id, phone, age) VALUES (23434, 63642642, 865355);
+-- You may print "select * from users_details; on MySQL Native SQL, use \d.
+select * from users_details; on MySQL Native SQL, use DESCRIBE.
+SELECT `ID`, `EMAIL`, `FIRST_NAME`, `LAST_NAME`, `ROLE`, `ACTIVE` FROM `user_role_permissions` WHERE `ROLE` = 'USER' ORDER BY `user_id` DESC LIMIT 10;
+ 
+ 
+ALTER TABLE user_role_permissions ADD role_id INTEGER UNSIGNED NOT NULL;
+ALTER TABLE user_role_permissions ADD constraint roles_pkey PRIMARY KEY (`user_role_permissions`.`user_role_name`,`user_role_permissions`.`user_role_id`);
+ALTER TABLE user_role_permissions ADD constraint fk_user_role_permissions_user_role FOREIGN KEY (`user_role_permissions`.`user_role_id`) REFERENCES roles(role_id);
+ALTER TABLE user_role_permissions ADD constraint fk_user_role_permissions_roles FOREIGN KEY (`user_role_permissions`.`user_role_name`) REFERENCES roles(role_name);
+/* MySQL

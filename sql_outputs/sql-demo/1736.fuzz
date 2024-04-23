@@ -1,0 +1,30 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP DATABASE IF EXISTS `user`;
+CREATE TABLE user(user_name VARCHAR(20), password VARCHAR(15));
+INSERT INTO user (user_name, password) VALUES ('admin', '<PASSWORD>');
+ALTER TABLE user MODIFY password CHAR(8) DEFAULT 'Y';
+UPDATE user SET password = <PASSWORD> WHERE password = 'n<PASSWORD>5';
+UPDATING passwords -- Again, just to show case it is not working;
+SELECT user_name, password, <PASSWORD> FROM user;
+DROP DATABASE IF EXISTS `user`;
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP DATABASE IF EXISTS `user`;
+CREATE TABLE user(user_name VARCHAR(20), password VARCHAR(15));
+INSERT INTO user (user_name, password) VALUES ('<PASSWORD>', '<PASSWORD>');
+UPDATE user SET password = <PASSWORD>(<PASSWORD>) WHERE password = '<PASSWORD>';
+SELECT COUNT(*) FROM user WHERE password = 'Y';
+-- Please modify the existing one to change password:
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP DATABASE IF EXISTS `user`;
+CREATE TABLE user(user_name VARCHAR(20), password VARCHAR(15));
+INSERT INTO user (user_name, password) VALUES ('<PASSWORD>', '<PASSWORD>');
+UPDATE user SET password = PASSWORD('<PASSWORD>') WHERE user_name = 'demo';
+SELECT user_name, password, <PASSWORD> FROM user;
+DROP DATABASE IF EXISTS `user`;
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP DATABASE IF EXISTS `user`;
+CREATE TABLE user(user_name VARCHAR(20), password VARCHAR(15));
+INSERT INTO user (user_name, password) VALUES ('<PASSWORD>', '<PASSWORD>');
+UPDATE user.password <PASSWORD>= <PASSWORD>, user.user_name = 'demo';

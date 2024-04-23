@@ -1,0 +1,48 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users
+(
+    User_id INT NOT NULL AUTO_INCREMENT,
+    first_name TEXT,
+    last_name TEXT,
+    password TEXT,
+    PRIMARY KEY (User_id)
+)
+ENGINE=InnoDB;
+CREATE TABLE Contact
+(
+    Contact_id INT NOT NULL AUTO_INCREMENT,
+    first_name TEXT,
+    email TEXT,
+    contact_type TEXT,
+    first_message TEXT,
+    second_message TEXT,
+    third_message TEXT,
+    date_creation DATETIME,
+    date_modified DATETIME,
+    PRIMARY KEY (Contact_id),
+    FOREIGN KEY (Contact_id) REFERENCES Users (User_id) ON UPDATE CASCADE
+);
+ALTER DATABASE sampleDB CHARACTER SET utf8 COLLATE utf8_unicode_ci
+-- Please create a simple search engine to search for a specific user's first name. You should have a search table that is populated with data about the users. You should have the first name as one, all lowercase, but the last name as a, one, other, lowercase, and the password, last char, and number. In the end, drop the search data table.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users
+(
+    User_id INT NOT NULL AUTO_INCREMENT,
+    first_name TEXT,
+    last_name TEXT,
+    password TEXT,
+    PRIMARY KEY (User_id)
+)
+ENGINE=InnoDB;
+CREATE TABLE Search_Table
+(
+    User_id INT NOT NULL,
+    first_name TEXT,
+    last_name TEXT,
+    password TEXT,
+    PRIMARY KEY (User_id)
+)
+ENGINE=InnoDB;
+ALTER DATABASE sampleDB CHARACTER SET utf8 COLLATE utf8_unicode_ci
+-- Please create a simple search engine to search for a specific user's first name. Searching for a specific first name should search both exact and partial matches. The search should return data for any combination of upper/lower case and number characters which are both at least 6 characters long. The search result will show the user ID and name of the user returned in the result. Be sure to have a first name column in the Search Table.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE

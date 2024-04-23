@@ -1,0 +1,3 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+create table table1 (id int not null primary key auto_increment, field1 varchar(500), field2 boolean, field3 bigint, field4 date);
+-- Please create a very short query which uses SQL features in a complex way. Be sure to use ENGINE=InnoDB. You should only use sampleDB as the database and assume no other table exist. You need to create new tables to perform operations. In the end, drop all tables you created.

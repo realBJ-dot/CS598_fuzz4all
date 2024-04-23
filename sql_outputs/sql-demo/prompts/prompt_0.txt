@@ -1,11 +1,9 @@
--- MySQL is an open-source relational database management system (RDBMS), which organizes data into tables that can relate to each other, thus structuring the data. It uses SQL, or Structured Query Language, to manipulate and extract data, manage users, facilitate network access, and aid in testing database integrity and backup creation.
+-- MySQL is an open-source relational database management system (RDBMS) that allows users to create, modify and extract data from a structured relational database using the Structured Query Language (SQL). It works harmoniously with an operating system to structure and manage a relational database, control user access, and execute other tasks like network access and testing database integrity.
 
-The software is free under the GNU General Public License but is also available under a variety of proprietary licenses. MySQL AB, the original owners, became a part of Oracle Corporation through several acquisitions, which led co-founder Michael Widenius to fork MySQL and create MariaDB. 
+MySQL, named after co-founder Michael Widenius's daughter, My, and SQL, is widely used with other programs to implement applications that require database functionality. It serves as an element of the LAMP web application software stack, where LAMP stands for Linux, Apache, MySQL, Perl/PHP/Python, and is used in many database-driven web applications and popular websites such as Facebook and YouTube.
 
-MySQL is commonly used in conjunction with other programs, forming the backbone of many database-driven web applications and popular websites. It forms part of several software stacks, including LAMP (Linux, Apache, MySQL, Perl/PHP/Python). 
+Written in C and C++, MySQL supports a variety of system platforms from Linux, macOS, Microsoft Windows to even the Symbian OS. It offers dual-licensing i.e., GPL version 2 or a proprietary license.
 
-Written in C and C++, MySQL is compatible with multiple system platforms. The server software and client libraries use dual-licensing distribution, with support available through an official manual, IRC channels, forums, or paid options via Oracle’s MySQL Enterprise products. 
-
-Overall, MySQL has been recognized for its performance, stability, and extensive documentation, making it a reliable choice for implementing multi-user and multi-threaded SQL database servers.
-/* Given no other table exists, please create a very short program which uses SQL features in a complex way. Be sure to use ENGINE=InnoDB. */
-USE sampleDB;
+Support for MySQL is provided through the official manual, various IRC channels, forums, and additionally, Oracle offers paid support via its MySQL Enterprise products. It is known for its exceptional performance in average scenarios and has been appraised as a fast, stable and true multi-user, SQL database server. Furthermore, it is also available under the MariaDB fork developed in 2010 when Oracle acquired Sun Microsystems, the then owner of MySQL AB.
+/* Please create a very short query which uses SQL features in a complex way. Be sure to use ENGINE=InnoDB. You should only use sampleDB as the database and assume no other table exist. You need to create new tables to perform operations. In the end, drop all tables you created. */
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;

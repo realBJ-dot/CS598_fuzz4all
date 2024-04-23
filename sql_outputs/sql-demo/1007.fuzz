@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+INSERT INTO dept (deptno, deptname) VALUES (1101,'English-language courses'), (1201,'Science and maths'), (1301,'Arabic/Hebrew'), (1401,'Other');
+INSERT INTO dept (deptno, deptname) VALUES (2331,'Engineering'), (2332,'Humanities'), (2333,'Arts and humanities'), (2334,'Social sciences');
+INSERT INTO dept_manager (deptno, empno, desc, sal, comm, loc, hiredate) VALUES (1101, 1025,  '<NAME> 1025', 260000, 30000,  'Abuja, Niger',  '2012-06-14');
+INSERT INTO dept_manager (deptno, empno, desc, sal, comm, loc, hiredate) VALUES (1101, 1030, '<NAME> 1030', 260000, 28000, 'Abuja, Niger',  '2012-06-29');
+INSERT INTO dept_manager (deptno, empno, desc, sal, comm, loc, hiredate) VALUES (1101, 1032, '<NAME> 1032', 260000, 19000, 'Abuja, Niger',  '2012-06-29');
+INSERT INTO dept_manager (deptno, empno, desc, sal, comm, loc, hiredate) VALUES (1201, 2025, 'Dr. <NAME> 2025', 350000, 30000, 'Mogadishu, Niger', '2012-06-15');
+INSERT INTO dept_manager (deptno, empno, desc, sal, comm, loc, hiredate) VALUES (1201, 2030, 'Mr. <NAME> 2030', 350000, 40000, 'Mogadishu, Niger', '2012-06-28');
+INSERT INTO dept_manager (

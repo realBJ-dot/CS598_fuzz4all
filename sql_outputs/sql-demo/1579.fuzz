@@ -1,0 +1,21 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `sampleDB`.`customers`;
+CREATE TABLE IF NOT EXISTS `sampleDB`.`customers` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `customerID` int NOT NULL,
+  `firstName` varchar(20) NOT NULL,
+  `lastName` varchar(25) NOT NULL,
+  `isFullTimeEmployee` tinyint(1) NOT NULL,
+  `lead` tinyint(6),
+  `vip` tinyint(4)
+);
+-- MySQL commands:
+-- ALTER TABLE `sampleDB`.`customers` DROP INDEX `customerID`;
+-- ALTER TABLE `sampleDB`.`customers` DROP UNIQUE `customerID`;
+-- INSERT INTO `sampleDB`.`customers` (firstName, lastName, createdOn, updatedOn, isFullTimeEmployee, isLead, isVIP) VALUES ('Jim', 'Smith', '03/05/20', '03/27/20', 0, 1, 0);
+-- INSERT INTO `sampleDB`.`customers` (firstName, lastName, createdOn, updatedOn, isFullTimeEmployee, isLead, isVIP) VALUES ('Bob', 'Carley', '06/12/20', '10/28/20', 0, 1, 1);
+-- INSERT INTO `sampleDB`.`customers` (firstName, lastName, createdOn, updatedOn, isFullTimeEmployee, isLead, isVIP) VALUES ('John', 'Doe', '11/11/20', '09/30/20', 1, 1, 0);
+-- INSERT INTO `sampleDB`.`customers` (firstName, lastName, createdOn, updatedOn, isFullTimeEmployee, isLead, isVIP) VALUES ('Peter', 'Parker', '02/13/20', NULL, 1, 0, 1);
+-- INSERT INTO `sampleDB`.`customers` (firstName, lastName, createdOn, updatedOn, isFullTimeEmployee, lead, vip) VALUES ('Mark', 'Mitchell', '02/05/20', NULL, 0, 0, 0);
+
+-- Please create a very short query which uses

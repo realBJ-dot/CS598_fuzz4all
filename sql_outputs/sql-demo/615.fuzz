@@ -1,0 +1,25 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE StudentsMutated;
+-- Now create the mutated table that holds the data in it
+DROP TABLE IF EXISTS Mutated;
+CREATE TABLE Mutated (IDINT INT);
+-- Then add data
+INSERT INTO Mutated VALUES (1);
+INSERT INTO Mutated VALUES (2);
+INSERT INTO Mutated VALUES (3);
+-- Now create the mutated table that holds the data in it and store a reference to the student table
+DROP TABLE IF EXISTS StudentsMutated;
+CREATE TABLE StudentsMutated (IDINT INT, StudentID INT, Mutated INT);
+INSERT INTO StudentsMutated VALUES (2,3,0);
+INSERT INTO StudentsMutated VALUES (2,2,1);
+INSERT INTO StudentsMutated VALUES (2,3,0);
+-- The mutated INT should now hold 1 and StudentID should contain 3
+UPDATE StudentsMutated SET Mutated = 1 WHERE StudentID=3;
+UPDATE StudentsMutated SET Mutated = 1 WHERE StudentID=3;
+-- Drop StudentsMutated table
+DROP TABLE IF EXISTS StudentsMutated;
+
+ALTER DATABASE sampleDB ENGINE=INNODB;
+
+
+select s.NAME, m.Student, m.Mutated from Student i, Mutated m where i.ID=m.Student and i.NAME='Paul';

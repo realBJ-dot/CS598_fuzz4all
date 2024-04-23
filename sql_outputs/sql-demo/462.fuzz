@@ -1,0 +1,23 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE mytable (
+    id int(10) not null auto_increment,
+    num int(10),
+    PRIMARY KEY (id)
+);
+DROP TABLE IF EXISTS mytable;
+-- MySQL should allow us to use it...
+SHOW DATABASES;
+USE sampleDB;
+SELECT * from mytable;
+SELECT * from mytable LIMIT 10;
+SELECT * from mytable LIMIT 0,10;
+SELECT * from mytable LIMIT 10,0;
+SELECT * from mytable LIMIT 1000,100;
+INSERT INTO mytable (num) VALUES (10);
+INSERT INTO mytable (num) VALUES (15);
+INSERT INTO mytable (num) VALUES (19);
+INSERT INTO mytable (num) VALUES (27);
+
+SELECT * from mytable WHERE num>20 OR EXISTS (SELECT * from mytable WHERE num=15);
+SELECT * from mytable WHERE num>20 AND EXISTS (SELECT * from mytable WHERE num=10)
+DROP DATABASE sampleDB;

@@ -1,0 +1,27 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employees_salary;
+CREATE TABLE employees_salary (
+    employee_id INT,
+    salaries REAL(6,2)
+);
+INSERT INTO employees_salary (employee_id, salaries) VALUES (1,23.43);
+INSERT INTO employees_salary (employee_id, salaries) VALUES (2,133.87);
+INSERT INTO employees_salary (employee_id, salaries) VALUES (3,81.87);
+INSERT INTO employees_salary (employee_id, salaries) VALUES (4,311.21);
+SELECT employee_id AS idNumber, salaries / 2.0 AS salaryHalfFromDBFromOracle [23.42/2];
+DROP DATABASE IF EXISTS sampleDB;
+-- Please try to use DML statements to perform operations on tables using the DDL statements we have seen so far. You should not insert an entry to a table and then try to fetch it. You need to create the table and insert some data there, before trying to fetch it. To do this, use the DROP TABLE statement to remove all data in the table that you inserted and then recreate the table. You'll notice that with the new DDL statements, the table automatically shrinks to zero in case a new entry is added to it.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employees_salary;
+CREATE TABLE employees_salary (
+    employee_id INT,
+    salaries REAL(6,2)
+);
+INSERT INTO employees_salary (employee_id, salaries) VALUES (1,23.43);
+INSERT INTO employees_salary (employee_id, salaries) VALUES (2,133.87);
+INSERT INTO employees_salary (employee_id, salaries) VALUES (3,81.87);
+INSERT INTO employees_salary (employee_id, salaries) VALUES (4,311.21);
+SELECT employee_id AS idNumber, salaries / 2.0 AS salaryHalfFromDBFromOracle [23.42/2];
+-- Please try to get a more efficient way to perform the same operation using SQL queries.
+SELECT DISTINCT salaryHalf, salaries / 2.0 FROM employees_salary ORDER BY salaryHalf DESC, salaries DESC;
+-- Please try to create a table containing the maximum values of the salaries in

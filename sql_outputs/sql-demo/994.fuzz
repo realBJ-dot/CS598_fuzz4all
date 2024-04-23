@@ -1,0 +1,14 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ 
+CREATE TABLE IF NOT EXISTS employees (id INT PRIMARY KEY NOT NULL, emp_name VARCHAR(255), gender VARCHAR(10), birthdate DATE, hire_date DATE, sal salary);
+CREATE TABLE IF NOT EXISTS dept (id int PRIMARY KEY NOT NULL, dept_name VARCHAR(250));
+CREATE table IF NOT EXISTS dept_emp(dept_id INT NOT NULL, emp_id INT NOT NULL, INDEX dept_emp_depid_idx (dept_id), INDEX dept_emp_empid_idx (emp_id), CONSTRAINT dept_emp_fk FOREIGN KEY (dept_id) REFERENCES dept (id) ON DELETE CASCADE ON UPDATE CASCADE, CONSTRAINT dept_emp_fk2 FOREIGN KEY (emp_id) REFERENCES employees (id) ON DELETE CASCADE ON UPDATE CASCADE
+    );
+CREATE TABLE IF NOT EXISTS dept_manager (dept_id int NOT NULL, emp_id int NOT NULL, INDEX dept_manager_depid_idx (dept_id), INDEX dept_manager_empid_idx (emp_id), CONSTRAINT dept_manager_fk FOREIGN KEY (dept_id) REFERENCES dept (id) ON DELETE CASCADE ON UPDATE CASCADE, CONSTRAINT dept_manager_fk2 FOREIGN KEY (emp_id) REFERENCES employees (id) ON DELETE CASCADE ON UPDATE CASCADE
+    );
+CREATE TABLE IF NOT EXISTS salaries (emp_id INT NOT NULL, sal_date DATE, INDEX sal_date_idx (sal_date), CONSTRAINT sal_date_fk FOREIGN KEY (emp_id) REFERENCES employees (id) ON DELETE CASCADE ON UPDATE CASCADE
+    );
+-- This is a sample query that displays all the employees from the employees table.
+SELECT * FROM emp_1;
+-- This will add a new employee to the employees table.
+INSERT INTO employees (emp_id, emp

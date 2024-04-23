@@ -1,0 +1,15 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `sampleDB`.`departments`;
+CREATE TABLE `sampleDB`.`departments` (
+	`id` int NOT NULL AUTO_INCREMENT,
+	`name` varchar(30) NOT NULL,
+	PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+Create DATABASE IF NOT EXISTS `sampleDB`; USE `sampleDB`;
+CREATE TABLE `departments` (
+	`id` int NOT NULL AUTO_INCREMENT,
+    `name` varchar(30) NOT NULL,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8; */
+ 

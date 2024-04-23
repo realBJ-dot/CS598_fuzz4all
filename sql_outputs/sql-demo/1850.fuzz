@@ -1,0 +1,29 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+INSERT INTO country VALUES ('ATSIER', 'Beijing');
+ALTER TABLE country ADD continent_id int(10);
+ALTER TABLE country ADD continent_fk varchar(10) NULL DEFAULT NULL;
+CREATE TABLE continent (
+  name char(8),
+  country_id int(10),
+  continent_fk varchar(10)
+);
+
+ 
+ALTER DATABASE sampleDB CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+CREATE TABLE IF NOT EXISTS continent (
+  id INT(11) NOT NULL AUTO_INCREMENT,
+  name VARCHAR(45),
+  PRIMARY KEY(id)
+);
+
+ALTER TABLE Country
+ADD FOREIGN KEY continent_id
+  (`continent_id`) REFERENCES continent (`id`)
+ON DELETE NO ACTION
+IN ROLLBACK;
+ALTER TABLE country DROP FOREIGN KEY continent_fk;
+ALTER TABLE continent DROP FOREIGN KEY country_id;
+ALTER TABLE continent DROP COLUMN `country_fk`;
+ALTER TABLE continent ADD UNIQUE INDEX `continent_uindex` (`continent_fk`);
+ALTER TABLE continent ADD FOREIGN KEY `continent_fk` (`country_id`) REFERENCES `country` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+

@@ -1,0 +1,17 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE user CASCADE;
+CREATE TABLE user(user_name VARCHAR(20), password varchar(15));
+INSERT INTO user (user_name, password) VALUES ('admin', '<PASSWORD>');
+-- The query result shows the new user data with no changes
+SELECT * FROM user;
+-- Please modify the previous code to modify the user table, also use ENGINE=InnoDB.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE user CASCADE;
+CREATE TABLE user(user_name VARCHAR(20), password varchar(15));
+INSERT INTO user (user_name, password) VALUES ('admin', '<PASSWORD>');
+-- The query result should reflect the new user data
+SELECT * FROM user;
+-- Please drop all data and make your query simple.
+DROP DATABASE IF EXISTS sampleDB;
+
+*/

@@ -1,0 +1,18 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE users_details;
+DROP TABLE users_employees;
+DROP TABLE users_employees_details;
+CREATE TABLE users_employees (user_id INTEGER, phone VARCHAR(50) UNIQUE, employee_id INTEGER, department_id INTEGER);
+CREATE TABLE users_employees_details (phone INTEGER, employee_id INTEGER, name VARCHAR(50));
+INSERT INTO users_employees(user_id, phone, employee_id, department_id) VALUES (23434, 63642642, 10, 1);
+INSERT INTO users_employees_details(phone, employee_id, name) VALUES (63642642, 10, 'Admin');
+INSERT INTO users_employees_details(phone, employee_id, name) VALUES(435643643, 10, 'Tech');
+INSERT INTO users_employees_details(phone, employee_id, name) VALUES (845648686, 13, 'Devs1');
+INSERT INTO users_employees_details(phone, employee_id, name) VALUES (325425468, 13, 'Devs');
+INSERT INTO users_employees_details(phone, employee_id, name) VALUES (566874, 14, 'Dev1');
+INSERT INTO users_employees_details(phone, employee_id, name) VALUES (906667745, 15, 'Dev3');
+INSERT INTO users_employees_details(phone, employee_id, name) VALUES (4090, 16, 'Dev4');
+INSERT INTO users_employees_details(phone, employee_id, name) VALUES (55534956, 19, 'Dev5'); 
+INSERT INTO users_employees_details(phone, employee_id, name) VALUES (23434, 22, 'Admin');
+INSERT INTO users_employees_details(phone, employee_id, name) VALUES (63642642, 29, 'Dev4');
+INSERT INTO users_employees_details

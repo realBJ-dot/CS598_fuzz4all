@@ -1,0 +1,38 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP FOREIGN KEY;
+CREATE TABLE IF NOT EXISTS customer(
+ customer_id INT NOT NULL AUTO_INCREMENT,
+ customer_name text NOT NULL,
+ CONSTRAINT customer_pk PRIMARY KEY(customer_id)
+);
+ALTER TABLE customer MODIFY customer_id INT FIRST;
+ALTER TABLE customer ENGINE=MyISAM;
+USE sampleDB;
+DROP TABLE IF EXISTS customer;
+ 
+SELECT DISTINCT customer_name FROM customer JOIN customer p ON customer_id = p.customer_id WHERE customer_name LIKE "%3%";
+-- Please create a query which returns the name of every person in the database whose id in between 10 and 30. */
+SELECT customer_name FROM customer WHERE customer_id BETWEEN 10 AND 30;
+-- Please create queries and explain the query plan and explain each phase of the query plan. The plans should allow you to assess if the query plan is optimal or not. Use a table to save your query plans so you can access them later.
+SELECT *, cost as index_cost INTO mytable From customer;
+OPTIMIZE TABLE customer;
+PLAN, INDEX, and SHOW REWRITE commands in explain analysis.
+ 
+DROP TABLE IF EXISTS mytable; CREATE TABLE mytable (c int not null);
+ALTER TABLE mytable ALTER COLUMN c int FIRST;
+CREATE INDEX i1 ON mytable (c);
+SHOW REWRITE;
+SHOW STATISTICS;
+EXPLAIN SELECT * FROM mytable;
+ 
+DROP TABLE IF EXISTS test; ALTER TABLE test ADD COLUMN c int DEFAULT 0;
+DROP TABLE IF EXISTS test1; ALTER TABLE test1 ADD COLUMN c int DEFAULT 0;
+ALTER TABLE test ALTER COLUMN c SET NOT NULL;
+ALTER TABLE test1 ALTER COLUMN c SET NOT NULL;
+SHOW INDEX FROM test;
+ALTER TABLE test SET NULL;
+ALTER TABLE test SET NULL;
+CHANGE TABLE test.a.c b.c;
+ALTER TABLE test RENAME COLUMN c.toa TO a;
+ALTER TABLE test1 RENAME COLUMN c1.toa TO toa;
+CHANGE TABLE test.c TO

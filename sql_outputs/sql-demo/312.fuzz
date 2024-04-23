@@ -1,0 +1,16 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE `customer` (
+  `customerID` INT(5) NOT NULL AUTO_INCREMENT,
+  `company_name` INT(5) NOT NULL,
+  PRIMARY KEY (`customerID`)
+);
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE `employee` (
+  `employeeID` INT(5) NOT NULL AUTO_INCREMENT,
+  `first_name` INT(5) NOT NULL,
+  `last_name` INT(5) NOT NULL,
+  `contact_ID` INT(5) NOT NULL,
+  `company_ID` INT(5) NOT NULL,
+  PRIMARY KEY (`employeeID`)
+);

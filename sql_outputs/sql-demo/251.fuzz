@@ -1,0 +1,15 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS `courses` (
+  `courseID` INT NOT NULL AUTO_INCREMENT, 
+    `courseNum` INT NULL,
+    `courseName` VARCHAR(45) NOT NULL, 
+    `teacherID` INT, 
+    `classroomID` INT, 
+    `termID` INT, 
+    `roomNum` INT, 
+        PRIMARY KEY (`courseID`), 
+        FOREIGN KEY (`teacherID`) REFERENCES `person` (`personID`), 
+        FOREIGN KEY (`classroomID`) REFERENCES `courses` (`courseID`), 
+        FOREIGN KEY (`termID`) REFERENCES `courses` (`courseID`));
+
+

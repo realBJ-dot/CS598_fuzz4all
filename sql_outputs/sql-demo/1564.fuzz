@@ -1,0 +1,7 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- INSERT INTO `sampleDB`.`cars` (`id`, `Make`, `Model`, `Color`, `Price`, `Year`) VALUES (2, 'Cadillac', 'Enzo', 'Red', 250000, 0);
+commit;
+close;
+commit close;
+end;
+grant all on sampleDB.cars to 'user1'@'%';

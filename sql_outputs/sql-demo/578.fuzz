@@ -1,0 +1,13 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+CREATE ALIAS IF NOT EXISTS Mutated AS Mutated;
+SELECT price FROM Mutated AS Mutated WHERE id = 2;
+UPDATE Mutated AS Mutated SET price = 80 WHERE id = 2;
+UPDATE Mutated AS Mutated SET price = 10 WHERE id = 2;
+DROP TABLE Mutated;
+DROP DATABASE sampleDB;
+SELECT price FROM Mutated AS Mutated WHERE id = 2;
+UPDATE Mutated AS Mutated SET price = 80 WHERE id = 2;
+UPDATE Mutated AS Mutated SET price = 10 WHERE id = 2;
+DROP TABLE Mutated;
+DROP DATABASE sampleDB;

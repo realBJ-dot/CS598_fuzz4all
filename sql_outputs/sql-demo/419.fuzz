@@ -1,0 +1,18 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+DROP TABLE IF EXISTS Person;
+#
+# The only change would be the creation of the new table.
+CREATE TABLE Person(
+    id INTEGER PRIMARY KEY,
+    first_name VARCHAR(256),
+    last_name VARCHAR(256),
+    other_data FLOAT,
+    some_stuff TEXT
+);
+
+DROP TABLE IF EXISTS Employee;
+#
+# We can modify the table, but will need a new INSERT /UPDATE statement.
+TRUNCATE Person;
+INSERT INTO Person VALUES(1, 'John', 'Doe', 23.4432, 'Hello');

@@ -1,0 +1,8 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS `FirstAndSecondTable2` ( `id` INT(11) NOT NULL PRIMARY KEY, `data` VARCHAR(300) CHARACTER SET UTF8);
+*/
+INSERT INTO `FirstAndSecondTable` ( `data` ) VALUES ( "Some Data" );
+ 
+CREATE VIEW `FirstAndSecondTable2` AS SELECT `FirstAndSecondTable`.`data` FROM `FirstAndSecondTable`. WHERE `id` = ANY(SELECT `id` FROM `FirstAndSecondTable`). You can drop the table once you have a view.
+ 
+SELECT * FROM `FirstAndSecondTable`. WHERE `id` = ANY(SELECT `id` FROM `FirstAndSecondTable`).

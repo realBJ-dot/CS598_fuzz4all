@@ -1,0 +1,42 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS users
+(
+	userId INT NOT NULL,
+	email_address varchar(500),
+	role INT DEFAULT 2,
+	CONSTRAINT pkUserId PRIMARY KEY(userId),
+	CONSTRAINT uk_email_unique UNIQUE(email_address),
+);
+-- The following three INSERT commands will result in an error. The USERS
+-- table already contains users with userId=1. If userId=1 is inserted as
+-- the first row in users, it will work (no errors). The only exception is
+-- if the command fails because the constraint was not respected.
+INSERT INTO  users(userId, email_address, role) VALUES (1, '<EMAIL>', 1);
+INSERT INTO  users(userId, email_address, role) VALUES (2, '<EMAIL>', 2);
+INSERT INTO  users(userId, email_address, role) VALUES (10, '<EMAIL>', 1);
+-- Drop user1. This constraint was not respected because it is the only
+-- UNIQUE constraint defined in the users table.
+ALTER TABLE users DROP CONSTRAINT unique_email_address; 
+DESCRIBE permissions; 
+-- The following three INSERT commands will result in an error. This is
+-- why it is not correct. It is allowed to add a row twice for the
+-- column userId when the userId column is auto-incremented. The UNIQUE
+-- constraint on the column email_address does already prevent an
+-- unwanted row to be added.
+INSERT INTO users values(1, '<EMAIL>', 1);
+INSERT INTO users values(2, '<EMAIL>', 1);
+INSERT INTO users values(10, '<EMAIL>', 1);
+-- Drop user2. The constraint of the userId column is not respected
+-- (because it is PRIMARY).
+ALTER TABLE users DROP CONSTRAINT unique_email_address;
+-- Drop the table users
+DROP TABLE users;
+DESCRIBE roles;
+-- For simplicity, just drop the roles 1,2 and 10
+DO $$
+    BEGIN
+        DELETE FROM roles WHERE roleId = 1;
+        DELETE FROM roles WHERE roleId = 2;
+        DELETE FROM roles WHERE roleId = 10;
+    END; $$;
+DESCR

@@ -1,0 +1,7 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- You must create the semantic equivalent by dropping the old table
+DROP TABLE IF EXISTS Students;
+CREATE TABLE Students (ID INT NOT NULL UNIQUE, Name TEXT, Email TEXT, College TEXT(30));
+INSERT INTO Students VALUES (1, '<NAME>', '<EMAIL>', 'Saint-Louis Polytechnic Institute');
+INSERT INTO Students VALUES (2, '<NAME>', '<EMAIL>', 'Saint-Louis Polytechnic Institute');
+INSERT INTO Students VALUES (3, '<NAME>', '<EMAIL>', 'Saint-Louis Polytechnic Institute');

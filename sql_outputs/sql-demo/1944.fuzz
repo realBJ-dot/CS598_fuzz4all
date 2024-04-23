@@ -1,0 +1,44 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS employees_salary_by_salary (
+    employee_salary	INT UNSIGNED,
+    emp_salary		INT UNSIGNED,
+    PRIMARY KEY (employee_salary, emp_salary));
+ 
+UPDATE employees_salary_by_salary SET emp_salary = emp_salary + 6000;
+SELECT emp_salary + 5000 FROM employees_salary_by_salary;
+DROP TABLE IF EXISTS employees_salary_by_salary;
+DELETE FROM employees_salary_by_salary;
+DEALLOCATE DATABASE IF EXISTS sampleDB;
+
+SELECT emp_salary_new FROM employees_salary_by_salary;
+UPDATE employees_salary_by_salary SET emp_salary_new = emp_salary;
+SELECT emp_salary_new FROM employees_salary_by_salary;
+SELECT emp_salary FROM employees_salary_by_salary;
+DEALLOCATE DATABASE IF EXISTS sampleDB;
+
+SELECT employee_salary, emp_salary_new FROM employees_salary_by_salary;
+ 
+UPDATE students SET first_name = 'Giovanni' WHERE first_name = 'Giovanni';
+SELECT INSTR(first_name, 'g');
+
+SELECT first_name FROM students;
+SELECT first_name FROM students WHERE first_name LIKE 'A_%';
+ 
+create database test;
+USE test;
+create table test (
+id int,
+title varchar(50)
+) engine InnoDB;
+insert into test (id, title) values (12, 'Software Developer');
+insert into test (id, title) values (32, 'Software Architect');
+
+
+select test.id from test;
+select test.* from test;
+
+ 
+
+create database test;
+USE test;
+create table test (

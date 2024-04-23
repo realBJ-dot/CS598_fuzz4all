@@ -1,0 +1,49 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+CREATE TABLE persons
+(
+    id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name  varchar (100) NOT NULL,
+    code varchar (100) UNIQUE NOT NULL,
+    CONSTRAINT unique_id UNIQUE (code),
+    CONSTRAINT required_fields FOREIGN KEY (code) REFERENCES sampleDB.persons (code) ON DELETE CASCADE ON UPDATE CASCADE
+);
+-- Write SQL to delete the data in persons table with code = 'P0298'.
+ */
+
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+DROP TABLE IF EXISTS products; CREATE TABLE products 
+(
+id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+code char (10) NOT NULL UNIQUE,
+label char(20) NULL,
+price INT,
+description TEXT,
+product_type INT,
+CONSTRAINT unique_code UNIQUE(code)
+);
+
+UPDATE  products SET code= 'BEE.001' WHERE code='BEE.002';
+
+DELETE FROM products WHERE code='BEE.004';
+
+ 
+DELETE FROM products WHERE id > 3;
+
+ 
+DROP TABLE IF EXISTS persons CASCADE; DROP TABLE IF EXISTS products CASCADE;
+CREATE TABLE persons
+(  
+    id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name  varchar (100) NOT NULL,
+    code varchar (100) UNIQUE NOT NULL
+);
+CREATE TABLE products
+(
+    id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY, 
+    code char (20) NOT NULL UNIQUE,
+    label char(20),
+    price INT
+);
+CREATE TABLE inventory

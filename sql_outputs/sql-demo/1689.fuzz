@@ -1,0 +1,17 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+select count(*) from staff;
+-- You can also use this sample for writing programs that use MySQL as a back-end storage system.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `staff`;
+ 
+-- MySQL features a query syntax in the form of prepared statements and functions. MySQL's SQL supports multi-line literals and allows users to write more complex queries with much less effort. As for the differences between MySQL and MSSQL, there is nothing too subtle about having to set up a connection in case the user/process tries to use a table that doesn't exist, thus forcing a server-side database operation and also requiring the user to know SQL.
+-- MySQL can also be used as a replacement for the MSSQL server, making the migration process even easier and more efficient. With MySQL, we don't even need an explicit connection-management layer if we use a tool that does the work behind the scenes. In addition, you are allowed to use both MySQL and MSSQL as a database back-end storage engine and in a combination.
+-- MySQL doesn't offer all of the MSSQL databases features. It offers the database features available to the MSSQL server. Even if not the most popular, it does include the full MSSQL features, like triggers, stored procedures, etc.
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `staff`;
+CREATE TABLE `staff` (
+	`id` int(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`name` text NOT NULL,
+	`department` varchar(50) NOT NULL,
+	`salary` int(

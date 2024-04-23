@@ -1,0 +1,24 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `emp`;
+CREATE TABLE `emp` (
+	id int(50) NOT NULL AUTO_INCREMENT,
+	name varchar(50) NOT NULL,
+	empgrade varchar(10) NOT NULL,
+	salary int(50) NOT NULL,
+	PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- This table has been mutated to look more like the emp data
+SELECT * FROM `emp`;
+-- Please create a new table that stores the ID, Name, and E-mail address of the newly inserted employee. 
+-- Be sure to use the database structure that we used above.
+USE sampleDB;
+CREATE TABLE `employees` (
+	`id` int(20) NOT NULL AUTO_INCREMENT,
+	`name` text NOT NULL,
+	`email` text NOT NULL,
+	PRIMARY KEY (`id`)
+);
+-- Modify the data in the previous table to include the ID, Name and E-mail Addresses of all the employees.
+-- Hint.
+-- You will need to add the code `INSERT INTO employees select ID, Name, Email from staff;`
+-- Note: you can only use the `=` operator to insert one value in a specific column.

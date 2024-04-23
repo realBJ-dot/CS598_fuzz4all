@@ -1,0 +1,11 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ INSERT INTO sampleDB.cars
+ VALUES ('Audi','A4','Green',105000);
+ SELECT * FROM sampleDB.cars;
+-- Please create a program which is a variation on the previous generated
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ INSERT INTO sampleDB.cars
+ VALUES ('Kia','Soul','Black',10000);
+ SELECT * FROM sampleDB.cars;
+
+```

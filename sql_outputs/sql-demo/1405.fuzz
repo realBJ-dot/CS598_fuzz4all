@@ -1,0 +1,19 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ALTER TABLE example ADD COLUMN author_id INT(10) UNSIGNED;
+ALTER TABLE example CHANGE COLUMN blah blah INT(10);
+ALTER TABLE example MODIFY COLUMN blah INT(10);
+DROP TABLE book1;
+CREATE TABLE book2 (
+  author_id INT(10) UNSIGNED,
+  title LONGTEXT
+);
+SELECT * FROM book2;
+CREATE TABLE `book2` (
+  author_id INT(10) UNSIGNED,
+  title LONGTEXT
+);
+-- Now, query the database again using the previously created select command
+SELECT * FROM book2;
+USE sampleDB;
+DROP TABLE example;
+DROP DATABASE sampleDB;

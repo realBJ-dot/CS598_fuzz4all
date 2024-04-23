@@ -1,0 +1,14 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- We assume here that the same program can be created by the previous generation version
+DROP TABLE IF EXISTS user;
+CREATE TABLE IF NOT EXISTS user (id INT PRIMARY KEY, "name" VARCHAR(200), balance INT);
+INSERT INTO user (id, "name", balance) VALUES (10, 'John', 1000);
+INSERT INTO user (id, "name", balance) VALUES (20, 'Paul', 1000);
+SELECT id, "name", balance
+FROM user WHRE (balance IN (50,100));
+UPDATE user SET balance = balance + 50 WHERE id = 20;
+UPDATE user SET balance = balance - 100 WHERE id = 10;
+UPDATE user SET balance = balance * 2 WHERE id > 10;
+UPDATE user SET balance = balance IN (5) WHERE balance IN (20,100,300)
+DROP TABLE IF EXISTS user;
+DROP DATABASE IF EXISTS sampleDB;

@@ -1,0 +1,19 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS review(
+ review_id INT,
+ review text
+);
+INSERT INTO review VALUES(1,'This is a text in a single line');
+INSERT INTO review VALUES(2,'This is a text in a single line');
+INSERT INTO review VALUES(3,'This is a text in a single line');
+ALTER TABLE review MODIFY review_id INT(4);
+ALTER TABLE review ENGINE=MyISAM;
+DROP TABLE review;
+DROP DATABASE sampleDB;
+ 
+DROP TABLE author;
+DROP TABLE review;
+```
+
+---
+[Return home](https: 

@@ -1,0 +1,30 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employee;
+CREATE TABLE employee(id int AUTO_INCREMENT,name varchar(10));
+INSERT INTO employee(id,name) VALUES (null,'<NAME>');
+INSERT INTO employee(id,name) VALUES (null,'<NAME>');
+INSERT INTO employee(id,name) VALUES (null,'<NAME>');
+INSERT INTO employee(id,name) VALUES (null,'<NAME>');
+
+insert into employee(id,name)
+values (NULL,'<NAME>');
+
+ 
+
+CREATE TABLE employee(id INT AUTO_INCREMENT,
+                 name VARCHAR(10),
+                 PRIMARY KEY(id),
+                 FOREIGN KEY(phoneID) REFERENCES phone(phoneID)
+)ENGINE=InnoDB AUTO_INCREMENT=86
+
+<fim_middle>
+CREATE TABLE phone(phoneID int AUTO_INCREMENT,
+number VARCHAR(20),
+brand VARCHAR(100),
+PRIMARY KEY(phoneID),
+FOREIGN KEY(phoneID) REFERENCES employee(employeeID)
+);
+
+DESCRIBE employee;
+DESCRIBE phone;
+--

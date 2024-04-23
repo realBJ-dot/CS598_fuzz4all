@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+UPDATE worker
+SET country = "Spain"
+WHERE name = "John";
+ 
+
+SELECT * FROM worker;
+
+DROP DATABASE IF EXISTS sampleDB;

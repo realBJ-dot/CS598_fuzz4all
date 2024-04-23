@@ -1,0 +1,18 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE mytable(
+   a int auto_increment primary key,
+    b varchar(30),
+    c int,
+    d text
+)ENGINE=InnoDB;
+CREATE TABLE mytable2(
+   a int auto_increment primary key,
+    b varchar(30),
+    c int,
+    d text
+)ENGINE=InnoDB; 
+INSERT INTO mytable(b,c,d) VALUES('ab','1',NULL);
+INSERT INTO mytable(b,c,d) VALUES('bc','2',NULL);
+INSERT INTO mytable2(b,c,d) VALUES('ab','1',NULL);
+INSERT INTO mytable2(b,c,d) VALUES('cd','2',NULL);
+SELECT * FROM mytable3; 

@@ -1,0 +1,42 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+DROP TABLE IF EXISTS `staff`;
+DROP TABLE IF EXISTS `emp`;
+
+CREATE TABLE `staff` (
+	`id` int(11) NOT NULL AUTO_INCREMENT,
+	`staff_name` text NOT NULL,
+	`grade` text NOT NULL,
+	`code` int(11) NOT NULL,
+	PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `emp` (
+	`id` int(11) NOT NULL AUTO_INCREMENT,
+	`name` varchar(50) NOT NULL,
+	`empgrade` varchar(10) NOT NULL,
+	PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+SHOW TABLES;
+
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `staff`;
+DROP TABLE IF EXISTS `emp`;
+
+CREATE TABLE `staff` (
+	`id` int(11) NOT NULL AUTO_INCREMENT,
+	`staff_name` text NOT NULL,
+	`grade` text NOT NULL,
+	`code` int(11) NOT NULL,
+	PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2021 DEFAULT CHARSET=utf8;
+
+INSERT INTO `staff` (`ID`, `staff_name`, `grade`, `code`) VALUES
+	(1, 'Sam', '99', 1),
+	(2, 'Bob', '90', 2),
+	(3, 'Maria', '77', 3),
+	(4, 'Sarah', '60', 4),
+	(5, 'Bruce', '1.0', 5),
+	

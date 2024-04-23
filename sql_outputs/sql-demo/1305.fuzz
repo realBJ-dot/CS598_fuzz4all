@@ -1,0 +1,47 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS users(
+	user_id INT NOT NULL PRIMARY KEY UNIQUE,
+	user_login_id varchar(50),
+	user_email varchar(500)
+);
+CREATE TABLE IF NOT EXISTS user_blog(
+	user_id INT NOT NULL,
+	blog_post_id INT NOT NULL
+);
+DESCRIBE user_blog;
+CREATE TABLE IF NOT EXISTS roles(
+	role_id INT NOT NULL PRIMARY KEY UNIQUE,
+	role_name varchar(200) UNIQUE
+);
+DESCRIBE roles;
+
+INSERT INTO roles(role_id, role_name)
+VALUES('1', 'Super Admin'),
+('2', 'Admin'),
+('3', 'Staff');
+
+INSERT INTO roles_permissions(roles_permissions_id, roles_id, permissions_id)
+VALUES('1', '1', '1'),
+('2', '1', '2'),
+('3', '1', '3'),
+('4', '2', '1'),
+('5', '2', '4'),
+('6', '2', '2'),
+('7', '3', '4'),
+('8', '3', '3');
+
+ALTER TABLE user_blog
+    ADD CONSTRAINT users_id_users FOREIGN KEY (user_id) REFERENCES users(user_id),
+
+    ADD CONSTRAINT user_blog_blog_post_id_blog_posts FOREIGN KEY (blog_post_id) REFERENCES blog_posts(blog_post_id);
+
+ALTER TABLE users
+    ADD CONSTRAINT users_blog_posts_id FOREIGN KEY(blog_post_author_id) REFERENCES blog_posts(blog_post_id);
+
+UPDATE permissions
+SET permissions_value_id = 8
+WHERE permissions_name = 'Access';
+UPDATE permissions
+SET permissions_value = -1
+WHERE permissions_name = 'Update';
+    

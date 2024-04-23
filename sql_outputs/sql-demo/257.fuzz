@@ -1,0 +1,35 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ALTER TABLE `enroll_student` ENGINE=InnoDB;
+ALTER TABLE `student` ENGINE=InnoDB;
+UPDATE `enroll_student` SET `student.name`='Jhon';
+SELECT teacher.teacherID, course.courseName
+FROM course INNER JOIN teacher on teacher.teacherID=course.teacherID  
+INNER JOIN student on student.studentID=course.studentID;
+
+UPDATE `enroll_student` SET `student.name`='Jhon';
+SELECT teacher.teacherID, course.courseName
+FROM course INNER JOIN teacher on teacher.teacherID=course.teacherID  
+INNER JOIN student on student.studentID=course.studentID;
+
+INSERT INTO `enroll_student`(`studentID`, `teacherID`,`classroomID`,`termID`,`roomID`) 
+VALUES (1,10,3,1,2);
+
+UPDATE `enroll_student` SET `student.name`='Jhon';
+SELECT teacher.teacherID, course.courseName
+FROM course INNER JOIN teacher on teacher.teacherID=course.teacherID  
+INNER JOIN student on student.studentID=course.studentID;
+
+UPDATE `enroll_student` SET `student.name`='Jhon';
+SELECT teacher.teacherID, course.courseName
+FROM course INNER JOIN teacher on teacher.teacherID=course.teacherID  
+INNER JOIN student on student.studentID=course.studentID;
+SELECT student.studentID, student.name, enroll_student.termID
+FROM enroll_student INNER JOIN student ON student.studentID=enroll_student.studentID;
+
+--SELECT course.courseName, teacher.teacherID, student.name, enroll_student.termID
+SELECT student.studentID, student.name, enroll_student.termID
+FROM enroll_student INNER JOIN student ON student.studentID=enroll_student.studentID
+INNER JOIN course ON course.courseID=enroll_student.courseID
+INNER JOIN teacher ON teacher.teacherID=enroll_student.teacherID;
+
+--SELECT course.courseName, teacher.teacherID,

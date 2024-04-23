@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS mytable( myid INT PRIMARY KEY, title VARCHAR(255) NOT NULL UNIQUE, price DECIMAL(10,2) DEFAULT '0.00');
+INSERT INTO mytable VALUES(1,'abc1', 100);
+INSERT INTO mytable VALUES(2,'abc2', 'abc1');
+INSERT INTO mytable VALUES(2,'abc3', 'abc1');
+INSERT INTO mytable VALUES(2,'abc4', 'abc2');
+INSERT INTO mytable VALUES(2,'abc5', NULL);
+SELECT myid, title, price FROM mytable;
+DROP TABLE mytable ;
+DROP DATABASE sampleDB;

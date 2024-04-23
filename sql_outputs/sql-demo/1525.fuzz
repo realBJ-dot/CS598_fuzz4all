@@ -1,0 +1,18 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE users;
+CREATE TABLE users(id INTEGER, fname VARCHAR(50), lname VARCHAR(50), user_type INTEGER);
+INSERT INTO users (id, fname, lname, user_type) VALUES (11, 'Ritwik', 'Bharan', 2);
+DROP TABLE users;
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE users;
+SET @tx_id:=SETXID();
+CREATE TABLE users(id INTEGER, fname VARCHAR(50), lname VARCHAR(50), user_type INTEGER, CONSTRAINT users_pkey PRIMARY KEY (id) );
+INSERT INTO users (id, fname, lname, user_type, CONSTRAINT users_insert_values_1234567876_k2369_k2369_k2369 UNIQUE (fname, lname) ) VALUES (11, 'Ritwik', 'Bharan', 2);
+UPDATE users SET user_type = 2 WHERE user_type = 1;
+INSERT INTO users (id, fname, lname, user_type);
+DELETE FROM users WHERE id = 11;
+COMMIT;
+
+DROP TABLE users;
+-- In the next chapter, you will try to understand the concepts that the MySQL supports to create and use a fully functional database. We will see in this chapter how to work with tables; how to add some basic data to the database. We will also see how to query data from database at various levels. Finally, we will do a sample INSERT query, which shows the usage of CREATE TABLE as the base for a database.

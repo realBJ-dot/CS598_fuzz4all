@@ -1,0 +1,3 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE users (Id int(11), FName varchar(50), LName varchar(50), Email varchar(50));
+CREATE TABLE employees (Id int(11), FName varchar(50), LName varchar(50), Email varchar(50), HireDate date, FKey int(11), MKey int(11), ManagerId int(11));

@@ -1,0 +1,8 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS MutatedNew;
+CREATE TABLE MutatedNew (ID INT, Student INT, Mutated int NOT NULL);
+INSERT INTO MutatedNew VALUES (1,1,0);
+INSERT INTO MutatedNew VALUES (2,2,1);
+INSERT INTO MutatedNew VALUES (3,3,0);
+SELECT * FROM MutatedNew INNER JOIN Students ON MutatedNew.Student = Students.ID;
+DROP DATABASE sampleDB;

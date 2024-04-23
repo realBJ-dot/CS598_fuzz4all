@@ -1,0 +1,14 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS users (
+    id                int auto_increment,
+    first_name        varchar(30) not null,
+    last_name         varchar(30) not null,
+    balance           decimal(11, 2) not null,
+    PRIMARY KEY (id)
+);
+SELECT
+id,first_name
+FROM users;
+ 
+DROP TABLE IF EXISTS users;
+DROP DATABASE IF EXISTS sampleDB;

@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS employee ( `EmpID` INT(4) NOT NULL AUTO_INCREMENT, `EmpName` TEXT NOT NULL, `Designation` TEXT NOT NULL, `Salary` DECIMAL(10, 4), KEY (`EmpID`));
+INSERT INTO employee (`EmpID`, `EmpName`, `Designation`, `Salary`) VALUES ('15', 'Nurse Abu', 'Dental Assistant', '2000');
+UPDATE employee
+SET Salary = Salary * 5000;
+SELECT * FROM employee;
+DROP TABLE IF EXISTS employee CASCADE;
+-- MySQL Workbench is an integrated development environment designed for MySQL. It is a GUI cross-platform application, which you can use to perform most common database management tasks such as view data, modify databases, configure schema and data management systems, perform common tasks such as searching and sorting, inserting and deleting data, and other standard tasks such as cloning, creating and dropping schemas to migrate data and execute scripts.
+
+MySQL Workbench is a cross-platform desktop application designed for performing common work tasks including creating, reading, altering, writing, and executing a database management system (DBMS). MySQL Workbench can be installed under Windows, Linux, Ubuntu, and OS X, as well as Windows Vista and 7, 8 and 10, and macOS, including the latest versions of Apple's Catalina and Big Sur operating systems. For more detailed installation instructions, please refer to the MySQL Workbench section on the [MySQL Website](https: 

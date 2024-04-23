@@ -1,0 +1,29 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DELETE FROM person Where birthdate>='2013-07-30';
+-- Please create a program to perform complex join between two tables
+-- Please read the documentation and check with the help of examples
+USE sampleDB; DROP TABLE IF EXISTS user; 
+CREATE TABLE user (id INT, name VARCHAR(200)); 
+INSERT INTO user (id, name) VALUES(1, 'Lee');
+INSERT INTO user (id, name) VALUES(2, 'John');
+INSERT INTO user (id, name) VALUES(3, 'Rahul');
+INSERT INTO user (id, name) VALUES(4, 'Vinay');
+DROP TABLE IF EXISTS usertemp;
+CREATE TABLE usertemp (u VARCHAR(200), u1 VARCHAR(200)); 
+DROP TABLE IF EXISTS emp;
+CREATE TABLE emp (id INT, u VARCHAR(200)); 
+DROP TABLE IF EXISTS emptemp;
+CREATE TABLE emptemp (e1 VARCHAR(200), e2 VARCHAR(200)); 
+-- Please use SQL commands to join user table and emp table with data having same u and e
+-- Please create a program that reads inputted SQL queries and runs them through an intelligent processor. If the query is valid, then the output should be the results of the query. If the query is invalid then the output should be the SQL queries that caused the invalidity
+-- Please use INSERT, UPDATE and DELETE commands to modify a database
+-- Please do not use the SQL commands except SELECT
+-- Please use multiple threads to test SQL performance while selecting and joining two tables
+-- Please create a small program to insert a large number of rows in an unsorted table in MySQL
+-- Please use MySQL dumper to create a.sql file in MySQL
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employees;
+CREATE TABLE employees (ID INT PRIMARY KEY, name VARCHAR(200), address VARCHAR(200), city varchar(200)); 
+INSERT INTO employees (id, address) VALUES(1, '1985118');
+INSERT INTO employees (id, address, city) VALUES(2, '4', 'Kolkata');
+INSERT INTO employees (id, address, city) VALUES(3, '5', 'Bathinda');

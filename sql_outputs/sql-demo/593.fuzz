@@ -1,0 +1,58 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS Mutated;
+DROP DATABASE sampleDB;
+
+-- Here is a sample SELECT statement. Since we want to make the output very human
+-- We first need to convert the binary value into text
+mysql> SELECT BINARY "mutated" FROM Mutated;
++-------------------+
+| mutated           |
++-------------------+
+| 7FB6E991D0983177 |
++-------------------+
+1 row in set (0.00 sec)
+-- Let's take a closer look
+mysql> SELECT BINARY "mutated" FROM Mutated;
++-------------------+
+| mutated           |
++-------------------+
+| 7FB6E991D0983177 |
++-------------------+
+1 row in set (0.00 sec, 1.36 sec in loop)
+mysql> SELECT mutated FROM Mutated;
++--------------------+
+| mutated            |
++--------------------+
+| 7FB6E991D0983177 |
++--------------------+
+1 row in set (0.00 sec)
+-- You can compare a column as well using =. Take a look at a real-life application
+-- If you need to see rows only, add LIMIT N to the end of your query or use the OFFSET N. Here is a sample query
+mysql> SELECT BINARY "mutated" FROM Mutated LIMIT 2;
++-------------------+
+| mutated           |
++-------------------+
+| 7FB6E991D0983177 |
++-------------------+
+1 row in set (0.00 sec)
+mysql> SELECT BINARY "mutated" FROM Mutated LIMIT 2 OFFSET 2;
++----------------------+
+| mutated              |
++----------------------+
+| F006825DCC6D0393 |
++----------------------+
+1 row in set (0.00 sec)
+mysql> SELECT BINARY "mutated" FROM Mutated UNION ALL
+-- Another way to do the same query is to use the WHERE condition. Here is a sample query
+mysql> SELECT BINARY "mutated" FROM Mutated WHERE "mutated" NOT IN (SELECT BINARY "mutated" FROM Mutated LIMIT 3);
++-------------------+
+| mutated           |
++-------------------+
+| 5A0CF130293D2237 |
++-------------------+
+1 row in set (0.00 sec)
+mysql> SELECT BINARY "mutated" FROM Mutated WHERE "mutated" IN (SELECT BINARY "mutated" FROM Mutated LIMIT 2) AND "name" = "<NAME>";
++-------------------+
+| mutated           |
++-------------------+
+| 7FB6E991D0983177

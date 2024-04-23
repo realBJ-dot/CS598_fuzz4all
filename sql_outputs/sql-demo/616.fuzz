@@ -1,0 +1,26 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS Original;
+CREATE TABLE Original (ID INT, Mutated INT, Stam FLOAT);
+INSERT INTO Original VALUES (1,0,30.55);
+INSERT INTO Original VALUES (2,1,17);
+INSERT INTO Original VALUES (3,1,4.5);
+-- If the data is read as such, the SQL will try to use that data and do nothing. To make sure the Mutated data is taken into consideration properly, we should also make sure Stam=30.55
+SELECT IDINT, Mutated, Stam FROM Original;
+-- If we update Original Table
+UPDATE Original SET Stam=Stam+5 WHERE ID=2;
+-- now we need to make sure Stam=15.5
+SELECT IDINT, Mutated, Stam FROM Original;
+-- the only modified original value should be ID=3
+DROP TABLE IF EXISTS Updated;
+CREATE TABLE Updated (ID INT, Mutated INT, Stam FLOAT);
+INSERT INTO Updated VALUES (3,0,47.5);
+ALTER TABLE Updated MODIFY Stam Stam DECIMAL(2,2);
+-- Now the mutated Int should hold 0 (Only 2 of 3 students can be active)
+SELECT COUNT(*) FROM Mutated;
+-- And now the Stam should be 57.57
+SELECT Stam FROM Updated;
+ALTER TABLE Original MODIFY ID INT;
+DROP TABLE IF EXISTS Updated;
+-- UPDATE table Original with column IDINT int AUTO_INCREMENT=4
+CREATE TABLE Updated (ID INT, Mutated INT, Stam DECIMAL);
+INSERT INTO Updated VALUES (1,0,30.55,

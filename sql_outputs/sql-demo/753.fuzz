@@ -1,0 +1,6 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP DATABASE IF EXISTS sampleDB;
+DROP TABLE IF EXISTS FirstAndSecondTable; INSERT INTO FirstAndSecondTable (id, data) VALUES (1, 'Hello, World!');
+UPDATE FirstAndSecondTable SET data = 'Hello, there!' WHERE id = 1;
+SELECT * FROM FirstAndSecondTable WHERE id = 1;
+DROP TABLE IF EXISTS sampleDB; */

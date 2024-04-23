@@ -1,0 +1,52 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+drop table1;
+create table1
+(
+    id integer primary key,
+    name varchar(50),
+    birthdate date
+);
+commit
+set autocommit=0;
+-- To delete table you will have 2 options.
+-- 1. using the drop table command you can delete the data.
+-- 2. You have to delete the data manually.
+drop table1;
+insert into table1 values(1, 'abc', '01 January, 1986');
+-- Now your data should be as below.
+-- 1.1 | | |
+-- 1.2 | 1 | abc | 01 January, 1986
+-- 1.3 | 1 | abc | 01 January, 1986
+-- 1.4 | 1 | abc | 01 January, 1986
+drop table1;
+-- The way to drop a table is using DROP TABLE statement.
+-- You have to declare the table first.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;DROP TABLE IF EXISTS table5;
+-- The DROP TABLE is quite helpful when you try to avoid data loss.
+-- It can also work in case of data corruption. To avoid it, you need to commit and then drop the table and reopen it again.
+create table table5
+(
+    id integer primary key,
+    name varchar(50),
+    birthdate date
+);
+insert into table5 values(1, 'abc', '01 January, 1989');
+insert into table5 values(2, 'xyz', '01 December, 1990');
+commit
+set autocommit=0;
+drop table table5;
+create table5
+(
+    id integer primary key,
+    name varchar(50),
+    birthdate date
+);
+-- The data is still there.
+-- Now you need to drop the entire database and reopen it.
+use sampledb;
+set foreign_key_checks=1;
+drop database sampledb;
+create database sampledb;
+use sampledb;
+set foreign_key_checks=0;
+--

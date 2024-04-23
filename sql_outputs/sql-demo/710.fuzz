@@ -1,0 +1,6 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS Student;
+CREATE TABLE Student (First_Name  varchar(20), Last_Name  varchar(20), Grade boolean);
+INSERT INTO Student (First_Name, Last_Name, Grade) VALUES ('John', 'Smith',     true);
+INSERT INTO Student (First_Name, Last_Name, Grade) VALUES ('Jane',  'Lee',       false);
+INSERT INTO Student (First_Name, Last_Name, Grade) VALUES ('Tom',   'Stark',     true);

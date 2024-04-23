@@ -1,0 +1,5 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+UPDATE employee SET ManagerID = NULL WHERE department = 'CEO';
+UPDATE employee SET ManagerID = NULL WHERE department = 'Managing Director';
+UPDATE employee SET ManagerID = NULL WHERE (ManagerID = 'Kevin');
+DROP DATABASE IF EXISTS sampleDB;

@@ -1,0 +1,27 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS users;
+INSERT INTO users (name, balance)
+VALUES ('<NAME>', 5478.31),
+        ('<NAME>', 5540.00),
+        ('<NAME>', 7578.13),
+        ('<NAME>', 9340.60),
+        ('<NAME>', 8939.44),
+        ('<NAME>', 5870.44),
+        ('<NAME>', 7310.13),
+        ('<NAME>', 4138.86),
+        ('<NAME>', 6290.98);
+SELECT
+  name, balance
+FROM users;
+ 
+LOAD DATA LOCAL INFILE 'data.csv' INTO TABLE "users" FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n' IGNORE 1 LINES;
+SELECT
+  name, balance
+FROM users;
+-- Please check your results in TableSpace Manager and that you find the users table with the users data. Now drop your users data from the users table with SHOW CREATE TABLE users and see how the data has been shifted over into the "users" table.
+SHOW CREATE TABLE users;
+DROP TABLE IF EXISTS "users";
+SHOW CREATE TABLE users;
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE

@@ -1,0 +1,18 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `sampleDB`.`customers`;
+CREATE TABLE IF NOT EXISTS `sampleDB`.`customers` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `customerID` int NOT NULL,
+  `firstName` varchar(20) NOT NULL,
+  `lastName` varchar(25) NOT NULL,
+  `isFullTimeEmployee` tinyint(1) NOT NULL,
+  `isLead` tinyint(1),
+  `isVIP` tinyint(1) NOT NULL,
+  `age` tinyint(1),
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `customers_customerID` (`customerID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+```
+
+![](../../.gitbook/assets/create_database_using_sql.png)
+

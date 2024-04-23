@@ -1,0 +1,29 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP PROCEDURE IF EXISTS UpdateAuthorDate;
+DELIMITER ;;
+CREATE PROCEDURE UpdateAuthorDate( IN author_id INT, IN author_date DATETIME )
+SELECT SET_DATE(@author_id,@author_date);
+DELIMITER ;
+DROP PROCEDURE IF EXISTS UpdateAuthorName;
+DELIMITER ;;
+CREATE PROCEDURE UpdateAuthorName( author_id INT, author_name text )
+UPDATE author SET author_name = author_name WHERE author_id = author_id;
+DELIMITER ;
+DROP PROCEDURE IF EXISTS UpdateAuthorNameAndPhone;
+DELIMITER ;;
+CREATE PROCEDURE UpdateAuthorNameAndPhone( author_id INT, author_name text, author_date DATETIME )
+UPDATE author SET author_name = author_name, author_date = author_date WHERE author_id = author_id;
+DELIMITER ;
+-- MySQL is commonly used for the backend work but also the data access layer for the frontend code. Because of the integration with PHP and JS you can also use MySQL for the backend.
+/*
+INSERT INTO sampleDB.author VALUES(1, 'John');
+INSERT INTO sampleDB.author VALUES(2, 'Jane');
+INSERT INTO sampleDB.author VALUES(3, 'Jessica');
+INSERT INTO sampleDB.author VALUES(4, 'Paul');
+
+INSERT INTO sampleDB.article VALUES(1, 'How does PHP work?', 1, 1545088552, 
+'This article is about how PHP works.', '/images/article.jpg', 0, 2);
+INSERT INTO sampleDB.article VALUES(2, 'PHP is Awesome!', 2, 1545142583, 
+'This article is more about PHP.', '/images/article.jpg', 0, 3);
+INSERT INTO sampleDB.article VALUES(3, 'PHP is Awesome again!', 3, 1545142583, 
+'

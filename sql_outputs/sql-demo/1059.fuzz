@@ -1,0 +1,2 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+SET GLOBAL sql_mode=ANSI_QUOTES,character_set_character_set="utf8mb4", character_set_connection=LATIN1, character_set_results=LATIN1

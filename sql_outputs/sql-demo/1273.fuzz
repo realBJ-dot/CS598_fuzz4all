@@ -1,0 +1,19 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- This is the previous SQL statement
+DESCRIBE users;
+-- Change the previous statement of the first table so that it includes the fulltext_idx index at the end.
+
+-- Now change some rows with an existing fulltext_idx index.
+UPDATE users SET fulltext_idx = "A User" WHERE name = "A User";
+
+-- Now drop the fulltext_idx index.
+DROP INDEX IF EXISTS fulltext_idx;
+
+-- Now change the first two rows
+UPDATE users SET name = "another name" WHERE name = "A User";
+UPDATE users SET name = "another name" WHERE name = "another name";
+
+-- Now let's see the results of the previous INSERT statement.
+DESCRIBE users;
+-- Drop all the tables.
+DROP DATABASE IF EXISTS sampleDB; DROP TABLE IF EXISTS users;

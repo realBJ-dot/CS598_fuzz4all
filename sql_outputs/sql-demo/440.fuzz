@@ -1,0 +1,22 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE mytable(
+   a INT PRIMARY KEY AUTO_INCREMENT,
+    b VARCHAR(30),
+    c INT,
+    d TEXT,
+    e DATE
+);
+
+-- Please create a way to create a new database, add users to the database and alter the database structure (tables, columns, constraints, indexes)
+USE sampleDB;
+CREATE DATABASE testDB; USE testDB;
+DELIMITER
+CREATE USER 'admin'@'%'
+IDENTIFIED BY 'admin';
+GRANT ALL PRIVILEGES ON testDB.* TO '<EMAIL>'@'%';
+FLUSH PRIVILEGES;
+DELIMITER ;
+show variables like 'password%';
+show variables like 'user%.password%';
+show databases;
+*/

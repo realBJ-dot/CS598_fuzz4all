@@ -1,0 +1,33 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employees_salary_by_salary;
+CREATE TABLE employees_salary_by_salary (
+    employee_salary	DECIMAL(18,0),
+    emp_salary		decimal(18,0),
+    PRIMARY KEY (employee_salary, emp_salary));
+INSERT INTO employees_salary_by_salary (employee_salary, emp_salary) VALUES(100000,100000);
+SELECT emp_salary + 5000 FROM employees_salary_by_salary;
+DROP TABLE IF EXISTS employees_salary_by_salary;
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employees_salary_by_salary;
+CREATE TABLE employees_salary_by_salary (
+    employee_salary	DECIMAL(18,0),
+    emp_salary		decimal(18,0),
+    PRIMARY KEY (employee_salary, emp_salary));
+INSERT INTO employees_salary_by_salary (employee_salary, emp_salary) SELECT * FROM (VALUES
+  (100001, 100001),
+  (100002, 100002),
+  (200003, 100004),
+  (200004, 100005),
+  (300005, 100006),
+  (300006, 100007),
+  (400007, 100008),
+  (400008, 100009),
+  (500009, 100010),
+  (500010, 100011),
+  (600011, 100012),
+  (600012, 100013),
+  (700013, 100014),
+  (700014, 100015),
+  (800015, 100016),
+  (800016, 100017),
+  (9000

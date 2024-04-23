@@ -1,0 +1,35 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `sampleDB`.`employees`;
+CREATE TABLE `sampleDB`.`employees` (
+	`deptId` int NULL,
+	`userName` varchar(15) NOT NULL,
+	`password` varchar(100) NOT NULL,
+	PRIMARY KEY (`userName`,`deptId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+DROP TABLE IF EXISTS `sampleDB`.`employee_dept`;
+CREATE TABLE `sampleDB`.`employee_dept` (
+	`employeeId` int NULL,
+	`deptId` int NOT NULL,
+	PRIMARY KEY (`employeeId`,`deptId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+INSERT INTO sampleDB.employee_dept (employeeId,deptId) VALUES(1,1),(2,1),(3,1),(4,1),(1,2),(2,2),(3,2),(4,2),(1,3),(2,3),(3,3), (4,3);
+SELECT * FROM employees;
+UPDATE employees SET password='<PASSWORD>' WHERE userName='admin';
+SELECT * FROM employees;
+UPDATE employees SET password='' WHERE userName='', deptId='', password='';
+-- The SQL server must be restarted for your test to pass. The easiest way to do this is to open the
+-- SQL Server Management Studio. It is the only database software available under Windows from the beginning.
+
+-- We need to create a script to demonstrate how to manipulate the tables using a basic query. Your task is to write the
+-- SQL query you need to perform in step 3.3.1 (3.4). Your task is also to update your previous query to demonstrate
+-- how to select all employees who were awarded the "VP of Sales", "Program Manager", "Civil Engineer", or "Accountant" job titles. You want to use the
+-- function "find" to perform this task. Your task is to create a version of your previous update where
+-- all records are selected. Please be sure to create tables which reflect the roles of the above job titles.
+
+-- UPDATE SQL
+SELECT * FROM employees as e
+JOIN employees as e1
+ON e1.fname=e.fname
+LEFT JOIN employees as e2 ON e2.lname=e.lname
+JOIN departments as d
+ON d.id=e.deptid

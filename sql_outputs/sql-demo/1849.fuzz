@@ -1,0 +1,15 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS state;
+CREATE TABLE state(
+	state char(2),
+	country char(5),
+	capital char(8));
+INSERT INTO state VALUES('AL','Albania','Tirana');
+INSERT INTO state VALUES('SA','Australia','Canberra');
+INSERT INTO state VALUES('NL','Albania','Tirana');
+INSERT INTO state VALUES('NT','Albania','Tirana');
+INSERT INTO state VALUES('SK','Albania','Tirana');
+INSERT INTO state VALUES('TR','Turkey','Ankara');
+INSERT INTO state VALUES('SA','Australia','Canberra');
+INSERT INTO state VALUES('SA','Australia','Canberra');
+INSERT INTO state VALUES('NT','Albania','T

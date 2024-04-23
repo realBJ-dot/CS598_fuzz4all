@@ -1,0 +1,77 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ 
+
+CREATE TABLE IF NOT EXISTS Mutated (
+    Field_1 INT NOT NULL,
+    Mutated_Field SET('a','b'),
+    FIELD_3 INT DEFAULT NULL,
+    Field_4 TINYINT DEFAULT 0,
+    PRIMARY KEY (Field_1)
+);
+
+
+CREATE TABLE IF NOT EXISTS Mutated2 (
+    Field_2 INT NOT NULL,
+    Mutated_Field SET('c'),
+    Field_4 INT DEFAULT NULL,
+    Field_3 TINYINT DEFAULT 0,
+    PRIMARY KEY (Field_2)
+);
+
+INSERT INTO Mutated
+    SELECT 1,
+    ('a','b',3),
+    NULL,
+    0
+FROM Mutated2;
+
+ 
+SELECT *
+FROM Mutated
+    JOIN Mutated2
+  ON Mutated.FIELD_2 = Mutated2.Field_2
+WHERE Mutated2.MUTATED_FIELD HAS (
+    'a', 'b'
+);
+
+INSERT INTO Mutated
+   (Field_2)
+  VALUES
+  (1);
+
+SHOW PROCESSLIST;
+
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ 
+
+CREATE TABLE IF NOT EXISTS Mutated (
+    Field_1 INT NOT NULL,
+    Mutated_Field SET('a','b'),
+    FIELD_3 INT DEFAULT NULL,
+    FIELD_4 TINYINT DEFAULT 0,
+    PRIMARY KEY (Field_1)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE IF NOT EXISTS Mutated2 (
+    Field_2 INT NOT NULL,
+    Mutated_Field SET('c'),
+    Field_4 INT DEFAULT NULL,
+    Field_3 TINYINT DEFAULT 0,
+    PRIMARY KEY (Field_2)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO Mutated
+    SELECT 1,
+    ('a','b',3),
+    NULL,
+    0
+FROM Mutated2;
+
+UPDATE Mutated
+   SET Mutated_Field = (Select Mutated_Field FROM Mutated2 WHERE Field_1 = 1)
+WHERE Field_2 = 4;
+
+SHOW PROCESSLIST;
+
+--
+/* Please create a semantically equivalent program to the previous generation. You need to use

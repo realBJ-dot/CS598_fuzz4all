@@ -1,0 +1,16 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE employees_salary_by_salary (
+    id INT UNSIGNED,
+    salary INT,
+    PRIMARY KEY (id));
+UPDATE employees_salary_by_salary SET salary = salary + 6000;
+SELECT salary + 5000 FROM employees_salary_by_salary;
+
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB; CREATE TABLE employees_salary_by_salary (id INT UNSIGNED, salary INT, PRIMARY KEY (id)); INSERT INTO employees_salary_by_salary (salary) VALUES (1000), (1200);
+SELECT salary FROM employees_salary_by_salary WHERE id = 2 AND salary = 1205;
+
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB; CREATE TABLE employees_salary_by_salary (salary INT, e INT, PRIMARY KEY (salary)); INSERT INTO employees_salary_by_salary VALUES (800), (650);
+SELECT * FROM employees_salary_by_salary WHERE e = 2 AND salary = 650;
+
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB; CREATE TABLE employees_salary_by_salary (id INT UNSIGNED, salary INT, PRIMARY KEY (id)); INSERT INTO employees_salary_by_salary VALUES (2), (5);
+SELECT * FROM employees_salary_by_salary WHERE id = 2 OR id = 3, (2, 3);

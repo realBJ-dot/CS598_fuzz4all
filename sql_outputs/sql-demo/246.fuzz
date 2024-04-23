@@ -1,0 +1,5 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+INSERT INTO course 
+    (courseNum, courseName, teacherID, classroomID, termID, roomNum) 
+    VALUES (3, 'Compilers Principles', 1, 1, 1, 3);
+COMMIT;

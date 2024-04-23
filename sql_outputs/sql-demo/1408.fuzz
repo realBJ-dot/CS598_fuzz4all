@@ -1,0 +1,14 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS `books` (
+  `id` INT(10) UNSIGNED AUTO_INCREMENT,
+  `author_id` INT(10) UNSIGNED,
+  `booktitle` INT(10) UNSIGNED
+);
+INSERT INTO `books` (`id`, `author_id`, `booktitle`) VALUES (17, 16, 1), (18, 16, 2), (16, 16, 3);
+SELECT * FROM `books` WHERE `author_id` IN (5);
+SELECT * FROM `books` WHERE `author_id` IN (5);
+INSERT INTO `books`(`id`, `author_id`, `booktitle`) VALUES (1, 7, 37);
+DELETE FROM `books` WHERE `author_id` IN (5);
+SELECT * FROM `books` WHERE `author_id` IN (5);
+SHOW WARNINGS;
+DROP TABLE `books`;

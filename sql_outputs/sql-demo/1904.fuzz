@@ -1,0 +1,28 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employees_salary;
+DROP TABLE IF EXISTS employees;
+CREATE TABLE employees(
+    emp_no          INT UNSIGNED,
+    emp_name        VARCHAR(30),
+    mgr_emp_no      INT UNSIGNED,
+    birth_date      DATE,
+    hire_date       DATE,
+    sal_grade       CHAR(1),
+    dept_no         INT UNSIGNED,
+    HIREBY          CHAR(1),
+    sal_value       DECIMAL(10,2),
+    comm_status     CHAR(1),
+    comm_rate       DECIMAL(3,1),
+    CONSTRAINT employees_PK PRIMARY KEY (emp_no));
+CREATE TABLE employees_salary(
+    employee_emp_no        INT UNSIGNED   NOT NULL,
+    employee_salary       INT UNSIGNED,
+    employee_salary_date  DATE,
+    employee_year         YEAR,
+    PRIMARY KEY (employee_emp_no, employee_salary_date, employee_year));
+USE sampleDB;
+INSERT INTO employees_salary VALUES (1100, 10000, '1991-01-01', 1990);
+INSERT INTO employees_salary VALUES (1100, 7000, '1991-02-01', 1990);
+INSERT INTO employees_salary VALUES (1100, 85000, '1991-02-10', 1991);
+INSERT INTO employees_salary VALUES (1100, 10000, '1991-02-21', 1990);
+INSERT INTO employees_salary VALUES (1100, 9

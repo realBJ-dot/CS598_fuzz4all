@@ -1,0 +1,38 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP DATABASE IF EXISTS `user`;
+-- Please create a program that changes a previous INSERT query to a DELETE query.
+DROP DATABASE IF EXISTS `user`;
+CREATE TABLE user(user_name VARCHAR(20), password VARCHAR(15));
+INSERT INTO user (user_name, password) VALUES ('admin', '<PASSWORD>');
+delete FROM user WHERE user_name='admin';
+-- Please create a program that changes a previous DELETE query to a UPDATE query.
+DROP DATABASE IF EXISTS `user`;
+CREATE TABLE user(user_name VARCHAR(20), password VARCHAR(15));
+INSERT INTO user (user_name, password) VALUES ('admin', '<PASSWORD>');
+update user set password='<PASSWORD>' where user_name='admin';
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP DATABASE IF EXISTS `user`;
+SELECT * FROM user WHERE user_name = 'admin';
+-- Please create a program that executes the SQL statements in order to insert an array of data.
+DROP DATABASE IF EXISTS `user`;
+CREATE TABLE user(user_name VARCHAR(20), password VARCHAR(15));
+INSERT INTO user (user_name, password) VALUES ('admin', '<PASSWORD>');
+-- Insert three rows in an array, i.e. ['Bob', 'Adam', 'Daniel']
+-- In your SQL statement INSERT INTO user (user_name,password) VALUES ('Bob', '1234'), ('Adam', '5678') and ('Daniel', '9876');
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP DATABASE IF EXISTS `user`;
+CREATE TABLE user(user_name VARCHAR(20), password VARCHAR(15));
+INSERT INTO user (user_name, password) VALUES ('admin', '<PASSWORD>');
+select user_name, password FROM user where user_name = 'admin';
+# Please create a SQL statement which returns all users.
+DROP DATABASE IF EXISTS `user`;
+CREATE TABLE user(user_name VARCHAR(20), password VARCHAR(15));
+INSERT INTO user (user_name, password) VALUES ('admin', '<PASSWORD>');
+-- Please create a mutated program that inserts several rows in random order.
+DROP DATABASE IF EXISTS `user`;
+CREATE TABLE user(user_name VARCHAR(20), password VARCHAR(15));
+INSERT INTO user (user_name, password) VALUES ('admin', '<PASSWORD>');
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP DATABASE IF EXISTS `user`;
+USE sampleDB;
+INSERT INTO

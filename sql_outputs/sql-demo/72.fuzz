@@ -1,40 +1,4 @@
-USE sampleDB;
--- Create and initialize a new table in order to hold a new batch of order information
-CREATE TABLE IF NOT EXISTS orders3 ( 
-	ordersID INT AUTO_INCREMENT NOT NULL, 
-	date DATE NOT NULL, 
-	quantity INT NOT NULL, 
-	customerID INT NOT NULL, 
-	storeID INT NOT NULL, 
-	CONSTRAINT pk_orders3 PRIMARY KEY (ordersID)
-);
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users(username char(20) PRIMARY KEY, FirstName VARCHAR(30)) ENGINE=InnoDB;
+INSERT INTO Users(username,Firstname) VALUES('Test','Test'),('Admin','Admin'),('Guest','Guest');
 
--- Write a program that inserts the 3rd stock into the table where price < 0 and stores 
--- the new values in an appropriately modified table.
-
-SELECT date, price 
-FROM stock1
-WHERE price < 0
-AND storeID = 9;
-INSERT INTO orders3 (ordersID, date, quantity, customerID, storeID)
-SELECT generate_series(ordersID,10), '2010-09-06', quantity, customerID, storeID
-FROM (
-	SELECT 
-	generate_series(price,30), 
-	DATE('2010-09-06')
-) AS tempTable;
-
-
--- Select all rows into 2 sheets, and 1 sheet with 1 row with the column names
--- Sort the orders by date, ascending, then by order number.
--- For each order, modify the price to be $ 1.50. Then save the updated value in a 
--- sheet. Save the column names from the first sheet in a separate file.
--- Then sort all 2 sheets according to the same criteria, and save them in a third 
--- sheet, also save the column names in a separate file.
--- Finally merge the two sheets according to the date and order IDs, to get 
--- a sheet with date and order IDs on each row, a sheet with column names
--- on each row, and a sorted sheet with both column names and orders. Print this sheet.
--- Create a function named count_distinct_orders that counts the number of orders
--- per date, storing the results in a result table, and returns a table with the date
--- and the number as results. Make sure to use an inner join with an additional
--- select statement that returns the column

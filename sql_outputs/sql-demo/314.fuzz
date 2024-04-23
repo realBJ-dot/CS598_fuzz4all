@@ -1,0 +1,2 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+INSERT INTO `contact`(first_name, last_name, email_address,number_phone) values(44,55,686478628634232434,120345324);

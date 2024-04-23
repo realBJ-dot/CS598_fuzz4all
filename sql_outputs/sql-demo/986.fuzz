@@ -1,0 +1,49 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE employees (
+id INT(100) NOT NULL AUTO_INCREMENT,
+empName VARCHAR(20),
+jobTitle VARCHAR(30),
+salary VARCHAR(20),
+FROM department (sampleDB.dept_emp)   
+);
+
+ 
+
+-- Create a sample table from a file in the current directory.
+CREATE TABLE employees (id int NOT NULL AUTO_INCREMENT, empName varchar(20), jobTitle varchar(30), salary varchar(20), deptName varchar(20));
+LOAD DATA LOCAL INFILE "employees.csv"
+INTO TABLE employees
+FIELDSterminated BY ","
+enclosed BY "\""
+LINES terminated BY "\n"
+IGNORE 1 LINES;
+
+CREATE TABLE dept(deptName varchar(20))
+
+
+-- Please create a mutated program that generates query using sampleDB database.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE employees (
+id INT(100) NOT NULL AUTO_INCREMENT,
+empName VARCHAR(20),
+jobTitle VARCHAR(30),
+salary VARCHAR(20),
+FROM department (sampleDB.dept_emp)   
+);
+
+SELECT e.id,d.deptName, e.jobTitle FROM employees e 
+JOIN department d ON e.deptName=d.deptName;
+
+-- Please update query by editing existing table.
+DROP TABLE sampleDB.employees;
+-- Create a new table and perform a complex query on it.
+DROP TABLE demoDB2.dept_emp;
+
+CREATE TABLE demoDB2.dept_emp (
+dept no primary key, emp no, position varchar(30), salary decimal(10,2));
+
+INSERT INTO demoDB2.dept_emp (dept, emp, position, salary)
+VALUES
+("Manhattan",2002,"Manager","400001.00" ), 
+("Manhattan",2001,"Senior Clerk","400020.50" ), 
+("Man

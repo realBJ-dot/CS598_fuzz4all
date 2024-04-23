@@ -1,0 +1,11 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users(username char(20), password <PASSWORD>(20), FirstName VARCHAR(30)) ENGINE = INNODB;
+INSERT INTO Users(username,password, FirstName) VALUES('Test','<PASSWORD>', 'Test'),('Admin','<PASSWORD>', 'Admin'),('Guest','<PASSWORD>f3065d0a238a17405bb6', 'Guest'),('Super','<PASSWORD>', 'Super');
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users(username char(20), password <PASSWORD>(20), FirstName VARCHAR(30)) ENGINE = INNODB;
+INSERT INTO Users(username,password, FirstName) VALUES('<PASSWORD>','<PASSWORD>', 'Test'),('Admin','d<PASSWORD>8a17405bb6', 'Admin'),('Guest','83c56919475bc47fdce9a930a237110', 'Guest'),('Super','7ee52990fe58a4a6bb68d8f8814ea59', 'Super');
+
+ALTER TABLE users DROP FOREIGN KEY;
+ALTER TABLE Users ADD CONSTRAINT `users_fk_password` FOREIGN KEY(`username`) REFERENCES `Users`(username) ON DELETE NO ACTION ON UPDATE CASCADE;
+

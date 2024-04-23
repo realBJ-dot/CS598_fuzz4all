@@ -1,12 +1,40 @@
-USE sampleDB;
-CREATE TABLE `comments` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `author` varchar(100) NOT NULL,
-  `post` bigint(20) NOT NULL,
-  `content` varchar(500) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `pid` (`post`)
-) ENGINE=InnoDB;
--- Add an index on both `author` and `post` columns
-CREATE INDEX ix_author_post 
-  ON `comments` (`author`, `post`);
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ 
+CREATE TABLE Users (
+        Student_Id     INTEGER    NOT NULL AUTO_INCREMENT,
+        Parent_Id      INTEGER    NOT NULL,
+        Email_id       INTEGER    NOT NULL,
+        Gender         ENUM('M', 'F') DEFAULT 'M',
+        Mobile_no      VARCHAR(20) DEFAULT '0412345678',
+        User_name      VARCHAR(10) DEFAULT 'Sneha',
+        Password       VARCHAR(12),
+        School_Id      INTEGER    DEFAULT '0',
+        Student_Name   VARCHAR(30) DEFAULT 'Sneha',
+        Address        VARCHAR(50) DEFAULT 'Chittaurgaon',   
+        Father_Name    VARCHAR(40) DEFAULT 'Sneha',
+        Mother_Name    VARCHAR(50) DEFAULT 'Sneha',
+        Birth_date     DATE DEFAULT '1980-02-28',
+        Father_Mobile  INTEGER DEFAULT '0',               
+        Blood_group    ENUM('A+','B+','AB+','O+','A-') DEFAULT 'A+',
+        Marital_Status ENUM('Civil', 'Maried', 'Dual', 'Divorced') DEFAULT 'Maried',
+        Father_Address VARCHAR(255),
+        PRIMARY KEY(Student_Id)
+)ENGINE=INNODB;
+INSERT INTO Users(Name, Email_id) VALUES ('Sneha', 12345);
+INSERT INTO Users(Name, User_id) VALUES ('Hemant', 1337);
+ 
+SELECT Email_id, USER_ID FROM Users
+
+UNION
+
+ 
+SELECT Student_Id, Mobile_no FROM Users
+
+-- Below is your comments for your queries
+1. We can select any data with query below to check 
+```mysql
+SELECT Email_Id, USER_ID FROM Users
+
+UNION ALL
+
+SELECT Student_

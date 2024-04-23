@@ -1,5 +1,32 @@
-USE sampleDB;
--- INSERT new blog content
-INSERT INTO posts (post_name, content) VALUES ('First post', 'Content');
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users(username char(20) PRIMARY KEY, FirstName VARCHAR(30)) ENGINE=InnoDB;
+INSERT INTO Users(username,Firstname) VALUES('Test','Test'),('Admin','Admin'),('Guest','Guest'),('Super','Super');
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users(username char(20) PRIMARY KEY, FirstName VARCHAR(30)) ENGINE=InnoDB;
+INSERT INTO Users(username,Firstname) VALUES('Test','Test'),('Admin','Admin'),('Guest','Guest'),('Super','Super');
 
-COMMIT;
+ 
+SELECT * from Users;
+
+ 
+UPDATE Users set username='T%d' where Firstname like 'T+%s%';
+
+ 
+SELECT COUNT(*) + 1 as cnt FROM Users WHERE Firstname LIKE 'T+%s%';
+-- MySQL Error 1057 (42000): Illegal mix of mix of non_const_cast<type1, type2>::const_reference (left) and non_const_cast<type1, type2>::result (right).
+-- Possible errors: 42000
+
+ 
+UPDATE Users set username='A%u',phone='T%0a',email='<EMAIL>' where Firstname LIKE 'A%+s%'; -- This statement is good in the real world.
+
+ 
+SELECT MAX(phone), username FROM Users GROUP BY username ORDER BY MAX(phone) ASC LIMIT 1;
+
+ 
+SELECT COUNT(*) from Users where Firstname LIKE 'B%+s%'; -- This statement is good in the real world.
+
+ 
+SELECT COUNT(*) FROM Users  WHERE LENGTH(username)>3;
+
+/* Find out the phone number of the most popular user, and their first name, in descending order by the number
+of the user in ascending order by

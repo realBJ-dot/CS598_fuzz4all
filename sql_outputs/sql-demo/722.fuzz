@@ -1,0 +1,19 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `FirstTable`;
+DROP TABLE IF EXISTS `SecondTable`;
+SHOW TABLES;
+INSERT INTO `FirstTable` VALUES ('First','Last','10.000.000.99');
+INSERT INTO `SecondTable` VALUES ('Second','Last','1200.00.11');
+SELECT * FROM `FirstTable`, `SecondTable`;
+SELECT `FirstTable`.`Name`, `FirstTable`.`Surname`, `FirstTable`.`Phone` FROM `FirstTable`;
+SELECT `SecondTable`.`Name`, `SecondTable`.`Surname`, `SecondTable`.`Phone` FROM `SecondTable`;
+SELECT IF (`FirstTable`.`Phone` < `SecondTable`.`Phone`, 'First', 'Second') FROM `FirstTable`, `SecondTable`;
+SELECT IF(`FirstTable`.`Phone` < `SecondTable`.`Phone`, 'First', `Second`) AS `Contact`;
+SELECT `FirstTable`.*, `SecondTable`.* FROM `FirstTable`, `SecondTable`;
+-- Please print the following queries. Feel free to modify the query to find the smallest price.
+SELECT `FirstTable`.`Price`, `SecondTable`.`Price` FROM `FirstTable`, `SecondTable`;
+-- Please use one or more joins to find out how many customers spend up to $600.
+-- Please print the following query.
+SELECT `CustomerName`, `LastName` FROM `Customer`
+JOIN `Invoices` ON `Invoices`.`CustomerName` = `Customer`.`CustomerName`
+JOIN `Orders` ON `Orders`.`InvoiceNo` = `Invoices`.`InvoiceNo`;

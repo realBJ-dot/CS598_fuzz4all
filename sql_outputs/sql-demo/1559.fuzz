@@ -1,0 +1,18 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DELETE FROM `sampleDB`.`cars`;
+CREATE TABLE `sampleDB`.`cars` (
+  `id` INT AUTO_INCREMENT PRIMARY KEY,
+  `Make` VARCHAR(255) NOT NULL,
+  `Model` VARCHAR(255) NOT NULL,
+  `Color` VARCHAR(255) NOT NULL,
+  `Price` INT NOT NULL,
+  `Year` INT NOT NULL
+);
+INSERT INTO `sampleDB`.`cars` (`id`, `Make`, `Model`, `Color`, `Price`, `Year`) VALUES (1, 'Volvo', 'XC10', 'Silver', 90000, 0);
+INSERT INTO `sampleDB`.`cars` (`id`, `Make`, `Model`, `Color`, `Price`, `Year`) VALUES (2, 'Renault', 'S-85', 'Black', 13500, 0);
+INSERT INTO `sampleDB`.`cars` (`id`, `Make`, `Model`, `Color`, `Price`, `Year`) VALUES (2, 'McLaren', 'MCLX10', 'Orange', 10935.93, 0);
+INSERT INTO `sampleDB`.`cars` (`id`, `Make`, `Model`, `Color`, `Price`, `Year`) VALUES (3, 'Volvo', 'XC30', 'Blue', 78000, 2017);
+INSERT INTO `sampleDB`.`cars` (`id`, `Make`, `Model`, `Color`, `Price`, `Year`) VALUES (4, 'Dodge', 'Kiva', 'Golden Red', 90500, 0);
+INSERT INTO `sampleDB`.`cars` (`id`, `Make`, `Model`, `Color`, `Price`, `Year`) VALUES (5, 'Volvo', 'XC100', 'Silver', 90000, 2017);
+INSERT INTO `sampleDB`.`cars` (`id`, `Make`, `Model`, `Color`, `Price`, `Year`) VALUES (6, 'McLaren', 'MCL50', 'Black', 75000, 0);
+INSERT INTO `sampleDB`.`cars` (`id`, `Make`, `Model`, `Color`, `Price`, `Year`) VALUES (7, 'F

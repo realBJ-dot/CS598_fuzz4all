@@ -1,0 +1,18 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE if exists person; DROP TABLE if exists person_old; DROP TABLE if exists player; DROP TABLE if exists team;
+CREATE TABLE person (id INT PRIMARY KEY, name VARCHAR(200) UNIQUE, age INT, heightInCm INT);
+CREATE TABLE player (id INT, name VARCHAR(200) UNIQUE, age INT, heightInCm INT, PRIMARY KEY(id)) ENGINE=InnoDB;
+CREATE TABLE team (id INT, name VARCHAR(200) UNIQUE, PRIMARY KEY(id)) ENGINE=InnoDB;
+ALTER TABLE person ADD CONSTRAINT fk_team_id FOREIGN KEY (teamId) REFERENCES team (id);
+UPDATE person SET teamId = team.id WHERE teamId = DEFAULT;
+-- How many people are in team A?
+SELECT COUNT(*) FROM person_old WHERE teamId = 1;
+UPDATE person SET teamId = 101 WHERE teamId = DEFAULT;
+-- How many people still are in team A?
+SELECT COUNT(*) FROM person_old WHERE teamId = DEFAULT;
+-- What are their names?
+SELECT name, CONCAT('#', teamId) AS "teamId#personId" FROM person_old;
+-- How many people with height more than 300 cm are in team A?
+SELECT COUNT(*) FROM person_old WHERE (heightInCm > 300);
+-- How many people in team A still have more than 40 cm height?
+SELECT COUNT(*) FROM person_old WHERE (heightInCm > 40);

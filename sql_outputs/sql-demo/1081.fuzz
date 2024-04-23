@@ -1,0 +1,50 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS test1 (id INT, name VARCHAR(30));
+INSERT INTO test1 (id, name) VALUES
+(1, 'A'),
+(2, 'B'),
+(3, 'C');
+-- You need to create indexes, alter them, and truncate the table to show the performance.
+ALTER INDEX test1_id RENAME TO renamedIndex1;
+ALTER TABLE test1 ADD index1(name);
+UPDATE test1 ALTER INDEX renamedIndex1 NAME to newIndex1;
+UPDATE test1 SET name='D'. FORCE WHERE name = 'B';
+CREATE TABLE IF NOT EXISTS test2 (id INT NOT NULL, name VARCHAR(30));
+ALTER TABLE test2 ADD INDEX (name);
+INSERT INTO test2 SELECT id, name FROM test1;
+ALTER TABLE test2 RENAME INDEX name to index2;
+-- You will notice that the change was successful only on some rows whereas it was successful on all rows (i.e., when the newIndex was used). So, you can think of a table as not changeable (i.e., readonly).
+
+
+ 
+CREATE PROCEDURE testPro1 (IN id INT)
+BEGIN
+   DECLARE a INT=1;
+   IF (id = 1) THEN
+      INSERT INTO TABLE1 VALUES(1,'A');
+      INSERT INTO TABLE1 VALUES(1,'B');
+      INSERT INTO TABLE2 VALUES (id, 'AAA');
+   ELSE
+      INSERT INTO TABLE1 VALUES(id,'D');
+      INSERT INTO TABLE2 VALUES (id, 'BB');
+   END IF;
+   RETURN a;
+   END;
+CALL testPro1(3);
+-- You need to modify this program so it will only print value back to the terminal for the second call.
+CREATE PROCEDURE testPro2 (IN id INT)
+BEGIN
+   DECLARE b INT;
+   SELECT name FROM table WHERE id=id INTO b;
+   RETURN b;
+   END;
+CALL testPro2(3);
+SELECT * FROM TABLE2;
+UPDATE TABLE2 SET name='A' WHERE id=3;
+CREATE PROCEDURE testPro3 ()
+BEGIN
+   DECLARE c INT;
+   SELECT name FROM table WHERE id FROM table1 INTO c;
+   RETURN c;
+   END;
+CALL testPro3();

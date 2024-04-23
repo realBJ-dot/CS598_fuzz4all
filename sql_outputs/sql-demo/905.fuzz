@@ -1,0 +1,17 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS user;
+CREATE TABLE IF NOT EXISTS user (id INT, "name" VARCHAR, "last-name" INT);
+INSERT INTO user (id, "name", "last-name") VALUES (10, 'John', NULL);
+INSERT INTO user (id, "name", "last-name") VALUES (20, 'Paul', 18);
+SELECT id, "name", "last-name"
+FROM user
+WHERE "name" = 'John';
+DROP TABLE IF EXISTS user;
+DROP DATABASE IF EXISTS sampleDB;
+CREATE DEFAULT CHARACTER SET utf8;
+ -- Try to create a table with different database columns that are of different data types
+ CREATE TABLE IF NOT EXISTS user (
+id         INT NOT NULL UNIQUE,
+name        TEXT    NOT NULL,
+birth_day   DATE    NOT NULL) ;
+-- Create a table with different database columns that are of different data types

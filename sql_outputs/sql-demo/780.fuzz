@@ -1,0 +1,4 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS `first_and_second_table` ( `id` int(11) not null primary key, `data` varchar(300) character set utf8);
+ */
+ 

@@ -1,0 +1,8 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- TODO: add some code here
+CREATE TABLE user(user_name VARCHAR(20), password VARCHAR(15)); -- Again
+INSERT INTO user (user_name, password) VALUES ('admin', '<PASSWORD>'); -- Again, as the program has been modified
+ALTER TABLE user MODIFY user_name VARCHAR(25) UNIQUE;
+ALTER TABLE user MODIFY password VARCHAR(15) NOT NULL;
+DROP DATABASE IF EXISTS `user`;
+DROP TABLE IF EXISTS user;

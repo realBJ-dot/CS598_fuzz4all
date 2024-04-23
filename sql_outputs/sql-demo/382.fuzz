@@ -1,0 +1,52 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ 
+SET @sql = "
+CREATE DATABASE IF NOT EXISTS sampleDB;
+USE sampleDB;
+CREATE TABLE Users
+(
+    User_id INT UNSIGNED NOT NULL AUTO_INCREMENT UNIQUE,
+    first_name VARCHAR(30) NOT NULL,
+    last_name VARCHAR(30) NOT NULL,
+    password VARCHAR(30) NOT NULL,
+    PRIMARY KEY (User_id),
+    UNIQUE (email)
+);
+CREATE TABLE Contact
+(
+    Contact_id INT UNSIGNED NOT NULL AUTO_INCREMENT UNIQUE,
+    first_name VARCHAR(20) NOT NULL,
+    email VARCHAR(20) NOT NULL,
+    contact_type VARCHAR(10) NOT NULL,
+    first_message VARCHAR(50) NOT NULL,
+    second_message VARCHAR(50),
+    third_message VARCHAR(50),
+    date_creation TIMESTAMP NOT NULL,
+    date_modified TIMESTAMP NOT NULL,
+    PRIMARY KEY (Contact_id),
+    FOREIGN KEY (Contact_id) REFERENCES Users (User_id) ON UPDATE cascade 
+);";
+SHOW DATABASES;
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users
+(
+    User_id INT UNSIGNED NOT NULL AUTO_INCREMENT UNIQUE,
+    first_name VARCHAR(30) NOT NULL,
+    last_name VARCHAR(30) NOT NULL,
+    password VARCHAR(30) NOT NULL,
+    PRIMARY KEY (User_id),
+    UNIQUE (email)
+);
+CREATE TABLE Contact
+(
+    Contact_id INT UNSIGNED NOT NULL AUTO_INCREMENT UNIQUE,
+    first_name VARCHAR(20) NOT NULL,
+    email VARCHAR(20) NOT NULL,
+    contact_type VARCHAR(10) NOT NULL,
+    first_message VARCHAR(50) NOT NULL,
+    second_message VARCHAR(50),
+    third_message VARCHAR(50),
+    date_creation TIMESTAMP NOT NULL,
+    date_modified TIMESTAMP NOT NULL,
+    PRIMARY KEY (Contact_id),
+    FOREIGN KEY (Contact_id

@@ -1,0 +1,23 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS tUser;
+
+ 
+CREATE TABLE IF NOT EXISTS tUser (
+    id INT unsigned NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(20) NOT NULL UNIQUE,
+    password CHAR(128) NOT NULL
+);
+
+INSERT INTO tUser (username, password) VALUES ('Admin', <PASSWORD>');
+INSERT INTO tUser (username, password) VALUES ('User', '$2y$10$pG7yP95f06vM1K/f0.Y2nOKmD7a8J6dD9X4Q66r2mV60i07p128i.e');
+
+CREATE TABLE IF NOT EXISTS tUsers (
+    id INT unsigned NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(30) NOT NULL UNIQUE,
+    password CHAR(128) NOT NULL
+);
+
+INSERT INTO tUsers (username, password) VALUES ('Admin', '$2y$10$pG7yP95f06vM1K/f0.Y2nOKmD7a8J6dD9X4Q66r2mV60i07p128i.e');
+INSERT INTO tUsers (username, password) VALUES ('User', '$2y$10$pG7yP95f06vM1K/f0.Y2nOKmD7a8J6dD9X4Q66r2mV60i07p128i.e');
+
+# End #

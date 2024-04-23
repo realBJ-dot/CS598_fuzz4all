@@ -1,0 +1,18 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employees_salary_by_salary;
+CREATE TABLE employees_salary_by_salary (
+    employee_salary	INT UNSIGNED,
+    emp_salary		INT UNSIGNED,
+ 	PRIMARY KEY (employee_salary, emp_salary));
+INSERT INTO employees_salary_by_salary (employee_salary, emp_salary) VALUES (10000, 3000);
+DROP TABLE employees_salary_by_salary;
+select employee_salary, emp_salary from employees_salary_by_salary;
+ 
+-- INSERT INTO employees_salary_by_salary (employee_salary, emp_salary) VALUES (10000, 3000);
+-- CREATE TABLE employees_salary_by_salary (
+--             employee_salary INTEGER(10, 0),
+--             emp_salary INTEGER(10, 0),
+--             PRIMARY KEY (employee_salary));
+-- SELECT * FROM employees_salary_by_salary;
+SELECT employee_salary, emp_salary, employee_salary - emp_salary as difference
+FROM employees_salary_by_salary;

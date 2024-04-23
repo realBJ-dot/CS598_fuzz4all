@@ -1,0 +1,9 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS employee ( `EmpID` INT(4) NOT NULL AUTO_INCREMENT, `EmpName` TEXT, `Designation` TEXT, `Salary` DECIMAL(10, 4), KEY (`EmpID`));
+USE sampleDB;
+DROP TABLE IF EXISTS employee;
+-- Please create a semantically equivalent query to the previous generation
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS employee ( `EmpID` INT(4) NOT NULL AUTO_INCREMENT, `EmpName` TEXT, `Designation` TEXT, `Salary` DECIMAL(10, 4), KEY (`EmpID`));
+USE sampleDB;
+DROP TABLE IF EXISTS employee;

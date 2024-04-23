@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS users(id INT NOT NULL PRIMARY KEY, name VARCHAR(10));
+DESCRIBE users;
+-- Please insert a row into table users with column name and password_hash NULL
+INSERT INTO users (name, password_hash) VALUES ('root', NULL);
+DESCRIBE users;
+SELECT
+  COUNT(*) AS num_rows
+FROM
+  users;

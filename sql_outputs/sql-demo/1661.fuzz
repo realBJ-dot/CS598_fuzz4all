@@ -1,0 +1,26 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `student`;
+CREATE TABLE `student` (
+	`stuID` serial NOT NULL AUTO_INCREMENT,
+	`stuNo` varchar(30) NOT NULL,
+	`stuName` varchar(255) NOT NULL,
+	`stuCollegeID` varchar(30) NOT NULL,
+	`stuDepartmentID` varchar(255) NOT NULL,
+	`studentYear` tinyint(2) DEFAULT NULL,
+	PRIMARY KEY (`stuID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+DROP TABLE IF EXISTS `student`;
+CREATE TABLE `student` (
+	`stuID` serial NOT NULL AUTO_INCREMENT,
+	`stuNo` varchar(30) NOT NULL,
+	`stuName` varchar(255) NOT NULL,
+	`stuCollegeID` varchar(30) NOT NULL,
+	`stuDepartmentID` varchar(255) NOT NULL,
+	`studentYear` tinyint(2) DEFAULT NULL,
+	PRIMARY KEY (`stuID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+DROP TABLE IF EXISTS `student`;
+CREATE TABLE `student` (
+	`stuID` serial NOT NULL AUTO_INCREMENT,
+	`stuNo` varchar(30) NOT NULL,
+	`stuName` varchar

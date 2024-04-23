@@ -1,0 +1,19 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+INSERT INTO `course` (`courseID`, `courseNum`, `courseName`, `teacherID`, `classroomID`, `termID`, `roomNum`)
+VALUES (1, 4501, 'Physics I', 3, 1, 1, 3), 
+ (2, 4502, 'Applied Statistics', 1, 1, 2, 8),
+ (3, 4503, 'Biology', 2, 2, NULL, NULL);
+INSERT INTO `person` (`personID`, `lastname`, `firstname`, `age`, `gender`)
+VALUES (1, 'Makre', 'Rachael', 59, 'female'), 
+       (2, 'Smith', 'Micheal', 83, 'female'), 
+       (3, 'Taylor', 'Ezekiel', 76, 'female'), 
+       (4, 'Wilson', 'Carl', 79, 'female'), 
+       (5, 'Holm', 'Emil', 44, 'female'), 
+       (6, 'Wilson', 'Charles', 65, 'female'), 
+       (7, 'Smith', 'Charles', 57, 'female'), 
+       (8, 'Williams', 'Larry', 55, 'female'), 
+       (9, 'Cooper', 'Frank', 64, 'female'), 
+       (10, 'Adams', 'Rose', 81, 'female');
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+SHOW TABLES;
+DROP DATABASE IF EXISTS sampleDB ;

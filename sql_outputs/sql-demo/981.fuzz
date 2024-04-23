@@ -1,0 +1,9 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employees;
+CREATE TABLE employees (employee_id INT AUTO_INCREMENT PRIMARY KEY, employee_first_name VARCHAR(25) NOT NULL, employee_last_name VARCHAR(25) NOT NULL, employee_title CHAR(3) NOT NULL DEFAULT 'DR', birth_date DATE, birth_city VARCHAR(25), birth_state CHAR(2), employee_salary INT NOT NULL, manager_id INT, FOREIGN KEY(manager_id) REFERENCES employees(employee_id));
+INSERT INTO employees (employee_first_name, employee_last_name, employee_title, birth_date, birth_city, birth_state, employee_salary, manager_id) VALUES ("Bill", "Chan", "DR", "1974-07-19", "London", "New York", 65000, NULL);
+INSERT INTO employees (employee_first_name, employee_last_name, employee_title, birth_date, birth_city, birth_state, employee_salary, manager_id) VALUES ("Clint", "Sutter", "DR", "1974-08-09", "London", "Pennsylvania", 140000, NULL);
+INSERT INTO employees (employee_first_name, employee_last_name, employee_title, birth_date, birth_city, birth_state, employee_salary, manager_id) VALUES ("Damon", "Chou", "DR", "1975-04-15", "London", "New York", 100000, 7);
+INSERT INTO employees (employee_first_name, employee_last_name, employee_title, birth_date, birth_city, birth_state, employee_salary, manager_id) VALUES ("Jenna", "Schoon", "DR", "1973-07-01", "London", "New York", 130000, 2);
+INSERT INTO employees (employee_first_name, employee_last_name, employee_title, birth_date, birth_city, birth_state, employee_salary, manager_id) VALUES ("Lewis", "Lloyd", "DR", "1979-04-26", "London", "New York", 40000, 6);
+INSERT INTO employees (employee_first_name, employee_last_

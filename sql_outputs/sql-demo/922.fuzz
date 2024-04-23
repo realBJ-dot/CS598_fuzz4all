@@ -1,0 +1,8 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- Here are some tables that illustrate the data types used in MySQL:
+-- Here are some tables that illustrate the data types used in MySQL:
+CREATE TABLE IF NOT EXISTS demo_personality (id INT, year INT);
+CREATE TABLE IF NOT EXISTS demo_personality_test (id INT, year INT);
+INSERT INTO demo_personality (id, year) VALUES (10, 2007);
+INSERT INTO demo_personality_test (id, year) VALUES (10, 2007);
+-- Here are some tables that illustrate the data types used in MySQL:

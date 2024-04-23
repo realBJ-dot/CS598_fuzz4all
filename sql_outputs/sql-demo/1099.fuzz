@@ -1,0 +1,7 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- CREATE TABLE is used in almost the same way as INSERT. You have to pass the table name first before the rest of INSERT query.
+insert into table1 values(1, 9, '20 February, 1983');
+insert into table1 values(2, 10, '01 January, 1980');
+insert into table1 values(3, 9, '01 February, 1985');
+-- The order of table column names does not matter. If the columns were not in a natural order, it may affect a result.
+-- INSERT statement does not return the inserted values, but rather the rows affected.

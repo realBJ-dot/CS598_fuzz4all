@@ -1,0 +1,23 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS user;
+CREATE TABLE IF NOT EXISTS user (name VARCHAR(200), last_name VARCHAR(200), phone CHAR(10));
+INSERT INTO user (name, last_name, phone) VALUES ('John','Smith', '989-098-098');
+SELECT * FROM user;
+DROP TABLE IF EXISTS user;
+-- Drop the database and recreate it using MySQL Workbench;
+
+DROP DATABASE IF EXISTS sampleDB;
+USE sampleDB;
+-- 5.)
+-- Please create a statement to create the table and INSERT some rows to the created table.
+
+DROP TABLE IF EXISTS user;
+CREATE TABLE IF NOT EXISTS user (name VARCHAR(200),
+last_name VARCHAR(200),
+phone CHAR(10),
+salary DECIMAL(10,2)
+);
+INSERT INTO user (name, last_name, phone, salary) VALUES('John','Smith', '989-098-098',5000);
+INSERT INTO user (name, last_name, phone, salary) VALUES('John','Smith', '989-098-098',7500);
+SELECT * FROM user;
+DROP TABLE IF EXISTS user;

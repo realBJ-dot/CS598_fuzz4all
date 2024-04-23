@@ -1,0 +1,46 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS Student;
+CREATE TABLE Student (FirstName VARCHAR(20), LastName CHAR(20), Grade INT);
+
+INSERT INTO Student (First_Name, Last_Name, Grade) VALUES ('John', 'Smith', 8);
+INSERT INTO Student (First_Name, Last_Name, Grade) VALUES ('Jane', 'Lee', 9);
+INSERT INTO Student (First_Name, Last_Name, Grade) VALUES ('Tom', 'Stark', 5);
+
+DROP TABLE IF EXISTS Student  -- Please test all the commands
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+DROP TABLE IF EXISTS Student
+CREATE TABLE Student (
+    FirstName CHAR(20),
+    LastName CHAR(20),
+    Grade INT
+) -- Please test all the commands<fim_middle>
+SHOW CREATE TABLE Student  -- Please test all the commands
+SHOW CREATE DATABASE sampleDB; -- Please test all the commands
+
+DROP TABLE IF EXISTS Student  -- Please test all the commands
+CREATE TABLE Student (
+    First_Name VARCHAR(20),
+    LastName CHAR(20),
+    Grade INT
+)
+
+SELECT * FROM Student
+
+DROP TABLE IF EXISTS Student
+CREATE TABLE Student (
+    First_Name VARCHAR(20),
+    LastName CHAR(20),
+    Grade INT
+);
+
+SELECT * FROM Student WHERE Grade > 8
+
+DROP TABLE IF EXISTS Student
+CREATE TABLE Student (
+    First_Name VARCHAR(20),
+    LastName CHAR(20),
+    Grade INT
+);
+
+SELECT Grade FROM Student WHERE grade <= 5 GROUP BY Grade HAVING COUNT(Grade) = 2

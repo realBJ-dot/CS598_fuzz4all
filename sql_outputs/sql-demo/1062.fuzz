@@ -1,0 +1,5 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+SET GLOBAL sql_mode=ANSI_QUOTES, MYSQL_NOTES = ON, MYSQL_LOCK_WAIT=1, MYSQL_LOG_BIN=ON, SQL_SMALL_RESULT=ON, SQL_BIG_RESULT=ON, SQL_BUFFER_SIZE=2053, SQL_CACHE=OFF, SQL_CACHED_RESULT=DEFAULT, SQL_CALC_FOUND_ROWS=DEFAULT, SQL_CALC_DETAILED_AVG=0, SQL_BIG_SELECTS=18, SQL_BIG_TABLES=1, SQL_BUFFER_ALLOCATION=1887, SQL_NO_AUTO_CREATE_USER=1, SQL_CONNECT_TIMEOUT=60;
+-- INSERT INTO `worker` (`id`,`nama_lengkap`,`email`,`jk`,`password`,`alamat`,`kota`,`provinsi`,`kode_pos`,`id_level`,`id_status`,`tgl_masuk`,`id_kota_asal`,`kota_tujuan`) VALUES (3208700041586, '<NAME>', '<EMAIL>', 'L', '4450ff1e01130d1a8e4d29c14632f2065e6db4cb', 'Pasuruan', 'Tebing Tinggi', 'Jawa Barat', '17511', 4, 2, '2012-12-10 15:35:08', 6, 8, '90193');
+-- END of query -----------------------------------------------------
+-- INSERT INTO `worker` (`id`,`nama_lengkap`,`email`,`jk`,`password`,`alamat`,`kota`,`provinsi`,`kode_pos`,`id_level`,`id_status`,`tgl_masuk`,`id_kota_asal`,`kota_tujuan`) VALUES (5633300018768, 'Ady', '<EMAIL

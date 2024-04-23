@@ -1,0 +1,5 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS `FirstAndSecondTable` ( `id` INT(11) NOT NULL PRIMARY KEY, `data` TEXT CHARACTER SET UTF8);
+GRANT ALL PRIVILEGES ON sampleDB.* to'sol_user';
+-- Please create a query which is semantically equivalent to the program on the previous generation. Your answer to this query should be similar to the ones from the previous question. */
+-- We shall show to you more queries with different database and table names. Try to understand and see if you can get an idea of how these work and what they are used for. You can also use this information to determine what should be used instead of a specific query.

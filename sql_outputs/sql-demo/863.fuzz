@@ -1,0 +1,5 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS movie;
+CREATE TABLE movie (id INT PRIMARY KEY, name VARCHAR(200), title VARCHAR(200), rating INT, plot_num INT, PRIMARY KEY(id));
+INSERT INTO movie (id, name, title, rating, plot_num) VALUES(71, 'Aliens', 'Pulp Fiction', 7, 9);
+INSERT INTO movie (id, name, title, rating, plot_num) VALUES(72, 'Aliens II', 'Pulp Fiction II', 4, 4);

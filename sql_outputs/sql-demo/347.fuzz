@@ -1,0 +1,31 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users(Id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, FirstName varchar(128), LastName varchar(128));
+-- You can also set the ID to AUTO_INCREMENT=1 to make the row-id the same as the auto-increment of the primary key.
+INSERT INTO Users (FirstName, LastName) VALUES ('John', 'Doe'), ('Joe', 'Bird');
+SELECT * FROM Users;
+DROP DATABASE IF EXISTS sampleDB;
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users(Id INT NOT NULL primary key auto_increment, FirstName varchar(128), LastName varchar(128));
+-- And you can even rename the table (for example, if you need to access it in later programs)
+DROP TABLE Users;
+CREATE TABLE Users2(Id INT NOT NULL primary key auto_increment, FirstName varchar(128), LastName varchar(128));
+DROP TABLE Users;
+INSERT INTO Users2 (FirstName, LastName) VALUES ('John', 'Doe'), ('Joe', 'Bird');
+SELECT * FROM Users2;
+DROP DATABASE IF EXISTS sampleDB;
+-- And, if you rename the table and you need to have access to it from another application, you can have it in MySQL as a view.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users2(Id INT NOT NULL primary key auto_increment, FirstName varchar(128), LastName varchar(128));
+CREATE VIEW ViewOfUsers2 AS SELECT FirstName, LastName FROM Users2;
+-- And you may use it in a more complex query to manipulate more data.
+DROP VIEW ViewOfUsers2;
+
+-- Or alternatively (even more elegant), you may also build it in PHP with the use of PHP PDO.
+DROP TABLE IF EXISTS sampleDB.TableA IF EXISTS sampleDB.TableB IF EXISTS sampleDB.TableC IF EXISTS sampleDB.TableD;
+CREATE DATABASE IF NOT EXISTS sampleDB;
+USE sampleDB;
+CREATE TABLE TableA(FirstName varchar(128), Id INT NOT NULL AUTO_INCREMENT);
+CREATE TABLE TableB(LastName varchar(128), Id INT NOT NULL AUTO_INCREMENT);
+CREATE TABLE TableC(Title varchar(128), Id INT NOT NULL AUTO_INCREMENT);
+CREATE TABLE TableD(Salary INT, Id INT PRIMARY KEY AUTO_INCREMENT);
+INSERT INTO TableA (FirstName) VALUES ('Joe'), ('John

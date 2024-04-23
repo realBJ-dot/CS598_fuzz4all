@@ -1,0 +1,19 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+SELECT * FROM employees;
+-- Please use SELECT statement to delete the last 10 rows from the table employees.
+DROP TABLE IF EXISTS employees
+INSERT INTO employees VALUES (1, 'Ashish');
+INSERT INTO employees VALUES (2, 'Andrew');
+INSERT INTO employees VALUES (3, 'Mark');
+INSERT INTO employees VALUES (4, 'Scott');
+INSERT INTO employees VALUES (5, 'Ethan');
+INSERT INTO employees VALUES (6, 'Andrew');
+INSERT INTO employees VALUES (7, 'Sherman');
+INSERT INTO employees VALUES (8, 'Ryan');
+INSERT INTO employees VALUES (9, 'Joseph');
+INSERT INTO employees VALUES (10, 'Margaret');
+INSERT INTO employees VALUES (11, 'Richard');
+-- Please use MySQL TRUNCATE TABLE command to delete the whole table from the sampleDB. Remember that, it can't drop the table if the table has data associated.
+DROP DATABASE If Exists sampleDB;
+
+-- Your solution will be here.

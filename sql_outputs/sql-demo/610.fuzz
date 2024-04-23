@@ -1,0 +1,27 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS MutatedV2;
+CREATE TABLE MutatedV2 (IDINT INT, Student INT, Mutated INT DEFAULT 0);
+INSERT INTO MutatedV2 VALUES (1,1,0);
+UPDATE MutatedV2 SET Mutated=1 WHre IDINT IN (2,3);
+UPDATE MutatedV2 SET Mutated=1 WHERE MUTATED=0;
+-- Please create a query using all data from tables, as long as we keep the mutation
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS Mutation;
+CREATE TABLE Mutation (ID INT, Student INT, Student_Mutated INT DEFAULT Mutation.Student);
+INSERT INTO Mutation VALUES (1,1,1);
+INSERT INTO Mutation VALUES (1,2,1);
+INSERT INTO Mutation VALUES (2,1,2);
+INSERT INTO Mutation VALUES (2,2,2);
+SELECT MUTATED, Student, Student_Mutated FROM Mutation;
+DROP TABLE IF EXISTS MyMutation;
+CREATE TABLE MyMutation (IDINT INT, Student INT DEFAULT Mutation.Student);
+INSERT INTO MyMutation VALUES (1,1);
+INSERT INTO MyMutation VALUES (2,2);
+INSERT INTO MyMutation VALUES (3,3);
+UPDATE MyMutation SET Student = Student_Mutated;
+UPDATE MyMutation SET Student_Mutated = Student;
+SELECT * FROM MyMutation;
+DROP TABLE IF EXISTS StudentMutated2;
+CREATE TABLE StudentMutated2 (IDINT INT, Student INT, Mutated INT DEFAULT Mutation.Student);
+INSERT INTO StudentMutated2 VALUES (1,1,1);
+INSERT INTO StudentMutated2 VALUES (2,2,2);

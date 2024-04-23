@@ -1,0 +1,26 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS test;
+CREATE TABLE test (id INT UNSIGNED, name VARCHAR(50), age INT);
+INSERT INTO test (id, name, age) VALUES (1, 'Pratik',  23);
+INSERT INTO test (id, name, age) VALUES (2, 'Pakistani', 3);
+INSERT INTO test (id, name, age) VALUES (3, 'Pratik',  23);
+INSERT INTO test (id, name, age) VALUES (4, 'Pratik', 16);
+INSERT INTO test (id, name, age) VALUES (5, 'Priya', 15);
+DROP TABLE IF EXISTS test;
+DROP DATABASE IF EXISTS sampleDB;
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS test6;
+CREATE TABLE test6 (id INT UNSIGNED, name VARCHAR(50), age INT);
+ALTER TABLE test6 ADD PRIMARY KEY (name);
+DROP TABLE IF EXISTS test6;
+DROP TABLE IF EXISTS test11;
+CREATE TABLE test11 (id INT UNSIGNED, name VARCHAR(50), age INT);
+ALTER TABLE test11 ADD PRIMARY KEY (name);
+-- Insert the data into the table test11
+-- Create another table which references the table test11 in foreign key constraint;
+DROP TABLE IF EXISTS test8;
+CREATE TABLE test8 (id INT unsigned, name VARCHAR(50), age INT);
+ALTER TABLE test8 ADD PRIMARY KEY (name);
+INSERT INTO test8 (id, name, age) VALUES (1, 'Pratik',  23);
+INSERT INTO test8 (id, name, age) VALUES (2, 'P

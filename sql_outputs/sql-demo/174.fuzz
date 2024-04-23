@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users_2 (username char(20) PRIMARY KEY, FirstName VARCHAR(30), LastName VARCHAR(30));
+DROP TABLE Users_2
+
+--
+-- Please update the table design and the queries using the design and the queries which should be updated/updated using the design.
+--
+UPDATE Users_2 SET FirstName = "Gabriela";
+UPDATE Users_2 SET LastName = "Jamesdavis" WHERE username = "Gabriela";
+UPDATE Users_2 SET FirstName = "George" WHERE username = "Gabriela"

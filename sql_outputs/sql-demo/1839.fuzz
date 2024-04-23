@@ -1,0 +1,6 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE users;
+CREATE TABLE users(name varchar(30), phone varchar(20));
+UPDATE users SET phone='New Phone Number';
+SELECT * FROM users;
+--

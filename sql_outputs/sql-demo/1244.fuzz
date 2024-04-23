@@ -1,0 +1,16 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS users (
+	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	username varchar(15) NOT NULL UNIQUE,
+	firstname TEXT,
+	lastname TEXT,
+	role CHAR(1) NOT NULL
+);
+-- Please create a query using SQL Server with some data from the sampleDB schema. Be sure to use ENGINE=InnoDB. You should only use sampleDB as the database and assume no other table exist. 
+SELECT * FROM users
+
+CREATE TABLE IF NOT EXISTS sampleTable (
+    firstName VARCHAR(255),
+	lastName VARCHAR(255),
+	role CHAR(10) DEFAULT 'a' NOT NULL
+);

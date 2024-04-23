@@ -1,0 +1,17 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE SEQUENCE IF NOT EXISTS Users (Value INT DEFAULT 1 NOT NULL PRIMARY KEY)ENGINE=InnoDB;
+CREATE TABLE TestUsers(UserId INT NOT NULL, UserIdId INT NOT NULL, UserIdValue INT NOT NULL UNIQUE, PRIMARY KEY (UserId, UserIdId));
+INSERT INTO TestUsers (UserId, UserIdId, UserIdValue) VALUES (1, 1, 1), (2, 2, 2), (3, 3, 3);
+INSERT INTO ValueUsers(UserIdValue, UserId) VALUES (1, 2), (2, 1), (3, 3), (4, 3);
+
+-- What are the most effective ways to improve your application’s robustness with SQL and MySQL.
+
+-- MySQL, when installed, runs on all your servers. You cannot safely drop or modify the tables in the sampleDB database because the tables refer to each other. Since the system is so robust, you can either change the tables or drop them.
+
+-- Create a new table in one database and then insert data in the same table in another database.
+
+-- After some time, you’ve learned about the relationship between the tables. Now you've discovered that the table Users already uses the UserId columns and both tables (values and valuesId) also use the UserId columns. You'd like to merge the tables back into a single table by combining the two User rows.
+
+-- MySQL supports a JOIN feature, you can use its syntax to merge two tables. You'll need to keep track of relationships that need to be considered in future developments, so you can use the same database as the source of truth.
+*/

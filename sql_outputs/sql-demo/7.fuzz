@@ -1,8 +1,2 @@
-USE sampleDB;
-CREATE TABLE `posts` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `author` varchar(100) NOT NULL,
-  `subject` varchar(100) NOT NULL,
-  `content` text,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB;
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+INSERT INTO Users (Name, User_id) VALUES ("<NAME>",1);

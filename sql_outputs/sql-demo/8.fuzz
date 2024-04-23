@@ -1,7 +1,24 @@
-USE sampleDB;
-CREATE TABLE `users` (
-  `email` varchar(100) NOT NULL,
-  `firstname` varchar(100) NOT NULL,
-  `lastname` varchar(100) NOT NULL,
-  PRIMARY KEY (`email`)
-) ENGINE=MyISAM;
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ALTER TABLE Users DROP PRIMARY KEY, ADD CONSTRAINT PK_Users PRIMARY KEY(User_id);
+COMMIT;
+
+ 
+<-- SELECT User_id,Name,IFNULL((
+SELECT 1
+FROM Users WHERE Name = 'Bruce';
+SELECT 10
+FROM Users WHERE Name = 'Bruce';
+SELECT 100
+FROM Users WHERE Name = 'Bruce';
+SELECT 1000
+FROM Users WHERE Name = 'Bruce';
+SELECT 10000
+FROM Users WHERE Name = 'Bruce';
+SELECT 90000
+FROM Users WHERE Name = 'Bruce';
+),0) FROM Users WHERE User_id > 10;");
+COMMIT;
+
+ 
+DROP TABLE IF EXISTS Users;
+DROP DATABASE IF EXISTS sampleDB;

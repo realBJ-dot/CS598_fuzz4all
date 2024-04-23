@@ -1,0 +1,31 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+ 
+CREATE TABLE IF NOT EXISTS accounts (
+    id            int auto_increment,
+    name          varchar(20) not null,
+    amount        decimal(10, 2),
+    PRIMARY KEY (id)
+    -- foreign key constraint with column type of account_id
+    FOREIGN KEY (balance, account_id)
+    REFERENCES accounts (id, name)
+);
+
+-- Example of a simple example which includes insert, select, update, and delete operations
+INSERT INTO accounts (id, name, amount) VALUES
+(11, '<NAME>', 2.5),
+(12, '<NAME>', 4.99),
+(13, '<NAME>', 2.75);
+
+SELECT account_id, name, amount
+FROM accounts
+WHERE id = 11;
+
+ALTER TABLE accounts
+DROP COLUMN amount;
+
+SELECT balance, sum(amount)
+FROM accounts
+GROUP BY balance;
+
+

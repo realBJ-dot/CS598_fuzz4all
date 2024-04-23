@@ -1,0 +1,19 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS users (
+    id            INT(10) UNSIGNED AUTO_INCREMENT NOT NULL,
+    name          VARCHAR(25),
+    last_balance  DECIMAL(6, 2),
+    PRIMARY KEY (id)
+);
+INSERT INTO users (id, name, last_balance)
+VALUES (1, '<NAME>', 4789.45),
+        (2, '<NAME>', 8089.45),
+        (3, '<NAME>', 5200.00),
+        (4, '<NAME>', 5298.27),
+        (5, '<NAME>', 1707.83),
+        (6, '<NAME>', 3421.35),
+        (7, '<NAME>', 2630.65),
+        (8, '<NAME>', 7308.65),
+        (9, '<NAME>', 2800.00);
+SELECT * FROM users;
+SHOW INDEX FROM users;

@@ -1,0 +1,9 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+UPDATE `Employee`
+SET
+  LastName = 'New',
+  Hire_date=CURRENT_DATE
+WHERE `Employee`.`Hire_date` IS NULL;
+SELECT * FROM `Employee`;
+#
+DROP DATABASE sampleDB;

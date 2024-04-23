@@ -1,11 +1,9 @@
-USE sampleDB;
-<fim_middle>CREATE TABLE IF NOT EXISTS testStore
-(
- code         INT AUTO_INCREMENT,
- name         VARCHAR(100),
- primary key (code)
-);
---INSERT INTO testStock (codeString, codeChar, name, price, priceChange, purchase, sales, salesLast, salesChange) values ("2000-05-01", "161-1628", "Red", "4.85", "0.3", "3", "12", "6", "-1");
---INSERT INTO testStock (codeString, codeChar, name, price, priceChange, purchase, sales, salesLast, salesChange) values ("2000-05-01", "1607", "Olive", "5.65", "0.3", "56", "72", "39", "-0");
---INSERT INTO testStore (name) values ("Vogue");
---INSERT INTO testStore (name) values ("Rim");
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users(username char(5) PRIMARY KEY, FirstName VARCHAR(20)) ENGINE=InnoDB;
+INSERT INTO Users(username,Firstname) VALUES('SuperTest','Test Firstname'),('SuperTest2','Test Secondname');
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ALTER TABLE Users ADD usernameN char(5);
+INSERT INTO Users VALUES ('Super_Test_1', 'New');
+INSERT INTO Users VALUES ('Super_Test_2', 'Secondname');
+SELECT * FROM Users;

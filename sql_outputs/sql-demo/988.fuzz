@@ -1,0 +1,55 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE employees (
+  emp_no INT,
+  birth_date VARCHAR(10)
+);
+CREATE TABLE salaries (
+  emp_no INT,
+  salary INT
+);
+INSERT INTO employees VALUES (100, '1968-01-10'), (200, '1968-03-25');
+INSERT INTO salaries VALUES (100, 3000);
+CREATE TABLE dept_emp (
+  emp_no INT,
+  dept_no INT
+);
+CREATE TABLE dept (
+  dept_no INT,
+  dept_name VARCHAR(25)
+);
+CREATE TABLE dept_manager (
+  dept_no INT,
+  emp_no INT
+);
+CREATE TABLE staff (
+  staff_no INT,
+  first_name VARCHAR(20),
+  last_name VARCHAR(25)
+);
+INSERT INTO staff VALUES (1, 'John', 'Doe');
+INSERT INTO staff VALUES (2, 'Joe', 'Doe');
+INSERT INTO staff VALUES (3, 'Steve', 'Jobs');
+INSERT INTO staff VALUES (4, 'Lisa', 'Jones');
+INSERT INTO staff VALUES (5, 'William', 'Knowles');
+CREATE TABLE dept (
+	dept_no INT NOT NULL PRIMARY KEY,
+	dept_name VARCHAR(25) UNIQUE NOT NULL
+);
+CREATE TABLE dept_emp (
+	emp_no INT NULL,
+	dept_no INT NOT NULL,
+	FOREIGN KEY (emp_no) REFERENCES employees (emp_no) ON DELETE CASCADE ON UPDATE CASCADE,
+	FOREIGN KEY (dept_no) REFERENCES dept (dept_no) ON DELETE CASCADE ON UPDATE CASCADE
+);
+SELECT e.emp_no, e.birth_date FROM employees e;
+SELECT s.emp_no, s.salary FROM salaries s;
+SELECT d.dept_no, d.dept_name FROM dept d;
+SELECT de.emp_no, de.dept_no
+FROM dept_emp de;
+SELECT de.emp_no, de.dept_no 
+FROM staff s join dept_emp de
+ON s.staff_no = de.emp_no AND de.staff_no = 3;
+SELECT dm.dept_no, dm.emp_no
+FROM dept_manager dm;
+-- Select a list of all employees in each department. 
+SELECT s.staff_no, s.first_name, d.dept_name FROM staff s 

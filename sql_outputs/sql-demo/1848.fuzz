@@ -1,0 +1,18 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+SELECT name, capital FROM continent;
+SELECT country FROM country;
+-- Please create a similar program for the second generation
+SELECT name from continent;
+SELECT name, capital from continent;
+USE sampleDB;
+-- Please create a similar program for the third generation
+SHOW TABLES;
+SELECT * FROM country;
+DROP TABLE IF EXISTS country;
+DROP TABLE IF EXISTS continent;
+USE sampleDB;
+-- Please create a similar program for the fourth generation
+SELECT DISTINCT name from continent;
+SHOW TABLES;
+DROP TABLE IF EXISTS country;
+DROP TABLE IF EXISTS continent;

@@ -1,0 +1,28 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS users(
+	userId INT NOT NULL PRIMARY KEY,
+	name varchar(500),
+	role VARCHAR (2) DEFAULT 'R'
+);
+CREATE TABLE IF NOT EXISTS permissions(
+	roleId INT NOT NULL,
+	userId INT NOT NULL,
+	CONSTRAINT fk_userId FOREIGN KEY(userId) REFERENCES users(userId) ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT fk_roleId FOREIGN KEY(roleId) REFERENCES users(roleId) ON DELETE CASCADE ON UPDATE CASCADE,
+	PRIMARY KEY(roleId, userId)
+);
+CREATE TABLE IF NOT EXISTS permissions2(
+	roleId INT NOT NULL,
+	userId INT NOT NULL,
+	CONSTRAINT fk_userId FOREIGN KEY(userId) REFERENCES users(userId) ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT fk_roleId FOREIGN KEY(roleId) REFERENCES users(roleId) ON DELETE CASCADE ON UPDATE CASCADE,
+	PRIMARY KEY(roleId, userId)
+);
+INSERT INTO users (userId, name, role) VALUES (1, 'User1 ', 'R');
+INSERT INTO users (userId, name, role) VALUES (2, 'User2 ', 'R');
+INSERT INTO permissions (roleId, userId) VALUES (1, 1);
+INSERT INTO permissions (roleId, userId) VALUES (1, 2);
+INSERT INTO permissions2 (roleId, userId) VALUES (1, 1);
+DESCRIBE users;
+DESCRIBE permissions;
+DESCRIBE permissions2;

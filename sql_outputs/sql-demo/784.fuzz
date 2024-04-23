@@ -1,0 +1,6 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS `FirstAndSecondTable` ( `id` INT(11) NOT NULL PRIMARY KEY, UNIQUE INDEX, `data` VARCHAR(300) CHARACTER SET UTF8);
+*/
+/* Use a temporary table to keep track of the ID.
+ *
+Note that the temporary table has no

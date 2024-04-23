@@ -1,0 +1,4 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE Subject; DROP DATABASE;
+-- MySQL will create indexes for you automatically for you. The name of the index can be specified in your table definition without the need of explicit type, if you are not sure what type of index to use. 
+CREATE TABLE Subject (Subject_Id INT(11) AUTO_INCREMENT, Subject_Name VARCHAR(24) NOT NULL, Subject_Teacher INT(11), PRIMARY KEY (Subject_Id, Subject_Teacher))ENGINE=InnoDB DEFAULT CHARSET=u

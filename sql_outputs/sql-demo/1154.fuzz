@@ -1,0 +1,33 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ 
+CREATE PROCEDURE insertUser
+	@first_name VARCHAR(255),
+	@last_name VARCHAR(255),
+	@email VARCHAR(255)
+AS
+	INSERT INTO users(first_name, last_name, email) VALUES(@first_name, @last_name, @email);
+
+ 
+DECLARE  @user_id INT;
+SET @user_id = (
+	SELECT user_id FROM users WHERE email = '<EMAIL>' AND first_name = 'Admin'
+);
+	DECLARE  @role VARCHAR(255);
+	SET @role = (
+	SELECT role FROM users WHERE user_id = @user_id AND first_name = 'Admin'
+);
+IF (ROLE_CONCAT('ROLE_'.@role) IS NULL)
+BEGIN
+	EXECUTE insertUser
+	@first_name = 'Admin',
+	@last_name = 'Admin',
+	@email = '<EMAIL>@domain.com'
+END;
+ELSE
+	EXECUTE updateUser
+	@user_id = @user_id,
+	@role = @role
+;
+SELECT * FROM users ;
+
+

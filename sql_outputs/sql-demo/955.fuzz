@@ -1,0 +1,25 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS mytable (
+	id int,
+	name varchar(255),
+	age smallint(5)
+);
+
+-- Add some records.
+INSERT INTO mytable (id, name, age) VALUES (1,'Bob',15);
+INSERT INTO mytable (id, name, age) VALUES (2,'Sara',18);
+INSERT INTO mytable (id, name, age) VALUES (3,'Patton',18);
+INSERT INTO mytable (id, name, age) VALUES (4,'Nakamoto',18);
+INSERT INTO mytable (id, name, age) VALUES (10,'Amy',37);
+INSERT INTO mytable (id, name, age) VALUES (20,'Jess',28);
+INSERT INTO mytable (id, name, age) VALUES (100,'Paul',54);
+INSERT INTO mytable (id, name, age) VALUES (101,'Michael',31);
+SET @firstId := 50;
+SET @counter := (@counter + 1) % 100;
+INSERT IGNORE INTO mytable (id, name, age) VALUES (@firstId,@firstId,'@counter');
+SET @firstId := (@firstId + 1) % 100;
+SET @counter := (@counter + 1) % 100;
+INSERT IGNORE INTO mytable (id, name, age) VALUES (@firstId,@firstId,'@counter');
+SET @firstId := (@firstId + 1) % 100;
+SET @counter := (@counter + 1) % 100;
+INSERT IGNORE INTO mytable (id, name, age) VALUES (@firstId,@firstId,'@counter');

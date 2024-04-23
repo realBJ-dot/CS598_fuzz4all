@@ -1,0 +1,22 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ 
+-- The database must be initialized.
+DROP TABLE IF EXISTS country;
+DROP TABLE IF EXISTS continent;
+CREATE TABLE country (
+  name char (5),
+  capital char (8));
+CREATE TABLE continent (
+  name char (8),
+  country char (5)
+);
+INSERT INTO continent VALUES ('Africa', 'Africa');
+INSERT INTO country VALUES ('AFGHANISTAN', 'Kabul');
+INSERT INTO continent VALUES ('Asia', 'Asia');
+INSERT INTO country VALUES ('ALBANIA', 'Tirana');
+INSERT INTO continent VALUES ('AMERICA', 'Americas');
+INSERT INTO country VALUES ('ARGENTINA', 'Buenos Aires');
+INSERT INTO continent VALUES ('ASIA', 'Asia');
+INSERT INTO country VALUES ('ARMENIA', 'Yerevan');
+SELECT * FROM country;
+SELECT * FROM continent;

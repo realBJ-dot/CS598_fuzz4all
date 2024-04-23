@@ -1,0 +1,11 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employees_positions;
+CREATE TABLE employees_positions(
+    employee_emp_no  INT UNSIGNED  NOT NULL,
+    employee_position INT UNSIGNED,
+    PRIMARY KEY (employee_emp_no, employee_position));
+USE sampleDB;
+INSERT INTO employees_positions VALUES (4100,  10);
+INSERT INTO employees_positions VALUES (4200,  20);
+SELECT * FROM employees_positions WHERE employee_emp_no=4100;
+DROP DATABASE IF EXISTS sampleDB;

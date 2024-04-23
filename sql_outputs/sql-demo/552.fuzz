@@ -1,0 +1,18 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS Mutated (id INT AUTO_INCREMENT PRIMARY KEY, price DECIMAL(10,2) UNIQUE);
+UPDATE Mutated SET price = 100 WHERE id = 2;
+SELECT price FROM Mutated;
+DELETE FROM Mutated WHERE id = 2;
+SELECT price FROM Mutated;
+DROP TABLE Mutated;
+DROP DATABASE sampleDB;
+--
+-- Please create a program to insert several records into a table, then query the table and check the values and data types for each row.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS Mutated (id INT AUTO_INCREMENT PRIMARY KEY, price DECIMAL(10,2));
+INSERT INTO Mutated (price) VALUES (150);
+INSERT INTO Mutated (price) VALUES (200);
+INSERT INTO Mutated (price) VALUES (350);
+SELECT * FROM Mutated ORDER BY price DESC;
+DROP TABLE Mutated;
+DROP DATABASE sampleDB;

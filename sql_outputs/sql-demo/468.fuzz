@@ -1,0 +1,34 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS mytable;
+CREATE TABLE IF NOT EXISTS mytable (
+        myint int
+) DEFAULT CHARSET=utf8;
+
+-- Make an index for the column that is used for filtering the data
+USE sampleDB;
+DROP TABLE IF EXISTS mytable;
+CREATE TABLE IF NOT EXISTS mytable (
+        myint int
+) DEFAULT CHARSET=utf8;
+
+ 
+SET @n = 0;
+INSERT INTO mytable (myint) SELECT 5 FROM sysdatabases
+UNION ALL
+SELECT @n := @n + 1, 5 FROM mytable;
+ 
+SELECT mytable.myint from mytable
+WHERE myint BETWEEN 0 AND 4;
+
+ 
+SELECT mytable.myint from mytable
+WHERE myint BETWEEN 2 AND 6;
+
+ 
+SELECT mytable.myint, name, username from mytable ORDER BY myint DESC;
+
+ 
+ALTER TABLE IF EXISTS mytable_modify ADD CONSTRAINT mytable_check CHECK (myint BETWEEN 1 AND 5);
+  
+ALTER TABLE IF EXISTS mytable_modify DROP CONSTRAINT mytable_check;
+*/

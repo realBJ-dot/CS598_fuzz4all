@@ -1,0 +1,15 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TRIGGER my_trigger AFTER UPDATE ON author;
+CREATE TABLE IF NOT EXISTS author(
+ author_id INT,
+ author_name text,
+ author_surname text
+);
+INSERT INTO author VALUES(1,'Alice','Smith');
+INSERT INTO author VALUES(2,'Bob','Smith');
+INSERT INTO author VALUES(3,'Charlie','Brown');
+ALTER TABLE author MODIFY author_id INT(4);
+ALTER TABLE author ENGINE=MyISAM;
+DROP TABLE author;
+DROP TRIGGER my_trigger;
+DROP DATABASE sampleDB;

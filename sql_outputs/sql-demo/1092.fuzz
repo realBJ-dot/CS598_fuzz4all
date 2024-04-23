@@ -1,0 +1,57 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+ 
+CREATE TABLE test(
+id INT(11) NOT NULL AUTO_INCREMENT,
+name VARCHAR(100) NOT NULL,
+PRIMARY KEY(id),
+CONSTRAINT fk1 FOREIGN KEY(id) REFERENCES test2(test_id)
+);
+
+CREATE TABLE test2(
+test_id INTEGER PRIMARY KEY,
+name1 INT(11) NOT NULL,
+name2 INT(11) NOT NULL
+);
+
+INSERT INTO test2(id,name1,name2)
+VALUES(1,1,3);
+
+INSERT INTO test2(id,name1,name2)
+VALUES(2,2,6);
+
+INSERT INTO test2(test_id,name1,name2)
+VALUES(1,1,3);
+
+INSERT INTO test2(test_id,name1,name2)
+VALUES(2,2,6);
+
+CREATE TABLE table1(
+id INT(11) NOT NULL AUTO_INCREMENT,
+firstname VARCHAR(20) NOT NULL,
+lastname VARCHAR(20) NULL,
+email VARCHAR(40) NOT NULL,
+phone VARCHAR(40) NULL,
+address VARCHAR(40),
+city VARCHAR(40),
+year INT(11),
+country VARCHAR(30),
+zip INT(11),
+PRIMARY KEY(id)
+);
+
+CREATE TABLE table2(
+id INT(11) NOT NULL AUTO_INCREMENT,
+name INT(11) NOT NULL,
+PRIMARY KEY(id)
+);
+
+ 
+
+ 
+insert into table2 select country,(select max(year) from table2) from table1 where year < 2000;
+select * from table2 where name=3;
+update table1 set phone=NULL where email='<EMAIL>';
+update table2 set name=6 where name=3;
+
+/* Replace the max() value of year with

@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+select employeeID,name,salary,department from employee10;
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+create table employee11(employeeID int, name varchar(30), salary decimal(10,2), department varchar(50));
+insert into employee11(employeeID,name,salary,department) values (1,'Mrs. <NAME> - President',350000,'IT');
+insert into employee11(employeeID,name,salary,department) values (2,'Mr. <NAME>',45000,'IT');
+insert into employee11(employeeID,name,salary,department) values (3,'Sr. <NAME>',300000,'Marketing');
+insert into employee11(employeeID,name,salary,department) values (4,'Mr. <NAME>',40000,'IT');
+insert into employee11

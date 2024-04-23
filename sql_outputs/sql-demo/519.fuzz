@@ -1,0 +1,25 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE mytable ( myid int, title varchar(255)  ) ENGINE=InnoDB;
+ 
+INSERT INTO mytable VALUES(1, 'def');
+INSERT INTO mytable VALUES(3, 'abc');
+INSERT INTO mytable VALUES(4, 'efg');
+SELECT myid, title FROM mytable  JOIN mytable ON mytable.myid=mytable.myid;
+ALTER TABLE mytable ADD btitle varchar(255); 
+ 
+UPDATE mytable SET title = 'ghi ', btitle = 'jk' WHERE myid=1 ; 
+SELECT myid, title, btitle FROM mytable; 
+DROP TABLE mytable;
+DROP DATABASE sampleDB;
+-- The next step is to demonstrate how multi-user connections can be achieved with MySQL. Let’s start with creating a user and granting privileges on the database to that user. */
+CREATE USER 'user'@'localhost' IDENTIFIED BY '<PASSWORD>';
+GRANT ALL PRIVILEGES ON sampleDB.* TO user@localhost IDENTIFIED BY '<PASSWORD>' ;
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ 
+CREATE TABLE user1table1( uid int PRIMARY KEY AUTO_INCREMENT, username varchar(100) NOT NULL, userphone varchar(25));
+CREATE TABLE user1table2( uid int PRIMARY KEY AUTO_INCREMENT, username varchar(100) NOT NULL, uf2 char(1) CHECK(uf2 in ('1','R','Y')));
+ 
+CREATE TABLE user1table1 ( uid int PRIMARY KEY AUTO_INCREMENT, username varchar(100) NOT NULL REFERENCES user1table2(uid) ON DELETE CASCADE ON UPDATE CASCADE) ENGINE=InnoDB DEFAULT CHARSET=unicode;
+ 
+ALTER TABLE user1table1 ADD fk  int(11) NOT NULL REFERENCES  user1table2 (uid) ON UPDATE CASCADE ON DELETE CASCADE   ;
+ALTER TABLE user1table1 ADD CONSTRAINT UK_user

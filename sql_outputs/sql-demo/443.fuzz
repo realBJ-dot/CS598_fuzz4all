@@ -1,0 +1,13 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE mytable(
+   a INT PRIMARY KEY AUTO_INCREMENT,
+    b VARCHAR(30),
+    c INT,
+    d TEXT,
+    e DATE
+)ENGINE=MyISAM;
+
+-- Please create a program to do the following:
+-- 1.	Create a database sampleDB in MyISAM mode using the SQL keyword ENGINE=MyISAM
+-- 2.	Create a new table mytable in the database sampleDB as above.
+

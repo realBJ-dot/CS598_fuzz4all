@@ -1,0 +1,25 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+UPDATE `staff` SET `staffGrade` = '3.5';
+-- You need to use a database you created
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+SELECT * From `staff`
+
+-- MySQL server will detect the correct user and password to allow it to proceed with this statement.
+-- To log in, you type MySQL's user ID and password in the "User" field when running the SELECT statement or from the database's "Myisam Admin" tool.
+mysql_secure_installation
+-- Passwords can't contain empty strings without being enclosed in quotes:
+
+-- Now you should be able to type password when running SELECT statement:
+SELECT * FROM `staff`
+
+-- 	UPDATE `staff` SET `staffGrade` = '3.5'
+-- 	UPDATE `staff` SET `staffGrade` = '3';
+-- 	  UPDATE `staff` SET `staffGrade` = '3';
+-- 		UPDATE `staff` SET `staffGrade` = '1';
+-- 			UPDATE `staff` SET `staffGrade` = '5'; 
+-- 			           UPDATE `staff` SET `staffGrade` = '5';
+-- 				      UPDATE `staff` SET `staffGrade` = 90.0;
+-- 					     UPDATE `staff` SET `staffGrade` = 1000.0;
+-- 							 UPDATE `staff` SET `staffGrade` = '1000';
+-- 								  UPDATE `staff` SET `staffGrade` = 999;
+-- 								   UPDATE `staff` SET `staffGrade` = 1.0/0x3F

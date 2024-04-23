@@ -1,0 +1,24 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS users_details(
+  `userId` int(5) NOT NULL AUTO_INCREMENT,
+  `userName` varchar(20),
+  `pwd` varchar(30),
+  `firstName` varchar(20),
+  `LastName` varchar(50),
+  `userType` int(1),
+  `isAdmin` bit(1),
+  `created_at` date,
+  `updated_at` date, 
+  PRIMARY KEY (`userId`)
+)ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO users_details(`firstName`,`userType`,`user_type`,`isAdmin`,`UserId`,`pwd`) VALUES
+('shahzeez',1,'user',1,1000,'8d034c97c12d515d94000009c824c4e224e966b9'),
+('shahzeez',1,'user',1,1001,'8b604f2c930d26a1d5c4c148d8916816483a77fe'),
+('shahzeez',1,'user',1,1002,'<PASSWORD>'),
+('shahzeez',1,'guest',0,1003,'<PASSWORD>'),
+('shahzeez',1,'guest',0,1004,'b709<PASSWORD>'),
+('shahzeez',1,'guest',0,1005,'b<PASSWORD>');
+
+# In the end, drop all tables you created.
+DROP TABLE IF EXISTS users_details;

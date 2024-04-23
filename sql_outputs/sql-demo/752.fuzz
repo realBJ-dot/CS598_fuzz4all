@@ -1,0 +1,25 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS FirstAndSecondTable
+(
+  `id` INT(11) NOT NULL PRIMARY KEY,
+  `data` VARCHAR(300) CHARACTER SET UTF8,
+  KEY `idxFirstAndSecondTable`
+  (`data`)
+);
+USE sampleDB;
+CREATE TABLE IF NOT EXISTS temp (
+  `id` INT(11) NOT NULL PRIMARY KEY,
+  `data` VARCHAR(300) CHARACTER SET UTF8,
+  KEY `idxFirstAndSecondTable`
+  (`data`)
+);
+INSERT INTO temp VALUES (1, 'Hi!'), (2, 'Bye!'), (3, 'Hello!'), (4, 'What\'s good?');
+INSERT INTO FirstAndSecondTable (id, data)
+  SELECT id, data FROM temp;
+SELECT * FROM FirstAndSecondTable;
+SELECT id, data FROM first_and_second_table;
+DELETE FROM FirstAndSecondTable WHERE id = 1;
+LOCK TABLES test LOCK IN SHARE MODE;
+SELECT * FROM FirstAndSecondTable;
+UNLOCK TABLES;
+ */

@@ -1,35 +1,3 @@
-USE sampleDB;
-SET sql_mode = 'FORCE_TRANS_TABLES=OFF';
-
--- Drop the stocks table.
-DROP TABLE stocks;
-
--- Create a table and insert some dummy data.
-CREATE TABLE stocks (
-    stockId int(11) NOT NULL,
-    name varchar(50) NOT NULL,
-    salePrice int(11) NOT NULL,
-    PRIMARY KEY (stockId)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-INSERT INTO stocks (name, salePrice)
-VALUES ("AAPL", 117.25),
-       ("BBBY", 96.45),
-       ("MSFT", 89.09),
-       ("GOOG", 106.10),
-       ("TSLA", 104.15);
-
--- Select just the non-null columns from the table.
-SELECT *
-FROM stocks
-WHERE name IS NOT NULL;
-
--- Select just the non-null columns from the table.
-SELECT name, salePrice
-FROM stocks
-WHERE salePrice IS NOT NULL;
-
--- Select just the non-null columns from the table.
-SELECT stockId, salePrice
-FROM stocks
-WHERE salePrice IS NOT NULL;
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users(username char(20) PRIMARY KEY, FirstName VARCHAR(30)) ENGINE=InnoDB;
+INSERT INTO Users(username,Firstname) VALUES('Test','Test');

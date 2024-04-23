@@ -1,0 +1,20 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS Student;
+CREATE TABLE Student (First_Name  varchar(20), Last_Name  varchar(20), Grade boolean);
+INSERT INTO Student (First_Name, Last_Name, Grade) VALUES ('John', 'Smith',     true);
+INSERT INTO Student (First_Name, Last_Name, Grade) VALUES ('Jane',  'Lee',       false);
+INSERT INTO Student (First_Name, Last_Name, Grade) VALUES ('Tom',   'Stark',     true);
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS Student;
+CREATE TABLE Student (First_Name  varchar(20), Last_Name  varchar(20), Grade boolean);
+INSERT INTO Student (First_Name, Last_Name, Grade) VALUES ('John', 'Smith',     true);
+INSERT INTO Student (First_Name, Last_Name, Grade) VALUES ('Tom',   'Stark',     true);
+INSERT INTO Student (First_Name, Last_Name, Grade) VALUES ('Jane',  'Lee',       false);
+
+## Databases and Servers
+In order to use the database you just created on your local machine, you need to create two more files in your MySQL client that are responsible for connecting to the database and for performing operations.
+
+* **MySQLClient.php** : This file provides simple functions for performing database operations to your database. See below for further information. This file has one function for creating database tables.
+* **server.php** : This file is required as part of the LAMP stack. It contains the configuration information about your server. You may want to create this file on your system administrator machine.
+

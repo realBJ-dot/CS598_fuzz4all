@@ -1,0 +1,9 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS `books` (
+  `author_id` INT(10) UNSIGNED,
+  `isbn` INT(10) UNSIGNED,
+  `name` VARCHAR(255) UNIQUE NOT NULL
+);
+INSERT INTO `books` (`author_id`, `isbn`, `name`)
+VALUES (5, 6000, 'Book 1'), (10, 7000, 'Book 2'), (8, 5000, 'Book 3'), (4, 4000, 'Book 4'), (6, 3000, 'Book 5');
+SELECT * FROM `books`;

@@ -1,3 +1,5 @@
-USE sampleDB;
- 
-SELECT TABLE_ROWS(comments);
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE Users;
+DROP DATABASE IF EXISTS sampleDB;
+
+

@@ -1,0 +1,11 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ --
+CREATE TABLE Users_2(username char(20) PRIMARY KEY, FirstName VARCHAR(30));
+SET @var=1,@var=
+0;
+END;
+
+--
+mysql> SET @var=1,@var=0; SELECT
+--
+ SELECT @var:= IFNULL(

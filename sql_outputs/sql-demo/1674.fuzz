@@ -1,0 +1,29 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `staff`;
+CREATE TABLE `staff` (
+	`ID` int(11) NOT NULL AUTO_INCREMENT,
+	`staff_name` text NOT NULL,
+	`grade` text NOT NULL,
+	`code` int(11) NOT NULL,
+	PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- Use the next two new tables to fulfill your requirements. 
+-- In this case, use two new tables called `staff` and `emp`
+
+-- 2nd table.
+
+CREATE TABLE `emp` (
+	`id` int(11) NOT NULL AUTO_INCREMENT,
+	`name` varchar(50) NOT NULL,
+	`empgrade` varchar(10) NOT NULL,
+	PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+-- You can now query the tables like before (only)
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+SELECT * FROM `emp`;
+SELECT * FROM `emp` AS e1;
+
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+SELECT * FROM `emp`;

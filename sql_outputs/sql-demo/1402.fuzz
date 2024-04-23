@@ -1,0 +1,17 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS `books` (
+  `author_id` INT(10) UNSIGNED,
+  `booktitle` VARCHAR(255)
+);
+INSERT INTO `books` (`author_id`, `booktitle`)
+VALUES (5, 'Go MySQL!');
+SELECT * FROM `books`;
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS `books` (
+  `author_id` INT(10) UNSIGNED,
+  `booktitle` INT(10) UNSIGNED
+);
+INSERT INTO `books` (`author_id`, `booktitle`)
+VALUES (5, 1), (8, 2), (3, 3), (5, 4), (10, 5), (9, 6), (6, 7), (5, 8);
+SELECT * FROM `books`;

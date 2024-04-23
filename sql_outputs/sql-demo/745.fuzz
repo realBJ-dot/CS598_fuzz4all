@@ -1,0 +1,7 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS `FirstAndSecondTableTemporary` ( `id` INT(11) NOT NULL PRIMARY KEY, `data` VARCHAR(300) DATA COMPRESSED) ENGINE=MEMORY;
+INSERT INTO `FirstAndSecondTableTemporary` (data) VALUES ('First Value');
+INSERT INTO `FirstAndSecondTableTemporary` (data) VALUES ('Second Value');
+SELECT data
+FROM `FirstAndSecondTableTemporary`; */
+DROP TABLE IF EXISTS `FirstAndSecondTableTemporary`;

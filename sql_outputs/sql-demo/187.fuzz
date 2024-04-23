@@ -1,0 +1,27 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+GRANT ALL PRIVILEGES ON sampleDB.* to'veryhighuser'@'localhost' identified by'secret';
+FLUSH PRIVILEGES;
+-- Remember to drop the database after every single query!
+DROP DATABASE IF EXISTS sampleDB;
+
+-- I am now logged in as veryhighuser
+SELECT user, host;
+GRANT SELECT, INSERT, UPDATE, DELETE ON sampleDB.* to'veryhighuser'@'localhost' identified by'secret';
+FLUSH PRIVILEGES;\q
+
+-- Now you are able to test that your changes are working
+SELECT id, name FROM Users WHERE groupname='veryhighuser';
+DELIMITER ;;
+CREATE FUNCTION addfive
+	(
+		p_username varchar(100),
+		p_password varchar(100)
+	)
+BEGIN
+	set @password=<PASSWORD>;</p>
+</div>
+</code>
+</div>
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+```
+---

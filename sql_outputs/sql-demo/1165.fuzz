@@ -1,0 +1,25 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS users(user_id INT PRIMARY KEY, first_name TEXT, last_name TEXT, email TEXT, created_at TIMESTAMP NULL);
+INSERT INTO users(user_id, first_name, last_name, email, created_at) VALUES (0, "John", "Doe", "<EMAIL>", "2017-06-18 19:20:26"), (1, "Amy", "Miller", "<EMAIL>", "2017-06-18 19:20:27");
+
+```
+
+## 3. Create tables in MySQL
+```shell
+mysql> create table IF NOT EXISTS users(user_id INT PRIMARY KEY AUTO_INCREMENT, first_name TEXT, last_name TEXT, email TEXT, created_at TIMESTAMP NULL);
+Table 'users' created
+```
+
+## 4. Create a table
+```shell
+MySQL [sampleDB]> CREATE TABLE IF NOT EXISTS users(user_id INT PRIMITIVE KEY AUTO_INCREMENT, first_name TEXT, last_name TEXT, email TEXT, created_at TIMESTAMP NULL);
+Table 'users' created
+
+```
+
+## 5. Drop tables from the MySQL shell
+```shell
+MySQL [sampleDB]> drop table users
+Query OK, 0 rows affected (0.05 sec)
+
+```

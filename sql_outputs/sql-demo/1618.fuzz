@@ -1,0 +1,37 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `sampleDB`.`emp`;
+DROP INDEX IF EXISTS `sampleDB`.`emp_deptid_idx`;
+DROP TABLE IF EXISTS `sampleDB`.`emp_dept`;
+CREATE TABLE `sampleDB`.`emp` (
+	`empNo` int(5) NOT NULL,
+	`first_name` varchar(50) DEFAULT NULL,
+	`last_name` varchar(50) DEFAULT NULL,
+	`gender` enum('M','F') DEFAULT 'M',
+	`dept_id` int(5) DEFAULT NULL,
+	PRIMARY KEY (`empno`),
+	KEY `sampleDB`.`employs_to_emp_dept` (`dept_id`),
+	KEY `sampleDB`.`employs_to_emp_dept_idx` (`dept_id`,`empno`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+DROP TABLE IF EXISTS `sampleDB`.`dept`;
+DROP TABLE IF EXISTS `sampleDB`.`users`;
+DROP INDEX IF EXISTS `sampleDB`.`users_name_idx`;
+DROP TABLE IF EXISTS `sampleDB`.`users`;
+DROP TABLE IF EXISTS `sampleDB`.`students`;
+DROP INDEX IF EXISTS `sampleDB`.`students_name_idx`;
+DROP TABLE IF EXISTS `sampleDB`.`students`;
+DROP FUNCTION IF EXISTS `user_exists`;
+DELIMITER;
+#
+# INSERT DATA TESTS
+#
+#
+#
+USE `users`;
+#
+# This is insert statement which will insert all records from emp table into users table.
+#
+#
+INSERT INTO `sampleDB`.`users` (`id`, `userID`, `username`, `password`) VALUES
+(1, '001', 'admin', <PASSWORD>$tPZ.2z/H1Y0u6o9t.l9tXecg4qH3y31kO8tTj3s7/iE.n6e9Qd4w'),
+(2, '002', 'user', '$2y$10$v1.iU6t4o6x/2/q3o.9y0.vP34/tEHe4g9f1u1dK1O0r4i23p6mZm'),
+(3, '003',

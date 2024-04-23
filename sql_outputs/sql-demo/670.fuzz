@@ -1,0 +1,53 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+GRANT ALL PRIVILEGES ON sampleDB.*
+TO 'root'@localhost
+IDENTIFIED BY 'password'
+WITH GRANT OPTION;
+DROP DATABASE IF EXISTS sampleDB;
+-- This code creates a virtual host that forwards all TCP requests traffic to MySQL:
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+GRANT ALL PRIVILEGES ON *.*
+TO 'root'@'%'
+IDENTIFIED BY 'password'
+WITH GRANT OPTION;
+DROP DATABASE IF EXISTS sampleDB;
+FLUSH PRIVILEGES;
+-- This code creates a virtual host that forwards all TCP requests traffic to MySQL, then forwards the TCP connection for accessing the MySQL DB to Redis:
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+GRANT ALL PRIVILEGES ON *.*
+TO 'root'@'%'
+IDENTIFIED BY 'password'
+WITH GRANT OPTION,
+MAP REDUCE TO RISK PERFORMANCE_SCHEMA.*
+REDIRECT_TO_PRINT '127.0.0.1:6379';
+DROP DATABASE IF EXISTS sampleDB;
+-- Please create a query to find maximum of the Grade column from Grade tables
+SELECT IFNULL(MAX(Grade), 0) Grade
+FROM Student;
+-- In your case:
+SELECT IFNULL(Max(Grade), 0) Grade
+FROM Student;
+-- and:
+SELECT ifnull(MAX(Grade), 0) Grade
+FROM Student;
+-- The above syntax is incorrect, while:
+SELECT IFNULL(MAX(Grade))
+FROM Student;
+-- is correct
+SELECT IFNULL(Max(Grade)) FROM Student;
+-- You also can use the following syntax:
+SELECT Grade AS Max_Grade
+FROM Student;
+SHOW DATABASES;
+SHOW TABLES;
+SHOW TABLE STATUS;
+-- Drop all tables.
+DROP TABLE IF EXISTS Grade;
+DROP TABLE IF EXISTS Student;
+
+-- Please create a query to find average of the Grade column from Grade tables
+SELECT AVG(Grade), Count(*) Grade_Count FROM Student GROUP BY Grade;
+-- in your case
+SELECT AVG(Grade), Count(*) FROM Student GROUP BY Grade
+-- and:
+SELECT AVG(

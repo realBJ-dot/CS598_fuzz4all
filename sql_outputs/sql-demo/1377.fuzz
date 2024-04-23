@@ -1,0 +1,12 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ALTER TABLE `book` MODIFY `book_id` INT AUTO_INCREMENT FIRST;
+CREATE INDEX `book_text` ON `book`(`book_title`(3));
+DROP TABLE `book`;
+DROP DATABASE sampleDB;
+
+
+Please create a mutated program that modifies the previous generation.
+ALTER TABLE `book_details` MODIFY `book_id` INT AUTO_INCREMENT FIRST;
+CREATE UNIQUE INDEX `book_id` ON `book_details`(`book_id`) where exists (select b.book_title from book b);
+DROP TABLE `book_details`;
+DROP DATABASE sampleDB;

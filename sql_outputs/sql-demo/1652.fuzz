@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS staff;
+CREATE TABLE staff (
+   id serial NOT NULL AUTO_INCREMENT,
+   staffName varchar(255) NOT NULL,
+   staffGrade varchar(10) NOT NULL,
+   staffCode varchar(20) NOT NULL,
+   PRIMARY KEY (id),
+   CONSTRAINT staff_staffCode_index UNIQUE (staffCode)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

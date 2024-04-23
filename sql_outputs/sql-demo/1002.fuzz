@@ -1,0 +1,45 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- Some sample data
+DELETE FROM employees;
+INSERT INTO employees VALUES
+( 101, 'Bill',   'Gates',
+    '368146', '1', '4724.6', '5327.5', 100000.00,
+    '<EMAIL>', '65002', '200', 'R',
+    null ),
+(202, 'George', 'Washington',
+    '536417', '2', '3213.1', '4119', 200000.00,
+    '<EMAIL>', '45351', '200', 'R',
+    null ),
+(404, 'John',   'Smith',
+    '321214', '4', '5132.5', '4523.3', 300000.00,
+    '<EMAIL>', '32429', '400', 'RD',
+    null ) ;
+-- End of sample data
+
+
+DROP DATABASE IF EXISTS my_db;
+CREATE DATABASE my_db;  
+USE my_db;
+SHOW TABLES;
+ 
+CREATE TABLE `employees` (
+  `emp_no`      int(11)     UNSIGNED NOT NULL AUTO_INCREMENT,
+  `first_name`  varchar(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `last_name`   varchar(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `birth_date`  date         NOT NULL;
+-- */
+-- End table definition
+ 
+CREATE TABLE `salaries` (
+  `emp_no` int(11) NOT NULL,
+  `salary` double(8,2) DEFAULT NULL,
+  PRIMARY KEY (`emp_no`)
+);
+-- */
+-- End table definition
+ 
+CREATE TABLE `dept_manager` (
+  `dept_no`     int(11)   NOT NULL,
+  `emp_no`      int(11)   NOT NULL,
+  `from_dept`   int(11)   NOT NULL,
+  `to_dept`     int(

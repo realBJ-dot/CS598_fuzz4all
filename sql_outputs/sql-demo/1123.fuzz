@@ -1,0 +1,6 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS table1(id INT, name VARCHAR(40));
+ALTER TABLE `table1` ADD COLUMN `a_column` SET NULL;
+UPDATE `table1` SET a_column='';
+ALTER TABLE `table1` DROP COLUMN `a_column`;
+DROP TABLE `table1`;

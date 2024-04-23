@@ -1,11 +1,10 @@
-USE sampleDB;
-SELECT "select", `firstname`, "from" users;
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS Users (New_Name INTEGER AUTO_INCREMENT PRIMARY KEY NOT NULL UNIQUE);
+INSERT INTO Users(Name, User_id) VALUES('Sneha', 12345);
+UPDATE Users SET User_id= 1337 WHERE Name ='Sneha';
+DELETE FROM Users WHERE Name ='Sneha';
 
-CREATE TABLE users (
-  email char(255) PRIMARY KEY NOT NULL,
-  firstname varchar(100) NOT NULL,
-  lastname varchar(100) NOT NULL
-);
-
-Select * From users;
+INSERT INTO Users(Name, User_id) VALUES('Hemant', 54321);
+UPDATE Users SET User_id= 2345 WHERE Name ='Hemant';
+DELETE FROM Users WHERE Name ='Hemant';
 

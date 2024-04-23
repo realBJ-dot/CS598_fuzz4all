@@ -1,0 +1,15 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users(username char(20) PRIMARY KEY, FirstName VARCHAR(30)) ENGINE=InnoDB;
+INSERT INTO Users(username,Firstname) VALUES('Test','Test'),('Admin','Admin'),('Guest','Guest'),('Super','Super');
+
+SHOW CREATE DATABASE sampleDB;
+
+SHOW FULL FIELDS FROM Users;
+SHOW SCHEMAS;
+DESC Users;
+
+ 
+SHOW CREATE DATABASE sampleDB;
+SHOW FULL FIELDS FROM Users;
+SHOW SCHEMAS;
+DESC Users;

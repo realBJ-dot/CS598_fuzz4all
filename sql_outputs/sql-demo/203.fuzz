@@ -1,0 +1,65 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+CREATE TABLE IF NOT EXISTS Users (
+    ID int(11) PRIMARY KEY AUTO_INCREMENT,
+    FirstName varchar(20) NOT NULL,
+    LastName varchar(30) NOT NULL
+);
+UPDATE Users
+SET LastName='Smith'
+WHERE ID = 1;
+UPDATE Users
+SET FirstName='Graham'
+WHERE ID = 2;
+UPDATE Users
+SET FirstName='John'
+WHERE ID = 3;
+SELECT SQL_CALC_FOUND_ROWS CONCAT(FirstName,'',LastName,' is a very','exciting','guy!');
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+CREATE TABLE IF NOT EXISTS Users
+(
+    ID int(11) PRIMARY KEY AUTO_INCREMENT,
+    FirstName varchar(20) NOT NULL,
+    LastName varchar(30) NOT NULL
+);
+UPDATE Users
+SET FirstName='Graham', LastName='Smith'
+WHERE ID = 1;
+UPDATE Users
+SET FirstName='John', LastName='Smith'
+WHERE ID = 2;
+UPDATE Users
+SET LastName='Smith'
+WHERE ID = 3;
+UPDATE Users
+SET FirstName='John', LastName='Smith', Address='Somewhere'
+WHERE ID = 4;
+SELECT SQL_CALC_FOUND_ROWS CONCAT(FirstName,'',LastName,' is a very','exciting','guy!');
+ 
+SELECT UserID from (SELECT UserID FROM Users);
+-- Please create a basic script in a text editor, convert this into a MySQL database, run it and then
+-- create a SQL script that does the exact same thing (but using stored procedures and stored
+-- functions)
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP PROCEDURE IF EXISTS GetEmployees_3;
+CREATE PROCEDURE GetEmployees_3()
+    BEGIN
+    SELECT FirstName, LastName,
+        IF(Role = 'Administrator', 'Administrator/Manager', NULL)
+        FROM Users
+        WHERE UserID <> 1;
+    END;
+-- Call
+USE sampleDB;
+CALL GetEmployees_3();
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+USE sampleDB;
+DROP PROCEDURE IF EXISTS GetEmployees_3;
+CREATE PROCEDURE GetEmployees_3 ()
+BEGIN
+SELECT FirstName, LastName
+FROM Users
+WHERE UserID <> 1
+UNION
+SELECT Manager

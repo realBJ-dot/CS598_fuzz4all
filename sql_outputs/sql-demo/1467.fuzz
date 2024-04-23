@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ 
+SELECT * FROM users_details WHERE user_id > 10 AND phone LIKE '2%';
+
+-- This query returns all rows where user_id > 10 && phone LIKE '2%', if any. Otherwise, it returns empty result set.
+
+-- Your query here
+SELECT * FROM users_details U INNER JOIN users_details V ON U.user_id = V.user_id AND u.phone LIKE '2%'; 
+
+ 

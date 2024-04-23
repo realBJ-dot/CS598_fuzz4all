@@ -1,0 +1,23 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS `FirstTable` ( `id` INT(11) NOT NULL PRIMARY KEY AUTO_INCREMENT, `num` INT(11), `data` VARCHAR(300) CHARACTER SET UTF8);
+
+INSERT INTO `FirstTable` ( `num`, `data` ) VALUES ( 1, 'Testing' );
+SELECT id, num, data FROM `FirstTable` ORDER BY num;
+ <fim_middle> */
+ 
+SHOW DATABASES;
+DROP DATABASE IF EXISTS `sampleDB`;
+SHOW TABLES;
+CREATE TABLE IF NOT EXISTS `ThirdTable` ( `id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT, `name` VARCHAR(20) CHARACTER SET UTF8);
+-- Create the users for your web service
+CREATE USER 'testUser'@'localhost' IDENTIFIED BY '<PASSWORD>';
+GRANT ALL PRIVILEGES ON sampleDB.* TO 'testUser';# -- Grant all privileges to the testUser
+FLUSH PRIVILEGES;
+USE sampleDB;
+UPDATE `ThirdTable` SET `name` = 'Tom' WHERE `id` = 1; # Show a row and update it where the id is 1.
+ 
+FLUSH PRIVILEGES;
+CREATE TABLE IF NOT EXISTS `FourthTable` ( `id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT, `name` VARCHAR(20) CHARACTER SET UTF8);
+ALTER TABLE `FourthTable` ADD COLUMN `time_of_birth` TIMESTAMP WITHOUT TIME ZONE NULL;
+ALTER TABLE `FourthTable` ADD FULLTEXT `tags` (`name`);
+UPDATE `FourthTable` SET `time_of_birth` = '2001-02-22 10:29:43.869' WHERE `id` = 1

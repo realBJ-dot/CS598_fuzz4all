@@ -1,0 +1,45 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP DATABASE IF EXISTS `sampleDB`;
+CREATE DATABASE IF NOT EXISTS sampleDB (DEFAULT CHARACTER SET = utf8); 
+DROP DATABASE IF EXISTS `sampleDB`;
+DROP DATABASE IF EXISTS `anotherDB`;
+DROP DATABASE IF EXISTS `yetAnotherDB`;
+;
+ ;
+ CREATE DATABASE IF NOT EXISTS `anotherDB`  ;
+CREATE DATABASE IF NOT EXISTS `sampleDB`  ;
+CREATE DATABASE IF NOT EXISTS `yetAnotherDB`  ;
+USE `sampleDB`
+CREATE TABLE firstTable (id VARCHAR (255) NOT NULL);
+SHOW TABLES;
+INSERT INTO `firstTable` (id) VALUES ('FirstRow');
+INSERT INTO `firstTable` (id) VALUES ('SecondRow');
+SELECT * FROM firstTable;
+# Now we need to load the database in memory.
+-- Now let's load the sampleDB database in memory as a table.
+SELECT * FROM sampleDB.firstTable;
+ -- Now load the sampleDB database in memory again. 
+SELECT * FROM sampleDB.firstTable;
+DROP TABLE `sampleDB`.firstTable;
+ SELECT * FROM sampleDB.firstTable;
+ -- Now drop the test table which is not part of sampleDB. 
+DROP TABLE `sampleDB`.firstTable;
+ SHOW TABLES;
+-- Also there should be no table named sampleTable anymore.
+;
+
+SHOW TABLE STATUS FROM sampleDB;
+;
+SHOW TABLE STATUS FROM sampleTable;
+;
+CREATE TABLE secondTable (id INT(11) NOT NULL, name VARCHAR(255) NOT NULL);
+CREATE TABLE thirdTable (id INT(11) NOT NULL, name VARCHAR(255) NOT NULL);
+INSERT INTO `secondTable` (id, name) Values (2, 'This is a Second row');
+INSERT INTO `secondTable` (id, name) VALUES (3, 'Third row');
+INSERT INTO `thirdTable` (id, name) VALUES (2, 'This is a third row');
+INSERT INTO `thirdTable` (id, name) VALUES (3, 'Third row');
+SELECT * FROM `secondTable`;
+SELECT * FROM `thirdTable`;
+DROP TABLE IF EXISTS `secondTable`;
+
+# Using UNION operator on two table is the same as the normal UNION query and gives you the common row or columns

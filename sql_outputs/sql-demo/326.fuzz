@@ -1,0 +1,53 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ 
+-- Please create the following table schema (without indexes)
+CREATE TABLE IF NOT EXISTS contact(
+   phone             TEXT,
+   email             TEXT,
+   first_name        TEXT,
+   last_name        TEXT,
+   birthday         DATETIME,
+   nationality      TEXT,
+   city              TEXT,
+   street            TEXT);
+CREATE UNIQUE INDEX IF NOT EXISTS email_idx ON contact(email);
+CREATE UNIQUE INDEX IF NOT EXISTS phone_idx ON contact(phone);
+-- We may attempt to solve this task in two ways:
+-- Using SQL and MySQL
+-- Using MySQL and a foreign key.
+ 
+CREATE TABLE IF NOT EXISTS addresses(
+   name             TEXT                    NOT NULL,
+   street           TEXT                    NOT NULL,
+   house_number  TEXT,
+   city             TEXT,
+   postal_code  TEXT                    NOT NULL,
+   state            TEXT,
+   country          TEXT                   DEFAULT 'UK');
+CREATE UNIQUE INDEX IF NOT EXISTS city_idx ON addresses(city);
+DROP TABLE addresses CASCADE;
+CREATE INDEX IF NOT EXISTS country_idx ON addresses(country);
+CREATE TABLE IF NOT EXISTS `orders` (
+   `id`          SERIAL                   PRIMARY KEY,
+   `date`        DATE                     NOT NULL,
+   `first_name`  TEXT,
+   `last_name`   TEXT,
+   `gender`      TEXT,
+   `comments`    TEXT,
+   `status`      TEXT
+);
+ALTER TABLE orders ADD FOREIGN KEY (status) REFERENCES orderstatus(id);
+-- We may try to use the solution implemented in an intermediate stage.
+SELECT * FROM orderstatus, orders, addresses;
+-- We may try to solve the task in two ways:
+SELECT DISTINCT `orders`.`id` FROM orders WHERE `orders`.`first_name` = `addresses`.`name` AND `orders`.`last_name` = `addresses`.`state`;
+DELETE FROM orders WHERE status = 'Shipped' AND `orders`.`created_by` IN (SELECT `orders`.`order_no` FROM orders);
+DROP TABLE addresses CASCADE, orderstatus, orders CASCADE;
+-- We want to find out the following facts by trying to create a new derived table:
+-- 450 orders
+-- A country with
+-- 1,235 customers
+-- A city with
+-- 103464 customers
+-- A street with
+-- 2,5946 customers

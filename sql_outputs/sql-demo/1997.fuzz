@@ -1,0 +1,6 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS people_by_sal;
+CREATE TABLE people_by_sal
+        ( person_salary DECIMAL(12,2) NOT NULL )
+        ENGINE=InnoDB;
+SELECT person_salary FROM people_by_sal;<commit_msg>add mySQL version<commit_after>

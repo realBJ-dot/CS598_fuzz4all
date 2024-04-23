@@ -1,0 +1,38 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- Here I use the ENGINE=InnoDB statement to ensure the table in the database have the same structure.
+CREATE TABLE IF NOT EXISTS users(
+	userId INT NOT NULL PRIMARY KEY,
+	name VARCHAR(50) DEFAULT 'root'
+);
+DESCRIBE users;
+-- Please create an efficient program to insert only an expected number of rows in one go.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS users;
+CREATE TABLE IF NOT EXISTS users(
+	userId INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	name VARCHAR(50) DEFAULT 'root'
+);
+DESCRIBE users;
+-- Please create a program that executes with MySQL 5.7 on and MySQL 8 and MySQL 5.5, 6, 7 and 8 on Mac systems. The program should perform multiple DELETE queries as described in your research.
+USE sampleDB;
+DROP TABLE IF EXISTS users;
+CREATE TABLE IF NOT EXISTS users(
+	userId INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	name VARCHAR(50) DEFAULT 'root'
+);
+DESCRIBE users;
+CREATE TABLE IF NOT EXISTS users_temp (
+	userId INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	name VARCHAR(50) DEFAULT 'root'
+);
+DESCRIBE users;
+ALTER TABLE users ADD FULLTEXT_FULL INDEX fulltext_full_idx (name);
+-- Please create a complex query which is difficult to create without proper understanding of the structure of the table
+DROP TABLE IF EXISTS users;
+CREATE TABLE IF NOT EXISTS users(
+	userId INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	name VARCHAR(200) DEFAULT 'root',
+	PASSWORD_HASH  VARCHAR(720) DEFAULT NULL,
+	PASSWORD TEXT DEFAULT NULL,
+	date_of_birth DATE DEFAULT NULL,
+	CONSTRAINT u_unique UNIQUE(name

@@ -1,9 +1,13 @@
-USE sampleDB;
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+CREATE TABLE IF NOT EXISTS Users (Name  VARCHAR(30), User_id INTEGER AUTO_INCREMENT PRIMARY KEY NOT NULL UNIQUE);
 
 
-CREATE TABLE `users` (
-  `email` varchar(100) NOT NULL,
-  `firstname` varchar(100) NOT NULL,
-  `lastname` varchar(100) NOT NULL,
-  PRIMARY KEY (`email`)
-) ENGINE=InnoDB;
+
+
+
+
+
+
+
+

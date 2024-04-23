@@ -1,0 +1,35 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS test1;
+CREATE TABLE test1 (id INT UNSIGNED AUTO_INCREMENT, userid INT, name VARCHAR(50),
+age INT);
+DROP TABLE IF EXISTS test2;
+CREATE TABLE test2 (id INT UNSIGNED AUTO_INCREMENT, userid INT, name VARCHAR(50),
+age INT);
+
+-- Please create a simple select query in MySQL using where condition,
+-- and use group by to group the results. For those columns that can
+-- be obtained using union, use DISTINCT. Sort the results by age;
+-- and keep using GROUP BY in order to find the values that have
+-- the highest average age. You can include the age column in
+-- the SELECT query. Do not be tempted to execute the query
+-- as select *, since it is not safe to select any columns other
+-- than the one you created for it. You should then execute
+-- the query and take note of the results. In MySQL, when you create
+-- new tables, you can optionally use a comment character so that
+-- you can record important information about them. Also, you can
+-- add comments to any table created using SQL. Use these comments
+-- for the purpose of this exercise.
+
+-- Query results for user id 100
+SELECT * FROM test1 WHERE (userid BETWEEN 1 and 50 and age > 18) AND (age < 25)
+ORDER BY age;
+
+-- Query results for user id 150
+SELECT * FROM test1 WHERE (userid BETWEEN 1 and 50 and age > 12) AND (age < 17)
+ORDER BY age;
+
+-- Query results for user id 200
+SELECT * FROM test1 WHERE (userid BETWEEN 1 and 50 and age > 2) AND (age < 3)
+ORDER BY age;
+
+

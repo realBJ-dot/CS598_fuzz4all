@@ -1,0 +1,12 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS Mutated;
+ALTER TABLE Mutated ENGINE = INNODB;
+CREATE TABLE IF NOT EXISTS Mutated;
+CREATE INDEX IF NOT EXISTS price_index ON Mutated (price);
+INSERT INTO Mutated VALUES (1), (2), (3);
+SELECT price FROM Mutated;
+DELETE FROM Mutated WHERE price >= 150;
+SELECT price FROM Mutated;
+DROP INDEX IF EXISTS price_index;
+DROP TABLE Mutated;
+DROP DATABASE sampleDB;

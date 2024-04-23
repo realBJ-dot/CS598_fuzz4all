@@ -1,0 +1,35 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+-- This SELECT statement should result in the same result no matter if the table name or the column name is case sensitive
+SELECT * from Person;
+SELECT * FROM person;
+-- Here we create both a table with capital letters in the name and then try to select from both, to see how MySQL does this in its indexing.
+CREATE TABLE person_cap (id INT primary key, name text, age text);
+CREATE TABLE Person_Cap (id INT primary key, name text, age text);
+SELECT * from Person_Cap;
+
+-- Please create a table with data which contains the word "apple" twice in the name field.
+CREATE TABLE apple(id INT PRIMARY KEY, a TEXT);
+INSERT INTO apple SET a = 'apple';
+INSERT INTO apple SET a ='apple';
+SELECT * FROM apple;
+DROP TABLE IF EXISTS apple;
+
+-- Please select * from the apple table in which age is greater than 15 and whose age is divisible by 3.
+ 
+SELECT * from apple where age > 15 and age % 3 = 0;
+
+-- A table contains data from which another table is formed. In our example, let's call it apple_people, also a table, containing the name of each person in the country that contains the word'mango' in the name field.
+CREATE TABLE apple_people(id INT PRIMARY KEY, a TEXT, personName TEXT);
+INSERT INTO apple_people SET a = 'apple', personName = '<NAME>';
+INSERT INTO apple_people SET a ='strawberry', personName = '<NAME>';
+INSERT INTO apple_people SET a = 'pineapple', personName = '<NAME>';
+INSERT INTO apple_people SET a ='mango', personName = '<NAME>';
+INSERT INTO apple_people SET a = 'cherry', personName = '<NAME>';
+INSERT INTO apple_people SET a = 'blueberry', personName = '<NAME>';
+INSERT INTO apple_people SET a = 'yellowfruit', personName = '<NAME>';
+INSERT INTO apple_people SET a ='mandarin', personName = '<NAME>';
+INSERT INTO apple_people SET a = 'grapes', personName = '<NAME>';
+INSERT INTO apple_people SET a = 'orange', personName = 'Angelina';
+INSERT INTO apple_people SET a ='strawberry', personName = '<NAME>';
+INSERT INTO

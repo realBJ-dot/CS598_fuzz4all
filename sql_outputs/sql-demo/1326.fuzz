@@ -1,0 +1,5 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+INSERT INTO author(author_name) VALUES("<NAME>");
+DESCRIBE author;
+DROP TABLE author;
+COMMIT; DROP DATABASE sampleDB;

@@ -1,0 +1,43 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `staff`;
+CREATE TABLE `staff` (
+	`id` serial NOT NULL AUTO_INCREMENT,
+	`staffName` varchar(255) NOT NULL,
+	`staffGrade` varchar(10) NOT NULL,
+	`staffCode` varchar(20) NOT NULL,
+	PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+-- Please drop the table named staff with ID 2
+DROP TABLE staffID2;
+INSERT INTO staff (staffName, staffGrade, staffCode) VALUES ('Jasmin', 'A','1');
+INSERT INTO staff (staffName, staffGrade, staffCode) VALUES ('Kevin', 'B','2');
+INSERT INTO staff (staffName, staffGrade, staffCode) VALUES ('Sara', 'B+', '3');
+INSERT INTO staff (staffName, staffGrade, staffCode) VALUES ('Joe', 'A-', '4');
+DROP TABLE IF EXISTS `staff`;
+CREATE TABLE `staff` (
+	`id` serial NOT NULL AUTO_INCREMENT,
+	`staffName` varchar(255) NOT NULL,
+	`staffGrade` varchar(10) NOT NULL,
+	`staffCode` varchar(20) NOT NULL,
+	PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+CREATE TABLE staffID3 (
+  staffID INT NULL AUTO_INCREMENT,
+  staffCode VARCHAR(20) NULL,
+  staffName VARCHAR(255) NULL,
+  PRIMARY KEY (staffID)
+);
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `staff`;
+ 
+DROP TABLE IF EXISTS `staffID4`;
+INSERT INTO staffID3 (staffCode, staffName) VALUES ('ABC', 'John');
+INSERT INTO staffID3 (staffCode, staffName) VALUES ('DEF', 'Mary');
+INSERT INTO staffID3 (staffCode, staffName) VALUES ('ghi', 'Jack');
+CREATE TABLE IF NOT EXISTS staffID (
+    staffID INT NULL AUTO_INCREMENT PRIMARY KEY,
+    staffCode VARCHAR(20) NULL,
+    staffName VARCHAR(255) NULL,
+    manager_staffID VARCHAR(20) NULL
+);
+DROP TABLE

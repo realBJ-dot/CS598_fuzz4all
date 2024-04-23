@@ -1,0 +1,16 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+SHOW databases;
+USE sampleDB;
+DROP TABLE IF EXISTS person_tmp;
+CREATE TABLE person_tmp (id INT PRIMARY KEY, name VARCHAR(200), age INT);
+INSERT INTO person_tmp (id, name, age) VALUES(4, '<NAME>', 37);
+INSERT INTO person_tmp (id, name, age) VALUES(3, '<NAME>', 30);
+SELECT * FROM person_tmp ORDER BY age DESC;
+-- Please add the following line in mysql.conf
+
+show variables like 'basedir';
+
+select concat(username, " ", host) from mysql.user;
+
+DROP DATABASE IF EXISTS sampleDB;
+-- END

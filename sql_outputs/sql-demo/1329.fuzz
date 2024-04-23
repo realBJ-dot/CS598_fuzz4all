@@ -1,0 +1,16 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS author(
+	author_id INT NOT NULL UNIQUE AUTO_INCREMENT PRIMARY KEY,
+	author_name text
+);
+DESCRIBE author;
+INSERT INTO author VALUES('John','Albert');
+INSERT INTO author VALUES('Paul','John');
+INSERT INTO author VALUES('John','Paul');
+SELECT * FROM author;
+SELECT a.author_id,a.author_name
+FROM author a,author b,category c
+WHERE a.author_id=b.author_id
+AND b.author_id=c.cat_id
+ORDER BY a.author_id;
+DROP DATABASE sampleDB;

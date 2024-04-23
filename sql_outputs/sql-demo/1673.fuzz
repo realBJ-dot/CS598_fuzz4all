@@ -1,0 +1,32 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS `staff` (
+	`id` serial NOT NULL AUTO_INCREMENT,
+	`staffName` varchar(255) NOT NULL,
+	`staffGrade` varchar(10) NOT NULL,
+	`staffCode` varchar(20) NOT NULL,
+	PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+show tables;
+show create table staff;
+-- You can create a table as follows
+-- CREATE TABLE IF NOT EXISTS `staff` (
+--	`id` smallint NOT NULL auto_increment primary key,
+--	`staffName` varchar(20) not null,
+--	`staffGrade` varchar(10) not null,
+--	`staffCode` varchar(20) not null
+--);
+show tables;
+show create table staff;
+-- This is an excellent opportunity to create a short program to check the integrity of tables like this
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `staff`;
+CREATE TABLE `staff` (
+	`id` serial NOT NULL AUTO_INCREMENT,
+	`staffName` varchar(255) NOT NULL,
+	`staffGrade` varchar(10) NOT NULL,
+	`staffCode` varchar(20) NOT NULL,
+	PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+INSERT INTO `staff` (`staffName`, `staffGrade`, `staffCode`)
+VALUES ('Kenzo', '10', '20-44-030');
+INSERT INTO `staff` (`staffName`, `staffGrade`, `staffCode`)

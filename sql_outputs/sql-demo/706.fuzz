@@ -1,0 +1,26 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS Student;
+CREATE TABLE Student(First_Name  VARCHAR(20), Last_Name CHAR(20), Grade boolean, Labeled INTEGER);
+INSERT INTO Student (First_Name) VALUES ('John1');
+INSERT INTO Student (Last_Name) VALUES ('Smith2');
+INSERT INTO Student (First_Name, Last_Name) VALUES ('Jane3',  'Lee4');
+INSERT INTO Student (Grade) VALUES  ('true');
+INSERT INTO Student (Labeled) VALUES ('1');
+SELECT Labeled
+FROM Student
+WHERE Grade is TRUE
+ORDER BY Grade, Labeled DESC;
+DROP TABLE IF EXISTS Student;
+CREATE TABLE Student(First_Name  VARCHAR(20), Last_Name CHAR(20), Grade boolean, Labeled INTEGER);
+INSERT INTO Student (First_Name) VALUES ('John1');
+INSERT INTO Student (Last_Name) VALUES ('Smith2');
+INSERT INTO Student (First_Name, Last_Name) VALUES ('Jane3',  'Lee4');
+INSERT INTO Student (Grade) VALUES  ('true');
+INSERT INTO Student (Labeled) VALUES ('1');
+SELECT Labeled
+FROM Student
+WHERE Grade is TRUE
+ORDER BY Grade, Labeled DESC LIMIT 2, 2;
+-- MySQL, named after co-founder <NAME>'s daughter, My, and SQL, is widely used with other programs to implement applications that require database functionality. It serves as an element of the LAMP web application software stack, where LAMP stands for Linux, Apache, MySQL, Perl/PHP/Python, and is used in many database-driven web applications and popular websites such as Facebook and YouTube.
+
+Written in C and C++, MySQL supports a variety of system platforms from Linux, macOS, Microsoft Windows to even the Symbian OS. It offers dual-licensing i.e., GPL version 2 or

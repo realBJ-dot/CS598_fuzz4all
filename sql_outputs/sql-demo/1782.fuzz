@@ -1,0 +1,9 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS test4;
+CREATE TABLE test4 (id INT UNSIGNED NOT NULL UNIQUE UNIQUE, name VARCHAR(50), type INT, age INT);
+INSERT INTO test4 (id, name, type, age) VALUES (0, "Jhon", 0, 20);
+INSERT INTO test4 (id, name, type, age) VALUES (1, "Steve", 1, 2);
+INSERT INTO test4 (id, name, type, age) VALUES (2, "Jeremiah", 1, 15);
+SELECT * FROM test4;
+DROP TABLE IF EXISTS test4;
+DROP DATABASE IF EXISTS sampleDB;

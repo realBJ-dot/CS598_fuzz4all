@@ -1,0 +1,56 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS author(
+ author_id INT,
+ author_name text,
+ author_surname text
+);
+INSERT INTO author VALUES(1,'Alice','Smith');
+INSERT INTO author VALUES(2,'Bob','Smith');
+INSERT INTO author VALUES(3,'Charlie','Brown');
+ALTER TABLE author MODIFY author_id INT(4);
+ALTER TABLE author ENGINE=MYISAM;
+DROP TABLE author;
+DROP DATABASE sampleDB;
+
+CREATE DATABASE IF NOT EXISTS sampleDB;
+CREATE TABLE IF NOT EXISTS author (
+author_id INT,
+author_age INT,
+author_name text,
+author_surname text
+);
+INSERT INTO author VALUES(1,27,'Bob','Smith');
+INSERT INTO author VALUES(2,28,'Ralf','Williams');
+INSERT INTO author VALUES(3,45,'Bob','Smith');
+DROP TABLE author;
+DROP DATABASE sampleDB;
+
+USE sampleDB;
+ALTER TABLE author CHANGE author_id author_id INT(4) NOT NULL;
+ALTER TABLE author MODIFY author_age INT(4);
+
+ 
+CREATE TABLE IF NOT EXISTS author (
+author_id INT(4) NOT NULL,
+author_age INT,
+author_name text,
+author_surname text
+);
+INSERT INTO author VALUES(1,27,'Bob','Smith');
+INSERT INTO author VALUES(2,28,'Ralf','Williams');
+INSERT INTO author VALUES(3,45,'Bo','Smith');
+ALTER TABLE author ADD author_sex CHAR(4);
+ALTER TABLE author MODIFY author_age INT(4);
+
+# CREATE DATABASE IF NOT EXISTS sampleDB;
+# USE sampleDB;
+# CREATE TABLE IF NOT EXISTS author (
+# author_id INT(4) NOT NULL,
+# author_name text,
+# author_surname text,
+# author_sex text
+# );
+
+# INSERT INTO author VALUES(1,'Alice','Smith','M');
+# INSERT INTO author VALUES(2,'Bob','Smith','M');
+# INSERT INTO author

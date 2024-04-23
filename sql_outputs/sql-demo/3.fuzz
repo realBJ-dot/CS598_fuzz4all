@@ -1,9 +1,14 @@
-USE sampleDB;
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
 
-create database sampleDB;
-use sampleDB;
-delete FROM employee;
-delet FROM job;
-DELETE FROM salary;
-use employee;
-delete FROM employee;
+-- Create a new table in sampleDB called employees and make sure it is in the form id, fname, lname, roleid and sal.
+CREATE TABLE employees ( id int(11) NOT NULL AUTO_INCREMENT, fname varchar(20) NOT NULL, lname varchar(30) NOT NULL, roleid int(11) NOT NULL, sal decimal(10,2) NOT NULL, departmentid int(11), PRIMARY KEY (id) ) ENGINE=InnoDB;
+-- Update the table employees to add a roleid column based on roleid. If the value of the column is not set in the query, then insert it with the roleid of 10.
+ALTER TABLE employees ADD roleid int(11);
+INSERT INTO employees ( id, fname, lname, roleid, sal, departmentid) VALUES (10, 'Bruno', 'Fonseca', 10, 25000.00,null);    INSERT INTO employees ( id, fname, lname, roleid, sal, departmentid) VALUES (200, 'Tamara', 'Baker', 1, 700.00,10);    INSERT INTO employees ( id, fname, lname, roleid, sal, departmentid) VALUES (300, 'Andrea', 'Tutti', 1, 5000.00,10);
+-- Add an index over the column roleid, which will be used for performing a join, and set it to descending order.
+ALTER TABLE employees ADD PRIMARY KEY (roleid);
+DROP INDEX roleid;    ALTER TABLE employees MODIFY roleid INT NOT NULL AFTER PRIMARY KEY;    ALTER TABLE employees ADD INDEX departmentid (departmentid);
+CREATE TABLE departments ( id int(11) NOT NULL AUTO_INCREMENT, dept_name varchar(50) NOT NULL, PRIMARY KEY (id) ) ENGINE=InnoDB;   -- Assign the employees to their roles from the employees table.
+INSERT INTO employees (id,fname,lname,departmentid,roleid) VALUES (20, 'Jamie', 'Kimberly', NULL, 6);    INSERT INTO employees (id,fname,lname,departmentid,roleid) VALUES (40, 'Nathan', 'Travis', NULL, 1);    INSERT INTO employees (id,fname,lname,departmentid,roleid) VALUES (30, 'Carla', 'Rose', NULL, 1);    INSERT INTO employees (id,fname,lname,departmentid,roleid) VALUES (22, 'Steven', 'King', 1, 3);   INSERT INTO employees (id,fname,lname,departmentid,roleid) VALUES (300, 'Andrea', 'Tutti', 2, 2);
+-- Find all employees that do not have a manager set from the employees table.
+SELECT id, fname, lname

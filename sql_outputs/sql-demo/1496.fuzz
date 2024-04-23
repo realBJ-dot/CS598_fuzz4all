@@ -1,0 +1,25 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE users_details;
+CREATE TABLE users_details(
+user_id INTEGER NOT NULL,
+phone VARCHAR(50) UNIQUE NOT NULL,
+age INTEGER NOT NULL,
+PRIMARY KEY (user_id)
+);
+INSERT INTO users_details (user_id, phone, age) VALUES (23, '636-426-42', 86);
+DROP TABLE users_details;
+
+<?php
+
+require_once 'DB.class.php';
+
+$db = new db();
+
+
+$users_details = $db->getRecord("SELECT * FROM users_details");
+
+
+var_dump($users_details);
+
+ 
+$db->close();

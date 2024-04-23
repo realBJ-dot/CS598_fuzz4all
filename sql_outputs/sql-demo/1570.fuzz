@@ -1,0 +1,21 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `sampleDB`.`customers`;
+CREATE TABLE IF NOT EXISTS `sampleDB`.`customers` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `address` varchar(128),
+  `firstname` varchar(64),
+  `lastname` varchar(64),
+  `email` varchar(64),
+  `company` varchar(64),
+  `contactphone` varchar(20),
+  `contactcity` varchar(64),
+  `zipcode` int,
+  `country` varchar(64),
+  `state` varchar(64),
+  `city` varchar(64),
+  `sales` int,
+  `lastupdate` datetime NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `customers_contactcity` (`contactcity`),
+  UNIQUE KEY `customers_contactcity_state` (`contactcity`,`state`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

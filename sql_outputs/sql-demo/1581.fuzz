@@ -1,0 +1,44 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `sampleDB`.`employees`;
+CREATE TABLE IF NOT EXISTS `sampleDB`.`employees` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(25) NOT NULL,
+  `emailID` varchar(30) NULL,
+  `employeeID` int,
+  `title` varchar(25),
+  `active` tinyint(1) DEFAULT 1,
+  `isAdmin` tinyint(1),
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `employees_employeeID` (`employeeID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- Here comes the important difference
+# Dropping a column
+ALTER TABLE `sampleDB`.`customers` DROP COLUMN isFullTimeEmployee;
+# Dropping a table
+DROP TABLE IF EXISTS `salesperson`;
+CREATE TABLE `salesperson` (
+  `personID` int NOT NULL AUTO_INCREMENT,
+  `firstName` varchar(50) NOT NULL,
+  `lastName` varchar(20) NOT NULL,
+  `addressLine1` varchar(50) NULL DEFAULT NULL,
+  `addressLine2` varchar(50),
+  `city` varchar(20) NOT NULL,
+  `state` varchar(5) NULL DEFAULT NULL,
+  `country` varchar(50) NULL DEFAULT NULL,
+  `postalCode` tinyint(1) NULL DEFAULT NULL,
+  `emailAddress` varchar(50) NOT NULL,
+  `phone` char(11) NULL DEFAULT NULL,
+  PRIMARY KEY (`personID`),
+  UNIQUE KEY `salesperson_emailID` (`emailAddress`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+ 
+
+# Add a column
+ALTER TABLE `sampleDB`.`customers` ADD `companyName` varchar(50) DEFAULT NULL;
+# Drop indexes
+DROP INDEX IF EXISTS `customers_isFullTimeEmployee_idx`;
+DROP INDEX IF EXISTS `customers_isLead_idx`;
+DROP INDEX IF EXISTS `customers_isVIP_idx`;
+# Create a unique index
+CREATE UNIQUE INDEX `customers_isFullTimeEmployee_idx` ON `sampleDB`.`customers` (`isFullTimeEmployee`, `isLead`, `isVIP`);
+# Create

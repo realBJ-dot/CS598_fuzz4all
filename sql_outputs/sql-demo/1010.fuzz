@@ -1,0 +1,38 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+#
+-- Update employees table in the sampleDB database
+CREATE TABLE IF NOT EXISTS employees(first_name TEXT,
+    LAST_NAME TEXT,
+    JOB_TITLE TEXT,
+    HIRE_DATE TEXT,
+    SALARY NUMBER(10,2));
+INSERT INTO employees(first_name, LAST_NAME, JOB_TITLE, HIRE_DATE, SALARY)
+    VALUES
+        ('John', 'Doe', 'Sales Manager', '1/2/2011','10000'),
+        ('Tom', 'Smith', 'President', '1/31/2010','12500'),
+        ('Mike', 'Bob', 'VP Marketing', '1/21/2006','25000'),
+        ('Mike', 'Donald', 'Senior Vice President', '2/8/2004','35000'),
+        ('John', 'Bowling', 'Staff', '1/30/1998','5000.00');
+
+-- Please complete this statement using multiple queries as needed.
+#
+-- What is the maximum number of people who manage more than three departments, as a result of the merge?
+--
+SELECT COUNT(emp_no) AS NumberManagerEmployees FROM dept_emp
+GROUP BY dept_no
+HAVING COUNT(emp_no) > 3;
+#
+-- Do employees who work for all departments report to Manager?
+SELECT COUNT(*) AS ManagerEmployees FROM dept_emp d, employees e
+WHERE d.emp_no = e.emp_no
+AND d.dept_emp_no = d.emp_number
+GROUP BY d.dept_no
+HAVING COUNT(*) > 1;
+#
+-- How many times are employees assigned to their own departments?
+SELECT COUNT(e.emp_no) AS EmployeeEmployees FROM employees e, dept_emp de
+WHERE e.emp_no = de.emp_no
+GROUP BY emp_no
+HAVING e.emp_no = ANY (SELECT emp_no FROM dept_emp);
+#
+-- How many times are employees hired by more than one

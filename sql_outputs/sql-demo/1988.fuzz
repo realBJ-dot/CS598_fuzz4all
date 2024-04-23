@@ -1,0 +1,6 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DESCRIBE employees_salary_by_salary;
+USE employees_salary_by_salary;
+ALTER TABLE employees_salary_by_salary MODIFY employee_salary CHARACTER;
+#end
+

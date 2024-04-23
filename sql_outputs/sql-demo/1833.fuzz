@@ -1,0 +1,24 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- Please create a new table and insert data.
+CREATE TABLE names(name varchar(20)); ALTER TABLE names ENGINE=InnoDB; 
+-- Please insert some data into this table.
+INSERT INTO names VALUES('Gary',23); INSERT INTO names VALUES('John',25); INSERT INTO names VALUES('Steve',30); INSERT INTO names VALUES('Joe',33); 
+-- Please create a mutated query. You will need to recreate the table and insert data in it. Here is the
+-- mutated query. You should remove the last three queries that are redundant and that are just 
+-- doing something for the sake of testing.
+SELECT* FROM names WHERE name='Gary' OR name='Joe' OR name='Steve';
+UPDATE names SET name='<NAME>' WHERE name='<NAME>'; 
+DELETE FROM names WHERE name='<NAME>'; 
+SELECT* FROM names WHERE name='Gary' OR name='Joe' OR name='Steve'; 
+UPDATE names SET name='<NAME>' WHERE name='<NAME> <NAME>'; 
+SELECT* FROM names WHERE name='Gary' OR name='Joe' OR name='Steve';
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- Please create a new table and insert data.
+CREATE TABLE names(name varchar(20)); ALTER TABLE names ENGINE=InnoDB;
+-- Please insert some data into this table.
+INSERT INTO names VALUES('Gary',23); INSERT INTO names VALUES('John',25); INSERT INTO names VALUES('Steve',30); INSERT INTO names VALUES('Joe',33); 
+-- Please create a mutated query. You will need to recreate the table and insert data in it. Here is the
+-- mutated query. You should remove the last three queries that are redundant and that are just 
+-- doing something for the sake of testing.
+SELECT name FROM names WHERE name='Gary' OR name='Joe' OR name='Steve'
+/* Your code ends here. Don't forget to commit your changes

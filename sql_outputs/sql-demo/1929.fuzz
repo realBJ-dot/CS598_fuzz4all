@@ -1,0 +1,7 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+insert into sampleDB.employees_salary_by_salary (employee_salary, emp_salary) values (6000, 5000);
+select employee_salary from employees_salary_by_salary;
+-- Please create a mutated program that computes with SQL ALL tables.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+query sql "SELECT employee_salary, emp_salary FROM employees_salary_by_salary";
+DROP DATABASE IF EXISTS sampleDB;

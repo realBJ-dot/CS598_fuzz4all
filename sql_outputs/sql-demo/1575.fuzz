@@ -1,0 +1,23 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `sampleDB`.`employees`;
+CREATE TABLE IF NOT EXISTS `sampleDB`.`employees` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `employeeID` int NOT NULL,
+  `firstName` varchar(20) NOT NULL,
+  `lastName` varchar(20) NOT NULL,
+  `isSenior` tinyint(1) NOT NULL,
+  `salaryPerHour` int NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `employees_employeeID` (`employeeID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO sampleDB.customers (id, customerID, firstName, lastName, isFullTimeEmployee, isLead, isVIP) VALUES (1, 4543, 'Marcia', 'Sutter', 0, 1, 0);
+INSERT INTO sampleDB. customers (id, customerID, firstName, lastName, isFullTimeEmployee, isLead, isVIP) VALUES (2, 5435, 'Rafa', 'Vigo', 1, 0, 1);
+INSERT INTO sampleDB.customers (id, customerID, firstName, lastName, isFullTimeEmployee, isLead, isVIP) VALUES (3, 9178, 'Romain', 'Lam', 1, 1, 0);
+
+INSERT INTO sampleDB.employees (id, employeeID, firstName, lastName, isSenior, salaryPerHour) VALUES (1, 45, 'Paula', 'Gil-Nag', 1, 10000);
+INSERT INTO sampleDB.employees (id, employeeID, firstName, lastName, isSenior, salaryPerHour) VALUES (2, 894, 'Marcia', 'Martins', 1, 10000);
+INSERT INTO sampleDB.employees (id, employeeID, firstName, lastName, isSenior, salaryPerHour) VALUES (3, 475, 'Sara', 'Lam', 1, 20000);
+
+SELECT * FROM sampleDB.customers JOIN sampleDB.employees ON sampleDB.employees.customerID = sampleDB.customers.id;
+SELECT lastName

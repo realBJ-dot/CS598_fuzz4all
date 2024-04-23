@@ -1,0 +1,17 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP DATABASE IF EXISTS sampleDB;
+ 
+CREATE TABLE IF NOT EXISTS student( s_sid int, s_fname text, s_lname text, s_age text, s_gender text);
+CREATE TABLE IF NOT EXISTS studentview( s_sid int, s_lname text);
+CREATE VIEW studentview AS SELECT s_lname as s_lname FROM student;  
+INSERT INTO student (s_sid, s_fname, s_lname, s_age, s_gender) VALUES (156, 'Thomas', 'Thomas', '25', 'Man');
+INSERT INTO studentview(s_lname) VALUES ('Jones');
+SELECT s_lname, s_sid FROM studentview WHERE s_sid IN (55, 168);
+DROP TABLE student;
+DROP VIEW studentview;
+
+ 
+CREATE TABLE IF NOT EXISTS student( s_sid int, s_fname text, s_lname text, s_age text, s_gender text);
+USE sampleDB; CREATE TABLE IF NOT EXISTS studentView (s_sid int, s_lname text); INSERT INTO student (s_sid, s_fname, s_lname, s_age, s_gender) VALUES (156,'Thomas', 'Thomas', '25', 'Man'); INSERT INTO studentview (s_lname) VALUES ('Jones') ; SELECT s_lname, s_sid FROM studentView WHERE s_sid IN (55, 168); -- Please use ENGINE=Innodb, replace sampleDB and the previous statements with the ones we discussed in class. If you did use ENGINE=InnoDB, replace the sampleDB and the previous statements with the ones we discussed in class.
+
+SELECT s_lname, s_sid FROM student WHERE s_sid IN (156, 25);

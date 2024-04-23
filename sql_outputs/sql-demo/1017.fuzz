@@ -1,0 +1,19 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employees;
+DROP TABLE IF EXISTS salaries;
+DROP TABLE IF EXISTS salaries;
+DROP TABLE IF EXISTS dept_manager;
+DROP TABLE IF EXISTS dept_emp;
+DROP TABLE IF EXISTS dept;
+DROP TABLE IF EXISTS staff;
+DROP TABLE IF EXISTS salaries;
+
+# CREATE TABLE IF NOT EXISTS dept_manager (
+#     dept_id INT NOT NULL PRIMARY KEY,
+#     role_id INT NOT NULL,
+#     manager_id INT NOT NULL
+# );
+# Create the employees table
+CREATE TABLE IF NOT EXISTS employees (
+	emp_id INT NOT NULL PRIMARY KEY,
+   

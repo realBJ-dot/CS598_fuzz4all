@@ -1,0 +1,9 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE `invoice` (
+  `order_id` INT(5) NOT NULL AUTO_INCREMENT,
+  `order_date` INT(15) NOT NULL,
+  `customer` INT(5) NOT NULL,
+  `total_amount` INT(5) NOT NULL,
+  `order_status` INT(5) NOT NULL,
+  PRIMARY KEY (`order_id`)
+);

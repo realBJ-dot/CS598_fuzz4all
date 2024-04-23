@@ -1,0 +1,4 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+update user_db_personality set level = 20;
+DELIMITER ;
+DROP DATABASE IF EXISTS `sampleDB`;

@@ -1,0 +1,43 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ 
+
+-- Creating Table in MySQL 
+ 
+CREATE TABLE IF NOT EXISTS employees(
+  `employeeId` int(5) NOT NULL AUTO_INCREMENT,
+  `companyId` int(5) NOT NULL,
+  `employeeName` varchar(20),
+  `email` varchar(40),
+  `position` varchar(50),
+  `salary` int(10),
+  `phone` varchar(20),
+  `department` int(3),
+  `created_at` date,
+  `updated_at` date,
+  PRIMARY KEY (`employeeId`)
+);
+use mysql;
+desc employees;
+delete from employees_details;
+
+DROP TABLE IF EXISTS employees;
+DROP DATABASE IF EXISTS sampleDB;
+create database sampleDB; use sampleDB;
+
+-- Creating New Table in MySQL
+ 
+use sampleDB;
+
+CREATE TABLE IF NOT EXISTS employee_info(
+  `employeeId` int(5) NOT NULL DEFAULT '0',
+  `companyId` int(5) NOT NULL DEFAULT '0',
+  `employeeName` varchar(20) DEFAULT '0',
+  `email` varchar(40) DEFAULT '0',
+  `position` varchar(50),
+  `salary` int(10) DEFAULT '0',
+  `phone` int(11) DEFAULT '0',
+  `department` int(3) DEFAULT '0',
+  `created_at` date NOT NULL DEFAULT CURRENT_DATE,
+  `updated_at` date NOT NULL DEFAULT CURRENT_DATE
+);
+INSERT INTO employee_info VALUES (null, '0',

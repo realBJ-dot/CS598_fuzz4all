@@ -1,0 +1,33 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+create table employee
+(
+    id int
+    primary key,
+    name varchar(50),
+    role_id int,
+    manager_id int,
+    manager varchar(30),
+    manager_manager int,
+    manager_manager varchar(30),
+    manager_manager_manager int,
+    manager_manager_manager varchar(30),
+    manager_manager_manager_manager int,
+    manager_manager_manager_manager varchar(30)
+);
+-- Create another database named sampleDB.
+create table employee2
+(
+    id int
+    primary key,
+    name varchar(50),
+    role_id int
+) ;
+create table employee3
+(
+    id int
+    primary key,
+    name varchar(50),
+    role_id int,
+    manager_id int,
+    manager varchar(30)
+);

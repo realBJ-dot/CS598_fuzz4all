@@ -1,0 +1,6 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS Mutated (date DATE, qty DECIMAL(10,2), price DECIMAL(10,2));
+UPDATE Mutated SET qty = 100, price = 99.75 WHERE qty = 100;
+SELECT * FROM Mutated;
+DROP TABLE Mutated;
+DROP DATABASE sampleDB;

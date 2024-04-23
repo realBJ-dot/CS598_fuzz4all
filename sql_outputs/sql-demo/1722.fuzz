@@ -1,0 +1,27 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+# This will take you to the MySQL Workbench UI (http: 
+start mysql
+-- If you wanted to, you could also start the MySQL terminal UI (http: 
+-- This command will bring you to the MySQL terminal
+exec mysql -h localhost -P 3306 -u root
+-- Use the following to authenticate to the MySQL engine
+mysql>  USE sampleDB
+mysql> grant all privileges on sampleDB.* to 'user'@'%';
+mysql> exit
+-- Now use your newly created MySQL command line terminal application to generate the above SQL commands. Run the above SQL commands several times for multiple rows.
+exit
+-- Check the database again
+mysql> show databases;
++---------------------------+
+| Database                 |
++---------------------------+
+| information_schema       |
+| mysql                    |
+| performance_schema       |
+| sampleDB                 |
+| sys                      |
+| test                     |
++---------------------------+
+11 rows in set (0.00 sec)
+```
+

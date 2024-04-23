@@ -1,0 +1,22 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employees_salary_by_salary;
+CREATE TABLE employees_salary_by_salary(employee_salary INT(8, 2));
+INSERT INTO employees_salary_by_salary(employee_salary) VALUES (10000.50);
+SELECT employee_salary + 10000 FROM employees_salary_by_salary WHERE employee_salary > 10000.50;
+DROP TABLE IF EXISTS sampleDB;
+SET CHARACTER_SET_RESULTS = latin1;
+CREATE DATABASE mysql; USE mysql;
+SHOW DATABASES;
+CREATE TABLE sample_table (a INT, b INT);
+DESC sample_table;
+CREATE TABLE sample_table LIKE employee_salary_view;
+SHOW CREATE TABLE sample_table;
+SELECT * FROM sample_table ORDER BY a;
+DROP TABLE IF EXISTS sample_table;
+DROP DATABASE IF EXISTS mysql;
+-- Your output has to be:
+-- CREATE DATABASE mysql; USE mysql
+-- Gives you two options to create table sample_table:
+-- SELECT * FROM sample_table ORDER BY a;
+-- Will give you the results for one column
+DROP DATABASE IF EXISTS mysql;

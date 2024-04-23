@@ -1,0 +1,25 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE car_info (
+  id INTEGER NOT NULL AUTO_INCREMENT,
+  brand VARCHAR(20) NOT NULL,
+  year INT UNSIGNED NOT NULL,
+  price INT unsigned,
+  PRIMARY KEY (id)
+);
+INSERT INTO car_info 
+  VALUES (1,'Ford',1500,200000), (11,'Nissan',1500,150000));
+CREATE TABLE sales (
+  id INTEGER NOT NULL AUTO_INCREMENT,
+  date DATE NOT NULL,
+  car_id INTEGER,
+  sale_type VARCHAR(10),
+  PRIMARY KEY (id)
+);
+INSERT IGNORE INTO sales 
+  VALUES(1,'2001-12-01',1,'sale'), (10,'2003-12-01',1,'sale'), 
+          (15,'2004-12-15',2,'refund'), (20,'2001-12-02',2,'sale');
+DROP TABLE sales;
+DROP TABLE car_info;
+DROP DATABASE sampleDB;
+GRANT ALL PRIVILEGES ON sampleDB.* TO 'root'@'localhost' IDENTIFIED BY '<PASSWORD>' WITH GRANT OPTION;
+FLUSH PRIVILEGES;

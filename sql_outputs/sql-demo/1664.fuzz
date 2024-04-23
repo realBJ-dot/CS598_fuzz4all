@@ -1,0 +1,27 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `staff`;
+CREATE TABLE `staff` (
+	`id` serial NOT NULL AUTO_INCREMENT,
+	`staffName` varchar(255) NOT NULL,
+	`staffGrade` varchar(10) NOT NULL,
+	`staffCode` varchar(20) NOT NULL,
+	PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+DROP TABLE IF EXISTS `staff`;
+CREATE TABLE `staff` (
+	`id` serial NOT NULL AUTO_INCREMENT,
+	`staffName` varchar(255) NOT NULL,
+	`staffGrade` varchar(10) NOT NULL,
+	`staffCode` varchar(20) NOT NULL,
+	PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+DROP TABLE IF EXISTS `staff`;
+CREATE TABLE `staff` (
+	`id` serial NOT NULL AUTO_INCREMENT,
+	`staffName` varchar(255) NOT NULL,
+	`staffGrade` varchar(10) NOT NULL,
+	`staffCode` varchar(20) NOT NULL,
+	PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+show create table staff;
+/* Please create a very short query which uses SQL features in a complex way. Be sure to use ENGINE

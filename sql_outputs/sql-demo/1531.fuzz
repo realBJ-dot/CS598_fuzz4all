@@ -1,0 +1,55 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE users;
+SET @query = CONCAT('CREATE TABLE IF NOT EXISTS `',table, '` (', col1,'VARCHAR(255)',', ', col2,'INT',') ENGINE=INNODB');
+PREPARE stmt  FROM @query;
+EXECUTE stmt;
+DEALLOCATE PREPARE stmt;
+DROP TABLE USERS;
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS posts;
+DROP TABLE IF EXISTS users_post;
+DROP TABLE IF EXISTS users_post_tags;
+DROP TABLE IF EXISTS users_tags;
+DROP TABLE IF EXISTS tags;
+DROP TABLE IF EXISTS users_post_comments;
+DROP TABLE IF EXISTS users_posts;
+DROP TABLE IF EXISTS posts_comments;
+DROP TABLE IF EXISTS users;
+
+CREATE DATABASE IF NOT EXISTS sampleDB;
+Use SampleDB;
+DROP TABLE IF EXISTS users_tags;
+DROP TABLE IF EXISTS users_posts;
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS users_post_comments;
+DROP TABLE IF EXISTS users_post_tags;
+DROP TABLE IF EXISTS posts_comments;
+DROP TABLE IF EXISTS posts;
+DROP TABLE IF EXISTS users_post;
+DROP TABLE IF EXISTS tags;
+DROP TABLE IF EXISTS users_tags;
+DROP TABLE IF EXISTS users;
+SELECT * FROM users_post_comments;
+ALTER TABLE users_post_comments ADD score SMALLINT(5) DEFAULT 0 FOR score_count;
+ALTER TABLE users_post_comments ADD total_comments INT(11) DEFAULT 0 FOR comments_count;
+ALTER TABLE users_post_comments ADD comment_content text;
+ALTER TABLE users_post_comments ADD comment_user text;
+ALTER TABLE users_post_comments ADD date date;
+
+CREATE TABLE `users_tags` (
+  userid INT(11) NOT NULL,
+  tagid INT(11) NOT NULL,
+  PRIMARY KEY(userid, tagid),
+  INDEX user(`userid`),
+  CONSTRAINT `user`
+    FOREIGN KEY (userid)
+    REFERENCES users (id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE);
+
+CREATE TABLE `users_posts` (
+  userid INT(11) NOT NULL,
+  postid INT(11) NOT NULL,
+  PRIMARY KEY(userid, post

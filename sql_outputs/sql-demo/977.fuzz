@@ -1,0 +1,8 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+TRUNCATE employees, salaries;
+ALTER TABLE employees ADD salary float DEFAULT 10000.00, ADD deptid int DEFAULT 10,  ADD dept char(5) DEFAULT 'IT';
+ALTER TABLE salaries ADD empname char(100);
+SELECT * FROM employees;
+SELECT * FROM salaries;
+DROP TABLE employees, salaries;
+DROP DATABASE;

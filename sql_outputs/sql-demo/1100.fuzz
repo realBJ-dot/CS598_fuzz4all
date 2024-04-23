@@ -1,0 +1,8 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+insert into table1 (id, first_name, last_name) values(1, 'Andrew', 'Chuck');
+insert into table1 (id, first_name, last_name) values(2, 'Ryan', 'Stevenson');
+insert into table1 (id, first_name, last_name) values(3, 'David', 'Wilkin');
+INSERT INTO user1 (user_name, first_name, last_name, email_id) VALUES ('Admin', 'Administrator', 'User', '<EMAIL>');
+-- Please write a query to check if the Admin user exists in the database and display the user information.
+-- Please modify the query as per question. Use JOIN to access two tables together and do SQL features and JOIN. Do not use ORDER BY statement on two tables that have the same columns.
+SELECT * FROM user1 WHERE `user_name`='Admin';

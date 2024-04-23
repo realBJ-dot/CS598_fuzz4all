@@ -1,0 +1,32 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS test1;
+CREATE TABLE test1 (id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, userid INT,
+name VARCHAR(50), age INT);
+DROP TABLE IF EXISTS test2;
+CREATE TABLE test2 (id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, userid INT,
+name VARCHAR(50), age INT);
+-- END of the statement
+-- Create a new table and add a column in table
+-- Create a new table and add a column in table
+-- Create a new table and add a column in table
+-- Create a new table and add a column in table
+-- Create a new table and add a column in table
+-- Create a new table and add a column in table
+DROP TABLE IF EXISTS test1;
+DELETE FROM test1;
+CREATE TABLE test1 (id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, userid INT,
+name VARCHAR(50), age INT);
+DROP TABLE IF EXISTS test2;
+DELETE FROM test2;
+CREATE TABLE test2 (id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, userid INT,
+name VARCHAR(50), age INT);
+-- Please specify table name and specify the column definition
+-- Create a new table and add a column in table
+-- Create a new table and add a column in table
+-- Add a constraint
+-- Drop a constraint
+INSERT INTO test1 (age) VALUES(42);
+SELECT age FROM sampleDB.test1;
+INSERT INTO test2 (age) VALUES(42);
+SELECT age FROM sampleDB.test2;
+-- Please create a very short query which uses SQL features in a complex way. Be sure to use ENGINE=InnoDB. You should only use sampleDB as the database and assume no other table exist. You need to create new tables to perform operations. In the end, drop all tables you created.

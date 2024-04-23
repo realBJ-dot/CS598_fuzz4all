@@ -1,0 +1,13 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- Create a new table in the previous generation
+DROP TABLE IF EXISTS employee;
+CREATE TABLE employee (id INT PRIMARY KEY, name CHAR(5), salary LONG);
+    INSERT INTO employee VALUES(1,'Morgan','100');
+    INSERT INTO employee VALUES(2,'Rohan','298');
+    INSERT INTO employee VALUES(3,'Jason','800');
+    INSERT INTO employee VALUES(4,'William','189');
+SELECT * FROM employee WHERE name='Morgan';
+SELECT name, salary
+FROM sampleDB.employee
+WHERE name IS NOT NULL;
+DROP DATABASE IF EXISTS sampleDB;

@@ -1,0 +1,52 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employees;
+DROP TABLE IF EXISTS salaries;
+DROP TABLE IF EXISTS dept_manager;
+DROP TABLE IF EXISTS dept_emp;
+DROP TABLE IF EXISTS dept;
+DROP TABLE IF EXISTS staff;
+DROP TABLE IF EXISTS salaries;
+DROP TABLE IF EXISTS employees;
+DROP TABLE IF EXISTS salaries;
+ 
+
+CREATE TABLE dept(
+d no(10)
+, dName varchar(10)
+);
+INSERT INTO dept values (1, 'Marketing');
+INSERT INTO dept values (2, 'Data Analytics');
+INSERT INTO dept values (1, 'HR');
+INSERT INTO dept values (4, 'IT');
+
+CREATE TABLE staff(
+ staffno(10)
+, fname varchar(20)
+, lname varchar(20)
+, gender char
+, salary double
+);
+INSERT INTO staff values (1, 'John', 'Doe', 'M', 750000);
+INSERT INTO staff values (2, 'Andrea', 'Milanini', 'M', 900000);
+INSERT INTO staff values (3, 'Rina', 'S', 'M', 1200000);
+INSERT INTO staff values (4, 'Josephine', 'H', 'F', 800000);
+INSERT INTO staff values (5, 'Patrick', 'L', 'F', 1050000);
+
+CREATE TABLE employees(
+ empno(10)
+, ename varchar(20)
+, job varchar(20)
+, mgr no(10)
+, hiredate date
+, sal double
+, comm double
+);
+INSERT INTO employees values (1223,
+ 'Kevin ', 'HR officer', 2, '1997/01/01',
+  800000.00, 2386000.00);
+INSERT INTO employees values (1224,
+ 'John', 'Programmer', 3, '1994/01/01',
+  1200000.00, 3668000.00);
+INSERT INTO employees values (1225,
+ 'Cindy', 'Programmer', 1, '1995/01/01',
+  100

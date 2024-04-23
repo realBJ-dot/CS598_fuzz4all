@@ -1,0 +1,17 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employees;
+CREATE TABLE employees (
+	id int(11) NOT NULL AUTO_INCREMENT,
+	name varchar(50) NOT NULL,
+	PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+DROP TABLE IF EXISTS employees;
+-- Please create a mutated program that displays the name of all employees.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employees;
+CREATE TABLE employees (
+	id int(11) NOT NULL AUTO_INCREMENT,
+	name varchar(50) NOT NULL,
+	PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+DROP TABLE IF EXISTS employees;

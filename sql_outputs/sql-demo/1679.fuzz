@@ -1,0 +1,34 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS emp;
+CREATE TABLE emp (
+	id INT (11) NOT NULL AUTO_INCREMENT,
+	name VARCHAR (45) NULL,
+	grade VARCHAR (45) NULL,
+	PRIMARY KEY (id)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+INSERT INTO emp VALUES(1, 'John', 'B');
+INSERT INTO emp VALUES(2, 'Paul', 'AA');
+-- you can now query the tables and print (using "SELECT * FROM...") or execute mutated queries like
+SELECT * FROM employees;
+SELECT EmpID FROM employees WHERE empgrade = 'B';
+SELECT Salary FROM employees WHERE empgrade = 'AA' LIMIT 1;
+-- Please create a program that modifies multiple tables at once using MySQL's multi-table engine.
+USE sampleDB;
+DROP TABLE IF EXISTS employees;
+CREATE TABLE empl (
+	empID INT NOT NULL,	
+	empName VARCHAR(100) NOT NULL,
+	empGrade VARCHAR(10) NOT NULL,
+	salary decimal(7, 2) NOT NULL,
+	PRIMARY KEY (empID)
+) ENGINE = InnoDB DEFAULT CHARSET=utf8;
+/* Create the three following new tables - use emp to store employee IDs, employee names and salaries */
+CREATE TABLE employees (
+	empID int NOT NULL AUTO_INCREMENT,
+	empName varchar(100) NOT NULL,
+	empGrade varchar(10) NOT NULL DEFAULT '',
+	salary decimal(7, 2) NOT NULL,
+	PRIMARY KEY (empID) 
+) ENGINE = InnoDB DEFAULT CHARSET=utf8;
+/* Create the following new table - use emps to hold employee IDs, 
+employee names and salaries and emps_to

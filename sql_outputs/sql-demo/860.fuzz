@@ -1,0 +1,21 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS person;
+CREATE TABLE person (id INT PRIMARY KEY, name VARCHAR(200));
+INSERT INTO person (id, name) VALUES(3, '<NAME>');
+INSERT INTO person (id, name) VALUES(4, '<NAME>');
+DROP TABLE IF EXISTS person;
+DROP DATABASE IF EXISTS sampleDB;
+
+-- If you run some SQL like the following:
+SELECT * FROM person;
+-- In MySQL, you must put your query inside a single quote, this way the result will not be interpreted as a query.
+SELECT * FROM 'person';
+-- If you don't have to create the required tables, you could use a subquery
+SELECT * FROM (SELECT * FROM person) d;
+-- However this generates a JOIN query, which is not performance very good.
+
+-- We have just done a brief review of Databases and their use at different stages of the development lifecycle. In the next tutorial, we will take a hands-on look at database query optimization which is the process to reduce the overall query response time.
+-- MySQL is still the most popular database server in the world, with 6.2 billion customers and a new version is out in the pipeline this coming week.
+-- In the following lesson, we will take a look at how to reduce the overall query responsiveness on a production level MySQL database.
+-- If you have never used SQLite or any other DBMS, there are a lot of tutorials available out there that will guide you how to design your application using SQL queries and MySQL. In the end, the key points to remember while programming with the help of the examples I have shown here is to be conscious of the amount of data and what you should optimize for. If you ever try to figure the root cause of a production database out of a small example like I did here, then it will become quite difficult or even impossible to trace what could be the problem. You are to be careful in order to make sure that you optimize your DB schema.
+-- Thank you very much for your time, in this tutorial, I have just briefly described how to implement a very simple schema where users could easily modify one or more of their names. The query below will add more data to the person table which allows the users to modify their name at a later point in time.

@@ -1,0 +1,35 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS Department;
+CREATE TABLE Department (dname char(30));
+INSERT INTO Department VALUES ('CS');
+INSERT INTO Department VALUES ('DB');
+INSERT INTO Department VALUES ('ME');
+INSERT INTO Department VALUES ('MGT');
+INSERT INTO Department VALUES ('HR');
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB;
+USE sampleDB;
+
+ 
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB; SELECT * INTO SqL_Result FROM Sample_Table;
+ 
+CREATE TABLE IF NOT EXISTS DEPT(
+    dname char(20)
+);
+SELECT * FROM DEPT;
+CREATE TABLE IF NOT EXISTS EMP(
+    eid     int(11),
+    ename    text,
+    empsal  int(11)
+);
+INSERT INTO EMP VALUES (12, 'Peter', 100);
+
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE Sample_DB;
+DROP TABLE IF EXISTS EMP;
+CREATE TABLE EMP(
+    eid     int(11),
+    ename    text,
+    empsal  int(11)
+)ENGINE=InnoDB;

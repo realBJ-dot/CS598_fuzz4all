@@ -1,0 +1,16 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DELETE FROM employees_salary_by_salary WHERE employee_salary = "2012-06-04";
+COMMIT;
+DROP DATABASE IF EXISTS sampleDB;
+SELECT CONCAT(employee_name, ", ", employee_salary);
+-- What will happen when you run this query? Use SELECT * from sampleDB.employees_salary_by_salary; you will see no such field named employee_salary.
+-- You need to drop the old table before creating a new one
+-- CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- Drop table employees_salary_by_salary;
+-- Create a new table employees_salary_by_salary to store the salary of employees in India, Europe, Asia.
+-- INSERT INTO employees_salary_by_salary(employee_salary, emp_salary) VALUES ('Indian Salary', 50000), ('European Salary', -25000), ('Asia Salary', 100000), ('European Salary', 45000);
+-- SELECT employee_salary + 5000 FROM employees_salary_by_salary;
+-- Try to read the data using the above query.
+-- Use EXPLAIN <query> TO console, select the part of the explain plan that runs the SELECT statement
+-- You'll see several columns but it will be truncated... You'll need to truncate the table.
+DROP DATABASE IF EXISTS sampleDB;

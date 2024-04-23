@@ -1,0 +1,20 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employees;
+DROP TABLE IF EXISTS salaries;
+DROP TABLE IF EXISTS dept_manager;
+DROP TABLE IF EXISTS dept_emp;
+DROP TABLE IF EXISTS dept;
+DROP TABLE IF EXISTS staff;
+DROP TABLE IF EXISTS salaries;
+DROP TABLE IF EXISTS employees;
+DROP TABLE IF EXISTS salaries;
+CREATE TABLE staff LIKE employees;
+INSERT INTO employees(ename, empid, deptid)
+SELECT employee, employee, id_dept from employees;
+UPDATE employees
+SET sal = sal + 50
+FROM salaries
+WHERE empid IN(16,18,40);
+DELETE FROM employees
+WHERE empid IN(10,9,8);
+

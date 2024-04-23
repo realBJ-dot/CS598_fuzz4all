@@ -1,0 +1,9 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employee;
+CREATE TABLE employee(name varchar(10),salary decimal(4,2));
+INSERT INTO employee (name,salary) VALUES ('<NAME>',5000);
+INSERT INTO employee (name,salary) VALUES ('<NAME>',5500);
+INSERT INTO employee (name,salary) VALUES ('<NAME>',6000);
+INSERT INTO employee (name,salary) VALUES ('<NAME>',1500);
+
+DROP DATABASE IF EXISTS sampleDB;

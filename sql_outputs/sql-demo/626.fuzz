@@ -1,0 +1,14 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+ 
+
+CREATE TABLE IF NOT EXISTS MutatedSample (
+  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(255)
+);
+
+ 
+INSERT INTO MutatedSample (name) VALUES ('<NAME>');
+INSERT INTO MutatedSample (name) VALUES ('<NAME>');
+INSERT INTO MutatedSample (name) VALUES ('<NAME>');
+SELECT * FROM MutatedSample;

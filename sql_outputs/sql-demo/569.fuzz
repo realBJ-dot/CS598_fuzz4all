@@ -1,0 +1,29 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS Mutated (id INT AUTO_INCREMENT CONSTRAINT ID UNIQUE PRIMARY KEY, price DECIMAL(10,2) UNIQUE);
+UPDATE Mutated SET price = 80 WHERE id = 2;
+SELECT price FROM Mutated;
+UPDATE Mutated SET price = 10 WHERE id = 2;
+SELECT price FROM Mutated;
+DROP TABLE Mutated;
+DROP DATABASE sampleDB;
+
+\# How can these be combined to one?
+CREATE TABLE IF NOT EXISTS Mutated (id INT AUTO_INCREMENT CONSTRAINT ID UNIQUE PRIMARY KEY, price DECIMAL(10,2) UNIQUE, brand_name VARCHAR(32));
+UPDATE Mutated SET price = 80 WHERE id = 2;
+UPDATE Mutated SET brand_name = 'Ford' WHERE id = 2;
+SELECT price, brand_name FROM Mutated;
+UPDATE Mutated SET price = 10 WHERE id = 2;
+SELECT price, brand_name FROM Mutated;
+DROP TABLE Mutated;
+DROP DATABASE sampleDB;
+
+\# What is this syntax for?
+CREATE TABLE IF NOT EXISTS Mutated (id INT AUTO_INCREMENT CONSTRAINT ID UNIQUE PRIMARY KEY, price DECIMAL(10,2) UNIQUE, brand_name VARCHAR(32));
+UPDATE Mutated SET price = 80 WHERE id = 2;
+UPDATE Mutated SET brand_name = 'Ford' WHERE id_ = 2;
+SELECT price, brand_name FROM Mutated;
+UPDATE Mutated SET price = 10 WHERE id = 2;
+SELECT price, brand_name FROM Mutated;
+DROP TABLE Mutated;
+DROP DATABASE sampleDB;
+-- Thanks to <NAME> for the detailed examples.

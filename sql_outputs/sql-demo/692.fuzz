@@ -1,0 +1,23 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+DROP TABLE IF EXISTS Student;
+CREATE TABLE Student (First_Name VARCHAR(20), Last_Name CHAR(20), Grade INT);
+INSERT INTO Student (Student_ID, First_Name, Last_Name, Grade) VALUES(1, 'John', 'Smith', 8);
+INSERT INTO Student (Student_ID, First_Name, Last_Name, Grade) VALUES(2, 'Jane', 'Lee', 9);
+INSERT INTO Student (Student_ID, First_Name, Last_Name, Grade) VALUES(3, 'Tom', 'Stark', 5);
+SELECT First_Name, Last_Name FROM Student;
+
+-- Please create a program which queries three tables using a semantical equivalent query. Be sure to use ENGINE=InnoDB.
+-- This program should use three different queries:
+--   SELECT First_Name, Last_Name FROM Student ORDER BY Last_Name; -- SELECT and then ORDER by Last_Name. You should sort the rows by the Last_Name column. Note: You don't have to return two columns (as you're already doing in the first case).
+--   SELECT Student_ID, First_Name FROM Student WHERE Grade = 4; -- SELECT and then WHERE Statement. Use WHERE Grade = 4; to retrieve a row where Grade = 4.
+--   SELECT Student_ID, First_Name FROM Student WHERE Grade <> 9; -- SELECT and then WHERE Statement. Use WHERE Grade <> 9; to retrieve a row where Grade <> 9.
+
+-- You may test the program with the following queries but be warned that the same query may generate different results:
+SELECT First_Name, Last_Name FROM Student ORDER BY Last_Name;
+SELECT Student_ID, First_Name FROM Student WHERE Grade = 9;
+SELECT Student_ID, First_Name FROM Student WHERE Grade <> 4;
+-- The result returned by these three queries should not include duplicate rows. You can filter the rows to make sure that it is a complete result set - that is, should have no rows that have the same first name as another row.
+
+SELECT Student_ID, First_Name, Grade FROM Student WHERE Grade = 8;
+SELECT Student_ID, First_Name FROM

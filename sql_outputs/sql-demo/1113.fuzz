@@ -1,0 +1,12 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE table1 ( a int, b int, c int);
+-- INSERT some data into the table1
+INSERT INTO table1 values (1,1,1), (2,3,5), (3,5,10)
+-- SELECT the data stored in the table1
+SELECT * FROM table1;
+-- CHANGE all data in the table1, and update all the rows in the
+-- table1 table to that which becomes new data
+UPDATE table1 SET b=b-1;
+UPDATE table1 SET c=c+5;
+-- SELECT the data stored in the table1
+SELECT * FROM table1;

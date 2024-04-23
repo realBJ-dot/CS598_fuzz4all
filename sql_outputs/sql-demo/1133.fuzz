@@ -1,0 +1,12 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF Not Exists projects(project_id TEXT NOT NULL, year_name TEXT NOT NULL, project_type TEXT NOT NULL, project_location TEXT NOT NULL, created_at TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP, PRIMARY KEY(project_id)    
+);
+select * from projects;
+select * from users;
+select * from roles;
+select * from projects;
+ 
+create user 'test'@'%' identified by 'test';
+grant all privileges on sampleDB.sampleDB to 'test'@'%';
+flush privileges;
+*

@@ -1,0 +1,21 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employees_salary_by_salary;
+CREATE TABLE employees_salary_by_salary (
+    employee_salary	INT UNSIGNED,
+    emp_salary		INT UNSIGNED,
+ 	PRIMARY KEY (employee_salary, emp_salary)
+);
+UPDATE employees_salary_by_salary SET emp_salary = emp_salary + 5000, employee_salary = employee_salary + 15000;
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employees_salary_by_salary;
+CREATE TABLE employees_salary_by_salary (
+    employee_salary	INT UNSIGNED,
+    emp_salary		INT UNSIGNED,
+ 	PRIMARY KEY (employee_salary, emp_salary)
+);
+UPDATE employees_salary_by_salary SET emp_salary = emp_salary + 6000, employee_salary = employee_salary + 15000 LIMIT 3;
+-- Execute all these SQL statements using MySQL Workbench and confirm the results.
+SHOW VARIABLES LIKE "sql_mode";
+SELECT VARIABLE_NAME, VARIABLE_VALUE FROM INFORMATION_SCHEMA.VARIABLES;
+*/

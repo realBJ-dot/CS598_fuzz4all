@@ -1,0 +1,20 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT Exists users_v1(user_id INT NOT NULL AUTO_INCREMENT, first_name TEXT NOT NULL, last_name TEXT NOT NULL, created_at TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP, PRIMARY KEY(user_id)
+);
+-- Please create a semantically equivalent program to the second generation
+CREATE DATABASE IF NOT Exists sampleDB; USE sampleDB;
+CREATE TABLE IF NOT Exists users_v2(user_id INT NOT NULL AUTO_INCREMENT, first_name TEXT NOT NULL, last_name TEXT NOT NULL, email TEXT NOT NULL, created_at TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP, PRIMARY KEY(user_id)
+);
+-- Please create a semantically equivalent program to the third generation
+CREATE DATABASE IF NOT Exists sampleDB; USE sampleDB;
+CREATE TABLE IF NOT Exists users_v3(user_id INT NOT NULL AUTO_INCREMENT, first_name TEXT NOT NULL, last_name TEXT NOT NULL, user_name TEXT NOT NULL, password TEXT NOT NULL, created_at TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP, PRIMARY KEY(user_id)
+);
+-- Please create a semantically equivalent program to the fourth generation
+CREATE DATABASE IF NOT Exists sampleDB; USE sampleDB;
+CREATE TABLE IF NOT Exists users_v4(user_id INT NOT NULL AUTO_INCREMENT, first_name TEXT NOT NULL, last_name TEXT NOT NULL, user_name TEXT NOT NULL, password TEXT NOT NULL, user_rank TEXT NOT NULL, created_at TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP, PRIMARY KEY(user_id)
+);
+-- Please create a semantically equivalent program to the fifth generation
+CREATE DATABASE IF NOT Exists sampleDB; USE sampleDB;
+CREATE TABLE IF NOT Exists users_v5(user_id INT NOT NULL AUTO_INCREMENT, first_name TEXT NOT NULL, last_name TEXT NOT NULL, user_name TEXT NOT NULL, password TEXT NOT NULL, user_rank TEXT NOT NULL, user_title TEXT NOT NULL, created_at TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP, PRIMARY KEY(user_id)
+);
+DROP DATABASE IF EXISTS sampleDB;

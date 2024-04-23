@@ -1,0 +1,29 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE users(
+	userId INT NOT NULL PRIMARY KEY,
+	name VARCHAR(10) DEFAULT 'root',
+	PASSWORD_HASH  VARCHAR(720) DEFAULT NULL,
+	ROLE INT DEFAULT 2
+);
+SELECT * FROM users;
+SELECT ROUND((SELECT COUNT(*) FROM users),0);
+SELECT ROUND(((SELECT COUNT(*) FROM users)*100)),2);
+SELECT ROUND(SUM(roleId), 0);
+DELETE FROM users WHERE roleId < 2;
+DELETE FROM users WHERE roleId IS NULL; -- or ROUND((SELECT COUNT(*) FROM users)*100), 2)
+SELECT ROUND((SELECT SUM(roleId) FROM users), 0.1); -- or ROUND((SELECT COUNT(*) FROM users)*100)/10000
+DELIMITER ';';
+GRANT SELECT ON users, permissions TO web_user; -- add it explicitly, will use the same username/password as on this host
+FLUSH PRIVILEGES;
+DELIMITER ; -- remove semicolon from the end to end the user function to end its execution
+GRANT SELECT, SHOW DATABASES ON sampleDB TO web_user;
+SELECT * FROM users;
+PREPARE stmt FROM 'SHOW DATABASES';
+EXECUTE stmt;
+DELIMITER ; -- remove semicolon from end to end
+DROP DATABASE sampleDB;
+FLUSH privileges;
+FLUSH PRIVILEGES;
+DELIMITER ; -- remove semicolon from end to end the user function to end its execution
+COMMIT;
+DROP USER web_user;

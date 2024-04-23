@@ -1,0 +1,23 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS Mutated;
+CREATE TABLE Mutated (id INT AUTO_INCREMENT PRIMARY KEY, price DECIMAL(10,2) UNIQUE);
+UPDATE Mutated SET price = 80 WHERE price = 80; -- This condition should be false
+UPDATE Mutated SET price = price - 2 WHERE price = price - 2; -- This condition should be true
+UPDATE Mutated SET price = price - 2 WHERE price = 90 AND price = 30; -- This condition should be true
+UPDATE Mutated SET price = price - 2 WHERE price = 48 AND price = 48 AND price = 48;
+DROP TABLE Mutated;
+DROP DATABASE sampleDB;
+-- Please create a program with the same code as the one for your task so that the execution can be verified.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS Mutated;
+CREATE TABLE Mutated (id INT AUTO_INCREMENT PRIMARY KEY, price DECIMAL(10,2) UNIQUE);
+SELECT price FROM Mutated WHERE price = 80;
+UPDATE Mutated SET price = 80 WHERE price = 80;
+UPDATE Mutated SET price = price - 2 WHERE price = price - 2;
+UPDATE Mutated SET price = price - 2 WHERE price = 90 AND price = 30;
+UPDATE Mutated SET price = price - 2 WHERE price = 48 AND price = 48 AND price = 48;
+SELECT price FROM Mutated WHERE price = 90;
+DROP TABLE Mutated;
+DROP DATABASE sampleDB;
+
+*/

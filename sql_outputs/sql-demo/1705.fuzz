@@ -1,0 +1,30 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE employee (
+        emp_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+        emp_name VARCHAR(255),
+        emp_salary REAL,
+        emp_addr VARCHAR(255),
+        emp_city   VARCHAR(255)
+    );
+
+insert into employee (emp_id, emp_name, emp_salary, emp_addr, emp_city) values (1000, '<NAME>', 50000.00, "Bangalore", "kollam");
+insert into employee (emp_id, emp_name, emp_salary, emp_addr, emp_city) values (1001, '<NAME>', 40000.00,"Bangalore", "Jaipur");
+commit;
+-- Your mutated code here to check if your schema and structure is correct
+show tables;
+-- Your mutated code here to perform your query
+SELECT emp_name, emp_salary, emp_addr, emp_city
+FROM employee;
+-- your mutated code here to check if your results are correct
+SELECT emp_name, emp_salary, emp_addr, emp_city
+FROM employee WHERE emp_salary>50000.00;
+-- your mutated code here to check if your results are correct
+SELECT emp_name
+FROM employee WHERE emp_name="<NAME>";
+-- Your mutated code here to count and list all the employees whose salary is greater than 40000.00
+
+SELECT COUNT(*) AS total, emp_name
+FROM employee
+where emp_salery>40000.00;
+show tables;
+-- Your mutated code here

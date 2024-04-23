@@ -1,0 +1,58 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employees;
+CREATE TABLE employees
+(
+    employee_id INT UNSIGNED AUTO_INCREMENT,
+    employee_name VARCHAR(40),
+    employee_last_name varchar(50),
+    employee_street text DEFAULT NULL,
+    employee_zip text DEFAULT NULL,
+    employee_city text DEFAULT NULL,
+    employee_email text DEFAULT NULL,
+    employee_birth_date date DEFAULT NULL,
+    employee_salary double DEFAULT NULL,
+    employee_salary_currency varchar(2) DEFAULT NULL,
+    employee_active boolean DEFAULT true,
+    employee_password_hash text,
+    employee_is_admin boolean DEFAULT false,
+    employee_status_id INT UNSIGNED,  
+    employee_status varchar(100),  
+
+    employee_positions JSON DEFAULT NULL,
+
+    employee_role_id INT UNSIGNED,
+    employee_salary_id INT UNSIGNED,
+    employee_paygrade_id INT UNSIGNED,
+
+    employee_birth_photo blob,
+    employee_profile_photo blob,
+    employee_photo blob,
+
+    employee_gender_preference varchar(10) DEFAULT NULL
+);
+-- Default admin role
+INSERT INTO role (id, name)
+VALUES (1, 'Administrator');
+
+-- Default role for employees
+INSERT INTO role (id, name)
+VALUES (2, 'Employer');
+INSERT INTO role (id, name)
+VALUES (3, 'User');
+INSERT INTO role (id, name)
+VALUES (4, 'Employee');
+
+-- Default salary
+INSERT INTO salary (id, type, salary, currency, employee_status_id, employee_salary_id, employee_paygrade_id)
+VALUES(1, 'Hourly', 50.0, 'USD', 1, 1, 1);
+
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employee_positions;
+CREATE TABLE employee_positions
+(
+    employee_id INT UNSIGNED,
+    employee_position_id INT UNSIGNED,
+    PRIMARY KEY(employee_id, employee_position_id),
+    FOREIGN KEY(employee_id) REFERENCES employees(employee_id),
+    FOREIGN KEY(employee_position_

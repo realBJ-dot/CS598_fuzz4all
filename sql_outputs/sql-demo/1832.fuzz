@@ -1,0 +1,29 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- Use MySQL to query the population of the United States based on the name of each state
+-- and create a new table called USpop in this database.
+SELECT state, stateName FROM stateName;
+CREATE TABLE USpop (year DECIMAL(4,0), pop INT);
+-- You will need to query the population data, but then you will be able to use the
+-- INSERT statements in order to create your new table.
+-- A few months ago, New York and California had almost 80 million people, while
+-- Los Angeles had almost 1 million!
+INSERT INTO USpop (year, pop) VALUES (1980, 8999);
+INSERT INTO USpop (year,pop) VALUES (2010, 129);
+-- Add one more record
+INSERT INTO USpop (year, pop) VALUES (2090, 47000);
+SELECT * FROM USpop;
+ 
+-- Open two new sessions on the same database. Create two rows with name 'Louis'
+-- and 'Angela'. Try the following. If you execute the following line, you will see the
+-- insert statement succeed.
+INSERT INTO USpop (year, pop) VALUES (2010, 210); INSERT INTO USpop (year, pop) VALUES (2090, 137);
+-- You will see that the same statement succeeded for both 'Kenton' name and
+-- second name.
+
+ 
+SELECT * FROM USpop;
+-- Try to query both year=1980 and year=2010 for 'Louis' in USpop
+SELECT year, pop FROM USpop WHERE name='Louis';
+SELECT year, pop FROM USpop WHERE year = 1980;
+SELECT year, pop FROM USpop WHERE year = 2010;
+ 

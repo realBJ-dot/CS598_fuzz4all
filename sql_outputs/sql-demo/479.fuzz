@@ -1,0 +1,9 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS mytable;
+CREATE TABLE mytable ( id INT, name TEXT, price INT, PRIMARY KEY (id));
+INSERT INTO mytable VALUES (NULL,'Carmen',12.34);
+INSERT INTO mytable VALUES (NULL,'Jimmy',3.3);
+INSERT INTO mytable VALUES (NULL,'Bart',2.13);
+SELECT id,name,price FROM mytable;
+DROP TABLE mytable;
+DROP DATABASE sampleDB;

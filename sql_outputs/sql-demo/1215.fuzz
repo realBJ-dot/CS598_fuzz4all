@@ -1,0 +1,44 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS users (
+    id            int auto_increment,
+    name          varchar(20) not null,
+    balance       decimal(11, 2) not null,
+    PRIMARY KEY (id)
+);
+INSERT INTO users (id, name, balance)
+VALUES (1, '<NAME>', 5478.31),
+        (2, '<NAME>', 5540.00),
+        (3, '<NAME>', 7578.13),
+        (4, '<NAME>', 9340.60),
+        (5, '<NAME>', 8939.44),
+        (6, '<NAME>', 5870.44),
+        (7, '<NAME>', 7310.13),
+        (8, '<NAME>', 4138.86),
+        (9, '<NAME>', 6290.98);
+SELECT name, balance
+FROM users
+    INNER JOIN
+    (
+        SELECT
+          name
+        FROM users
+        INNER JOIN
+        users
+        ON users.id = users2.id
+    ) AS users2
+ON users.id = users2.id;
+select users.name, users2.name
+from users AS users2
+where users.id = users2.id;
+select users.id, users.name, COUNT(users2.id) as count
+from users
+WHERE users.id = users2.id
+GROUP BY users.id, users.name
+HAVING (count = 1), sum(users.balance)!= 8302.82;
+-- Please update the select statement to match with the select statement in sample 6, this time using a subquery:
+SELECT
+  name, balance
+FROM users
+WHERE id >=1;
+SELECT
+  name, balance

@@ -1,0 +1,27 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `students`;
+CREATE TABLE `students` (
+	`idNo` int(20) NOT NULL AUTO_INCREMENT,
+	`name` text NOT NULL,
+	`dept` text NOT NULL,
+	`semestre` text NOT NULL,
+	PRIMARY KEY (`idNo`)
+);
+INSERT INTO `students` (`idNo`, `name`, `dept`, `semestre`) VALUES (1, '<NAME>', 'MATH2', '2');
+INSERT INTO `students` (`idNo`, `name`, `dept`, `semestre`) VALUES (2, '<NAME>', 'COMP102', '4');
+
+
+
+ 
+DROP TABLE IF EXISTS `t`;
+CREATE TABLE `t` (
+   `i` int(20) NOT NULL AUTO_INCREMENT,
+   `k` int(20) NOT NULL,
+   `t1` varchar(10) NOT NULL,
+   `t2` int(10),
+   `t3` varchar(20),
+   PRIMARY KEY (`i`),
+   UNIQUE KEY `k1` (`k`,`t1`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+INSERT INTO `t` (`i`,`k`,`t1`,`t2`,`t3`) VALUES(601,1,'asd',1,'1');
+INSERT INTO `t` (`i`,`k`,`t1`,`t2`,`t3`) VALUES(801,2,'asd',2,'2');

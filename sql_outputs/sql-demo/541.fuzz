@@ -1,0 +1,7 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS Mutated (pk INT AUTO_INCREMENT PRIMARY KEY, name char(50) UNIQUE);
+SELECT pk, name FROM Mutated;
+UPDATE Mutated SET name = "test" WHERE pk = 3;
+SELECT * FROM Mutated;
+DROP TABLE Mutated;
+DROP DATABASE sampleDB;

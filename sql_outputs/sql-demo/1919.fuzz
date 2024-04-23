@@ -1,0 +1,27 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employees_salary;
+CREATE TABLE employees_salary (
+    employee_salary        INT UNSIGNED,
+    PRIMARY KEY (employee_salary));
+UPDATE employees_salary SET employee_salary = 5000 WHERE employee_salary = 2500;
+INSERT INTO employees_salary (employee_salary) VALUES (2000) ON DUPLICATE KEY UPDATE employee_salary = employees_salary.employee_salary + 5000;
+INSERT INTO employees_salary (employee_salary) VALUES (2000) ON DUPLICATE KEY UPDATE employee_salary = employees_salary.employee_salary + employees_salary.employee_salary;
+DROP TABLE employees_salary;
+CREATE TABLE employees_salary(
+    emp_salary INT UNSIGNED,
+    PRIMARY KEY (emp_salary));
+INSERT INTO employees_salary (emp_salary) VALUES (5000) ON DUPLICATE KEY UPDATE emp_salary = emp_salary + 5000;
+INSERT INTO employees_salary (emp_salary) VALUES (5000) ON DUPLICATE KEY UPDATE emp_salary = emp_salary + emp_salary; 
+DROP TABLE employees_salary;
+CREATE TABLE employees_salary(
+    emp_salary INT UNSIGNED,
+    PRIMARY KEY (emp_salary));
+UPDATE employees_salary SET emp_salary = 1000 WHERE emp_salary = 5000;
+SELECT emp_salary FROM employees_salary;
+DROP TABLE employees_salary;
+CREATE TABLE employees_salary(
+    emp_salary INT UNSIGNED,
+    PRIMARY KEY (emp_salary));
+INSERT INTO employees_salary (emp_salary) VALUES (0) ON DUPLICATE KEY UPDATE emp_salary = employees_salary.emp_salary + 5000;
+INSERT INTO employees_salary (emp_salary) VALUES (0) ON DUPLICATE KEY UPDATE emp_salary = employees_salary.emp_salary + employees_salary.emp_salary;
+/* Please create a very short query which uses SQL features in a complex way. Be sure to use ENGINE=InnoDB. You should only use sampleDB as the database and assume no other table exist. You need to create new tables to perform operations. In the end, drop all tables you created

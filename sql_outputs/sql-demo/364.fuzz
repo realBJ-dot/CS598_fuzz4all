@@ -1,0 +1,33 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ 
+SELECT Name
+FROM Users
+--
+-- You are given a selection of sample data for each of the following selects and operations.
+--
+SELECT NAME
+FROM Users
+WHERE NAME = 'John'
+ORDER BY NAME
+--
+-- You have just performed a simple select statement and are asked to perform a series of operations on a table in sampleDB. You now have to find a similar selection and perform a series of operations to achieve your goal.
+ 
+SELECT NAME
+FROM Users
+ORDER BY NAME DESC
+ 
+SELECT NAME
+FROM Users
+ORDER BY NAME
+ 
+SELECT Name
+FROM Users
+JOIN SampleData on Name = SampleData.NAME
+ORDER BY NAME
+--
+-- You have just performed a simple join operation in sampleDB and can do this operation on SampleData as well. In this case, perform that operation as well. This shows the application of JOIN's in SQL. Perform a logical join using the SampleData table and the Users table to find rows from Users such that their first names and last names match. In the result set, print the Names. */
+SELECT Users.Name, SampleData.NAME
+FROM Users
+INNER JOIN SampleData on SampleData.Name = Users.Name
+ORDER BY Users.Name
+--

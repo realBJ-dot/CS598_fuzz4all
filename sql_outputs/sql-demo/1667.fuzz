@@ -1,0 +1,35 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ALTER TABLE `staff` ENGINE = InnoDB;
+DELETE FROM `staff`.
+ 
+MYSQL Workbench
+Create/Open Database
+  InnoDB Database:
+  Host: 127.0.0.1
+  Port: 3306
+  User: root
+  Password: <PASSWORD>
+  Database: newDB
+*/
+
+mysql> use newDB;
+mysql> create table `staff` (
+	`id` serial NOT NULL AUTO_INCREMENT,
+	`staffName` varchar(255) NOT NULL,
+	`staffGrade` varchar(10) NOT NULL,
+	`staffCode` varchar(20) NOT NULL,
+	PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+mysql>
+mysql> select * from employee;
++------+----------+------------+
+| id  | staffName | staffGrade |
++------+----------+------------+
+|    1| Pulkit | 5 |
+|    2| Satish  | 5 |
+|    3| Jagannathan | 7 |
+|    4| Karthik | 6 |
+|    5| Ravindran | 5.7 |
+|    6| Sarveksha | 8 |
+|    7| Ravikrishnan | 11 |
+|    8| Ranjan | 7

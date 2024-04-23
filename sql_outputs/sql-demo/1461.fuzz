@@ -1,0 +1,5 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+alter table users_details add constraint users_details_pk PRIMARY KEY (user_id, phone);
+alter table customers add constraint customers_pk PRIMARY KEY (customer_id);
+commit;
+exit;

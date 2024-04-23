@@ -1,0 +1,11 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ALTER TABLE Mutated MODIFY price DOUBLE;
+ALTER TABLE Mutated ADD new_price DOUBLE AFTER price;
+SELECT new_price FROM Mutated;
+UPDATE Mutated SET new_price = new_price+1 WHERE id = 2;
+ALTER TABLE Mutated DROP COLUMN new_price;
+DROP DATABASE sampleDB;
+
+</pre>
+</body>
+</html>

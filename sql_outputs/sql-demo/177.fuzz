@@ -1,0 +1,6 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+INSERT INTO Users_2 (usernamename, FirstName) VALUES ('Joe', 'John');
+DROP TABLE Users_2
+
+create user 'test1';
+grant all privileges on sampleDB.* to 'test1'@'%' identified by 'test1';

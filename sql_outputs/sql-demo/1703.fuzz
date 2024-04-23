@@ -1,0 +1,64 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- your mutated code here
+DROP DATABASE IF EXISTS sampleDB;
+-- Now test your new application by importing a schema.
+-- Please create a very simple view with schema for viewing the table contents and data in the same table in another db.
+-- CREATE TABLE `person` (
+--     `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+--     `fullname` varchar(50) NOT NULL,
+--     `lastname` varchar(50) NOT NULL,
+--     `address` varchar(50) NOT NULL,
+--     `phone` varchar(20) NOT NULL,
+--     `email` varchar(50) NULL DEFAULT NULL,
+--     `salary` decimal(10,2) NOT NULL DEFAULT '0.00',
+--     `gender` tinyint(2) NULL DEFAULT '0',
+--     `datehired` date NOT NULL,
+--     `createdt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+--     `modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+--     PRIMARY KEY (`id`)
+-- );
+create view view_table_list AS
+SELECT 
+  tbl_name as 'Table Name',
+  t.Engine as 'Engine',
+  tbl_rows as 'Number of Rows',
+  ROUND(
+    ((SELECT COUNT(*)
+    FROM TABLE `sampleDB`.`person`)
+    /
+    (SELECT COUNT(*) 
+    FROM TABLE `sampleDB`.`person` ORDER BY datehired
+    DESC
+    LIMIT 1
+    ))) as 'Data Volume',
+    ROUND((
+    (SELECT SUM("salary")
+    FROM sampleDB.`person`
+    WHERE `datehired` >= CURDATE()))
+    /
+    (SELECT COUNT(*) FROM sampleDB.`person`)))
+   AS "Revenue"
+FROM
+    (SELECT tbl_name as 'Table Name', tbl_rows as 'Number of Rows'  FROM information_schema.views WHERE view_schema = 'public') as t
+
+/*
+CREATE GENERATOR p_persons 
+PARAMS ((end_date timestamp), (ndate int))
+STATEMENTS '
+
+WHILE (CURDATE() >= @paramNdate)  
+BEGIN
+SELECT
+    COUNT(*)
+FROM
+    person
+WHERE
+    DATE(DATEHired, @paramEnddate) < CURDATE()
+END';
+
+
+Create trigger on_persons_before before insert on person
+for each row insert into generator_output
+using p_persons (2020-12-21, 30
+/* 
+The trigger acts on insert, when the row is inserted, but not when the row is first inserted. If you use the trigger insert statement, make sure the table is not empty before setting the trigger as trigger is on a table. So, in the update statement

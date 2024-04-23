@@ -1,0 +1,40 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS Subject CASCADE;
+
+-- Create another example that adds 2 tables
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS Question CASCADE;
+DROP TABLE IF EXISTS Option CASCADE;
+
+CREATE TABLE Question (id VARCHAR(30) NOT NULL UNIQUE KEY, answer VARCHAR(50));
+CREATE UNIQUE INDEX question_unique_id ON Question (id);
+
+CREATE TABLE Option (id VARCHAR(30) NOT NULL UNIQUE KEY, questionId VARCHAR(30), answer VARCHAR(10));
+CREATE UNIQUE INDEX option_idx ON Option (id);
+
+ALTER TABLE Option ADD CONSTRAINT fk_option_question ON FOREIGN KEY (questionId) REFERENCES Question (id);
+
+INSERT INTO Question VALUES('q1', 'q1 answer');
+INSERT INTO Question VALUES('q2', 'a2q2');
+INSERT INTO Question VALUES('q2', 'a2q2');
+INSERT INTO Question VALUES('q2', 'a2q2');
+INSERT INTO Question VALUES('q3', 'q3 answer');
+INSERT INTO Option VALUES('o1', 'q1','a1');
+INSERT INTO Option VALUES('b1', 'q1','b1');
+INSERT INTO Option VALUES('b1', 'q1','d1');
+INSERT INTO Option VALUES('o1', 'q2','a1');
+INSERT INTO Option VALUES('o2', 'q2', 'a1');
+INSERT INTO Option VALUES('o2', 'q2', 'a2');
+INSERT INTO Option VALUES('o2', 'q2', 'a2');
+INSERT INTO Option VALUES('o2', 'q2', 'a1');
+INSERT INTO Option VALUES('o2', 'q2', 'a1');
+INSERT INTO Option VALUES('o2', 'q3', 'a1');
+INSERT INTO Option VALUES('o3', 'q3', 'a1');
+INSERT INTO Option VALUES('o3', 'q3', 'a2');
+INSERT INTO Option VALUES('o3', 'q3', 'a2');
+
+
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS Question CASCADE;
+DROP TABLE IF EXISTS Option CASCADE;
+DROP DATABASE sampleDB;

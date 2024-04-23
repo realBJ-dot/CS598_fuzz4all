@@ -1,0 +1,29 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ 
+DROP TABLE IF EXISTS `sampleTables`;
+CREATE TABLE `sampleTables` (
+	`ID` int(11) NOT NULL AUTO_INCREMENT,
+	`Name` text NOT NULL,
+	`Year` int(11) NOT NULL DEFAULT '0',
+	PRIMARY KEY (`ID`)
+);
+-- Execute the table insert statement
+INSERT INTO `sampleTables` VALUES (1, 'A', 2021);
+INSERT INTO `sampleTables` VALUES (2, 'B', 2021);
+INSERT INTO `sampleTables` VALUES (3, 'C', 2021);
+INSERT INTO `sampleTables` VALUES (4, 'D', 2021);
+INSERT INTO `sampleTables` VALUES (5, 'E', 2021);
+INSERT INTO `sampleTables` VALUES (6, 'F', 2021);
+-- Execute a simple select statement
+SELECT * FROM `sampleTables`;
+-- Execute a SELECT statement with subqueries
+SELECT * FROM `sampleTables` AS s1 LEFT JOIN `sampleTables` AS s2
+ON s1.ID = s2.Year
+AND s1.Name = s2.Name;
+-- Execute a multiple joins
+SELECT * FROM `sampleTables` s1, `sampleTables` s2
+ON s1.ID = s2.Year
+AND s1.Name = s2.Name AND s1.Name = 'B';
+-- Execute a SELECT statement with where condition
+SELECT * FROM `sampleTables` s1 LEFT JOIN `sampleTables` s2
+ON s1.ID = s2

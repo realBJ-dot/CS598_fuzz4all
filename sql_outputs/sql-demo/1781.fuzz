@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS test;
+CREATE TABLE test (id INT UNSIGNED, name VARCHAR(50), phone INT);
+INSERT INTO test (id, name, phone) VALUES (1, 'Raj',  '555-444-3333');
+INSERT INTO test (id, name, phone) VALUES (2, 'Srinivas',   '990-888-7777');
+INSERT INTO test (id, name, phone) VALUES (3, 'Jeremiah', '901-666-5555');
+INSERT INTO test (id, name, phone) VALUES (4, 'Peter',   '302-444-3333');
+SELECT * FROM test;
+DROP TABLE IF EXISTS test;
+DROP DATABASE IF EXISTS sampleDB;

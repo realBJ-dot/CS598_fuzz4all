@@ -1,0 +1,9 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- Please create a very short query which uses SQL features in a complex way. Be sure to use ENGINE=InnoDB. You should only use sampleDB as the database and assume no other table exist. You need to create new tables to perform operations. In the end, drop all tables you created.
+
+CREATE TABLE IF NOT EXISTS employees_salary_by_salary (
+    employee_salary	INT UNSIGNED, 
+    emp_salary		INT UNSIGNED,
+    PRIMARY KEY (employee_salary, emp_salary));
+UPDATE employees_salary_by_salary SET emp_salary = emp_salary + 6000;
+SELECT emp_salary + 5000 FROM employees_salary_by_salary;

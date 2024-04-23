@@ -1,0 +1,7 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TEMPORARY TABLE IF NOT EXISTS `FirstAndSecondTable` (id INT(11) NOT NULL, data TEXT CHARACTER SET UTF8);
+INSERT INTO `FirstAndSecondTable` (`id`, data) VALUES (0, "1");
+INSERT INTO `FirstAndSecondTable` (`id`, data) VALUES (1, "0");
+SELECT COUNT(*) FROM `FirstAndSecondTable`;
+DROP TEMPORARY TABLE `FirstAndSecondTable`;
+*/

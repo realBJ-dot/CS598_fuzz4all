@@ -1,0 +1,8 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+-- Please drop all tables
+DROP TABLE IF EXISTS sampleTable1; DROP TABLE IF EXISTS sampleTable2;
+-- Please drop all records
+DELETE FROM sampleTable1; DELETE FROM sampleTable2;
+
+DROP DATABASE IF EXISTS sampleDB; DROP DATABASE IF EXISTS sampleDB2;

@@ -1,0 +1,23 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE users (user_name varchar(30), user_pwd varchar(30));
+INSERT INTO users (user_name, user_pwd) VALUES ('m', 'B');
+UPDATE users
+    SET user_pwd = '<PASSWORD>'
+WHERE user_name = 'j'
+UNION ALL
+UPDATE users
+    SET user_pwd = '<PASSWORD>'
+WHERE user_name =  'k';
+DROP DATABASE sampleDB;
+-- Please create a mutated query that returns only users who are in groups 1 & 4.
+SELECT * FROM users
+WHERE user_pwd = '<PASSWORD>' AND user_name IN ('i', 'j');
+DROP DATABASE sampleDB;
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE persons (name varchar(30), password  varchar(30));
+INSERT INTO persons (name, password) VALUES ('i',  '<PASSWORD>');
+INSERT INTO persons (name, password) VALUES ('j', '<PASSWORD>');
+INSERT INTO persons (name, password) VALUES ('k', '<PASSWORD>');
+DROP DATABASE sampleDB;
+

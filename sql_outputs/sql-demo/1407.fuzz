@@ -1,0 +1,13 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+INSERT INTO `books` (`author_id`, `booktitle_orig`)
+VALUES (5, 1), (8, 2), (3, 3), (5, 4), (10, 5), (9, 6);
+DELIMITER ;;
+CREATE TRIGGER copyTrigger BEFORE INSERT ON `books`
+   FOR EACH ROW
+   INSERT INTO `testTable` (`id`, `author_id`)
+   VALUES (LAST_INSERT_ID(), NEW.author_id);
+DELIMITER ;
+UPDATE `books`
+  SET `author_id` = 8;
+SELECT * FROM `books`;
+#

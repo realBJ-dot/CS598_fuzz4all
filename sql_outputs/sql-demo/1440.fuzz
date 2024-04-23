@@ -1,0 +1,14 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS users_details(
+  `userID` INT NOT NULL AUTO_INCREMENT,
+  `userName` VARCHAR(20),
+  `pwd` VARCHAR( 30),
+  `firstName` VARCHAR(20),
+  `LastName` VARCHAR(20),
+  `UserType` INT( 10),
+  `isAdmin` BIT( 10),
+  `created_at` DATE,
+  `updated_at` DATE, 
+  PRIMARY KEY (`userID`)
+);
+# End of Question 20

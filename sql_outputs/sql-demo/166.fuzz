@@ -1,0 +1,5 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE Users_1
+-- Please create and populate a new database with no records.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+SELECT * from Accounts

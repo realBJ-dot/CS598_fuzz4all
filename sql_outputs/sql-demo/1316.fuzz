@@ -1,0 +1,29 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS cat_product(
+	prod_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	cat_fk INT NOT NULL,
+	prod_name text
+);
+DESCRIBE cat_product;
+USE sampleDB;
+INSERT INTO category (cat_id, cat_name) VALUES (1, 'Baby Foods');
+INSERT INTO category (cat_id, cat_name) VALUES (2, 'Baking Products');
+INSERT INTO category (cat_id, cat_name) VALUES (3, 'Breads and Bakery');
+INSERT INTO category (cat_id, cat_name) VALUES (4, 'Books');
+INSERT INTO category (cat_id, cat_name) VALUES (5, 'Cakes, Chips, Potions');
+INSERT INTO category (cat_id, cat_name) VALUES (6, 'Donuts, Fruits, Spices');
+INSERT INTO category (cat_id, cat_name) VALUES (7, 'Drinks and Water');
+INSERT INTO category (cat_id, cat_name) VALUES (8, 'Electronics, Apparelines, Furnishings');
+INSERT INTO category (cat_id, cat_name) VALUES (9, 'Fish, Seafood');
+INSERT INTO category (cat_id, cat_name) VALUES (10, 'Frozen Foods');
+INSERT INTO category (cat_id, cat_name) VALUES (11, 'Grocery Stores');
+INSERT INTO category (cat_id, cat_name) VALUES (12, 'Jewelery');
+INSERT INTO category (cat_id, cat_name) VALUES (13, 'Leathers and Hoodies');
+INSERT INTO category (cat_id, cat_name) VALUES (14, 'Meat');
+INSERT INTO category (cat_id, cat_name) VALUES (15, 'Mobile Phones');
+INSERT INTO category (cat_id, cat_name) VALUES (16, 'Nail Grooming');
+INSERT INTO category (cat_id, cat_name) VALUES (17, 'Notebooks and Songs');
+INSERT INTO category (cat_id, cat_name) VALUES (18, 'Pasta');
+INSERT INTO category (cat_id, cat_name) VALUES (19, 'Pets');
+INSERT INTO category (cat_id, cat_name) VALUES (20, 'Pet Supplements');
+INSERT INTO category (cat_id, cat_name) VALUES (2

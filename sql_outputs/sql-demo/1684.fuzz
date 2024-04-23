@@ -1,0 +1,18 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `emp`;
+CREATE TABLE `emp` (
+	id int(50) NOT NULL AUTO_INCREMENT,
+	name varchar(50) NOT NULL,
+	empgrade varchar(10) NOT NULL,
+	salary int(50) NOT NULL,
+UNIQUE KEY `name`(`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO `Emp` (`id`,`name`,`empgrade`,`salary`) VALUES ("20", "Virginia", "1", "90000");
+INSERT INTO `Emp` (`id`,`name`,`empgrade`,`salary`) VALUES ("5", "John", "2", "70000");
+INSERT INTO `Emp` (`id`,`name`,`empgrade`,`salary`) VALUES ("22", "Ethan", "1", "80000");
+INSERT INTO `Emp` (`id`,`name`,`empgrade`,`salary`) VALUES ("18", "Mary", "2", "70000");
+INSERT INTO `Emp` (`id`,`name`,`empgrade`,`salary`) VALUES ("4", "Tom", "2", "92000");
+INSERT INTO `Emp` (`id`,`name`,`empgrade`,`salary`) VALUES ("7", "Sam", "3", "60000");
+INSERT INTO `Emp` (`id`,`name`,`empgrade`,`salary`) VALUES ("10", "Jerry", "1", "20000");
+INSERT INTO `Emp` (`id`,`name`,`empgrade`,`salary`)

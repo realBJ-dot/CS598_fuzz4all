@@ -1,0 +1,15 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users
+(
+ID INT(5) AUTO_INCREMENT,
+UserID INT(11) NOT NULL UNIQUE,
+Password VARCHAR(50) NOT NULL,
+Age INT(5) NOT NULL,
+Phone INT(5) NOT NULL
+);
+-- Please create a very basic program. The query results should be displayed to the screen.
+CREATE DATABASE IF NOT EXISTS sampleDB;
+USE sampleDB;
+SELECT * FROM Users WHERE AGE=20;
+USE sampleDB;
+DROP TABLE Users

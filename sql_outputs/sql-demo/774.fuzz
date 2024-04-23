@@ -1,0 +1,12 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS `Temp_idFirstAndSecondId` ( `id` INT(11) PRIMARY KEY, `data` VARCHAR(300) CHARACTER SET UTF8);
+CREATE TABLE IF NOT EXISTS `TableWithId` ( `id` INT(11) NOT NULL PRIMARY KEY, `data` VARCHAR(300) CHARACTER SET UTF8);
+*/
+INSERT INTO TableWithId VALUES (2, "one data");
+INSERT INTO `FirstAndSecondTable` VALUES (5, "five data");
+INSERT INTO `FirstAndSecondTable` VALUES (6, "six data");
+INSERT INTO `FirstAndSecondTable` VALUES (5, "data six");
+SHOW TABLES;
+DROP TABLE IF EXISTS `Temp_idFirstAndSecondId`;
+DROP TABLE IF EXISTS TableWithId;
+DROP DATABASE IF EXISTS sampleDB;

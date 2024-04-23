@@ -1,0 +1,5 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- This should generate an SQL command statement like 'DROP DATABASE IF EXISTS user.'
+DROP DATABASE IF EXISTS `user`;
+CREATE TABLE user(user_name VARCHAR(20), password VARCHAR(15));
+INSERT INTO user (user_name, password) VALUES ('admin', '<PASSWORD>');

@@ -1,0 +1,9 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TEMPORARY TABLE IF NOT EXISTS temptbl (id INT(11));
+INSERT INTO `temptbl` VALUES (1);
+DELETE FROM `temptbl`;
+SELECT COUNT(*) FROM `temptbl`;
+DROP TABLE `temptbl`
+
+INSERT INTO `sampleDB`.`FirstAndSecondTable` (`id`, `data`) VALUES (1, "Hello, world");
+*/

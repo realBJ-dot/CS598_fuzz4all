@@ -1,0 +1,13 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `employees`;
+CREATE TABLE `employees` (
+	`id` int(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`staff_id` int(20) UNSIGNED NOT NULL,
+	`salary` int(25) NOT NULL,
+	PRIMARY KEY (`id`,`staff_id`),
+	KEY `staffFK` (`staff_id`),
+	CONSTRAINT `staffFK` FOREIGN KEY (`staff_id`) REFERENCES `staff` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+-- Please create the above database in your local development environment.

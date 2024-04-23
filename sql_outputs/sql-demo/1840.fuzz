@@ -1,0 +1,27 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE persons(firstname varchar(20), lastname varchar(20), age int);
+INSERT INTO persons VALUES('David', 'Tolkien', 43);
+INSERT INTO persons VALUES('Elizabeth', 'Cox', 40);
+INSERT INTO persons VALUES('Danis', 'Tolkien', 44);
+SELECT * FROM persons;
+SELECT * FROM persons ORDER BY lastname ASC;
+UPDATE persons SET age=age+20 WHERE lastname='Tolkien';
+SELECT * FROM persons;
+SELECT * FROM persons ORDER BY lastname ASC;
+UPDATE persons set lastname='Jackson' where lastname='<NAME>';
+SELECT * FROM persons;
+SELECT * FROM persons ORDER BY lastname ASC;
+-- Please use a SQL script to drop and recreate all tables created throughout this session.
+DROP TABLE persons, names;
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE persons(firstname varchar(20), lastname varchar(20), age int);
+INSERT INTO persons
+    (firstname, lastname, age)
+    VALUES ('David', 'Tolkien', 43),
+    ('Elizabeth', 'Cox', 40),
+    ('Danis', 'Tolkien', 44);
+SELECT * FROM persons;
+DROP TABLE persons;
+DROP TABLE names;
+
+exit;\

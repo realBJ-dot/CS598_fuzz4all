@@ -1,0 +1,18 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE users;
+BEGIN
+
+     ;
+     
+    CREATE USER 'root'@'localhost' IDENTIFIED BY '<PASSWORD>';
+
+     
+    CREATE USER 'test'@'localhost' IDENTIFIED BY '<PASSWORD>';
+
+    GRANT ALL PRIVILEGES ON sampleDB.* TO 'test'@'localhost';
+END
+```
+
+## Source Code
+---
+- https: 

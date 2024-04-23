@@ -1,0 +1,42 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+CREATE TABLE employees (emp_no INT NOT NULL, 
+    emp_name VARCHAR(25),
+    sex CHAR(1),
+    hire_date DATE,
+    mgr_no INT,
+    dept_no INT,
+    roles_id CHAR(10)
+);
+
+CREATE TABLE dept (dept_no INT NOT NULL, 
+    dept_name VARCHAR(10),
+    location TEXT
+);
+
+CREATE TABLE dept_manager (dept_no INT, 
+    mgr_no INT
+); 
+
+INSERT INTO employees (emp_no,emp_name,sex,hire_date,mgr_no,dept_no,roles_id) VALUES 
+(1, '<NAME>', 'M', '01-05-2037',1,1, 'PRES'),
+(2, '<NAME>', 'F', '05-01-2038',1,2, 'PRES');
+
+INSERT INTO dept (dept_no,dept_name,location) VALUES
+(2,'Engineering', 'Dallas'),
+(1,'Marketing', 'Dallas'),
+(3, 'Human Resources', 'San Francisco'),
+(4, 'Reception', 'Dallas'),
+(5, 'Sales', 'San Francisco');
+
+INSERT INTO employees (emp_no,emp_name,sex,hire_date,mgr_no,dept_no,roles_id) VALUES 
+(3, '<NAME>', 'M','01-07-2039',2,3, 'PRES'),
+(4, '<NAME>', 'F','28-12-2039',3,4, 'PRES'),
+(5, '<NAME>', 'M','12-12-2032',3,5, 'PRES'),
+(6, '<NAME>', 'F','25-03-2040',5,5, 'PRES'),
+(7, '<NAME>', 'M','31-09-2040',5,5, 'PRES'),
+(8, '<NAME>', 'F','10-12-2031',5,5, 'PRES'),
+(9, '<NAME>', 'M','24-01-2041',5,5, 'PRES'),
+(10, '<NAME>', 'F','22-01-2038',5,5, 'PRES');
+
+INSERT INTO dept

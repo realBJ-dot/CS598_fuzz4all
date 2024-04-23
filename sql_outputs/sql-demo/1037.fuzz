@@ -1,0 +1,28 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employee10;
+DROP DATABASE IF EXISTS sampleDB;
+ 
+ 
+DROP TABLE IF EXISTS employee10;
+CREATE TABLE employee10 (
+  employeeID int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  salaries varchar(50),
+  empname char(100),
+  employeeDepartmentID int NOT NULL
+);
+
+
+INSERT INTO employee10 (employeeID, salaries, empname, employeeDepartmentID) VALUES ('1', '20000', 'Mohamed', '1'), ('2', '21000', 'Rahul', '1'), ('3', '16000', '<NAME>', '1'), ('4', '20000', '<NAME>', '1'), ('5', '22000', 'Zakaria', '1'), ('6', '25000', 'Amin', '1'), ('7', '22000', 'Abdul', '1'), ('8', '23000', 'Fawaz', '1'), ('9', '20000', 'Abdur', '1'), ('10', '23000', 'Nasrul', '1');
+
+-- Create a table for employee10
+DROP TABLE IF EXISTS employee10;
+CREATE TABLE employee10 (
+  employeeID int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  salaries varchar(50),
+  empname char(100),
+  employeeDepartmentID int NOT NULL
+);
+
+-- Insert table employee10
+INSERT INTO employee10 (employeeID, salaries, empname, employeeDepartmentID)
+VALUES ('1', '20000', 'Mohamed', '1'), ('2', '21000', 'Rahul', '1'), ('3', '16000', '<NAME>', '1'), ('4', '20000', '<NAME>', '1'), ('5', '22000', 'Zakaria', '1'), ('6', '25000', 'Amin', '1'), ('7', '22000', 'Abdul', '1'), ('8', '23000', 'Fawaz', '1'), ('9', '20000

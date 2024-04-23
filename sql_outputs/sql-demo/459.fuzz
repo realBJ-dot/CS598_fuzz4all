@@ -1,0 +1,36 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE address(
+    id int auto_increment primary key,
+    city varchar(30),
+    surname varchar(20)
+)ENGINE=InnoDB;
+INSERT INTO address(city,surname) VALUES ('Dresden','Meier');
+
+-- What is going on here?
+SELECT id,city as city_name,CONCAT(surname, " ", firstname) as address
+    FROM address
+    INNER JOIN mytable USING(a);
+--
+-- The address table has no entry for the address ID:12; as it does not exist in the database. This is intentional, because there are no rows with the given address ID in the address table:
+--
+--
+CREATE TABLE address(
+    id int auto_increment primary key,
+    city varchar(30),
+    surname varchar(20)
+)ENGINE=InnoDB;
+INSERT INTO address(city,surname) VALUES ('Dresden','Meier');
+-- What next?
+-- Please create a program which generates the following diagram:
+--
+-- _____________________________________________________
+-- |  1)     2)       3)                            |
+-- |                      |  4)     5)     6)      7)     8)    |
+-- |                      |    9) 10) |     11)       12)              |
+-- |____________________|_______________________________|___________________|
+--    (0,0)           (0,1)         (1,1)                  (1,0)
+--
+-- 1st row: This row represents the customer with ID 123, which is not yet present in the database (no customer with same ID). ID is used to reference customer records and is incremented each time new customer is added. The customer has the specified city 'Dresden' and surname 'Meier'. The customer name in the database is '<NAME>'!
+-- 2nd row: The customer was added via the 2nd row, and has the city 'Dresden', which is also in the database. The surname was automatically added from the employee object of the employee with ID 122. In the database, this is '<NAME>', because the employee name is in the employee table (both with ID 122 and Name '<NAME>').
+-- 3rd row: The customer is still present in the database, it has the city 'Dresden', which is still 'Dresden' in the address table, because we were not able to find an entry in the address table for this address record (it had an ID of 12).
+-- 4th row: The database automatically adds an address for customer

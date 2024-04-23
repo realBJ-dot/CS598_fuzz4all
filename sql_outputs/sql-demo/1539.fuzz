@@ -1,0 +1,24 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ 
+DROP DATABASE sampleDB;
+
+-- SQL Server
+-- The Windows database engine runs on Windows Vista and later edition of Windows Server operating systems, while SQL Server run on the Server 2005 Enterprise or Windows 2000 and Server 2003 operating systems.
+
+-- MySQL
+-- MySQL is an open-source relational database management system (RDBMS) that allows users to create, modify and extract data from a structured relational database using the Structured Query Language (SQL). It works harmoniously with an operating system to structure and manage a relational database, control user access, and execute other tasks like network access and testing database integrity.
+
+-- PHP
+-- PHP is a high-level server-side scripting language written in C, designed for developers based in the web industry. It can serve as an important building block of an application server. PHP is extremely lightweight and can be used in a number of applications ranging between single script websites to multi-page or multi-tier application servers.
+
+-- PostgreSQL
+-- PostgreSQL is a free Relational Database Management System (RDBMS) that can be used for development and testing purposes. It is an open source re-implementation of the open source database Management System PostgreSQL available in free and open source software. PostgreSQL is supported on all major versions of Oracle, DB2, Sybase, SQL Server, MySQL, and HSQLDB.
+
+-- Oracle
+-- Oracle is a leading provider for cloud data storage and relational data management, operating and high-availability services. Oracle has released a comprehensive guide to database administration, with numerous practical exercises.
+
+-- MongoDB
+-- MongoDB (a new database program) is an open source document-oriented database system with the goal of providing non-transactional, high performance, multi-model, non-interchangeable data store services to developers.
+
+-- MySQL Workbench
+-- The MySQL Workbench is an open source full-featured graphical toolkit for database management. It has robust integration with several popular database management systems, including MySQL, PostgreSQL and Oracle.

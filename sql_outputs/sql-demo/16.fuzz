@@ -1,6 +1,8 @@
-USE sampleDB;
-INSERT INTO `users` (`user_id`, `user_name`, `user_pass`, `user_mail`)
-VALUES
-  (1, 'test.doe', <PASSWORD>', '<EMAIL>');
-
-DROP TABLE `comments` INSEX;
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE Users;
+DROP TABLE Users1;
+END TRY;
+BEGIN CATCH;
+ROLLBACK;
+PRINT 'Failed';
+END CATCH;

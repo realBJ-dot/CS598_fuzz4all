@@ -1,0 +1,4 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users_1(username char(20) PRIMARY KEY, FirstName VARCHAR(30));
+ALTER TABLE Users_2
+-- Please modify the query to change it to select username from Users_1. Create a mutated version of the program

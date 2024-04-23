@@ -1,0 +1,6 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE `product` (
+  `prodID` INT(2) NOT NULL AUTO_INCREMENT,
+  `prodName` INT(10) NOT NULL,
+  PRIMARY KEY (`prodID`)
+);

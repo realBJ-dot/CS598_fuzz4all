@@ -1,0 +1,50 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE Mutated;
+DROP DATABASE sampleDB;
+-- Please drop any tables you created that were not created with ENGINE INNODB before.
+
+DROP DATABASE IF EXISTS simpleDB;
+
+CREATE DATABASE IF NOT EXISTS simpleDB; USE simpleDB;
+
+CREATE TABLE IF NOT EXISTS Student_Grade ( idINT INT NOT NULL PRIMARY KEY, Name VARCHAR(50), Grade VARCHAR(10));
+
+INSERT INTO Student_Grade VALUES(101, 'Adam', 'A');
+INSERT INTO Student_Grade VALUES(102, 'Bob', 'A');
+INSERT INTO Student_Grade VALUES(103, 'Charlie', 'AA');
+INSERT INTO Student_Grade VALUES(104, 'Doris', 'A');
+INSERT INTO Student_Grade VALUES(105, 'Eric', 'F');
+
+SELECT * FROM Student_Grade;
+-- You can add a column, but can’t add a foreign key.
+ALTER TABLE Student_Grade ADD Grade2 VARCHAR(20);
+ALTER TABLE Student_Grade ADD CONSTRAINT `FK_Student_Grade_Grade2` FOREIGN KEY (Grade2) REFERENCES Student_Grade (Grade);
+
+SELECT * FROM Student_Grade;
+
+ALTER TABLE Student_Grade MODIFY Grade1 VARCHAR(20);
+
+UPDATE Student_Grade SET Grade = 'E';
+SELECT * FROM Student_Grade;
+
+SELECT Grade FROM Student_Grade WHERE Grade IN ('E', 'A', 'AA'); -- If multiple Grades are provided, you need to use UNION
+
+-- You can drop columns that are NOT part of a foreign key.
+ALTER TABLE Student_Grade MODIFY Grade CHAR(5);
+DROP TABLE Student_Grade;
+
+DROP DATABASE IF EXISTS bigDB;
+
+CREATE DATABASE IF NOT EXISTS bigDB;
+CREATE TABLE IF NOT EXISTS largeTable ( idINT INT AUTO_INCREMENT PRIMARY KEY, colSTR VARCHAR(255) );
+INSERT INTO largeTable VALUES(10, 'Hello');
+
+CREATE TABLE IF NOT EXISTS smallTable ( idINT INT AUTO_INCREMENT PRIMARY KEY, colSTR VARCHAR(255) );
+INSERT INTO smallTable VALUES(10, 'Hello2');
+
+ALTER TABLE smallTable ADD CONSTRAINT FK_smallTable_largeTable FOREIGN KEY (idINT) REFERENCES largeTable(idINT);
+
+SELECT * FROM smallTable;
+
+ALTER TABLE smallTable MODIFY colSTR VARCHAR(20);
+SELECT * FROM small

@@ -1,0 +1,61 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TEMPORARY TABLE employees_positions (employee_emp_no INT UNSIGNED, employee_position INT UNSIGNED);
+DROP TABLE IF EXISTS employees_positions;
+INSERT INTO employees_positions
+SELECT employee_emp_no, employee_position
+FROM employees
+WHERE employee_emp_no IN
+(
+    SELECT DISTINCT employee_emp_no
+    FROM employees_positions
+)
+UNION
+SELECT employee_emp_no, employee_position
+FROM employees_positions
+ORDER BY employee_emp_no, employee_position;
+--
+ 
+--
+DROP table IF EXISTS salaries;
+CREATE TABLE salaries
+(
+    salary_emp_no     INT UNSIGNED  NOT NULL,
+    salary_amount     DECIMAL(5, 2) NOT NULL,
+    salary_date       DATE          NOT NULL,
+    PRIMARY KEY (salary_emp_no, salary_date)
+);
+
+DROP table IF EXISTS employees;
+CREATE TABLE employees
+(
+    employee_emp_no           INT UNSIGNED  NOT NULL,
+    employee_last_name        VARCHAR(25)   NOT NULL,
+    employee_first_name       VARCHAR(20)   NOT NULL,
+    employee_birth_date       DATE          NOT NULL,
+    employee_job_title        VARCHAR(25)   NOT NULL,
+    employee_manager_cost      DECIMAL(5, 2) NOT NULL,
+    employee_manager_staff_no VARCHAR(20)   NOT NULL,
+    PRIMARY KEY (employee_emp_no)
+);
+DROP table IF EXISTS orders;
+CREATE TABLE orders
+(
+    order_cust_no INT UNSIGNED  NOT NULL,
+    order_order_no INT UNSIGNED  NOT NULL AUTO_INCREMENT,
+    order_order_date     DATE          NOT NULL,
+    order_order_priority INT UNSIGNED  NOT NULL,
+    order_total_price    DECIMAL(5, 2)  NOT NULL,
+    order_status       INT UNSIGNED  NOT NULL,
+    PRIMARY KEY (order_cust_no, order_order_no),
+    UNIQUE KEY (order_order_date)
+);
+
+DROP table IF EXISTS orders_items;
+CREATE TABLE orders_items
+(
+    order_cust_no INT UNSIGNED  NOT NULL,
+    order_order_no INT UNSIGNED  NOT NULL,
+    order_order_item_id INT UNSIGNED  NOT NULL,
+    PRIMARY KEY (order_cust_no, order_order_no, order_order_item_id),
+    UNIQUE KEY (order_order_item_id)
+);

@@ -1,0 +1,7 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+INSERT INTO `Lecture`(`Course_Code`,`Course_Name`) VALUES ('PHP4', 'PHP for the Web');
+INSERT INTO `Lecture` (`Course_Code`, `Course_Name`) VALUES ('PHP5', 'PHP for Dummies');
+INSERT INTO `Lecture` `Course_Code` (`Lecture_ID`) `Course_Name`;
+DROP TABLE IF EXISTS `Lecture`;
+
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB, IF NOT EXISTS `Lecture`;

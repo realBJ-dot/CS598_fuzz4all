@@ -1,0 +1,7 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS table1;
+-- Use this table if the column already exists.
+-- Use this table if you have tables which have same names or same column names.
+CREATE TABLE IF NOT EXISTS table1 (id INT(11), date INT(11), name VARCHAR(20));
+INSERT INTO table1 (id, date, name) VALUES (3, NULL, "Moscow");
+INSERT INTO table1 (id, date, name) VALUES

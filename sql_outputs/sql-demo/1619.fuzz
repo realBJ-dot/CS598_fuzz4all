@@ -1,0 +1,12 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+SET NAMES EUC_CN;
+SET FOREIGN_KEY_CHECKS = 0;
+DROP TABLE IF EXISTS `sampleDB`.`cities`;
+CREATE TABLE `sampleDB`.`cities` (
+	`id` int NOT NULL AUTO_INCREMENT,
+	`stateId` int NOT NULL,
+	`name` varchar(30) NOT NULL,
+	PRIMARY KEY (`id`),
+	FOREIGN KEY (`stateId`) REFERENCES `sampleDB`.`states` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+SET FOREIGN_KEY_CHECKS = 1;

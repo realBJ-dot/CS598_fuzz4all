@@ -1,0 +1,63 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users(
+    User_name INT NOT NULL AUTO_INCREMENT,
+    first_name TEXT,
+    last_name TEXT,
+    password TEXT,
+    PRIMARY KEY (User_name),
+    UNIQUE KEY unique_username (User_name)
+);
+SELECT password, CONCAT(first_name,'', last_name) FROM Users;
+
+-- Create table to test 6.1
+CREATE TABLE Students(
+    student_id INT AUTO_INCREMENT,
+    fname VARCHAR(20),
+    lname VARCHAR(20),
+    gender CHAR(1),
+    grade INT,
+    PRIMARY KEY (student_id),
+    UNIQUE KEY uii(student_id),
+    KEY idx(grade)
+);
+SELECT * FROM Students;
+
+-- Update query
+UPDATE Users SET
+    password = '',
+    last_name = '<PASSWORD>',
+    password_changed = '<PASSWORD>',
+    password_changed_by = '<PASSWORD>'
+WHERE password_changed_by = '<PASSWORD>';
+
+-- Create table to test 6.2
+CREATE TABLE Test(
+    student_id INT NOT NULL,
+    total_marks INT,
+    grade INT,
+    PRIMARY KEY (student_id),
+    FOREIGN KEY (student_id) REFERENCES Students (student_id)
+);
+
+-- DML to test 6.3
+UPDATE Test SET grade = 9, status = 'Absent';
+UPDATE Test SET grade = 8, status = 'Absent';
+
+-- CREATE table to test 6.4
+CREATE TABLE Test(
+    student_id INT NOT NULL AUTO_INCREMENT,
+    test_question VARCHAR(25),
+    status TEXT,
+    PRIMARY KEY (student_id)
+);
+
+-- UPDATE table Test
+UPDATE Test SET status = 'Complete';
+UPDATE Test SET student_id = 3;
+
+
+SELECT * FROM Students;
+SELECT * FROM Test;
+
+TRUNCATE TABLE Users;
+TRUNCATE TABLE Test;

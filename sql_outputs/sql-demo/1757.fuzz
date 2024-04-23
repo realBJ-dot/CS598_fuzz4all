@@ -1,0 +1,38 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS test3;
+CREATE TABLE test3 (id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, userid INT, name VARCHAR(50),
+age INT);
+-- MySQL offers no form of backup and recovery. It doesn't have recovery option in DDL, DML, DCL and others. You can rely only on the current application state. Please create a query with the following parameters: 1. Test1. name=Rahul 2. age=21 If test2 table is available, and can properly be populated, return age=22. Otherwise, return age=30.
+SELECT name, age
+FROM `test2`
+WHERE `name`='Rahul' AND `age`=21;
+SELECT name, age
+FROM `test2`
+WHERE `name`='Rahul' AND `age`=22;
+SELECT name, age
+FROM `test2`
+WHERE `name`='Rahul' AND `age`=30;
+SELECT name, age
+FROM `test2`
+WHERE `name`='John' AND `age`=21;
+SELECT name, age
+FROM `test2`
+WHERE `name`='Rahul' AND `age`=30;
+SELECT name, age
+FROM `test2`
+WHERE name='Rahul' AND age>20;
+SELECT name, age
+FROM `test2`
+WHERE `name`='Brahma' AND `age`=35;
+SELECT name, age
+FROM `test2`
+WHERE `name`='Mishra' AND `age`=35;
+SELECT name, age
+FROM `test3`
+WHERE `name`='Rahul' AND `age`=20;
+-- Test3. name=Rahul  This query shows all test3s where name='Rahul', and age>20. It returns all rows of test3(as well as rows in test2 tables using WHERE statement). You can also filter using ON clause with multiple conditions.
+ 
+CREATE TABLE IF NOT EXISTS `test4`(`id` INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, `userid` INT, `age` INT);
+DROP TABLE IF EXISTS test4;
+CREATE TABLE test4 (id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, userid INT, age INT);
+INSERT INTO `test4` `age`, `userid

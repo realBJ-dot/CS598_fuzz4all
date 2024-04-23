@@ -1,0 +1,42 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE mytable ( a int auto_increment primary key, b varchar(30), c int, d text, e date) ;
+DROP TABLE IF EXISTS mytable ;
+CREATE TABLE mytable ( a int auto_increment primary key, b varchar(30), c int, d text, e date) ;
+CREATE TABLE other_table (c int, d text, e date) ;
+INSERT INTO mytable SET b = 'cat'; INSERT INTO other_table (c, d, e) VALUES(1, 'dog', '2016-07-18');
+UPDATE mytable SET c=b; UPDATE other_table SET e = d;
+DROP TABLE IF EXISTS mytable;
+DROP TABLE IF EXISTS other_table;
+SELECT c, d FROM mytable, other_table WHERE c > b AND d > c;
+SELECT d FROM mytable WHERE c!=1;
+CREATE TABLE test(a int, b text)ENGINE=INNODB;
+INSERT INTO test (a, b) VALUES(1, 'abc');
+DROP TABLE IF EXISTS test;
+CREATE TABLE test(a int, b text)ENGINE=INNODB;
+INSERT INTO test (a, b) VALUES(1, 'abc');
+DROP TABLE IF EXISTS test;
+-- Create a table for the purposes of the following demo.
+CREATE TABLE demo (a int, b int);
+INSERT INTO demo (a, b) VALUES(1, 2);
+DROP TABLE IF EXISTS demo;
+-- Now, drop the demo table and re-create it.
+DROP TABLE IF EXISTS demo;
+CREATE TABLE demo (a int, b int);
+INSERT INTO demo (a, b) VALUES(1, 2);
+
+DROP TABLE IF EXISTS demo;
+CREATE TABLE demo (a int, b int) ;
+GRANT ALL PRIVILEGES ON demo TO 'new_user'@localhost;
+GRANT ALL PRIVILEGES ON demo to 'database_user'@'%';
+GRANT ALL PRIVILEGES ON demo to 'database_user'@'localhost';
+-- It can also perform a single SQL statement:
+--
+-- MySQL [sampleDB]> ALTER TABLE demo ADD COLUMN c char(50);
+-- Query OK, 8 rows affected (0.24 sec)
+--
+INSERT INTO demo (a, b, c) VALUES(10, 20, 'hello');
+--
+UPDATE demo SET a = c WHERE a = 10;
+--
+DROP TABLE IF EXISTS demo;
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB; CREATE TABLE demo (a int, b int) ; ALTER TABLE demo ADD COLUMN c char(50

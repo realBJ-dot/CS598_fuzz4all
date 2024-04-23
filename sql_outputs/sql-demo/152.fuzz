@@ -1,0 +1,23 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+INSERT INTO Users_2 SELECT Username, 'Jon' FROM Users_2;
+UPDATE Users_2 SET FirstName = 'Jonny' WHERE Username = 'Jack';
+-- Please create a program which creates a schema and creates tables for
+-- you
+DROP SCHEMA IF EXISTS `schema1`
+CREATE SCHEMA IF NOT EXISTS schema1;
+CREATE TABLE IF NOT EXISTS schema1.users
+(
+  id INT(2) AUTO_INCREMENT,
+  username varchar(20) UNIQUE NOT NULL,
+  PRIMARY KEY (id),
+  UNIQUE  (`username`)
+);
+DROP TABLE sampleDB.USERS_1
+CREATE TABLE sampleDB.USERS_1(username char(20), firstname varchar(30));
+UPDATE sampleDB.USERS SET firstname = 'Jonny' where username = 'Jack';
+DROP TABLE sampleDB.USERS
+CREATE TABLE sampleDB.USERS(username char(20), firstname varchar(30));
+DROP SCHEMA IF EXISTS `schema1`
+DROP TABLE IF EXISTS sampleDB.USERS_1
+DROP TABLE IF EXISTS sampleDB.USERS_2
+exit;

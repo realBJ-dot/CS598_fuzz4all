@@ -1,0 +1,14 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS user;
+CREATE TABLE IF NOT EXISTS user (id INT PRIMARY KEY, "name" VARCHAR(200), "last-name" VARCHAR(200));
+INSERT INTO user (id, "name", "last-name") VALUES (10, 'John', 'Smith');
+INSERT INTO user (id, "name", "last-name") VALUES (20, 'Paul', 'Jones');
+SELECT id, "name", "last-name" FROM user;
+DROP TABLE IF EXISTS user;
+DROP DATABASE IF EXISTS sampleDB;
+USE root;
+-- Please create a very short query which uses SQL features in a complex way. Be sure to use ENGINE=InnoDB. You should only use sampleDB as the database and assume no other table exist. You need to create new tables to perform operations. In the end, drop all tables you created. */
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS user;
+CREATE TABLE IF NOT EXISTS user (id INT PRIMARY KEY, "name" VARCHAR(200), "last-name" VARCHAR(200));
+INSERT INTO user (id, "name", "last-name") VALUES (10, 'John', 'Smith');

@@ -1,0 +1,60 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+-- Create a new table and insert data
+CREATE TABLE IF NOT EXISTS customers (
+    customer_number  int auto_increment,
+    title            smallint not null,
+    first_name       varchar(30) not null,
+    last_name        varchar(30) not null,
+    address          varchar(80) not null,
+    primary key (customer_number)
+);
+
+-- Delete one or both of the tables
+DROP TABLE IF EXISTS orders; DROP TABLE IF EXISTS customers;
+
+CREATE DATABASE IF NOT EXISTS employees; USE employees;
+
+CREATE TABLE employees (
+    employee_number  int auto_increment,
+    first_name       varchar(30) not null,
+    last_name        varchar(30) not null,
+    email            varchar(50) not null unique,
+    job_title        int not null,
+    salary           decimal(11, 2) not null unique,
+    PRIMARY KEY (employee_number)
+);
+
+SELECT *
+FROM employees order by employee_number DESC;
+
+-- Update a single column
+UPDATE employees SET email='updated_email';
+UPDATE users SET balance=100, credit=1000 WHERE email = 'updated_email';
+
+-- Insert data in multiple database tables
+
+USE employees;
+INSERT INTO employees (employee_number, first_name, last_name, email, job_title, salary)
+VALUES (1, 'first update', 'last update', 'updated_<EMAIL>', 2, 3000),
+       (2, 'first update2', 'last update2', '<EMAIL>', 3, 500);
+
+DROP TABLE employees;
+
+ 
+
+CREATE TABLE employees2 (
+    employee_number  int auto_increment,
+    first_name       varchar(30) not null,
+    last_name        varchar(30) not null,
+    email            varchar(50) not null unique,
+    job_title        int not null,
+    salary           decimal(11, 2) not null unique,
+    PRIMARY KEY (employee_number)
+);
+
+USE employees2;
+UPDATE users SET balance=100, credit=1000 WHERE email = '<EMAIL>';
+UPDATE users SET balance=200 WHERE email = '<EMAIL>';
+
+DROP TABLE employees2. If you created

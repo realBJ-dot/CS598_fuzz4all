@@ -1,0 +1,7 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- Please write a program to drop all sampleDB tables
+USE sampleDB;
+DROP TABLE IF EXISTS StudentsMutatedBY;
+DROP TABLE IF EXISTS Mutated;
+DROP TABLE IF EXISTS StudentsMutated;
+DROP DATABASE sampleDB;

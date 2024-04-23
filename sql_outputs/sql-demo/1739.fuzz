@@ -1,0 +1,17 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS user;
+CREATE TABLE user(id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, username VARCHAR(20) UNIQUE,
+password VARCHAR(15) NOT NULL);
+INSERT INTO user (username, password) VALUES ('admin', '<PASSWORD>');
+-- Try to insert usernames that have any characters in them.
+-- Note the insert will fail.
+-- Please drop the table and re-create it with auto incrementing primary key.
+DROP TABLE IF EXISTS user;
+CREATE TABLE user(id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, username VARCHAR(20) UNIQUE,
+password VARCHAR(15) NOT NULL);
+INSERT INTO user (username, password) VALUES ('admin', '<PASSWORD>');
+-- Please create a reverted program that inserts rows into the table.
+DROP TABLE IF EXISTS user;
+CREATE TABLE user(id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, username VARCHAR(20) UNIQUE,
+password VARCHAR(15) NOT NULL);
+INSERT INTO user (username, password) VALUES ('admin', '<PASSWORD>');

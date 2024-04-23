@@ -1,0 +1,11 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `sampleDB`.`roles`;
+CREATE TABLE `sampleDB`.`roles` (
+	`id` int NOT NULL AUTO_INCREMENT,
+	`roleName` varchar(30) NOT NULL,
+	`departmentId` int NOT NULL,
+	PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=178 DEFAULT CHARSET=utf8;
+INSERT INTO `sampleDB`.`roles` (`roleName`, `departmentId`) VALUES ('admin', 1),('programmer', 1),('system analyst', 1),('manager', 10),('manager', 2),('intern', 20),('intern', 40),('intern', 80),('manager', 90),('programmer', 100),('manager', 110),('intern', 120),('intern', 140),('intern', 160),('manager', 170);
+DROP TABLE `sampleDB`.`roles`;
+USE sampleDB;

@@ -1,0 +1,25 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ 
+CREATE TABLE IF NOT EXISTS `student` (
+  `studentID` INT NOT NULL AUTO_INCREMENT,
+    `firstName` VARCHAR(45) NULL,
+    `lastName` VARCHAR(45) NULL,
+  PRIMARY KEY (`studentID`)
+   
+  UNIQUE (firstName)
+);</pre> 
+</div>
+<p class="image-right">
+<img src="/images/querySQL.jpg" alt="Query SQL in MySQL" title="Query SQL in MySQL">
+
+</p>
+<p>
+The queries here are created from a list of names where each name has four sections, the first and the last name.
+&nbsp; &nbsp; First, we create a table with a foreign key constraint to the students table that has three columns.
+<a href="https://www.geeksforgeeks.org/mysql-tutorial-foreign-key/">Learn more about Foreign Key constraint</a>.
+
+
+</p>
+</div>
+</body>
+</html>

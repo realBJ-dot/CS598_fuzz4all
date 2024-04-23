@@ -1,0 +1,9 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+TRUNCATE `sampleDB`.`employees`;
+
+DROP TABLE IF EXISTS `sampleDB`.`employees`;
+-- Please create a program that creates a new employee through user input
+
+-- Please create a system program that stores the empolyees who don't have a manager
+-- Please use ALTER TABLE
+ */

@@ -1,0 +1,43 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS mytable(
+   a INT PRIMARY KEY AUTO_INCREMENT,
+    b VARCHAR(30),
+    c INT,
+    d TEXT,
+    e DATE
+)ENGINE=InnoDB;
+
+mysql> INSERT INTO mytable VALUES(NULL, 'Hi', 123,'sdf', '2020-10-12');
+Query OK, 1 row affected (0.01 sec)
+Records: 1  Duplicates: 0  Warnings: 0
+
+mysql> UPDATE mytable SET b='lo' WHERE d='sdf';
+Query OK, 1 row affected (0.05 sec)
+Records: 1  Duplicates: 0  Warnings: 0
+
+mysql> DELETE FROM mytable WHERE b='Hi';
+Query OK, 21 rows affected (0.00 sec)
+Records: 21  Duplicates: 0  Warnings: 0
+
+mysql> SHOW TABLES;
++---------------+
+| Tables_in_sampleDB |
++-----------------+
+| mytable         |
+| schema_migrations |
+| sys.metadata    |
++-----------------+
+3 rows in set (0.00 sec)
+
+mysql> SHOW tables WHERE table_name = 'tables_in_sampleDB';
++---------------------+
+| Tables_in_sampleDB |
++---------------------+
+| mytable             |
+| schema_migrations   |
++---------------------+
+2 rows in set (0.00 sec)
+
+
+```
+

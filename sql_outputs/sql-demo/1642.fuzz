@@ -1,0 +1,14 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS teacher_credentials (
+	`teacher_id` int NOT NULL AUTO_INCREMENT,
+	`username` varchar(255) NULL,
+	`fullname` varchar(255) NULL,
+	`password` varchar(255) NULL,
+	`email` varchar(255) NULL,
+	`birthday` date NULL,
+	`gender` enum('M','F') NULL DEFAULT 'M',
+	`birthday` date NULL,
+	`school` varchar(255) NULL DEFAULT NULL,
+    `password_salt` varchar(40) NULL,
+	PRIMARY KEY (`teacher_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

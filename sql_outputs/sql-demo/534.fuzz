@@ -1,0 +1,12 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE mytable( myid int, title varchar(255) PRIMARY KEY, price decimal(10,2));
+INSERT INTO mytable VALUES(1,'abc1', 100);
+INSERT INTO mytable VALUES(2,'abc2', null);
+INSERT INTO mytable VALUES(3,'abc3', 200);
+INSERT INTO mytable VALUES(4,'abc4', null);
+INSERT INTO mytable VALUES(5,'abc5', null);
+SELECT * FROM mytable ;  
+DROP TABLE mytable;
+DROP DATABASE sampleDB;
+USE MYSQL;
+ALTER TABLE mytable MODIFY price bigint NULL;

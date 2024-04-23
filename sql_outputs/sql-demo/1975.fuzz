@@ -1,0 +1,6 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE VIRTUAL TABLE employees_salary_by_salary BY ENGINE=InnoDB
+ON TABLE employees_salary_by_salary (employee_salary)
+OPTION (max_rows = 10);
+SELECT employee_salary + 10000 FROM employees_salary_by_salary WHERE employee_salary > 20000;
+DROP DATABASE IF EXISTS sampleDB;

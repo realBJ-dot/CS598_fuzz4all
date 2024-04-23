@@ -1,0 +1,7 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS Mutated;
+DROP TABLE IF EXISTS StudentsMutated;
+DROP TABLE IF EXISTS StudentsMutatedBy;
+
+ 
+

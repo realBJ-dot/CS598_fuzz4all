@@ -1,0 +1,35 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+	CREATE TABLE IF NOT EXISTS Users(
+	UserId INT NOT NULL PRIMARY KEY,
+	Userpass VARCHAR(20),
+	UserRole VARCHAR(10),
+	UserType BIT(1) DEFAULT 1
+);
+	CREATE TABLE IF NOT EXISTS UsersPermission(
+	UserId INT NOT NULL,
+	RoleId INT NOT NULL,
+	UserRole varchar(5),
+	Primary Column UserId INT NOT NULL,
+	Primary Column RoleId INT NOT NULL,
+	Foreign Key UserId(UserId),
+	Foreign Key RoleId(RoleId),
+	FOREIGN Key UserId(UserId) UNIQUE,
+	FOREIGN Key RoleId(RoleId) UNIQUE
+);
+	DESCRIBE Users;
+	DESCRIBE UsersPermission;
+-- Please add a second table called 'admin'. Create, then modify, and drop two views.
+CREATE TABLE IF NOT EXISTS adminusers(
+	UserId INT NOT NULL PRIMARY KEY,
+	Admin BIT(1) DEFAULT true
+);
+
+ 
+ALTER TABLE adminusers ADD PRIMARY KEY(UserId, AdminUsers);
+DESCRIBE adminusers;
+CREATE VIEW Users_Admin AS SELECT * FROM 'adminusers' JOIN UsersPermission on UsersPermission.UserId = UserPermission.UserId AND UsersPermission.RoleID = AdminPermission.RoleID;
+DESCRIBE Users_Admin;
+CREATE VIEW Users_AdminPermission AS SELECT * FROM 'adminusers' JOIN UsersPermission on UsersPermission.UserId = AdminPermission.UserId AND UsersPermission.RoleId = AdminPermission.RoleId;
+DESCRIBE Users_AdminPermission;
+/*
+Finally, update the Views in the first query to display the

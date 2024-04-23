@@ -1,0 +1,11 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- The mutation algorithm you will be using will only
+-- work if all the rows match the condition on insert.
+CREATE TABLE IF NOT EXISTS human (id INT NOT NULL AUTO_INCREMENT, name VARCHAR(200) not null, primary key (id)) ENGINE=Memory;
+INSERT into human (id, name) VALUES(1, "<NAME>");
+UPDATE human SET name='<NAME>';
+
+ 
+DROP TABLE human USE NAMES sampleDB;
+
+DROP DATABASE sampleDB;

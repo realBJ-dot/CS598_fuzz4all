@@ -1,0 +1,6 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP DATABASE sampleDB;
+--
+-- Please replace: sampleDB with whatever you will need for the assignment.
+--
+CREATE DATABASE IF NOT EXISTS alex_db;

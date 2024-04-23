@@ -1,0 +1,7 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS employee ( `EmpID` INT(4) NOT NULL AUTO_INCREMENT, `EmpName` TEXT NOT NULL, `Designation` TEXT NOT NULL, `Salary` DECIMAL(10, 4), KEY (`EmpID`));
+INSERT INTO employee (`EmpID`, `EmpName`, `Designation`, `Salary`) VALUES ('15', '<NAME>', 'Accountant', '2000');
+UPDATE employee
+SET salary = salary * 250;
+SELECT * FROM employee;
+DROP TABLE IF EXISTS employee CASCADE;

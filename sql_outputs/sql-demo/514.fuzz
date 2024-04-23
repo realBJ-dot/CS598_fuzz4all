@@ -1,0 +1,23 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+INSERT INTO mytable VALUES (1,'abc');
+INSERT INTO mytable VALUES (2,'abc');
+SELECT distinct myid FROM mytable ;
+DROP TABLE mytable;
+DROP DATABASE sampleDB;
+
+SELECT * FROM mysql.version();
+
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE mytable
+(
+    id INT(6) UNSIGNED AUTO_INCREMENT,
+    name CHAR(200 ) DEFAULT NULL,
+    PRIMARY KEY(id)
+);
+
+START TRANSACTION;
+    INSERT INTO mytable VALUES (1, 'firstname');
+ROLLBACK;
+DROP TABLE mytable;
+DROP DATABASE sampleDB;

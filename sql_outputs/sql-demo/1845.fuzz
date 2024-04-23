@@ -1,0 +1,14 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE employee(name char(5));
+CREATE TABLE project(name char(5));
+ALTER TABLE project ADD CONSTRAINT fk_EMPLOYEE UNIQUE KEY (name, emp);
+DROP TABLE IF EXISTS project2;
+CREATE TABLE project2(name char(5));
+ALTER TABLE project2 ADD CONSTRAINT fk_EMPLOYEE UNIQUE KEY (name, emp);
+-- Drop all tables.
+DROP TABLE country;
+DROP TABLE continent;
+-- Use schema.sql script in the sampleDB database folder and execute to create the schema.
+
+-- Please create an efficient query which uses the appropriate table names, column names and tables. Try to use the where clause when possible.
+SELECT * FROM employee p1 INNER JOIN employee p2 ON p1.name = p2.name where emp_id in (

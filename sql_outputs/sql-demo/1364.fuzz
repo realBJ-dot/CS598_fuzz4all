@@ -1,0 +1,29 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ALTER TABLE book MODIFY COLUMN book_price float;
+ALTER TABLE book MODIFY COLUMN book_publication_date text;
+ALTER TABLE book MODIFY COLUMN book_isbn INT(4);
+ALTER TABLE book MODIFY COLUMN book_publication_date VARCHAR(11);
+
+SELECT * FROM book WHERE book_price = 6 AND LENGTH(book_publication_date) = 6;  
+SELECT * FROM book WHERE LENGTH(book_publication_date) = 6 AND book_price = 14;  
+SELECT * FROM book WHERE book_isbn <= 5;  
+SELECT * FROM book WHERE book_price >= 15 AND LENGTH(book_publication_date) = 9;  
+SELECT * FROM book WHERE LENGTH(book_publication_date) < 6 AND book_isbn >= 7 ORDER BY book_title DESC;  
+SELECT * FROM book WHERE LENGTH(book_publication_date) < 6 ORDER BY book_title DESC;  
+SELECT * FROM book WHERE book_price >= 15 AND LENGTH(book_publication_date) = 9 ORDER BY book_title;  
+SELECT * FROM book WHERE LENGTH(book_publication_date) < 6 AND LENGTH(book_isbn) = 5 ORDER BY book_id;  
+
+
+ 
+UPDATE book SET book_isbn = 1000 ORDER BY LENGTH(book_publication_date);
+UPDATE book SET book_isbn = 1001;
+UPDATE book SET book_isbn = 1002, book_price = 100;
+SELECT * FROM book WHERE book_isbn IN (1001,1002);
+DROP TABLE book;
+DROP DATABASE sampleDB;
+
+ 
+DROP DATABASE IF EXISTS `sampleDB`;
+CREATE DATABASE `sampleDB`;
+DROP TABLE IF EXISTS `sampleDB`.`book`;
+DELETE

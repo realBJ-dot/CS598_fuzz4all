@@ -1,0 +1,16 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE `account` (
+  `ID` INT NOT NULL AUTO_INCREMENT,
+  `name` INT NOT NULL,
+  `balance` INT NOT NULL,
+  PRIMARY KEY (`ID`)
+);
+
+INSERT INTO `contact` (first_name, last_name, email_address, number_phone) VALUES (1, 'Abdul', '<EMAIL>', 6222);
+INSERT INTO `contact` (first_name, last_name, email_address, number_phone) VALUES (2, '<NAME>', '<EMAIL>', 6086);
+INSERT INTO `contact` (first_name, last_name, email_address, number_phone) VALUES (3, '<NAME> ', '<EMAIL>', 8456);
+INSERT INTO `account` (`ID`, `name`, `balance`) VALUES (1, '<NAME>', 1500);
+INSERT INTO `account` (`ID`, `name`, `balance`) VALUES (3, 'Amelia', 1000);
+INSERT INTO `account` (`ID`, `name`, `balance`) VALUES (2, 'Vidya', 2000);
+INSERT INTO `account` (`ID`, `name`, `balance`) VALUES (5, 'Jade', 500);
+INSERT INTO `account` (`ID`, `name`, `balance`) VALUES (6, 'Kay', 30000);

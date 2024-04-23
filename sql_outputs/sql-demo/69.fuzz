@@ -1,24 +1,4 @@
-USE sampleDB;
-ALTER TABLE stock
-ADD COLUMN name VARCHAR(24) DEFAULT 'N/A' AFTER stock_code;
-ALTER TABLE stock
-ADD COLUMN expiry_date DATE DEFAULT '2019-01-19' AFTER stock_code;
-ALTER TABLE orders2
-ADD COLUMN description VARCHAR(672) DEFAULT 'N/A' AFTER storeID;
-ALTER TABLE orders2
-ADD COLUMN expiry_date DATE DEFAULT '2019-01-19';
-EXEC insert_into_table
-UPDATE stock
-SET name = 'Tiger'
-WHERE stock_code = 'TW';
-UPDATE stock
-SET expiry_date = '2017-12-12';
-UPDATE orders2
-SET description = 'Order from Tampines and the Prairies', expiry_date = '2019-03-14';
-EXEC insert_into_table
-INSERT INTO orders2 (date, quantity, customerID, storeID)
-VALUES ('2018-04-14', 12, 1000, 300),
-       ('2018-04-16', 24, 1000, 400);
-EXEC insert_into_table
-UPDATE orders2
-SET description = 'Order from Barrow', expiry_date = '2019
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users(username char(20) PRIMARY KEY, FirstName VARCHAR(30)) ENGINE=InnoDB;
+INSERT INTO Users(username,Firstname) VALUES('Test','Test'),('Admin','Admin'),('Guest','Guest'),('Super','Super');
+ 

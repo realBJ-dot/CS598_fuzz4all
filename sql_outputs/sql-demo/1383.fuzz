@@ -1,0 +1,59 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE sampleTable;
+DROP TABLE user_table;
+CREATE TABLE IF NOT EXISTS user_table(
+ user_id INT AUTO_INCREMENT PRIMARY KEY,
+ user_name text,
+ user_email text,
+ user_password text,  
+ user_age int
+);
+CREATE TABLE IF NOT EXISTS test_table(
+ test_id INT AUTO_INCREMENT PRIMARY KEY,
+ test_col text
+);
+DROP TABLE test_table;
+-- Please create a large, complex, semantically equivalent program that would read, save, update, use, delete, sort and count large amounts of data.
+CREATE TABLE test (
+ test_id INT NOT NULL PRIMARY KEY GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1),
+ category text,
+ test_number smallint,
+ test_string text,
+ test_text text,
+ test_date date,
+ test_time time
+);
+CREATE TABLE products (
+ product_id VARCHAR(10) UNSIGNED NOT NULL PRIMARY KEY GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1) UNIQUE,
+ product_name text,
+ product_price DECIMAL(10,2)
+);
+CREATE TABLE users (
+ user_name TEXT(255) UNIQUE NOT NULL PRIMARY KEY,
+ user_address text,
+ user_city text,
+ user_telephone CHAR(20) UNIQUE
+);
+-- Please create a new table called comments and fill it with data to allow you to sort/count the rows in the table.
+CREATE TABLE comments (
+ comment_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+ user_id INT unsigned,
+ comment_body text,
+ comment_date VARCHAR(10),
+ FOREIGN KEY(user_id) REFERENCES users(user_id)
+);
+CREATE TABLE orders (
+ order_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+ order_date VARCHAR(10),
+ user_id INT unsigned,
+ total_amount DECIMAL(10,2)
+);
+DROP TABLE comments;
+DROP TABLE orders;
+DROP TABLE products;
+DROP TABLE users;
+DROP TABLE test;
+DROP DATABASE sampleDB;
+
+CREATE TABLE IF NOT EXISTS user_table(
+ user_id INT AUTO_INCREMENT PRIMARY KEY,

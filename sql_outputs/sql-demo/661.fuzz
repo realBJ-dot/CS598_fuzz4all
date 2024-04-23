@@ -1,0 +1,42 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS Student;
+CREATE TABLE Student (FirstName VARCHAR(20), LastName VARCHAR(20), Grade INT);
+INSERT INTO Student (FirstName, LastName, Grade) VALUES ('John', 'Smith', 8);
+INSERT INTO Student (FirstName, LastName, Grade) VALUES ('Jane', 'Lee', 9);
+SELECT * FROM Student;
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+
+CREATE TABLE Student (
+ID INT AUTO_INCREMENT PRIMARY KEY,
+FirstName VARCHAR(20) NOT NULL,
+LastName VARCHAR(20),
+Grade INT NOT NULL);
+
+INSERT INTO Student (FirstName, LastName, Grade) VALUES ('John', 'Smith', 8);
+INSERT INTO Student (FirstName, LastName, Grade) VALUES ('Jane', 'Lee', 9);
+
+
+DROP TABLE IF EXISTS Student;
+CREATE TABLE Student (
+ID MEDIUMINT,	--  主键
+FirstName VARCHAR(30) NOT NULL,	--  索引定义范围：字符长度为30， 存储唯一值:
+LastName VARCHAR(30),	--  索引定义范围：字符长度为30, 存储唯一值:
+Grade INT NOT NULL);	--  索引定义范围：0-64位数字，存储整数类型值
+
+
+INSERT INTO Student (id, FirstName, LastName, Grade) VALUES (100, 'John'	,'Smith', 8);
+INSERT INTO Student (id, FirstName, LastName, Grade) VALUES (100, 'Jane',	'Lee', 9);
+
+DROP TABLE IF EXISTS Student;
+CREATE TABLE Student (
+ID INTEGER PRIMARY KEY,
+FirstName VARCHAR(30) NOT NULL,
+LastName VARCHAR(30),
+Grade INT NOT NULL);
+
+INSERT INTO Student (id, FirstName, LastName, Grade) VALUES(100, 'John',	'Smith',8);
+INSERT INTO Student (id, FirstName, LastName, Grade) VALUES(100, 'Jane',	'Lee',9);
+
+
+DROP TABLE IF EXISTS Student;

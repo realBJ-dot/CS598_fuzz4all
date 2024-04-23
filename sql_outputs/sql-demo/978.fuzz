@@ -1,0 +1,29 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE employees ( id INT AUTO_INCREMENT, emp_no INTEGER PRIMARY KEY, fname VARCHAR(20) NOT NULL, mname VARCHAR(30), lname VARCHAR(20), sex CHAR(1), hire_date DATE);
+INSERT INTO employees (emp_no, fname, mname, lname, sex, hire_date) VALUES (1, 'Jacob', 'Joe', 'Blankenship', 'F', '1970-01-01'),
+                                             (2, 'Paul', 'William', 'Jones', 'M', '1980-01-01'),
+                                             (3, 'Jon', 'Paul', 'Blankenship', 'M', '1992-01-01');
+SELECT * FROM employees;
+
+SELECT first_name, last_name FROM employees;
+SELECT * FROM salaries;
+
+
+DROP TABLE IF EXISTS salary;
+
+CREATE TABLE salary(emp_no INT, salary INT NOT NULL);
+use sampleDB;
+CREATE TABLE dept(dept_no INT, dept_name VARCHAR(10));
+SHOW tables;
+/* 0. Please create a fully mutated database program with employees, salaries, and dept.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE employees ( id INT AUTO_INCREMENT, emp_no INTEGER PRIMARY KEY, fname VARCHAR(20) NOT NULL, mname VARCHAR(30), lname VARCHAR(20), sex CHAR(1), hire_date DATE);
+CREATE TABLE salaries ( salary INT AUTO_INCREMENT);
+CREATE TABLE dept (dept_no INT, dept_name VARCHAR(10));
+INSERT INTO employees (emp_no, fname, mname, lname, sex, hire_date) VALUES (1, 'Jacob', 'Joe', 'Blankenship', 'F', '1970-01-01'),
+                                             (2, 'Paul', 'William', 'Jones', 'M', '1980-01-01'),
+                                             (3, 'Jon', 'Paul', 'Blankenship', 'M', '1992-01-01');
+SHOW tables;
+INSERT INTO dept (dept_no, dept_name) VALUES (1, 'Software');
+INSERT INTO dept (dept_no, dept_name) VALUES (2, 'Sales');
+INSERT INTO dept (dept_no, dept_name

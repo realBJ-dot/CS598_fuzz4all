@@ -1,0 +1,19 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `sampleDB`.`teachers`;
+CREATE TABLE `sampleDB`.`teachers` (
+    `id` SERIAL NOT NULL AUTO_INCREMENT,
+    `name` CHAR(255) NOT NULL,
+    `code` CHAR(20 NOT NULL),
+    `password` varchar(255) NOT NULL,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- Please create a SQL query to create a foreign key constraint in your tables. A sample key of the 'teachers' table and related key of the 'attendance' table would be 'id' and 'teacherCode'. The code must be something like `CONSTRAINT fkTeacherCode FOREIGN KEY(teacherCode) REFERENCES teachers(teacherCode)`.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `sampleDB`.`teachers`;
+CREATE TABLE `sampleDB`.`teachers` (
+    `id` SERIAL NOT NULL AUTO_INCREMENT,
+    `name` CHAR(255) NOT NULL,
+    `code` CHAR(20 NOT NULL),
+    `password` varchar(255) NOT NULL,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

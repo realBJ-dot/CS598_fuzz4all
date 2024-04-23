@@ -1,0 +1,22 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+INSERT INTO Contact(first_name, last_name, email_address,number_phone) values(44,55,686478628634232434,120345324);
+
+insert into Contact ( first_name, last_name, email_address, gender, date_of_birth, nationality, is_under18) values
+
+  ('Sophia', 'Angelini', '<EMAIL>', 'female', '1972-10-20', 'Italian', '18'),
+  ('Isadora', 'Nerissa', '<EMAIL>', 'female', '1971-03-28', 'Polish', '17'),
+  ('Leda', 'Dorota', '<EMAIL>', 'female','2002-06-06', 'Polish', '20'),
+  ('Katerina', 'Maksyma', '<EMAIL>', 'female', '2002-05-13','Norwegian', '18'),
+  ('Sergey', 'Tal', '<EMAIL>', 'female','2004-11-15', 'Russian', '19');
+
+-- Please perform the following query to see that only 3 rows were inserted, the ones with 18- and 19-years of age.
+SELECT * FROM Contact;
+ 
+DROP DATABASE IF EXISTS sampleDB;
+
+CREATE USER IF NOT EXISTS testuser@localhost IDENTIFIED BY 'testtesttest';
+GRANT GRANT ALL PRIVILEGES ON sampleDB.* TO testuser;
+FLUSH PRIVILEGES;
+DROP USER testuser@localhost;
+
+DROP DATABASE IF EXISTS sampleDB;

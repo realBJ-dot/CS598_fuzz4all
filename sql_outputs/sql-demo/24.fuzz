@@ -1,7 +1,2 @@
-USE sampleDB;
-INSERT INTO comments(author, content, post) VALUES("Jane", "Hello World!", 5);
-INSERT INTO comments(author, content, post) VALUES("Anja", "Greetings", 10);
-SELECT * FROM comments;
-
-*-- SQL statement to insert and read data. --*
-
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE Users;

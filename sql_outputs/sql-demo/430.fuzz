@@ -1,0 +1,9 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS sample("age" int);
+INSERT INTO sample(age) VALUES(30), (40), (50), (60), (70), (80);
+#
+# Please insert new data to table sample.
+INSERT INTO sample(age) VALUES(90);
+UPDATE sample SET age = 110;
+DELETE FROM sample WHERE age = 90;
+SELECT age, (SELECT age FROM sample) AS average FROM sample;

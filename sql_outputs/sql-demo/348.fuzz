@@ -1,0 +1,21 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users(Id INT NOT NULL, FirstName varchar(128), LastName varchar(128));
+INSERT INTO Users(FirstName,LastName) VALUES ('John', 'Doe');
+INSERT INTO Users(FirstName,LastName) VALUES ('Joe', 'Bird'), ('Tim', 'Smith');
+SELECT * FROM Users;
+DROP DATABASE IF EXISTS sampleDB;
+-- Make sure you test a few queries in a script file
+ 
+#-- Please create a document for the previous query
+ 
+#-- Create a script with a different query, write the same query with different parameters.
+ 
+
+ 
+
+SELECT USERSNAME, COUNT(*) FROM Users
+WHERE USERSNAME = "John" AND USERSNAME = "Joe"
+GROUP BY UsersName HAVING SUM(COUNT(DISTINCT UsersName))>5 AND SUM(COUNT(DISTINCT UsersName))>10;
+
+
+ 

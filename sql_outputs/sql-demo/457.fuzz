@@ -1,0 +1,19 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE mytable(
+  id int auto_increment primary key,
+  name varchar(50),
+  title varchar(50),
+  address text,
+  telephone text
+)ENGINE=InnoDB;
+ 
+USE sampleDB;
+SELECT myFunction();
+SELECT myVar;
+ 
+USE sampleDB;
+DELETE FROM mytable; -- Use a delete statement which uses one of each of the three MySQL commands and what they are used within a delete statement should give familiar result.
+ 
+USE sampleDB;
+UPDATE mytable; -- Use an update statement which uses one of each of the three MySQL commands and what they are used within an update statement should give familiar result.
+ 

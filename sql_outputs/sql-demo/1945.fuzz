@@ -1,0 +1,34 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employees_salary_by_salary;
+CREATE TABLE employees_salary_by_salary (
+    employee_salary	DECIMAL(18,0),
+    emp_salary		decimal(18,0),
+    PRIMARY KEY (employee_salary, emp_salary));
+UPDATE employees_salary_by_salary SET employee_salary = employee_salary + 5000;
+SELECT employee_salary + 4000 FROM employees_salary_by_salary;
+-- Please create a complex database using MySQL and show some results
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employees_salary_by_salary;
+CREATE TABLE employees_salary_by_salary (
+    employee_salary	decimal(18,0),
+    emp_salary		DECIMAL(18,0),
+    PRIMARY KEY (employee_salary, emp_salary));
+UPDATE employees_salary_by_salary SET emp_salary = emp_salary + 15000;
+DELETE FROM employees_salary_by_salary
+	WHERE employee_salary = 15000;
+INSERT INTO employees_salary_by_salary (employee_salary, emp_salary)
+	VALUES (20000, 20000), (22000, 22000), (23500, 23500), (25000, 25000);
+SELECT employee_salary, emp_salary FROM employees_salary_by_salary
+	WHERE employee_salary < 24000;
+-- Please try to create some complex database using MySQL
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employees_salary_by_salary;
+CREATE TABLE employees_salary_by_salary (
+    employee_salary	decimal(18,0),
+    emp_salary		DECIMAL(18,0),
+    PRIMARY KEY (employee_salary, emp_salary));
+UPDATE employees_salary_by_salary SET emp_salary = emp_salary + 30000;
+SELECT employee_salary, emp_salary FROM employees_salary_by_salary
+	WHERE employee_salary < 30000;
+-- Please try to create some very complex database using MySQL
+CREATE

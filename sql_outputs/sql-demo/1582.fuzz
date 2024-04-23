@@ -1,0 +1,27 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+INSERT INTO `customers` (`id`, `customerID`, `firstName`, `lastName`, `isFullTimeEmployee`, `isLead`, `isVIP`)
+VALUES (115, 125, 'Elaine', 'Munoz', 1, 1, 0);
+INSERT INTO `customers` (`id`, `customerID`, `firstName`, `lastName`, `isFullTimeEmployee`, `isLead`, `isVIP`)
+VALUES (445, 567, 'Amy', 'Crowe', 1, 1, 0);
+INSERT INTO `customers` (`id`, `customerID`, `firstName`, `lastName`, `isFullTimeEmployee`, `isLead`, `isVIP`)
+VALUES (345, 198, 'Peter', 'Park', 0, 0, 1);
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `sampleDB`.`orders`;
+CREATE TABLE IF NOT EXISTS `sampleDB`.`orders` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `orderID` int NOT NULL,
+  `customerID` int NOT NULL,
+  `employeeID` int,
+  `orderDate` date NOT NULL,
+  `orderTotal` decimal(10, 2) DEFAULT NULL,
+  `orderQty` int NOT NULL,
+  `orderStatus` varchar(20) default NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `customers_customerID` (`customerID`),
+  FOREIGN KEY (`customerID`) REFERENCES `customers` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+INSERT INTO `sampleDB`.`customers` (`id`, `customerID`, `firstName`, `lastName`, `isFullTimeEmployee`, `isLead`, `isVIP`);
+INSERT INTO `sampleDB`.`customers` (`id`, `customerID`, `firstName`, `lastName`, `isFullTimeEmployee`, `isLead`, `isVIP`);
+INSERT INTO `sampleDB`.`customers` (`id`, `customerID`, `firstName`, `lastName`, `isFullTimeEmployee`, `isLead`, `isVIP`);
+CREATE DATABASE IF

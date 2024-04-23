@@ -1,0 +1,7 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- Please create a simple CREATE DATABASE statement for the sake of the example shown in MySQL
+CREATE DATABASE sampleDB; USE sampleDB
+create table IF NOT EXISTS cities(id, country varchar(32) NOT NULL, city varchar(32) NOT NULL);
+insert into cities values(1, 'Canada', 'Ottawa');
+insert into cities values(2, 'Canada', 'Toronto');
+insert into cities values(3, 'Canada', 'Bombay');

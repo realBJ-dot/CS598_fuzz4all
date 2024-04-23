@@ -1,0 +1,22 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `person`;
+DROP TABLE IF EXISTS `course`;
+CREATE TABLE IF NOT EXISTS `person` (
+`id` int(11) NOT NULL AUTO_INCREMENT,
+`age` int(11) NOT NULL,
+`name` varchar(50) NULL DEFAULT NULL,
+PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE IF NOT EXISTS `course` (
+`id` int(11) NOT NULL AUTO_INCREMENT,
+`shortCode` varchar(50) DEFAULT NULL,
+`courseName` varchar(50) DEFAULT NULL,
+`courseDuration` varchar(255) DEFAULT NULL,
+`courseDescription` varchar(255) DEFAULT NULL,
+`courseTeacher` varchar(255) DEFAULT NULL,
+```
+This will create a  table called `person` and will not create a table called `course`. The data type and size of the `name` column in the `person` table will be different from the other two tables.
+
+```php
+?>
+```

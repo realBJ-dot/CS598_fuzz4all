@@ -1,0 +1,18 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employee;
+CREATE TABLE employee(id INT PRIMARY KEY AUTO_INCREMENT, name varchar(10));
+DELETE FROM employee;
+
+INSERT INTO employee(name) VALUES ('<NAME>');
+INSERT INTO employee(name) VALUES ('<NAME>');
+INSERT INTO employee(name) VALUES ('<NAME>');
+
+DROP TABLE IF EXISTS employee;
+CREATE TABLE employee ( id int, name varchar(10));
+INSERT INTO employee ( name ) VALUES ('<NAME>');
+INSERT INTO employee ( name ) VALUES ('<NAME>');
+INSERT INTO employee ( name ) VALUES ('<NAME>');
+INSERT INTO employee ( name ) VALUES ('<NAME>');
+INSERT INTO employee ( name ) VALUES ('<NAME>');
+
+DROP TABLE IF EXISTS employee;

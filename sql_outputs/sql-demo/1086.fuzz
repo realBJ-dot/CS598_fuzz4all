@@ -1,0 +1,8 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS table1 (id INT(11));
+INSERT INTO table1 (id) VALUES (1);
+INSERT INTO table1 (id) VALUES (19);
+INSERT INTO table1 (id) VALUES (9);
+CREATE TABLE IF NOT EXISTS table2 (id INT(11), date INT(11));
+INSERT INTO table2 (id, date) VALUES (0,0);
+INSERT INTO table2 (id, date) VALUES

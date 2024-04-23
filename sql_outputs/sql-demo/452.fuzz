@@ -1,0 +1,20 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+INSERT INTO mytable(b,c,d,e)
+VALUES
+   ('myval','myval',null,null),
+   ('myval',5,'mydat',null);
+INSERT INTO mytable(b,c) VALUES ('b','c');INSERT INTO mytable(b,c) VALUES ('b', 'e');
+SELECT e FROM mytable;
+DROP TABLE mytable;
+DROP DATABASE IF EXISTS sampleDB;
+ 
+ 
+CREATE DATABASE sampleDB DEFAULT CHARACTER SET utf8; USE sampleDB;
+BEGIN
+   INSERT INTO mytable(b,c) VALUES ('b','e');
+   COMMIT;
+END;
+ 
+ 
+ 
+ 

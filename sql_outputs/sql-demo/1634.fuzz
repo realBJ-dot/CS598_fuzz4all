@@ -1,0 +1,26 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `sampleDB`.`courses`;
+ CREATE TABLE `sampleDB`.`courses` (
+	`id` serial NOT NULL AUTO_INCREMENT,
+	`courseName` varchar(30) NOT NULL UNIQUE,
+	PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `sampleDB`.`teachers`;
+CREATE TABLE `sampleDB`.`teachers` (
+	`id` serial NOT NULL AUTO_INCREMENT,
+	`teacherName` varchar(30) NOT NULL UNIQUE,
+	PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `sampleDB`.`student_course`;
+DROP TABLE IF EXISTS `sampleDB`.`course_teacher`;
+CREATE TABLE `sampleDB`.`student_course` (
+	`studentId` SERIAL NOT NULL FOREIGN KEY REFERENCES `sampleDB`.`students`("id"),
+	`courseId` SERIAL NOT NULL FOREIGN KEY REFERENCES `sampleDB`.`courses`("id"),
+	CONSTRAINT `fk1` FOREIGN KEY (`studentId`) REFERENCES `sampleDB`.`students` (`id`),
+	CONSTRAINT `fk2` FOREIGN KEY (`courseId`) REFERENCES `sampleDB`.`courses` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/* Please create a short query which uses all four tables. Be sure to use ENGINE=InnoDB. You should only use sampleDB as the database and assume no other table exist. You need to create new tables to perform operations

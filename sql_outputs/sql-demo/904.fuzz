@@ -1,0 +1,8 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS user (id INT, "name" VARCHAR, "last-name" VARCHAR, phone CHAR);
+INSERT INTO user (id, "name", "last-name", phone) VALUES (10, 'John', 'Smith', '989-098-098');
+SELECT id, "name", "last-name", phone, "name" AS "name-reverse"
+FROM user
+WHERE "name"='John';
+DROP TABLE IF EXISTS user;
+DROP DATABASE IF EXISTS sampleDB;

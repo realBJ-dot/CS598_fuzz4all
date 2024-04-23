@@ -1,0 +1,37 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DO $$
+CREATE TABLE mytable(
+   a INT PRIMARY KEY AUTO_INCREMENT,
+    b VARCHAR(30),
+    c INT,
+    d TEXT,
+    e DATE
+)ENGINE=myISAM;
+commit;
+DO $$;
+DROP TABLE IF EXISTS mytable CASCADE;
+commit;
+ 
+
+SELECT * FROM mytable; -- Your answer should be: SELECT * FROM mytable WHERE b = 'My Table Value 1';
+commit;
+INSERT INTO mytable (a, b, c, d, e) VALUES(1, 'My Table Value 1', 1, '"My Table Value 2"', sysdate());
+commit;
+ 
+SELECT * FROM mytable ORDER BY c;
+SELECT * FROM mytable WHERE a = 'My Table Value 1';
+ 
+SELECT DISTINCT name FROM mytable ORDER BY c;
+
+ 
+SELECT * FROM mytable WHERE c=1;
+SELECT b, c, d FROM mytable;
+SELECT b, count(*) OVER() FROM mytable;
+ 
+USE sampleDB;
+SELECT IF(b='a column', c, 0), IF(b='a column', e, 0) FROM mytable LEFT JOIN anothertable ON a=c UNION SELECT b, d FROM mytable LEFT JOIN anothertable ON a=c INNER JOIN anothertable ON a=0;
+COMMIT;
+INSERT INTO mytable (a, b, d) VALUES(7, 'Some', "Some Values for D");
+INSERT INTO mytable (a, b, d) VALUES(7, 'Some', "Some Values 2 for D");
+commit;
+/* You have a total of three queries

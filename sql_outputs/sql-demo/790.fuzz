@@ -1,0 +1,2 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ALTER TABLE IF EXISTS `FirstAndSecondTable` ADD FOREIGN KEY (`id`) REFERENCES `SomeOtherTable`;

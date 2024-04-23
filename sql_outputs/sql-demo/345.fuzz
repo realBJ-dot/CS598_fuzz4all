@@ -1,0 +1,6 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE users (id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT, first_name varchar(255), last_name varchar(255));
+ALTER TABLE users ADD COLUMN first_name_lowercase varchar(255);
+UPDATE users SET first_name_lowercase = first_name where first_name in ('john', 'joe');
+SELECT * FROM users;
+DROP DATABASE IF EXISTS sampleDB;

@@ -1,0 +1,30 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ALTER TABLE contact ADD phone int(6);
+ALTER TABLE contact ADD unique(`phone`);
+ALTER TABLE contact MODIFY email_address varchar(15);
+SELECT * FROM contact;
+DROP DATABASE IF EXISTS sampleDB;
+INSERT INTO contact(name, email_address, `phone_number`) VALUES ('Eddie', '<EMAIL>', '6571981988');
+INSERT INTO contact(name, email_address, `phone_number`) VALUES ('Nana', '<EMAIL>', '8571981999');
+INSERT INTO contact(name, email_address, `phone_number`) VALUES ('Robert', '<EMAIL>', '9071981985');
+INSERT INTO contact(name, email_address, `phone_number`) VALUES ('Jennifer', '<EMAIL>', '9275688866');
+INSERT INTO contact(name, email_address, `phone_number`) VALUES ('Ron', '<EMAIL>', '6571981982');
+SELECT * FROM contact;
+DROP DATABASE IF EXISTS sampleDB;
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE employee
+(
+EMPID INT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+NAME VARCHAR(100) NOT NULL,
+TITLE INT(3) NOT NULL,
+SALARY FLOAT NOT NULL,
+DEPTID INT(4) NULL,
+LASTPAY DATE,
+PRIMARY KEY(EMPID)
+);
+INSERT INTO employee VALUES(null,'<NAME>','Sales Representative',100000,'3','2014-11-21');
+INSERT INTO employee VALUES(null,'<NAME>','Sales Representative',110000,'1','2000-05-30');
+INSERT INTO employee VALUES(null,'<NAME>','Salesperson',100000,'3','2014-12-02');
+INSERT INTO employee VALUES(null,'<NAME>','Sales Representative',80000,'3','2009-03-20');
+INSERT INTO employee VALUES(null,'<NAME>','Sales Representative',70000,'3','2013-05-31');
+INSERT INTO employee VALUES(null

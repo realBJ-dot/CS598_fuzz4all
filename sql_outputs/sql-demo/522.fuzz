@@ -1,0 +1,6 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ 
+ 
+ 
+SELECT myid, title, price FROM mytable ;
+DROP DATABASE sampleDB;

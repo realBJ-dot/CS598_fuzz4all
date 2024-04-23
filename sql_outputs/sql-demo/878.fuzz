@@ -1,0 +1,6 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS person;
+CREATE TABLE person (id INT PRIMARY KEY, name VARCHAR(200), age INT);
+INSERT INTO person (id, name, age) VALUES(5, '<NAME>', 27);
+INSERT INTO person (id, name, age) VALUES(6, '<NAME>', 49);
+SELECT * FROM person;

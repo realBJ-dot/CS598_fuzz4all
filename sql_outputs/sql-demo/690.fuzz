@@ -1,0 +1,7 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS Student;
+CREATE TABLE Student (First_Name CHAR(20), Last_Name CHAR(20), Grade INT);
+INSERT INTO Student VALUES ('John', 'Smith', 8);
+INSERT INTO Student VALUES ('Jane', 'Lee', 9);
+INSERT INTO Student VALUES ('Tom', 'Stark', 5);
+

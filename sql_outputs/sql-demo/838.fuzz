@@ -1,0 +1,3 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- Please create another mutated program that inserts a record into the sampleDB table
+CREATE TABLE IF NOT EXISTS person (ID INT PRIMARY KEY, name VARCHAR(200), birthdate DATE, a_long_text TEXT, a_long_long_text TEXT, some_binary LONGBINARY);

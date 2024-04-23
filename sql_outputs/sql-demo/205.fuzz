@@ -1,0 +1,9 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+USE sampleDB2;
+DROP TABLE IF EXISTS table10931;
+CREATE TABLE table10931 (col1 INT(10));
+insert into table10931 values (1);
+insert into table10931 values (2);
+ 
+USE sampleDB;
+SHOW DATABASES;

@@ -1,0 +1,38 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS users;
+CREATE TABLE IF NOT EXISTS users(
+	userId INT DEFAULT 1,
+	name VARCHAR(20) DEFAULT 'root'
+);
+DESCRIBE users;
+DROP TABLE IF EXISTS login;
+CREATE TABLE IF NOT EXISTS login (
+	email VARCHAR(40) DEFAULT '<EMAIL>',
+	userId INT DEFAULT 1
+);
+DESCRIBE users;
+DROP TABLE IF EXISTS dataTest;
+CREATE TABLE IF NOT EXISTS dataTest (
+	id INT DEFAULT 1,
+	description VARCHAR(100) DEFAULT 'Description',
+	amount DOUBLE
+);
+DESCRIBE users;
+CREATE TABLE IF NOT EXISTS users(
+	userId INT DEFAULT 1,
+	name VARCHAR(20) DEFAULT 'root'
+);
+DESCRIBE users;
+-- Please create a more meaningful program, which is simpler and more complex
+DROP TABLE IF EXISTS users CASCADE;
+CREATE TABLE IF NOT EXISTS users(
+	userId INT DEFAULT 1,
+	name VARCHAR(20) DEFAULT 'root'
+);
+DESCRIBE users;
+DROP TABLE IF EXISTS users CASCADE;
+CREATE TABLE IF NOT EXISTS login (
+	email VARCHAR(25) DEFAULT '<EMAIL>',
+	userId INT DEFAULT 1
+);
+DESCRIBE users;

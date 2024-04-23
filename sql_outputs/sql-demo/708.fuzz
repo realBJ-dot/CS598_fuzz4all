@@ -1,0 +1,19 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS Class;
+CREATE TABLE Class (Class_no INTEGER, Course_no INTEGER );
+INSERT INTO Class (Class_no, Course_no ) VALUES (1000,  1);
+INSERT INTO Class (Class_no, Course_no ) VALUES (1001,  2);
+INSERT INTO Class (Class_no, Course_no ) VALUES (1002,  3);
+INSERT INTO Class (Class_no, Course_no ) VALUES (1004,  4);
+INSERT INTO Class (Class_no, Course_no ) VALUES (1005,  5);
+INSERT INTO Class (Class_no, Course_no ) VALUES (1006,  6);
+INSERT INTO Class (Class_no, Course_no ) VALUES (1007,  7);
+INSERT INTO Class (Class_no, Course_no ) VALUES (1008,  8);
+SELECT
+  Class_no,
+  Course_no
+FROM Class
+WHERE
+  Course_no = 6
+ORDER BY
+  Class_no;

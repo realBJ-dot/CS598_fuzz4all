@@ -1,0 +1,28 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `SecondTable`;
+CREATE TABLE IF NOT EXISTS `SecondTable` ( `id` INT NOT NULL PRIMARY KEY, `data` VARCHAR(300) CHARACTER SET "UTF8");
+ *
+Note that the temporary table and the table do
+-- Please create a semantically equivalent program to the previous version
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `FirstAndSecondTable`;
+CREATE TABLE IF NOT EXISTS `FirstAndSecondTable` ( `id` INT NOT NULL PRIMARY KEY, `data` VARCHAR(300) CHARACTER SET "UTF8", `SecondId` INT NOT NULL, `SecondData` VARCHAR(300) CHARACTER SET "UTF8");
+UPDATE `FirstAndSecondTable` SET `SecondData` = "";
+DROP TABLE IF EXISTS `SecondTable`;
+CREATE TABLE IF NOT EXISTS `SecondTable` ( `id` INT NOT NULL PRIMARY KEY, `data` VARCHAR(300) CHARACTER SET "UTF8");
+*/
+-- Create a new table. Please test that the new table is created and
+-- then truncate it.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `DataForSecondTable`;
+CREATE TABLE IF NOT EXISTS `DataForSecondTable` ( `id` INT NOT NULL PRIMARY KEY, `data` VARCHAR(300) CHARACTER SET "UTF8", `SecondId` INT NOT NULL, `SecondData` VARCHAR(300) CHARACTER SET "UTF8");
+INSERT INTO `DataForSecondTable` (`data`) VALUES ("TEST");
+
+DELETE FROM `DataForSecondTable`;
+DROP TABLE IF EXISTS `DataForSecondTable`;
+DROP TABLE IF EXISTS `SecondTable`;
+DROP TABLE IF EXISTS `FirstAndSecondTable`;
+
+INSERT INTO `FirstAndSecondTable` (`SecondId`, `SecondData`) VALUES (1, "Hello");
+
+SELECT * FROM `DataForSecondTable`;

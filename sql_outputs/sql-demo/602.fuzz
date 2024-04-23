@@ -1,0 +1,33 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS Mutated;
+DROP TABLE IF EXISTS StudentsMutated;
+DROP TABLE IF EXISTS StudentsMutatedBy;
+ 
+CREATE TABLE Mutated (
+id int(10) NOT NULL,
+first varchar(20) NOT NULL,
+last varchar(20) NOT NULL,
+name varchar(50) NOT NULL,
+age int(3) NOT NULL
+) ENGINE=InnoDB;
+INSERT INTO Mutated(id, first, last, name, age) VALUES 
+(1, 'Hilda', 'Kennedy', 'Hilda', 16),
+(2, 'Laura', 'Marshal', 'Laura', 14),
+(3, 'John', 'Hendricks', 'John', 20);
+-- Create the mutated2 table where all information for all students will have a mutation of the mutated data.
+CREATE TABLE Mutated2 (
+id int(10) NOT NULL,
+first varchar(20) NOT NULL,
+last varchar(20) NOT NULL,
+name varchar(50) NOT NULL,
+age int(3) NOT NULL
+) ENGINE=InnoDB;
+INSERT INTO Mutated2(id, first, last, name, age) SELECT id, first, last, name, age FROM `Mutated`;
+ 
+ALTER TABLE Mutated2 ADD CONSTRAINT fk_Student_Mutated FOREIGN KEY (id) REFERENCES Mutated(id) ON DELETE CASCADE;
+ 
+ALTER TABLE Mutated ADD CONSTRAINT FK_Student_Mutated2 FOREIGN KEY (id) REFERENCES Mutated2(id) ON DELETE CASCADE;
+-- Perform operations on the mutated data.
+select * from Mutated2 JOIN Mutated USING (first);
+DROP DATABASE sampleDB;
+exit;

@@ -1,0 +1,27 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- CREATE TABLE ONLY employees;
+-- CREATE TABLE ONLY salaries;
+-- CREATE TABLE employees ( first_name character(10), last_name character(10), department char(3) );
+-- CREATE TABLE salaries ( first_name character(5), last_name character(5), salary int );
+INSERT INTO employees
+
+SELECT DISTINCT first_name, last_name, department
+
+FROM employees, dept_emp
+
+WHERE employees.last_name = dept_emp.emp_last_name
+  AND employees.department = dept_emp.emp_department
+
+ORDER BY last_name, first_name;
+
+-- Drop all tables you created and leave the database alone.  Make sure you drop the database at the end of every operation.
+DROP TABLE IF EXISTS employees;
+DROP TABLE IF EXISTS salaries;
+DROP TABLE IF EXISTS dept_manager;
+DROP TABLE IF EXISTS dept_emp;
+DROP TABLE IF EXISTS dept;
+DROP TABLE IF EXISTS staff;
+DROP TABLE IF EXISTS salaries;
+DROP TABLE IF EXISTS employees;
+DROP DATABASE sampleDB;
+

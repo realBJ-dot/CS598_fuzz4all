@@ -1,0 +1,33 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employee;
+CREATE TABLE employee (id VARCHAR(18) PRIMARY KEY, firstname VARCHAR(30), lastname VARCHAR(30));
+INSERT INTO employee (id, firstname, lastname) VALUES ('MADAM', 'HAYASHI', 'JONES');
+SELECT * FROM employee;
+DROP DATABASE IF EXISTS sampleDB;
+
+
+The first time you query an existing table using MySQL’s standard protocol to retrieve data, and even then, some queries (e.g. reading from an encrypted database file for backup purposes, or data that is generated at the current time, to display on a printed paper) have to be prefixed with a special command. For example, when your database file is stored under the /var/lib directory, this command would work:
+
+/var/lib/mysql/sampleDB/test.dump
+
+This command is not required, as long as you are only interested in the specific table you need to retrieve. This way, even if the tables differ in data format, retrieving only one table is still quite fast.
+
+When you want to change (modify) a table, you can simply drop the existing table, and redo the same modifications by creating a new one. For example, a simple DROP TABLE will not drop rows or perform deletes.
+
+The tables on your live database will not change. It’s more likely to be modified. A more realistic use case would involve that database having to be protected for the moment, which can get extremely time consuming, when changing multiple tables.
+
+The command ‘CREATE TABLE’ is used in the same way, as the TABLE statements of the DDL and DML commands. However, the table does not have to exist in order to execute it. For example, if you enter such query:
+
+ 
+CREATE TABLE employee (
+    id  VARCHAR(18) PRIMARY KEY,
+    firstname   VARCHAR(30),
+    lastname      VARCHAR(30));
+
+You can use the ‘DROP TABLE’ statement as normal.
+
+In MySQL, we can specify that only certain columns (or columns with specified data types) are stored in a table. If not specified, they are stored in the default column-store (the InnoDB table engine). This means that the table can have rows that have only numbers (like the employee table).
+-- MySQL is a relational database management system 
+-- It supports basic read-execute-show-modify-delete (CRUD) of tables. 
+--
+-- MySQL

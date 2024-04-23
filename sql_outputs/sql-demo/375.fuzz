@@ -1,0 +1,28 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users
+(
+    User_id INT INTEGER AUTO_INCREMENT,
+    first_name TEXT,
+    last_name TEXT,
+    password TEXT,
+    PRIMARY KEY (User_id)
+);
+CREATE TABLE Contact
+(
+    User_id INT,
+    Contact_id INT,
+    first_name TEXT,
+    email TEXT,
+    contact_type TEXT,
+    date_creation DATETIME,
+    date_modified DATETIME,
+    PRIMARY KEY (User_id, Contact_id),
+    FOREIGN KEY (User_id) REFERENCES Users (User_id),
+    PRIMARY KEY (Contact_id),
+    FOREIGN KEY(Contact_id) REFERENCES Contact (Contact_id) ON UPDATE SET NULL
+);
+SELECT * FROM Users;
+SELECT * FROM Contact;
+DROP TABLE Users;
+DROP TABLE Contact;
+

@@ -1,0 +1,34 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS book(
+ book_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+ author_id INT NOT NULL,
+ book_title text NOT NULL,
+ book_publisher text,
+ book_publication date,
+ UNIQUE(author_id,book_title),
+ FOREIGN KEY (author_id)
+ REFERENCES author(author_id) ON CHANGE DEFERRED UPDATE
+ book_publication author_id
+);
+INSERT INTO book VALUES(1,1,'A Tale of Two Cities','<NAME>','December 29, 1891','<NAME>');
+INSERT INTO book VALUES(3,2,'A Tale of Two Cities','<NAME>','December 29, 1895',NULL);
+INSERT INTO book VALUES(4,3,'A Tale of Two Cities','<NAME>','January 28, 1904',NULL);
+INSERT INTO book VALUES(5,1,'A Tale of Two Cities','<NAME>','January 28, 1902',NULL);
+CREATE TABLE IF NOT EXISTS author_book(
+ author_id INT NOT NULL,
+ book_id INT NOT NULL,
+ author_book_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+ FOREIGN KEY (author_id)
+ REFERENCES author(author_id) ON DELETE CASCADE,
+ FOREIGN KEY (book_id)
+ REFERENCES book(book_id) ON DELETE CASCADE,
+ UNIQUE(author_id, book_title)
+);
+ 
+INSERT INTO author_book VALUES(2,2,3);
+INSERT INTO author_book VALUES(1,3,4);
+ALTER TABLE author_book MODIFY author_book_id INT(8);
+ALTER TABLE author_book ENGINE=InnoDB;
+DROP TABLE author_book;
+DROP DATABASE sampleDB;
+/* Please create a very short query which uses SQL features in a complex way. Be sure to use ENGINE=InnoDB. You should only use sampleDB as the database and assume no other table exist. You need to create new tables to perform operations. In the

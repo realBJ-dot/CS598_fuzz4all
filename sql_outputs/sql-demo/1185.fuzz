@@ -1,0 +1,14 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS users
+(
+    fid INT NOT NULL,
+    name VARCHAR NOT NULL,
+    gender TINYINT,
+    DOB DATE NOT NULL
+);
+INSERT INTO users(fid, name, gender, DOB)
+VALUES
+    (1, 'Jim', 1, '2016-05-14'),
+    (2, 'Tim', 1, '2017-07-05'),
+    (10, 'Nina', 1, '2016-03-17');
+FLUSH PRIVILEGES;

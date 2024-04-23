@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- Please write a very short query that updates all employees in the database. You need to use ENGINE=InnoDB and also change
+--   the `salary` field inside of the query. You need to use SQL as well as MySQL functions. You also need
+--   to use the `staffFK` reference constraint which we used in the previous section.
+UPDATE Employees SET salary = 15000 WHERE staff_id = 33;
+-- DON'T forget to drop your newly created `employees` table once you are done with the execution.
+-- DON'T forget to create a mutated program which performs two operations and shows how the statements are
+--   combined.
+DROP DATABASE sampleDB;
+-- DON't forget to run all the above steps, including running a `mysql -p sampleDB` on your local machine.

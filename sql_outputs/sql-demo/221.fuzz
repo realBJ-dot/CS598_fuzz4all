@@ -1,0 +1,48 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS posts(
+   postid         INT AUTO_INCREMENT NOT NULL,
+   postauthor     VARCHAR(20)     NOT NULL,
+   posttime       DATETIME       NOT NULL,
+   postcontent    VARCHAR(2000)    NOT NULL,
+   PRIMARY KEY ( postid )
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;  -- Use this to recreate the database file
+
+CREATE INDEX IF NOT EXISTS posttime ON posts( posttime );
+
+INSERT INTO posts VALUES
+   (1,'Anthony',   '2019-08-27 07:00:20 PM',  'This is my first post.'),
+   (2,'Anthony',   '2019-08-27 07:00:25 PM',  'This is the third entry.'),
+   (3,'Robert',     '2019-08-28 12:00:56 AM',   'It is hard to believe the Internet\'s survival rate. But I am sure you realize that no single Internet company can produce unprecedented success. In the end, the Internet cannot create itself.')
+GO
+SELECT * FROM posts;
+
+SELECT COUNT(*) FROM posts;
+
+DROP TABLE IF EXISTS posts;
+
+CREATE DATABASE IF NOT EXISTS sampleDB;
+
+CREATE TABLE IF NOT EXISTS users(
+   userid         INT AUTO_INCREMENT NOT NULL,
+   username     VARCHAR(20)     NOT NULL,
+   email        VARCHAR(30),
+   password     VARCHAR(30)     NOT NULL,
+   gender       INT,
+   birthday     DATETIME,
+   nationality  VARCHAR(20),
+   PRIMARY KEY ( userid )
+) ENGINE=InnoDB;
+
+INSERT INTO users VALUES
+   (1, 'roberto',  '<EMAIL>',        '<PASSWORD>',   1, '1980-10-01', 'European',   'It was a pleasure working with Alessandro and I.'),
+   (2,'matilda',   '<EMAIL>',         '28a1cb626232fd303b859e37c3b267e5987f64b0',   2, '1970-8-14', 'United States', 'For my dear Alessandro.'),
+   (3, 'roberto',  '<EMAIL>',        '<PASSWORD>',   2, '2022-12-10', 'Japan',      'It is a wonderful day.')
+GO
+SELECT * FROM users;
+
+SELECT COUNT(*) FROM users;
+
+DROP TABLE IF EXISTS users;
+
+CREATE DATABASE IF NOT EXISTS sampleDB;
+

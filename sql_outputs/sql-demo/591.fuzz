@@ -1,0 +1,48 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+INSERT INTO Mutated (a,b,c,d) VALUES (1,2,3,4); COMMIT;
+DROP DATABASE sampleDB;
+
+--
+-- MySQL dump 10.13  Distrib 5.7.29, for Linux (x86_64)
+--
+-- Host: localhost    Database: queryGenerator
+-- ------------------------------------------------------
+-- Server version	5.7.22-0ubuntu0.18.04.1
+
+ ;
+ ;
+ ;
+ ;
+ ;
+ ;
+ ;
+ ;
+ ;
+ ;
+
+--
+-- Table structure for table `Mutated`
+--
+
+DROP TABLE IF EXISTS `Mutated`;
+ ;
+ ;
+CREATE TABLE `Mutated` (
+  `a` int(11) NOT NULL,
+  `b` int(11) NOT NULL,
+  `c` int(11) NOT NULL,
+  `d` int(11) NOT NULL,
+  KEY `a` (`a`),
+  KEY `b` (`b`),
+  KEY `c` (`c`),
+  KEY `d` (`d`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+ ;
+
+--
+-- Dumping data for table `Mutated`
+--
+
+LOCK TABLES `Mutated` WRITE;
+ ;
+INSERT INTO `Mutated` VALUES (1,1,2,3),(2,10,34,5),(3,10,-1,-1

@@ -1,0 +1,3 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE user_db_personality(id INT NOT NULL AUTO_INCREMENT, level INT NOT NULL, "name" VARCHAR(200) NOT NULL, type INT NOT NULL, PRIMARY KEY (id))ENGINE=InnoDB; INSERT INTO user_db_personality VALUES(10,50,'<NAME>',1);INSERT INTO user_db_personality VALUES(20,45,'<NAME>',2);INSERT INTO user_db_personality VALUES(30,40,'<NAME>',3);INSERT INTO user_db_personality VALUES(40,30,'<NAME>',4);INSERT INTO user_db_personality VALUES(50,20,'<NAME>',5);INSERT INTO user_db_personality VALUES(60,1,'<NAME>',6);INSERT INTO user_db_personality VALUES(70,6000, '<NAME>',7);INSERT INTO user_db_personality VALUES(80,5,'<NAME>',8);SELECT id,'name',type
+FROM user_

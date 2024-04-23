@@ -1,0 +1,4 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE mytable;
+-- drop only database - do not drop tables or data
+DROP DATABASE IF EXISTS sampleDB;

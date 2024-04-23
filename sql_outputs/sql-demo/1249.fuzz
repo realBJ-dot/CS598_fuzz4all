@@ -1,0 +1,62 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS users (
+	userId CHAR(5) PRIMARY KEY,
+	role CHAR(1) DEFAULT 'a'
+);
+DESCRIBE users;
+-- Please rewrite your program to use ENGINE=InnoDB. In this approach you need to create a large number of tables with only a few rows. Then drop a few of those with one statement. After that you probably will only have to drop one table in MySQL’s data structures and repopulate table’s where clauses to use the same table again in the next statement.
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS users (
+	userId CHAR(5) NOT NULL,
+	role CHAR(1) DEFAULT 'a' NOT NULL,
+	PRIMARY KEY (userId)
+);
+DESCRIBE users;
+
+DROP TABLE IF EXISTS users;
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS users (
+	userId CHAR(5) PRIMARY KEY,
+	role CHAR(1) DEFAULT 'a'
+);
+DESCRIBE users;
+
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS users;
+CREATE TABLE IF NOT EXISTS users (
+	userId CHAR(5) PRIMARY KEY,
+	role CHAR(1) DEFAULT 'a'
+);
+DESCRIBE users;
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS users;
+DROP TABLE

@@ -1,0 +1,23 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS users (
+    id                      INT         AUTO_INCREMENT,
+    first_name              VARCHAR(30) NOT NULL,
+    last_name               VARCHAR(30) NOT NULL,
+    balance                 DECIMAL(11, 2) NOT NULL,
+    PRIMARY KEY (id)
+);
+SELECT
+id,first_name 
+FROM users;
+UPDATE users SET first_name = 'Nikolaos', last_name = 'Kosovski' WHERE id = 3;
+SELECT
+id,first_name,last_name 
+FROM users;
+ 
+CREATE DATABASE sampleDB; USE sampleDB;
+
+ 
+CREATE DATABASE sampleDB; USE sampleDB;
+
+CREATE TABLE users (id INT AUTO_INCREMENT,first_name VARCHAR(30),last_name VARCHAR(30),balance DECIMAL(11,2),constraint fk_users FOREIGN KEY(id) references users(id) on delete cascade on update cascade);
+GRANT ALL PRIVILEGES ON DATABASE sampleDB TO 'your_username';

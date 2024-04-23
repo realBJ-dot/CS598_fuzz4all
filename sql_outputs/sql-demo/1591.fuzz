@@ -1,0 +1,30 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `sampleDB`.`employees`;
+CREATE TABLE `sampleDB`.`employees` (
+    `id` int NOT NULL AUTO_INCREMENT,
+    `employeeID` int NOT NULL,
+    `firstName` varchar(20) NOT NULL,
+    `lastName` varchar(25) NOT NULL,
+    `departmentID` int DEFAULT '0',
+    `location` varchar(50) DEFAULT NULL,
+    UNIQUE KEY `employees_employeeID` (`employeeID`)
+) DEFAULT CHARSET=utf8;
+-- Please create a mutated program that inserts few more rows into the employees table.
+INSERT INTO sampleDB.employees (employeeID, firstName, lastName)
+VALUES (600, 'Jane', 'Doe'),
+(601, 'Jane', 'Doe'),
+(602, 'Bob', 'Smith'),
+(603, 'Bob', 'Smith'),
+(604, 'Fred', 'Knight'),
+(605, 'Marge', 'Beard'),
+(606, 'Bill', 'Graham'),
+(607, 'John', 'Doe').
+*/
+-- Please create a mutated program that performs a scan on the employee table based on the employee's last name. 
+-- 40 rows will be returned. (Hint: a scan is an operation that scans all rows in the table.) Output the results in two separate columns.
+SELECT * FROM sampleDB.employees WHERE lastName LIKE '%me%';
+-- Please create a mutated program that performs a scan on the employee table based on the employee's last name
+-- and orders them in reverse gender order. 40 rows will be returned. (Hint: use ORDER by)Output the results in two separate columns.
+SELECT * FROM sampleDB.employees WHERE lastName LIKE '%me%';
+-- Your program should accept one parameter: a name which will retrieve employees' first name which name starts with the first character of the given parameter and the suffix "s" that appears anywhere in the first name.
+-- For example,

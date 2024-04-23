@@ -1,0 +1,6 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ 
+ALTER TABLE table3 MODIFY COLUMN date INT(11);
+ 
+INSERT INTO table3 (id,date) VALUES (1,NULL);
+ 

@@ -1,0 +1,11 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employee;
+CREATE TABLE employee(name varchar(10));
+INSERT INTO employee(name) VALUES ('<NAME>');
+INSERT INTO employee(name) VALUES ('<NAME>');
+INSERT INTO employee(name) VALUES ('<NAME>');
+INSERT INTO employee(name) VALUES ('<NAME>');
+DROP TABLE IF EXISTS employee;
+DROP TABLE IF EXISTS employee;
+DROP DATABASE IF EXISTS sampleDB;
+DROP DATABASE IF EXISTS sampleDB;

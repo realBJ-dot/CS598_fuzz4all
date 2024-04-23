@@ -1,0 +1,8 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE mytable (b varchar(40) PRIMARY KEY, c int, d text, e date);
+DROP TABLE IF EXISTS mytable;
+-- Drop all tables.
+DROP  DATABASE IF EXISTS sampleDB;
+
+-- The MySQL Query Engine used to write this tutorial is based on a MySQL grammar parser written by <NAME> which uses a small handful of SQL features.
+-- You will learn some basic syntax, and you will learn a lot of SQL with just a few lines of code.

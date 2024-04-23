@@ -1,0 +1,12 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+UPDATE mytable SET title = 'hghi' WHERE myid = 1 ;
+SELECT myid, title, price FROM mytable ;  
+DROP TABLE mytable;
+DROP DATABASE sampleDB;
+--Please create a program which creates a mutated database which can replace the previous one. Note that you have to design a solution to replace the previous one by creating a copy of the database.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE DATABASE IF NOT EXISTS newDB; COPY newDB.mytable(myid, title, price)  FROM sampleDB.mytable ;  
+SELECT myid, title, price FROM newDB.mytable ;  
+DROP TABLE newDB.mytable;
+DROP DATABASE sampleDB;  
+DROP DATABASE newDB;

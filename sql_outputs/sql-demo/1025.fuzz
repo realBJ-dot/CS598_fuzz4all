@@ -1,0 +1,30 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS test;
+DROP TABLE IF EXISTS customer;
+CREATE TABLE test (id NVARCHAR(5), name NVARCHAR(20), gender TEXT DEFAULT NULL, address NVARCHAR(50), countryid NVARCHAR(3));
+DELIMITER #
+INSERT INTO test (id, name, gender, countryid) VALUES ('1', '<NAME>', 'M', '7011');
+INSERT INTO test (id, name, gender, countryid) VALUES ('2', '<NAME>', 'F', '2222');
+INSERT INTO test (id, name, gender, countryid) VALUES ('3', '<NAME>', 'M', '48');
+INSERT INTO test (id, name, gender, countryid) VALUES ('4', '<NAME>', 'M', '88');
+DELIMITER ;
+--
+-- Here you can create a table and a derived table
+CREATE TABLE customer (id NVARCHAR(5), firstname NVARCHAR(20), lastname NVARCHAR(20), gender TEXT DEFAULT NULL, address NVARCHAR(50));
+--
+#
+# Now you try to use the derived table as a view - the table will work and you can work with it. But that is not good, because it is not used as the view at all. This is why the view is created. 
+CREATE VIRTUAL TABLE customer_derived (firstname NVARCHAR(20), lastname NVARCHAR(20));
+--
+#
+# You can create a view based on a table. A view is a collection of rows of data. You can use the view to access the data of other tables and to perform calculations on the data in other tables.
+#
+# A view is often used to combine and perform operations on two or more views. It is usually used in conjunction with the ORDER BY and LIMIT clauses.
+#
+# The derived table created in Example 9.3 illustrated how to create a view and use it.
+--
+--
+# Create a derived table to demonstrate the principle of using views
+CREATE VIEW department AS SELECT countryid as id, departmentname as name FROM countryorder, countryorder2;
+--
+# The view in Example 9.4 shows the use of the virtual table created with Example 9

@@ -1,0 +1,16 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS person;
+CREATE TABLE person (ID INT PRIMARY KEY, name VARCHAR(200), birthdate DATE, hobbies TEXT);
+INSERT INTO person (id, name, birthdate, hobbies) VALUES(1, '<NAME>', '1996-06-24', 'Reading Reading Reading');
+INSERT INTO person (id, name, birthdate, hobbies) VALUES(2, '<NAME>', '2013-07-30', 'Reading Reading Reading Reading');
+SELECT * FROM person WHERE birthdate='2013-07-30' AND hobbies REGEXP '\breading[\s]?reading[\s]?reading';
+SELECT ID, name FROM person WHERE birthdate<'2016-01-01' AND hobbies LIKE '%ing';
+-- Please create a very short query which uses SQL features in a complex way. Be sure to use ENGINE=InnoDB. You should only use sampleDB as the database and assume no other table exist. You need to create new tables to perform operations. In the end, drop all tables you created.
+-- You need to answer all my questions here.
+```
+
+## 15 - Migrating from MySQL to PostgreSQL
+
+PostgreSQL is a free, open source, advanced relational database management system. It is the most used database system in the world. PostgreSQL uses a SQL dialect called SQL Language that is supported by more than 316 languages. It features extensive array functions and a language called PL/pgSQL that is supported by 23 languages. PostgreSQL is very easy to operate, although, PostgreSQL is not able to do everything offered by MySQL. PostgreSQL was developed in 2010 by the former PostgreSQL community. At the time of writing, is open-source, there were not any big announcements since 2010 and is still used by many companies.
+
+PostgreSQL works by utilizing a relational approach to database management, where the database is built according to the tables, then using the SQL commands to access and modify the data. When you store a table, for example, in a database, the server creates a relational schema (schema) of that table. You create a schema through CREATE SCHEMA, which creates a table called schema where the information about that schema will be stored.

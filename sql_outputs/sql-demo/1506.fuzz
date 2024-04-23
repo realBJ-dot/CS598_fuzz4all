@@ -1,0 +1,21 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE users_details;
+CREATE TABLE users_details(user_id INTEGER, phone VARCHAR(50) UNIQUE, age INTEGER);
+INSERT INTO users_details(user_id, phone, age) VALUES (23434, 63642642, 865357);
+DROP TABLE users_details;
+
+MySQL DB Browser for Windows is an excellent feature for managing MySQL databases and other databases. It can connect to remote database servers in Windows, and it can connect to a local MySQL server. You can create or export your current MySQL databases including database schema. It has all the features of standard MySQL GUI, MySQL Workbench, DBeaver, Sequel Pro, and MySQL Shell.
+
+DBeaver provides an extensive database designer UI which allows you to work on the current MySQL databases without any additional tools. A database design view will display all of the tables in a database and allow you to work with the tables from both a relational view and a schema view.
+
+We encourage you to learn how to use DBeaver by using its guide and tutorials, especially the book, for example, DataBase Design Using DBeaver.
+
+What is MySQL Indexes
+
+A good question that has come up repeatedly when I started learning MySQL, is, how do you get the SQL indexes defined? In our case, I'm dealing with Oracle's RDBMS tables. When I started learning MySQL, I assumed all this is managed automatically by my MySQL database. And so I started studying with what I know to see how those tables were managed.
+
+MySQL offers three indexes built-in: primary, unique and auto-increment.
+
+Primary keys are used to ensure that all data is saved. They are mandatory in case one or more columns is having NULL values. The key-value pair in a table can be any data and its stored in key columns. In MySQL, there is no predefined column in the table that is used as a unique identifier. You have to specify the column of user-id and phone column. A unique key is used to ensure that the data are not duplicated. A key-value pair is used to enforce that the data is already in the table.
+
+To create a primary key for user-id, we simply have to create an index of

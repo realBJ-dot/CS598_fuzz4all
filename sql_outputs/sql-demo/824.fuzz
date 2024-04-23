@@ -1,0 +1,23 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS users_test;
+CREATE TABLE users_test (user_name varchar(30), user_pwd varchar(30));
+-- Write an efficient SQL statement using appropriate JOIN or UNION syntax
+-- We only need to write two queries and make sure you test them at least on a few scenarios where UNION is available or when you are working with a single table. Otherwise it may be difficult and tricky when debugging.
+-- We can use a case statement to test the functionality of the SQL and test the correctness of the logic as well.
+CREATE TABLE test_tbl_name (company_name varchar(30), customer_name varchar(30));
+ -- Create an additional table on top of all existing tables and add a row on top
+ CREATE TABLE users_test (user_name varchar(30), user_pwd varchar(30), user_email varchar(30));
+ -- You need to test the INSERT functionality of the SQL statement or you will get no results, in this case, you can directly access the table without any problem.
+ -- In this situation, use SELECT query.
+ -- You can use UNION instead of JOIN syntax. In this case, UNION will run its tests first and get you the results instead of a single row.
+ -- It is very important that this query works only with the two tables you created.
+
+ -- We can use multiple if where expressions to test the JOIN and UNION syntax in a more efficient manner and the results will be the same.
+ -- If you are working with large data sets, we can use JOIN to build multiple separate tables and then UNION them together at the end to get the desired results. This allows us to speed up the tests as much as possible.
+ -- Since this syntax is simple, it may be less error-prone in some situations than using a case statement. In other cases, using if and where statements may cause an error.
+
+ CREATE TABLE users_temp (user_name varchar(30), user_pwd varchar(30));
+ -- Create a temporary table for storing the results we get during the testing
+ CREATE TABLE IF NOT EXISTS users_test (user_name varchar(30), user_pwd varchar(30), user_email varchar(30));
+ -- INSERT INTO into the new table and we are sure to get the data after
+ INSERT INTO users_test (user_name, user_pwd) VALUES ('user1', '<PASSWORD>'),

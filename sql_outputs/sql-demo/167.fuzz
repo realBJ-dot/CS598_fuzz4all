@@ -1,0 +1,14 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users_3(username char(20) PRIMARY KEY, FirstName VARCHAR(30));
+
+CREATE TABLE Users_7(username char(20) PRIMARY KEY, FirstName VARCHAR(30));
+ALTER TABLE Users_7
+    ADD (Country CHAR(30));
+CREATE TABLE Users_7(username char(20) PRIMARY KEY, FirstName VARCHAR(30), Country CHAR(30));
+
+CREATE TABLE Users_8(username char(20) PRIMARY KEY, FirstName VARCHAR(30), Country CHAR(30), Company_Name VARCHAR(50), Phone CHAR(15));
+ALTER TABLE Users_8
+   ADD FULLTEXT (Country Name);
+CREATE TABLE Users_8(username char(20) PRIMARY KEY, FirstName VARCHAR(30), Country CHAR(30), Company_Name varchar(50), Phone char(15), Text1 Text, Text2 Text, Text3 Text, Text4 Text);
+ALTER TABLE Users_8
+   ADD FULLTEXT (Text1 Text, Text2 Text, Text3 Text, Text4 Text);

@@ -1,0 +1,5 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE users_details;
+CREATE TABLE users_details(user_id INTEGER, name VARCHAR(50), age INTEGER, profile_img BLOB, gender TINYINT);
+INSERT INTO users_details(user_id, name, age, profile_img, gender) VALUES (23434, 63642642, 898357, 90020900, 254);
+DROP TABLE users_details;

@@ -1,0 +1,12 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+#
+-- You need to use schema to perform operations. A schema is a collection of constraints, data definitions and indexes stored together in a tab-separated data file. They are used to describe a database. You can create one or more databases and load these schema files into that specific database.
+DROP TABLE IF EXISTS employees;
+DROP TABLE IF EXISTS dept_manager;
+DROP TABLE IF EXISTS dept_emp;
+DROP TABLE IF EXISTS dept;
+DROP TABLE IF EXISTS staff;
+DROP TABLE IF EXISTS salaries;
+CREATE TABLE employees (
+  eid INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT PRIMARY KEY,
+  empname CHAR(20)

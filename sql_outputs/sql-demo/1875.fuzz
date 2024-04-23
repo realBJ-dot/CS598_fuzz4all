@@ -1,0 +1,22 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employees_salaries;
+CREATE TABLE employees_salaries
+(
+    employee_id INT UNSIGNED AUTO_INCREMENT,
+    employee_salary INT UNSIGNED,
+    PRIMARY KEY(employee_id, employee_salary)
+);
+INSERT INTO employees_salaries(employee_id, employee_salary) VALUES
+(1, 9000), (2, 10000), (3, 430000), (4, 120000);
+INSERT INTO jobs_positions(id) VALUES
+(1), (7), (8), (5), (4), (3), (6);
+ 
+SELECT e.id, e.last_name, e.first_name, j.title
+FROM employees e
+LEFT JOIN employees_positions ep
+ON e.id = ep.employee_id
+JOIN job_positions j
+ON ep.employee_position = j.id
+WHERE j.status='Active' AND e.salary < 500000;
+-- Expected result:
+-- id: '2', last name: 'Sivan', first name: 'Chris', title: 'CEO';

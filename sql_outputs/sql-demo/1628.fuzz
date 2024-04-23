@@ -1,0 +1,18 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `sampleDB`.`departments`;
+CREATE TABLE `sampleDB`.`departments` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `departmentName` varchar(30) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Let the user choose for a sample data source
+-- The user should input a username on the command line
+
+-- MySQL:
+mysql --host=localhost --port=3306 --user=root sampleDB > data.sql
+ 
+mysql --host=localhost --port=3306 --user=root sampleDB -e 'DROP SHOW DATABASES' > data.sql
+mysql --host=localhost --port=3306 --user=root sampleDB < data.sql
+```
+

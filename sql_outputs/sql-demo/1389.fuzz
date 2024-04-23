@@ -1,0 +1,38 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS teacher CASCADE;
+CREATE TABLE teacher(
+ teacher_id INT AUTO_INCREMENT,
+ teacher_fname text NOT NULL,
+ teacher_lname text NOT NULL,
+ teacher_dept text NOT NULL,
+ CONSTRAINT teacher_pk PRIMARY KEY(teacher_id)
+);
+DROP TRIGGER IF EXISTS before_insert_update;
+CREATE TRIGGER before_insert_update AFTER INSERT ON teacher
+  FOR EACH ROW SET NEW.teacher_id = (SELECT teacher_id_max FROM teacher) + 1;
+DROP TRIGGER IF EXISTS before_select;
+CREATE TRIGGER before_select AFTER SELECT ON teacher
+  SET NEW.teacher_fname = CONCAT('<NAME>',(SELECT CONCAT(LTRIM(RTRIM(substring_index(NEW.teacher_lname,'_',length(NEW.teacher_lname)))) FROM teacher WHERE teacher_fname = NEW.teacher_fname LIMIT 1))
+);
+DROP TRIGGER IF EXISTS before_delete;
+CREATE TRIGGER before_delete AFTER DELETE ON teacher
+  BEGIN DELETE FROM student WHERE teacher_fname = OLD.teacher_fname; END;
+DROP TRIGGER IF EXISTS before_update;
+CREATE TRIGGER before_update AFTER UPDATE ON teacher
+  BEGIN UPDATE student SET teacher_id_max = teacher_id_max - 1 WHERE teacher_id_max = (SELECT MAX(teacher_id_max) FROM teacher); END;
+DROP TABLE IF EXISTS student CASCADE;
+CREATE TABLE student(
+ student_id INTAUTO_INCREMENT,
+ student_email text NOT NULL,
+ student_name text NOT NULL,
+ student_sex text NOT NULL,
+ CONSTRAINT student_pk PRIMARY KEY(student_id)
+);
+DROP TRIGGER IF EXISTS insert_student;
+CREATE TRIGGER insert_student AFTER INSERT ON student
+  FOR EACH ROW INSERT INTO student (student_name, student_email, student_sex) VALUES (NEW.student_name, NEW.student_email, NEW.student_sex);
+DROP TRIGGER IF EXISTS select_student;
+CREATE TRIGGER select_student BEFORE SELECT ON student
+  FOR EACH ROW SELECT CONCAT(first_name,' ', last_name) AS fullname FROM student WHERE student_id = NEW.student_id;
+DROP TRIGGER IF EXISTS select_student2;
+CREATE TRIGGER

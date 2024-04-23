@@ -1,0 +1,16 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+UPDATE company_employee_details 
+SET emp_salary  = emp_salary * 2
+WHERE emp_salary < 100000 AND emp_salary!= NULL;
+ALTER TABLE employees_salary_by_salary ADD column year INT;
+ALTER TABLE employees_salary_by_salary ADD column mont REAL;
+ALTER TABLE employees_salary_by_salary ADD column sal_mont int(5) unsigned AFTER column mont;
+# ALTER TABLE example3 CHANGE emp_salary emp_salary text AFTER employee_salary;
+UPDATE employees_salary_by_salary 
+SET column year = 1960, column name = '<NAME>'
+WHERE employees_salary_by_salary. column emp_salary > 100000;
+SELECT employees_salary_by_salary. emp_sal, employees_salary_by_salary.column Year, employees_salary_by_salary. column month, employees_salary_by_salary. column sal_mont, employees_salary_by_salary. column gender 
+FROM employees_salary_by_salary
+LEFT OUTER JOIN department_table 
+ON employees_salary_by_salary.department_id = department_table.department_id;
+DROP DATABASE IF EXISTS sampleDB;

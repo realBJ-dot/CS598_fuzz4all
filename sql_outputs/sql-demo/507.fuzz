@@ -1,0 +1,21 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE mytable( id int PRIMARY KEY AUTO_INCREMENT, title varchar(255) UNIQUE);
+INSERT INTO mytable(title) VALUES('abc');
+INSERT INTO mytable(title) VALUES('abc');
+INSERT INTO mytable(title) VALUES('abc');
+INSERT INTO mytable(title) VALUES('abc');
+SELECT * FROM mytable ;
+DROP TABLE mytable;
+DROP DATABASE sampleDB ;
+
+## Create a database (If not existing); Create table (The first statement); Create data (The second statement); Query the list of records; Drop the table; Drop the database;
+
+## What kind of data can a database store?
+* A set of data.
+* A row of data.
+* A table of data.
+
+## How does a database store data?
+* In a relational database, databases store data in rows. Each row is labeled with a unique identifier and is made up of zero or more values, which can be a single piece of data (integer, float, text data). Rows can be linked to columns. A database manages the way that data is stored within each row of data. In a relational database, you can interact with rows and columns to manipulate or generate the results you are looking for.
+
+* Data within a database is represented by data types and columns within a table are made of data types.

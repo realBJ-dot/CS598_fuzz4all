@@ -1,0 +1,20 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+SET GLOBAL sql_mode=NO_AUTO_VALUE_ON_ZERO,NO_ENGINE_SUBSTITUTION;
+DROP TABLE IF EXISTS worker;
+DROP TABLE IF EXISTS puppy;
+CREATE TABLE worker (
+    ID smallint(7),
+    name varchar(20),
+    surname varchar(20),
+    age int, 
+    sons int,
+    daughters int
+);
+
+CREATE TABLE puppy (
+    ID mediumint(7),
+    name varchar(40),
+    birthdate date
+);
+SELECT * FROM worker;
+SELECT * FROM puppy;

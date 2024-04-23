@@ -1,0 +1,13 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS bookman(
+ bookman_id INT,
+ bookman_first_name text,
+ bookman_last_name text,
+ bookman_birth_date text,
+ bookman_department text
+);
+INSERT INTO bookman VALUES(1,'Nurse','Sneaker','1986-08-07','Marketing');
+INSERT INTO bookman VALUES(2,'Dr. Scott','Rich','1985-05-07','Sales');
+UPDATE bookman SET bookman_department='Banking' WHERE bookman_last_name='Smith';
+DROP TABLE IF EXISTS bookman;
+DROP DATABASE sampleDB;

@@ -1,0 +1,7 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+create table mytbl(id int primary key auto_incr, sname varchar(20), ssn int);
+insert into mytbl(id, sname, ssn) values(1,'Tamra', 1111);
+insert into mytbl(id, sname, ssn) values(2,'Suriyasi', 121234);
+SELECT * FROM mytbl;
+drop table mytbl;
+DROP DATABASE sampleDB;

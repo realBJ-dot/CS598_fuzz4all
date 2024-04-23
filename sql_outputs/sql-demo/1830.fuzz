@@ -1,0 +1,21 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ALTER TABLE names ADD (age int(3));
+UPDATE names SET age=age+age WHERE id=1;
+UPDATE names SET age=age+age WHERE id=3;
+SELECT * FROM names;
+ALTER TABLE names DROP  (age);
+SELECT * FROM names;
+DROP TABLE names;
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE names(name varchar(20), age int(3));
+CREATE INDEX ON names(name);
+CREATE INDEX ON names(age);
+UPDATE names SET age=age+age WHERE id=1;
+UPDATE names SET age=age+age WHERE id=3;
+SELECT * FROM names;
+-- Please create a database and table where both the data inserted into the table and the id
+SELECT * FROM names;
+ALTER TABLE names DROP  (age);
+SELECT * FROM names;
+DROP TABLE names;
+DROP DATABASE IF EXISTS sampleDB;

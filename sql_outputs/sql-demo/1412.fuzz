@@ -1,0 +1,26 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+SELECT * FROM `books` LIMIT 8;
+CREATE TABLE IF NOT EXISTS `books` (
+  `author_id` INT(10) UNSIGNED,
+  `booktitle` VARCHAR(255)
+);
+INSERT INTO `books` (`author_id`, `booktitle`)
+VALUES (6, 'Go MySQL!' + '!');
+SELECT * FROM `books`;
+DROP TABLE books;
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+SELECT * FROM books;
+CREATE TABLE IF NOT EXISTS `books2` (
+  `author_id` INT(10) UNSIGNED,
+  `booktitle` VARCHAR(255)
+);
+INSERT INTO `books2` (`author_id`, `booktitle`)
+  VALUES (6, 'Go MySQL!');
+SELECT * FROM `books2`;
+SELECT * FROM books2;
+-- Please implement a simple system with multiple databases. Assume you have a database named ‘main_db’. Create another database named ‘backup_db’. Create one table from your ‘main_db’ database that has two columns which are named ‘id’ and ‘data’. Create a table ‘backup_db’ that has column ‘id’ and contains the data you created in ‘main_db’. Now add a new row into your ‘main_db’ table with a value of one. Insert a value to each of the new ‘backup_db’ table’s rows by calling mySQL’s ‘ALTER TABLE’ command. Add a new row to the ‘main_db’ table and insert a new value to the ‘main_db’ table for all columns (in other words). Run your modified program to show “id = 1” and “id = 2” in the ‘backup_db’ table.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `backup_db`;
+CREATE TABLE IF NOT EXISTS `backup_db` (
+  `id` INT(10

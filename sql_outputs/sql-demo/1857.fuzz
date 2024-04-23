@@ -1,0 +1,47 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS country;
+DROP TABLE IF EXISTS continent;
+CREATE TABLE country (
+  name char (50));
+CREATE TABLE continent (
+  name char (50));
+INSERT INTO country VALUES ('Africa');
+INSERT INTO continent VALUES ('Asia');
+INSERT INTO country VALUES ('All Oceans');
+INSERT INTO continent VALUES ('Australia');
+INSERT INTO country VALUES ('Asia');
+INSERT INTO continent VALUES ('Europe');
+INSERT INTO country VALUES ('European');
+INSERT INTO continent VALUES ('Oceans');
+INSERT INTO country VALUES ('North America');
+INSERT INTO continent VALUES ('North America');
+INSERT INTO country VALUES ('South America');
+INSERT INTO continent VALUES ('South America');
+INSERT INTO country VALUES ('South America');
+INSERT INTO continent VALUES ('Oceans');
+INSERT INTO country VALUES ('Antarctica');
+INSERT INTO continent VALUES ('Antarctica');
+INSERT INTO country VALUES ('Australia');
+INSERT INTO continent VALUES ('Australia');
+INSERT INTO country VALUES ('Australia');
+INSERT INTO continent VALUES ('Australia');
+INSERT INTO country VALUES ('Australia');
+INSERT INTO continent VALUES ('Australia');
+INSERT INTO country VALUES ('Australia');
+INSERT INTO continent VALUES ('Australia');
+INSERT INTO country VALUES ('Australia');
+INSERT INTO continent VALUES ('Australia');
+INSERT INTO country VALUES ('Australia');
+INSERT INTO continent VALUES ('Oceans');
+INSERT INTO country VALUES ('Australia');
+INSERT INTO continent VALUES ('Australia');
+INSERT INTO country VALUES ('Eastern Cape');
+INSERT INTO continent VALUES ('Antarctica');
+INSERT INTO country VALUES ('Eastern Europe');
+INSERT INTO continent VALUES ('Europe');
+INSERT INTO country VALUES ('Europe');
+INSERT INTO continent VALUES ('Europe');
+INSERT INTO country VALUES ('European');
+INSERT INTO continent VALUES ('Europe');
+INSERT INTO country VALUES ('European');
+INSERT INTO

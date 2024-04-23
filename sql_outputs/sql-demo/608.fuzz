@@ -1,0 +1,17 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- First create the student table as it is intended
+DROP TABLE IF EXISTS Students;
+CREATE TABLE Students (ID NUMERIC, NAME TEXT, COLLEGE TEXT);
+INSERT INTO Students VALUES (1,'<NAME>','Saint-Louis Polytechnic Institute');
+INSERT INTO Students VALUES (2,'<NAME>','Saint-Louis Polytechnic Institute');
+INSERT INTO Students VALUES (3,'<NAME>','Saint-Louis Polytechnic Institute');
+-- Then we will create the mutated table
+DROP TABLE IF EXISTS Mutated;
+CREATE TABLE Mutated (IDINT NUMERIC, Student INT, Mutated INT);
+-- now add data. Mutated Int is defined as 0 (false) or 1 (true)
+INSERT INTO Mutated VALUES (1,1,0);
+INSERT INTO Mutated VALUES (2,2,1);
+INSERT INTO Mutated VALUES (3,3,0);
+-- The mutated Int should only hold 1 (only 1 mutated value in the student table can be active)
+SELECT COUNT(*) FROM Mutated;
+DROP TABLE IF EXISTS StudentsMutated;

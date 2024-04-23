@@ -1,0 +1,67 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS users_details(user_id INTEGER, phone VARCHAR(50), age INTEGER);
+TRUNCATE TABLE users_details;
+INSERT INTO users_details VALUES(23, '232323-232323', 23);
+SELECT phone, age FROM users_details WHERE user_id = 23;
+commit;
+SELECT * FROM sampleDB.users_details;
+commit;
+
+DROP TABLE IF EXISTS users_details;
+-- TRUNCATE removes every rows from the table and frees up space for other rows
+-- TRUNCATE TABLE <table-name>
+-- DROP TABLE <table-name>
+
+CREATE TABLE book_status (
+  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  book_title VARCHAR(255),
+  status INT
+);
+
+CREATE TABLE book_loan (
+  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  id_user INT NOT NULL,
+  loan_date DATE,
+  last_payment DATE,
+  book INT,
+  status_history INT,
+  FOREIGN KEY (id_user)
+    REFERENCES users_details(user_id)
+);
+
+CREATE TABLE loan_payment(
+ id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+ id_loanto INT NOT NULL,
+ amount double,
+ book_name VARCHAR(255),
+ status_history INT
+);
+
+-- You have to use a trigger for the loan_payment table
+
+CREATE FUNCTION my_func() RETURNS VARCHAR(255)
+    DETERMINISTIC
+    SQL SECURITY INVOKER
+BEGIN
+  SELECT 'My new value';
+END;
+
+DELIMITER ;
+-- CREATE OR REPLACE FUNCTION my_func() RETURNS INTEGER
+--  PARAMETER STYLE CALLING
+--  BEGIN RETURN 3; END;
+-- CHANGE my_func my_func();
+
+-- DROP TRIGGER IF EXISTS my_func;
+CREATE TRIGGER IF NOT EXISTS my_func AFTER INSERT ON users_details  FOR EACH ROW BEGIN UPDATE book_loan SET status_history = status_history+1 WHERE book int = :NEW.book; END;
+
+
+COMMIT;
+-- TRIGGER <trigger_name>
+    AFTER UPDATE ON users_details 
+FOR EACH ROW BEGIN UPDATE book_loan SET status_history = status_history+1 WHERE book int = :OLD.book; END;
+
+CREATE TABLE user_accounts(
+ id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+ status VARCHAR(50)
+);

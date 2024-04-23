@@ -1,0 +1,43 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ 
+
+CREATE TABLE IF NOT EXISTS person (
+  pid serial PRIMARY KEY,
+  pname text NOT NULL,
+  psalary numeric NOT NULL,
+  pphone char(12) NOT NULL,
+  paddress text DEFAULT NULL,
+  pdate date DEFAULT GETDATE() NOT NULL
+);
+CREATE TABLE IF NOT EXISTS emplyee (
+  eid serial PRIMARY KEY,
+  ename text NOT NULL,
+  ename2 text DEFAULT NULL,
+  ephone char(11),
+  esalary numeric DEFAULT NULL,
+  eaddress text NOT NULL,
+  enote text DEFAULT NULL,
+  etag bigint NOT NULL
+);
+ALTER TABLE person ADD CONSTRAINT pfkPerson FOREIGN KEY(pname) REFERENCES emplyee(ename);
+ALTER TABLE emplyee ADD CONSTRAINT enfkEployee FOREIGN KEY(ename2) REFERENCES emplyee(ename);
+ 
+CREATE TABLE IF NOT EXISTS company (
+  companyid bigint PRIMARY KEY,
+  name varchar(100),
+  contactname varchar(100),
+  companyaddress text,
+  number_of_employees int DEFAULT NULL,
+  managerid bigint DEFAULT NULL,
+  phone varchar(50),
+  companycity varchar(25),
+  active_deactivated bit DEFAULT NULL,
+  CONSTRAINT fkC_Manager FOREIGN KEY (managerid) REFERENCES person(pid),
+  CONSTRAINT fkC_Contact FOREIGN KEY (contactname) REFERENCES person(pname)
+);
+CREATE TABLE IF NOT EXISTS branch (
+  branchID bigint PRIMARY KEY,
+  branch_name varchar(50),
+  business_id varchar(50),
+  branch_manager bigint,
+  branch_managername varchar(50) DEFAULT NULL

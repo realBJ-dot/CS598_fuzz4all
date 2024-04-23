@@ -1,0 +1,9 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `sampleDB`.`students`;
+CREATE TABLE `sampleDB`.`students` (
+	`id` serial NOT NULL AUTO_INCREMENT,
+	`studentName` varchar(30) NOT NULL UNIQUE,
+	PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+ 
+ 

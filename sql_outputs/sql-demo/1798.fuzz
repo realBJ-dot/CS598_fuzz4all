@@ -1,0 +1,16 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+REPLACE
+  INTO car (name, price) 
+  VALUES 
+   ('GMC',22000);
+INSERT 
+  INTO car (name, price) 
+  VALUES
+   ('Mazda',40000);
+UPDATE car 
+  SET price =  35000
+  WHERE name ='Mazda';
+SELECT * FROM car; DROP TABLE car; DROP DATABASE IF EXISTS sampleDB;
+-- Please create a program that uses the SELECT DISTINCT function to get car models 
+-- with unique values. 
+SELECT DISTINCT car.name FROM car; 

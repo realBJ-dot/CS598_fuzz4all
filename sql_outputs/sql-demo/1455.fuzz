@@ -1,0 +1,7 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS users_details(user_id INTEGER, phone VARCHAR(50) UNIQUE, age INTEGER);
+commit;
+
+
+
+CREATE TABLE IF NOT EXISTS customers(customer_id INTEGER, first_name VARCHAR(255), last_name VARCHAR(255), gender VARCHAR(10), DOB DATE);

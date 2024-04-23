@@ -1,0 +1,37 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Person (First_name TEXT, Last_name TEXT, Address TEXT, City TEXT, State TEXT, ZIP TEXT);
+INSERT INTO Person
+(First_name, Last_name, Address, City, State, ZIP)
+VALUES
+("Mike", "Dunn", "1033 W 16th Ave", "Greenville", "MD", "W4T 1M3"),
+("Alex", "Miller", "2741 Mission Ave", "Westminster", "TX", "75213");
+TRUNCATE TABLE Person;
+-- Please create a mutated program that creates a query using the use query feature.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Person (First_name TEXT, Last_name TEXT);
+INSERT INTO Person
+(First_name, Last_name)
+VALUES
+("Mike", "Dunn"),
+("Mike", "Morrison");
+UPDATE Person SET Address = "West Palo Alto", City = "Seattle", State = "WA"
+WHERE State = "TX";
+-- For the above program, please use the following query: UPDATE Person SET Address = "West Palo Alto", City = "Seattle", State = "WA" WHERE State = "TX";
+-- Create a new table with random data to test the WHERE query functionality.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Person (First_name TEXT, Last_name TEXT);
+INSERT INTO Person
+(First_name, Last_name)
+VALUES
+("Mike", "Dunn"),
+("Mike", "Morrison");
+-- For the above program, please use the following query: INSERT INTO Person
+-- (First_name, Last_name, Address, City, State, ZIP)
+-- VALUES
+-- ("Mike", "Dunn", "16", "New York", "CA", "94042"),
+-- ("Mike", "Morrison", "211", "Cape Town", "AZ", "852"),
+-- ("Mike", "Morrison", "543", "Seattle", "WA", "987"),
+-- ("Mike", "Dunn", "32", "Chicago", "IL", "60653"),
+-- ("Mike", "Morrison", "7845", "Cape Town", "GA", "84765");
+-- Please create a new program to count the number of rows in the Person table
+CREATE DATABASE IF NOT EXISTS sampleDB; USE

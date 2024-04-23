@@ -1,0 +1,25 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS test1;
+CREATE TABLE test1 (id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, userid INT, name VARCHAR(50), age INT);
+DROP TABLE IF EXISTS test2;
+CREATE TABLE test2 (id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, userid INT, name VARCHAR(50), age INT);
+DROP TABLE IF EXISTS test3;
+CREATE TABLE test3 (id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, userid INT, name VARCHAR(50), age INT);
+DROP TABLE IF EXISTS test4;
+CREATE TABLE test4 (id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, userid INT, name VARCHAR(50), age INT);
+DROP TABLE IF EXISTS test5;
+CREATE TABLE test5 (id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, userid INT, name VARCHAR(50), age INT);
+
+commit;
+exit;
+-- This query could be optimized further using the optimization table
+SELECT * FROM test1;
+SELECT * FROM test2;
+SELECT * FROM test3;
+SELECT * FROM test4;
+SELECT * FROM test5;
+EOF
+
+if [ "$?" == 0 ]; then
+  read -p "Please wait while the changes have been applied"
+fi

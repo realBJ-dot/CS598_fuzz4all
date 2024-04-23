@@ -1,0 +1,8 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+DROP TABLE IF EXISTS users, permissions;
+ 
+SELECT users.userId, users.name, users.PASSWORD_HASH, count(*) FROM users LEFT JOIN permissions ON users.userId=permissions.userId GROUP BY users.userId, users.name, users.PASSWORD_HASH, count(*) ORDER BY users.userId;
+DESCRIBE users;
+DESCRIBE permissions;
+DROP DATABASE IF EXISTS sampleDB;

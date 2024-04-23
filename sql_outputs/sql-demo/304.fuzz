@@ -1,0 +1,9 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE `contact` (
+  `contactID` INT(5) NOT NULL AUTO_INCREMENT,
+  `first_name` INT(5) NOT NULL,
+  `last_name` INT(5) NOT NULL,
+  `email_address` INT(5) NOT NULL,
+  `number_phone` INT(5) NOT NULL,
+  PRIMARY KEY (`contactID`)
+);

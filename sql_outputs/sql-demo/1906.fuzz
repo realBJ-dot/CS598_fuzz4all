@@ -1,0 +1,27 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employees;
+CREATE TABLE employees (
+   employee_id        INT UNSIGNED,
+   employee_name        VARCHAR(255) NOT NULL,
+   dept_id            INT UNSIGNED,
+   hire_date          DATETIME NOT NULL,
+   PRIMARY KEY (employee_id));
+-- You've got a good grasp of what you can do with relational databases, now go deep and create your own tables for data science. Enjoy!
+DROP TABLE IF EXISTS sampleDB.salary_grades;
+CREATE TABLE sampleDB.salary_grades
+(
+   salary             INT UNSIGNED,
+   grades             ENUM("Bachelor's", "Master's", "PhD"))
+ENGINE=INNODB
+DEFAULT CHARSET=utf8;
+DROP PROCEDURE IF EXISTS test1
+LANGUAGE SQL;
+DELIMITER $$
+USE sampleDB;
+CREATE PROCEDURE test1()
+BEGIN
+SELECT salary, grades FROM sampleDB.salary_grades;
+END$$
+
+DELIMITER ;
+SET character_set_connection='utf8mb4' COLLATE = 'utf8mb4_unicode_ci';

@@ -1,0 +1,12 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users_1(username char(20) PRIMARY KEY, FirstName VARCHAR(30));
+DROP TABLE Users_1
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ 
+DROP DATABASE sampleDB
+
+
+</pre>
+				</div>
+			</body>
+		</html>

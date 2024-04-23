@@ -1,0 +1,41 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE names(name varchar(20));
+INSERT INTO names VALUES('<NAME>');
+UPDATE names SET name='<NAME>' WHERE name=name;
+SELECT * FROM names;
+UPDATE names SET name='<NAME>' WHERE name='<NAME>';
+DELETE FROM names WHERE name='<NAME>';
+SELECT * FROM names;
+UPDATE names SET name='New First Name' WHERE name='New Last Name';
+SELECT * FROM names;
+SELECT name FROM names;
+UPDATE names SET name='New Last Name' WHERE name='<NAME>';
+SELECT * FROM names;
+SELECT * FROM names;
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE names2(name varchar(20));
+INSERT INTO names2 VALUES('<NAME>');
+UPDATE names2 SET name='<NAME>' WHERE name=name;
+SELECT * FROM names2;
+UPDATE names2 SET name='<NAME>' WHERE name='<NAME>';
+DELETE FROM names1 WHERE name='<NAME>';
+SELECT * FROM names1;
+UPDATE names1 SET name='New First Name' WHERE name='New Last Name';
+SELECT * FROM names1;
+SELECT name FROM names2;
+UPDATE names2 SET name='New Last Name' WHERE name='<NAME>';
+SELECT * FROM names2;
+SELECT * FROM names2;
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE names3(name varchar(20));
+INSERT INTO names3 VALUES('<NAME>');
+UPDATE names3 SET name='<NAME>' WHERE name=name;
+SELECT * FROM names;
+UPDATE names3 SET name='<NAME>' WHERE name='<NAME>';
+DELETE FROM names3 WHERE name='<NAME>';
+SELECT * FROM names3;
+UPDATE names3 SET name='New First Name' WHERE name='New Last Name';
+SELECT * FROM names3;
+SELECT name

@@ -1,11 +1,2 @@
-USE sampleDB;
-CREATE TABLE users (
-   user_id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-   username VARCHAR(20) NOT NULL UNIQUE,
-   password VARCHAR(16)
-);
-INSERT INTO users (username, password) VALUES ('Admin', 0);
-GRANT ALL PRIVILEGES ON sampleDB.* TO 'Admin'@'%' IDENTIFIED BY 'password';
-SHOW TABLES;
-GRANT ALL PRIVILEGES ON `sampleDB`.* TO 'Admin'@'%' IDENTIFIED BY 'password';
-SHOW TABLES;
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE Users;

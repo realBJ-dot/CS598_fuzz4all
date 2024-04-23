@@ -1,0 +1,8 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+INSERT INTO employees_salary_by_salary(employee_salary, emp_salary) VALUES ('800000', 100000);
+SELECT employee_salary + 10000 FROM employees_salary_by_salary;
+SELECT employee_salary + 2000 FROM employees_salary_by_salary;
+SELECT employee_salary + 500 FROM employees_salary_by_salary;
+SELECT employee_salary + 5000 FROM employees_salary_by_salary;
+SELECT employee_salary + 5000 FROM employees_salary_by_salary;
+DROP DATABASE IF EXISTS sampleDB;

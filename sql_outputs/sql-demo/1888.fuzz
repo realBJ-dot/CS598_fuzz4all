@@ -1,0 +1,27 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employees_positions;
+CREATE TABLE employees_positions
+(
+    employee_emp_no  INT UNSIGNED PRIMARY KEY NOT NULL,
+    employee_position INT UNSIGNED PRIMARY KEY  NOT NULL,
+    CONSTRAINT employee_emp_fk FOREIGN KEY (employee_emp_no) REFERENCES employees (employee_emp_no)
+);
+
+-- You must create a new table to insert data
+USE employees;
+DROP TABLE IF EXISTS Employees;
+CREATE TABLE Employees
+(
+    employee_emp_no  INT UNSIGNED PRIMARY KEY NOT NULL,
+    employee_sal_aries DECIMAL(9,2)  NULL,
+    employee_dept_no   INT UNSIGNED  NULL,
+    employee_hire_date DATE NOT NULL
+);
+CREATE INDEX idxEmployees_deptno ON Employees (employee_dept_no);
+USE Employees;
+INSERT INTO Employees (employee_emp_no, employee_dept_no, employee_sal_aries, employee_hire_date)
+            VALUES (1,201,NULL, '1952-01-10'), (1,88,NULL, '2013-08-27'), (2,361,NULL, '1969-07-18');
+SELECT * FROM Employees;
+
+INSERT INTO Employees (employee_emp_no, employee_dept_no, employee_sal_aries, employee_hire_date)
+    VALUES (3,88,NULL, '-'), (4,108,NULL, '2002-03-15'), (5,361,NULL,'-'), (6,88,NULL, '1969-07-18'), (7,0,NULL, '-'), (8,0,NULL, '1974-01-15'), (9,980,NULL,'2020-12-26'), (10,0,NULL, '-'), (11,600,NULL, '2012-08-02'), (12,1700,NULL, '2019-02-26'), (13,3800,NULL, '2019-01-20'), (14,9000,NULL, '1979-03-08'), (15,0,NULL, '2016-04-16'), (17,0,NULL, '1965

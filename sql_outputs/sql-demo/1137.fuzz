@@ -1,0 +1,3 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT Exists customers(customer_id INT NOT NULL AUTO_INCREMENT, phone_number INT NOT NULL, user_id INT NOT NULL, FOREIGN KEY(user_id) REFERENCES users(user_id), PRIMARY KEY(customer_id));
+

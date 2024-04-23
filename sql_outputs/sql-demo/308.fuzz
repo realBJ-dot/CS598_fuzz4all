@@ -1,0 +1,6 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE `admin` (
+  `adminID` INT(5) NOT NULL AUTO_INCREMENT,
+  `password` INT(5) NOT NULL,
+  PRIMARY KEY (`adminID`)
+);

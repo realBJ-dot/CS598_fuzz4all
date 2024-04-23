@@ -1,0 +1,62 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+CREATE TABLE departments (
+	did INT AUTO_INCREMENT PRIMARY KEY,
+	dept_name VARCHAR(20) NOT NULL
+);
+
+CREATE TABLE employees (
+	eid INT AUTO_INCREMENT,
+	emp_name VARCHAR(30),
+	job_desc VARCHAR(50),
+	PRIMARY KEY (eid)
+);
+
+CREATE TABLE dept_manager (
+	did INT,
+	mid INT,
+	PRIMARY KEY (did, mid)
+);
+
+CREATE TABLE staff (
+	sid INT AUTO_INCREMENT PRIMARY KEY,
+	sn INT,
+	en VARCHAR(20),
+	job_desp VARCHAR(50)
+);
+
+CREATE TABLE dept_emp (
+	did INT,
+	eid INT,
+	PRIMARY KEY (did, eid)
+);
+
+CREATE TABLE salaries (
+	sid INT,
+	salary INT,
+	PRIMARY KEY (sid)
+);
+
+
+ 
+SELECT eid,emp_name,job_desc FROM employees;
+UPDATE employees SET job_desc = "Software Developer" WHERE emp_name = "Mr.Raj";
+ 
+SELECT emp_name,job_desc,did,emp_ID,emp_name,emp_name, sid
+FROM employees
+INNER JOIN salaries
+ON employees.sid = salaries.sid
+INNER JOIN dept_emp
+ON salaries.sid = dept_emp.eid
+INNER JOIN staff
+ON staff.sid = dept_emp.eid
+INNER JOIN dept
+ON dept.did = dept_emp.did
+WHERE job_desc = "Software Developer" AND emp_ID = 2475;
+
+
+
+ 
+DELETE FROM employees WHERE emp_name = "Mr.Rahman";
+
+/* Please make 6 simple SELECT operations. Create 7 tables for the above

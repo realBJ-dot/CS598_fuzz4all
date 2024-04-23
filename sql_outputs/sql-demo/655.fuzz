@@ -1,0 +1,27 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Subject (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255));
+
+
+
+SELECT *
+FROM Subject
+ORDER BY id;
+
+SELECT *
+FROM Subject a LEFT JOIN Subject b ON a.name = b.name
+WHERE name = 'Bach';
+
+SELECT *
+FROM Subject a RIGHT JOIN Subject b ON a.name = b.name
+WHERE name='Grosser';
+
+SELECT *
+FROM Subject a CROSS JOIN Subject b INNER JOIN Subject c ON a.id = b.id AND b.id = c.id
+WHERE b.name = 'Bach';
+
+SELECT *
+FROM Subject a ORDER BY a.id DESC;
+
+SELECT *
+FROM Subject a ORDER BY a.id DESC LIMIT 5;
+

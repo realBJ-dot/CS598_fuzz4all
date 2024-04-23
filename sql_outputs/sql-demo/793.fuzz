@@ -1,0 +1,15 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS `FirstAndSecondTable` ( `id` INT(11) NOT NULL PRIMARY KEY, `data` TEXT CHARACTER SET UTF8);
+
+INSERT INTO `FirstAndSecondTable` ( `id`, `data` )
+VALUES ('1','1','111');
+INSERT INTO `FirstAndSecondTable` ( `id`, `data` )
+VALUES ('2','2','222');
+
+SELECT `id`, `data`
+FROM `FirstAndSecondTable`
+ORDER BY id;
+
+DROP TABLE `FirstAndSecondTable`;
+
+#

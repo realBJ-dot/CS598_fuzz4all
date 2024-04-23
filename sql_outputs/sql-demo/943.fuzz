@@ -1,0 +1,19 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS user_db_skills (
+label VARCHAR(32), PRIMARY KEY (label)
+) ENGINE=INNODB;
+SELECT * FROM user_db_skills;
+DROP TABLE IF EXISTS user_db_skills;
+-- You can also use an external engine, which can handle a large number of small tables such as the following:
+-- https: 
+CREATE DATABASE IF NOT EXISTS samplesDB; USE samplesDB;
+CREATE TABLE IF NOT EXISTS user_db_skills (
+skill_id INT, PRIMARY KEY (skill_id)
+);
+SELECT * FROM user_db_skills;
+DROP TABLE IF EXISTS user_db_skills;
+DROP TABLE IF EXISTS user_db_skill_history;
+DROP DATABASE IF EXISTS sampleDB;
+DROP DATABASE IF EXISTS samplesDB;
+DROP DATABASE IF EXISTS user_db_skills;
+DROP DATABASE IF EXISTS user_db_skill_history;

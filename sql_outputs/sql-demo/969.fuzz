@@ -1,0 +1,14 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP DATABASE IF EXISTS sampleDB;
+-- Write your code in a file called "my-first-query.sql" as a single SQL statement
+-- The query is expected to make use the MySQL functionality such as CREATE TABLE.
+-- The first table created in this tutorial is a single row table. Add the same table to the second database, add data to the third table and try to answer the query in the fourth database as the first database.
+DROP TABLE IF EXISTS test_table;
+CREATE TABLE test_table (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, text_name VARCHAR(255) NOT NULL, phone_number INT, email VARCHAR(255), address TEXT, created_dates TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP, modified_dates TIMESTAMP  NULL DEFAULT NULL, password VARCHAR(50));
+INSERT INTO test_table(text_name,phone_number,email,address,created_dates,modified_dates,password) VALUES ('<NAME>','2112050227', '<EMAIL>', '123, Albany St', '2018-11-15 20:17:22','2018-11-16 20:28:16','$7$1w9s7kJ0K4wM4.i9xmydIOA.0nS3l7zJ4dP2wC0y.6oU1JbyQFWMs');
+DROP TABLE IF EXISTS test_table; ALTER TABLE test_table CHANGE phone_number phone_number INT UNSIGNED;
+DROP TABLE IF EXISTS test_table; ALTER TABLE test_table CHANGE password password VARCHAR(255);
+DROP TABLE IF EXISTS test_table; ALTER TABLE test_table CHANGE email email VARCHAR(255);
+DROP TABLE IF EXISTS test_table; ALTER TABLE test_table CHANGE modified_dates modified_dates TIMESTAMP NULL DEFAULT NULL;
+DROP TABLE IF EXISTS test_table; ALTER TABLE test_table CHANGE created_dates created_dates TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP;
+DROP TABLE IF EXISTS test_table;

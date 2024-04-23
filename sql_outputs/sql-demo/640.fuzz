@@ -1,0 +1,19 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS Subject;
+CREATE TABLE Subject (
+	ID INT PRIMARAY KEY,
+	SUBJ_NAME VARCHAR(255)
+);
+INSERT INTO Subject VALUES (1, 'MATH');
+INSERT INTO Subject VALUES (2, 'PHYSICS');
+INSERT INTO Subject VALUES (3, 'SCIENCE');
+-- Please create a very short query which uses SQL features in a complex way. Be sure to use ENGINE=InnoDB. You should only use sampleDB as the database and assume no other table exist. You need to create new tables to perform operations. In the end, drop all tables you created. */
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS Subject;
+CREATE TABLE Subject(
+	ID INT PRIMARY KEY,
+	SUBJ_NAME VARCHAR(255)
+);
+INSERT INTO Subject VALUES (1, 'MATH');
+INSERT INTO Subject VALUES (2, 'PHYSICS');
+INSERT INTO Subject VALUES (3, 'SCIENCE');

@@ -1,0 +1,11 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS order_tbl;
+CREATE TABLE order_tbl (name VARCHAR(200), description TEXT, priority INT);
+INSERT INTO order_tbl (name, description, priority) VALUES('<NAME>', 'Order name should not be empty', 4);
+INSERT INTO order_tbl (name, description, priority) VALUES('<NAME>', 'Order name should not be empty', 5);
+INSERT INTO order_tbl (name, description, priority) VALUES('<NAME>', 'Order name should not be empty', 6);
+SELECT name, * FROM person_tmp LIMIT 2;
+SELECT name, COUNT(*) FROM person_tmp WHERE age > 17 ORDER BY priority DESC;
+SELECT name FROM employee_tmp;
+DROP DATABASE IF EXISTS sampleDB;
+*/

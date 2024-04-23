@@ -1,0 +1,8 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE mytable ( myid INT,title  CHAR(255)  );
+INSERT INTO mytable (id, title) VALUES (1, 'abc');
+INSERT INTO mytable (id, title) VALUES (2, 'def');
+INSERT INTO mytable (id, title) VALUES (3, 'ghi');
+SELECT * FROM mytable WHERE title='def';
+DROP TABLE mytable;
+DROP DATABASE sampleDB;

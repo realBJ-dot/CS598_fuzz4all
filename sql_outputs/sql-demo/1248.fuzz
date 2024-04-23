@@ -1,0 +1,17 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS users (
+	userId CHAR(5) NOT NULL,
+	role CHAR(1) DEFAULT 'a' NOT NULL
+);
+DESCRIBE users;
+
+SET @s='insert into users(userId,role) values(\'A123\',\'a\');
+insert into users(userId,role) values(\'A456\',\'a\');
+insert into users(userId,role) values(\'A078\',\'a\');
+select * from users;';
+
+SET @s2=@usersql;'
+
+mysql --silent -u $username  -p --host $host --port $port --default-character-set=utf8 --default-collation-server=utf8_general_ci $db >$savepath/MySQL_insert.sql 2>&1;
+
+# Now run the sql in MySQL - mysql -u $username -p < insert.sql

@@ -1,0 +1,12 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ALTER TABLE Users_3 ADD INDEX user_first_name (first_name);
+ALTER TABLE Users_3 ADD INDEX user_last_name (last_name);
+
+CREATE TABLE IF NOT EXISTS Invoices (
+    user_id INT,
+    user_name TEXT,
+    invoice_id INT NOT NULL,
+    date_requested TIMESTAMP NOT NULL,
+    amount INT NOT NULL,
+    PRIMARY KEY user_id
+);

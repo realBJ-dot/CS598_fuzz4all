@@ -1,0 +1,16 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- Create table employees based on the following specification
+INSERT INTO employees VALUES (1, 'Anne','Beck', 'Coffee Bean', 'Coffee');
+INSERT INTO employees VALUES (2, 'Marie','Brahms', 'Designer', 'Production');
+INSERT INTO employees VALUES (3, 'Claudia','Buchanan', NULL, 'Engineering');
+-- Please create an application which performs the following task:
+-- 1. It reads the records given by the first and second argument
+-- 2. This time, it displays the values of a particular key in the result set.
+-- For example, you want to display the department of the first department
+SELECT department FROM employees WHERE id = 1;
+-- You can also use SQL syntax to filter a data base by condition. For example, you can use the WHERE department=”Engineering”
+-- for retrieving information only on the Engineering department. 
+-- To find all records, use WHERE 1=1
+Select * from employees
+-- Create a table students (id INT, name char (30), marks INT),
+CREATE DATABASE IF NOT EXISTS sampleDB

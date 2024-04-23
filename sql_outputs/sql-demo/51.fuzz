@@ -1,6 +1,16 @@
-USE sampleDB;
-DROP INDEX IF EXISTS `contentIndex`;
-ALTER TABLE posts MODIFY content VARCHAR(100);
--- END of example02_07.sql
-
--- end of file
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users(username char(20) PRIMARY KEY, Firstname VARCHAR(30)) ENGINE=MYISAM;
+INSERT INTO Users(username,FirstName) VALUES('Test','Test'),('Admin','Admin'),('Guest','Guest'),('Super','Super');
+ 
+CREATE TABLE Users(username char(20) PRIMARY KEY, Firstname VARCHAR(30)) ENGINE=MEMORY;
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users(username char(20), Firstname VARCHAR(30)) ENGINE=INNODB SLAVE=master;
+INSERT INTO Users(username,FirstName) VALUES('Dev','Dev');
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users(username char(20), Firstname VARCHAR(30)) ENGINE=INNODB SLAVE=slave;
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users(username char(20), Firstname VARCHAR(30)) ENGINE=INNODB SLAVE1=master;
+INSERT INTO Users(username,FirstName) VALUES('Dev1','Dev

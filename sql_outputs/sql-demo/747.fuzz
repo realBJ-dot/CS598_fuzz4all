@@ -1,0 +1,12 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS `FirstAndSecondTable` ( `primaryID` INT(11)+NOT NULL PRIMARY KEY, `data` VARCHAR(300) CHARACTER SET UTF8);
+-- The previous program is semantically equivalent to the current one. But in this case, the IDs were assigned to rows in the temporary table by nextval(primaryID). But this has the disadvantage that the
+-- Please write the full SQL query
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TEMPORARY TABLE IF NOT EXISTS `FirstAndSecondTable_temp` ( `id` INT(11) NOT NULL PRIMARY KEY, `data` VARCHAR(300) CHARACTER SET UTF8);
+-- Note that the IDs remain in the previous table even though the temporary table does not reference them anymore. In this case, this change is transparent to the user.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS `FirstAndSecondTable` ( `primaryID` INT(11)+NOT NULL PRIMARY KEY, `data` VARCHAR(300) CHARACTER SET UTF8);
+-- The temporary table contains a new integer ID but it references the original primary ID (or rather, is linked to the same primary ID as the original table).
+-- The temporary table is named by using a temporal keyword (temp) to differentiate it from the original table.
+*/

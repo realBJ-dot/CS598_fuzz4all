@@ -1,0 +1,7 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ -- INSERT 5 lines
+INSERT INTO `FirstAndSecondTable`
+  VALUES (34, 'Teaching Together'), (35, 'Teaching Together'), (36, 'Teaching Together'), (37, 'Teaching Together'), (38, 'Teaching Together');
+ -- INSERT 3 lines
+INSERT INTO `FirstAndSecondTable`
+  VALUES (39, 'Teaching Together'), (40,

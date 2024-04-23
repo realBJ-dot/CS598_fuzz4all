@@ -1,11 +1,3 @@
-USE sampleDB;
-SHOW TABLES;
-SHOW DATABASES;
-SHOW TABLES in sampleDB;
-SHOW CREATE TABLE testStock;
--- http: 
-# http: 
-# http: 
-# http: 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users(username char(20) PRIMARY KEY, first_name VARCHAR(30) NOT NULL) ENGINE=InnoDB;
 
--- 2016-12-04

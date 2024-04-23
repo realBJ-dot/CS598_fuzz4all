@@ -1,0 +1,6 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- The same sample but using MySQL in a language that is both declarative (like PostgreSQL) and transparent (like SQL)
+CREATE TABLE IF NOT EXISTS users_details(user_id INTEGER, phone VARCHAR(50) UNIQUE, age INTEGER);
+INSERT INTO users_details(user_id, phone, age) VALUES ('23434', '63642642', '865355');
+DROP TABLE IF EXISTS users_details;
+DROP DATABASE IF EXISTS sampleDB;

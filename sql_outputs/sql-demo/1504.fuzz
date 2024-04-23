@@ -1,0 +1,36 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE users_details;
+CREATE TABLE users_details(user_id INTEGER, phone VARCHAR(50) UNIQUE, age INTEGER);
+INSERT INTO users_details(user_id, phone, age) VALUES (23434, 63642642, 865357);
+DROP TABLE users_details;
+
+DROP TABLE IF EXISTS users;
+CREATE TABLE IF NOT EXISTS users
+(
+    id int(11) NOT NULL AUTO_INCREMENT,
+    username varchar(255) NOT NULL,
+    email varchar(255) NOT NULL,
+    password varchar(255) NOT NULL,
+    gender int(555) NOT NULL,    
+    PRIMARY KEY (id)
+);
+
+ 
+INSERT INTO users ( username, email, password, gender) VALUES ('root', '<EMAIL>', '<PASSWORD>', 0);
+
+
+
+ 
+
+ 
+CREATE INDEX username_index ON users (username);
+
+ 
+
+ 
+CREATE VIEW test_view AS SELECT * FROM users_details 
+ 
+
+DROP DATABASE sampleDB;
+
+

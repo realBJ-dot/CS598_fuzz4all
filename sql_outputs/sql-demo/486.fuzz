@@ -1,0 +1,15 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS category( catid int, catname varchar(255), PRIMARY KEY(catid) );
+CREATE TABLE IF NOT EXISTS item( itemid int, catid int, desc varchar(80), PRIMARY KEY(itemid), CONSTRAINT fk_item_category FOREIGN KEY(catid) REFERENCES category(catid) );
+
+SELECT * FROM category;
+SELECT * FROM item;
+INSERT INTO item(itemid, desc, catid) VALUES(1,'first item',1);
+INSERT INTO item(itemid, desc, catid) VALUES(2,'second item',2);
+INSERT INTO item(itemid, desc, catid) VALUES(3,'third item',1);
+SELECT * FROM item where itemid=1;
+SELECT * FROM category WHERE catid=1;
+DROP TABLE IF EXISTS item;
+DROP TABLE IF EXISTS category;
+DROP DATABASE IF EXISTS sampleDB;
+# To be considered a hard core, you should have a hard time to understand every topic mentioned in the course. You are expected to fully understand the database and the table in detail and be able to understand the query in that way. Do not worry if you miss the details. You are free/liberal in what you can write and use SQL.

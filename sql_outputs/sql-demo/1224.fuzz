@@ -1,0 +1,8 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+UPDATE users
+SET balance = balance * 1.25
+WHERE id = 1; -- Please also change the code in UPDATE queries to get all users with a balance of 5478.31 in any currency. For this, you will need to create a second table which has different columns one for users and another one for their balances.
+SELECT 
+  name, balance, TO_CHAR(balance, 3),
+    TO_CHAR(ROUND(balance, 3), 3)
+FROM users;

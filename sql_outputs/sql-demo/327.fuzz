@@ -1,0 +1,15 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREAT TABLE IF NOT EXISTS users (
+  --name TEXT NOT NULL,
+  email VARCHAR(80),
+  pwd CHAR(16) NULL,
+  isadmin BOOLEAN DEFAULT '0',
+  UNIQUE(email)
+);
+INSERT INTO users
+(email, pwd, isadmin)
+VALUES
+('<EMAIL>', <PASSWORD>', true),
+('<EMAIL>', <PASSWORD>', true),
+('<EMAIL>', <PASSWORD>', true);
+COMMIT;

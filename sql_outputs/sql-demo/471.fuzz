@@ -1,0 +1,7 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+DELETE FROM mytable;
+INSERT INTO mytable VALUES (23333), (1);
+-- Delete a row using MySQL
+DELETE FROM mytable WHERE id = 23333;
+SELECT * FROM mytable;

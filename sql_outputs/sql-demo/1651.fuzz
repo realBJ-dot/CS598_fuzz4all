@@ -1,0 +1,20 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `sampleDB`.`staff`;
+CREATE TABLE `sampleDB`.`staff` (
+    `id` int(11) NOT NULL AUTO_INCREMENT,
+    `staffName` varchar(255) NOT NULL,
+    `staffGrade` varchar(10) NOT NULL,
+    `staffCode` varchar(20) NOT NULL,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+insert into `staff` values (NULL,'<NAME>','99','123123456'),(NULL,'<NAME>','12','12121212'),(NULL,'Prof. <NAME>','1','56566645'),(NULL,'Dr. <NAME>','67','151515155569'),(NULL,'<NAME>','75','2323232823'),(NULL,'<NAME>','78','8186345'),(NULL,'<NAME>','56','8186345'),(NULL,'<NAME>','21','151515155569'),(NULL,'Mr. <NAME> PhD','20','55555555'),(NULL,'Mr. <NAME>','21','55555555');
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `sampleDB`.`staff`;
+CREATE TABLE `sampleDB`.`staff` (
+	`id` serial NOT NULL AUTO_INCREMENT,
+	`staffName` varchar(255) NOT NULL,
+	`staffGrade` varchar(10) NOT NULL,
+	`staffCode` varchar(20) NOT NULL,
+	PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;

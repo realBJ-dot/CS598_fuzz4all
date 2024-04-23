@@ -1,0 +1,5 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+UPDATE `products` SET `name`='iPhone 8' WHERE `product_id`=1;
+UPDATE `products` SET `cost`='41.2' WHERE `product_id`=3;
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE products;

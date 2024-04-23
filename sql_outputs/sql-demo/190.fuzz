@@ -1,0 +1,30 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ALTER TABLE Users RENAME TO Users_2
+-- Please create a short query having no more than two distinct subqueries
+SELECT * FROM (SELECT User_id FROM Users WHERE User_id NOT IN (SELECT User_id FROM Users)) AS x
+AND (SELECT User_id FROM Users WHERE User_id NOT IN (SELECT User_id FROM Users)) AS y
+AND x.User_id <> y.User_id
+-- Please create a SQL query which returns three distinct integers (0,1,2). The query should be executed against the user table.
+SELECT RAND()
+AND RAND()
+AND RAND()
+-- Please create a query which returns true or false. The query should be executed against the user table. 
+SELECT User_id FROM Users_3 WHERE User_id in (1, 2, 3, 5) AND User_id IN (28, 29)
+-- Please create a query which executes only if 'users' table is empty.
+SELECT COUNT(*) FROM Users
+-- You know which of the following is true? (Select only true) 
+-- (a)  (b)  (c)  (d)  
+SELECT User_id FROM Users WHERE User_id NOT IN (SELECT User_id FROM Users WHERE first_name = 'user1')
+-- The following query returns false if two or more 'users' table records are equal. It also returns true if the user with user_id = 28 has more than two connections to it.
+SELECT User_id IN (SELECT User_id FROM Users WHERE  User_id NOT IN (SELECT User_id FROM Users WHERE first_name = 'user2'))
+-- Please create a query which would return true only on records where country is 'Germany'.
+SELECT User_id FROM Users WHERE country = 'Germany'
+-- Please create a mutated query in MySQL
+UPDATE users SET last_login = '2009-04-13' WHERE Country = 'UK' and Last_login IS NULL 
+-- Please create a query which executes only when a table with the column'size_on_disk' exists. The size_on_disk column is stored in the 'user_diskspace' table
+SELECT User_id FROM Users WHERE size_on_disk > 1000
+-- Please create a mutated query that updates the 'users' table with all countries that have a population value greater than 140 million.
+UPDATE Users SET country = 'India' WHERE population_in_millions > 14000 * 1000
+-- Please create a query which returns any records with 3 or more columns having a certain value.
+SELECT * FROM users
+WHERE (length(first_name) == 3) AND (length(last

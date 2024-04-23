@@ -1,0 +1,68 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employees_positions;
+CREATE TABLE employees_positions
+(
+    employee_id INTEGER NOT NULL,
+    employee_position INTEGER NOT NULL,
+    PRIMARY KEY(employee_id, employee_position),
+    FOREIGN KEY(employee_position) REFERENCES job_positions(id)
+);
+--
+-- Please create a table
+DECLARE @Employees INT UNSIGNED;
+SET @Employees = 99;
+CREATE TEMPORARY TABLE temp_employee_positions
+(
+    id INTEGER GENERATED ALWAYS AS IDENTITY,
+    name VARCHAR(100),
+    PRIMARY KEY(id)
+);
+
+INSERT INTO temp_employee_positions
+VALUES (1, 'Developer');
+FOR $i IN (1.. @Employees ) LOOP
+    INSERT INTO employees_positions
+    (
+        employee_id,
+        employee_position
+    )
+    SELECT $i.id,
+    (SELECT name FROM "temp_employee_positions")
+    FROM dual;
+END LOOP;
+DROP TABLE IF EXISTS employees_positions;
+CREATE TABLE employees_positions
+(
+    employee_id INTEGER UNSIGNED,
+    employee_position INTEGER,
+    PRIMARY KEY(employee_id, employee_position),
+    FOREIGN KEY(employee_position) REFERENCES job_positions(id)
+);
+ 
+DECLARE @Employees INT UNSIGNED;
+SET @Employees = 94;
+SELECT COUNT(*)
+  FROM temp_employee_positions
+ WHERE id = (SELECT CHR(employee_position)
+           FROM employees_positions
+           ORDER BY RAND()
+           LIMIT 1);
+DROP TABLE IF EXISTS temp_employee_positions;
+DROP TABLE IF EXISTS employees_positions;
+CREATE TABLE employees_positions
+(
+    employee_id INTEGER NOT NULL,
+    employee_position INTEGER NOT NULL,
+    PRIMARY KEY(employee_id, employee_position),
+    FOREIGN KEY(employee_position) REFERENCES job_positions(id)
+);
+ 
+--
+-- 
+--
+-- Which position are most often used by employees?
+--
+--
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS job_positions;
+CREATE TABLE

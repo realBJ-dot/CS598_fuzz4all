@@ -1,0 +1,29 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ 
+INSERT INTO Person VALUES(1, 'Drew', 'Woodbury', 5000.000, 'Hi there');
+DROP DATABASE sampleDB;
+--
+-- In this query, the first statement has `ON_FAILURE = 1`. It means
+-- that `insert.sql` stops and returns control to `mysql`. Then it runs
+-- `insert.sql`, which executes each LOAD DATA statement to load the data for
+-- the table with the same name. We see the row in the newly added table!
+--
+#
+# Now, for that to work properly, we need to modify the script `insert.sql`:
+--
+# 1. Run `SHOW VARIABLES LIKE 'value'`;
+# 2. Set `ON_FAILURE = 1` in SHOW VARIABLES.
+# 3. Modify SHOW VARIABLES to look like this: 
+# ON_FAILURE=0; LOAD DATA INFILE 'load.sql';
+#
+# Save it to load.sql
+#
+# 4. Execute: `LOAD DATA INFILE 'load.sql'`
+#
+# This is how the loaded data should look like:
+#
+# 1. To get the column names, run `SHOW COLUMNS FROM Table`.
+# 2. To get the column values, run `SELECT * FROM Table`.
+# 3. Execute `drop table if exists Person; 
+# create table Person (A int, B text, C double, D text)`
+# 4. Finally, execute `load data local infile'sample.tbl'`.

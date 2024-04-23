@@ -1,0 +1,32 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP FUNCTION IF EXISTS create_staff_fun;
+DELIMITER  
+CREATE FUNCTION create_staff_fun(
+	`name` TEXT,
+	`department` TEXT,
+	`salary` INT
+) RETURNS INT(20) UNSIGNED
+BEGIN
+	DECLARE i int;
+	DECLARE msg TEXT;
+
+	SET i = 0;
+	INSERT INTO `staff`
+	(`name`,
+	`department`,
+	`salary`)
+	VALUES(
+		`name`,
+		`department`,
+		`salary`);
+	RETURN i;
+END
+ 
+DELIMITER ;
+
+-- Please create another program that will display the top 5 staff that have over 10000 money. */
+SELECT *, COUNT(*) as count_money
+FROM `staff`
+ORDER BY `count_money` DESC
+LIMIT 5;
+

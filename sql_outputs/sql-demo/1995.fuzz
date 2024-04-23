@@ -1,0 +1,13 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employees_salary_and_department;
+CREATE TABLE employees_salary_and_department
+        ( employee_salary DECIMAL(12,2) NOT NULL,
+            department CHAR(20) NOT NULL )
+        ENGINE=InnoDB;
+SELECT employee_salary FROM employees_salary_and_department;
+INSERT INTO employees_salary_and_department (employee_salary, department) VALUES (1000, 'Research');
+INSERT INTO employees_salary_and_department (employee_salary, department) VALUES (1500, 'Consulting');
+INSERT INTO employees_salary_and_department (employee_salary, department) VALUES (1000, 'Development');
+INSERT INTO employees_salary_and_department (employee_salary, department) VALUES (1000, 'Marketing');
+INSERT INTO employees_salary_and_department (employee_salary, department) VALUES (1000, 'Administration');
+DROP TABLE IF EXISTS employees_salary_and_department;

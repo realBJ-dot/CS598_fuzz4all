@@ -1,0 +1,34 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE people (
+  id INT(11) NOT NULL AUTO_INCREMENT,
+  username VARCHAR(200) NOT NULL,
+  first_name VARCHAR(200) NOT NULL,
+  last_name VARCHAR(200) NOT NULL,
+  password VARCHAR(1000) NOT NULL,
+  active BOOLEAN,
+  PRIMARY KEY (id)
+);
+
+INSERT INTO `people` (`id`,`username`,`first_name`,`last_name`,`password`,`active`) 
+VALUES
+(1, 'admin', 'admin', 'admin', 'admin', true);
+
+SELECT 
+	*
+FROM 
+	`people`
+where
+	active is false;
+	
+DROP TABLE `people`;
+
+ALTER TABLE `people` 
+ADD `password` VARCHAR(200) NOT NULL AFTER `last_name`;
+
+INSERT INTO `people` (`id`,`username`,`first_name`,`last_name`,`password`,`active`) 
+VALUES
+(2, 'teste1', 'Teste', 'teste1', 'teste1', true);
+
+SELECT `id`, `username`, `first_name`, `last_name`, `password`, `active`
+FROM `people`
+ORDER BY `id`;

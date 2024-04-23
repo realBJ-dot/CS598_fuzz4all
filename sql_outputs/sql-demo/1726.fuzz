@@ -1,0 +1,44 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- This should generate an SQL command statement like 'DROP DATABASE IF EXISTS x.'
+DROP DATABASE IF EXISTS `tictactoe1`;
+CREATE TABLE TicTacToe AS (
+    player_1_name TEXT NULL,
+    player_1_roll INT NULL,
+    player_1_move TEXT NULL,
+    player_2_name TEXT NULL,
+    player_2_roll INT NULL,
+    player_2_move TEXT NULL
+);
+INSERT INTO TicTacToe(player_1_name, player_1_roll, player_1_move, player_2_name, player_2_roll, player_2_move) VALUES ('user1','1234','move1', 'user1','1234','move2');
+--
+--
+-- MySQL Database Engine
+CREATE DATABASE TicTacToe Engine=InnoDB; --
+
+--
+-- MySQL Table structure for table `TicTacToe`
+--
+
+DROP TABLE IF EXISTS `TicTacToe`;
+ ;
+ ;
+CREATE TABLE `TicTacToe` (
+  `player_1_name` TEXT DEFAULT NULL,
+  `player_1_roll` INT DEFAULT NULL,
+  `player_1_move` TEXT DEFAULT NULL,
+  `player_2_name` TEXT DEFAULT NULL,
+  `player_2_roll` INT DEFAULT NULL,
+  `player_2_move` TEXT DEFAULT NULL,
+  PRIMARY KEY (`player_1_name`,`player_1_roll`,`player_1_move`,`player_2_name`,`player_2_roll`,`player_2_move`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+ ;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `TicTacToe`
+--
+ALTER TABLE `TicTacToe`
+  ADD PRIMARY KEY (`player_2_name`,`player_1_roll`,`player_1_move`,`player_2_roll`,`player_2_move`);

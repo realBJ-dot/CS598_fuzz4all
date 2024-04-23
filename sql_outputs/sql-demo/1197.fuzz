@@ -1,0 +1,7 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+ 
+INSERT INTO users VALUES('a', 'A', 3850.00), ('b', 'B', 7800.00), ('c', 'C', 4000.00);
+UPDATE users SET balance = 1000.00 WHERE id = 3;
+
+DROP DATABASE IF EXISTS sampleDB;

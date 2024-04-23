@@ -1,0 +1,8 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+INSERT INTO book VALUES (1,'The Art of SQL',5,'2002',229);
+UPDATE book SET book_title = 'The art of sql', book_publication_date = '2045-2046', book_isbn = 55555, book_price=222,
+ WHERE book_isbn = 1;
+DELETE FROM book WHERE book_isbn = 5;
+SELECT * FROM book;
+DROP TABLE book;
+DROP DATABASE sampleDB;

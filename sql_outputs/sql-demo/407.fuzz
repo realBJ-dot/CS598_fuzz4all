@@ -1,0 +1,15 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ 
+CREATE DATABASE IF NOT EXISTS testDB; USE testDB;
+ 
+CREATE TABLE testTable1 (id int PRIMARY KEY, data TEXT);
+CREATE TABLE testTable2 (id INT PRIMARY KEY, data TEXT);
+INSERT INTO testTable1 VALUES(1, 'first');
+INSERT INTO testTable2 VALUES(2, 'first');
+-- Please drop the tables that you created before testing.
+DROP TABLE testTable1;
+DROP TABLE testTable2;
+-- Please drop testDB.
+DROP DATABASE IF EXISTS sampleDB;
+DROP DATABASE IF EXISTS testDB;
+exit;

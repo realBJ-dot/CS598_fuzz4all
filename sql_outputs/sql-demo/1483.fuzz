@@ -1,0 +1,21 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ALTER TABLE users_details MODIFY(phone VARCHAR(50) UNIQUE); 
+-- Please write a mutated program to use a stored procedure to update age of a given user
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DELIMITER ;;
+CREATE PROCEDURE getAgeFromUser(IN user_id INTEGER, OUT user_age INTEGER)
+BEGIN
+	SELECT age INTO user_age FROM users_details WHERE user_id=user_id;
+END ;;
+DELIMITER ;
+USE sampleDB;
+CALL getAgeFromUser(23434);
+DELIMITER ;;
+DROP PROCEDURE getAgeFromUser;;
+CREATE PROCEDURE getAgeFromUser(IN user_id INTEGER, OUT user_age INTEGER)
+BEGIN
+	SELECT age INTO user_age FROM users_details WHERE user_id=user_id;
+END ;;
+DELIMITER ;
+USE sampleDB;
+CALL getAgeFromUser(23434);

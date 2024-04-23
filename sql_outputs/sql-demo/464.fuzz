@@ -1,0 +1,60 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS mytable;
+
+ 
+INSERT INTO mytable (data) VALUES ("0");
+INSERT INTO mytable (data) VALUES ("1");
+ ;
+
+ 
+mysql -u root -p -p sampleDB
+mysql> select * from mytable;
++------+---------------------+
+| data |                      |
++------+---------------------+
+|    0 |                      |
+|    1 |                      |
+|    2 |                      |
+|    3 |                      |
+|    4 |                      |
+|    5 |                      |
+|    6 |                      |
+|    7 |                      |
+|    8 |                      |
+|    9 |                      |
+|   10 |                      |
+|   11 |                      |
+|   12 |                      |
+|   13 |                      |
+|   14 |                      |
+|   15 |                      |
+|   16 |                      |
+|   17 |                      |
+|   18 |                      |
+|   19 |                      |
+|   20 |                      |
++------+---------------------+
+209 rows in set (0.05 sec)
+
+ 
+drop table if exists mytable;
+
+ 
+drop table if exists mytable;
+
+ 
+mysql> select * from mytable;
++------+---------------------+
+| data |                      |
++------+---------------------+
+|    0 |                      |
+|    1 |                      |
+|    2 |                      |
+|    3 |                      |
+|    4 |                      |
+|    5 |                      |
+|    6 |                      |
+|    7 |                      |
+|    8 |                      |
+|    9 |                      |
+|   10 |                     

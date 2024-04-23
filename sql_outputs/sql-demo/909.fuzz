@@ -1,0 +1,20 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS user;
+CREATE TABLE IF NOT EXISTS user (id INT PRIMARY KEY, "name" VARCHAR(200), "last-name" VARCHAR(200));
+INSERT INTO user (id, "name", "last-name") VALUES (10, 'John', 'Smith');
+INSERT INTO user (id, "name", "last-name") VALUES (20, 'Paul', 'Jones');
+SELECT id, "name", "last-name"
+FROM user
+WHERE "last-name" = 'Jones';
+DROP TABLE IF EXISTS user;
+DROP DATABASE IF EXISTS sampleDB;
+-- Please give the database dump and compare it to a previously created program
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS user;
+CREATE TABLE IF NOT EXISTS user (id INT PRIMARY KEY, "name" VARCHAR(200), "last-name" VARCHAR(200));
+INSERT INTO user (id, "name", "last-name") VALUES (10, 'John', 'Smith');
+INSERT INTO user (id, "name", "last-name") VALUES (20, 'Paul', 'Jones');
+SELECT * FROM user WHERE id = 10;
+SELECT * FROM user WHERE "last-name" = 'Jones';
+DROP TABLE IF EXISTS user;
+DROP DATABASE IF EXISTS sampleDB;

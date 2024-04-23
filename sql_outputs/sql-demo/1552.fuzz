@@ -1,0 +1,2 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+INSERT INTO tab1 (name, email) VALUES ("Tom", "<EMAIL>");

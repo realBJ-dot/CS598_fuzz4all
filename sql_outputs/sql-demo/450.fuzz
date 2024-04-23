@@ -1,0 +1,11 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE mytable(
+   a int auto_increment primary key,
+   b varchar(30) not null,
+   c int not null,
+   d text not null,
+   e date not null
+)ENGINE=InnoDB;
+DROP DATABASE sampleDB;
+
+*/

@@ -1,0 +1,7 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE employees_salary_by_salary ( employee_salary INT UNSIGNED,
+    emp_salary INT UNSIGNED);
+
+SELECT emp_salary + 5000 FROM employees_salary_by_salary;
+DROP DATABASE IF EXISTS sampleDB;
+

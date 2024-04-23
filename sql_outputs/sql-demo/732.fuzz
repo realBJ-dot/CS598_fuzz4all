@@ -1,0 +1,30 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ -- INSERT DATA;
+ -- DROP TABLE IF EXISTS `table1`;
+ ALTER TABLE `table1` CHANGE `col1` `col2` TINYINT(1);
+ ALTER TABLE `table1` CHANGE `col1` `col2` TINYINT(2);
+ ALTER TABLE `table1` CHANGE `col2` `col1` TINYINT(1);
+ ALTER TABLE `table1` CHANGE `col1` `col2` TINYINT(3);
+ ALTER TABLE `table1` CHANGE `col2` `col1` TINYINT(2);
+ ALTER TABLE `table1` CHANGE `col1` `col2` TINYINT(5);
+
+ -- DROP TABLE IF EXISTS `table2`;
+ ALTER TABLE `table2` CHANGE `col1` `col2` TINYINT(1);
+ ALTER TABLE `table2` CHANGE `col1` `col2` TINYINT(2);
+ -- ALTER TABLE `table2` CHANGE `col2` `col1` TINYINT(2);
+ ALTER TABLE `table2` CHANGE `col2` `col1` TINYINT(1);
+  ALTER TABLE `table2` CHANGE `col2` `col1` TINYINT(3);
+ ALTER TABLE `table2` CHANGE `col1` `col2` TINYINT(2);
+ ALTER TABLE `table2` CHANGE `col1` `col2` TINYINT(4);
+ ALTER TABLE `table2` CHANGE `col1` `col2` TINYINT(6);
+ ALTER TABLE `table2` CHANGE `col1` `col2` TINYINT(1);
+ 
+ -- DROP TABLE IF EXISTS `table3`;
+ ALTER TABLE `table3` CHANGE `col1` `col2` TINYINT(1);
+ ALTER TABLE `table3` CHANGE `col1` `col2` TINYINT(2);
+ ALTER TABLE `table3` CHANGE `col1` `col2` TINYINT(3);
+ ALTER TABLE `table3` CHANGE `col1` `col2` TINYINT(4);
+ ALTER TABLE `table3` CHANGE `col1` `col2` TINYINT(5);
+ 
+ -- DROP TABLE IF EXISTS `table4`;
+ ALTER TABLE `table4` CHANGE `col1` `col2

@@ -1,0 +1,7 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS users_details (user_id INTEGER, phone VARCHAR(50) UNIQUE, age INTEGER);
+INSERT INTO users_details(user_id, phone, age) VALUES (23543, 6364254, 865355);
+DELETE FROM users_details WHERE user_id = 23434;
+SELECT * FROM users_details;
+
+select * from users_details join users where users.user_id = users_details.user_id and users.user_type = 'Customer';

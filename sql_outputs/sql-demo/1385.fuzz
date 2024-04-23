@@ -1,0 +1,15 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE book(
+ book_id int(11) NOT NULL AUTO_INCREMENT,
+ book_title varchar(50) NOT NULL,
+ book_isbn int(6) DEFAULT NULL,
+ book_publication_date date DEFAULT NULL,
+ book_price int(3) DEFAULT '0',
+ constraint book_id primary key(book_id),
+ constraint FK_book_author foreign key(book_author) references author(author_id)
+);
+ALTER TABLE book MODIFY book_id INT FIRST;
+CREATE INDEX book_author ON book(book_author(5));
+ALTER TABLE book ENGINE=MyISAM;
+DROP TABLE book;
+DROP DATABASE sampleDB;

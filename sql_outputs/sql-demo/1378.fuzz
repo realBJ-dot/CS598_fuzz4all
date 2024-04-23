@@ -1,0 +1,25 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ 
+DELIMITER  
+CREATE FUNCTION books_popularity(popularity INT)
+BEGIN
+	DECLARE id INT, cnt INT, book_id INT, book_publication_date DATE DEFAULT '0000-00-00';
+	DECLARE books TEXT;
+	SELECT COUNT(book_id) INTO cnt FROM book;
+	SELECT book_id INTO id FROM book WHERE popularity = popularity LIMIT 1;
+	SELECT DISTINCT book_id INTO books FROM book WHERE popularity = popularity ORDER BY RAND();
+	FOR book_id IN SELECT DISTINCT book_id
+	FROM book WHERE popularity = popularity ORDER BY RAND()
+	LOOP
+		SET cnt = 0;
+		FOR book_id IN SELECT DISTINCT book_id FROM book WHERE popularity = popularity ORDER BY RAND()
+		LOOP
+			SELECT CASE WHEN cnt = 0 THEN book_publication_date ELSE (SELECT book_publication_date FROM book WHERE book_id = book_id) END INTO book_publication_date FROM book WHERE book_id = book_id ORDER BY RAND();
+			SET cnt = cnt + 1;
+		END LOOP;
+	END LOOP;
+END 
+DELIMITER ;
+SELECT books_popularity(7);
+DROP TABLE books_popularity;
+DROP DATABASE sampleDB;

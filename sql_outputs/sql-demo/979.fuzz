@@ -1,0 +1,36 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- This command will create both employee table and departments table in the employee table.
+CREATE TABLE employees (
+    emp_no INTEGER,
+    last_name VARCHAR,
+    first_name VARCHAR,
+    sex VARCHAR,
+    title VARCHAR,
+    birth_date DATE,
+    hire_date DATE,
+    address VARCHAR,
+    district VARCHAR,
+    country VARCHAR,
+    phone VARCHAR,
+    salaray decimal(10,2) DEFAULT 0.00
+);
+CREATE TABLE dept_emp (
+    emp_no INTEGER,
+    dept_no INTEGER,
+    PRIMARY KEY(emp_no, dept_no)
+);
+ALTER TABLE dept_emp ADD CONSTRAINT dept_emp_fk FOREIGN KEY (emp_no) REFERENCES employees(emp_no);
+ALTER TABLE dept_emp ADD CONSTRAINT dept_emp_fk2 FOREIGN KEY (dept_no) REFERENCES dept(dept_no);
+ 
+CREATE TABLE dept_manager (
+    emp_no INTEGER NOT NULL,
+    dept_no INTEGER NOT NULL,
+    PRIMARY KEY(emp_no, dept_no),
+    CONSTRAINT dept_emp_fk FOREIGN KEY (emp_no) REFERENCES employees(emp_no);
+    CONSTRAINT dept_emp_fk2 FOREIGN KEY (dept_no) REFERENCES dept(dept_no);
+);
+INSERT INTO employees (emp_no, last_name, first_name, sex, title, birth_date, hire_date, address, district, country, phone, salaray)
+VALUES
+(1,'Smith','John','F','Sales Representative', '1984-05-26', '1988-03-23','33 S Central Avenue', 'Greencay', 'Tennessee', NULL, 11100.00),
+(2,'Donald','Edward', 'M', 'Sales Representative', '1992-03-13', '2000-03-09','57 N 9th Street', 'Oakland', 'California', '123-456-7890','39859.35'),
+(3,'Brown', 'Jones', 'M', 'Sales Representative', '1985-06-14', '2000-05-26','7467 W Broad 55th Ave', 'Louisville', '

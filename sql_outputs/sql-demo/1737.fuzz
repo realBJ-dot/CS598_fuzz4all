@@ -1,0 +1,12 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ALTER TABLE user MODIFY password VARCHAR(15) NOT NULL;
+UPDATE users SET user_name='admin'; -- Again
+INSERT INTO user (user_name, password) VALUES ('admin', '<PASSWORD>'); -- Again, but with extra quotes in password
+SELECT COUNT(*) FROM user;
+DROP DATABASE IF EXISTS `user`;
+DROP TABLE IF EXISTS `user`;
+SHOW DATABASES;
+GRANT ALL PRIVILEGES ON DATABASE sampleDB TO `user`;
+-- You should be able to login here: http: 
+-- For this to work, the user_name must match the username as stored in the database above
+USE sampleDB;

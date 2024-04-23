@@ -1,0 +1,14 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE `mytable`(
+   `a` INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    `b` VARCHAR(30),
+    `c` INT,
+    `d` TEXT,
+    `e` DATE,
+    KEY(`e`)
+);
+
+ 
+USE sampleDB; DROPTABLE mytable;
+DROP TABLE`mytable`;
+DROP DATABASE IF EXISTS sampleDB;

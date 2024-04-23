@@ -1,0 +1,13 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP DATABASE IF EXISTS `user`;
+CREATE TABLE user(user_name VARCHAR(20), password VARCHAR(15));
+INSERT INTO user (user_name, password) VALUES ('admin', '<PASSWORD>');
+UPDATE user SET password='<PASSWORD>' WHERE user_name='admin';
+-- Please create a mutated program that uses transactions
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP DATABASE IF EXISTS `user`;
+CREATE TABLE user(user_name VARCHAR(20), password VARCHAR(15));
+INSERT INTO user (user_name, password) VALUES ('admin', '<PASSWORD>');
+CREATE TABLE `transaction`(tx_id INTEGER, tx_account VARCHAR(20), tx_amount INTEGER);
+INSERT INTO `transaction` (`tx_id`, `tx_account`, `tx_amount`) VALUES (1, 'admin', 100);
+CREATE TABLE `transaction_history`(txh_id INTEGER PRIMARY KEY AUTO_INCREMENT, txh_tx_id INTEGER, txh_amount INTEGER);

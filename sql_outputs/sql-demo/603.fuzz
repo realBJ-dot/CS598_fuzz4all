@@ -1,0 +1,26 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- You must create the mutated table by dropping the old table
+DROP TABLE IF EXISTS Mutated;
+
+CREATE TABLE Mutated (Name TEXT, Email TEXT, Instructor BIT(1));
+-- This is the main table that is involved in the mutated process
+CREATE TABLE StudentsMutated (ID INT, Name TEXT, Email TEXT, College TEXT);
+-- This table is created as instructed, you must be sure to drop it
+DROP TABLE IF EXISTS StudentsMutatedBy;
+
+CREATE TABLE StudentsMutatedBy (ID INT, Name TEXT, Email TEXT, College TEXT);
+
+INSERT INTO Mutated VALUES ('<NAME>', '<EMAIL>', '0');
+INSERT INTO Mutated VALUES ('<NAME>', '<EMAIL>', '0');
+
+INSERT INTO StudentsMutated VALUES (1, '<NAME>', '<EMAIL>', 'Saint-Louis Polytechnic Institute');
+INSERT INTO StudentsMutated VALUES (2, '<NAME>', '<EMAIL>', 'Saint-Louis Polytechnic Institute');
+INSERT INTO StudentsMutated VALUES (3, '<NAME>', '<EMAIL>', 'Saint-Louis Polytechnic Institute');
+
+INSERT INTO StudentsMutatedBy VALUES (1, '<NAME>', '<EMAIL>', 'Saint-Louis Polytechnic Institute');
+INSERT INTO StudentsMutatedBy VALUES (2, '<NAME>', '<EMAIL>', 'Saint-Louis Polytechnic Institute');
+INSERT INTO StudentsMutatedBy VALUES (3, '<NAME>', '<EMAIL>', 'Saint-Louis Polytechnic Institute');
+
+SELECT * FROM StudentsMutatedBy;
+-- This is the mutated table
+ SELECT * FROM StudentsMutated;

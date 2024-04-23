@@ -1,0 +1,18 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+DROP TABLE IF EXISTS mytable;
+CREATE TABLE mytable (
+        key longtext NOT NULL PRIMARY KEY,
+        text text,
+        flag byte(1),
+        key2 longtext NOT NULL
+);
+-- Please create a very fast program to do a basic table scan in the last three days. It should fetch all rows using either an INNER or a JOIN syntax. You should use ENGINE=InnoDB
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS mytable;
+CREATE TABLE mytable (
+        key longtext NOT NULL PRIMARY KEY,
+        text text,
+        flag byte(1),
+        key2 longtext NOT NULL
+) ENGINE=InnoDB CHARACTER SET=utf8;

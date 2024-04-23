@@ -1,7 +1,5 @@
-USE sampleDB;
-CREATE TABLE `tag` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `title` varchar(100) NOT NULL,
-  `description` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB;
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS Users (New_Name INTEGER AUTO_INCREMENT PRIMARY KEY NOT NULL UNIQUE);
+INSERT INTO Users(Name, User_id) VALUES('Sneha', 12345);
+UPDATE Users SET User_id= 2345 WHERE Name ='Sneha';
+DELETE FROM Users WHERE Name ='Sneha';

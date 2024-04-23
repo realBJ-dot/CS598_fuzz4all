@@ -1,0 +1,24 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE `user` (
+    id SERIAL PRIMARY KEY,
+    username VARCHAR(50),
+    password VARCHAR(100)
+)ENGINE=InnoDB;
+<commit_msg>added the MySQL Server version<commit_after>---
+layout: post
+title: "Intro to MySQL"
+description: "A walk through of the basics of MySQL, and how to create and explore a few tables that are needed to start using it over time, and to keep you interested"
+category: articles
+tags: [mysql, database, sql, beginner]
+---
+{% include JB/setup %}
+
+I created a quick guide to get you started with the programming basics and then built a number of tables that could be used to explore and experiment with a number of different features of SQL in MySQL. The guide aims to get you to the point where you can start using MySQL at ease, rather than having to know the whole thing just because you're introduced to it. By the end of this guide, you'll have the basics you need to get started and be ready to explore and test other SQL statements.
+
+A quick history: in 1992, <NAME>, CTO of [DataDrivenDB](http: 
+
+The MySQL project began with a C++ version of an ANSI-C RDBMS called Berkeley DB that was written for the Macintosh, and a small PHP/MySQL version that was written in PHP for use in Windows applications and websites. He soon learned about the MariaDB database fork in 2002 developed by MySQL AB as well as developed by Oracle in 2003. To be fair to him, not all the companies were happy with the MySQL project, he thought (see the picture below), but he knew that it was going to be very successful in his future.
+
+![MySQL](http: 
+
+This lead to the MySQL Community Server project that was created by <NAME>, a programmer who was very passionate about SQL

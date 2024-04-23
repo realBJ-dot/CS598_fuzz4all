@@ -1,0 +1,5 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+INSERT INTO Student (First_Name, Last_Name, Grade) VALUES ('Marc', 'Johnson', 10);
+UPDATE Student SET First_Name = 'Thomas' WHERE Grade = 10;
+SELECT * FROM Student;
+DROP DATABASE IF EXISTS sampleDB;

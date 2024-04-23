@@ -1,0 +1,4 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ALTER TABLE `sampleDB`.`employees` MODIFY COLUMN `lastName` varchar(25) CHARSET=utf8 COLLATE=utf8_general_ci DEFAULT 'Taylor';
+SELECT * FROM `sampleDB`.`employees`;
+-- Please create a much bigger mutated program that changes the schema of the MySQL database.

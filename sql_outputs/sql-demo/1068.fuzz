@@ -1,0 +1,15 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+SET GLOBAL sql_mode=ANSI_QUOTES;
+CREATE TABLE `worker AS` (
+  `no_worker` INT,
+  `nama_lengkap` VARCHAR(50),
+  `kode_lokasi` VARCHAR(50),
+  `username` VARCHAR(50),
+  `password` VARCHAR(50),
+  `tgl_masuk` DATETIME,
+  `id_level` INT,
+  `id_status` INT,
+  `id_kota_asal` INT,
+  `id_kota_tujuan` INT,
+  `no_tlp` INT
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1 AUTO_INCREMENT=5;

@@ -1,0 +1,6 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ INSERT INTO Users_2 SELECT * FROM Users_2;
+ SELECT CONCAT('firstname: ', Users_2.User firstname FROM Users_2);
+
+  
+exit

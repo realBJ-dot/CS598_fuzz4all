@@ -1,0 +1,39 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ALTER TABLE users ADD FULLTEXT INDEX fulltext_idx (name);
+-- Please create an optimistic program that uses the FULLTEXT indexes, and demonstrates the use case
+ALTER DATABASE sampleDB DISABLE KEYS;
+-- Please create a transaction-support program to demonstrate the use of transactions in real life.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE users(
+	userId INT NOT NULL PRIMARY KEY,
+	name VARCHAR(50) DEFAULT 'root'"
+);
+INSERT INTO users (userId) VALUES (1);
+UPDATE users SET name = 'new' WHERE userId = 1;
+DELETE FROM users WHERE userId = 1;
+SELECT * from users;
+UNLOCK TABLES;
+// Please create a program to demonstrate how to open an existing fulltext indexed database that is in shared-cache mode.
+USE sampleDB;
+BEGIN;
+CREATE TABLE IF NOT EXISTS users(
+	userId INT NOT NULL PRIMARY KEY,
+	name VARCHAR(50) DEFAULT 'root"'
+);
+INSERT INTO users (userId) VALUES (1);
+UPDATE users SET name = 'new' WHERE userId = 1;
+DELETE FROM users WHERE userId = 1;
+SELECT * from users;
+COMMIT;
+ 
+create table if not exists users(
+	userId int not null primary key,
+	name varchar(20)
+);
+use sampledb;
+truncate table users;
+-- Please create a new program to demonstrate a use case where a column of a textual data type can be shared and index-shared.
+ 
+use sampledb;
+CREATE TABLE users(
+	userName_idx

@@ -1,0 +1,27 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS book(
+	book_id INT NOT NULL  PRIMARY KEY AUTO_INCREMENT,
+	book_author_id INT,
+	FOREIGN KEY (book_author_id) REFERENCES author(author_id),
+	book_title text,
+	book_pages INT NOT NULL,
+	FOREIGN KEY (book_author_id) REFERENCES author(author_id) ON UPDATE SET NULL
+);
+DESCRIBE book;
+INSERT INTO book VALUES('001','John','The Bible ',150);
+INSERT INTO book VALUES('001','Paul','The Bible ',100);
+INSERT INTO book VALUES('002','John','25-30',150);
+INSERT INTO book VALUES('002','Paul','25-30',150);
+INSERT INTO book VALUES('003','John','25-30',100);
+-- Select all columns from book table:
+SELECT * FROM book;
+-- Select all author_id,author_name from author table:
+SET @author_name=CONCAT('Author ',author_id,'_',author_name);
+SET @num=0;SET @author_name=CONCAT('Author ',@num,'_',@author_name);
+SET @author_id_list=CONCAT(CONCAT('Author id: ',author_id,','),@author_name);
+SET @num++;SET @author_name=CONCAT('Author ',@num,'_',@author_name);
+SET @author_id_list=CONCAT(@author_id_list,CONCAT(',Author: ',author_id,','),@author_name);
+SET @author_id_list=CONCAT(CONCAT('Author id: ',author_id,','),@author_name);
+SELECT @author_id_list;
+--
+-- Please add a

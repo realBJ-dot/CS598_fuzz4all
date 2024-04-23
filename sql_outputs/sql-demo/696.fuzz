@@ -1,0 +1,36 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS Student;
+CREATE TABLE Student (
+  First_Name  VARCHAR(20),
+  Last_Name   CHAR(20),
+  Grade       INT,
+  PRIMARY KEY (First_Name, Last_Name) );
+INSERT INTO Student (First_Name, Last_Name, Grade) VALUES ('John',  'Smith',     8);
+INSERT INTO Student (First_Name, Last_Name, Grade) VALUES ('Jane',   'Lee',       9);
+INSERT INTO Student (First_Name, Last_Name, Grade) VALUES ('Tom',    'Stark',     5);
+SELECT
+  First_Name,
+  Last_Name,
+  Grade
+FROM Student
+WHERE
+  Grade >= 7
+ORDER BY
+  First_Name;
+-- Please do your tests in the following scenario.
+-- 
+-- 1)	Create the table which has a Primary Key that is not a part of the order in which it is being ordered.
+-- 2)	Select from the table without its primary key.
+-- 3)	Insert new record in the table which is equivalent to the previous one.
+-- 4)	Select from the table but the record with the primary key that is not the same as the previous one.
+-- 5)	Update the record with the PRIMARY KEY and test if the update will work if the record is deleted.
+-- 6)	Delete the record with the PRIMARY KEY and the record with other columns that are not part of the PRIMARY KEY column and update the row again and again.
+-- 7)	Let the queries return.
+-- 8)	Verify the results using any program that you write. You should be able to run the program from 1 through 9 and check the output.
+-- 
+-- The expected output should be: 
+-- 
+-- The first query should return the record, but the second should return NULL.
+-- The first query should update the record and should work again, but should return NULL.
+-- The first query should select without its primary key and should return three records.
+-- The first query should insert

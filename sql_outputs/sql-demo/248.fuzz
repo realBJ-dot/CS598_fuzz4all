@@ -1,0 +1,35 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+CREATE TABLE IF NOT EXISTS `person` (
+  `personID` INTEGER UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY, 
+    `lastname` VARCHAR(45) NULL DEFAULT NULL, 
+    `firstname` VARCHAR(45) NOT NULL,
+    `age` INTEGER NOT NULL, 
+    `gender` CHAR(6) NULL DEFAULT NULL
+  );
+CREATE TABLE IF NOT EXISTS `course` (
+  `courseID` INTEGER UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `courseNum` INTEGER NULL,
+    `courseName` TEXT NOT NULL, 
+    `teacherID` INTEGER, 
+    `classroomID` INTEGER, 
+    `termID` INTEGER, 
+    `roomNum` INTEGER
+  );
+ 
+ 
+INSERT INTO `person` (`personID`, `lastname`, `firstname`, `age`, `gender`) VALUES (3, 'Rashan', 'Rashan', 29,"male"); 
+DELETE FROM `person` WHERE `personID` = 3;
+UPDATE `course` SET `courseName` = 'SQL' WHERE `courseID` = 1;
+ 
+
+ 
+SELECT * FROM student ORDER BY enrollID; 
+SELECT * FROM student WHERE enrollID IS NULL; 
+SELECT * FROM student WHERE enrollID IS NULL AND address IS NULL; 
+
+ 
+
+ 
+SELECT count(*) FROM student; 
+SELECT SUM(amount)

@@ -1,0 +1,28 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS user_db_personalities (
+name VARCHAR(32), age INT UNSIGNED, phone VARCHAR(21), email VARCHAR(32), PRIMARY KEY (name)
+);
+CREATE TABLE IF NOT EXISTS user_db_personality_history (
+name VARCHAR(32), old_level INT UNSIGNED, new_level INT UNSIGNED, PRIMARY KEY (name)
+) engine = innopad;
+# Insert query with a long string
+insert into user_db_personalities (name, age, phone, email) values ('<NAME>', 25, '5555555555', '<EMAIL>');
+# Insert query with large amount of chars
+insert into user_db_personalities (name, age, phone, email) values ('<NAME>', 25, '5555555555', '<EMAIL>' || chr(13) || ':' || chr(13) || chr(13) || 'and I love this string!');
+# Delete query
+delete from user_db_personality_history where name = '<NAME>';
+# Update query
+update user_db_personality_history set new_level=35 where old_level=35 and name = '<NAME>';
+# Show query result
+select * from user_db_personalities;
+# Show query status
+
+UPDATE `user_db_personalities` SET `name` = "<NAME>" WHERE `user_db_personalities`.`name` = "<NAME>";
+UPDATE `user_db_personalities` SET `name` = "<NAME>" WHERE `user_db_personality_history`.`name` = "<NAME>";
+# Drop query
+DROP TABLE IF EXISTS sampleDB.user_db_personality_history;
+DROP TABLE IF EXISTS sampleDB.user_db_personalities;
+
+create table t1 as select * from user_db_personalities as p1 order by age desc limit 1;
+SHOW INDEX FROM `t1` WHERE `Key_name` = 'idx_personality_name';
+SELECT GROUP_CONCAT(name SEPARATOR ','), COUNT(*) FROM `user_db_personality_

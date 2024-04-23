@@ -1,0 +1,5 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE  Users_2(username char(20) PRIMARY KEY,
+FirstName VARCHAR(30),
+email char(32));
+INSERT INTO Users_2 VALUES('Joe','John','<EMAIL>');

@@ -1,0 +1,46 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ 
+CREATE DATABASE IF NOT EXISTS MySQLDB;
+USE MySQLDB;
+
+ 
+CREATE TABLE courses (
+  `id` int(11) NOT NULL,
+  `grade` int(11) NOT NULL,
+  `name` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  CONSTRAINT `FK_courses_grade` FOREIGN KEY (`grade`) REFERENCES `grades` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE persons (
+  `id` int(11) NOT NULL,
+  `firstname` varchar(25) DEFAULT NULL,
+  `lastname` varchar(25) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `grade` int(11) DEFAULT NULL,
+  `department` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  CONSTRAINT `FK_persons_grade` FOREIGN KEY (`grade`) REFERENCES `grades` (`id`),
+  CONSTRAINT `FK_persons_department` FOREIGN KEY (`department`) REFERENCES `departments` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE grades (
+  `id` int(11) NOT NULL,
+  `grade` varchar(25) DEFAULT NULL,
+  `course_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  CONSTRAINT `FK_grades_course` FOREIGN KEY (`course_id`) REFERENCES `courses` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE students (
+  `id` int(11) NOT NULL,
+  `firstname` varchar(25) DEFAULT NULL,
+  `lastname` varchar(25) DEFAULT NULL,
+  `gender` varchar(10) DEFAULT NULL,
+  `course_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  CONSTRAINT `FK_students_grade` FOREIGN KEY (`course_id`) REFERENCES `courses` (`id`),
+  CONSTRAINT `FK_students_department` FOREIGN KEY (`course_id`) REFERENCES `courses` (`id`) ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+ 
+INSERT INTO students(id, firstname, lastname, gender, course_id)
+VALUES
+(1, "Joe","Brown", "Female", 1),
+(2,"Peter","Parker",

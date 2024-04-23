@@ -1,0 +1,40 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `sampleDB`.`employees`;
+CREATE TABLE `sampleDB`.`employees` (
+	`id` int NOT NULL AUTO_INCREMENT,
+	`employeeID` int NOT NULL,
+	`firstName` varchar(20) NOT NULL,
+	`lastName` varchar(25) NOT NULL,
+	`isFullTimeEmployee` tinyint(1) NOT NULL,
+	`isLead` tinyint(1)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+ 
+UPDATE `sampleDB`.`employees` SET employeeID = employeeID * 5 WHERE `id == 0`;
+
+DROP TABLE IF EXISTS `sampleDB`.`employees`;
+CREATE TABLE `sampleDB`.`employees` (
+	`id` int NOT NULL AUTO_INCREMENT,
+	`employee` int,
+	`firstName` varchar(20),
+	`lastName` varchar(25)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+SELECT employeeID FROM `sampleDB`.`employees`;
+DELETE FROM `sampleDB`.`employees` WHERE id = 0;
+DELETE FROM `sampleDB`.`employees` WHERE `employee = 0` LIMIT 2;
+DROP TABLE IF EXISTS `sampleDB`.`employees`;
+
+CREATE TABLE `sampleDB`.`employees` (
+	`id` int NOT NULL AUTO_INCREMENT,
+	`employeeID` int,
+	`firstName` varchar(20),
+	`lastName` varchar(25)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO `sampleDB`.`employees` (employeeID, lastName, firstName) VALUES ('1', 'Bob', 'Cooke');
+INSERT INTO `sampleDB`.`employees` (employeeID, lastName, firstName) VALUES ('1000', 'Sherman', 'Sherman');
+SELECT id, lastName, firstName FROM employees;
+
+UPDATE `sampleDB`.`employees` SET fullName = 'Bob-Sherman', isLead = 1 WHERE id = 0;
+SELECT *

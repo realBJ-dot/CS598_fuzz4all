@@ -1,0 +1,6 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS person_tmp;
+CREATE TABLE person_tmp (id INT PRIMARY KEY, name VARCHAR(200));
+ALTER TABLE person_tmp MODIFY name VARCHAR(200) CHARACTER SET ISO_8859_9 COLLATE ISO_8859_9_CI;
+SELECT * FROM person_tmp;
+-- Please create a very short query which uses SQL features in a complex way. Be sure to use ENGINE=InnoDB. You should only use sampleDB as the database and assume no other table exist. You need to create new tables to perform operations. In the end, drop all tables you created.

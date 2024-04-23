@@ -1,2 +1,8 @@
-USE sampleDB;
-DROP TABLE testStore; 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users(username char(20) PRIMARY KEY, FirstName VARCHAR(30), Surname VARCHAR(30)) ENGINE=InnoDB;
+INSERT INTO Users(username,Firstname,Surname) VALUES('Test','Test','Test'),('Admin','Admin','Admin'),('Guest','Guest','Guest'),('Super','Super','Super');
+
+-- Create the second database and the tables therein.
+CREATE DATABASE IF NOT EXISTS secondDB; USE secondDB;
+CREATE TABLE Users(username char(20) PRIMARY KEY, FirstName VARCHAR(30), Surname VARCHAR(30)) ENGINE=InnoDB; -- add unique on username column
+INSERT INTO Users(username,Firstname,Surname) VALUES('Test','Test','Test'),('Admin','Admin','Admin'),('Guest','Guest','Guest'),('Super','Super','Super');

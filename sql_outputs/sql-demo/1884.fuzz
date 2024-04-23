@@ -1,0 +1,28 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employees_positions;
+CREATE TABLE employees_positions (
+    employee INTEGER NOT NULL,
+    position INTEGER NOT NULL,
+    PRIMARY KEY (employee, position)
+);
+--
+INSERT INTO employees_positions VALUES (1, 1);
+INSERT INTO employees_positions VALUES (1, 2);
+INSERT INTO employees_positions VALUES (2, 3);
+INSERT INTO employees_positions VALUES (2, 4);
+INSERT INTO employees_positions VALUES (2, 5);
+INSERT INTO employees_positions VALUES (2, 6);
+INSERT INTO employees_positions VALUES (2, 7);
+INSERT INTO employees_positions SELECT
+        employee,
+        position
+    FROM employees;
+SELECT employee, position, COUNT(employee) AS all_members
+    FROM (
+        SELECT employees.employee AS employee, employees.position AS position
+        FROM employees
+        GROUP BY employees.employee, employees.position
+        ) AS members_count
+    GROUP BY employee, position;
+--
+DROP DATABASE IF EXISTS sampleDB;

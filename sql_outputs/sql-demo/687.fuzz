@@ -1,0 +1,8 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- And execute it.
+CREATE TABLE Student (First_Name VARCHAR(20), Last_Name CHAR(20), Grade INT);
+
+-- NOTE:- In this case, MySQL only allows a maximum of 10000 columns and 10000 rows in a table. 
+
+-- To drop table, just execute the following query on the mysql shell
+DROP TABLE IF EXISTS Student;

@@ -1,0 +1,11 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users_2(username char(20) PRIMARY KEY, FirstName VARCHAR(30));
+UPDATE Users_2
+DELETE FROM Users_2
+DROP TABLE Users_2
+-- How many users do you expect from a query using InnoDB engine?
+CREATE DATABASE IF NOT EXISTS sampleDB_20; USE sampleDB_20;
+CREATE TABLE Users_2(username char(20) PRIMARY KEY, FirstName VARCHAR(30));
+SELECT COUNT(username)
+FROM Users_2
+DROP TABLE Users_2

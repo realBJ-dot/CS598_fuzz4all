@@ -1,0 +1,50 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employees;
+DROP TABLE IF EXISTS salaries;
+DROP TABLE IF EXISTS dept_manager;
+DROP TABLE IF EXISTS dept_emp;
+DROP TABLE IF EXISTS dept;
+DROP TABLE IF EXISTS staff;
+DROP TABLE IF EXISTS salaries;
+DROP TABLE IF EXISTS employees;
+DROP DATABASE sampleDB;
+-- Please create a program which inserts data in different database and then uses 
+-- queries to print the data
+CREATE DATABASE IF NOT EXISTS sampleDB;
+USE sampleDB;
+DROP TABLE IF EXISTS employees;
+DROP TABLE IF EXISTS salaries;
+DROP TABLE IF EXISTS dept_manager;
+DROP TABLE IF EXISTS dept_emp;
+DROP TABLE IF EXISTS dept;
+DROP TABLE IF EXISTS staff;
+DROP TABLE IF EXISTS salaries;
+DROP TABLE IF EXISTS employees;
+DROP DATABASE sampleDB;
+-- Please create a program which fetches data from specific tables in the sampleDB database.
+-- The tables to use are employees, salaries, dept_manager, dept_emp, dept, staff. Use the
+-- appropriate table names where applicable. Also show the data in a meaningful way.
+CREATE DATABASE IF NOT EXISTS sampleDB;
+USE sampleDB;
+DROP TABLE IF EXISTS employees;
+DROP TABLE IF EXISTS salaries;
+DROP TABLE IF EXISTS dept_manager;
+DROP TABLE IF EXISTS dept_emp;
+DROP TABLE IF EXISTS dept;
+DROP TABLE IF EXISTS staff;
+DROP TABLE IF EXISTS salaries;
+DROP TABLE IF EXISTS employees;
+DROP DATABASE sampleDB;
+CREATE DATABASE IF NOT EXISTS sampleDB;
+USE sampleDB;
+DROP TABLE IF EXISTS employees;
+DROP TABLE IF EXISTS salaries;
+DROP TABLE IF EXISTS dept_manager;
+DROP TABLE IF EXISTS dept_emp;
+DROP TABLE IF EXISTS dept;
+DROP TABLE IF EXISTS staff;
+DROP TABLE IF EXISTS salaries;
+DROP TABLE IF EXISTS employees;
+DROP DATABASE sampleDB;
+-- Please write the MySQL DROP DATABASE statement in the comment section below.
+DROP DATABASE sampleDB;

@@ -1,0 +1,29 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE Users
+create table Users(UserFirstName VARCHAR(30), UserLastName VARCHAR(30))
+-- We can also use the INSERT statement to generate some test data into our table Users
+insert into Users values('John','Doe');
+insert into Users values('Mary','Smith');
+
+SELECT * FROM Users;
+-- Use SELECT to extract all records from table Users.
+SELECT UserFirstName, UserLastName FROM Users;
+ 
+select Users.UserFirstName, Users.UserLastName, Cars.ModelYear as ModelYear from Users inner join Cars on Users.UserFirstName = Cars.UserFirstName
+insert into Users values('Rick', 'Moran');
+insert into Users values('Rose', 'Jones');
+insert into Users values('Joshua','Hansen');
+insert into Users values('David', 'Schneider');
+insert into Users values('Emma', 'Lewis');
+insert into Users values('Sarah', 'Kelley');
+
+SELECT * FROM Users;
+SELECT * FROM Cars
+SELECT * FROM Users INNER JOIN Cars USING(UserFirstName)
+SELECT Users.UserFirstName, Users.UserLastName FROM Users INNER JOIN Cars USING (UserFirstName)
+
+SELECT * FROM Users LEFT JOIN Cars ON Users.UserFirstName = Cars.UserFirstName
+
+SELECT * FROM Users INNER JOIN Cars USING (UserFirstName) LEFT JOIN Users INNER JOIN Cars ON Users.UserFirstName = Cars.UserFirstName
+-- Please create a 3rd mutated query which extracts all the records from the Users table that have the UserFirstName 'R'. */
+SELECT * FROM Users WHERE UserFirstName = 'R'

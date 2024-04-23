@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS `users` (
+  `user_id` INT(10) UNSIGNED,
+  `user_name` TEXT,
+  `user_password` TEXT
+);
+ALTER TABLE `users` ADD UNIQUE KEY `username`(`user_name`);
+ ;
+ ;
+ ;

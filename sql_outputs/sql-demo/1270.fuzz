@@ -1,0 +1,14 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+CREATE TABLE IF NOT EXISTS users(
+	userId int NOT NULL PRIMARY KEY,
+	age int DEFAULT 0,
+	username int DEFAULT 0,
+	email varchar(100),
+	password varchar(30),
+	gender int DEFAULT 0
+);
+INSERT INTO users(userId, age, username, email, password, gender)
+	VALUES (1, 29, 1, '<EMAIL>', '123456', 1);
+-- Modify the password of a user. The original is defined beforehand.
+UPDATE users SET password_hash=<PASSWORD>' WHERE userId=1;

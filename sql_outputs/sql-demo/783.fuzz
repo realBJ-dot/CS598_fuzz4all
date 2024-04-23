@@ -1,0 +1,14 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS `FirstAndSecondTable` ( `id` INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY, `data` VARCHAR(300) CHARACTER SET UTF8);
+INSERT INTO `FirstAndSecondTable` (id, data) VALUES (200, 'test data 2'), (202, 'test data 2');
+CREATE TABLE IF NOT EXISTS `FirstAndLastTable` ( `id` INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY, `data` VARCHAR(300) CHARACTER SET UTF8);
+ 
+UPDATE `FirstAndLastTable` SET `data` = CONCAT('test data', '2') Where `data` = 'test data';
+ 
+SELECT * FROM `FirstAndLastTable` ORDER BY `id` LIMIT 2; USE `sampleDB`;
+SELECT * FROM `FirstAndSecondTable` ORDER BY `id` LIMIT 2;
+ 
+INSERT INTO `FirstAndLastTable` (id, data) VALUES IF NOT EXISTS (201, 'test data 2');
+ 
+UPDATE `FirstAndLastTable` SET data = 'Changed test data' WHERE id = 202;
+SELECT * FROM `FirstAndLastTable` ORDER BY `data`;

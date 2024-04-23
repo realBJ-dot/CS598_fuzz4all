@@ -1,0 +1,32 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `sampleDB`.`departments`;
+CREATE TABLE `sampleDB`.`departments` (
+	`id` int NOT NULL AUTO_INCREMENT,
+	`departmentName` varchar(100) NOT NULL,
+	PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+USE sampleDB;
+-- UPDATE 10000 rows in sampleDB. The row update will be done using 2-3 operations. To be updated are the values of the records in the "Department Name" columns. You can use the command
+UPDATE departments SET departmentName = 'Engineering' WHERE id = 1;
+UPDATE departments SET departmentName = 'Civil' WHERE id = 2;
+UPDATE departments SET departmentName = 'Chemical' WHERE id = 3;
+UPDATE departments SET departmentName = 'Science' WHERE id = 4;
+-- UPDATE 100 rows in sampleDB.
+-- INSERT 100 rows in sampleDB.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `sampleDB`.`employees`;
+CREATE TABLE `sampleDB`.`employees` (
+	`id` int NOT NULL AUTO_INCREMENT, 
+	`firstName` varchar(50) NOT NULL,
+	`lastName` varchar(50) NOT NULL,
+	`email` varchar(50) NOT NULL,
+	`dob` date,
+	`ssn` varchar(12) NOT NULL,
+	`gender` enum('M','F','N','V') NOT NULL,
+	`joiningDate` date,
+	`sal` varchar(15) DEFAULT NULL,
+	`department` int NOT NULL DEFAULT 0,
+	PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/* UPDATE 10000 rows in sampleDB. The values of the rows update are the values of the tables "Employee Name", "Employee ID", "Department" and "Salary",
+-- To be update are the values of 9 columns in the "Employee Name", "Employee ID", "Department", "Salary", tables. You need to use a single UPDATE command that combines 2 different commands. First, you need to execute "id = UPDATE_VALUE". Secondly, the UPDATE

@@ -1,0 +1,13 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE users;
+CREATE TABLE users(id INTEGER, fname VARCHAR(50), lname VARCHAR(50), user_type INTEGER);
+INSERT INTO users (id, fname, lname, user_type) VALUES (11, 'Ritwik', 'Bharan', 2);
+
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE users;
+CREATE TABLE users(id INTEGER, fname VARCHAR(50), lname VARCHAR(50), user_type INTEGER);
+INSERT INTO users (id, fname, lname, user_type) VALUES 
+(11, 'Ritwik', 'Bharan', 1),
+(21, 'Vamini', 'Kumar', 1),
+(31, 'Sankal', 'Tambak', 2),
+(41, 'Ruchi', 'Rambo', 0);

@@ -1,0 +1,36 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS Person(
+  `id`      int(11) NOT NULL AUTO_INCREMENT,
+  `FirstName`   varchar(35) DEFAULT NULL,
+  `LastName`    varchar(35) DEFAULT NULL,
+  `Phone`          smallint(6) DEFAULT 0,
+  `DateOfBirth`         varchar(20) DEFAULT "00/00/0000",
+  PRIMARY KEY (`id`)
+);
+CREATE TABLE IF NOT EXISTS Employee (
+  `id`      int(11) NOT NULL AUTO_INCREMENT,
+  `Name` varchar(100) DEFAULT NULL,
+  `Salary`          decimal(18,2) DEFAULT 2000.00,
+  `Phone` varchar(10) CHARACTER SET 'utf8 COLLATE 'utf8_unicode_ci' DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `email` (`email`)
+);
+INSERT INTO Person VALUES (1, "Bobby",   "Smith",    43445,         "00/00/0000");
+INSERT INTO Person VALUES (2, "Eva",      "Johnson",    45654,             "00/00/0123");
+INSERT INTO Person VALUES (3, "Jessica",  "Bacon",     43444,       "00/00/0001");
+INSERT INTO Person VALUES (4, "Jerry",    "Sparrow", 43445,       "00/00/0002");
+INSERT INTO Person VALUES (5, "Bobby",    "Williams", 43445,              "2000/03/31");
+INSERT INTO Person VALUES (6, "Eva",         "Pugh",  45654,           "00/00/0005");
+INSERT INTO Employee VALUES (11, "Sam", 3000.00,     "43431234567"),
+    (12, "Sarah", 2000.00, null),
+    (13, "Mike", 1600.00, "76547654567");
+#
+-- Please show the contents of database
+SELECT * FROM sampleDB.Person;
+SELECT * FROM sampleDB.Employee;
+#
+# Please run the following SQL query. You should see employee records for all of your employees' salaries.
+#
+# UPDATE Employee SET Salary = Salary * 4 / 3;
+#
+

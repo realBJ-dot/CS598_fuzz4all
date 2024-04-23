@@ -1,0 +1,43 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS `courses` (
+  `courseID` INT NOT NULL AUTO_INCREMENT, 
+    `courseNum` INT NOT NULL, 
+    `courseName` VARCHAR(45) NOT NULL, 
+    `teacherID` INT, 
+    `classroomID` INT, 
+    `termID` INT, 
+    `roomNum` INT, 
+        PRIMARY KEY (`courseID`), 
+        FOREIGN KEY (`teacherID`) REFERENCES `person` (`personID`), 
+        FOREIGN KEY (`classroomID`) REFERENCES `course` (`courseID`), 
+        FOREIGN KEY (`termID`) REFERENCES `course` (`courseID`));
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS `persons` (
+  `personID` INT NOT NULL AUTO_INCREMENT, 
+    `lastname` VARCHAR(45) NULL DEFAULT NULL, 
+    `firstname` VARCHAR(45) NOT NULL,
+    `age` INT NOT NULL, 
+    `gender` ENUM('male', 'female') NULL DEFAULT NULL, 
+  PRIMARY KEY (`personID`));
+CREATE TABLE IF NOT EXISTS `persons_courses` (
+  `personCourseID` INT NOT NULL AUTO_INCREMENT, 
+    `personID` INT NULL,
+    `courseID` INT NOT NULL,
+        PRIMARY KEY (`personCourseID`), 
+        FOREIGN KEY (`personID`) REFERENCES `person` (`personID`), 
+        FOREIGN KEY (`courseID`) REFERENCES `course` (`courseID`));
+-- This query must be run in multiple statements
+DELIMITER ;;
+-- Please create a semantically equivalent program to the query
+select courseID, courseNum, courseName
+from course
+inner join persons_courses
+on course.courseID=personCourse.courseID
+where persons_courses.personID=persons.personID
+order by courseID, courseName;;
+DELIMITER ;
+    
+-- Execute the query
+
+DELIMITER ;;
+-- Please create a semantically equivalent program to the query

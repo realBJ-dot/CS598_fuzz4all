@@ -1,0 +1,41 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- drop the employee table if it exists
+DROP TABLE IF EXISTS employee;
+-- create a new table employee for each employee row in employee.csv
+CREATE TABLE employee(id INT NOT NULL AUTO_INCREMENT UNIQUE, name varchar(10));
+-- write a loop to append first and last name. you will then need to append id. You will use mysql commands to create a column and INSERT your result into that column.
+insert into employee(name)
+select first_name ||'' || last_name from employee
+
+-- create a new table employee2 for each employee id in employee.csv
+-- loop through all rows of the employee table with SELECT
+select * from employee
+-- for each row, append the first or last name and the employee id.
+-- for each result, assign new id to employee2
+
+select * from employee where employee.id= employee2.id;
+-- drop the tables you created.
+DROP TABLE IF EXISTS employee;
+-- now that the employee table is cleared, create two NEW tables.
+CREATE TABLE employee2(id int unique, fullname varchar(10));
+CREATE INDEX employee2_idx ON employee2(id);
+-- loop through employee2. make sure each employee has one record in it.
+-- insert a dummy record where there is no existing record.
+select * from employee2;
+INSERT INTO employee2
+select id, concat(first_name,'', last_name) from employee
+
+select id, concat(first_name,'', last_name) from employee2;
+-- insert each result into the employee table.
+insert into employee
+select
+id,concat(first_name,'', last_name) from employee2;
+
+-- check that none exist, use mysql to see that
+select id,concat(first_name,'', last_name) from employee;
+-- then drop it
+DROP TABLE IF EXISTS employee2;
+-- drop all the tables created so far.
+DROP TABLE IF EXISTS employee;
+DROP TABLE IF EXISTS employee2;
+DROP DATABASE IF EXISTS samplesDB;

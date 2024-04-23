@@ -1,0 +1,26 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS mytable;
+CREATE TABLE IF NOT EXISTS mytable (
+        myint int
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+DROP TABLE IF EXISTS mytable;
+CREATE TABLE IF NOT EXISTS mytable (
+        myint int
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+DROP TABLE IF EXISTS mytable;
+CREATE TABLE IF NOT EXISTS mytable (
+        myint int
+) ENGINE=MergeTree DEFAULT KEY(myint) ORDER BY (myint) ENGINE=InnoDB;
+DROP TABLE IF EXISTS mytable;
+CREATE TABLE IF NOT EXISTS mytable (
+        myint int
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+SELECT * FROM mytable;
+INSERT INTO mytable VALUES(1234);
+SELECT * FROM mytable;
+
+SELECT count(*) FROM mytable;
+SELECT count(*) AS total FROM mytable;
+SELECT max(myint) AS value FROM mytable;
+SELECT min(myint) AS value FROM mytable;

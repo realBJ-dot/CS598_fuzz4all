@@ -1,0 +1,19 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+SELECT * FROM mytable AS s;
+DROP TABLE s;
+DROP DATABASE sampleDB;
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+SELECT myid, title, myid * 10 AS times FROM mytable;
+SELECT myid, title, myid * 10 AS times FROM mytable AS s;
+DROP TABLE s;
+DROP DATABASE sampleDB;
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE SCHEMA sales;
+CREATE TABLE sales.employees(id INT, name VARCHAR(255));
+INSERT INTO sales.employees(id, name) VALUES(1, 'John');
+INSERT INTO sales.employees(id, name) VALUES(2, 'Mary');
+INSERT INTO sales.employees(id, name) VALUES(3, 'Tina');
+SELECT * FROM sales.employees;
+-- DROP DATABASE sampleDB;

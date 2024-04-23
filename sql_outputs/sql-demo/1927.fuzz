@@ -1,0 +1,35 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE new_employees_salary_by_salary (
+    employee_salary  INT UNSIGNED,
+    emp_salary       INT UNSIGNED,
+    employee_salary2 INT UNSIGNED,
+    emp_salary2      INT UNSIGNED,
+    PRIMARY KEY (employee_salary, emp_salary));
+INSERT INTO new_employees_salary_by_salary
+VALUES (5500, 1400, 5500, 1400);
+SELECT employee_salary2, emp_salary2 FROM new_employees_salary_by_salary;
+
+ 
+DROP TABLE IF EXISTS employees_salary_by_salary;
+DROP TABLE IF EXISTS new_employees_salary_by_salary;
+DROP DATABASE sampleDB;
+
+ 
+DROP DATABASE sampleDB;
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employees_salary_less_than_1000;
+CREATE TABLE employees_salary_less_than_1000 (
+    employee_salary	INT UNSIGNED,
+    emp_salary		INT UNSIGNED,
+ 	PRIMARY KEY (employee_salary, emp_salary));
+INSERT INTO employees_salary_less_than_1000 (employee_salary, emp_salary) VALUE (6500, 1910);
+SELECT * FROM employees_salary_less_than_1000 WHERE employee_salary < 1000;
+DROP TABLE IF EXISTS employees_salary_less_than_1000;
+
+ 
+DROP TABLE IF EXISTS sample_persons;
+CREATE TABLE sample_persons (
+    sample_id		INT UNSIGNED,
+    first_name	VARCHAR(20),
+    last_name	VARCHAR(20),
+    email			VARCHAR(50

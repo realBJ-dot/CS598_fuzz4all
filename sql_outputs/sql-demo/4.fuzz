@@ -1,16 +1,42 @@
-USE sampleDB;
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
 
-CREATE TABLE sampleTable (id int(11), name varchar(100), email char(50), phone char(10), score float, address text);
-INSERT INTO sampleTable (id, name, email, phone, score, address)
-VALUES (1, '<NAME>', '<EMAIL>', '0618559230', 9.80,'seoul, korea'),
-        (2, '<NAME>', '<EMAIL>', '0629799019', 7.15, 'nairobi, Kenya'),
-        (3, '<NAME>', '<EMAIL>', '0610151711', 9.00, 'paris, France');
 
  
+CREATE TABLE IF NOT EXISTS employee (
+id int(11) AUTO_INCREMENT,
+firstname varchar(255) NOT NULL,
+lastname varchar(255) NOT NULL,
+gender varchar(20) NOT NULL,
+salary decimal(10,2) NOT NULL,
+primary key (id));
 
- 
-DROP TABLE IF EXISTS mysql2test;
-CREATE TABLE mysql2test (value varchar(5));
-SELECT * INTO mysql2test FROM mysql2test2;
+CREATE TABLE IF NOT EXISTS city (
+id int(11) AUTO_INCREMENT,
+name varchar(255) NOT NULL,
+primary key (id));
 
-DROP TABLE IF EXISTS mysql2test2;
+INSERT INTO employee (firstname, lastname, gender, salary)VALUES ('Joe', 'Smith', 'M', '80400');
+INSERT INTO employee (firstname, lastname, gender, salary)VALUES ('John', 'Jones', 'M', '82500');
+INSERT INTO employee (firstname, lastname, gender, salary)VALUES ('Bill', 'Clark', 'M', '87000');
+INSERT INTO employee (firstname, lastname, gender, salary)VALUES ('David', 'Johnson', 'M', '86700');
+INSERT INTO city (name)VALUES ('London');
+INSERT INTO city (name)VALUES ('Paris');
+INSERT INTO city (name)VALUES ('New york');
+DROP TABLE employee;
+DROP TABLE city;
+USE $DATABASE_NAME;  
+
+FLUSH TABLE employee;
+FLUSH TABLE city;
+DROP TABLE employee; DROPS TABLE city;
+USE $DATABASE_NAME;  
+
+/* If all of the required steps are followed but your query gives errors, report the cause of the error. Here are some tips:
+- If you have issues with creating tables, make sure your table does not have any missing primary keys. You can use the following statement to check for missing keys:
+SHOW CREATE TABLE $TABLE_NAME;
+- You might have misspelled the table name. Make sure you are using $DATABASE_NAME + "." + $TABLE_NAME. Make sure to remove the quotes.
+- Make sure you can access the table you created. You can do this by using the following statements:
+SHOW TABLES LIKE $TABLE_NAME;
+- Make sure your keys are NOT NULL. Be sure to remove the NOT NULL from the primary keys. Also remove the NULLS keyword from each of your column's constraints so MySQL does not set null values into your tables.
+- Make sure you are using a unique key so we can easily identify rows that you need to update or drop them.
+- Make sure you are able to truncate the table by running the following command:

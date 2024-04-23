@@ -1,0 +1,50 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+insert into table1 values(3, 9, '01 November, 1985');
+ 
+
+
+SELECT COUNT(*) FROM table1;
+* Unnamed Result set :
++-----------+
+| COUNT(*)  |
++-----------+
+| 3         |
++-----------+
+
+create table table1(id int, value int);
+insert into table1 select * from temp;
+
+SELECT COUNT(*) FROM table1;
+* Unnamed Result set:
++-----------+
+| COUNT(*)  |
++-----------+
+| 1         |
++-----------+
+
+SELECT value FROM table1 WHERE id=3;
+* Unnamed Result set:
++-----------+
+| value     |
++-----------+
+| 02/01/1983 |
++-----------+
+
+SELECT * FROM table1 WHERE id=3;
++-----+------+--------+
+| id  | value | table1 |
++-----+------+--------+
+| 3   | 02    |   NULL |
++-----+------+--------+
+1 row in set (0.02 sec)
+
+ALTER TABLE table1 ALTER id SET DEFAULT 0;
+
+SELECT COUNT(*) FROM table1;
+* Unnamed Result set:
++-----------+
+| COUNT(*)  |
++-----------+
+| 2         |
++-----------+
+

@@ -1,0 +1,14 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS users(
+  `userId` int(5) NOT NULL AUTO_INCREMENT,
+  `userName` varchar(10) NOT NULL,
+  `pwd` varchar(30) NOT NULL,
+  `pwdConfirm` varchar(30) NOT NULL,
+  `firstName` varchar(20),
+  `LastName` varchar(50),
+  `userType` int(1),
+  `created_at` date,
+  `updated_at` date,
+  PRIMARY KEY (`userId`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+ 

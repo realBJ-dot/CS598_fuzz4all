@@ -1,0 +1,18 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+SET @myvar := 'Some text';
+SET @myvar := 'Some other text';
+SELECT @myvar;
+SELECT CONCAT(@myvar, @myvar);
+SET NAMES 'utf8';
+SET CHARACTER_SET_CLIENT = 'latin1';
+SHOW VARIABLES WHERE Variable_name = 'character_set_database' or Variable_name = 'collation_database';
+SHOW VARIABLES WHERE Variable_name = 'character_set_connection' or Variable_set_name = 'collation_connection';
+SHOW VARIABLES WHERE Variable_name = 'character_set_results' or Variable_set.name = 'collation_results';
+SHOW VARIABLES WHERE Variable_name = 'collation_connection' or Variable_set.name = 'collation';
+SHOW VARIABLES WHERE Variable_set_name = 'encoding';
+ 
+SELECT username FROM Users_2 WHERE username LIKE 'Test' AND username LIKE 'Tset_%'
+-- Please use the following syntax in your query, replace the username as appropriate.
+SELECT username FROM Users_2 WHERE username LIKE 'Test%' AND username LIKE 'Tset';
+ 
+DROP DATABASE IF EXISTS testDB;

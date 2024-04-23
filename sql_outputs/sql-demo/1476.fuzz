@@ -1,0 +1,38 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS users_details (user_id INTEGER, phone VARCHAR(50) UNIQUE, age INTEGER);
+INSERT INTO users_details(user_id, phone, age) VALUES (123, 123123, 20);
+DELETE FROM users_details WHERE user_id = 123;
+ 
+--
+
+--
+-- MySQL Data Transfer
+--
+
+-- 2022-03-23 08:57:47
+CREATE DATABASE IF NOT EXISTS `sampleDB`  ;
+USE `sampleDB`;
+-- 2022-03-23 08:57:48
+CREATE TABLE `users_details` (
+  `user_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `phone` varchar(50) NOT NULL DEFAULT '',
+  `age` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+-- 2022-03-23 08:57:48
+INSERT INTO `users_details` (`user_id`, `phone`, `age`) VALUES
+(123, '123123', 20);
+-- 2022-03-23 08:57:48
+COMMIT;
+
+-- Drops DATABASE `sampleDB`
+
+-- Drops DATABASE `sampleDB`
+
+-- Drops DATABASE `sampleDB`
+
+-- Drops DATABASE `sampleDB`
+
+-- Drops DATABASE `sampleDB`
+
+-- Drops DATABASE `sampleDB`

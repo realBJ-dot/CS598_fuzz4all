@@ -1,11 +1,11 @@
--- MySQL is an open-source relational database management system (RDBMS) that operates using Structured Query Language (SQL). It allows for the creation, modification, and extraction of data from relational databases and controls user access. Besides, MySQL interfaces with an operating system to implement a database in a computer's storage system, manage users, enable network access, and ensures database integrity and backups.
+-- MySQL is an open-source relational database management system (RDBMS) named after co-founder Michael Widenius's daughter My and SQL, the acronym for Structured Query Language. As an RDBMS, MySQL helps organize data into tables that can be interrelated, facilitating data management. It works with operating systems to implement a relational database in a computer's storage system, managing users, network access, and database integrity testing and backup creation.
 
-MySQL, which can be used for free under the GNU General Public Licence, was initially owned by the Swedish company MySQL AB, now under Oracle Corporation, following Sun Microsystems' acquisition. Later, the original creator, Widenius, forked the MySQL project to establish MariaDB.
+Under the GNU General Public License, MySQL is available for free, but it also comes under various proprietary licenses. The software was originally owned by the Swedish company MySQL AB, and later came under the ownership of Sun Microsystems, which is now Oracle Corporation. In 2010, the open-source MySQL project was forked to create MariaDB.
 
-MySQL is commonly used with other software to facilitate applications requiring relational database functionality. It's part of the LAMP web application software stack, and many database-driven web applications and popular websites use it, including Facebook and Twitter. 
+MySQL can interact directly with a MySQL database using SQL. However, it's more commonly used with other programs implementing applications requiring relational database capabilities. It forms a crucial part of several web application software stacks like LAMP and is extensively used by many database-driven web applications and popular websites.
 
-Written in C and C++, MySQL can work on a wide range of system platforms, including Linux, macOS, and Microsoft Windows. The MySQL server software and client libraries use dual-licensing distribution, i.e., GPL version 2 or a proprietary license. 
+Crafted in C and C++, MySQL operates on various system platforms. Its distribution involves dual-licensing - under GPL version 2 or a proprietary license. For support, it has an official manual, numerous IRC channels and forums, and Oracle also offers paid support through its MySQL Enterprise products.
 
-Users can receive support from its official manual, IRC channels, forums, or via paid support from Oracle's MySQL Enterprise products. It has generally been well-received, noted for its high performance and strong support and documentation.
-/* Given no other table exists, please create a very short program which uses SQL features in a complex way. Be sure to use ENGINE=InnoDB. */
-USE sampleDB;
+MySQL has received positive reviews for its performance, developer interfaces, and robust documentation. It has been established as a fast, stable, and authentic multi-user, multi-threaded SQL database server.
+/* Please create a very short query which uses SQL features in a complex way. Be sure to use ENGINE=InnoDB. You should only use sampleDB as the database and assume no other table exist. You need to create new tables to perform operations. In the end, drop all tables you created. */
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;

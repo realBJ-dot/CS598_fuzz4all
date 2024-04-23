@@ -1,0 +1,100 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+SELECT id, price
+FROM Mutated;
+
+SELECT id, price
+FROM Mutated
+WHERE price = 100;
+
+SELECT id, price
+FROM Mutated
+WHERE price = 100
+AND id = 2;
+
+SELECT id, price
+FROM Mutated
+WHERE price = 100
+AND id = NOT 2;
+
+SELECT id, price
+FROM Mutated
+WHERE price = 100
+AND id IS NULL;
+
+SELECT id, price
+FROM Mutated
+WHERE price = 100
+AND id IS NOT NULL;
+
+SELECT id, price
+FROM Mutated
+WHERE price = 100
+OR id = 2;
+
+SELECT id, price
+FROM Mutated
+WHERE price = 100
+OR id = 2
+AND id IS NULL;
+
+SELECT id, price
+FROM Mutated
+WHERE price = 100
+AND price = 100;
+
+SELECT id, price
+FROM Mutated
+WHERE price = 100
+AND price = 100
+AND id = 2;
+
+SELECT id, price
+FROM Mutated
+WHERE price = 100
+AND price = 100
+AND id = 2
+AND price = 100;
+
+SELECT id, price
+FROM Mutated
+WHERE price = 100
+AND price = 100
+AND id = 2
+AND price = 100
+AND id IS NULL;
+
+SELECT id, price
+FROM Mutated
+WHERE price = 100
+AND price = 100
+AND id = 2
+AND price = 100
+AND id IS NOT NULL;
+
+SELECT id, price
+FROM Mutated
+WHERE price = 100
+AND price = 100
+AND id = 2
+AND NOT price = 100;
+
+SELECT id, price
+FROM Mutated
+WHERE price = 100
+AND price = 100
+AND id = 2
+AND
+price = 100
+AND id IS NULL;
+
+SELECT id, price
+FROM Mutated
+WHERE price = 100
+AND price = 100
+AND id = 2
+AND
+price = 100
+AND id IS NOT NULL;
+
+/* Do the above multiple times to see how

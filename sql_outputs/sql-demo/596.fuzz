@@ -1,0 +1,17 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ 
+CREATE TABLE Students (
+  id INTEGER,
+  name varchar(255),
+  year INT,
+  CONSTRAINT studentID PRIMARY KEY (id)
+
+);
+
+CREATE TABLE StudGroup (
+  id INTEGER,
+  Name varchar(255),
+  year INT,
+  CONSTRAINT studentName PRIMARY KEY (id)
+
+);

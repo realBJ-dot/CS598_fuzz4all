@@ -1,0 +1,55 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS test3;
+CREATE TABLE IF NOT EXISTS test3 (id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, userid INT, name VARCHAR(50),
+age INT);
+INSERT INTO test3 (userid, name, age) VALUES
+(1, 'Viking', 5),
+(1, 'Penguin', 13),
+(1, 'Wild Mouse', 30),
+(2, 'Hare', 4);
+DROP TABLE IF EXISTS test1;
+CREATE TABLE IF NOT EXISTS test1 (id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, name VARCHAR(50));
+INSERT INTO test1(name) VALUES
+('Viking'),
+('Penguin'),
+('Wild Mouse'),
+('Hare');
+-- Test the query and create a new index
+SELECT * FROM test1 WHERE user1  = 'Viking';
+
+SELECT id, name FROM index1 WHERE name = 'Penguin' AND user1  = 'Viking';
+
+-- Update test1 data
+UPDATE test1
+SET user1 = 'Penguing'
+WHERE name = 'Penguin';
+
+-- Select test for test1
+SELECT name FROM test1
+WHERE user1 = 'Penguing';
+
+SELECT id, name FROM test1, test2
+WHERE test1.userid = test2.userid
+ORDER BY test2.id ASC LIMIT 1
+
+-- Create a new table - test3 which will contain new field
+CREATE TABLE IF NOT EXISTS test3 (id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, userid INT, name VARCHAR(50),
+age INT, user1 INT);
+
+-- Create many many join tables using test3 and test1, test2
+CREATE TABLE IF NOT EXISTS test1 (id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, name VARCHAR(50));
+CREATE TABLE IF NOT EXISTS test2 (id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, userid INT, name VARCHAR(50),
+age INT);
+
+CREATE TABLE IF NOT EXISTS test3_user (id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, userid INT, name VARCHAR(50),
+age INT);
+
+INSERT INTO test1 (name) VALUES
+('Viking'),
+('Penguin'),
+('Wild Mouse'),
+('Hare');
+
+INSERT INTO test2 (userid, name, age) VALUES
+(1, 'Smurf', 4),
+(1, '

@@ -1,0 +1,28 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS Employee;
+# CREATE TABLE Employee (id INTEGER PRIMARY KEY, employer VARCHAR(256), position VARCHAR(256), salary FLOAT);
+CREATE TABLE Employee (
+    id INTEGER PRIMARY KEY,
+    employer VARCHAR(256),
+    position VARCHAR(256),
+    salary FLOAT,
+    bonus FLOAT
+);
+--
+# Let's now create some new rows in the Employee table.
+INSERT INTO Employee VALUES(1,'IBM', 'Manager', 12345, 0);
+INSERT INTO Employee VALUES(2, 'Black Duck', 'Developer', 98765, 5000);
+INSERT INTO Employee VALUES(3, 'HP', 'Team Lead', 12345, 10000);
+INSERT INTO Employee VALUES(4, 'Tata Global Services', 'Developer', 54321, 7500);
+INSERT INTO Employee VALUES(5, 'Oracle', 'Developer', 34567, 60000);
+INSERT INTO Employee VALUES(6, 'Oracle', 'Java Developer', 98765, 3.999);
+INSERT INTO Employee VALUES(7, 'Black Duck', 'Designer', 32145, 0);
+INSERT INTO Employee VALUES(8, 'Big Ben', 'Tester', 4567, 0);
+INSERT INTO Employee VALUES(9, 'Tata Global Services', 'Tester', 8765, 0);
+DROP TABLE IF EXISTS Employee_detail;
+#
+# Let's now use a JOIN! Let's say we want to obtain information about all employees, including their company, position and salary. We will need a JOIN clause.
+SELECT emp.id, emp.first_name, emp.last_name, e.employer, emp.position, emp.salary, emp.bonus FROM Employee as emp INNER JOIN Employee_detail AS e ON emp.id = e.employee_id;
+#
+# Let us write some new queries.
+SELECT emp.id, emp.first_name, emp.last_name, e.employer, e.position, emp.salary, emp.bonus FROM Employee AS

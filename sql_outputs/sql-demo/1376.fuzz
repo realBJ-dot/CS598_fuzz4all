@@ -1,0 +1,36 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS film(
+ title TEXT NOT NULL,
+ description TEXT,
+ acting_stars TEXT,
+ director TEXT
+);
+ALTER TABLE film MODIFY title text FIRST;
+CREATE TABLE IF NOT EXISTS actor(
+ actor_name TEXT NOT NULL UNIQUE,
+ image TEXT,
+ age INT
+);
+ALTER TABLE actor MODIFY actor_name text first UNIQUE;
+CREATE TABLE IF NOT EXISTS cast(
+ cast_id int auto_increment,
+ actor_name int,
+ film_title int,
+ cast_role TEXT,
+ constraint cast_pk primary key(cast_id )
+);
+ALTER TABLE film MODIFY title text first;
+ALTER TABLE cast MODIFY film_title int first;
+ALTER TABLE cast MODIFY cast_role text first;
+alter table film add constraint fk_cast_film FOREIGN KEY (cast_title) REFERENCES cast (film_title);
+create table IF NOT EXISTS toto(
+ title TEXT NOT NULL,
+ PRIMARY KEY(title)
+);
+ALTER TABLE film drop PRIMARY KEY;
+-- drop existing indexes on the movie table
+ALTER TABLE film DROP INDEX title;
+SELECT * FROM film;
+--  Please update the table
+UPDATE film SET cast_role = 'Proper Mention' WHERE cast_id = 1;
+select * from actor;

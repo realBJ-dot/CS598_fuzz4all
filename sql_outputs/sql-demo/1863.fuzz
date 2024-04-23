@@ -1,0 +1,30 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS employees (
+  id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
+  name char (50),
+  last_name char (50),
+  job char (50),
+  department char (50) 
+);
+Create table if not exists employee_address(
+  id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
+  employee INT UNSIGNED,
+  street_address char (50),
+  city varchar (50),
+  state char (5),
+  postal_code mediumint (5)
+);
+create table if not exists employee_salary (
+  id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
+  employee INT UNSIGNED,
+  month varchar (50),
+  year smallint,
+  pay_rate smallint,
+  pay_date date DEFAULT CURRENT_DATE,
+  gross_salary smallint
+); 
+-- Please perform the following SQL-like UPDATE statement
+UPDATE employees e_emp
+SET last_name = 'X', first_name='X', department = 'X'
+WHERE name = 'X', last_name = 'X', job = 'X', department = 'X';
+Delete

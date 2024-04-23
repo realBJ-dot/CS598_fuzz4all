@@ -1,0 +1,18 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ALTER TABLE `employees` MODIFY `managerID` int(11) NOT NULL DEFAULT '2';
+ALTER TABLE `employees` MODIFY `departmentID` int(11) DEFAULT '1';
+DROP TABLE IF EXISTS `sampleDB`.`employees`;
+CREATE TABLE `sampleDB`.`employees` (
+	`id` int NOT NULL AUTO_INCREMENT,
+	`employeeID` int NOT NULL,
+	`firstName` varchar(20) NOT NULL,
+	`lastName` varchar(25) NOT NULL,
+	`isFullTimeEmployee` tinyint(1) NOT NULL,
+	`isLead` tinyint(1),
+	`managerID` int,
+	`departmentID` int DEFAULT '0',
+	PRIMARY KEY (`id`),
+	UNIQUE KEY `employees_employeeID` (`employeeID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+\l

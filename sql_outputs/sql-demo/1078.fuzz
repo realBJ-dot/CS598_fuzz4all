@@ -1,0 +1,14 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+SET GLOBAL sql_mode=ANSI_QUOTES;
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB_2; USE sampleDB_2;
+SET GLOBAL sql_mode=ANSI_QUOTES;
+
+-- In this section, you will create a simple INSERT/SELECT/UPDATE/DELETE statement that includes a JOIN and a WHERE clause (using a temporary table). You will also explore the different options to access the data.
+
+-- Please insert the following records into worker table in the table:
+-- a. no_worker, nama_lengkap, kode_lokasi, username, password, tgl_masuk, id_level, id_status, id_kota_asal, id_kota_tujuan, no_tlp.
+
+INSERT INTO worker VALUES (1, 'Hilmi Aldana', 'Depok', 'hilmi', '92449c91bc80a757f91b6dd7f8f04ab8', '0000-00-00 00:00:00.000', 2, 4, 25, 47, 0, 0),
+(2, '<NAME>', 'Depok', 'alham', 'c2001953e40b9cf24b562010ab35fc2f', '0000-00-00 00:00:00.000', 2, 4, 25, 47, 0, 0),
+(3, '<NAME>', 'Depok', 'amir', '117f53586f3e5fa522893e7b7490845b', '0000-00-00 00:00:00.000', 2, 4, 25, 47, 0, 0),

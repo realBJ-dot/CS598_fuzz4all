@@ -1,0 +1,7 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE contact (name VARCHAR(250), phone_number VARCHAR(50), email_address VARCHAR(300)) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+INSERT INTO contact(name, phone_number, email_address) VALUES ('<NAME>', '(775) 555-3355', '<EMAIL>'),('<NAME>', '(775) 555-1111', '<EMAIL>'),('<NAME>', '(998) 555-6666', '<EMAIL>'),('<NAME>', '(998) 555-8888', '<EMAIL>');
+SELECT * FROM contact;
+DROP DATABASE IF EXISTS sampleDB;
+
+select user();

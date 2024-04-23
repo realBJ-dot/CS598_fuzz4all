@@ -1,0 +1,51 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS users (
+	userId CHAR(5) NOT NULL,
+	role CHAR(1) DEFAULT 'a' NOT NULL,
+	PRIMARY KEY (userId)
+);
+-- Please modify your program to use WHERE condition to find the users whose role is 'a' and whose user name is greater than 'a' and use ORDER BY.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS users (
+	userId CHAR(5) NOT NULL,
+	role CHAR(1) DEFAULT 'a' NOT NULL,
+	PRIMARY KEY (userId)
+);
+-- Please use a subquery to find the users whose name starts with 't', display the user IDs and roles.
+
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS users (
+	userId CHAR(5) NOT NULL,
+	role CHAR(1) DEFAULT 'a' NOT NULL,
+	PRIMARY KEY (userId)
+);
+SELECT * FROM (
+SELECT userId, role from users where LEFT(userId,2)='a' ORDER BY userId);
+-- Please replace in your program the user query with the MySQL sub query above to display the names of the users who have role 'a'.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS users (
+	userId CHAR(5) NOT NULL,
+	role CHAR(1) DEFAULT 'a' NOT NULL,
+	PRIMARY KEY (userId)
+);
+DESC users;
+-- If you have completed all the subqueries for the users table, then use the MySQL ORDER BY to order by the lastName and firstName alphabetically (without any quotes).
+-- Please create a new table named firstNames in the same database of the following structure. The structure should contain: ID, firstName.
+CREATE TABLE IF NOT EXISTS firstNames (
+	id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	firstName VARCHAR(20)
+);
+USE sampleDB;
+DESC firstNames;
+-- Now create a new user table named userNames and use a WHERE condition on the users table that have role 'a'  (no quotes) and display the firstName and lastName from the table.
+CREATE TABLE IF NOT EXISTS userNames (
+	id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	firstName VARCHAR(20)
+);
+-- Create a second user table which is semantically equivalent to the first but contains the firstName and lastName reversed.
+CREATE TABLE IF NOT EXISTS reversedNames (
+	id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	lastName VARCHAR(20),
+	firstName VARCHAR(20)
+);
+-- Create a third user table

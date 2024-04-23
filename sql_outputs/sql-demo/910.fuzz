@@ -1,0 +1,15 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS user_address;
+CREATE TABLE IF NOT EXISTS user_address (id INT PRIMARY KEY AUTO_INCREMENT, "address" text, "city" text);
+INSERT INTO user_address(id, "address", city) VALUES (1, '123 Street', 'New York');
+CREATE TABLE IF NOT EXISTS user_company (id INT PRIMARY KEY AUTO_INCREMENT, "company-name" text);
+INSERT INTO user_company(id, "company-name") VALUES (2, 'Apple Inc.');
+SELECT * FROM user_address
+WHERE city = 'New York';
+SELECT * FROM user_company
+ORDER BY id DESC
+LIMIT 1;
+DROP TABLE IF EXISTS user_address;
+DROP TABLE IF EXISTS user_company;
+DROP TABLE IF EXISTS user_contact_last_name;
+DROP DATABASE IF EXISTS sampleDB;

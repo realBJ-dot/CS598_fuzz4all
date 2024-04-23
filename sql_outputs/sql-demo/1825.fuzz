@@ -1,0 +1,18 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employee;
+CREATE TABLE employee(name varchar(10));
+INSERT INTO employee(name) VALUES ('<NAME>'),('<NAME>'),('<NAME>'),('<NAME>'),('<NAME>'),('<NAME>');
+DROP TABLE IF EXISTS employee;
+
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employee;
+CREATE TABLE employee(name varchar(10));
+INSERT INTO employee(name) SELECT 'John' FROM employee WHERE name='John';
+INSERT INTO employee(name) SELECT 'Michał' FROM employee WHERE name='Michał';
+INSERT INTO employee(name) SELECT 'Mateusz' FROM employee WHERE name='Mateusz';
+INSERT INTO employee(name) SELECT 'Gabryl', 'Jan';
+DROP TABLE IF EXISTS employee;
+DROP DATABASE IF EXISTS sampleDB;
+-- Please read the documentation on tables, the key-value pairs, and the
+-- ALTER command to learn more about the use-cases of this program.*/

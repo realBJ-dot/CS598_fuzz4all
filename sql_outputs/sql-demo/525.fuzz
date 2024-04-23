@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+INSERT INTO mytable VALUES(3, 'egh', 900);
+UPDATE mytable SET price = price +50 WHERE myid = 2;
+SELECT myid, title, price FROM mytable ;  
+DROP TABLE mytable;
+DROP DATABASE sampleDB;
+
+DROP DATABASE mysql;
+DROP DATABASE mybase;
+

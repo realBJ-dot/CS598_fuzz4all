@@ -1,0 +1,9 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE users_details; 
+COMMIT;
+DROP TABLE customer_name;
+COMMIT;
+DROP TABLE customer_age;
+COMMIT;
+
+Drop Database If Exists sampleDB;

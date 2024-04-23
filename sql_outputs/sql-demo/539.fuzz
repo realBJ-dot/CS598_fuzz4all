@@ -1,0 +1,13 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+UPDATE mytable SET price = '0.50' WHERE myid =(SELECT MIN(myid) FROM mytable WHERE title = 'abc4') ;
+SELECT myid, title, price FROM mytable;
+DROP TABLE mytable ;
+DROP DATABASE sampleDB;
+-- Please create a program to add data to a table with NULL values. Be sure to show sample insert and update.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ALTER TABLE mytable ADD CONSTRAINT myfk FOREIGN KEY(myid) REFERENCES mytable(myid) ON DELETE CASCADE ON UPDATE CASCADE;
+INSERT INTO mytable VALUES(NULL,'abc1', '0');
+INSERT INTO mytable VALUES(NULL,NULL, '0');
+SELECT myid, title, price FROM mytable;
+DROP TABLE mytable ;
+DROP DATABASE sampleDB;

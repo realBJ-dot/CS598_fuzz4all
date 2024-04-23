@@ -1,0 +1,30 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employees_positions
+WHERE employee_position = 1000;
+INSERT INTO employees_positions
+SELECT emp_no, MAX(position) AS position FROM employees GROUP BY emp_no;
+UPDATE employees SET employee_position = position
+FROM employees_positions USING (\*)
+WHERE employees.emp_no = employees_positions.employee_emp_no
+AND employees.job_title = employees_positions.employee_position;
+DROP TABLE IF EXISTS employees_positions;
+-- Please create a semantically equivalent query. Check if this is possible by using LIMITS and OFFSETS.
+SELECT emp_no, MAX(position) AS position FROM employees GROUP BY emp_no
+UNION SELECT emp_no, MAX(distinct position) AS position FROM employees GROUP BY emp_no
+ORDER BY emp_no, position
+LIMIT 100 OFFSET 0;
+ 
+CREATE DBSCHEMA employees;
+USE employees;
+CREATE TABLE employees ( emp_no INT UNSIGNED NOT NULL PRIMARY KEY, emp_name VARCHAR(30) NOT NULL) CHARSET utf8 COLLATE utf8_general_ci;
+CREATE TABLE positions ( pos_code INT UNSIGNED NOT NULL PRIMARY KEY,  pos_name VARCHAR(30) NOT NULL) CHARSET utf8 COLLATE utf8_general_ci;
+CREATE TABLE employees_to_positions ( employee_emp_no INT UNSIGNED NOT NULL, employee_pos_code INT UNSIGNED NOT NULL,
+FOREIGN KEY (employee_emp_no) REFERENCES employees (emp_no), 
+FOREIGN KEY (employee_pos_code) REFERENCES positions (pos_code))
+ENGINE = InnoDB DEFAULT CHARSET = utf8 COLLATE = utf8_general_ci;
+ 
+INSERT INTO employees VALUES
+(100, 'Mrs.<NAME>'), (101, 'Mr. <NAME>.'), (102, 'Frans Boyce'), (103, 'Master Professor'), (104, 'CEO');
+-- We have to create a new table based on the employee_emp_no, so we must add one more column: employee_new_emp_no
+INSERT INTO employees ADD employee_new_emp_no int;
+INSERT INTO employees_to_positions SELECT emp_no, emp_no AS employee_new_emp_no, pos_code, 'CEO' AS employee_pos_code FROM employees_to_positions UNION ALL SELECT emp_no, emp_no AS employee_new_emp_no, pos_code,

@@ -1,7 +1,7 @@
-USE sampleDB;
-CREATE TEMP TABLE tempPosts AS 
-SELECT * from posts WHERE content = content;
-INSERT INTO tempPosts SELECT content, content, content, content, content, content, content from posts;
-SELECT * FROM tempPosts;
-DROP TABLE tempPosts;
-DROP INDEX `contentIndex;`
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users(username char(20) PRIMARY KEY, FirstName VARCHAR(30)) ENGINE=InnoDB;
+INSERT INTO Users(username,Firstname) VALUES('Test','Test'),('Admin','Admin'),('Guest','Guest'),('Super','Super');
+ 
+ 
+DROP TABLE Users; CREATE TABLE Users(username char(20) PRIMARY KEY, FirstName VARCHAR(30)); 
+INSERT INTO Users(username,FirstName) VALUES('super', 'Super'),('test', 'Test'),('admin', 'Admin');

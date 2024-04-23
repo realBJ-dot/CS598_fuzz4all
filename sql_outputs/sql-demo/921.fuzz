@@ -1,0 +1,9 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS user_db_personality;
+CREATE TABLE user_db_personality (id INT PRIMARY KEY, level INT, "name" VARCHAR(200), type INT, UNIQUE(id));
+INSERT INTO user_db_personality (id, level, "name", type) VALUES (20, 45,'<NAME>', 'Inquisitive);
+SELECT id, "name", type
+FROM user_db_personality WHERE id in (3,10);
+ALTER TABLE user_db_personality MODIFY(type TINYINT);
+ALTER TABLE user_db_personality MODIFY("name" DATETIME);
+DROP DATABASE IF EXISTS sampleDB;

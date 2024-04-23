@@ -1,0 +1,32 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE myuser( userid int, name varchar(100), balance int, status char(1));
+INSERT INTO myuser VALUES(1, 'joe', 1234, 'A');
+INSERT INTO myuser VALUES(2, 'joe', -1234, 'A');
+INSERT INTO myuser VALUES(3, 'joe', 1000000, 'A');
+INSERT INTO myuser VALUES(4, 'joe', -1000000, 'A');
+INSERT INTO myuser VALUES(5, 'joe', 100, nulls);
+INSERT INTO myuser VALUES(6, 'joe', nulls, 'A');
+INSERT INTO myuser VALUES(7, 'joe', '35h', 'A');
+INSERT INTO myuser VALUES(8, 'joe', '36h', 'A');
+INSERT INTO myuser VALUES(9, 'joe', '39h', 'A');
+INSERT INTO myuser VALUES(10, 'joe', '20h', 'B');
+INSERT INTO myuser VALUES(11, 'joe', '20h', 'A');
+SELECT * from myuser;
+DROP TABLE myuser;
+DROP DATABASE sampleDB;
+
+*/
+In my case, the error occurred when the select * from myuser; part was run by my machine.
+
+My user is a Windows user. According to the information about the Windows Registry, the computer user (username) is not the same as the account.
+
+The command below returns the account name of the current user.
+
+net user
+C:\WINDOWS\system32>net user
+Username     Password       Comment        ProfilePath
+nt authority\system 12345678   Administrator     C:\WINDOWS\system32\config\systemprofile
+Joe            98765432  joe              C:\WINDOWS\system32\config\systemprofile\Profiles\joe.txt
+DOMAIN\Joe      -          joe              C:\WINNT\System32\config\systemprofile\Profiles\joe.txt
+joe            98765432  joe              C:\WINNT\SYSTEM32\config\systemprofile\Profiles\joe.txt
+127.

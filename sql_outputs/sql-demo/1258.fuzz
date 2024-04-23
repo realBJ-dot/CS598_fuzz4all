@@ -1,0 +1,80 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+create table if not exists products (
+	productCode CHAR(50) NOT NULL,
+	name varchar(250),
+	cost int
+);
+desc products;
+
+create table if not exists orders (
+	productCode CHAR(50) NOT NULL,
+	customerName varchar(250) NOT NULL,
+	PRIMARY KEY (productCode)
+);
+desc orders;
+
+create table if not exists orderitems (
+	orderId CHAR(50) NOT NULL,
+	productCode CHAR(50) NOT NULL,
+	quantity int DEFAULT 1 NOT NULL,
+	PRIMARY KEY (orderId)
+);
+desc orderitems;
+
+create table if not exists customerorders (
+	orderId CHAR(50) NOT NULL,
+	customerName varchar(250) NOT NULL,
+	PRIMARY KEY (orderId)
+);
+desc customerorders;
+
+
+
+
+ 
+ 
+ 
+ 
+create table Student_DB.Students(
+    studentID int not null,
+    studentName varchar(250) not null,
+    gender varchar(1),
+    rollNo int not null,
+    primary key(studentID)
+    );
+desc Students;
+
+
+
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+create table if not exists Students(
+	 studentID int not null auto_increment,
+	 FirstName varchar(250),
+	 LastName varchar(250),
+	 gender int not null
+	 primary key(studentID)
+);
+desc Students;
+
+select * from Students;
+ 
+DROP TABLE IF EXISTS Students;
+SHOW TABLES;
+FLUSH PRIVILEGES;
+
+
+show variables like 'character%';
+set character_set_connection ='utf8';
+
+set session character_set_connection = 'utf8';
+
+
+ 
+ 
+ 
+
+/*
+* You are asked for a list of the student records where student age is less than 21. 
+* Student ids of those records should NOT be displayed from the database. The

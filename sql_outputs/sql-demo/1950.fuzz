@@ -1,0 +1,20 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+INSERT INTO employees_salary_by_salary(employee_salary, emp_salary) VALUES ('2012-06-05', 100000);
+UPDATE employees_salary_by_salary SET employee_salary = employee_salary + 5000 WHERE employee_salary = '2012-06-04';
+SELECT employee_salary + 5000 FROM employees_salary_by_salary;
+DROP DATABASE IF EXISTS sampleDB;
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+INSERT INTO employees_salary_by_salary(employee_salary, emp_salary) VALUES ('2012-06-05', 100000);
+UPDATE employees_salary_by_salary SET emp_salary = emp_salary, employee_salary = employee_salary + 5000 WHERE employee_salary LIKE '2%';
+SELECT employee_salary + 5000 FROM employees_salary_by_salary;
+DROP DATABASE IF EXISTS sampleDB;
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+INSERT INTO employees_salary_by_salary(employee_salary, emp_salary) VALUES ('2012-06-05', 100000), ('2012-06-06', 100000), ('2012-06-07', 100000), ('2012-06-08', 100000), ('2012-06-09', 100000);
+SELECT employee_salary + 5000 FROM employees_salary_by_salary;
+INSERT INTO employees_salary_by_salary(employee_salary, emp_salary) VALUES ('2012-06-06', 100000);
+SELECT employee_salary + 5000 FROM employees_salary_by_salary;
+DROP DATABASE IF EXISTS sampleDB;
+ 
+CREATE DATABASE

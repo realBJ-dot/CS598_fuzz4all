@@ -1,0 +1,49 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS user_db_skills (
+label VARCHAR(32), PRIMARY KEY (label)
+);
+CREATE TABLE IF NOT EXISTS user_db_skills_2 (
+label VARCHAR(32), PRIMARY KEY (label)
+);
+ALTER TABLE user_db_skills_2 ADD FOREIGN KEY (label) REFERENCES user_db_skills(label);
+-- You will need to modify this to work with multiple tables
+DO BEGIN
+DECLARE v_temp table
+(
+t_id    INTEGER AUTO_INCREMENT NOT NULL
+, skill_id    VARCHAR(32)
+, skill VARCHAR(32)
+, PRIMARY KEY(t_id)
+, KEY skill_id(skill_id)
+)ENGINE = InnoDB DEFAULT CHARSET = binary;
+INSERT INTO v_temp
+SELECT skill_id, skill, label
+FROM `user_db_skills`;
+INSERT INTO `user_db_skills_2` SELECT skill_id, skill, label
+FROM `user_db_skills`;
+INSERT INTO user_db_skills SELECT * FROM v_temp;
+DROP TABLE IF EXISTS v_temp;
+END
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS user_db_skills (
+label VARCHAR(32), PRIMARY KEY (label)
+);
+CREATE TABLE IF NOT EXISTS user_db_skills_2 (
+label VARCHAR(32), PRIMARY KEY (label)
+);
+ALTER TABLE user_db_skills_2 ADD FOREIGN KEY (label) REFERENCES user_db_skills(label);
+DO BEGIN
+DECLARE v_temp table
+(
+t_id    INTEGER AUTO_INCREMENT NOT NULL
+, skill_id    VARCHAR(32)
+, skill VARCHAR(32)
+, PRIMARY KEY(t_id)
+, KEY skill_id(skill_id)
+)ENGINE = InnoDB DEFAULT CHARSET = binary;
+INSERT INTO v_temp
+SELECT skill_id, skill, label
+FROM `user_db_skills`;
+INSERT INTO `user_db_skills_2` SELECT skill_id, skill, label
+FROM `

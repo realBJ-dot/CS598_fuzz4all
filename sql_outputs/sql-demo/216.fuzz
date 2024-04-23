@@ -1,0 +1,41 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+GRANT ALL PRIVILEGES ON sampleDB2.* TO 'root'@'localhost' IDENTIFIED BY 'root';
+SET GLOBAL  max_allowed_packet=512M;
+ 
+DROP SCHEMA IF EXISTS sampleDB;
+CREATE USER 'root'@'localhost' IDENTIFIED BY 'root';
+DROP DATABASE IF EXISTS sampleDB2;
+ 
+DROP TABLE IF EXISTS sampleDB2.persons;
+CREATE TABLE IF NOT EXISTS `sampleDB2`.`persons` (
+`personsID`  INT UNSIGNED  NOT NULL AUTO_INCREMENT,
+`firstName` CHAR(50),
+`lastName` CHAR(50),
+`birthdate` DATETIME,
+PRIMARY KEY (`personsID`)
+);
+
+ALTER TABLE `sampleDB2`.`persons` ADD INDEX `firstPersonsID` ON `sampleDB2`.`persons`(`personsID`);
+ALTER TABLE `sampleDB2`.`persons` ADD INDEX `lastPersonsID` ON `sampleDB2`.`persons`(`personsID`);
+ALTER TABLE `sampleDB2`.`persons` ADD INDEX `birthdatePersonsID` ON `sampleDB2`.`persons`(`personsID`);
+ 
+DROP TABLE IF EXISTS sampleDB2.countries;
+CREATE TABLE IF NOT EXISTS `sampleDB2`.`countries` (
+`countriesID`  INT UNSIGNED  NOT NULL AUTO_INCREMENT,
+`name` CHAR(50),
+PRIMARY KEY (`countriesID`)
+);
+ALTER TABLE `sampleDB2`.`countries` ADD INDEX `countryID` ON `sampleDB2`.`countries`(`countriesID`);
+ 
+ALTER TABLE `sampleDB2`.`countries`
+ADD PRIMARY KEY(`name`);
+ 
+DROP TABLE IF EXISTS sampleDB2.persons;
+DROP TABLE IF EXISTS sampleDB2.countries;
+
+-- Please write the query needed for the sample project.
+-- Please drop all tables which are present in this schema. 
+
+#-------------------------------------------------------
+--MySQL sample database created
+#-------------------------------------------------------

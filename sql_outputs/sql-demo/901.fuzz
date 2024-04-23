@@ -1,0 +1,28 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS table1;
+DROP TABLE IF EXISTS tab1e;
+CREATE TABLE IF NOT EXISTS table1 (id INT, field1 BIGINT);
+CREATE TABLE IF NOT EXISTS tab1e (id INT, field1 BIGINT);
+ 
+create table IF NOT EXISTS table2 (id INT, field1 BIGINT, user_id_tbl BIGINT);
+ 
+select *
+from table1 a
+join table2 b
+on a.id = b.id
+and b.user_id_tbl =3
+;
+drop table table2;
+drop table IF EXISTS table1;
+drop table IF EXISTS tab1e;
+drop database if exists sampledb;
+
+-- To test the user is able to access the tables created earlier
+-- go to http: 
+-- select * from user; and go back to http: 
+
+-- https: 
+-- https: 
+-- https: 
+-- https: 
+-- https: 

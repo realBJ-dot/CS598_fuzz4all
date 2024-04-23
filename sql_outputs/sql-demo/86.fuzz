@@ -1,9 +1,8 @@
-USE sampleDB;
-CREATE TABLE IF NOT EXISTS testSales
-(
- code          INT,
- name          VARCHAR(64),
- location      CHAR(32),
- quantity      INT,
- PRIMARY KEY(code)
-);
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users(username char(20) PRIMARY KEY, FirstName VARCHAR(30)) ENGINE=InnoDB;
+SELECT username,FirstName from Users;
+
+<h2><h2>Example SQL Query:</h2>
+
+<pre><code>UPDATE Users SET Firstname='Jhon' WHERE username='<username>';
+</code></pre>

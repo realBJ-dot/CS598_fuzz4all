@@ -1,0 +1,31 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS continent (
+  id INTEGER AUTO_INCREMENT PRIMARY KEY,
+  name TEXT,
+  country char (10));
+CREATE TABLE IF NOT EXISTS country (
+  id INTEGER AUTO_INCREMENT PRIMARY KEY,
+  name TEXT,
+  population INTEGER);
+DROP TABLE IF EXISTS continent_country;
+CREATE TABLE IF NOT EXISTS continent_country (
+  id INTEGER AUTO_INCREMENT PRIMARY KEY,
+  continent_id INTEGER,
+  country_id INTEGER);
+-- Do not modify the following code block. Please comment out the following code and create a new sampledb.sql file.
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+INSERT INTO continent (name, country) VALUES ('Europe', 'Europe');
+INSERT INTO continent (name, country) VALUES ('Australia', 'Australia');
+INSERT INTO continent (name, country) VALUES ('North America', 'North America');
+INSERT INTO continent (name, country) VALUES ('Middle East', 'Middle East');
+INSERT INTO continent (name, country) VALUES ('Oceania', 'Oceania');
+
+CREATE TABLE `country` (`id` INTEGER NOT NULL, `name` TEXT, `population` INTEGER);
+INSERT INTO country (name, population) VALUES ('America', 3.708E+06);
+INSERT INTO country (name, population) VALUES ('Africa', 2.949E+06);
+INSERT INTO country (name, population) VALUES ('Albania', 5.682E+05);
+INSERT INTO country (name, population) VALUES ('Argentina', 9.179E+06);
+INSERT INTO country (name, population) VALUES ('Armenia', 1.168E+06);
+INSERT INTO country (name, population) VALUES

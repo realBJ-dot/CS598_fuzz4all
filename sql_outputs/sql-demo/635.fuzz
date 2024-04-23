@@ -1,0 +1,4 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS Subject CASCADE;
+CREATE TABLE Subject (ID INT PRIMARY KEY, SUBJECT_NAME VARCHAR(255));
+-- Please create a very short query which uses SQL features in a complex way. Be sure to use ENGINE=InnoDB. You should only use sampleDB as the database and assume no other table exist. You can use a sample program. In the end, drop all tables you created.

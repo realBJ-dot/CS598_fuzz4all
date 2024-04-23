@@ -1,0 +1,5 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP DATABASE sampleDB;
+-- MySQL Workbench
+-- MySQL Workbench is open source full-featured graphical toolkit for database management. It is open source under the GNU General Public License v3 and it was designed to be fast, flexible, and easy. You can install and run MySQL Workbench on any platform which offers a browser. You can easily take advantage of various plug-ins to provide more capabilities of your database.
+/* Please create a very short query which uses SQL features in a complex way. Be sure to use ENGINE=InnoDB. You should only use sampleDB as the database and assume no other table exist. You need to create new tables to perform operations.

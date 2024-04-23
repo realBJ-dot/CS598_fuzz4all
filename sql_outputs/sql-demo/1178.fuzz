@@ -1,0 +1,19 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+INSERT INTO users(first_name, last_name, email, created_at) VALUES('<NAME>','Baker', '<EMAIL>', '2015-05-30 05:29:15');
+INSERT SELECT user_id, first_name, last_name, email
+FROM users;
+DROP TABLE users;
+-- MySQL client program that is used to interrogate and modify the previous database. First create a client and run the next command to login as a user that you created above. Then enter the appropriate SQL command to delete all rows from users. Use the second table to confirm the row deletion.
+-- Please take the mysqlclient package from: http: 
+mysql.connector.connect(
+    host = "localhost",
+    port = 3306,
+    user = "root",
+    passwd = "<PASSWORD>"
+)
+cursor = conn.cursor()
+cursor.execute("DELETE FROM users WHERE user_id = 1")
+print(cursor)
+cursor.execute("select * from users")
+print(cursor)
+conn.commit();

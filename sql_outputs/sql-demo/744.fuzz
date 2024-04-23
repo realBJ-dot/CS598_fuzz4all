@@ -1,0 +1,9 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- INSERT data into both tables and store the ID in a new
+-- temporary table. You need to create a second table from scratch.
+-- Drop the old table
+DROP TABLE IF EXISTS `FirstAndSecondTable`;
+CREATE TABLE `FirstAndSecondTable` ( `id` int(11) NOT NULL PRIMARY KEY, `data` varchar(300) CHARACTER SET utf8);
+;
+INSERT INTO `FirstAndSecondTable`
+  VALUES (6

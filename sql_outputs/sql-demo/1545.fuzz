@@ -1,0 +1,6 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+GRANT CREATE, SHOW DATABASES, INJURY REMOTE, DROP, INSERT, UPDATE, REFERENCES ON `sampleDB`.* TO '_user'@'_localhost' IDENTIFIED BY 'password'
+--Please create a complex query in SQL
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+SELECT * FROM `sampleDB`.sample
+DROP DATABASE sampleDB;

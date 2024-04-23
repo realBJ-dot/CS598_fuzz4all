@@ -1,0 +1,19 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP VIEW users;
+CREATE VIEW users AS
+    SELECT phone, age
+    FROM users_details
+    ORDER BY age
+    DESC;
+DROP TABLE users
+SELECT * FROM users_details;
+SELECT * FROM users;
+SELECT * FROM users_details;
+select * from users_details;
+SELECT * from users;
+DROP TABLE IF EXISTS users
+DROP DATABASE IF EXISTS sampleDB;
+drop table users_details;
+drop table users_details;
+drop table users_details;
+select * from users_details order by age desc limit 33;

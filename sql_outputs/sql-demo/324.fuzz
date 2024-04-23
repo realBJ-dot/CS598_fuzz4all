@@ -1,0 +1,37 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS  orders(
+	order_id int(11) NOT NULL,
+	purchase_date date NOT NULL,
+	order_address text,
+	PRIMARY KEY (order_id)
+);
+CREATE TABLE IF NOT EXISTS  customers(
+	customer_id int(11) NOT NULL,
+	customer_name varchar(25),
+	customer_address1 text,
+	customer_address2 text,
+	PRIMARY KEY (customer_id)
+);
+CREATE TABLE IF NOT EXISTS  customer_order_details(
+	customer_id int(11) NOT NULL,
+	order_id int(11) NOT NULL,
+	order_amount int(11) NOT NULL,
+	UNIQUE INDEX IX_customer_orders(customer_id, order_id),
+	CONSTRAINT FK_customers FOREIGN KEY (customer_id) REFERENCES customers (`customer_id`),
+	CONSTRAINT FK_orders FOREIGN KEY (order_id) REFERENCES orders (`order_id`)
+);
+ALTER TABLE customer ADD FOREIGN KEY (customer_id) REFERENCES customers(customer_id);
+ALTER TABLE customer ADD FOREIGN KEY (customer_id) REFERENCES customers(customer_id);
+ALTER TABLE customers ADD FOREIGN KEY (customer_id) REFERENCES customers(customer_id);
+ALTER TABLE customer_order_details ADD FOREIGN KEY (customer_id) REFERENCES customers(customer_id);
+ALTER TABLE customer_order_details ADD FOREIGN KEY (order_id) REFERENCES orders(order_id);
+ALTER TABLE customer ADD CONSTRAINT UNIQUE ("phone_number");
+ALTER TABLE customers ADD CONSTRAINT UNIQUE ("phone_number");
+ALTER TABLE orders ADD CONSTRAINT UNIQUE ("customer_id");
+ 
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+USE customers;
+ 
+INSERT INTO customers(customer_id, customer_name, customer_address1, customer_address2)
+SELECT customer_id, customer_name,

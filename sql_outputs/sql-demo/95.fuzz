@@ -1,15 +1,9 @@
-USE sampleDB;
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users(username char(20) PRIMARY KEY, FirstName VARCHAR(30))ENGINE=InnoDB;
+INSERT INTO Users(username,Firstname) VALUES('Test','Test'),('Admin','Admin'),('Guest','Guest'),('Super','Super');
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users(username char(20) PRIMARY KEY, FirstName VARCHAR(30))ENGINE=InnoDB;
+INSERT INTO Users(username,Firstname) VALUES('Test','Test'),('Admin','Admin'),('Guest','Guest'),('Super','Super');
+DROP TABLE Users.
 
-
-create table test (
-    id int unsigned not null auto_increment primary key,
-    date date
-);
-
-insert into test (date) values ('2002-07-01');
-insert into test (date) values ('2015-06-02');
-insert into test (date) values ('2016-07-03');
-insert into test (date) values ('2016-09-05');
-insert into test (date) values ('2016-08-26');
-
--- Dump completed on 2019-10-16 15:07:52

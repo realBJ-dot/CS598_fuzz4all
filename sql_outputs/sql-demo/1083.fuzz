@@ -1,0 +1,44 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- The next two lines are equivalent to the previous command
+CREATE TABLE IF NOT EXISTS table1 (id INT(11));
+ 
+INSERT INTO table1 (id) VALUES (1);
+ 
+CREATE TABLE IF NOT EXISTS table2 (id INT(11), date INT(11));
+ 
+INSERT INTO table2 (id, date) VALUES (0,0);
+ 
+INSERT INTO table2 (id, date) VALUES (2,4);
+ 
+INSERT INTO table2 (id, date) VALUES (4,6);
+ 
+SELECT * FROM table2 ORDER BY id;
+ 
+DROP TABLE IF EXISTS table2;
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS table1 (id INT(11));
+INSERT INTO table1 (id) VALUES (1);
+CREATE TABLE IF NOT EXISTS table2 (id INT(11), date INT(11));
+INSERT INTO table2 (id, date) VALUES (0,NULL);
+INSERT INTO table2 (id, date) VALUES (2,4);
+INSERT INTO table2 (id, date) VALUES (4,6);
+ 
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS table1 (id INT(11));
+INSERT INTO table1 (id) VALUES (1);
+CREATE TABLE IF NOT EXISTS table2 (id INT(11), date INT(11));
+INSERT INTO table2 (id, date) VALUES (0,NULL);
+INSERT INTO table2 (id, date) VALUES (1,NULL);
+INSERT INTO table2 (id, date) VALUES (2,4);
+INSERT INTO table2 (id, date) VALUES (4,6);
+CREATE TABLE IF NOT EXISTS table3 (id INT(11), date INT(11));
+INSERT INTO table3 (id, date) VALUES (1,NULL);
+INSERT INTO table3 (id, date) VALUES (2,4);
+INSERT INTO table3 (id, date) VALUES (4,6);
+/* Please create a program to do the following tasks:
+
+1. Find the date with max id, return this date.
+2. Find the date with min id, return this date.
+3. Find the year and max date for each day of week, in that order.

@@ -1,0 +1,9 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS Student2;
+CREATE TABLE Student2 (FirstName VARCHAR(20), LastName VARCHAR(20), Grade INT, Phone Number VARCHAR(20));
+INSERT INTO Student2 (FirstName, LastName, Grade, Phone Number) VALUES ('John','Smith',8,80766764567);
+INSERT INTO Student2 (FirstName, LastName, Grade, Phone Number) VALUES ('Jane','Lee',9,7656575796);
+INSERT INTO Student2 (FirstName, LastName, Grade, Phone Number) VALUES ('Tom','Stark',10,6548778477);
+INSERT INTO Student2 (FirstName, LastName, Grade, Phone Number) VALUES ('Angela','Miller',7,9877421164);
+SELECT * FROM Student2 WHERE FirstName LIKE "A";
+DROP DATABASE IF EXISTS sampleDB;

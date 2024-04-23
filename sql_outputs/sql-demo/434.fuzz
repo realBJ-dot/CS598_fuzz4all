@@ -1,0 +1,4 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+UPDATE employees2 SET deptno = 3 WHERE empno = '002';
+#
+#

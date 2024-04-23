@@ -1,0 +1,22 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Subject (ID INT PRIMARY KEY, SUBJECT_NAME VARCHAR(255));
+INSERT INTO Subject VALUES (1,'Math');
+INSERT INTO Subject VALUES (2,'Physics');
+INSERT INTO Subject VALUES (3,'Science');
+-- Please write queries using these techniques on the sampleDB.  Then drop it
+-- using a DROP DATABASE statement.
+-- If you write something else other than the ones presented above and
+-- they do not work; please state so and I can fix your program.
+
+-- Please try the following queries:
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS IntermediateTable (
+  ID INT,
+  SCHOOL VARCHAR(255),
+  CONSTRAINT IF NOT EXISTS IntermediateTableId
+  PRIMARY KEY(ID AUTO_INCREMENT) DEFAULT ('Math')
+) ENGINE=InnoDB;
+
+ 
+DROP TABLE IF EXISTS IntermediateTable;

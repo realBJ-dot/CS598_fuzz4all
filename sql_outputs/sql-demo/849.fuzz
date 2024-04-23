@@ -1,0 +1,13 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS company;
+CREATE TABLE company (ID INT PRIMARY KEY, name VARCHAR(50), description VARCHAR(100));
+INSERT INTO company (id, name, description) VALUES(1, 'ACME Enterprises', 'Cooperation with more than 2,500 companies across the United States. Companies can manage employees, staff, and clients. Each employee gets benefits. Companies become very popular as companies grow');
+INSERT INTO company (id, name, description) VALUES(2, 'Acme Bank', 'Acme Bank, Inc. is a bank of the USA, a division of the Washington State, DC. The bank receives mortgage interests when the money they offer goes into a bank account belonging to the firm');
+INSERT INTO company (id, name, description) VALUES(3, 'Apple, Inc.', 'Apple, Inc. is the company that develops and produces technology that is mobile and portable');
+INSERT INTO company (id, name, description) VALUES(4, 'Adobe', 'Adobe is an evolving multinational technology company with an affiliate. They develop software to transform the way our visual arts work');
+INSERT INTO company (id, name, description) VALUES(5, 'ABC Bank', 'ABC Bank Limited is a bank by the UK in the United Kingdom which is the largest bank in the country');
+INSERT INTO company (id, name, description) VALUES(6, 'Accenture', 'Accenture is a technology development company with a partnership with Bank of America');
+INSERT INTO company (id, name, description) VALUES(7, 'Alphabet Inc.', 'Alphabet, Inc. is a sports-based music giant with a partnership with New Orleans Lakers');
+INSERT INTO company (id, name, description) VALUES(8, 'Asus', 'Asus was founded by <NAME>, but has since grown with a strong passion for technology for the last century');
+INSERT INTO company (id, name, description) VALUES(9, 'Atlassian', 'Atlassian is an American company headquartered at San Jose, CA');
+INSERT INTO company (id, name, description

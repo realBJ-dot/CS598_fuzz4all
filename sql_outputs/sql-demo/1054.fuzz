@@ -1,0 +1,76 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE worker (
+    id INT NOT NULL PRIMARY KEY,
+    name VARCHAR(20) NOT NULL,
+    number STRING,
+    address1 VARCHAR(255) NOT NULL,
+    address2 VARCHAR(255) NULL,
+    hiring_date DATE NULL,
+    phone VARCHAR(25),
+    job_title VARCHAR(255),
+    department VARCHAR(20));
+ 
+CREATE TABLE employee (
+    employeeNumber INT NOT NULL PRIMARY KEY,
+    name VARCHAR(20) NOT NULL,
+    salary DOUBLE NOT NULL,
+    division INT,
+    department INT);
+ 
+CREATE TABLE customer (
+    customerID INT NOT NULL PRIMARY KEY,
+    customerName VARCHAR(50) NOT NULL,
+    customerType INT NOT NULL,
+    employeeNumber INT,
+    CONSTRAINT CHECK_employeeNumber CHECK (employeeNumber >= 0, employeeNumber <= 100));
+ 
+INSERT INTO worker
+(
+    name,
+    number,
+    address1,
+    address2,
+    hiring_date,
+    job_title,
+    department)
+VALUES ("Jeff", "1234567890", "Address 1", "Address 2", "1990-01-19", "Senior Engineer", 2);
+INSERT INTO worker
+(
+    name,
+    number,
+    address1,
+    address2,
+    hiring_date,
+    job_title,
+    department)
+VALUES ("Jeff", "7890123456", "Address 9", "Address 6", "2001-12-01", "Engineer", 3);
+INSERT INTO worker
+(
+    name,
+    number,
+    address1,
+    address2,
+    hiring_date,
+    job_title,
+    department)
+VALUES ("Michael", "2147483646", "Address 8", "Address 4", "2000-01-01", "Manager", 1);
+INSERT INTO worker
+(
+    name,
+    number,
+    address1,
+    address2,
+    hiring_date,
+    job_title,
+    department)
+VALUES ("Tanner", "1322356925", "Address 3", NULL, "1994-03-22", "Manager", 1);
+INSERT INTO worker
+(
+    name,
+    number,
+    address1,
+    address2,
+    hiring_date,
+    job_title,
+    department)
+VALUES ("Brendan", "12012534567", "Address 7", "Address 2", "19

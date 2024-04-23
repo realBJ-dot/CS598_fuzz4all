@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+insert into book values ('<NAME>','The Man Who Killed Everyone','9780655232578', '2012-05-20' );
+insert into book values ('Dune','A New Game - Dune In The Night Before','9781905042210', '1984-12-13' );
+insert into book values ('The Little Prince','Greatest Fans - The Little Prince (2000) 9th Series','9780375317173','1989-11-29' );
+INSERT INTO book VALUES ('The Psychologist', '<NAME>', '1495153',  '1971-01-01' );
+insert into book values ('A History of Time', '<NAME>', '9786153227762', '1987-05-11');
+
+DROP TABLE book;
+DROP DATABASE sampleDB;

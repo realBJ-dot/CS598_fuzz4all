@@ -1,0 +1,69 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users_2(username char(20) PRIMARY KEY, FirstName VARCHAR(30));
+UPDATE Users_2 SET FirstName=''; 
+-- How to get all tables belong to same user? 
+SELECT DISTINCT username
+FROM Users_2
+-- How long last user logged into this computer? 
+SELECT MAX(LoginTime)
+FROM Users_2
+-- How many times user is registered?
+SELECT COUNT(*)
+FROM Users_2
+-- Delete all entries of a specific username
+DELETE
+FROM Users_2
+WHERE username='admin'
+-- Delete all entries of a specific username
+SELECT *
+FROM Users_2
+WHERE username='admin'
+-- Delete all entries of a specific username
+UPDATE Users_2
+SET LoginTime=GETDATE()
+WHERE Username!='admin' 
+-- Select all entries of a specific username
+SELECT *
+FROM Users_2
+WHERE Username!='admin' 
+-- Select all entries of a specific username
+DELETE
+FROM Users_2
+WHERE Username='admin'  
+-- Select all entries of a specific username
+SELECT *
+FROM Users_2
+WHERE Username!='admin'
+-- Please create and execute a simple query
+SELECT  SUM(amount)
+FROM Users_2
+ORDER BY amount
+-- Select table names
+SELECT DISTINCT TABLE_NAME
+FROM INFORMATION_SCHEMA.TABLES
+-- Please create new database with different name
+SELECT * FROM INFORMATION_SCHEMA.TABLES
+# All tables belong to same author
+SELECT DISTINCT username
+FROM Users_2
+-- Number of registered users
+SELECT COUNT(*)
+FROM Users_2
+-- Number of users
+SELECT COUNT(*)
+FROM Information_Schema.USERS
+-- Print all information of users
+SELECT *
+FROM Users_2 
+# All tables belong to same author
+SELECT DISTINCT username
+FROM Users_2
+-- Number of registered users
+SELECT COUNT(*)
+FROM Users_2
+-- Number of users
+SELECT COUNT(*)
+FROM Information_Schema.USERS
+-- Print all information of users
+SELECT *
+FROM Users_2 

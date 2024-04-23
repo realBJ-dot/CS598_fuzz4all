@@ -1,0 +1,6 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS `FirstAndSecondTable` ( `id` INT(11) NOT NULL PRIMARY KEY, `name` VARCHAR(50) CHARACTER SET UTF8, `age` INT);
+INSERT INTO `FirstAndSecondTable` (`id`, `name`, `age`) VALUES (1, 'David', 39);
+INSERT INTO `FirstAndSecondTable` (`id`, `name`, `age`) VALUES (2, 'Joe', 50);
+SELECT * FROM `FirstAndSecondTable` WHERE `Age` = "50" LIMIT 1;
+SELECT * FROM `FirstAndSecondTable` WHERE `Age` = "33" LIMIT 1;*/

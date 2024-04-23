@@ -1,0 +1,48 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Projects
+(
+    Project_id INT NOT NULL AUTO_INCREMENT,
+    first_name TEXT,
+    last_name TEXT,
+    contact_phone TEXT,
+    is_active INTEGER,
+    date_added DATETIME,
+    PRIMARY KEY (Project_id),
+    FOREIGN KEY (Project_id) REFERENCES Users (User_id) ON UPDATE CASCADE
+);
+--Please show
+-- Create a non-relational table using the SELECT statement and the FROM statement
+
+SELECT * FROM Users;
+SELECT * FROM Contacts;
+SELECT * FROM Projects WHERE project_id > 10;
+-- Create a table with multiple columns, add data and show all rows
+
+USE sampleDB;
+CREATE TABLE MyTable
+(
+    first_name TEXT,
+    last_name TEXT,
+    password TEXT
+);
+INSERT INTO MyTable (first_name, last_name, password)
+VALUES ('Rahul','Vazirani','83ab80241a')
+VALUES ('Ramy','Kumar','83<PASSWORD>')
+VALUES ('Anuvadhan','Pilipi','378c83157b'),
+VALUES ('Shilshah','Sivapalli','83157b157b098'),
+VALUES ('Guru','Kathep', '8<PASSWORD>')
+VALUES ('Nikhil', 'Shah', 'b021122906120')
+VALUES ('Preethi', 'Chandra', '82d48c6b<PASSWORD>b1');
+USE sampleDB;
+SELECT first_name FROM MyTable;
+USE sampleDB;
+DELETE FROM MyTable WHERE last_name = 'Shah';
+DELETE FROM Users WHERE User_id > 6;
+DELETE FROM Contact WHERE Contact_id > 5;
+DELETE FROM Projects WHERE Project_id > 12;
+--You are still able to retrieve the data from where the row had been inserted or selected
+
+--Create and insert two very similar tables to the same table. Show all rows from second table
+
+USE sampleDB;
+CREATE

@@ -1,0 +1,18 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `sampleDB`.`people`;
+CREATE TABLE IF NOT EXISTS `sampleDB`.`people` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(10) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+INSERT INTO `sampleDB`.`cars` (`Make`, `Model`, `Color`, `Price`, `Year`, `Owner`) VALUES ('Honda', 'Odyssey', 'Red', 20000, 2013, 'Kate');
+INSERT INTO `sampleDB`.`cars` (`Make`, `Model`, `Color`, `Price`, `Year`, `Owner`) VALUES ('Dodge', 'Ram', 'Gold', 20000, 2012, 'Kate');
+INSERT INTO `sampleDB`.`cars` (`Make`, `Model`, `Color`, `Price`, `Year`, `Owner`) VALUES ('Ford', 'Mustang', 'Silver', 20000, 2020, 'Kevin');
+INSERT INTO `sampleDB`.`people` (`name`) VALUES ('Kate');
+INSERT INTO `sampleDB`.`people` (`name`) VALUES ('Kevin');
+DELETE FROM `sampleDB`.`cars`;
+INSERT INTO `sampleDB`.`cars` (`Make`, `Model`, `Color`, `Price`, `Year`, `Owner`) VALUES ('Volvo', 'TMC', 'Red', 15000, 2013, 'Mary');
+INSERT INTO `sampleDB`.`cars` (`Make`, `Model`, `Color`, `Price`, `Year`, `Owner`) VALUES ('Ford', 'Mustang', 'Silver', 20000, 2020, 'Kevin');
+INSERT INTO `sampleDB`.`people` (`name`) VALUES ('Mary');
+INSERT INTO `sampleDB`.`people` (`name`) VALUES ('Kevin');
+SELECT * FROM `sampleDB`.`cars` WHERE

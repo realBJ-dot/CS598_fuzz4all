@@ -1,0 +1,26 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employees_salary_by_salary;
+CREATE TABLE employees_salary_by_salary (
+    employee_salary	INT UNSIGNED,
+    emp_salary		INT UNSIGNED,
+	PRIMARY KEY (employee_salary, emp_salary));
+DELETE FROM employees_salary_by_salary;
+DELETE FROM employees_salary_by_salary;
+-- Please create a new table and insert several (5) values (default values) in it.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employees_salary_by_salary;
+CREATE TABLE employees_salary_by_salary (
+    employee_salary	INT UNSIGNED,
+    emp_salary		INT UNSIGNED,
+	06600,
+	1,
+	null,
+	false,
+	0x17038B05,
+	-- Please create a query which uses a JOIN between 2 tables and returns total number of rows in 'employees_salary_by_salary' table. Write 1 line of MySQL query, 1 line of PHP query or 1 line of other programming language/system/database. You can use any combination of FROM, JOIN, UNION, UNION ALL, SELECT and FROM. You do not need to know any more about the specific database.
+	SELECT count(*) FROM employees_salary_by_salary
+WHERE employee_salary = 06600 UNION SELECT count(*) FROM employees_salary_by_salary
+WHERE employee_salary = 1 UNION SELECT count(*) FROM employees_salary_by_salary
+WHERE employee_salary = null UNION SELECT count(*) FROM employees_salary_by_salary
+WHERE employee_salary = false UNION SELECT count(*) FROM employees_salary_by_salary
+WHERE employee_salary = 0x17038B05

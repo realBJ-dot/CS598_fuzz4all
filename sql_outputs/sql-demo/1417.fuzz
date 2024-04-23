@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS `books` (
+  `author_id` INT(10) UNSIGNED,
+  `isbn` INT(10) UNSIGNED,
+  `title` TEXT
+);
+INSERT INTO `books` (`author_id`, `isbn`, `title`)
+VALUES (5, 6000, 'Learning MySQL'), (10, 7000, 'Pro MySQL 5.0'), (17, 8000, 'MySQL Tutorial'), (5, 4000, 'Hello World!');
+SELECT * FROM `books`;
+DROP DATABASE IF EXISTS sampleDB;

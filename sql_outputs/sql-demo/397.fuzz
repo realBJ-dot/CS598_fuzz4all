@@ -1,0 +1,3 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Person (First_name TEXT, Last_name TEXT);
+CREATE TABLE Employee (First_name TEXT, Last_name TEXT);

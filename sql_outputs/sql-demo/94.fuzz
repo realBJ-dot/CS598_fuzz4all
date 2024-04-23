@@ -1,11 +1,3 @@
-USE sampleDB;
-DELETE FROM testCart WHERE date > '2016-09-05';
-UPDATE testCart SET qtyOnHand = 22 WHERE DATE('2016-09-05') < date;
-UPDATE testCart SET amount = '135.99' WHERE date = '2016-09-05';
-SELECT date, qtyOnHand, amount FROM testCart;
- ;
- ;
- ;
- ;
-
--- Dump completed on 2019-10-16 15:07:52
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users(username char(20) PRIMARY KEY, FirstName VARCHAR(30)) ENGINE=InnoDB;
+INSERT INTO Users(username,Firstname) VALUES('Test','Test'),('Admin','Admin'),('Guest','Guest'),('Super','Super');

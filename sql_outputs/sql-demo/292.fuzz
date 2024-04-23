@@ -1,0 +1,14 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- Please run the program in a shell. You should see the mutated table under sampleDB.Table1. You can confirm the mutation by running
+SELECT * FROM Table1;
+-- Please create a modified program that does a few iterations of the previous program. For example, you can modify the previous program to create ten new rows and so forth. This should be done in a loop. You should see the new rows in sampleDB.Table1. Please drop all tables under sampleDB once you have seen the results. You need to drop at least three tables. In the end, drop all the tables once you have seen the results.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employee CASCADE;
+CREATE TABLE `my_new_table` (
+    `Column1` INT NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=5
+DEFAULT CHARACTER SET=utf8 COLLATE=utf8_general_ci;
+-- Please run the program and you should see the new rows added to the Table1. You can drop all the tables in the sampleDB once you see the results.
+DROP TABLE IF EXISTS employee CASCADE;
+DROP TABLE IF EXISTS my_new_table CASCADE;
+DROP DATABASE IF EXISTS sampleDB;

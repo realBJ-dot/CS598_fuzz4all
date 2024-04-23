@@ -1,0 +1,9 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE users_details;
+CREATE TABLE users_details(user_id INTEGER, phone VARCHAR(50) UNIQUE, age INTEGER, job_title VARCHAR(20), department_id INTEGER, salary REAL);
+INSERT INTO users_details(user_id, phone, age, job_title, department_id, salary) VALUES (233, 656545432, 325, 'CEO', 3, 25.56);
+DROP TABLE users_details;
+DROP TABLE users_details_backup;
+CREATE TABLE users_details_backup(user_id INTEGER, phone VARCHAR(50) UNIQUE, age INTEGER);
+INSERT INTO users_details_backup(user_id, phone, age) VALUES (233, 656545432, 325);
+DROP TABLE users_details;

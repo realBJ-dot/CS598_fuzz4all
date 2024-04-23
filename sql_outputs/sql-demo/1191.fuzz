@@ -1,0 +1,19 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE users;
+CREATE TABLE users (
+    id                int auto_increment,
+    first_name        varchar(30) not null,
+    last_name         varchar(30) not null,
+    balance           decimal(11, 2) not null,
+    PRIMARY KEY (id)
+);
+FLUSH PRIVILEGES;
+UPDATE users
+    SET balance = 5000
+WHERE balance = 5300;
+FLUSHHPrivileges;
+drop TABLE users;
+DROP TABLE IF EXISTS sampleDB;
+
+
+*/

@@ -1,0 +1,36 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS users (
+	userId CHAR(5) NOT NULL,
+	userStatus INT DEFAULT 0 NOT NULL,
+	authId VARCHAR(190) DEFAULT NULL,
+	authPasswordHash <PASSWORD>,
+CREATE TABLE IF NOT EXISTS userStats (
+	uid CHAR(5) NOT NULL,
+	playtime INT DEFAULT 0 NOT NULL,
+	totalscore INT DEFAULT 0 NOT NULL,
+	totalitems INT DEFAULT 0 NOT NULL,
+	created TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+CREATE TABLE IF NOT EXISTS players (
+	pid CHAR(5) NOT NULL,
+	uid CHAR(5) NOT NULL,
+	score INT DEFAULT 0 NOT NULL,
+	playtime INT DEFAULT 0 NOT NULL,
+	PRIMARY KEY (pid, uid)
+)ENGINE=InnoDB;
+DESCRIBE players;
+
+INSERT INTO users (userId,role) values ('alice', 'a');
+INSERT INTO users (userId,role) values ('bob', 'a');
+INSERT INTO users (userId,role) values ('eve','s');
+
+INSERT INTO userStats (uid, playtime, totalscore, totalitems) values ('alice', 300,16, 10);
+INSERT INTO userStats (uid, playtime, totalscore, totalitems) values ('alice', 400,29, 12);
+INSERT INTO userStats (uid, playtime, totalscore, totalitems) values ('bob', 500,27, 13);
+INSERT INTO userStats (uid, playtime, totalscore, totalitems) values ('bob', 400,30, 8);
+INSERT INTO userStats (uid, playtime, totalscore, totalitems) values ('bob', 300,14, 11);
+INSERT INTO userStats (uid, playtime, totalscore, totalitems) values ('eve', 505,21, 20);
+INSERT INTO userStats (uid, playtime, totalscore, totalitems) values ('eve', 300,10, 17);
+INSERT INTO userStats (uid, playtime, totalscore, totalitems) values ('eve', 200,20, 19)
+
+SELECT * FROM players
+WHERE NOT uid = 'alice'

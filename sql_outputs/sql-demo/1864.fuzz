@@ -1,0 +1,17 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employees;
+CREATE TABLE employees (
+  id INTEGER UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+  name char (50) NOT NULL,
+  last_name char (50) NOT NULL,
+  job varchar(50) DEFAULT NULL,
+  department char (50) DEFAULT NULL
+);
+-- Please create some sample data where employees.id is from 2 to 40. Use INSERT statement to insert new records into the table employees using different attributes.
+INSERT INTO employees (name, job, department) values ('<NAME>', 'Developer', 'IT Department');
+INSERT INTO employees (name, job, department) values ('<NAME>', 'Developer', 'IT Department');
+INSERT INTO employees (name, job, department) values ('<NAME>', 'Developer', 'IT Department');
+INSERT INTO employees (name, job, department) values ('<NAME>', 'Developer', 'IT Department');
+INSERT INTO employees (name, job, department) values ('<NAME>', 'Developer', 'IT Department');
+INSERT INTO employees (name, job, department) values ('<NAME>', 'Developer', 'IT Department');
+INSERT INTO employees

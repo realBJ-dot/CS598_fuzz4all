@@ -1,0 +1,55 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ALTER TABLE employee MODIFY Salary DECIMAL(10, 4);
+ALTER TABLE employee MODIFY Salary DECIMAL(10, 6);
+ALTER TABLE employee MODIFY Designation TEXT;
+--
+-- Please create a new file which creates a new table. The new table will call itself `mutatedTable`.
+CREATE OR REPLACE DIRECTORY temp
+LOCATION '/tmp/mutated_table_data'
+CREATE TABLE mutatedTable
+(
+    `id` int NOT NULL,
+    `first` varchar(20) DEFAULT NULL,
+    PRIMARY KEY (`id`),
+    INDEX idx(id)
+) ENGINE = INNODB;
+--
+-- You need to create the new table only once. It will be named `data1`.
+TRUNCATE TABLE data1;
+INSERT INTO data1 VALUES (1, 'John'), (2, 'Mike');
+--
+-- You need to use the data in a select statement. You first add new columns in order to maintain consistency later.
+CREATE TABLE newColumns
+(
+    `id` int NOT NULL,
+    `first` varchar(20) DEFAULT NULL
+);
+--
+-- You need to run SQL commands like create table and add new columns. Just be sure to test that the commands are OK, because the table will not be shown after the table has been created.
+SELECT * INTO TABLE newColumns
+    FROM data1;
+ALTER TABLE newColumns ADD FULLTEXT (first);
+ALTER TABLE newColumns ADD FULLTEXT (last);
+ALTER TABLE newColumns ADD FULLTEXT (designation);
+--
+-- You need to test how the new table behaves later on the database
+CREATE TABLE tempTable;
+INSERT INTO tempTable SELECT * FROM data1 AS newColumns;
+SELECT * INTO TABLE tempTable;
+ALTER TABLE tempTable ADD FULLTEXT (first);
+SELECT * INTO TABLE tempTable;
+--
+-- You need to test new columns in a select statement using the FULLTEXT() function.
+WITH fullTextData AS (SELECT * INTO TABLE tempTable)
+SELECT first, last INTO TABLE newColumns
+    FROM fullTextData;
+SELECT * INTO TABLE newColumns AS newColumns
+    FROM fullTextData;
+SELECT first, last INTO TABLE newColumns
+    FROM fullTextData AS fullTableData;
+ALTER TABLE tempTable ALTER COLUMN designation VARCHAR(20);
+SELECT first, last INTO TABLE newColumns
+    FROM fullTextData AS fullTableData;
+--
+-- You need to test index column. You need to run INSERT query only once, because the column values will be updated as well. But if the column values are updated, also the index values will get updated.
+SET

@@ -1,12 +1,10 @@
-USE sampleDB;
-
-SHOW engine;
-SHOW variables;
-INSERT INTO USERS (USER_ID, USERNAME, PASSWORD) VALUES ('101', 'foo', '123456');
-SELECT PASSWORD_HASH();
-USE;
-SHOW status;
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ -- Note: Create a sample table to test database functionality and drop it if not needed.
  
-FLUSH PRIVILEGES;
-SHOW STATUS LIKE "%db_version";
-ALTER DATABASE sampleDB DEFAULT CHARACTER SET = utf8mb4;
+ 
+INSERT INTO sampleData VALUES (1, "First row", 2000, 1), (2, "Second row", 3000, 1), (3, "Third row", 4000, 1), (4, "Forth row", 5000, 1), (5, "Fifth row", 6000, 1), (6, "Sixth row", 7000, 1);
+
+SELECT * FROM sampleData; -- Verify that the sample table exists
+DROP TABLE IF EXISTS sampleData; -- Drop sample table once the database is not used
+
+TERMINATE CONNECTION;

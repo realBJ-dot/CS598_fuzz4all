@@ -1,0 +1,27 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS users (
+    id                int auto_increment,
+    first_name        varchar(30) not null,
+    last_name         varchar(30) not null,
+    balance           decimal(11, 2) not null,
+    PRIMARY KEY (id)
+);
+INSERT INTO users (id, first_name, last_name, balance)
+    VALUES (1, 'Damon', 'Phillips', '4040.24'),
+           (2, 'Michael', 'Smith', '4410.55'),
+           (3, 'John', 'Brown', '2100.93'),
+           (4, 'Mike', 'Miller', '5176.10');
+SELECT
+  first_name, last_name, balance
+FROM users;
+DELETE FROM users WHERE id = 2;
+SELECT
+  id, first_name, last_name, balance
+FROM users;
+UPDATE users SET balance = balance * 22.5 WHERE id = 2;
+SELECT
+  id, first_name, last_name, balance
+FROM users;
+DROP TABLE IF EXISTS users;
+        USE sampleDB;
+DROP DATABASE

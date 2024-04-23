@@ -1,0 +1,6 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- Please create the mutated query using mutated syntax.
+DELETE FROM employee;
+
+-- The above statements are not allowed at the moment. There is only one way to get result like this.
+SELECT * FROM employee;

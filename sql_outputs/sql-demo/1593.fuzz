@@ -1,0 +1,67 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `sampleDB`.`employees`;
+CREATE TABLE `sampleDB`.`employees` (
+    `eID` int NOT NULL AUTO_INCREMENT,
+    `eFirstname` varchar(20) NOT NULL,
+    `eLastname` varchar(25) NOT NULL,
+    `emplEntimely` tinyint(1) NOT NULL,
+    `isLead` tinyint(1),
+    `ManagerID` int,
+    `DepartmentID` int DEFAULT 0,
+    `isFulltime` tinyint(1),
+    PRIMARY KEY (`eID`),
+    UNIQUE KEY `employees_employeeID` (`employeeID`)
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
+
+#
+USE sampleDB;
+USE sampleDB;
+SHOW TABLES;
+DESCRIBE TABLE employees;
+#
+#
+SHOW TABLES;
+#
+#
+DESCRIBE TABLE employees;
+
+#
+#
+DROP DATABASE IF EXISTS sampleDB;
+```
+
+## Running MySQL on your computer
+To run MySQL, you can either start the MySQL Daemon service, or use the MySQL command line tool to run your queries. For either of the approaches, start by stopping the MySQL service as shown next:
+
+```
+systemctl stop mysql
+```
+
+After stopping the service, start the MySQL service as shown below:
+    
+```
+systemctl start mysql
+```
+
+For testing purposes, you can also try the MySQL Workbench instead of MySQL CLI. For installation, go to the official [MySQL Workbench website](https: 
+
+Now, you can try the following queries:
+1. View the created DB:
+```
+SHOW DATABASES;
+```
+2. View the tables in the previously created DB:
+```
+SHOW TABLES;
+```
+3. View a specific table:
+```
+DESC TABLE employees;
+```
+4. Show only the fields of the selected table:
+```
+SELECT * FROM employees LIMIT 100;
+```
+5. Add new information to the database
+```sql
+INSERT INTO

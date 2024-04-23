@@ -1,0 +1,28 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS author(
+ author_id INT,
+ author_name text,
+ author_surname text
+);
+INSERT INTO author VALUES(1,'Alice','Smith');
+INSERT INTO author VALUES(2,'Bob','Smith');
+INSERT INTO author VALUES(3,'Charlie','Brown');
+CREATE TABLE IF NOT EXISTS book(
+ book_id int,
+ title text,
+ author_id int,
+ FOREIGN KEY (author_id)
+ REFERENCES author (author_id)
+);
+ALTER TABLE author MODIFY author_id INT(4);
+CREATE TABLE IF NOT EXISTS book_author(
+ book_id int,
+ author_id int
+);
+ALTER TABLE book MODIFY book_id INT(4);
+ALTER TABLE book ENGINE=MyISAM;
+ALTER TABLE book_author MODIFY book_id INT(4);
+ALTER TABLE book_author ENGINE=MyISAM;
+DROP TABLE author;
+DROP TABLE book;
+DROP DATABASE sampleDB;

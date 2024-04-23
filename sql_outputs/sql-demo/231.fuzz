@@ -1,0 +1,13 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE `course` (id INT NOT NULL AUTO_INCREMENT, name VARCHAR(50) NOT NULL, code VARCHAR(50) NOT NULL, PRIMARY KEY (id));
+CREATE TABLE `person` (id INT NOT NULL AUTO_INCREMENT, name VARCHAR(50) NOT NULL, age INT NOT NULL, PRIMARY KEY (id));
+
+-- Test data
+INSERT INTO cohort_enroll (person_id, course_id, date_enrolled, week_of_year, homework, grade, is_checked, status) VALUES
+(1, 1, '2017-05-03', 4, 3, '9999', 1, 1),
+(2, 2, '2017-07-02', 2, '123', '9999', 1, 1),
+(3, 2, '2017-06-25', 2, '123', '9999', 1, 1),
+(4, 2, '2017-07-26', 2, '123', '9999', 1, 1),
+(5, 3, '2017-08-10', 4, '456', '9999', 1, 1),
+(6, 1, '2016-05-13', 3, '13', '9999', 1, 1),
+(7, 3, '2016-08-29', 2, '789', '9999', 0, 1);

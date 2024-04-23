@@ -1,0 +1,11 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS students
+(name  VARCHAR(30) NOT NULL UNIQUE,
+email VARCHAR(100) UNIQUE,
+address  VARCHAR(100));
+COMMENT ON COLUMN students.address IS 'This is the address of the student';
+
+comment on column `student`.`name` is 'This is the name of the student';
+
+CREATE INDEX idx_name ON students(name);
+comment on index idx_name is 'This is the index name';

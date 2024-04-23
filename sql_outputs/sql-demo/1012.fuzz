@@ -1,0 +1,59 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employees;
+DROP TABLE IF EXISTS salaries;
+DROP TABLE IF EXISTS dept_manager;
+DROP TABLE IF EXISTS dept_emp;
+DROP TABLE IF EXISTS dept;
+DROP TABLE IF EXISTS staff;
+DROP TABLE IF EXISTS salaries;
+#
+# The "EMPLOYEES" table contains the following columns:
+#
+# emp_no	  INTEGER PRIMARY KEY
+# last_name	  VARCHAR(50)   NOT NULL
+# first_name	  VARCHAR(50)   NOT NULL
+# sex		  CHAR(1)       NOT NULL DEFAULT 'M'  -- 0=male, 1=female, 2=unknown
+# job_title	  VARCHAR(20)   NOT NULL
+# mgr_emp_no	  INTEGER
+# hire_date	  DATE  
+# sal		  	  INTEGER
+# comm		  	  INTEGER
+# delinq		  INTEGER
+# tenure		  INTEGER
+--
+# The "SALARIES" table contains the following columns:
+#
+# emp_no		INTEGER
+# sal		  	  INTEGER
+--
+# The "STAFF" table contains the following columns:
+#
+# staff_no		INTEGER PRIMARY KEY
+# staff_title		VARCHAR (20)
+# birth_date		DATE  
+# hire_date		DATE  
+# pay		  	  INTEGER
+--
+# The "DEPARTMENT" table contains the following columns:
+#
+-- department_no	INTEGER PRIMARY KEY
+# department_name	  VARCHAR(20)   NOT NULL
+--
+# The "DEPARTMENT_MANAGER" table contains the following columns:
+#
+-- department_no		INTEGER
+# department_manager	  INTEGER
+--
+# The "DEPT_MANAGER" table contains the following columns:
+--
+-- dept_no		INTEGER
+# dept_name		VARCHAR(20)   NOT NULL
+--
+-- The "DEPT_EMP" table contains the following columns:
+--
+-- dept_no			INTEGER
+# emp_no			INTEGER
+# from_date		DATE
+# to_date			DATE
+--
+# We want to add the following

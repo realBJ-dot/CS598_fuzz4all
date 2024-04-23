@@ -1,0 +1,11 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- Create tables and insert data in them. The data should be in the sequence of ID values
+DROP TABLE IF EXISTS test4;
+CREATE TABLE test4 (id INT UNSIGNED, salary NUMERIC);
+INSERT INTO test4 (id, salary) VALUES (1, 2000);
+INSERT INTO test4 (id, salary) VALUES (2, 4000);
+INSERT INTO test4 (id, salary) VALUES (3, 6000);
+INSERT INTO test4 (id, salary) VALUES (4, 8000);
+SELECT * from test4;
+DROP TABLE IF EXISTS test4;
+DROP DATABASE IF EXISTS sampleDB;

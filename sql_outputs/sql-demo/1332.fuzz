@@ -1,0 +1,35 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS author(
+  author_id INT UNSIGNED AUTO_INCREMENT UNIQUE,
+  author_name text
+  )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+ALTER TABLE author MODIFY author_id INT();
+INSERT INTO author VALUES(1,'Alice');
+INSERT INTO author VALUES(2,'Bob');
+INSERT INTO author VALUES(3,'Charlie');
+DROP DATABASE sampleDB;
+-- Please create a mutated program which uses the UTF8 database character set and MySQL's built-in collation syntax.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS author(
+  author_id INT(6) UNSIGNED AUTO_INCREMENT UNIQUE,
+  author_name text
+  )ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+ALTER TABLE author MODIFY author_id INT();
+INSERT INTO author VALUES(1,'Alice');
+INSERT INTO author VALUES(2,'Bob');
+INSERT INTO author VALUES(3,'Charlie');
+DROP DATABASE sampleDB;
+-- Please modify the previous program to make it modify the characters in the third row to '!' after appending it with '!' and's' to the last of the row.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS author(
+  author_id INT(6) UNSIGNED AUTO_INCREMENT UNIQUE,
+  author_last_name text,
+  author_first_name text,
+  author_fullname text
+  )ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+ALTER TABLE author MODIFY author_id INT();
+INSERT INTO author VALUES(1,'','','Alice');
+INSERT INTO author VALUES(2,'Charlie','Bob','','');
+DROP DATABASE sampleDB;
+-- Please create a mutated program which uses MySQL's built-in collation syntax on the author_last_name column and sort the first character in the author_fullname column in ascending order.
+CREATE DATABASE IF NOT

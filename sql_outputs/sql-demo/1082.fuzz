@@ -1,0 +1,6 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employee;
+CREATE TABLE IF NOT EXISTS employee (employee_id INT AUTO_INCREMENT,name VARCHAR(30),age INT,salary INT);
+INSERT INTO employee;
+UPDATE employ_id SET name = 'New Name';
+DROP DATABASE sampleDB;

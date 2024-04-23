@@ -1,0 +1,23 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+DROP TABLE IF EXISTS employees;
+
+ 
+CREATE TABLE employees(employee_id INT, employee_name VARCHAR(255),
+    country_code VARCHAR(20), country_name VARCHAR(255));
+
+ 
+DELIMITER $$
+CREATE PROCEDURE insert_employee(OUT employee_id INT, 
+    OUT employee_name VARCHAR(255), OUT country_code VARCHAR(20), 
+    OUT country_name VARCHAR(255))
+BEGIN
+SELECT employee_id, employee_name, country_code, country_name
+    INTO employee_id, employee_name, country_code, country_name
+    WHERE employee_id = 1;
+END $$
+DELIMITER ;
+
+ 
+CALL insert_employee(employee_id, employee_name, country_code, country_name);
+-- This should also run fine because the stored procedures have been executed successfully.

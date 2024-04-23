@@ -1,0 +1,18 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ALTER TABLE employees_salary_by_salary MODIFY employee_salary INTEGER;
+ALTER TABLE employees_salary_by_salary MODIFY employee_salary VARCHAR(20);
+DROP DATABASE IF EXISTS sampleDB;
+-- Please create a schema schema which is similar to the one you know from relational databases. You can assume the schema already exists and that you have created schema as well as tables in the database schema. We will call these schema schemas. Then create tables in schema based on the schema itself(i.e. you are assuming they all come with same structure). Use sampleSchema in your script. */
+CREATE DATABASE IF NOT EXISTS sampleSchema; USE sampleSchema;
+CREATE TABLE IF NOT EXISTS employees (
+    emp_id INT NOT NULL,
+    name VARCHAR(255)
+);
+INSERT INTO employees (emp_id, name) VALUES (26220352, 'John');
+CREATE TABLE IF NOT EXISTS emp_project (
+    emp_id INT NOT NULL,
+    project_id INT NOT NULL
+);
+INSERT INTO employees (emp_id, name) VALUES (26220352, 'John');
+ALTER TABLE emp_project ADD FOREIGN KEY (emp_id) REFERENCES employees(emp_id) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE employees DROP INDEX name_idx;

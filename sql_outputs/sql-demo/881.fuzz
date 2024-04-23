@@ -1,0 +1,8 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE person (id INT PRIMARY KEY, name VARCHAR(200), age INT);
+INSERT INTO person (id, name, age) VALUES(5, '<NAME>', 27);
+INSERT INTO person (id, name, age) VALUES(6, '<NAME>', 49);
+SELECT max(age) FROM person;
+UPDATE person SET last_name = 'Newton' WHERE age = 5;
+SELECT * FROM person; SELECT max(age) FROM person; -- Let us get the most-agreed-upon answer :)
+DROP DATABASE sampleDB;

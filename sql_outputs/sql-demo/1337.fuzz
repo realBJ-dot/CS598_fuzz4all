@@ -1,0 +1,11 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS user(
+ user_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+ user_name text
+);
+ALTER TABLE user MODIFY user_id INT(8);
+ALTER TABLE user ENGINE=InnoDB;
+DROP TABLE user;
+DROP DATABASE sampleDB;
+```
+This example will be used in an upcoming demo course on MySQL and this database will already be there.

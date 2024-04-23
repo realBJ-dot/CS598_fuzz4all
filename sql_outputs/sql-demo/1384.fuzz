@@ -1,0 +1,14 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS book (
+book_id INT NOT NULL AUTO_INCREMENT,
+book_title VARCHAR(250),
+book_isbn INT,
+book_publication_date DATETIME(6) NOT NULL,
+book_price INT,
+constraints PK_book PRIMARY KEY (book_id)
+);
+ALTER TABLE book MODIFY book_id INT FIRST;
+CREATE UNIQUE INDEX X_book_publication_date ON book (book_publication_date);
+ALTER TABLE book ENGINE=MyISAM;
+DROP TABLE book;
+DROP DATABASE sampleDB;

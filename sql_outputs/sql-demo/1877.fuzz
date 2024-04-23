@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employees_positions;
+CREATE TABLE employees_positions
+(
+    employee_id INT UNSIGNED AUTO_INCREMENT,
+    employee_postion INT UNSIGNED,
+    PRIMARY KEY(employee_id, employee_postion),
+    FOREIGN KEY(employee_postion) REFERENCES job_positions(id)
+);
+

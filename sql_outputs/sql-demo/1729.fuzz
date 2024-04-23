@@ -1,0 +1,31 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE user;
+CREATE TABLE newuser (user_name VARCHAR(20), password VARCHAR(15));
+-- Please add new rows to the new table to create a mutated version!
+INSERT INTO newuser (user_name, password) VALUES ('newUser', '<PASSWORD>');
+-- Please add the password column to newUser and modify all existing rows to have an updated password of the newUser (use an in-place mutation operation).
+UPDATE newUser SET password='<PASSWORD>' WHERE user_name='<PASSWORD>';
+SHOW DATABASES; SHOW TABLES; SELECT * FROM newUser;
+-- Please display the contents of all tables in every database. The result table should have two rows, one for each table. Each row is in one column, separated by spaces.
+-- Each database should have a name.
+-- Please use SHOW DATABASES to tell which database is active.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP USER IF EXISTS admin; DROP TYPE IF EXISTS T_User CASCADE;
+CREATE USER 'admin'@'%' IDENTIFIED BY 'password';
+-- Please drop all tables in the active database. Check the tables in sampleUser before you drop it.
+USE sampleDB; DROP TABLE IF EXISTS user, newUser CASCADE;
+-- Please drop all tables in every database and check what happen if you do it the other way around.
+CREATE TABLE IF NOT EXISTS user (user_name VARCHAR(20), password VARCHAR(15));
+USE sampleDB; DROP TABLE IF EXISTS sampleUser CASCADE;
+-- The last thing left to do is to clean up. It is important that you do this after every mutation so that your database remains stable.
+-- Please use SHOW TABLES to check which tables you created. Use DESCRIBE and SHOW CREATE TABLE to verify whether all the tables that you created contain a password column.
+-- Please remove the password column from everything, including newUser and existing rows.
+-- Please try to run the program again. You should not see any errors, but the program may crash with SIGABRT instead of the error it was expecting.
+-- Please clean up and start over.
+USE sampleDB; DROP DATABASE IF EXISTS sampleDB;
+-- Please start over with a clean database. Drop database statements should be executed atomically.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TYPE IF EXISTS T_User CASCADE;
+CREATE TYPE T_User (id INT UNSIGNED PRIMARY KEY, name VARCHAR(25), password VARCHAR(16));
+DROP TABLE IF EXISTS user CASCADE;
+-- Drop the database again. Create a new database,

@@ -1,0 +1,17 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users(username char(20) PRIMARY KEY, FirstName VARCHAR(30)) ENGINE=InnoDB;
+INSERT INTO Users(username,Firstname) VALUES('Test','Test'),('Admin','Admin'),('Guest','Guest'),('Super','Super');
+
+
+-- For a more detailed explanation follow:https: 
+-- 2 - Please create a very short query which uses SQL features in a complex way. Be sure to use ENGINE=InnoDB. You should only use sampleDB as the database and assume no other table exist. You need to create new tables to perform operations. In the end, drop all tables you created.
+
+CREATE TABLE IF NOT EXISTS Users(
+    username char(20) PRIMARY KEY, 
+    FirstName VARCHAR(30), 
+    LastName VARCHAR(50),
+    DOB date,
+    gender enum('Male','Female'),
+    DOBEnum date,
+    GenderInt int);
+    

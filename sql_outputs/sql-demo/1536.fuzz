@@ -1,0 +1,5 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE users;
+CREATE TABLE users(id INTEGER, fname VARCHAR(50), lname VARCHAR(50), password LVARCHAR(30));
+INSERT INTO users (id, fname, lname, password) VALUES (11, 'Ritwik', 'Bharan', '<PASSWORD>');
+DROP TABLE users;

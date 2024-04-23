@@ -1,0 +1,20 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS users;
+CREATE TABLE users (
+	userId CHAR(5),
+	role CHAR(1)
+	PRIMARY KEY (userId),
+	UNIQUE KEY userId_UNIQUE (userId)
+);
+DROP TABLE IF EXISTS users;
+CREATE TABLE users (
+	userId CHAR(5),
+	role CHAR(1)
+	PRIMARY KEY (userId) FULLTEXT,
+	UNIQUE KEY userId_UNIQUE (userId)
+);
+-- DROP ALL TABLES
+USE sampleDB;
+DROP TABLE users;
+DROP DATABASE IF EXISTS sampleDB;
+

@@ -1,0 +1,23 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+ 
+ALTER TABLE `books` ADD `author` INT(11);
+
+ 
+
+ALTER TABLE `publisher` ADD `books_available` INT(15);
+
+ 
+DROP TABLE `books`;
+
+ 
+ALTER TABLE `books_available` ADD `author_id` INT(10);
+
+ 
+ALTER TABLE `author_books` ADD `book_id` INT(10);
+
+ 
+
+DROP TABLE `author_books`;
+
+/* The above queries will drop the table "author_books", for tables

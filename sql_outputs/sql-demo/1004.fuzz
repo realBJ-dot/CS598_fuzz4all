@@ -1,0 +1,37 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE employees (first_name VARCHAR(25), last_name VARCHAR(26), title VARCHAR(30));
+CREATE TABLE salaries (salary DECIMAL(7, 2), emp_no INT);
+INSERT INTO employees (first_name, last_name, title) VALUES ("Lily", "White", "CEO");
+INSERT INTO employees (first_name, last_name, title) VALUES ("Rose", "Tolstoy", "Marketing Manager");
+INSERT INTO employees (first_name, last_name, title) VALUES ("Raven", "Kubo", "Sales Director");
+INSERT INTO employees (first_name, last_name, title) VALUES ("Terry", "Williams", "Employee");
+INSERT INTO salaries (salary, emp_no) VALUES (200000, 1);
+INSERT INTO salaries (salary, emp_no) VALUES (300000, 1);
+INSERT INTO salaries (salary, emp_no) VALUES (250000, 3);
+INSERT INTO salaries (salary, emp_no) VALUES (290000, 1);
+INSERT INTO dept_emp (emp_no, dept_no) VALUES (1, 1);
+INSERT INTO dept_emp (emp_no, dept_no) VALUES (1, 2);
+INSERT INTO dept_manager (dept_no,  manager) VALUES (2, 2);
+INSERT INTO dept (dept_no, dept_name) VALUES (1, 'SALES');
+INSERT INTO dept (dept_no, dept_name) VALUES (2, 'ACCOUNTING');
+-- The new SQL will not update if there are no updates. MySQL does an update when a transaction is done.
+-- This is a good hint for future developers.
+UPDATE salaries SET salary = salary + 500
+WHERE emp_no IN (2);
+UPDATE salaries SET salary = salary + 1000
+WHERE emp_no IN (3);
+UNLOCK TABLES;
+FLUSH TABLES;
+LOCK TABLES employees WRITE;
+UPDATE employees
+SET first_name = 'George'
+WHERE emp_no = 1;
+UPDATE employees
+SET last_name = 'Williams'
+WHERE emp_no = 3;
+UPDATE salary
+SET salary = salary + 1500
+WHERE emp_no = 1;
+UNLOCK TABLES;
+UNLOCK TABLES;
+COMMIT;

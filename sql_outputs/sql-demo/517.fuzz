@@ -1,0 +1,5 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ALTER TABLE mytable ADD CONSTRAINT idx ON mytable(price);
+SELECT COUNT(*) FROM mytable;
+DROP TABLE mytable;
+DROP DATABASE sampleDB;

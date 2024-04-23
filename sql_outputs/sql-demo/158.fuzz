@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users_3(username char(20) PRIMARY KEY, FirstName VARCHAR(30));
+INSERT INTO Users_3
+VALUES('rupal', 'Rupal');
+CREATE TABLE Users(username char(20) PRIMARY KEY, FirstName VARCHAR(30));
+INSERT INTO Users(username, FirstName)
+VALUES('rupal', 'Rupal');
+INSERT INTO Users(username, FirstName)
+VALUES('kantipul', 'Manji');
+DROP TABLE Users; DROP DATABASE sampleDB; DROP USER 'kantipul'

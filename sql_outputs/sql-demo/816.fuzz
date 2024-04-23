@@ -1,0 +1,7 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+UPDATE users SET user_pwd = NULL WHERE user_name = 'g';
+-- please create a mutated program that modifies the previous generation.
+ 
+  
+INSERT INTO users (user_name, user_pwd) VALUES ('n', 'c');
+DROP DATABASE sampleDB;

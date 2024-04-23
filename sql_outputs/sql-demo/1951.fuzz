@@ -1,0 +1,5 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+UPDATE employees_salary_by_salary SET employee_salary = 70000 WHERE emp_salary = 200000;
+SHOW DATABASES;
+SELECT employee_salary + 5000 FROM employees_salary_by_salary;
+DROP DATABASE IF EXISTS sampleDB;

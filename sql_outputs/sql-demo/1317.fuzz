@@ -1,0 +1,9 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS blog (
+	bid INT PRIMARY KEY AUTO_INCREMENT,
+	title text,
+	cat_id INT,
+	cat_name text,
+	content text);
+DESCRIBE blog;
+-- Please create a program that uses the WHERE clause to return all blogs that have a category of ‘Entertainment’.

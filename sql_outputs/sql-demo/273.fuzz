@@ -1,0 +1,25 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ 
+INSERT INTO `student` (`StudentName`, `EmailID`, `Department`) VALUES ('<NAME>', '<EMAIL>', 752.75);
+INSERT INTO `student` (`StudentName`, `EmailID`, `Department`) VALUES ('<NAME>', '<EMAIL>', 1.75);
+INSERT INTO `student` (`StudentName`, `EmailID`, `Department`) VALUES ('<NAME>', '<EMAIL>', 100.08);
+INSERT INTO `student` (`StudentName`, `EmailID`, `Department`) VALUES ('<NAME>', '<EMAIL>', 17001.36);
+INSERT INTO `student` (`StudentName`, `EmailID`, `Department`) VALUES ('<NAME>', '<EMAIL>', 8024.50);
+ 
+SELECT * FROM `student`, student_detail WHERE student.StudentID = detail.StudentID AND student.StudentName='<NAME>' OR student.StudentName='<NAME>'; 
+SELECT `StudentID`, `StudentName`, `Department`, `Gender` 
+FROM `student`, student_detail, student_gender 
+WHERE student.StudentID = student_detail.StudentID
+AND student.StudentID = student_gender.StudentID 
+AND student.StudentName='<NAME>'
+AND student_detail.Gender=student_gender.Gender; 
+SELECT student.`StudentID`, student.`StudentName` 
+FROM `student`, student_detail, student_gender 
+WHERE student.StudentID = student_detail.StudentID 
+AND student.StudentID = student_gender.StudentID 
+AND student.StudentName IN ('Girish', 'Bishwaj')
+AND student_detail.Gender = student_gender.Gender; 
+SELECT student.StudentID, student.StudentName 
+FROM `student`, student_detail 
+WHERE student.StudentID = student_detail.StudentID AND student.StudentID IN (2, 4, 5); 
+SHOW TABLES LIKE'student'; 

@@ -1,0 +1,12 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS `books` (
+  `isbns` INT(10) UNSIGNED
+);
+INSERT INTO `books` (`isbns`)
+VALUES (4000), (1000), (2000);
+SELECT * FROM `books`;
+INSERT INTO `books` (`isbns`)
+VALUES (7000), (5000), (8000);
+SELECT * FROM `books`;
+DROP TABLE `books`;
+DROP DATABASE sampleDB;

@@ -1,0 +1,12 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS people;
+CREATE TABLE people ('name' varchar(80), 'height' character(1));
+CREATE INDEX people_name ON people ('name');
+DROP INDEX IF EXISTS people_height;
+CREATE INDEX people_height ON people ('height');
+SELECT * FROM people;
+DROP TABLE IF EXISTS people;
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS people;
+CREATE TABLE people('name' varchar(80), 'height' integer);
+CREATE INDEX people_name ON people('name');

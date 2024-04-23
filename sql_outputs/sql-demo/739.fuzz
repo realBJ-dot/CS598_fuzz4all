@@ -1,0 +1,37 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- Insert data into both tables and store the ID in a new
+-- temporary table. You need to create a second table from scratch.
+-- Drop the old table
+DROP TABLE IF EXISTS `FirstAndSecondTable`;
+
+CREATE TABLE `FirstAndSecondTable` ( `id` int(11) NOT NULL PRIMARY KEY, `data` varchar(300) CHARACTER SET utf8);
+
+-- INSERT 10 records
+INSERT INTO `FirstAndSecondTable`
+  VALUES (10, 'Washout'), (11, 'Cleaning'), (12, 'Watching TV'), (13, 'Walking'), (14, 'Teaching Others'), (15, 'Teaching Together'), (16, 'Making Movies'), (17, 'Buying Books'), (18, 'Walking In'), (19, 'Teaching Together');
+
+-- INSERT 5 records
+INSERT INTO `FirstAndSecondTable`
+  VALUES (20, 'Teaching Together'), (21, 'Teaching Together'), (22, 'Teaching Together'), (23, 'Teaching Together'), (24, 'Teaching Together');
+
+-- INSERT 2 records again
+INSERT INTO `FirstAndSecondTable`
+  VALUES (25, 'Teaching Together'), (26, 'Teaching Together');
+
+-- INSERT 2 records
+INSERT INTO `FirstAndSecondTable`
+  VALUES (27, 'Teaching Together'), (28, 'Teaching Together');
+
+-- INSERT 5 records
+INSERT INTO `FirstAndSecondTable`
+  VALUES (29, 'Teaching Together'), (30, 'Teaching Together'), (31, 'Teaching Together'), (32, 'Teaching Together'), (33, 'Teaching Together');
+
+-- DROP TABLE IF EXISTS `FirstAndSecondTable`;
+-- DROP TABLE IF EXISTS `FirstAndSecondTable`;
+-- DROP TABLE IF EXISTS `FirstAndSecondTable`;
+-- DROP TABLE IF EXISTS `FirstAndSecondTable`;
+-- DROP TABLE IF EXISTS `FirstAndSecondTable`;
+
+
+;
+ 

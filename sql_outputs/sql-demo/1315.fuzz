@@ -1,0 +1,30 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS products;
+CREATE TABLE products(
+	pid int auto_increment,
+	pname varchar(255),
+	price int,
+	category_id int,
+	PRIMARY KEY (pid),
+	FOREIGN KEY (category_id) REFERENCES category(catId)
+);
+DESCRIBE products;
+DROP TABLE IF EXISTS customers;
+CREATE TABLE customers(
+	cid int auto_increment,
+	fullname text,
+	address text,
+	city text,
+	state text,
+	PRIMARY KEY (cid)
+);
+DESCRIBE customers;
+
+CREATE TABLE customeraddress(
+cid int,
+addressid int,
+PRIMARY KEY((cid), addressid),
+FOREIGN KEY (cid) REFERENCES customers(cid),
+FOREIGN KEY (addressid) REFERENCES address(addrId)
+);
+DESCRIBE customeraddress;

@@ -1,0 +1,2 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- In a very short query, modify the data in the user_db_skills table to use SQL features within a complex way.

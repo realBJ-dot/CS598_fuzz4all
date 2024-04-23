@@ -1,0 +1,14 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- You must create the main table by dropping the old table, drop the temporary table,
+-- and insert rows from mutated table in the new table.
+DROP TABLE IF EXISTS Mutated;
+DROP TABLE IF EXISTS StudentsMutated;
+DROP TABLE IF EXISTS StudentsMutatedBy;
+CREATE TABLE Mutated (Name TEXT, Email TEXT, Instructor BIT(1));
+INSERT INTO Mutated VALUES ('<NAME>', '<EMAIL>', '0');
+INSERT INTO Mutated VALUES ('<NAME>', '<EMAIL>', '0');
+INSERT INTO StudentsMutated VALUES (1, '<NAME>', '<EMAIL>', 'Saint-Louis Polytechnic Institute');
+INSERT INTO StudentsMutated VALUES (2, '<NAME>', '<EMAIL>', 'Saint-Louis Polytechnic Institute');
+INSERT INTO StudentsMutated VALUES (3, '<NAME>', '<EMAIL>', 'Saint-Louis Polytechnic Institute');
+INSERT INTO StudentsMutatedBy VALUES (1, '<NAME>', '<EMAIL>', 'Saint-Louis Polytechnic Institute');
+INSERT INTO StudentsMutatedBy VALUES (2, '<NAME>', '<EMAIL>', 'Saint-

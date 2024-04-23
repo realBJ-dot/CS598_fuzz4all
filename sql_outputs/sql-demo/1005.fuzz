@@ -1,0 +1,16 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+INSERT INTO employees VALUES ("Cynthia", "<EMAIL>", 6543);
+INSERT INTO staff VALUES ("Bob", 1234);
+INSERT INTO employees VALUES ("Vernon", "<EMAIL>", 6598, 1);
+INSERT INTO departments VALUES ("IT", 1);
+INSERT INTO departments VALUES ("Sales", 2);
+INSERT INTO dept_emp VALUES (1, 1);
+INSERT INTO dept_emp VALUES (2, 2);
+INSERT INTO dept_emp VALUES (3, 3);
+INSERT INTO dept_emp VALUES (4, 4);
+-- Please create a mutated program that uses the previous code
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+SELECT * FROM employees;
+SELECT * FROM staff;
+SELECT * FROM departments;
+SELECT * FROM dept_emp;

@@ -1,0 +1,53 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ 
+
+
+
+-- This is a list of all supported options of MySQL using the --help option
+-- --help:
+-- mysql> --help
+
+-- --help-no-data:
+-- mysql> --help-no-data
+
+-- --help-extended:
+-- mysql> --help-extended
+
+-- --help-connection-options:
+-- mysql> --help-connection-options
+
+-- --help-connection:
+-- mysql> --help-connection
+
+-- --help-queries:
+-- mysql> --help-queries
+
+-- Use the --variables option to see all variables present in the connection string
+-- --variables:
+-- mysql> --variables
+
+-- --port:
+-- mysql> --port
+
+-- --help-character-set:
+-- mysql> --help-character-set
+
+-- --default-character-set:
+-- --default-character-set
+
+-- --help-ssl:
+-- mysql> --help-ssl
+
+-- --default-tls:
+-- --default-tls
+
+-- --cipher:
+-- --cipher
+
+-- --no-autocommit:
+-- --no-autocommit
+
+
+-- --default-transaction-isolation:
+-- --default-transaction-isolation
+-- Use \? to learn more about other connection options.

@@ -1,0 +1,18 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `sampleDB`.`teachers`;
+DROP TABLE IF EXISTS `sampleDB`.`teachers2`;
+CREATE TABLE `sampleDB`.`teachers` (
+	`id` SERIAL NOT NULL AUTO_INCREMENT,
+	`teacherName` VARCHAR(255),
+	`password` VARCHAR(255),
+	`teacherCode` VARCHAR(20),
+	PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `sampleDB`.`teachers2` (
+	`id` INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+	`teacherCode` INTEGER NOT NULL,
+	`teacherName` VARCHAR(255) NOT NULL,
+	`password` VARCHAR(255) NOT NULL,
+	PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

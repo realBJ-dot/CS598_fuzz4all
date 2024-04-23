@@ -1,0 +1,12 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- Create tables and insert data in them. The data should be in the sequence of ID values.
+DROP TABLE IF EXISTS test3;
+CREATE TABLE test3 (id INT UNSIGNED, name VARCHAR(50), age INT);
+INSERT INTO test3 (id, name, age) VALUES (1, 'Raj',  22);
+INSERT INTO test3 (id, name, age) VALUES (2, 'Srinivas', 3);
+INSERT INTO test3 (id, name, age) VALUES (3, 'Jeremiah', 16);
+INSERT INTO test3 (id, name, age) VALUES (4, 'Peter', 16);
+SELECT * FROM test3;
+DROP TABLE IF EXISTS test3;
+
+DROP DATABASE IF EXISTS sampleDB;

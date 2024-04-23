@@ -1,0 +1,16 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ALTER TABLE `mng_mstr_jabatan` ADD `no_jabatan` INT NULL DEFAULT NULL AFTER `nama_jabatan`; 
+ALTER TABLE `mng_mstr_jabatan` ADD `is_active_status` TINYINT(1) NULL AFTER `id_level`;
+ALTER TABLE `mng_mstr_jabatan` DROP `id_status`;
+ALTER TABLE `mng_mstr_jabatan` DROP `id_kota_asal`;
+ALTER TABLE `mng_mstr_jabatan` DROP `id_kota_tujuan`;
+-- Please do the same for the previous table.
+ALTER TABLE `mng_mstr_golongan` ADD `no_golongan` INT NULL DEFAULT NULL AFTER `nama_golongan`; 
+ALTER TABLE `mng_mstr_golongan` ADD `is_active_status` TINYINT(1) NULL AFTER `id_level`;
+ALTER TABLE `mng_mstr_golongan` DROP `id_status`;
+ALTER TABLE `mng_mstr_golongan` DROP `id_kota`;
+-- Please try to re-create the program above but do NOT change the table structure. Use sampleDB for the database name and make sure you know the table list by executing sampleDB.listTables(). You should only have one table, sampleDB.worker, which will now be used for this purpose.
+ALTER TABLE `mng_mstr_jabatan` MODIFY `is_active_status` TINYINT(1) NULL AFTER `id_level`;
+ALTER TABLE `mng_mstr_jabatan` MODIFY `tgl_masuk` DATETIME NOT NULL AFTER `nama_jabatan`;
+ALTER TABLE `mng_mstr_jabatan` MODIFY `id_level` INT NOT NULL AFTER `nama_jabatan`;
+ALTER TABLE `mng_mstr_jabatan` MODIFY `id

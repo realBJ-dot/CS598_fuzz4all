@@ -1,0 +1,8 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS users;
+CREATE TABLE users (user_name varchar(30), user_pwd varchar(30));
+INSERT INTO users (user_name, user_pwd) VALUES ('m', 'b');
+UPDATE users SET user_pwd = SHA1(MD5('$3y$10$A09nJ5R189j5J7p1z621Q.047sJ9B5yH.Q36J.zV.360dM/6B73uH'));
+SELECT * FROM user_pwd
+DROP TABLE users;
+DROP DATABASE sampleDB;

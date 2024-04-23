@@ -1,0 +1,38 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS student;
+CREATE TABLE student (
+  id INT UNSIGNED PRIMARY KEY NOT NULL,
+  name char (50) NOT NULL,
+  score INT UNSIGNED);
+Insert into student values (1, '<NAME>', 100);
+-- Please create a program which will update a student's score based on the following criteria: Name matches the given value 'B', Score is less than the given value. After updating the record, you should see the score updated.
+-- You should use update clause with where clause and returning clause.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS students;
+CREATE TABLE students (
+  id INT UNSIGNED PRIMARY KEY NOT NULL,
+  name char (50) NOT NULL,
+  score INT UNSIGNED);
+Insert into students values (1, '<NAME>', 100);
+UPDATE students
+SET score = 60
+WHERE name = 'B' and score < 30;
+-- Please create an application, which reads every 10th record and displays it in the form "Date : XX, Time : XX, Country : XX". You should use cursor statement.
+-- You should use the MySQL select query. You can use GROUP BY clause.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS date_log;
+CREATE TABLE date_log (
+  date_time datetime DEFAULT CURRENT_TIMESTAMP );
+-- Please use SQL-like UPDATE syntax to update the last_name and first_name of all records.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employees;
+CREATE TABLE employees (
+  id INT UNSIGNED PRIMARY KEY NOT NULL,
+  name char (50),
+  last_name char (50),
+  job char (50),
+  department char (50)
+);
+-- Please use SELECT statement to delete the records of the table employees.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employees

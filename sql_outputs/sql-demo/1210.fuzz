@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+SELECT COUNT(*) AS c FROM users;
+ALTER TABLE users MODIFY balance int;
+SELECT COUNT(*) AS c FROM users;
+ALTER TABLE users MODIFY first_name varchar(50);
+SELECT COUNT(*) AS c FROM users;
+ALTER TABLE users MODIFY last_name varchar(50);
+SELECT COUNT(*) AS c FROM users;
+        USE sampleDB;
+DROP DATABASE IF EXISTS sampleDB;

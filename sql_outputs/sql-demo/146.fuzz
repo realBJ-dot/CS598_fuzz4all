@@ -1,0 +1,18 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+INSERT INTO Users_2(username, firstname) VALUES("User1", "Jerome");
+SELECT * FROM Users_2 where username = "User1";
+UPDATE Users_2 SET username = "newusername1" WHERE username = "User1";
+INSERT INTO Users_2(username, firstname) VALUES("User2", "Eric");
+SELECT * FROM Users_2 where username = "User2";
+DROP TABLE Users_2
+-- Try to modify only the firstname column here
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+INSERT INTO Users_2(username, firstname) VALUES("User3", "Kev");
+SELECT * FROM Users_2 where username = "User3";
+UPDATE Users_2 SET firstname = "newfirstname3" WHERE username = "User3";
+INSERT INTO Users_2(username, firstname) VALUES("User4", "Pauline");
+SELECT * FROM Users_2 where username = "User4";
+DROP TABLE Users_2
+-- Now drop the users_2 database
+DROP DATABASE sampleDB
+

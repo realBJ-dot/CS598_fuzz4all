@@ -1,34 +1,3 @@
-USE sampleDB;
-DROP TABLE IF EXISTS orders2;
-DROP TABLE IF EXISTS store;
-DROP TABLE IF EXISTS customer;
-CREATE TABLE IF NOT EXISTS store_products ( 
-	storeID INT NOT NULL, 
-	productsID INT NOT NULL, 
-	quantity INT NOT NULL, 
-	CONSTRAINT fk_products_store_id FOREIGN KEY (storeID) REFERENCES store (storeID), 
-	CONSTRAINT fk_products_products_id FOREIGN KEY (productsID) REFERENCES product (productsID) 
-	ON DELETE CASCADE 
-	ON UPDATE RESTRICT
-);
-CREATE TABLE IF NOT EXISTS orders ( 
-	ordersID INT AUTO_INCREMENT NOT NULL, 
-	date DATE NOT NULL, 
-	quantity INT NOT NULL, 
-	customerID INT NOT NULL, 
-	orderlineID INT NOT NULL, 
-	storeID INT NOT NULL, 
-	CONSTRAINT pk_orders PRIMARY KEY (ordersID)
-);
-CREATE TABLE IF NOT EXISTS order_lines ( 
-	orderlineID INT AUTO_INCREMENT NOT NULL, 
-	productID INT NOT NULL, 
-	quantity INT NOT NULL, 
-	CONSTRAINT pk_order_lines PRIMARY KEY (orderlineID)
-);
--- END OF Q8
-CREATE TABLE IF NOT EXISTS order_lines_2 ( 
-	orderlineID INT UNIQUE NOT NULL, 
-	productID INT UNIQUE NOT NULL, 
-	quantity INT NOT NULL, 
-	CONSTRAINT fk_orderline_order_lines FOREIGN KEY (orderlineID
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users(username char(20) PRIMARY KEY, FirstName VARCHAR(30)) ENGINE=InnoDB;
+INSERT INTO Users(username,Firstname) VALUES('Test','Test'),('Admin','Admin'),('Guest','Guest'),('Super','Super');

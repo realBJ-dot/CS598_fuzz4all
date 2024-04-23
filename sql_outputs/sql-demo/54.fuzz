@@ -1,9 +1,14 @@
-USE sampleDB;
-UPDATE posts SET content = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut mi in enim scelerisque dapibus. Aenean dapibus nisi at turpis accumsan placerat. Donec id nulla lorem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut mi in enim scelerisque dapibus. Aenean dapibus nisi at turpis accumsan placerat. Donec id nulla lorem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.' WHERE content = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut mi in enim scelerisque dapibus. Aenean dapibus nisi at turpis accumsan placerat. Donec id nulla lorem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.';
--- If this statement fails, you are probably missing the required table.
--- Please run the SQL specified in the MySQL Workbench wizard above,
--- then run this program in the command line.
-USE sampleDB;
-SELECT content FROM posts;
--- END OF Q2-- MySQL Workbench SQL --*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*/
--- END OF Q2
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users(username char(20) PRIMARY KEY, FirstName VARCHAR(30));
+CREATE TABLE Roles(username char(20),password varbinary(64), role varchar(10) NOT NULL, FirstName VARCHAR(30) NOT NULL);
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+INSERT INTO Users(username,password, role) VALUES('Guest','<PASSWORD>', 'Guest');
+CREATE TABLE Roles(username char(20),password varbinary(64), role varchar(10) NOT NULL, FirstName VARCHAR(30) NOT NULL);
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+INSERT INTO Roles(role,username,password) VALUES('User','User','d<PASSWORD>27<PASSWORD>99954704938823a1d87195'),('Super','Super','688e50c4d49bd6625db658b29d<PASSWORD>87195'),('User','Guest','39e31b3468231329a3d1d0b72ebab185f7799954704938823a1d87195');
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users(username char(20),password varbinary(64), role varchar(10) NOT NULL);
+CREATE TABLE Roles(username char(20),password varbinary(64), role varchar(10) NOT NULL);
+CREATE DATABASE IF NOT EXISTS sampleDB; 
+INSERT INTO Users(username,password, role) VALUES('Admin','<PASSWORD>0e2e4a6b0267b3b67d73109096335d5a84e

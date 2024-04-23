@@ -1,0 +1,20 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS inventory (
+    id             int auto_increment,
+    item_id         int not null,
+    title          varchar(255) not null,
+    description    text,
+    price_inc      decimal(6, 2) not null,
+    PRIMARY KEY (id),
+    FOREIGN KEY (item_id)
+    REFERENCES items (id)
+);
+INSERT INTO inventory (id, item_id, title, description, price_inc)
+    VALUES (1, 42, 'Red Lantern (New)',
+            'A red lantern which has been made to sit in front of a dark sky.', '3.89'),
+      (2, 38, 'Blue Lantern (New)',
+            'Blue lantern which has been made in front of a dark sky.', '5.99'),
+           (9, 23, 'Brown Lantern (New)',
+            'Brown lantern which has been made to sit in front of a dark sky.', '1055.95'),
+           (37, 97, 'Cinnamon Tablet',
+            'Tablet of bronze made in color with the Cinnamon color.', '2.50

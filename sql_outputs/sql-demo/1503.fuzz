@@ -1,0 +1,15 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE users_details;
+CREATE TABLE users_details(user_id INTEGER, phone VARCHAR(50) UNIQUE, email VARCHAR(500) UNIQUE);
+INSERT INTO users_details(user_id, email) VALUES (1, '<EMAIL>');
+INSERT INTO users_details(user_id, email) VALUES (2, '<EMAIL>');
+DROP TABLE users_details;
+SELECT * FROM users_details;
+-- Please create a very short query which uses SQL features in a complex way. Be sure to use ENGINE=InnoDB. You should only use sampleDB as the database and assume no other table exist. You need to create new tables to perform operations. In the end, drop all tables you created. */
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE users_details;
+CREATE TABLE users_details(user_id INTEGER, phone VARCHAR(50) UNIQUE, email VARCHAR(500), password VARCHAR(50));
+INSERT INTO users_details(user_id, email, password) VALUES (3, '<EMAIL>', '<PASSWORD>310');
+INSERT INTO users_details(user_id, email, password) VALUES (4, '<EMAIL>', '<PASSWORD>a8044d<PASSWORD>8445b2<PASSWORD>');
+DROP TABLE users_details;
+-- END sampleDB

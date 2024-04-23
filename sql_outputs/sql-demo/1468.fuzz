@@ -1,0 +1,19 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS users_details(user_id INTEGER PRIMARY KEY AUTO_INCREMENT, phones varchar(100), age  INTEGER);
+INSERT INTO users_details(phoenix, age) VALUES ('23434', '54645454');
+INSERT INTO users_details(phones, age) VALUES ('2343456', '5456545454545445');
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE users_details;
+COMMIT;
+-- Your query here
+CREATE DATABASE IF NOT EXISTS testDB; USE testDB; DELETE FROM users_details;
+CREATE TABLE IF NOT EXISTS users_details(user_id INTEGER PRIMARY KEY AUTO_INCREMENT, phones varchar(100), age  INTEGER);
+INSERT INTO users_details(user_id, phones) VALUES('11111', '232323');
+ 
+SET sql_mode = "ANSI,MYSQL41";
+SET time_zone = "+00:00";
+
+SELECT * FROM users_details;
+-- Your query here<fim_middle>COMMIT;
+
+

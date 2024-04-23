@@ -1,0 +1,20 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employees_salary;
+CREATE TABLE employees_salary (
+   employee_salary        INT UNSIGNED,
+   PRIMARY KEY (employee_salary));
+UPDATE employees_salary set employee_salary= employee_salary+ 25000 where employee_salary = 2500;
+SELECT * FROM employees_salary;
+-- Please create a query program that prints the first 10 records. 
+select * from employees_salary limit 0, 10;
+-- Please update the previous query to add a new condition and remove the condition used previously.
+select * from employees_salary limit 0, 10;
+-- Please create a modified program to add a new column. 
+use sampleDB;
+create table employees_salary(
+  employee_salary        int UNSIGNED);
+use employees_salary;
+insert into employees_salary values (100000);
+use sampleDB;
+select * from employees_salary;
+

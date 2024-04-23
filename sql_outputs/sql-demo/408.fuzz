@@ -1,0 +1,4 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ALTER TABLE Person ADD (Home_addr TEXT);
+UPDATE Person SET (Last_name, First_name, Home_addr) = ('Smith', 'John', '<NAME>');
+SHOW STATUS LIKE "Query_Cache_Hits";

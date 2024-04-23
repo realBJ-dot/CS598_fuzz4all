@@ -1,0 +1,29 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS mytable( myid INT PRIMARY KEY, title VARCHAR(255) NOT NULL UNIQUE, price DECIMAL(10,2) DEFAULT '0.00');
+SELECT myid, title FROM mytable;
+UPDATE mytable SET price = 0.50 WHERE myid = 1;
+SELECT myid, title FROM mytable;
+UPDATE mytable USING mytable_mutated SET price = 5.60 WHERE myid = 1;
+SELECT myid, title FROM mytable;
+DROP TABLE mytable ;
+SELECT myid, title, price FROM mytable;
+DROP DATABASE sampleDB;
+-- Please create a new database sampleDB based on an existing database sampleDB
+CREATE DATABASE IF NOT EXISTS sampleDB_new; USE sampleDB_new;
+CREATE TABLE IF NOT EXISTS mytable( myid INT PRIMARY KEY, title VARCHAR(255) NOT NULL UNIQUE, price DECIMAL(10,2) DEFAULT '0.00');
+SELECT myid, title FROM mytable;
+UPDATE mytable SET price = 5.60 WHERE myid = 1;
+SELECT myid, title FROM mytable;
+DROP TABLE mytable ;
+SELECT myid, title FROM mytable;
+DROP DATABASE sampleDB_new;
+-- Please create a new database sampleDB based on an existing database sampleDB
+CREATE DATABASE IF NOT EXISTS sampleDB_new; USE sampleDB_new;
+CREATE TABLE IF NOT EXISTS mytable( myid INT PRIMARY KEY, title VARCHAR(255) NOT NULL UNIQUE, price DECIMAL(10,2) DEFAULT '0.00');
+SELECT myid, title FROM mytable;
+UPDATE mytable SET price = 5.60 WHERE myid = 1;
+SELECT myid, title FROM mytable;
+DROP DATABASE sampleDB_new;
+-- This is a way to see the difference between two different ways to write a statement.
+-- 1. One way uses parentheses in a line. The statement is executed in the context of the entire block.
+-- 2. The other way uses square brackets to reference specific objects. The statements is executed in

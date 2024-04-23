@@ -1,0 +1,9 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS useru;
+CREATE TABLE useru(u_id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,username VARCHAR(20),
+password VARCHAR(15));
+INSERT INTO USER(username, password) VALUES ('john', '123456');
+INSERT INTO USER(username, password) VALUES ('admin', '234567');
+INSERT INTO USER(username, password) VALUES ('adminss', '123556');
+INSERT INTO USER(username, password) VALUES ('adminsss', '235634');
+INSERT INTO USER(username, password) VALUES ('adminsss', '123654');

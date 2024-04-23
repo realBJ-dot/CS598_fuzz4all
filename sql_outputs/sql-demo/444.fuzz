@@ -1,0 +1,16 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE mytable(
+   a INT PRIMARY KEY AUTO_INCREMENT,
+    b TEXT UNIQUE KEY,
+    c INT,
+    d TEXT,
+    e DATETIME
+)ENGINE=InnoDB;
+# To see differences
+show tables;
+show tables from sampleDB;
+SHOW FULL COLUMNS FROM mytable;
+# To truncate tables
+use sampleDB;
+DELETE FROM mytable;
+show tables;

@@ -1,0 +1,30 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `FirstTable`;
+DROP TABLE IF EXISTS `SecondTable`;
+CREATE TABLE `FirstTable` ( `Name` varchar(20) NOT NULL)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE `SecondTable` ( `ID` INT NOT NULL AUTO_INCREMENT, `Name` varchar(200) NOT NULL, `Address` varchar(200) NOT NULL, `Birthdate` DATETIME NOT NULL, `Gender` ENUM('MALE','FEMALE','UNDISCLOSED','NA'), `Type` ENUM('PERSON','COMPANY'), `Phone` VARCHAR(10) NOT NULL, PRIMARY KEY(`ID`));
+INSERT INTO `FirstTable` (`Name`) VALUES 
+    ('Name1'), ('Name2'), ('Name3'), ('Name4');
+INSERT INTO `SecondTable`(`Name`,`Address`,`Birthdate`,`Gender`,`Type`,`Phone`) VALUES
+    (NULL,'Address','Birthdate','Gender','Type','Phone'),
+    (NULL,'Address','Birthdate','Gender','Type','Phone'),
+    (NULL,'Address','Birthdate','Gender','Type','Phone'),
+    (NULL,'Address','Birthdate','Gender','Type','Phone'),
+    (NULL,'Address','Birthdate','Gender','Type','Phone'),
+    (NULL,'Address','Birthdate','Gender','Type','Phone'),
+    (NULL,'Address','Birthdate','Gender','Type','Phone'),
+    (NULL,'Address','Birthdate','Gender','Type','Phone'),
+    (NULL,'Address','Birthdate','Gender','Type','Phone'),
+    (NULL,'Address','Birthdate','Gender','Type','Phone'),
+    (NULL,'Address','Birthdate','Gender','Type','Phone'),
+    (NULL,'Address','Birthdate','Gender','Type','Phone'),
+    (NULL,'Address','Birthdate','Gender','Type','Phone'),
+    (NULL,'Address','Birthdate','Gender','Type','Phone'),
+    (NULL,'Address','Birthdate','Gender','Type','Phone'),
+    (NULL,'Address','Birthdate','Gender','Type','Phone'),
+    (NULL,'Address','Birthdate','Gender','Type','Phone'),
+    (NULL,'Address','Birthdate','Gender','Type','Phone'),
+    (NULL,'Address','Birthdate','Gender','Type','Phone'),
+    (NULL,'Address','Birthdate','Gender','Type','Phone'),
+    (NULL,'Address','Birthdate','Gender','Type','Phone'),
+    (NULL,'Address','Birthdate','Gender','Type

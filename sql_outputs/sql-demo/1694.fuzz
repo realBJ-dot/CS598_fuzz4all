@@ -1,0 +1,18 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `employees`;
+CREATE TABLE `employees` (
+	`id` int(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`staff_id` int(20) UNSIGNED NOT NULL,
+	`salary` int(25) NOT NULL,
+	PRIMARY KEY (`id`,`staff_id`),
+	KEY `staffFK` (`staff_id`),
+	CONSTRAINT `staffFK` FOREIGN KEY (`staff_id`) REFERENCES `staff` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+ 
+DROP DATABASE sampleDB;
+-- If you wish to change the username/password for our root user, edit your ~/.my.cnf file and change the password for root user accordingly. 
+# If you do not wish to change the username/password for root user, uncomment the next line to skip MySQL root
+# user password change. 
+CREATE DATABASE IF NOT EXISTS sampleDB; 
+USER YOUR_DEV_DB_USERNAME@localhost;

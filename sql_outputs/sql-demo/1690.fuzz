@@ -1,0 +1,42 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `employees`;
+CREATE TABLE `employees` (
+	`staff_id` int(20) UNSIGNED NOT NULL,
+	`salary` int(25) DEFAULT NULL,
+	`staff_name` varchar(45) DEFAULT NULL,
+	PRIMARY KEY (`staff_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- Please create the mutated program.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `employees`;
+CREATE TABLE `employees` (
+	`id` int(20) UNSIGNED NOT NULL,
+	`staff_id` int(20) UNSIGNED NOT NULL,
+	`gender` int(2) DEFAULT NULL,
+	`staff_name` varchar(45) DEFAULT NULL,
+	PRIMARY KEY (`id`),
+	KEY `staffFK` (`staff_id`),
+	CONSTRAINT `staffFK` FOREIGN KEY (`staff_id`) REFERENCES `staff` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- Please create the mutated program in your local development environment.
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `employees`;
+CREATE TABLE `employees` (
+	`id` int(20) UNSIGNED NOT NULL,
+	`gender` int(2) DEFAULT NULL,
+	`staff_id` int(20) UNSIGNED NOT NULL,
+	PRIMARY KEY (`id`, `staff_id`),
+	KEY `staffFK` (`staff_id`),
+	CONSTRAINT `staffFK` FOREIGN KEY (`staff_id`) REFERENCES `staff` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+INSERT INTO `employees`
+(id, gender, staff_id)
+VALUES
+(1, null, 2),
+(11, 2, 5),
+(12, 2, 6),
+(13, 2, 7),
+(2, 3, 8),
+(14, 3, 9),
+(15, 3

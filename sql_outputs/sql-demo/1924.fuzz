@@ -1,0 +1,13 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE emp_salary(
+    emp_id INT UNSIGNED,
+    emp_salary INT UNSIGNED,
+    PRIMARY KEY (emp_salary, emp_id),
+    FOREIGN KEY (emp_id) REFERENCES accounts(account_id));
+CREATE TABLE accounts(
+    account_id INT UNSIGNED,
+    account_holder VARCHAR(255) NOT NULL,
+    account_type ENUM('Checking','Savings','Credit Card'),
+    PRIMARY KEY (account_id));
+INSERT INTO accounts(account_id) VALUES (1);
+INSERT INTO accounts(account_id) VALUES (2);

@@ -1,0 +1,34 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employees_salary_by_salary;
+CREATE TABLE employees_salary_by_salary
+        ( employee_salary DECIMAL(12,2),
+        employee_id INTEGER)
+        ENGINE=InnoDB;
+INSERT INTO employees_salary_by_salary
+              ( employee_salary,
+              employee_id )
+VALUES
+              ( 2012-06-04,
+              1 );
+SELECT employee_salary FROM employees_salary_by_salary WHERE employee_id = 1;
+SELECT employee_salary + 100000 FROM employees_salary_by_salary;
+DROP DATABASE IF EXISTS sampleDB;
+
+-- 1. Install PHP 5.6
+#https: 
+-- 2. Setup Apache
+-- Download Apache
+wget http: 
+tar -xvf httpd-2.8.36.tar.gz
+cd httpd-2.8.36
+./configure --prefix=/var/www/html --with-php-config=/usr/bin/php-config
+-- start the process of compiling the code and installing on your system by running the below command
+make
+sudo make install
+-- Start Apache
+sudo service httpd start
+-- 3. Write the Code To Create A Database
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+#end
+--

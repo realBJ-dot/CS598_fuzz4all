@@ -1,18 +1,22 @@
-USE sampleDB;
-REPLACE INTO orders3 (date, quantity,customerID,storeID) VALUES ('2019-01-02', 10,'2','1'),('2019-03-03', 5,'3','1'),('2019-04-03', 30,'1','2'),('2019-06-07',3,'1','2');	-- Insert values of the table
-SELECT itemID, item_code, item_desc, stock.quantity*item_price - stock.quantity*inventory.quantity AS minus
-FROM orders3 INNER JOIN inventory ON orders3.itemID = inventory.itemID INNER JOIN stock ON inventory.stockID = stock.stockID
-ORDER BY itemID; 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users (id INT, username char(20) PRIMARY KEY, FirstName VARCHAR(30));
+INSERT INTO Users (id,username,firstname) VALUES(NULL,'Test','Test'), (NULL,'Admin','Admin'), (NULL,'Guest','Guest');
 
- 
-USE sampleDB;
-SELECT date, itemID, item_code, item_desc, SUM(price*quantity) AS price, AVG(price) AS avg
-FROM orders3 INNER JOIN inventory ON orders3.itemID = inventory.itemID
-GROUP BY date,itemID,item_code,item_desc
-ORDER BY price DESC;
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users_Table (id INT, username char(20) PRIMARY KEY, FirstName VARCHAR(30));
+INSERT INTO Users_Table (id,username,firstname) VALUES(NULL,'Test','Test'), (NULL,'Admin','Admin'), (NULL,'Guest','Guest'), (NULL,'Super','Super');
 
-REPLACE INTO orders3 (date, quantity,customerID,storeID) VALUES ('2019-01-02', 10,'2','1'),('2019-03-03', 5,'3','1'),('2019-04-03', 30,'1','2'),('2019-06-07',3,'1','2');	-- Insert values of the table
-  INSERT INTO orders3 (date, quantity,customerID,storeID) VALUES ('2019-04-09', 10,'2','1'),('2019-06-22', 5,'3','1');	-- Insert values of the table
- 
- -- 1.	For each item, print the price of the first stock in the list.
- --
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users (id INT, username char(20) PRIMARY KEY, FirstName VARCHAR(30)) default NULL, LastName VARCHAR(20), Email VARCHAR(45)	default NULL;
+INSERT INTO Users (id,username,firstname,lastname,email) VALUES(NULL,'Test','Test','Test','<EMAIL>'), (NULL,'Admin','Admin','Admin','<EMAIL>'), (NULL,'Guest','Guest','Guest','<EMAIL>');
+
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users (id INT AUTO_INCREMENT, username varchar(20) primary key, firstname varchar(30), lastname varchar(30), email varchar(45), password char(90) default NULL);
+insert into users (username, firstname, lastname, email, password) values ('admin', 'admin', 'admin', '<PASSWORD>', 'admin');
+
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB; 
+CREATE TABLE users(id INT, nickname char(5), city char(20), salary REAL default 20000, createddate TIMESTAMP default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP, updatets TIMESTAMP default NULL, PRIMARY KEY (id));
+
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users(username char(20) UNIQUE, password char(20), firstname char(30), lastname char(30), gender char(1));
+INSERT INTO Users(username,password,firstname,lastname,gender) VALUES('Super','<PASSWORD>',NULL,NULL,'male'),('Test1','<PASSWORD>',NULL,NULL,'male'),('

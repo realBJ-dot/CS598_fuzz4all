@@ -1,0 +1,4 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+UPDATE mytable SET price=price+price;
+DROP DATABASE sampleDB;
+

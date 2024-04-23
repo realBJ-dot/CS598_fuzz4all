@@ -1,0 +1,69 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+-- Now change the column data type:
+ALTER TABLE Student MODIFY First_Name VARCHAR(50);
+ALTER TABLE Student MODIFY Grade TINYINT;
+ALTER TABLE Student MODIFY Last_Name CHAR(50);
+
+COMMIT;
+-- And drop the database
+DROP DATABASE IF EXISTS sampleDB;
+-- The purpose of this exercise is to recreate the database table structure using SQL (stored procedures are used in this case - see "Exercise 2")
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+CREATE TABLE Student (First_Name VARCHAR(30), Last_Name CHAR(20), Grade INT);
+DROP PROCEDURE IF EXISTS updateGrade;
+DELIMITER $$
+CREATE PROCEDURE updateGrade(IN student_id INT)
+BEGIN
+	UPDATE Student SET Grade = 7
+	WHERE Student_Id = student_id;
+END $$
+DELIMITER ;
+-- Update Grade:
+CALL updateGrade(2);
+CALL updateGrade(1);
+
+SELECT * FROM Student;
+
+DROP PROCEDURE IF EXISTS updateGrade;
+DELIMITER $$
+CREATE PROCEDURE updateGrade(IN student_id INT)
+BEGIN
+	UPDATE Student SET Grade = 7
+	WHERE Student_Id = student_id;
+END $$
+DELIMITER ;
+-- Update Grade:
+CALL updateGrade(2);
+CALL updateGrade(1);
+
+SELECT * FROM Student;
+
+DROP PROCEDURE IF EXISTS updateGrade;
+DELIMITER $$
+CREATE PROCEDURE updateGrade(IN student_id INT)
+BEGIN
+	UPDATE Student SET Grade = 7
+	WHERE Student_Id = student_id;
+END $$
+DELIMITER ;
+-- Update Grade:
+CALL updateGrade(2);
+CALL updateGrade(1);
+
+SELECT * FROM Student;
+
+DROP DATABASE IF EXISTS sampleDB;
+-- And add a constraint on the columns:
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+-- Now change the column data type:
+ALTER TABLE Student MODIFY First_Name VARCHAR(30);
+ALTER TABLE Student MODIFY Grade TINYINT;
+ALTER TABLE Student MODIFY Last_Name CHAR(20);
+COMMIT;
+-- And drop the database
+DROP DATABASE IF EXISTS sampleDB;
+
+CREATE

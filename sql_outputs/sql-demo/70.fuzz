@@ -1,48 +1,6 @@
-USE sampleDB;
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users(username char(20) PRIMARY KEY, FirstName VARCHAR(30)) ENGINE=InnoDB;
+INSERT INTO Users(username,Firstname) VALUES('Test','Test'),('Admin','Admin'),('Guest','Guest'),('Super','Super');
 
-DROP TABLE IF EXISTS orders3;
-DROP TABLE IF EXISTS stock1;
-CREATE TABLE IF NOT EXISTS orders3 ( 
-	ordersID INT AUTO_INCREMENT NOT NULL, 
-	date DATE NOT NULL, 
-	quantity INT NOT NULL, 
-	customerID INT NOT NULL, 
-	storeID INT NOT NULL, 
-	CONSTRAINT pk_orders3 PRIMARY KEY (ordersID)
-);
-CREATE TABLE IF NOT EXISTS stock1 ( 
-	stockID INT AUTO_INCREMENT NOT NULL, 
-	date DATE NOT NULL, 
-	quantity INT NOT NULL, 
-	stock_code VARCHAR(24) NOT NULL, 
-	CONSTRAINT pk_stock1 PRIMARY KEY (stockID)
-);
--- 1.	For each item, print the price of the first stock in the list.
--- 2.	For each item, add it to the inventory if the price is less than 0.
--- 3.	For each item, subtract it from the inventory if it is greater than the item price.
--- End of your Program
--- Please create an iterative program that adds to the previous generation
-USE sampleDB;
 
-DROP TABLE IF EXISTS orders3;
-DROP TABLE IF EXISTS stock1;
-CREATE TABLE IF NOT EXISTS orders3 ( 
-	ordersID INT AUTO_INCREMENT NOT NULL, 
-	date DATE NOT NULL, 
-	quantity INT NOT NULL, 
-	customerID INT NOT NULL, 
-	storeID INT NOT NULL, 
-	CONSTRAINT pk_orders3 PRIMARY KEY (ordersID)
-);
-CREATE TABLE IF NOT EXISTS stock1 ( 
-	stockID INT AUTO_INCREMENT NOT NULL, 
-	date DATE NOT NULL, 
-	quantity INT NOT NULL, 
-	stock_code VARCHAR(24) NOT NULL, 
-	CONSTRAINT pk_stock1 PRIMARY KEY (stockID)
-);
--- 1.	For each item, print the price of the first stock in the list.
--- 2.	For each item, add it to the inventory if the price is less than 0.
--- 3.	For each item, subtract it from the inventory if it is greater than the item price.
--- End of your Program
--- Please create a recursive program that uses the
+```

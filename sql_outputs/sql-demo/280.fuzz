@@ -1,0 +1,5 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+SELECT CONCAT('My name is ',FIRST_NAME,LAST_NAME,': ');
+SELECT CONCAT('My designation is ',Designation,' and I have',SALARY, '$');
+UPDATE employee SET Salary=SALARY*SALARY_MULTIPLY AND DESIGNATION = 'Intern';
+--

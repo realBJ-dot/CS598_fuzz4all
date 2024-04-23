@@ -1,0 +1,14 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+UPDATE Users_2 SET FirstName = 'Gabriel'
+SHOW SQL
+-- Please create a sample table that contains information on all of the countries by their names.
+CREATE TABLE Countries(id SERIAL PRIMARY KEY, name VARCHAR(30));
+INSERT INTO Countries VALUES(1,'Italy'), (2, 'Japan'), (3, 'China');
+SELECT * FROM Countries ORDER BY Name
+SELECT COALESCE(name, 'Unknown') FROM Countries WHERE id IN(1, 2, 3);
+SELECT UPPER(name) FROM Countries WHERE 1 IN (1, 2, 3, 4)
+-- Please create a new table that will list all user names who have more than 3 distinct characters in the first name. Print this table in reverse order.
+CREATE TABLE AllDifferentCharacters(first_character CHAR (1), username CHAR (20), count INT);
+SELECT COUNT(*) FROM AllDifferentCharacters WHERE first_character=(SELECT DISTINCT CHAR(1) FROM Users_2) ORDER BY username DESC;
+
+

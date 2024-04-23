@@ -1,0 +1,21 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS MutatedGen2 (id INT AUTO_INCREMENT PRIMARY KEY, price DECIMAL(10,2) UNIQUE);
+UPDATE MutatedGen2 SET price = 80 WHERE id = 1;
+SELECT price FROM MutatedGen2;
+DELETE FROM MutatedGen2 WHERE id = 1;
+SELECT price FROM MutatedGen2;
+DROP TABLE MutatedGen2;
+DROP DATABASE sampleDB;
+-- Please create a very very short query which uses the JSON parser in a simple way. You should not use sampleDB as the database for the tests, but the database where the query will be executed: You need to create a table to store test data (test_data is the name in your preferred language). In the end, drop the table. */
+CREATE DATABASE IF NOT EXISTS testDB; USE testDB;
+CREATE TABLE IF NOT EXISTS test_data (username VARCHAR(10), password <PASSWORD>(10));
+INSERT INTO test_data VALUES ("Marco", "1"), ("Alex", "999"),  ("Manuell", "777");
+INSERT INTO test_data (username, password) VALUES ( "Daniel", "99");
+INSERT INTO test_data VALUES  ("Carlo","78"), ("Cruz","654");
+-- After writing some code (e.g. a table creation routine) for creating a database, a simple SQL query, and a mutation, run a simple test query: You need to write a program that uses tables created for this purpose. In the end, query for all the data stored in test_data and print the username and password fields. */
+CREATE DATABASE IF NOT EXISTS testDB; USE testDB;
+CREATE TABLE IF NOT EXISTS test_data2( id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,username VARCHAR(10), password VARCHAR(10));
+INSERT INTO test_data2 (username, password) VALUES ( "Marco", "1"), ("Alex", "999"),  ("Manuell", "777");
+INSERT INTO test_data2 (username, password) VALUES  ("Daniel", "99");
+INSERT INTO test_data2 VALUES  ("Carlo","78"), ("Cruz","654");
+-- After writing some code (e.g. a table creation routine) for creating a database, a simple SQL query, and a mutation, run a simple update query for the database: You need to write

@@ -1,0 +1,7 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+UPDATE Person SET First_name = "NewName", Last_name = "NewLast";
+INSERT INTO Employee values ("NewName", "NewLast");
+INSERT IGNORE INTO Person (First_name, Last_name);
+DROP TABLE Person;
+DROP TABLE Employee;
+DROP DATABASE IF EXISTS sampleDB;

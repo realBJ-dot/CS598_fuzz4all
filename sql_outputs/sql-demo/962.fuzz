@@ -1,0 +1,22 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+--
+-- Please create a different database and make this one the current database. Use sampleDB as the table name prefix.
+CREATE DATABASE IF NOT EXISTS sampleDB AS DEFAULT CHARACTER SET utf8;
+--
+-- The `DATABASE` name must be case insensitive and consist of letters or numbers only.
+--
+
+--
+-- Please create your own tables in the sampleDB database
+CREATE TABLE  `sampleTable` (
+  `id` INT NOT NULL auto_increment,
+  `userName` CHAR(50) NOT NULL,
+  `company` VARCHAR(80),
+  `salary` INT,
+  `email` VARCHAR(50),
+  `lastLogin` DATETIME,
+  `createDate` DATETIME,
+  `modifyDate` DATETIME,
+  --
+  PRIMARY KEY (`id`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8

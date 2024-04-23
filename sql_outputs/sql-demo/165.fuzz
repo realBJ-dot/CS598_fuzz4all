@@ -1,0 +1,23 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users_1(username char(20) PRIMARY KEY, FirstName VARCHAR(30));
+DELETE FROM Users_1 WHERE Users_1.username="User3";
+DROP TABLE Users_1
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users(username char(20) PRIMARY KEY, FirstName VARCHAR(30), address VARCHAR(30), phone CHAR(20), username2 char(20), username3 char(20));
+DROP TABLE Users
+-- Please use the following SQL to create new table with a single character primary key. Insert the following values: name,age,salary; value1,25,10000. Insert the following values: name,age,salary; value1,25,10000. Insert the following values; value1,21,9950.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE table1(id1 char(10) primary key, id2 char(10), id3 char(10));
+INSERT INTO table1 VALUES ('id1', 'id 1', 'id 1');
+INSERT INTO table1 VALUES ('id2', 'id 2', 'id 2');
+INSERT INTO table1 VALUES ('id3', 'id 3', 'id 3');
+DROP TABLE table1
+-- Use the following query to create three tables. The tables should have same number of rows. Name them sample1, sample2, and sample3
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS sample1(id char(10), name char(10), salary INT, date DATE, time VARCHAR(10));
+CREATE TABLE IF NOT EXISTS sample2(id1 char(10), id2 char(10));
+CREATE TABLE IF NOT EXISTS sample3(id1 char(10), id2 char(10), id3 char(10));
+DROP TABLE sample1;
+DROP TABLE sample2;
+DROP TABLE sample3

@@ -1,5 +1,12 @@
-USE sampleDB;
--- INSERT INTO orders3 VALUES(2, '01/06/19', 3, 4, 0);
--- INSERT INTO orders3 VALUES(3, '05/01/19', 10, 1, 2);
-UPDATE orders3 SET inventory = inventory + quantity WHERE stockID = stock.stockID AND price >= 0;
-UPDATE orders3 SET inventory = inventory - quantity WHERE quantity > stock.stockID;
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users (username bigint PRIMARY KEY, FirstName varchar(30), Lastname varchar(30), Phone int(10));
+INSERT INTO Users (username, Firstname, Lastname, Phone) VALUES (1800,"Mark","Lee",12345), (53458,"Steve","King",98765), (45, "Amit","Sharma", 84625), (69079231,"Arjun","Tiwari", 666655);
+-- A query to select each of the columns in the Users table
+select * from Users;
+INSERT INTO users (username,firstname,lastname,phone) values (101,'Mary','Simpson',145);
+
+ 
+DROP DATABASE IF EXISTS sampleDB;
+ ;
+INSERT INTO users (username,Firstname,Lastname) VALUES (100,'John','Doe'),(102,'Mike','Dunlap'),(104,'Adam','Jones');
+ ;

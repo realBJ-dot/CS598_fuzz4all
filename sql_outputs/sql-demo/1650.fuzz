@@ -1,0 +1,11 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `sampleDB`.`staff`;
+CREATE TABLE IF NOT EXISTS `sampleDB`.`staff` (
+	`id` serial NOT NULL AUTO_INCREMENT,
+	`staffName` varchar(255) NOT NULL,
+	`staffGrade` varchar(10) NOT NULL DEFAULT 'A',
+	`staffCode` varchar(20) NOT NULL,
+	PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- Please create a query to delete all the staff entries. Use multiple tables to achieve efficient, concurrent operations.
+SELECT `id`, `staffName`, `staffCode` FROM `sampleDB`.`staff`

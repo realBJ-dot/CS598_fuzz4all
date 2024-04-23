@@ -1,0 +1,25 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- 
+-- 2-2 Creating a New Table
+--
+CREATE TABLE Names_Table(Id_Number INT, First_Name VARCHAR(20), Last_Name VARCHAR(20), Occupation VARCHAR(50), Department VARCHAR(10), City VARCHAR(20), Country VARCHAR(50));
+-- 
+-- 2-3 Inserting Data
+--
+INSERT INTO Names_Table (Id_Number, First_Name, Last_Name, Occupation, Department, City, Country) VALUES (113, 'Alexander', 'Bezmeyer', 'Owner', 'IT', 'Paris', 'France');
+INSERT INTO Names_Table (Id_Number, First_Name, Last_Name, Occupation, Department, City, Country) VALUES (3, 'Robert', 'Holtz', 'Vice President', 'Sales', 'Kiev', 'Ukraine');
+INSERT INTO Names_Table (Id_Number, First_Name, Last_Name, Occupation, Department, City, Country) VALUES (8, 'Steven', 'Auer', 'Marketing Manager', 'Marketing', 'Stuttgart', 'Germany');
+INSERT INTO Names_Table (Id_Number, First_Name, Last_Name, Occupation, Department, City, Country) VALUES (43, 'Nicole', 'Alzheimer', 'Owner', 'IT', 'Mannheim', 'Germany');
+INSERT INTO Names_Table (Id_Number, First_Name, Last_Name, Occupation, Department, City, Country) VALUES (46, 'Greta', 'Reinhardt', 'Owner', 'IT', 'Wolfsburg', 'Germany');
+INSERT INTO Names_Table (Id_Number, First_Name, Last_Name, Occupation, Department, City, Country) VALUES (50, 'Oliver', 'Watts', 'Owner', 'IT', 'New York', 'United States');
+INSERT INTO Names_Table (Id_Number, First_Name, Last_Name, Occupation, Department, City, Country) VALUES (35, 'Charles', 'Rice', 'Manager', 'Sales', 'Paris', 'France');
+SELECT * FROM Names_Table;
+
+<HR>
+<H4 ALIGN=LEFT>MySQL Commands used: </H4>
+
+<UL>
+<LI>SHOW DATABASES</LI>
+<LI>SHOW TABLE STATUS</LI>
+<LI>DESCRIBE TABLE</LI>
+<LI>SELECT table_name FROM

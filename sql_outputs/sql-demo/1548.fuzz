@@ -1,0 +1,5 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+INSERT INTO testTable (columna, columnb, columnc)
+VALUES ('Hello', 'World', 5), ('Hello', 'World', 10), ('Hello', 'World', 20), ('Hello', 'World', '1'), ('Hello', 'World', '11'), ('Hello', 'World', '22'), ('Hello', 'World', '3');
+COMMIT; 

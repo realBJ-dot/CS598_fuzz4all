@@ -1,0 +1,40 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE mytable( myid int, title varchar(255));
+INSERT INTO mytable(myid, title) VALUES(1,'abc');
+INSERT INTO mytable(myid, title) VALUES(NULL,'abc');
+INSERT INTO mytable(myid, title) VALUES(2,'def');
+INSERT INTO mytable(myid, title) VALUES(NULL,'def');
+SELECT * FROM mytable ;
+DROP TABLE mytable;
+DROP DATABASE sampleDB;
+
+mysql> CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ERROR 1063 (23000): Duplicate entry 'abc' for key 'PRIMARY'
+mysql> ALTER TABLE mytable DROP PRIMARY KEY;
+Query OK, 1 row affected, 0.00 sec
+Records: 1  Duplicates: 0  Warnings: 0
+mysql> INSERT INTO mytable(myid, title) VALUES(1,'abc');
+Query OK, 1 row affected, 0.00 sec
+Records: 1  Duplicates: 0  Remaining rows: 1 After delete: 0
+mysql> INSERT INTO mytable(myid, title) VALUES(3,'ghi');
+Query OK, 1 row affected, 0.00 sec
+Records: 1  Duplicates: 0  Remaining rows: 1 After delete: 0
+mysql> INSERT INTO mytable(myid, title) VALUES(2,'def');
+Query OK, 1 row affected, 0.01 sec
+Records: 2  Duplicates: 0  Remaining rows: 1 After delete: 0
+mysql> SELECT * FROM mytable ORDER BY myid ASC;
++---------+-----------+
+| myid   | title    |
++---------+-----------+
+| NULL   | abc      |
+| 1      | def      |
+| 2      | ghi      |
++---------+-----------+
+3 rows in set (0.01 sec)
+mysql> DROP TABLE mytable;
+Query OK, 0 rows affected (1.18 sec)
+Records: 2  Duplicates: 0  Remaining rows: 1
+mysql> DROP DATABASE sampleDB;
+ Query OK, 1 row affected (0.00 sec)
+Records: 1
+mysql>

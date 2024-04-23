@@ -1,0 +1,27 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- Insert data in the existing tables
+INSERT INTO `firstTable` (Id, firstName, lastName) VALUES (2, 'Sam', 'Smith');
+INSERT INTO `firstTable` (Id, firstName, lastName) VALUES (3, 'Ben', 'Green');
+INSERT INTO `secondTable` (Id, lastName) VALUES ('Walsh');
+INSERT INTO `secondTable` (Id, lastName) VALUES ('Watts');
+INSERT INTO `thirdTable` (firstId, nextId) VALUES (2, 2);
+INSERT INTO `thirdTable` (firstId, nextId) VALUES (3, 2);
+INSERT INTO `thirdTable` (firstId, nextId) VALUES (3, 1);
+INSERT INTO `thirdTable` (firstId, nextId) VALUES (2, 1);
+INSERT INTO `thirdTable` (firstId, nextId) VALUES (3, 3);
+INSERT INTO `thirdTable` (firstId, nextId) VALUES (1, NULL);
+INSERT INTO `thirdTable` (firstId, nextId) VALUES (NULL, NULL);
+INSERT INTO `thirdTable` (firstId) VALUES (1);
+INSERT INTO `thirdTable` (firstId, nextId) VALUES (1, 1);
+INSERT INTO `thirdTable` (firstId, nextId) VALUES (NULL, NULL);
+INSERT INTO `thirdTable` (firstId, nextId) VALUES (NULL, NULL);
+INSERT INTO `thirdTable` (firstId) VALUES (3);
+INSERT INTO `thirdTable` (firstId, nextId) VALUES (3, 2);
+INSERT INTO `thirdTable` (firstId, nextId) VALUES (NULL, NULL);
+INSERT INTO `thirdTable` (firstId, nextId) VALUES (2, 3);
+INSERT INTO `thirdTable` (firstId, nextId) VALUES (3, 3);
+INSERT INTO `thirdTable` (firstId, nextId) VALUES (C);
+INSERT INTO `thirdTable` (firstId) VALUES (2);
+DROP TABLE IF EXISTS `sampleDB``.FirstTable`;
+-- Drop the tables completely
+DROP TABLE IF EXISTS `sampleDB``.FirstTable`;

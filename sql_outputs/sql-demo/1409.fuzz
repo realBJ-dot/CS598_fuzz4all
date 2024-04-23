@@ -1,0 +1,17 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS `books` (
+  `author_id` INT(10) UNSIGNED,
+  `booktitle` INT(10) UNSIGNED
+);
+INSERT INTO `books` (`author_id`, `booktitle`)
+VALUES (5, 1), (8, 2), (3, 3), (5, 4), (10, 5), (9, 6), (6, 7), (5, 8);
+UPDATE `books` SET `author_id` = `author_id`+1 WHERE `author_id` = 5;
+SELECT * FROM `books`;
+UPDATE `books` SET `booktitle` = `booktitle`+1 WHERE `author_id` = 5;
+SELECT * FROM `books`;
+DROP TABLE `books`;
+-- Please make sure the query is a single statement. Also include your solution in the comments. */
+SELECT author_id, booktitle FROM `books` INNER JOIN `books` ON author_id=2 UNION
+SELECT author_id, booktitle FROM `books` INNER JOIN `books` ON author_id=1 UNION
+SELECT author_id, booktitle FROM `books` INNER JOIN `books` ON author_id=2 UNION
+SELECT author_id, booktitle FROM `books` INNER JOIN `books` ON author_id=1;

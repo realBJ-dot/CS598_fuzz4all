@@ -1,0 +1,18 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE person (
+    `person_id` int(11) NOT NULL AUTO_INCREMENT,
+    `name` varchar(50) NOT NULL,
+    `gender` char(4) DEFAULT NULL,
+    `rollno` int(5) DEFAULT NULL,
+    `address` varchar(255) DEFAULT NULL,
+    `birth_date` date DEFAULT NULL,
+    `birth_year` year(4) DEFAULT NULL,
+    `permanent_address` varchar(255) DEFAULT NULL,
+    PRIMARY KEY (`person_id`), UNIQUE KEY `rollno` (`rollno`), INDEX `name` (`name`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE course (
+    `course_id` int(2) NOT NULL AUTO_INCREMENT,
+    `name` varchar(255) DEFAULT NULL,
+    `department` char(4) DEFAULT NULL,
+    PRIMARY KEY (`course_id`), UNIQUE KEY `name` (`name`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=latin1;

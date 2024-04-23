@@ -1,0 +1,30 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `sampleDB`.`employees`;
+CREATE TABLE IF NOT EXISTS `sampleDB`.`employees` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `employeeID` int NOT NULL,
+  `employeeNumber` int NOT NULL,
+  `isFullTimeEmployee` tinyint(1) NOT NULL,
+  `isLead` tinyint(1),
+  `isVIP` tinyint(1) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `employees_employeeID` (`employeeID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+ 
+-- Please create 3 tables that perform operation on 2 databases using the following three commands:
+-- CREATE TABLE IF NOT EXISTS `sampleA`.`customers` (
+--   `id` int NOT NULL AUTO_INCREMENT,
+--   `customerID` int NOT NULL,
+--   `isFulltimeEmployee` tinyint(1),
+--   `isLead` tinyint(1),
+--   `isVIP` tinyint(1)
+-- ) ENGINE=InnoDB;
+-- INSERT INTO `sampleA`.`customers`
+--   (`customerID`, `isFulltimeEmployee`, `isLead`, `isVIP`)
+--   SELECT customerID, "false", "false", "false" FROM sampleDB.customers;
+-- SELECT * FROM customers;
+-- CREATE TABLE IF NOT EXISTS `sampleB`.`customers` (
+--   `id` int NOT NULL AUTO_INCREMENT,
+--   `customerID` int NOT NULL,
+--   `isFulltimeEmployee` tinyint(1),
+--  

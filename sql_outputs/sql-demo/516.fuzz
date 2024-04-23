@@ -1,0 +1,44 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ALTER TABLE mytable ADD column mycolumn blob;
+UPDATE mytable SET mycolumn = '1,255-1234';
+SELECT mycolumn, count(mycolumn) FROM mytable;
+ALTER TABLE mytable DROP COLUMN mycolumn;
+SELECT myid, title, price FROM mytable ;  
+DROP TABLE mytable;
+DROP DATABASE sampleDB;
+ 
+CREATE OR REPLACE FUNCTION getcustomersnameandsum(cid int) RETURNS SETOF TEXT 
+BEGIN
+DECLARE resultset set;
+LOOP 
+select customers.fname, orders.sumtotal, customers.lname into @result from database_samples.customers 
+	JOIN database_samples.orders 
+		ON ((customers.cid = orders.cid));
+		
+RETURN NEXT;
+END LOOP;
+END
+;
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+SELECT customers.cid,customers.fname, customers.lname,customers.sumtotal FROM database_samples.customers
+SELECT sum(orders.sumtotal) FROM database_samples.customers JOIN database_samples.orders on ( (customers.cid = orders.cid));
+DROP TABLE getcustomersnameandsum;
+SELECT getcustomersnameandsum(1);
+DROP DATABASE sampleDB;
+-- Please create a program that displays all column details of a table. Use JOIN
+ -- to join customer and sales for the date.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ 
+CREATE TABLE customer (
+	cid int(11) unsigned NOT NULL AUTO_INCREMENT,
+  fname char(32) NOT NULL DEFAULT '',
+  lname char(32) NOT NULL DEFAULT '',
+  phone int(10) unsigned NOT NULL DEFAULT '0',
+  email char(32) NOT NULL DEFAULT '',
+  PRIMARY KEY (cid)
+);
+
+ 
+CREATE TABLE sales (
+	cid int(11) unsigned NOT NULL,
+  tid int(11)

@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS users_details(user_id INTEGER, phone VARCHAR(50) UNIQUE, age INTEGER, PRIMARY KEY(user_id));
+INSERT INTO users_details(user_id, phone, age) VALUES ('23434', '63642642', '865355');
+COMMIT;
+show databases;
+DESC sampleDB.users_details;
+-- Your query here
+show tables;
+DROP TABLE IF EXISTS sampleDB.users_details;
+DELIMITER ;

@@ -1,0 +1,12 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS users(id integer PRIMARY KEY AUTO_INCREMENT, login, password);
+CREATE TABLE IF NOT EXISTS users(id integer AUTO_INCREMENT, login, password);
+CREATE TABLE IF NOT EXISTS users(id integer AUTO_INCREMENT, login, password);
+INSERT INTO users(login, password) VALUES ('test_user','password');
+SET GLOBAL local_infile= 1;
+CREATE TABLE users(id integer PRIMARY KEY AUTO_INCREMENT, login, password);
+CREATE TABLE users(id integer AUTO_INCREMENT, login, password);
+CREATE TABLE users(id integer AUTO_INCREMENT, login, password);
+INSERT INTO users(id, login, password) values(2, 'test_user', 'password');
+SET GLOBAL local_infile= 1;
+DROP TABLE IF EXISTS users;

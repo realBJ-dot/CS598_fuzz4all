@@ -1,0 +1,20 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+INSERT INTO table2
+values('name1', 'value1'),
+('name2', 'value2');
+show tables; 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+INSERT INTO table1 (id, name, value)
+values (1, 'name', 'value'),
+(2, 'name', 'value'),
+(3, 'name', 'value'),
+(4, 'name', 'value'),
+(5, 'name', 'value'),
+(6, 'name', 'value');
+INSERT INTO table2
+values('name22', 'value31'),
+('name23', 'value32');
+show tables;
+drop table table1;
+drop table table2;
+drop database sampleDB;

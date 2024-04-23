@@ -1,0 +1,23 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS Student;
+CREATE TABLE Student (First_Name VARCHAR(20), Last_Name CHARACTER(20), Grade INT);
+INSERT INTO Student (First_Name, Last_Name, Grade) VALUES ('John', 'Smith', 8);
+INSERT INTO Student (First_Name, Last_Name, Grade) VALUES ('Jane', 'Lee', 9);
+INSERT INTO Student (First_Name, Last_Name, Grade) VALUES ('Tom', 'Stark', 10);
+
+SELECT * FROM Student;
+CREATE TABLE Student (First_Name VARCHAR(40), Last_Name CHARACTER(20), Grade INT);
+INSERT INTO Student (First_Name, Last_Name, Grade) VALUES ('John', 'Smith', 8);
+INSERT INTO Student (First_Name, Last_Name, Grade) VALUES ('Jane', 'Lee', 9);
+INSERT INTO Student (First_Name, Last_Name, Grade) VALUES ('Tom', 'Stark', 10);
+
+SELECT * FROM Student;
+CREATE TABLE Student (First_Name CHARACTER(20), Last_Name CHARACTER(20), Grade INT);
+INSERT INTO Student (First_Name, Last_Name, Grade) VALUES ('John', 'Smith', 8);
+INSERT INTO Student (First_Name, Last_Name, Grade) VALUES ('Jane', 'Lee', 9);
+INSERT INTO Student (First_Name, Last_Name, Grade) VALUES ('Tom', 'Stark', 10);
+
+SELECT * FROM Student;
+
+DROP TABLE IF EXISTS Student;
+DROP DATABASE IF EXISTS sampleDB;

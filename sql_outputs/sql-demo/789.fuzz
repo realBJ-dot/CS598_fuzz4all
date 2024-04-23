@@ -1,0 +1,7 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TEMPORARY TABLE IF NOT EXISTS `tmp_tbl` ( `id` INT(11) NOT NULL PRIMARY KEY, `data` VARCHAR(300) CHARACTER SET UTF8) ENGINE = INNODB;
+INSERT INTO `sampleDB`.`FirstAndSecondTable` VALUES( 1, 'abc' );
+SELECT * FROM `tmp_tbl` INNER JOIN `FirstAndSecondTable` ON `tmp_tbl`.`id` = `FirstAndSecondTable`.`id`;
+DROP TABLE IF EXISTS `tmp_tbl`
+DROP DATABASE IF EXISTS `sampleDB`
+*/

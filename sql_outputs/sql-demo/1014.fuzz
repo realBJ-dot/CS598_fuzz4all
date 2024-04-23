@@ -1,0 +1,25 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employees;
+DROP TABLE IF EXISTS salaries;
+DROP TABLE IF EXISTS dept_manager;
+DROP TABLE IF EXISTS dept_emp;
+DROP TABLE IF EXISTS dept;
+DROP TABLE IF EXISTS staff;
+DROP TABLE IF EXISTS salaries;
+-- You need to use a schema to perform operations. A schema is a collection of constraints, data definitions and indexes stored together in a tab-separated data file. They are used to describe a database. You can create one or more databases and load these schema files into that specific database.
+#
+# Please create a SQL table and perform several operations on it such as updating the data.
+-- You can also get the data from a table into an array.
+-- You can compare the records of the two tables on the basis of their ID.
+-- For instance, if a particular employee has many other employees, create a foreign key constraint named `EMP` of the type `FOREIGN KEY` and set the reference type to `NO ACTION`. In case of 2 records having the same value in the reference column, which in this case is the ID column, you will get an error. The solution is to use the `ON DELETE CASCADE` feature i.e., `DELETE FROM salaries WHERE ID = x`).
+-- MySQL schema files usually have.sql extension whereas other DBMS schema files are.sql.gz. It cannot be changed after tables have been created on a database.
+#
+-- Create a new table, add columns and populate some records and show the columns.
+-- You can also add columns to existing tables from the command prompt.
+#
+-- How to get the data of a table from MySQL?
+#
+-- You can also get the records from a table into JavaScript.
+#
+# Please use foreign keys to access an existing data.
+-- MySQL allows you to specify a field that should be unique, e.g., an employee is usually associated with one person with the `PRIMARY KEY` constraint. Also, MySQL supports the `UNIQUE KEY` constraint, which allows you to create unique indexes on columns or part of the key. MySQL has support for 10 foreign key indexes, but only a small set of foreign keys is supported per table. You need to create a schema file and specify the foreign keys as

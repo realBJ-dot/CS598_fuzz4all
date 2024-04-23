@@ -1,0 +1,28 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS users(
+	userId INT NOT NULL,
+	name VARCHAR(10) DEFAULT 'root',
+	password_hash VARCHAR(720) DEFAULT NULL,
+	role_id int DEFAULT 2
+);
+DESCRIBE users;
+CREATE TABLE IF NOT EXISTS groups(
+	groupId INT NOT NULL,
+	roleId int NOT NULL DEFAULT 2,
+	CONSTRAINT fk_groupId FOREIGN KEY(groupId) REFERENCES users(userId) ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT fk_roleId FOREIGN KEY(roleId) REFERENCES users(userId) ON DELETE CASCADE ON UPDATE CASCADE,
+	PRIMARY KEY( groupId, roleId)
+);
+DESCRIBE groups;
+DESCRIBE users;
+DESCRIBE permissions;
+CREATE TABLE IF NOT EXISTS permissions(
+	group_id INT NOT NULL,
+	role_id INT NOT NULL,
+	CONSTRAINT fk_role_id FOREIGN KEY(role_id) REFERENCES users(userId) ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT fk_group_id FOREIGN KEY(group_id) REFERENCES users(userId) on delete cascade on update cascade,
+	PRIMARY KEY( group_id, role_id )
+);
+DESCRIBE permissions;
+DESCRIBE users;
+DESCRIBE groups;

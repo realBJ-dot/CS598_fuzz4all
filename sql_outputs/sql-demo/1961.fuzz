@@ -1,0 +1,7 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+INSERT INTO employees_salary_by_salary(employee_salary, emp_salary) VALUES ('2012-06-04', 100000);
+SELECT employee_salary + CAST(2*cast(2 as int) as SIGNED);
+DROP DATABASE IF EXISTS sampleDB;
+ 
+
+

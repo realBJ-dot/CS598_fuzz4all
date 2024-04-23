@@ -1,0 +1,17 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+SET GLOBAL innodb_file_per_table=1;
+
+CREATE TABLE IF NOT EXISTS author(
+	author_id INT NOT NULL UNIQUE AUTO_INCREMENT PRIMARY KEY,
+	author_name text
+);
+DROP TABLE IF EXISTS author;
+
+CREATE TABLE IF NOT EXISTS author(
+  author_id INT(11) UNSIGNED UNIQUE AUTO_INCREMENT PRIMARY KEY,
+  author_name  varchar(255),
+  description text
+);
+
+DROP TABLE IF EXISTS author;
+COMMIT;

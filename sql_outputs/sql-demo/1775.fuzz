@@ -1,0 +1,90 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP SCHEMA IF EXISTS demo1 CASCADE;
+
+-- Make a schema without a table.
+CREATE SCHEMA demo1;
+
+-- Make a table with a schema and a sequence.
+CREATE TABLE demo1.tbl1 (
+    col1 INTEGER, 
+	col2 DATE
+);
+
+-- Make a table with a secondary index with no options.
+CREATE TABLE demo1.tbl2 
+	(
+		col1 INTEGER, 
+		col2 DATE
+	)
+	ENGINE=InnoDB
+	-- The 'NO_AUTO_INCREMENT' option should be added, otherwise 'auto_increment' will be added
+	AUTO_INCREMENT=42
+	DEFAULT CHARSET=utf8;
+
+SELECT * FROM demo1.tbl2;
+
+-- Please define the database in a way that the following statements can access it.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB
+
+-- Add a table without specifying a primary key.
+CREATE TABLE sampleDB.tbl1 
+	(
+		col1 INTEGER, 
+		col2 DATE
+	)
+	ENGINE=InnoDB
+	DEFAULT CHARSET=utf8
+
+-- Add a table specifying a key but not requiring an AUTO_INCREMENT.
+CREATE TABLE sampleDB.tbl2 
+	(
+		col1 INTEGER, 
+		col2 DATE
+	)
+	ENGINE=InnoDB
+	DEFAULT CHARSET=utf8
+
+-- Add a table specifying a key and AUTO_INCREMENT that requires a UNIQUE constraint
+CREATE TABLE sampleDB.tbl2
+	(
+		col1 INTEGER,
+		col2 DATE
+	)
+	ENGINE=InnoDB
+	DEFAULT CHARSET=utf8
+
+-- Add a table specifying a key, AUTO_INCREMENT and UNIQUE constraint.
+CREATE TABLE sampleDB.tbl2
+	(
+		col1 INTEGER,
+		col2 DATE
+	)
+	ENGINE=InnoDB
+	DEFAULT CHARSET=utf8
+	AUTO_INCREMENT=0;
+
+-- Add a table without specifying a DEFAULT and setting it to NULL.
+CREATE TABLE sampleDB.tbl3 
+	(
+		col1 INT UNSIGNED, 
+		col2 DATETIME 
+	)
+	ENGINE=InnoDB
+	DEFAULT CHARSET=utf8
+
+-- Set a table explicitly to be created with AUTO_INCREMENT set to zero.
+CREATE TABLE sampleDB.tbl4
+	(
+		col1 INT UNSIGNED, 
+		col2 DATETIME 
+	)
+	ENGINE=InnoDB
+	AUTO_INCREMENT=0
+	DEFAULT CHARSET=utf8
+
+-- Create another table without specifying a primary key.
+CREATE TABLE sampleDB.tbl5 
+	(
+		col1 INT UNSIGNED, 
+		col2 DATETIME
+	)

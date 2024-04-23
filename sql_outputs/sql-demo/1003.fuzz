@@ -1,0 +1,5 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+UPDATE employee SET Salary = Salary + 1 WHERE Emp_Number in
+(
+SELECT Emp_Number FROM employees WHERE Manager_Number=108
+);

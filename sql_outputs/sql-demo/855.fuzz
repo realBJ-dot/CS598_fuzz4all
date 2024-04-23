@@ -1,0 +1,38 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS person_tmp;
+CREATE TABLE person_tmp (id INT NOT NULL AUTO_INCREMENT, name VARCHAR(200), birthdate DATE);
+INSERT INTO person_tmp (name, birthdate) VALUES (
+    '<NAME>',
+    '1995-01-20'
+);
+INSERT INTO person_tmp (name, birthdate) VALUES (
+    '<NAME>',
+    '2013-05-17'
+);
+DROP TABLE IF EXISTS person_tmp;
+DROP DATABASE IF EXISTS sampleDB;
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS person_tmp;
+CREATE TABLE person_tmp (id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY, name VARCHAR(200), birthdate DATE);
+INSERT INTO person_tmp (name, birthdate) VALUES (
+    '<NAME>',
+    '1995-01-20'
+);
+INSERT INTO person_tmp (name, birthdate) VALUES (
+    '<NAME>',
+    '2013-05-17'
+);
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS person_tmp;
+CREATE TABLE person_tmp (
+    id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    name VARCHAR(200),
+    surname VARCHAR(200),
+    birthdate DATE,
+    created_at TIMESTAMP NOT NULL DEFAULT GETDATE(),
+    INDEX (created_at),
+    INDEX (birthdate, name, surname)
+);
+INSERT

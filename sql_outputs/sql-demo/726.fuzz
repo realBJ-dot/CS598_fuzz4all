@@ -1,0 +1,14 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+TRUNCATE TABLE `FirstTable`;
+TRUNCATE TABLE `SecondTable`;
+DROP TABLE IF EXISTS `FirstTable`;
+DROP TABLE IF EXISTS `SecondTable`;
+CREATE TABLE `FirstTable` (`firstColumn` TEXT);
+CREATE TABLE `SecondTable` (`secondColumn` TEXT);
+
+ 
+USE sampleDB; SHOW tables; DESC sys.innodb_table_stats `FirstTable`;
+
+INSERT INTO sys.innodb_table_stats(`name`, `table_id`, `index_id`, `stats_id`, `heap_data_file_id`, `num_read`, `num_key_reads`, `num_write`, `bytes_read`, `bytes_read_ahead`, `bytes_written`, `index_read`, `index_read_ahead`, `index_write`, `index_write_ahead`, `bytes_stored`, `rows_inserted`, `rows_updated`, `bytes_inserted`, `bytes_deleted`, `bytes_tested`, `bytes_freed`) VALUES ('FirstTable', '0', NULL, NULL, '0', 1, 0, 0, 17, 17, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 0, 0, 0, 0);
+
+SELECT `firstColumn`, sys.innodb_table_stats(`firstColumn`, 'FirstTable', 'FirstColumn', 'FirstColumnStats', '0', 1, 0, 0, 17, 17, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 0, 0, 0, 0, 16) AS `FirstTable` from `FirstTable` WHERE sys.innodb_table_stats(`firstColumn`, 'FirstTable', 'FirstColumn', 'FirstColumnStats', '0', 1, 0,

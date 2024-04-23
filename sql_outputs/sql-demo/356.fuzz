@@ -1,0 +1,35 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users (Id INTEGER AUTO_INCREMENT PRIMARY KEY, Email VARCHAR(32), Name VARCHAR(64), Address VARCHAR(128));
+INSERT INTO Users (Email,Name,Address) VALUES ('<EMAIL>','james','123');
+UPDATE Users set Address = '987654';
+
+-- This query would be too large to run in the MySQL Command Window like it did before -
+-- It might be faster to run it in another MySQL Shell or Terminal instance. Please try that.
+USE sampleDB; SELECT Address FROM Users LIMIT 2;
+
+ALTER TABLE Users ADD (Address VARCHAR(64), Age INT);
+
+SELECT Address, Age FROM Users LIMIT 2;
+--
+-- Now create a very large table. This will be too large for the test case to
+-- run in one go. Please use MySQL Workbench to create a table with a large select
+-- statement and let us know how much time it would take to run. To run the
+-- table-creating query, we will need to use an engine with an innodb storage engine.
+--
+-- As in the previous example, create a database, a table and the table-filling query.
+-- Once we are done making the query, drop all tables.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE sampleTable (name VARCHAR(32));
+INSERT INTO sampleTable (name) VALUES ('one'), ('two'), ('three'), ('four'), ('five'), ('six'), ('seven'), ('eight'), ('nine'), ('ten'), ('eleven'), ('twelve'), ('thirteen'), ('fourteen'), ('fifteen');
+DROP DATABASE sampleDB;
+
+-- For these queries we will need to use an engine with an innodb storage engine.
+-- Please make sure your current schema has an innodb engine.
+CREATE TABLE test(name VARCHAR(32));
+INSERT INTO test VALUES ('one'), ('two'), ('three');
+DROP TABLE test;
+ALTER TABLE test ENGINE=InnoDB;
+ALTER TABLE test ADD (age INT);
+SELECT age FROM test LIMIT 5;
+DROP TABLE test;
+

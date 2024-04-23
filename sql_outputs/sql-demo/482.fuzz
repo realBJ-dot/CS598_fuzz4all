@@ -1,0 +1,15 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE mytable( myid int, title varchar(255));
+INSERT INTO mytable(myid, title) VALUES(0,'abc');
+INSERT INTO mytable(myid, title) VALUES(1,'def');
+INSERT INTO mytable(myid, title) VALUES(2,'ghi');
+
+CREATE TABLE mytable( myid int primary key, title varchar(255));
+INSERT INTO mytable(myid, title) VALUES(0,'abc');
+INSERT INTO mytable(myid, title) VALUES(1,'def');
+INSERT INTO mytable(myid, title) VALUES(2,'ghi');
+DROP TABLE mytable;
+DROP DATABASE sampleDB;
+
+<br>
+## The query below should execute without an error when I execute it for yourself on the MySQL Workbench.

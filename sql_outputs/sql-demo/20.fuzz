@@ -1,4 +1,4 @@
-USE sampleDB;
-INSERT INTO comments(author, content, post) VALUES ("William", "Hello World!", 10);
-INSERT INTO comments(author, content, post) VALUES ("John", "Greetings", 5);
-SELECT * FROM comments;
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE Users;
+DROP DATABASE IF EXISTS sampleDB;
+

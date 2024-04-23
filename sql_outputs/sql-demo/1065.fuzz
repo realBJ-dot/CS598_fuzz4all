@@ -1,0 +1,15 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE `worker`;
+CREATE TABLE `worker` (
+  `no_worker` INT,
+  `nama_lengkap` VARCHAR(50),
+  `kode_lokasi` VARCHAR(50),
+  `username` VARCHAR(50),
+  `password` <PASSWORD>(<PASSWORD>),
+  `tgl_masuk` DATETIME,
+  `id_level` INT,
+  `id_status` INT,
+  `id_kota_asal` INT,
+  `id_kota_tujuan` INT,
+  `no_tlp` INT
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;

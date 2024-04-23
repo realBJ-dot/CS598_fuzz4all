@@ -1,0 +1,3 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users(username int PRIMARY KEY AUTO_INCREMENT, FirstName VARCHAR(30)) ENGINE=InnoDB;
+INSERT INTO Users(username,Firstname) VALUES(NULL,'Test'),(NULL,'Admin'),(NULL,'Guest'),(NULL,'Super');

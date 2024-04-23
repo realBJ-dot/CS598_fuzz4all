@@ -1,0 +1,12 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS "Users_3" (
+    UserID int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    Password varchar(50) NOT NULL DEFAULT 0,
+    Created_At timestamp default CURRENT_TIMESTAMP
+);
+CREATE TABLE IF NOT EXISTS Admin_Users (
+    ID int(11) PRIMARY KEY,
+    UserName varchar(25) UNIQUE
+);
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;

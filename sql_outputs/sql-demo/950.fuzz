@@ -1,0 +1,7 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+DROP TABLE user_db_skills;
+ 
+SELECT COUNT(*) FROM user_db_skills;
+
+DROP table user_db_skills;

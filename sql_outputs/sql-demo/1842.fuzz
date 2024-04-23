@@ -1,0 +1,40 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+-- Please create and use tables.
+DROP TABLE IF EXISTS country;
+DROP TABLE IF EXISTS continent;
+CREATE TABLE country(
+	name char(5),
+	capital char(8));
+CREATE TABLE continent(
+	name char(8),
+	country char(5));
+INSERT INTO continent VALUES('Africa','Africa');
+INSERT INTO country VALUES('Afghanistan','Kabul');
+INSERT INTO continent VALUES('Asia','Asia');
+INSERT INTO country VALUES('Albania','Tirana');
+INSERT INTO continent VALUES('Americas','Americas');
+INSERT INTO country VALUES('Argentina','Buenos Aires');
+INSERT INTO continent VALUES('Asia','Asia');
+INSERT INTO country VALUES('Armenia','Yerevan');
+INSERT INTO continent VALUES('Europe','Europe');
+INSERT INTO country VALUES('Australia','Canberra');
+INSERT INTO continent VALUES('Europe','Europe');
+INSERT INTO country VALUES('Austria','Vienna');
+INSERT INTO continent VALUES('Europe','Europe');
+INSERT INTO country VALUES('Azerbaijan','Beyoun');
+INSERT INTO continent VALUES('Oceas','Oceas');
+INSERT INTO country VALUES('Bangladesh','Dhaka');
+INSERT INTO continent VALUES('Asia','Asia');
+INSERT INTO country VALUES('Belgium','Brussels');
+INSERT INTO continent VALUES('Europe','Europe');
+INSERT INTO country VALUES('Bosnia and Herzegovina','Sarajevo');
+INSERT INTO continent VALUES('Europe','Europe');
+INSERT INTO country VALUES('Bulgaria','Sofia');
+INSERT INTO continent VALUES('Europe','Europe');
+INSERT INTO country VALUES('Burundi','Bujumbura');
+INSERT INTO continent VALUES('Africa','Africa');
+INSERT INTO country VALUES('Czech Republic','Prague');
+INSERT INTO continent VALUES('Europe','Europe');
+INSERT INTO country VALUES('Denmark','Odense');
+INSERT INTO continent VALUES('Europe','Europe');

@@ -1,0 +1,17 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DO
+BEGIN
+UPDATE person SET name=CONCAT(SUBSTRING(id,1,1), '.',name);
+END;
+
+-- Please create a program that uses the table created by DO. You should insert values into the tables. Then you need to get all names which are under the first letter of the id.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DO
+BEGIN
+INSERT INTO person (id, name, birthdate) VALUES(1,'<NAME>', '1996-06-24');
+INSERT INTO person (id, name, birthdate) VALUES(2,'<NAME>', '2015-07-16');
+END;
+
+SELECT * FROM person WHERE birthdate = '2015-07-16';
+SELECT name FROM person WHERE name LIKE 'A%';
+SELECT name FROM person WHERE birthdate > '1996-06-24';

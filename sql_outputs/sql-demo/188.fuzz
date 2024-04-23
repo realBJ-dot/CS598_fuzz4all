@@ -1,0 +1,17 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+-- Use one of the following:
+
+-- INSERT
+INSERT INTO Users_3 VALUES ("Viviane","<EMAIL>","Passwort","Bahn");
+
+-- UPDATE
+UPDATE Users_3
+SET Users_3.email = "<EMAIL>", Users_3.password = "<PASSWORD>"
+WHERE Users_3.user_id = 1 AND Users_3.password = "<PASSWORD>";
+
+-- DELETE
+DELETE FROM Users_3
+WHERE Users_3.user_id = 1;
+
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;

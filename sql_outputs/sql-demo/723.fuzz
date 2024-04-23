@@ -1,0 +1,26 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- You should be able to successfully select a table and query results from the original table
+SELECT * FROM FirstTable;
+-- INSERT DATA INTO `FirstTable`
+INSERT INTO FirstTable VALUES (1, 'This is just an inserted row', 26, 9, 25, 47);
+INSERT INTO FirstTable VALUES (2, 'This is just an inserted row', 27, 9, 20, 44);
+INSERT INTO FirstTable VALUES (3, 'This is just an inserted row', 28, 9, 15, 42);
+insert into `SecondTable`
+(id, category_id, title, release_date, first_aired, runtime)
+VALUES (4,2, 'Inspirational Homenick', '2020-04-13', '2020-11-28', '142');
+insert into `SecondTable`
+(id, category_id, title, release_date, first_aired, runtime)
+VALUES (4,2, 'Inspirational Homenick', '2020-04-13', '2020-11-28', '142');
+SELECT * FROM `FirstTable`;
+DROP TABLE IF EXISTS `FirstTable`;
+DROP TABLE IF EXISTS `SecondTable`;
+DROP DATABASE IF EXISTS `sampleDB`;
+;
+;
+;
+;
+-- MySQL is an open-source relational database management system (RDBMS) that allows users to create, modify and extract data from a structured relational database using the Structured Query Language (SQL). It works harmoniously with an operating system to structure and manage a relational database, control user access, and execute other tasks like network access and testing database integrity.
+
+MySQL, named after co-founder <NAME>' daughter, My, and SQL, is widely used with other programs to implement applications that require database functionality. It serves as an element of the LAMP web application software stack, where LAMP stands for Linux, Apache, MySQL, Perl/PHP/Python, and is used in many database-driven web applications and popular websites such as Facebook and YouTube.
+
+Written in C and C++, MySQL supports a variety of system platforms from Linux, macOS, Microsoft Windows to even the Symbian OS. It offers dual-licensing i.e

@@ -1,0 +1,16 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- Create a new table in the previous generation
+DROP TABLE IF EXISTS manpower;
+CREATE TABLE manpower (man, salary INT);
+INSERT INTO manpower VALUES ('Michael', 120000);
+INSERT INTO manpower VALUES ('Bob', 85000),
+INSERT INTO manpower VALUES ('Maria', 750000);
+INSERT INTO manpower VALUES ('Peter', 85000);
+INSERT INTO manpower VALUES ('Alice', 100000);
+INSERT INTO manpower VALUES ('Johnny', 110000);
+-- Update a column in the previous generation
+ALTER TABLE manpower ADD column location CHAR(1);
+UPDATE manpower SET location = 'Downtown';
+-- Drop the previous generation
+DROP DATABASE IF EXISTS sampleDB; 
+

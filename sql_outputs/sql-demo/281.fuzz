@@ -1,0 +1,44 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS employee ( `EmpID` INT(5) NOT NULL AUTO_INCREMENT, `EmpName` TEXT NOT NULL, `Designation` TEXT NOT NULL, `Salary` DECIMAL(11, 2), KEY (`EmpID`));
+
+--
+--
+--
+--
+--
+-- Please modify the mutated program to show the data saved with 'SHOW DATABASE STATUS'.
+--
+-- Create a mutated function to return rows where a certain condition is met.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE FUNCTION returnEmployees(Designation) RETURNS TABLE (EmpID int, EmpName text)
+RETURNS SET GLOBAL LOCAL READS SQL DATA
+BEGIN
+    SELECT EmployeeID, EmpName FROM Employee where EmploymentStatus = 1 AND Designation = DESIGNATION;
+END
+--
+-- Please call the new mutated function in the main function without specifying the value of 'DESIGNATION'.
+--
+SET ANSI_NULLS ON;
+SET AUTOCOMMIT OFF;
+SET CHARACTER_SET_CLIENT = DEFAULT;
+SET CHARACTER_SET_RESULTS = DEFAULT;
+SET COLLATION_CONNECTION = DEFAULT;
+SET NAMES utf8;
+SET SESSION sql_mode = "STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION";
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+SET READ_TIMEOUT = 0;
+SET NAMES utf8mb4;
+--
+--
+--
+--
+--
+--
+--
+-- Please modify the mutated function so that it uses the new MySQL keyword 'SELECT' to read the rows that match the condition specified in the function argument DESIGNATION.
+--
+--
+-- Please modify the main function so that it executes the select statement in the context of the database specified in the main function argument.
+--
+--
+-- Finally, please comment the two main functions.

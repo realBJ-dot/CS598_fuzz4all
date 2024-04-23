@@ -1,0 +1,12 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- No other table should exist but you can check that by trying
+-- to create a new schema and using the query: SELECT * FROM mutated
+-- as well as that the same table does not exist.
+CREATE TABLE IF NOT EXISTS Mutated (id INT AUTO_INCREMENT PRIMARY KEY, price DECIMAL(10,2) UNIQUE);
+SELECT * FROM Mutated;
+UPDATE Mutated SET price = 80 WHERE id = 1;
+SELECT * FROM Mutated;
+DELETE FROM Mutated WHERE id = 1;
+SELECT * FROM Mutated;
+DROP TABLE Mutated;
+DROP DATABASE sampleDB;

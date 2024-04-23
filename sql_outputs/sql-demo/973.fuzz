@@ -1,0 +1,29 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+BEGIN
+BEGIN TRANSACTION;
+-- INSERT a lot of records to populate sampleDB
+COMMIT;
+
+SELECT * FROM products;
+DROP DATABASE sampleDB;
+
+-- This database is a result of running the query above.
+```
+
+## [Exercise - 30](https: 
+You are given a CSV file with the following columns:
+
+```no-highlight
+Product_Name,Description,Price(In-Currency)
+iPhone,51 in. (32 Bits),30.16
+iPhone 11 Pro,iPad Pro (2,6),63.56
+```
+
+Task
+
+> Please print a report, named "iPhones-price.txt", which shows the name and price of all iPhones in the sample CSV file.
+
+```no-highlight
+iPhone,30.16
+iPhone 11 Pro,63.56
+```

@@ -1,0 +1,11 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS users_details;
+create TABLE users_details(
+id INT(10),
+surname VARCHAR(255),
+firstname VARCHAR(255),
+addressid INT(10),
+password VARCHAR(255),
+CONSTRAINT user_details_PK PRIMARY KEY (id),
+CONSTRAINT addressid FOREIGN KEY (addressid) REFERENCES address (id)
+");

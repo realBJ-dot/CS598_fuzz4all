@@ -1,0 +1,17 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS employee ( EmpID INT PRIMARY KEY AUTO_INCREMENT, EmpName varchar(10) NOT NULL, Designation varchar(10) NOT NULL, Salary Decimal(10, 4) ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+USE sampleDB;
+-- Drop all the tables except employee. Now re-create employee table
+DROP TABLE IF EXISTS salary;
+DROP TABLE IF EXISTS employees;
+-- Use employee table to insert employees. Do not change empID.
+USE employee;
+INSERT INTO employee (EmpID, EmpName, Designation, Salary) VALUE(1000, "Rajesh", "Intern Engineer", 1000000000), (10001, "Shri", "Intern Engineer", 5000000000), (10002, "Bhimya", "Intern Engineer", 4000000000), (10003, "Soni", "Intern Engineer", 1500000000), (10004, "Shreyas", "Intern Engineer", 5000000000), (10005, "Harsh", "Intern Engineer", 1000000000), (10006, "Mukesh", "Intern Engineer", 6000000000), (10007, "Vijay", "Intern Engineer", 5000000000) ;
+ 
+DROP TABLE IF EXISTS employee;
+USE sampleDB;
+CREATE TABLE IF NOT EXISTS employee ( `EmpID` INT(4) NOT NULL AUTO_INCREMENT, `EmpName` TEXT NOT NULL, `Designation` TEXT NOT NULL, `Salary` DECIMAL(10, 4), KEY (`EmpID`));
+-- Please explain how the above query can be re-written in the new table.
+ALTER TABLE employee ADD constraint employee_unique UNIQUE (EmpName);
+-- Create the employee table again and do not change empID.
+CREATE TABLE IF NOT EXISTS employee ( EmpID INT PRIMARY KEY AUTO_INCREMENT, EmpName varchar(10) NOT NULL, Designation varchar(10

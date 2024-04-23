@@ -1,0 +1,7 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS emp_tmp;
+CREATE TABLE emp_tmp (department CHAR(10), designation CHAR(10), salary DECIMAL(7,2), manager INT, PRIMARY KEY (department, designation));
+INSERT INTO emp_tmp (department, designation,salary,manager) VALUES('IT','Engineer',9000.00,3);
+INSERT INTO emp_tmp (department, designation,salary,manager) VALUES('IT','Engineer',10000.00,3);
+SELECT * FROM emp_tmp ORDER BY id;
+SELECT * FROM emp_tmp ORDER BY manager DESC;

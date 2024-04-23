@@ -1,0 +1,11 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE `teacher` ( `TeacherID` INT(11) NOT NULL AUTO_INCREMENT, `TeacherName` VARCHAR(50) NOT NULL, `EmailID` VARCHAR(50) UNIQUE NOT NULL, PRIMARY KEY (`TeacherID`) );
+ 
+SELECT teacher.TeacherName, teacher.EmailID FROM teacher left outer join student on teacher.TeacherID=student.TeacherID WHERE student.Department IS NULL;
+ 
+SELECT student.TeacherName,student.Department, student.StudentID,student.StudentName, student.TeacherID, teacher.TeacherName,teacher.EmailID FROM student inner join teacher on teacher.TeacherID=student.TeacherID LEFT OUTER JOIN class ON class.ClassID=student.ClassID WHERE student.Department IS NULL;
+ 
+SELECT Department, count(*) FROM class GROUP BY Department ORDER BY Department;
+ 
+SELECT Department,count(Department), sum(Class.ClassID) FROM class GROUP BY Department;
+DROP DATABASE sampleDB;

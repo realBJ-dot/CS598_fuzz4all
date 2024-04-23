@@ -1,0 +1,13 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS user;
+CREATE TABLE user
+(
+  id INT AUTO_INCREMENT,
+  "name" VARCHAR(200),
+  "lastName" VARCHAR(200)
+);
+INSERT INTO user(name, "lastName") VALUES ('John', 'Smith');
+INSERT INTO user(name, "lastName") VALUES ('Paul', 'Jones');
+SELECT * FROM user;
+DROP TABLE user;
+DROP DATABASE IF EXISTS sampleDB;

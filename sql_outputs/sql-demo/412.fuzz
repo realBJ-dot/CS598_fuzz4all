@@ -1,0 +1,18 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+CREATE TABLE IF NOT EXISTS Employees(Employee_id INT AUTO_INCREMENT, First_name VARCHAR(16), Last_name VARCHAR(16), Department INT,
+	PRIMARY KEY(Employee_id), FOREIGN KEY (Department) REFERENCES Departs(Department));
+
+ 
+SELECT * FROM Employee;
+
+ 
+SET @sql = CONCAT('UPDATE Employee SET Last_name = \'Doe\' WHERE First_name = \'John\';');
+
+UPDATE Employee_id INSTR(@sql, 'employees_id', 'Employees.Employee_id') = 1;
+
+INSERT INTO employees (Employee_id, First_name, Last_name, Department) VALUES (1,'John', 'Doe', 'Human Resources'), (2, 'Paul', 'Gilbert', 'Human Resources'), (3, 'Marie', 'Barber', 'Human Resources'), (4, 'Mary', 'Doe', 'Administration');
+
+#
+# Create and query a new table.
+#

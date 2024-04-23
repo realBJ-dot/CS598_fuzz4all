@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS `customers` (
+  `customer_id` int(10) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100),
+  `city` varchar(100),
+  `address` varchar(100),
+  PRIMARY KEY (`customer_id`)
+)ENGINE=InnoDB;
+SELECT * FROM customers;
+USE sampleDB;

@@ -1,0 +1,48 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS customers;
+CREATE TABLE IF NOT EXISTS customers (
+    id int NOT NULL AUTO_INCREMENT,
+    customer_id int NOT NULL DEFAULT 0,
+    customer_fname varchar(50) charset utf8, 
+    customer_lname varchar(50) charset utf8,
+    is_fulltime_employee tinyint(1) NOT NULL DEFAULT 0,
+    is_lead tinyint(1),
+    is_vip tinyint(1) NOT NULL DEFAULT 0,
+    PRIMARY KEY (id),
+    UNIQUE KEY customer_id (customer_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `sampleDB`.`employees`;
+CREATE TABLE IF NOT EXISTS `sampleDB`.`employees` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `employeeID` int NOT NULL,
+  `firstName` varchar(20) NOT NULL,
+  `lastName` varchar(25) NOT NULL,
+  `isFullTimeEmployee` tinyint(1) NOT NULL,
+  `isLead` tinyint(1),
+  `managerID` int,
+  `departmentID` int DEFAULT '0',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `employees_employeeID` (`employeeID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- Please add a semantically equivalent program to the previous generation
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employees;
+CREATE TABLE IF NOT EXISTS employees (
+    id int NOT NULL AUTO_INCREMENT,
+    employee_id int NOT NULL DEFAULT 0,
+    employee_fname varchar(50) charset utf8, 
+    employee_lname varchar(50) charset utf8,
+    is_fulltime_employee tinyint(1) NOT NULL DEFAULT 0,
+    is_lead tinyint(1),
+    manager_id int,
+    department_id int DEFAULT '0',
+    PRIMARY KEY (id),
+    UNIQUE KEY employee_id (employee_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- Drop all tables created
+DROP TABLE IF EXISTS `sampleDB`.`employees`;
+DROP TABLE IF EXISTS `sampleDB`.`customers`;
+ 
+DROP DATABASE IF EXISTS `sampleDB`;

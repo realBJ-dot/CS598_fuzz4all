@@ -1,0 +1,17 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+<commit_msg>add mysql 5.7 support for php<commit_after>Apache + MySQL + PHP + Apache is a small web server which is designed for fast, flexible and secure Internet access. With support for PHP and Apache, the PHP developers can develop highly scalable and maintainable web applications by using this technology within their own website.
+
+PHP is a popular server-side programming language based on the procedural model. It is one of the most popular open-source PHP framework for developing fast and reliable websites. It offers the wide range and speed at which you can create and build websites from the core of a framework. It is the most popular PHP framework for small web sites.
+
+PHP 5 is a large update compared to PHP 4 and is still in general beta release (2008). PHP 5 still has some open questions, but it has better stability and performance than PHP 4.
+
+MySQL is an open-source relational database management system (RDBMS) that allows users to create, modify and extract data from a structured relational database using the Structured Query Language (SQL). It works harmoniously with an operating system to structure and manage a relational database, control user access, and execute other tasks like network access and testing database integrity.
+
+MySQL, named after co-founder Michael Widenius's daughter, My, and SQL, is widely used with other programs to implement applications that require database functionality. It serves as an element of the LAMP web application software stack, where LAMP stands for Linux, Apache, MySQL, Perl/PHP/Python, and is used in many database-driven web applications and popular websites such as Facebook and YouTube.
+
+Written in C and C++, MySQL supports a variety of system platforms from Linux, macOS, Microsoft Windows to even the Symbian OS. It offers dual-licensing i.e., GPL version 2 or a proprietary license.
+
+Support for MySQL is provided through the official manual, various IRC channels, forums, and additionally, Oracle offers paid support via its MySQL Enterprise products. It is known for its exceptional performance in average scenarios and has been appraised as a fast, stable and true multi-user, SQL database server. Additionally, it is also available under the MariaDB fork developed in 2010 when Oracle acquired Sun Microsystems, the then owner of MySQL AB.
+
+Additionally, version 5.7 is supported

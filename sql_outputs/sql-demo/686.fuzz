@@ -1,0 +1,20 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS student;
+CREATE TABLE student (first VARCHAR(50), last CHAR(25), grade INT);
+INSERT INTO student (first,last,grade) VALUES ('John','Smith',8);
+INSERT INTO student (first,last,grade) VALUES ('Jane','Lee',9);
+INSERT INTO student (first,last,grade) VALUES ('Tom','Stark',5);
+-- Please write a simple query which uses a group by clause, so that the grouping conditions are in a single query. You need to use sampleDB as the database. You can use the following SQL structure to create your database. Note: your program must create a table for each student for the first time.
+ -- Please write a simple query which uses the SQL JOIN feature to access the records of two tables. This feature is named as left outer join. The left part of the JOIN specifies two tables to be joined on and the right part specifies the table which the output data will be stored in. Use sampleDB and test tables 
+CREATE TABLE IF NOT EXISTS test (id INT);
+CREATE TABLE IF NOT EXISTS student
+SELECT ID, First_Name, Last_Name FROM student WHERE First_Name = "Jane" AND Last_Name NOT IN ('Donald', 'Thomas');
+-- Please update the above query to change the condition to return John Smith that belongs to the group (John) but does not belong explicitly to group Donald.
+
+-- In this assignment, you will have to write a simple query which extracts data from a selected table and creates a copy in another table.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employee CASCADE;
+CREATE TABLE employee (Employee_ID INT, First_Name VARCHAR(20), Last_Name CHAR(25), Seniority INT);
+INSERT INTO employee (Employee_ID, First_Name, Last_Name, Seniority) VALUES 20, 'John','smith', 0;
+INSERT INTO employee (Employee_ID, First_Name, Last_Name, Seniority) VALUES 21, 'Mary', 'Smith', 95;
+INSERT INTO employee (Employee_ID, First_Name, Last_Name, Seniority) VALUES 23, 'Sarah', 'Jones', 

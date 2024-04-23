@@ -1,0 +1,17 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ CREATE TEMPORARY TABLE IF NOT EXISTS `IDTrack` ( `id` INT(11) NOT NULL PRIMARY KEY, `data` VARCHAR(3) CHARACTER SET UTF8);
+ INSERT INTO `IDTrack` ( `id`, `data` ) VALUES ( 0, 'A' );
+ SELECT * FROM `IDTrack` LIMIT 1;
+ */
+
+SELECT * FROM `FirstAndSecondTable`;
+# create an array of the first 10
+arrayA = ( select ( data ) from firsttable );
+lengthA = rowcount( arrayA );
+SELECT arrayA AS dataName, COUNT(data) AS dataCount FROM arrayA;
+SELECT arrayA[2] AS dataName FROM arrayA WHERE rowcount(arrayA) > 3;
+SELECT arrayA[2] AS dataName, COUNT(data) AS dataCount FROM arrayA GROUP BY arrayA[2];
+SELECT arrayA[2,3] AS dataName, COUNT(data) AS COUNT FROM arrayA GROUP BY arrayA[2,3];
+-- update data on the fly
+
+ALTER DATABASE sampleDB CHARACTER SET = latin1;

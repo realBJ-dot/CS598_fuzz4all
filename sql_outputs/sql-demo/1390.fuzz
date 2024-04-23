@@ -1,0 +1,21 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- Add multiple rows to the Authors table. All the authors should have their names stored in a new field in the Authors table called Name, all the books should have these names stored in a new field in the Books table called Name. Add names to all the books
+DELIMITER $$
+DROP TRIGGER IF EXISTS `sampleDB`.`Authors`.`AuthorsId_Auto_Trigger`$$
+CREATE TRIGGER sampleDB.`Authors`.`AuthorsId_Auto_Trigger`
+  AFTER INSERT ON `sampleDB`.Authors FOR EACH ROW BEGIN
+       INSERT INTO `sampleDB`.`Books`
+       (`BookId`, `Name`)
+SELECT `AuthorId`, CONVERT(char(8)), `Name` FROM `sampleDB`.`Authors` WHERE `AuthorId` = NEW.`AuthorId`
+ $$
+DELIMITER ;
+DELIMITER $$
+DROP FUNCTION IF EXISTS `sampleDB`.`fnc_get_max_book_id`$$
+CREATE FUNCTION `sampleDB`.`fnc_get_max_book_id`() RETURNS int
+    DETERMINISTIC
+BEGIN
+DECLARE max_book_id int;
+SELECT MAX(BookID) INTO max_book_id FROM `sampleDB`.`Books`;
+RETURN max_book_id;
+END $$
+DELIMITER ;

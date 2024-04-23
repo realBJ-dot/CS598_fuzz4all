@@ -1,0 +1,25 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+DROP TABLE IF EXISTS Users;
+DROP TABLE IF EXISTS Contact;
+
+CREATE TABLE Users
+(
+    User_id INT PRIMARY KEY AUTO_INCREMENT,  
+    first_name TEXT,
+    last_name TEXT,
+    password TEXT,
+    FOREIGN KEY (User_id) REFERENCES Contact (Contact_id) ON DELETE CASCADE
+);
+
+CREATE TABLE Contact_Type
+(
+    Contact_Type_id INT PRIMARY KEY AUTO_INCREMENT,
+    Contact_type TEXT,
+    date_creation DATETIME,
+    FOREIGN KEY (Contact_Type_id) REFERENCES Users (User_id) ON DELETE CASCADE
+);
+
+DROP TABLE IF EXISTS Contact_Type;
+DROP TABLE IF EXISTS Users;
+-- For more information, visit https: 

@@ -1,0 +1,11 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ 
+CREATE USER 'root';
+CREATE DATABASE IF NOT EXISTS newDB;
+USE newDB;
+CREATE TABLE users (name CHAR(50));
+-- Use INSERT, SELECT, UPDATE and DELETE operations
+INSERT INTO users VALUES ('<NAME>');
+SELECT * FROM users;
+UPDATE users SET name = '<NAME>' WHERE name ='Sherlock';
+SELECT * FROM users;

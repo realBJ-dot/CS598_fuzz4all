@@ -1,0 +1,30 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Professor (ID INT PRIMARY KEY, FIRST_NAME VARCHAR(255), LAST_NAME VARCHAR(258), SCHOOL VARCHAR(255));
+INSERT INTO Professor VALUES (1, 'Michael', 'Widenius', 'MIT');
+INSERT INTO Professor VALUES (2, 'Michael', 'Collins', 'MIT');
+INSERT INTO Professor VALUES (3, 'Tom', 'Barron', 'MIT');
+-- Please create a semantically equivalent program that uses WHERE instead of a simple equality statement
+ 
+ 
+USE sampleDB;
+CREATE TABLE Course (ID INT PRIMARY KEY, COURSE_TITLE VARCHAR(255), SCHOOL VARCHAR(255));
+INSERT INTO Course VALUES (1, 'MATH 101', 'MIT');
+INSERT INTO Course VALUES (2, 'MATH 220', 'University of Alberta');
+INSERT INTO Course VALUES (3, 'MATH 422', 'MIT');
+INSERT INTO Course VALUES (4, 'MATH 301', 'University of Texas at Austin');
+INSERT INTO Course VALUES (5, 'SCIENCE 102', 'University of California, Los Angeles');
+INSERT INTO Course VALUES (6, 'MATH 302', 'MIT');
+INSERT INTO Course VALUES (7, 'MATH 323', 'MIT');
+SET SQL_SAFE_UPDATES = 0;
+DROP TRIGGER trg_Sample;
+DROP TABLE IF EXISTS Subject CASCADE; DROP TABLE IF EXISTS Professor CASCADE; DROP TABLE IF EXISTS Course CASCADE;
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Subject (ID INT PRIMARY KEY, SUBJECT_NAME VARCHAR(255));
+INSERT INTO Subject VALUES (1, 'MATH');
+INSERT INTO Subject VALUES (2, 'PHYSICS');
+INSERT INTO Subject VALUES (3, 'SCIENCE');
+CREATE TABLE Professor (ID INT PRIMARY KEY, FIRST_NAME VARCHAR(255), LAST_NAME VARCHAR(258), SCHOOL VARCHAR(255));
+INSERT INTO Professor VALUES (1, 'Michael', 'Widenius', 'MIT');
+INSERT INTO Professor VALUES (2, 'Michael', 'Collins', 'MIT');
+INSERT INTO Professor VALUES (3, 'Tom', 'Barron', 'MIT');
+SET SQL_SAFE_UPDATES = 1; DROP TRIGGER tr

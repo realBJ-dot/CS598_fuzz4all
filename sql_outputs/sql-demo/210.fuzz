@@ -1,0 +1,38 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS user
+( username varchar(50) NOT NULL PRIMARY KEY,
+
+firstname varchar(50) NOT NULL,
+lastname varchar(50) NOT NULL
+);
+
+INSERT INTO user VALUES ('admin','Ada','Lovelace');
+INSERT INTO user VALUES ('alice','Alice','Jobs');
+INSERT INTO user VALUES ('bob','Bob','Allen');<commit_msg>Updated MySQL.sql.<commit_after>---
+permalink: /
+title: "Hello, World"
+excerpt: "About me"
+author_profile: true
+redirect_from: 
+  - /about/
+  - /about.html
+---
+
+## Hi, I'm Adrian. I'm a second-year graduate student in the Computer Science department at [University of Kansas](http: 
+
+## Contact
+
+* [LinkedIn](https: 
+* [GitHub](http: 
+* [E-mail: <EMAIL>](<EMAIL>)
+* [Github: @adrianliu20](https: 
+
+## Research
+
+* Evolutionary Algorithms
+	* [Learning the Neural Network for Deep Learning Using Genetic Algorithms](http: 
+* [An overview of the Evolutionary Algorithm](http: 
+
+## Publications
+
+* [Learning Convolutional Neural Networks

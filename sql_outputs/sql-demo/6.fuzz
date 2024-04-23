@@ -1,15 +1,2 @@
-USE sampleDB;
-CREATE TABLE IF NOT EXISTS users(
-  email varchar(100) NOT NULL,
-  firstname varchar(100) NOT NULL,
-  lastname varchar(100) NOT NULL,
-  PRIMARY KEY (email) UNIQUE
-) ENGINE=InnoDB;
- 
-USE sampleDB;
-INSERT INTO `users` VALUES ('<EMAIL>', 'Vasya', 'Babkin', '<EMAIL>'), ('<EMAIL>', 'Marina', 'Marianovska', '<EMAIL>'), ('<EMAIL>', 'Maria', 'Sabkinska', '<EMAIL>');
-UPDATE `users` SET `email` = '<EMAIL>', `firstname` = 'Hanna', `lastname` = 'Hugues' WHERE `userid`=2;
-SELECT u.`email`, u.`firstname`, u.`lastname` 
-  FROM `users` u 
-  INNER JOIN user_login l ON u.`email` = l.`email`
-  ORDER BY l.`id` ASC;
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ALTER TABLE Users MODIFY Name VARCHAR(100) NOT NULL;

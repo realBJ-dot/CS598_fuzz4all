@@ -1,0 +1,8 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+UPDATE user_db_personality SET level = 30 WHERE type = 2 OR type = 3;
+CREATE TABLE IF NOT EXISTS user_db_personality (id INT PRIMARY KEY, level INT, "name" VARCHAR(200), type INT, UNIQUE(id));
+INSERT INTO user_db_personality (id, level, "name", type) VALUES (61, 50,'<NAME>', 'Mind');
+INSERT INTO user_db_personality (id, level, "name", type) VALUES (21, 30,'<NAME>', 'Competitiveism');
+INSERT INTO user_db_personality (id, level, "name", type) VALUES (70, 35,'<NAME>', 'Athleticism');
+UPDATE user_db_personality SET level = 35 WHERE level > 30 AND (type = 11 OR type = 12) AND id < 70;
+UPDATE user_db_personality SET level = 25 WHERE type = 3 AND id = 10;

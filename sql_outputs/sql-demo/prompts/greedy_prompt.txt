@@ -2,6 +2,6 @@
 
 MySQL is often used with other programs to implement applications that need relational database capability. It is a component of the LAMP web application software stack, which includes Linux, Apache, MySQL, Perl/PHP/Python. It is used by many database-driven web applications and popular websites like Facebook, Twitter, and YouTube.
 
-MySQL is written in C and C++, and works on many system platforms. It uses dual-licensing distribution, offered under GPL version 2 or a proprietary license. Support can be obtained from the official manual, IRC channels, forums, and Oracle's paid support via its MySQL Enterprise products. It has received positive reviews for its performance, developer interfaces, and documentation.
-/* Given no other table exists, please create a very short program which uses SQL features in a complex way. Be sure to use ENGINE=InnoDB. */
-USE sampleDB;
+MySQL is written in C and C++, and works on many system platforms. It uses dual-licensing distribution, offered under GPL version 2 or a proprietary license. Support can be obtained from the official manual, IRC channels, forums, or through paid support from Oracle. It has received positive reviews for its performance and developer interfaces.
+/* Please create a very short query which uses SQL features in a complex way. Be sure to use ENGINE=InnoDB. You should only use sampleDB as the database and assume no other table exist. You need to create new tables to perform operations. In the end, drop all tables you created. */
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;

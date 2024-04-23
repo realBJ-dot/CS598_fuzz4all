@@ -1,0 +1,31 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- Create 3 tables
+CREATE TABLE IF NOT EXISTS user_tbl (
+	usr_id INT NOT NULL,
+	usr_name text
+);
+
+CREATE TABLE IF NOT EXISTS users_role_tbl (
+	usr_id INT,
+	role text
+);
+-- INSERT VALUES
+INSERT INTO user_tbl VALUES 1, "Beno";
+INSERT INTO user_tbl VALUES 2, "Josak";
+INSERT INTO user_tbl VALUES 3, "Alain";
+INSERT INTO users_role_tbl VALUES 1, "Admin";
+INSERT INTO users_role_tbl VALUES 2, "User";
+INSERT INTO users_role_tbl VALUES 2, "Administrator";
+-- SELECT (see the column ORDER BY)
+SELECT usr_name FROM user_tbl ORDER BY usr_name ASC;
+-- JOIN
+SELECT u.usr_name, u.usr_id, r.role FROM users_role_tbl AS r LEFT JOIN user_tbl u ON u.usr_id = r.usr_id;
+SELECT u.usr_name, u.usr_id, r.role FROM user_tbl u LEFT JOIN users_role_tbl AS r ON u.usr_id = r.usr_id WHERE u.usr_id IN (2, 3);
+SELECT u.usr_name, u.usr_id, r.role AS role FROM user_tbl u LEFT JOIN users_role_tbl AS r ON u.usr_id = r.usr_id WHERE r.role = 'Admin';
+-- IN AND NOT IN
+SELECT u.usr_name, u.usr_id, r.role AS role FROM user_tbl u LEFT JOIN users_role_tbl AS r ON u.usr_id = r.usr_id WHERE u.usr_id = 2 OR u.usr_id = 3;
+SELECT u.usr_name, u.usr_id, r.role AS role FROM user_tbl u LEFT JOIN users_role_tbl AS r ON u.usr_id = r.usr_id WHERE u.usr_name IN ('Beno', 'Josak') AND NOT u.usr_id IN (2, 4);
+-- LIKE
+SELECT u.usr_name, u.usr_id, r.role AS role FROM user_tbl u LEFT JOIN users_role_tbl AS r ON u.usr_id = r.usr_id WHERE u.usr_name LIKE '%eno';
+-- DELETE
+DELETE FROM users_role_tbl WHERE role = 'Administrator';

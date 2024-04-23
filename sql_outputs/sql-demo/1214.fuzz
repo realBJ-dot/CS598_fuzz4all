@@ -1,0 +1,19 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS users (
+    id                int auto_increment,
+    first_name        varchar(30) not null,
+    last_name         varchar(30) not null,
+    balance           decimal(11, 2) not null,
+    PRIMARY KEY (id)
+);
+INSERT INTO users (id, first_name, last_name, balance)
+    VALUES (0, 'Brenda', 'Walker', '5569.96'),
+           (2, 'Clark', 'Kent', '5000.92'),
+           (4, 'John', 'Brown', '6090.90'),
+           (6, 'Maryam', 'Thomas', '4529.93'),
+           (7, 'Robert', 'Dooley', '3579.37'),
+           (8, 'Stanley', 'Rogers', '3679.19'),
+           (9, 'Jane', 'Williams', '6010.27');
+
+-- UPDATE TO 0
+UPDATE users SET id=1, balance=5589.96 WHERE id = 0

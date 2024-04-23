@@ -1,0 +1,9 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS category(
+	cat_id INT NOT NULL  PRIMARY KEY AUTO_INCREMENT,
+	cat_name text
+);
+INSERT INTO category(cat_id,cat_name) VALUES(1,'First Category'); INSERT INTO category(cat_id,cat_name) VALUES(2,'Second Category'); INSERT INTO category(cat_id,cat_name) VALUES(3,'Third Category'); INSERT INTO category(cat_id,cat_name) VALUES(4,'Fourth Category');
+DESCRIBE category;
+DROP TABLE category;
+DROP DATABASE sampleDB;

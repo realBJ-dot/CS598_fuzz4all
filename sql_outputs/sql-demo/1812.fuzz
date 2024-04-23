@@ -1,0 +1,23 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ 
+CREATE DATABASE IF NOT EXISTS testDB; USE testDB;
+ 
+CREATE TABLE sampleDB.employee(
+    id INTEGER PRIMARY KEY,
+    name VARCHAR (15) NOT NULL UNIQUE,
+    address VARCHAR(50) NOT NULL,
+    PRIMARY KEY(id)
+);
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS sampleDB.employee(id INTEGER PRIMARY KEY, name VARCHAR (15) NOT NULL UNIQUE, address VARCHAR(50) NOT NULL);
+INSERT INTO sampleDB.employee VALUES(1, 'John', 'Mahalo');
+INSERT INTO sampleDB.employee VALUES(2, 'Nicole', 'Taylor');
+INSERT INTO sampleDB.employee VALUES(3, 'Rick', 'Mahalo');
+DROP DATABASE IF EXISTS sampleDB;
+
+CREATE DATABASE IF NOT EXISTS testDB; USE testDB;
+CREATE TABLE IF NOT EXISTS testDB.employee VALUES (1, 'Rick','Mahalo');
+DROP DATABASE IF EXISTS testDB;
+
+INSERT INTO sampleDB.employee (name) VALUES ('John');

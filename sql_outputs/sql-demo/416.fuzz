@@ -1,0 +1,8 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+INSERT INTO Person (name) VALUES ("Tony");
+INSERT INTO Person (name) VALUES ("Morpheus");
+INSERT INTO Person (name) VALUES ("Donald");
+INSERT INTO Person (name) VALUES ("Trillian");
+
+INSERT INTO Employee (name, salary) VALUES ("<NAME>", 215000.00), ("<NAME>", 150.00), ("<NAME>", -2000000.00), ("<NAME>", -4000000.00 ), ("<NAME>", 3300000.00), ("<NAME>", 75000000.00);

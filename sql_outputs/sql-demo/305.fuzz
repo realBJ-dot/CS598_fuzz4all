@@ -1,0 +1,23 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE `customer` (
+  `customerID` INT(5) NOT NULL AUTO_INCREMENT,
+  `contactID` INT(5) NOT NULL,
+  `name` INT(5) NOT NULL,
+  `address` INT(5) NOT NULL,
+  `city` INT(5) NOT NULL,
+  `state` INT(5) NOT NULL,
+  `zip` INT(5) NOT NULL,
+  PRIMARY KEY (`customerID`),
+  FOREIGN KEY (`contactID`) REFERENCES `contact` (`contactID`)
+);
+DESC contact;
+USE mysql_sampleDB;
+SELECT * FROM contact;
+USE mysql_sampleDB_2;
+SET FOREIGN_KEY_CHECKS = 0;
+DROP TABLE customer CASCADE;
+ALTER TABLE contact CHANGE ID ID INT(5);
+SET FOREIGN_KEY_CHECKS = 1;
+DESC customer;
+ALTER TABLE contact DROP foreign_key contactID;
+ALTER TABLE contact DROP foreign_key contactID;

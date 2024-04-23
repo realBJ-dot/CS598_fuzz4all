@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS `firstTable`;
+
+ALTER TABLE firstTable
+  ADD `lastName` varchar(30);
+DROP TABLE IF EXISTS `secondTable`;
+
+ALTER TABLE secondTable
+  ADD `lastName` varchar(30);
+DROP DATABASE IF EXISTS `sampleDB`;

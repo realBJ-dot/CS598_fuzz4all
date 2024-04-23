@@ -1,0 +1,23 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+# For your convenience, the following table is in the Sample Database.
+#
+-- This table contains data about students and their respective grades.
+# For each student, there is a student number, a student name, a student grade and,
+# for each grade, there is a grade number, the grades (out of 10), course code,
+# and the course name. The table also has another column:
+#
+-- If grade < 7, the student gained 'fail'.
+-- If grade between 7 and 10, the student gained 'pass'.
+-- If grade = 8 or above, the student gained'subminative'.
+CREATE TABLE Students (STUDENT_ID INT, STUDENT_NAME VARCHAR(255), GRADE INT, FILED_ON DATE,
+                          FAIL VARCHAR(160), PASS VARCHAR(160), SUBMINATIVE VARCHAR(160) PRIMARY KEY);
+INSERT INTO Students VALUES (1, 'Student 1', 7, '2018-01-01', 'fail', 'fail','subminative');
+INSERT INTO Students VALUES (2, 'Student 2', 8, '2018-01-01', 'fail', 'pass', 'fail');
+INSERT INTO Students VALUES (3, 'Student 3', 9, '2018-01-02', 'pass', 'fail', 'pass');
+INSERT INTO Students VALUES (4, 'Student 4', 8, '2018-01-03', 'fail', 'fail', 'fail');
+INSERT INTO Students VALUES (5, 'Student 5', 7, '2018-01-04', 'fail','start', 'pass');
+INSERT INTO Students VALUES (6, 'Student 6', 5, '2018-01-04', 'fail', 'pass', 'fail');
+INSERT INTO Students VALUES (7, 'Student 7', 9, '2018-01-05', 'fail', 'fail', 'fail');
+INSERT INTO Students VALUES (8, 'Student 8', 7, '2018-01-06', 'fail', 'fail', 'pass');
+INSERT INTO Students VALUES (8, 'Student 9', 10, '2018-01-06', 'pass', 'fail','start');
+INSERT INTO Students VALUES

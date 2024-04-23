@@ -1,6 +1,5 @@
-USE sampleDB;
-INSERT INTO comments(author, content, post) VALUES("Mary", "How are you", 10);
-INSERT INTO comments(author, content, post) VALUES("John", "Good day", 6);
-INSERT INTO comments(author, content, post) VALUES("Mary", "How are you", 10);
-SELECT c.author, c.content, p.author FROM comments c, posts p WHERE p.comments=c.id;
-SHOW TRIGGERS;
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users (Username CHAR(12) NOT NULL, Country CHAR(2), Email VARCHAR(50));
+INSERT INTO Users VALUES ("Rahul","India","<EMAIL>"),("Dany","India","<EMAIL>"),("Sandeep","India","<EMAIL>");
+DROP TABLE Users;
+DROP DATABASE IF EXISTS sampleDB;

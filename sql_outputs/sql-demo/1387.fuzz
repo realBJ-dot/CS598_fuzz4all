@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+-- Please create a program that reads the following table:
+--
+--     Author | BookId |
+--
+-- and writes to a table:
+--
+--     Author | BookTitle |
+--
+-- Using the IN keyword.

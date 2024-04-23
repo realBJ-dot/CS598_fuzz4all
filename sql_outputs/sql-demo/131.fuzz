@@ -1,0 +1,7 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users (
+    username char(20) PRIMARY KEY, 
+    FirstName VARCHAR(30)
+);
+INSERT INTO Users (username, FirstName) VALUES ('Test', 'Test'), 
+('Admin', 'Admin'), ('Guest', 'Guest'), ('Super', 'Super');

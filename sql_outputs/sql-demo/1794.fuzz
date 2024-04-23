@@ -1,0 +1,12 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE car (name varchar(50), price decimal(15,2));
+ALTER TABLE car CHANGE name name varchar(75);
+INSERT INTO car (name, price) 
+ VALUES 
+  ('Buick',50000), 
+  ('Ford',60000), 
+  ('Volvo',40000);
+DROP DATABASE IF EXISTS sampleDB;
+-- Insert your test data under the name testDB.
+ALTER USER 'root'@'%' IDENTIFIED BY '<PASSWORD>';
+GRANT ALL PRIVILEGES ON sampleDB TO root@'%';

@@ -1,0 +1,9 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS Mutated (id INT NOT NULL, price DECIMAL(10,2) UNIQUE, INDEX idx(price));
+UPDATE Mutated SET price = 80 WHERE id = 2;
+SELECT price FROM Mutated;
+UPDATE Mutated SET price = 10 WHERE id = 2;
+SELECT price FROM Mutated;
+SELECT price FROM Mutated ORDER BY price;
+DROP TABLE Mutated;
+DROP DATABASE sampleDB;

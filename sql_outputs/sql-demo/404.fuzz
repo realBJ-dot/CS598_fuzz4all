@@ -1,0 +1,6 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Person (First_name TEXT);
+INSERT INTO Person (First_name) VALUES ("Jerry");
+UPDATE Person SET First_name="'Bob"';
+SELECT * FROM Person;
+DROP TABLE Person;

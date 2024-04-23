@@ -1,0 +1,8 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE mytable(
+   a INT PRIMARY KEY AUTO_INCREMENT,
+    b VARCHAR(30),
+    c INT,
+    d TEXT,
+    e DATE
+)ENGINE=InnoDB;

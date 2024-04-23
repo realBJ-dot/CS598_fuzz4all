@@ -1,0 +1,60 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS book(
+ book_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+ book_name text,
+ author_id INT
+ );
+INSERT INTO book VALUES(1,'The Art of SQL',1);
+INSERT INTO book VALUES(2,'Programming the Databases Man',2);
+INSERT INTO book VALUES(3,'My first SQL',3);
+ALTER TABLE book MODIFY author_id INT;
+ALTER TABLE book ENGINE=InnoDB;
+DROP TABLE book;
+DROP DATABASE sampleDB;
+
+
+*1.2-1-1-MySQL.md 完成*
+1、本次任务是用MySQL创建并创建自己的数据库以存储测试数据，并通过DML语句进行添加修改删除。1、2、3完成*
+2、本次任务是利用MySQL创建数据库表的方法(1-Insert,2-Update,3-Delete)。完成以后，就可以删除测试数据，但是要删除的数据不能小于2条*
+    1、1、插入*
+        CREATE DATABASE IF NOT EXISTS sampleDB; 
+        USE sampleDB; 
+      *
+        CREATE TABLE IF NOT EXISTS author( 
+        author_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, 
+        author_name text
+        ); 
+          
+      
+         *
+         INSERT INTO author VALUES(1,'Alice'); 
+         INSERT INTO author VALUES(2,'Bob'); 
+         INSERT INTO author VALUES(3,'Charlie'); 
+         ALTER TABLE author MODIFY author_id INT(4); 
+         ALTER TABLE author ENGINE=InnoDB; 
+         *
+          
+         DROP TABLE author; 
+         DROP DATABASE sampleDB;
+            *
+            1、2、删除。删除的条数要大于2条。
+        CREATE DATABASE IF NOT EXISTS sampleDB; 
+      *
+        
+        USE sampleDB; 
+         
+        CREATE TABLE IF NOT EXISTS book( 
+        book_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, 
+        book_name text, 
+        author_id INT
+        ); 
+          
+        INSERT INTO book VALUES(1,'The Art of SQL',1); 
+        INSERT INTO book VALUES(2,'Programming the Databases Man',2); 
+        INSERT INTO book VALUES(3,'My first SQL',3); 
+            *
+            ALTER TABLE book MODIFY author_id INT; 
+            ALTER TABLE BOOK ENGINE=INNODB; 
+            * 
+           
+            DROP TABLE book

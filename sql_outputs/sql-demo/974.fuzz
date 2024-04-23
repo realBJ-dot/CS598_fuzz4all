@@ -1,0 +1,28 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+-- Please create a very short query which uses SQL features in a complex way. Be sure to use ENGINE=InnoDB. You should only use sampleDB as the database and assume no other table exist. You need to create new tables to perform operations. In the end, drop all tables you created. */
+SET sql_mode="NO_AUTO_PREPARE";
+DROP TABLE IF EXISTS `person`;
+DROP TABLE IF EXISTS `address`;
+DROP TABLE IF EXISTS `city`;
+DROP TABLE IF EXISTS `state`;
+DROP TABLE IF EXISTS `country`;
+DROP TABLE IF EXISTS `contact`;
+DROP TABLE IF EXISTS `company`;
+DROP TABLE IF EXISTS `project`;
+DROP TABLE IF EXISTS `task`;
+DROP TABLE IF EXISTS `projectperson`;
+DROP TABLE IF EXISTS `projectcontact`;
+DROP TABLE IF EXISTS `companyperson`;
+ 
+CREATE TABLE IF NOT EXISTS `projectcontact` (
+  `ID` INT(11) NOT NULL AUTO_INCREMENT,
+  `projectID` INT(11) NOT NULL,
+  `contactID` INT(11) NOT NULL,
+  `position` TINYINT(3) NULL DEFAULT NULL,
+  `salary` DECIMAL(10,2) NULL DEFAULT NULL,
+  `hourlyRate` TINYINT(3) NULL DEFAULT NULL,
+  PRIMARY KEY (ID)
+) ENGINE=InnoDB AUTO_INCREMENT=88 DEFAULT CHARSET=latin1;
+INSERT INTO `person` (`name`, `address`, `city`, `state`, `country`, `email`, `phone`, `position`)
+  VALUES ('<NAME>', '20 Chatham Street, New York City, New York', 'Brooklyn', 'NY', 'US', '<EMAIL>', '555-111-2222', 2), ('<NAME>', '9109 N Pine Ave, Los Angeles, CA', 'Oakland', 'CA', 'US', '<EMAIL>', '608-555-3333', 1), ('<NAME>', '133 Dowry Ave, Washington D.C.', 'Seattle', 'WA', 'US', '<EMAIL>', '415-888-5555', 2), ('<NAME>', '3069 Mary Wood St, Dublin, N.I.', 'Dublin', 'IE', 'GB', '<EMAIL>', '444-777-8888', 1), ('<NAME>', '7015 Riverside St, London, England', 'London', 'GB', 'UK', '<EMAIL>', '2063452598', 1), ('<NAME>', '2

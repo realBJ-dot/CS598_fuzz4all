@@ -1,0 +1,40 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS movies(
+	movieId INT NOT NULL PRIMARY KEY,
+	imdbId VARCHAR(10) DEFAULT NULL,
+	title VARCHAR(100) DEFAULT NULL,
+	year INT DEFAULT NULL
+); USE sampleDB;
+CREATE TABLE IF NOT EXISTS movies(
+	movieId INT NOT NULL PRIMARY KEY,
+	imdbId VARCHAR(11) DEFAULT NULL,
+	title VARCHAR(50) DEFAULT NULL,
+	year INT DEFAULT NULL
+); USE sampleDB;
+USE sampleDB;
+ALTER TABLE movies MODIFY YEAR(2005);
+SELECT * FROM movies;
+ALTER TABLE movies MODIFY DATE(30/29, 30/032/2000) NO ACTION;
+SELECT * from movies where date < '11/01/2009';
+-- Please create a script that uses FOR XML option of MySQL's SELECT statement using FOR XML_FORCE_ARRAY property
+SELECT * FROM movies FOR XML_FORCE_ARRAY;
+CREATE TABLE IF NOT EXISTS customers(
+	customerId INT NOT NULL PRIMARY KEY,
+	name VARCHAR(30) DEFAULT 'root'
+);
+-- Please create a program to count the number of lines in one of the five tables. Print all of them in a human readable format.
+USE sampleDB;
+CREATE TABLE IF NOT EXISTS users(
+	userId INT NOT NULL PRIMARY KEY,
+	name VARCHAR(10) DEFAULT 'root',
+	PASSWORD_HASH  CHAR(64) DEFAULT NULL
+);
+CREATE TABLE IF NOT EXISTS movies(
+	movieId INT NOT NULL PRIMARY KEY,
+	imdbId CHAR(11) DEFAULT NULL,
+	title CHAR(100) DEFAULT NULL,
+	year CHAR(4) DEFAULT NULL
+);
+ALTER TABLE movies ADD FULLTEXT INDEX title_idx (title);
+USE sampleDB;
+CREATE TABLE IF

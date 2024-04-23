@@ -1,0 +1,23 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ 
+CREATE TABLE  INDEX_TEST(
+  indexID int DEFAULT '0' AUTO_INCREMENT,
+  indexName varchar(32) DEFAULT NULL,
+  employeeID int DEFAULT 'NULL',
+  INDEX_TEST_UNIQUE (employeeID)
+);
+INSERT INTO INDEX_TEST VALUES (null,'<NAME>',1), (null,'Rajan',45),(null,'Rajan1',45),(null,'Rajan2',45);
+CREATE
+ 
+PARTITION BY RANGE (employeeID) (
+  SUBPARTITION BY RANGE (employeeID) (
+    SUBPARTITION employeeID_sub0 VALUES (0),
+      PARTITION employeeID_sub2(employeeID),
+    COMMIT PRESERVE 3
+  ),
+  COMMIT PRESERVE 3
+);
+CREATE INDEX idx1 ON INDEX_TEST  (employeeID);
+CREATE INDEX idx2 ON INDEX_TEST(employeeID);
+CREATE INDEX idx3 ON INDEX_TEST(employeeID);
+/* Please create a very short query which uses SQL features in a complex way. Be sure to use ENGINE=InnoDB. You should only

@@ -1,0 +1,52 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users(username char(20) PRIMARY KEY, FirstName VARCHAR(30)) ENGINE=InnoDB;
+INSERT INTO Users(username,Firstname) VALUES('Test','Test'),('Admin','Admin'),('Guest','Guest'),('Super','Super');
+ 
+USE sampleDB;
+CREATE TABLE Users (username varchar(20), Firstname varchar(30) PRIMARY KEY);
+#
+# We want to insert an entry into sampleDB table and make note of its
+# ID, for which we use the AUTO_INCREMENT column flag. You can query
+# this by issuing these commands using MySQL or another RDBMS,
+# depending on your specific demand.
+# #
+insert into sampleDB.Users
+Values ('Test','Test'), ('Admin','Admin'), ('Guest','Guest'), ('Super','Super');
+
+--
+-- The next command will list all the columns defined in the Users table.
+--
+Select * from sampleDB.Users;
+
+-- 2nd solution
+
+-- Step 1 - Install php
+# 3- On the server, go to the mysql folder.
+$ php -v
+PHP 7.4.9
+
+# 2nd PHP installation
+$ sudo apt update
+#
+# Now add our PFS_PHP variable to the server. This will setup PHP path and other configuration flags for our php.ini file.
+add_iit_php
+#
+# We also need a package for PHP. A lot of PHP is already install on our system, but not necessarily what we would want for our PHP files. So we install PHP-FPM package and install a module for Apache that runs php-fpm.
+$ sudo apt install php7.4-fpm php7.4-cli php7.4-pgsql php7.4-mysql
+
+# 3- Download and install apache
+$ sudo apt install apache2
+$ sudo apt install apache2-utils
+
+# 4 - Install mysql php module
+$ sudo a2enmod php7.4
+$ sudo a2enmod rewrite
+
+# 5 - Add php in the server
+$ sudo service apache2 restart
+
+# 6- Now you know how to install php with mysql and apache. Next, lets setup nginx to forward to php via port.
+
+$ sudo apt install nginx
+
+#

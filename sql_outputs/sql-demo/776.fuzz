@@ -1,0 +1,14 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS tmpID ( `tmp_ID` INTEGER(11));
+INSERT INTO tmpID (tmp_ID)
+-- Please check whether the temporary table is in use or not */
+SELECT COUNT(id) FROM tmpID; SELECT COUNT(id) 6 FROM tmpID;
+DROP TABLE tmpID;
+
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS newTable (id INTEGER NOT NULL PRIMARY KEY, data TEXT);
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB_two; USE sampleDB_two; CREATE TABLE IF NOT EXISTS new_table (id INTEGER NOT NULL PRIMARY KEY, data TEXT);
+DROP TABLE new_table;
+DROP DATABASE sampleDB;

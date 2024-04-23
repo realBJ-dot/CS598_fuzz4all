@@ -1,0 +1,9 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users(Name VARCHAR(128));
+INSERT INTO Users (Name) VALUES ('John'), ('Joe');
+-- Please add 2nd rows to the sampleDB database. You should use
+-- both 1st and 2nd syntax. Add the new rows to the table.
+INSERT INTO Users (Name) VALUES ('Anna');
+INSERT INTO Users (Name) VALUES ('Angela');
+SELECT * FROM Users;
+DROP TABLE IF EXISTS Users;

@@ -1,0 +1,22 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users_2(username char(20) PRIMARY KEY, FirstName VARCHAR(30));
+DROP TABLE Users_2 ;
+-- Please modify the code to create two tables. Each table will have four columns, and each column will have a different data type. The following is the template code, which needs modification.
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users(username char(20) PRIMARY KEY, FirstName VARCHAR(30), LastName VARCHAR(30));
+DROP TABLE Users;
+CREATE TABLE Users(username char(20) PRIMARY KEY, FirstName VARCHAR(30), LastName VARCHAR(30), 
+BirthDate DATETIME, address VARCHAR(30), email VARCHAR(100), phone BIGINT, UNIQUE(email));
+DROP TABLE Users;
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users(username char(20) PRIMARY KEY, FirstName VARCHAR(30), LastName VARCHAR(30), 
+BirthDate DATETIME, address VARCHAR(30), email VARCHAR(100) NOT NULL, phone BIGINT, UNIQUE(email));
+DROP TABLE Users;
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users(username char(20) PRIMARY KEY, FirstName VARCHAR(30), LastName VARCHAR(30), 
+BirthDate DATETIME, address VARCHAR(30), email VARCHAR(100), phone BIGINT, UNIQUE(email,phone));
+DROP TABLE Users;
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Users(username char(20) PRIMARY KEY, FirstName VARCHAR(30), LastName VARCHAR(30), 
+BirthDate DATETIME, address VARCHAR(30), email VARCHAR(100), phone BIGINT, UNIQUE(email));
+DROP TABLE Users;

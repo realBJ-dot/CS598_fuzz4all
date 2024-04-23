@@ -1,0 +1,47 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS users(
+	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	name varchar(500),
+	role INT DEFAULT 2,
+	profile_photo varchar(500)
+);
+DESCRIBE users;
+CREATE TABLE IF NOT EXISTS profiles(
+	userId INT NOT NULL,
+	bio MEDIUMBLOB,
+	CONSTRAINT fk_userId FOREIGN KEY(userId) REFERENCES users(userId) REFERENCES users(userId) ON DELETE CASCADE ON UPDATE CASCADE,
+	PRIMARY KEY (userId),
+	UNIQUE (userId),
+	FOREIGN KEY (userId) REFERENCES users(userId) REFERENCES users(userId) ON DELETE CASCADE ON UPDATE CASCADE,
+	UNIQUE (userData)
+);
+DESCRIBE users;
+DESCRIBE profiles;
+CREATE TABLE IF NOT EXISTS role_assignments(
+	roleId INT NOT NULL,
+	userId INT NOT NULL,
+	CONSTRAINT fk_roleId FOREIGN KEY(roleId) REFERENCES users(userId) ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT fk_userId FOREIGN KEY(userId) REFERENCES users(userId) ON DELETE CASCADE ON UPDATE CASCADE,
+	PRIMARY KEY(roleId, userId)
+);
+DESCRIBE users;
+DESCRIBE role_assignments;
+CREATE TABLE IF NOT EXISTS posts(
+	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	posting_date datetime,
+	body text,
+	userId INT,
+	CONSTRAINT fk_userId FOREIGN KEY(userId) REFERENCES users(userId) REFERENCES users(userId) ON DELETE CASCADE ON UPDATE CASCADE,
+	FOREIGN KEY (userId) REFERENCES users(userId) REFERENCES users(userId) ON DELETE CASCADE ON UPDATE CASCADE,
+	UNIQUE (posting_date, body, userId)
+);
+DESCRIBE users;
+DESCRIBE posts;<commit_msg>Removing more lines<commit_after> 
+ 
+
+<fim_middle>CREATE TABLE IF NOT EXISTS users(
+	userId INT NOT NULL,
+	email_address varchar(500) UNIQUE NOT NULL,
+	role INT DEFAULT 2,
+	profile_photo varchar(500)
+);

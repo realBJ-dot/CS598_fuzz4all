@@ -1,0 +1,40 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+alter table mytable add newColumn INT NOT NULL AFTER id; SHOW COLUMNS;
+    ALTER TABLE mytable modify price DECIMAL(10,2);  ALTER TABLE SampleDB.Testmodify ADD COLUMN newColumn INT NOT NULL AFTER id; SHOW COLUMNS;
+DROP TABLE mytable;
+DROP DATABASE sampleDB;
+show databases;
+drop database sampleDB;
+-- Please use  MySQL’s Query Analyzer to identify problems in the query
+create db table test(s1 varchar(15), s2 varchar(14));
+insert into test values('aaaa','aaaa');
+insert into test(s1, s2) values('bbb', 'bbbbb');
+insert into test values('cccc','cccc');
+-- you must have the access privileges for the view.
+create view Testview1 as
+select * from Testtable where test1 like 'a%';
+-- to update only the columns that have a NULL value, you can use
+-- UPDATE Testtbl SET testField = 'newvalue' WHERE testField like 'aaa%'
+create view Testview2 as
+select * from Testtable where test1 like 'a%';
+-- to update a whole row you must be able to delete the old value first. Use SELECT Testtbl.*, Testtbl.testField as oldValue FROM Testtbl LIMIT 1 and then update Testtbl SET testField = 'newvalue' where oldValue = 'oldvalue'
+create view Testview3 as
+select * from Testtable where test1 like 'a%';
+-- you cannot edit or remove rows through the view.
+create view Testview3 as
+select * from Testtable where test1 like 'a%';
+-- To add a new row and then delete you need to remove the old values
+create view Testview4 as
+select * from Testtable where test1 like 'a%';
+select * from testtable,* from testtable,testtable where testtable.id=testtable.otherId;
+select * from testtable,testtable where id=testtable.id;
+drop view Testview4;
+drop view Testview3;
+drop view Testview2;
+drop view Testview1;
+drop view Testview;
+DROP view Testtbl;
+-- Please update the program in section 4.2 to allow you to list the columns in each
+-- table. Be sure to use the ENGINE=* option and that both tables are in the same
+-- database.
+CREATE TABLE

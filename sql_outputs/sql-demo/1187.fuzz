@@ -1,0 +1,6 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE users(
+	user_id INTEGER PRIMARY KEY,
+	first_name VARCHAR(15) UNIQUE,
+	last_name VARCHAR(25) NOT NULL
+);

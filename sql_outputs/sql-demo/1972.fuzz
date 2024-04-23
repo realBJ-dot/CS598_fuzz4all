@@ -1,0 +1,15 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+
+CREATE TABLE IF NOT EXISTS employees_salary_by_salary(
+    employee_salary INT
+);
+
+
+FLUSH PRIVILEGES;
+
+LOCK TABLES employees_salary_by_salary WRITE;
+INSERT INTO employees_salary_by_salary(employee_salary) VALUES('2012-06-04');
+UNLOCK TABLES;
+
+DROP DATABASE IF EXISTS sampleDB;
+

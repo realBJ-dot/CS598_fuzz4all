@@ -1,0 +1,9 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS animal_new (id INT, name VARCHR(20), sex VARCHR(10), PRIMARY KEY (id), UNIQUE(name, sex));
+INSERT INTO animal_new (id, name, sex) VALUES(1, 'Lion', 'Female');
+INSERT INTO animal_new (id, name, sex) VALUES(2, 'Tiger', 'Male');
+INSERT INTO animal_new (id, name, sex) VALUES(3, 'Tiguan', 'Male');
+INSERT INTO animal_new (id, name, sex) VALUES(4, 'Falcon', 'Male');
+SELECT id, name, sex FROM animal_new WHERE sex = 'Male';
+DROP TABLE IF EXISTS animal_new;
+DROP DATABASE IF EXISTS sampleDB;

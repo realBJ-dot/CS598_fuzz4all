@@ -1,0 +1,23 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employees;
+CREATE TABLE employees (
+	id int(11) NOT NULL AUTO_INCREMENT,
+	email varchar(50) NOT NULL,
+	password varchar(50) NOT NULL,
+	PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+DROP TABLE IF EXISTS employees;
+-- Please create a program to view all the employees. Be sure to use ORDER BY with multiple columns and ORDER BY as desc.
+SELECT id, name, salary, department FROM employees;
+-- Please use UPDATE to modify the Employee's salary using a sub-query.
+UPDATE employees SET salary = 4000 WHERE salary = 1500;
+-- Please use DELETE to remove the Employee's salary using a sub-query, then view the remaining employees.
+UPDATE employees SET salary = 4000 WHERE salary = 1500;
+-- Please use DROP TABLE to delete ALL the relevant tables and then CREATE them back.
+DROP TABLE IF EXISTS employees;
+CREATE TABLE employees (
+	id int(11) NOT NULL AUTO_INCREMENT,
+	email varchar(50) NOT NULL,
+	password varchar(50) NOT NULL,
+	PRIMARY KEY (id)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;

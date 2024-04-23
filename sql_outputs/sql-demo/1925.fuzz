@@ -1,0 +1,40 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS employees_salary_by_salary;
+CREATE TABLE employees_salary_by_salary (
+    employee_salary	INT UNSIGNED,
+    emp_salary		INT UNSIGNED,
+ 	PRIMARY KEY (employee_salary, emp_salary));
+INSERT INTO employees_salary_by_salary (employee_salary, emp_salary) VALUES (6500, 2000);
+select employee_salary, emp_salary from employees_salary_by_salary;
+SELECT SUM(salary) FROM employees_salary_by_salary;
+show tables;
+create table employees_salary
+(
+employee_salary INTEGER,
+emp_salary  INTEGER
+);
+SELECT MIN(employee_salary) FROM employees_salary_by_salary
+UNION
+SELECT MAX(employee_salary) FROM employees_salary_by_salary;
+show tables;
+select employee_salary,
+FROM employees_salary_by_salary
+WHERE employee_salary <= MAX(employee_salary);
+ 
+show create table employees_salary;
+
+
+/-----------------------------------
+# Drops tables & view & show databases
+---------------------------------------*/
+DROP DATABASE IF EXISTS sampleDB;
+DROP TABLE IF EXISTS employees_salary_by_salary;
+CREATE TABLE employees_salary_by_salary (
+    employee_salary	INT UNSIGNED,
+    emp_salary		INT UNSIGNED,
+ 	PRIMARY KEY (employee_salary, emp_salary));
+INSERT INTO employees_salary_by_salary (employee_salary, emp_salary) VALUES (6500, 2000);
+show create table employees_salary_by_salary;
+SELECT EMP_MNO, FIRST, LAST, YEAR_OF_BIRTH, MONTH_OF_BIRTH, day_of_birth
+FROM employees
+WHERE MONTH_OF_BIRTH<MONTH('06/12');

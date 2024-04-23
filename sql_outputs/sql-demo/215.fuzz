@@ -1,0 +1,37 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS person; USE sampleDB;
+DROP TABLE IF EXISTS student; USE sampleDB;
+DROP TABLE IF EXISTS teacher; USE sampleDB;
+CREATE TABLE IF NOT EXISTS person(
+id INTEGER(11) AUTO_INCREMENT,
+name VARCHAR(50) NOT NULL,
+age INTEGER(2) NOT NULL,
+position VARCHAR(50) NOT NULL,
+PRIMARY KEY(id)
+);
+CREATE TABLE IF NOT EXISTS student(
+class_year VARCHAR(20) NOT NULL,
+id INTEGER(11),
+name VARCHAR(50) NOT NULL,
+salary INTEGER(11) NOT NULL,
+PRIMARY KEY(id)
+);
+ CREATE TABLE IF NOT EXISTS teacher(
+class_year VARCHAR(20) NOT NULL,
+id INTEGER(11),
+name VARCHAR(50) NOT NULL,
+salary INTEGER(11) NOT NULL,
+PRIMARY KEY(id)
+);
+ INSERT INTO person (name,age,position) VALUES ("Rachit",20,"Engineer");
+ INSERT INTO person (name,age,position) VALUES ("Tirthankatri",21,"Teacher");   
+ INSERT INTO person (name,age,position) VALUES ("Vatsiya",20,"Student");
+ INSERT INTO student (class_year,id,name,salary) VALUES ("2012/2013",1,"Rachit",1000);
+ INSERT INTO student (class_year,id,name,salary) VALUES ("2015/2016",2,"Vatsiya",3000);
+ INSERT INTO student (class_year,id,name,salary) VALUES ("2016/2017",3,"Tirthankatri",3500);
+ INSERT INTO teacher (class_year,id,name,salary) VALUES ("2010/2011",1,"Rachit",1500);
+ INSERT INTO teacher (class_year,id,name,salary) VALUES ("2013/2014",2,"Vatsiya",2000);
+ INSERT INTO teacher (class_year,id,name,salary) VALUES ("2012/2018",3,"Tirthankatri",1700);
+ USE sampleDB; SELECT * FROM person;
+ SELECT * FROM student;
+ SELECT * FROM teacher;

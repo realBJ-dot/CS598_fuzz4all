@@ -1,0 +1,26 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE users;
+CREATE TABLE users(id INTEGER, fname VARCHAR(50), lname VARCHAR(50), user_type INTEGER);
+INSERT INTO users (id, fname, lname, user_type) VALUES (46, 'David', 'M', 4);
+
+
+```
+# What's next
+1. You can also make some improvements with tables by adding new columns and data types to them.
+2. You can also create functions/procedures and use them in other functions
+3. You can also make modifications in existing tables. (Just use UPDATE, DELETE, INSERT etc)
+4. You can also add constraints to your tables so that you can restrict a single row or entire table to only certain values.
+
+You can now use various functions.
+* SQL GROUP BY
+* SQL ORDER BY
+* SQL ORDER BY (DESC)
+* SQL UNION
+* SQL UNION (ALL)
+* SQL UNION ALL (EXCEPT)
+* SQL JOIN
+* SQL SELECT
+* SQL UPDATE
+* SQL DELETE
+
+

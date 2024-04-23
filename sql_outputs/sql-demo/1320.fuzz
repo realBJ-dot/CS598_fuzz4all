@@ -1,0 +1,37 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS author(
+    author_id INT NOT NULL  PRIMARY KEY AUTO_INCREMENT,
+    author_name text
+);
+DESCRIBE author;
+
+INSERT INTO author VALUES('John','Albert');
+INSERT INTO author VALUES('Paul','John');
+INSERT INTO author VALUES('John','Paul');
+USE sampleDB;
+SELECT a.author_id,a.author_name
+FROM author a,author b,category c
+WHERE a.author_id=b.author_id
+AND b.author_id=c.cat_id
+ORDER BY a.author_id;
+SELECT a.author_id,b.author_name,
+count(*) as num
+FROM author a,author b,category c
+WHERE a.author_id=b.author_id
+AND b.author_id=c.cat_id
+GROUP BY a.author_id
+ORDER BY a.author_id;
+--
+-- Please add new tables to sampleDB with a suitable index structure in its schema. Make sure to be sure you are using one of the index options used with other indexes. A couple of them are shown in the table below which is part of MySQL. They are used when the table is small enough and the values will be stored in the file. */
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS author(
+    author_id INT NOT NULL  PRIMARY KEY AUTO_INCREMENT,
+    author_name text
+);
+DESCRIBE author;
+
+INSERT INTO author VALUES('John','Albert');
+INSERT INTO author VALUES('Paul','John');
+INSERT INTO author VALUES('John','Paul');
+--
+-- Indexes are what are used to speed up queries and store data in better place and speed up the processing. They can be used for data storage on disk and used for faster searching for data. In the case of

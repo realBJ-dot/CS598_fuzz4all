@@ -1,0 +1,5 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+alter table table2 ADD COLUMN c CHAR(2);
+drop table table2;
+drop table sampleDB.table2;
+drop table sampleDB.table3;

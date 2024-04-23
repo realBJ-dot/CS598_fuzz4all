@@ -1,0 +1,34 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP DATABASE sampleDB2; EXIT
+-- Please re-use the code to create the third and last database as sampleDB3 and sampleDB3a, respectively. Please fill in sampleDB3a with SQL that: creates a table t1 with 20 rows and does a join on t1 and t2 with an auto-increment id number that is updated every 15 rows.
+CREATE DATABASE IF NOT EXISTS sampleDB3; USE sampleDB3;
+CREATE DATABASE IF NOT EXISTS sampleDB3A; USE sampleDB3A;
+CREATE TABLE t1 (ID INT);
+INSERT INTO t1 VALUES(1); INSERT INTO t1 VALUES(2); INSERT INTO t1 VALUES(3); INSERT INTO t1 VALUES(4);
+CREATE TABLE t1b(ID INT);
+
+SET GLOBAL local_infile=TRUE; SET GLOBAL local_infile=FALSE;
+-- Please create a SQL statement that updates the auto-increment ID field of table t1 by 50. Create a table t2 that has an integer field id. Then, create a SQL statement to update the field with an auto-increment value by 0, 1, 2,... 50 using your updated SQL statement on table t1. You should use a subquery for t2.
+CREATE DATABASE IF NOT EXISTS sampleDB3B; USE sampleDB3B;
+CREATE TABLE t2 (ID INT);
+INSERT INTO t2 VALUES(54);
+CREATE TABLE t3 (ID INT);
+CREATE TABLE t3b (ID INT);
+CREATE TABLE t4 (ID INT);
+INSERT INTO t4 VALUES(5);
+CREATE TABLE t4b (ID INT);
+
+
+
+SHOW DATABASES;
+SHOW TABLES;
+-- Please create the following two tables in the sampleDB. You need a table t1 that has 4 columns and integer types t1.id, the integer type of the last column and 1 integer column named numRows.
+CREATE DATABASE IF NOT EXISTS sampleDB4a; USE sampleDB4a;
+CREATE TABLE IF NOT EXISTS t1 (id INT PRIMARY KEY, numRows INT);
+
+
+ 
+CREATE DATABASE IF NOT EXISTS sampleDB5; USE sampleDB5;
+DROP PROCEDURE IF EXISTS getNameById;
+DELIMITER $$
+CREATE PROCEDURE `getNameById`(IN `personid` INT)

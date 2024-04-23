@@ -1,0 +1,11 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+DROP TABLE IF EXISTS customer;
+CREATE TABLE customer (cid INT AUTO_INCREMENT, cname VARCHAR(21), address CHAR(50), city CHAR(25)); CREATE TABLE customer (cid INT AUTO_INCREMENT, cname VARCHAR(21), address CHAR(50), city CHAR(25)); INSERT INTO customer (cname, address, city) VALUES ('Jane', '127 Lago St.', 'Fairfax', 'New Jersey'); INSERT INTO customer (cname, address, city) VALUES ('Max', '1212 Lago St.', NULL, 'New York'); INSERT INTO customer (cname, address, city) VALUES ('Alyssa', '128 Lago St.', 'Boston', 'San Diego'); DROP TABLE IF EXISTS customer;
+     
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+     
+CREATE DATABASE IF NOT EXISTS sampleDB; SELECT * FROM customer;
+SELECT cname, address, city
+FROM customer
+ORDER BY cname, address;
+DROP DATABASE IF EXISTS sampleDB;

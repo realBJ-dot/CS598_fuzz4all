@@ -1,0 +1,41 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS `sampleDB`.`cars_2` (
+  `Make` varchar(20) NOT NULL,
+  `Model` varchar(10) NOT NULL,
+  `Color` varchar(8) NOT NULL,
+  `Price` float NOT NULL,
+  `Year` int NOT NULL,
+  `Owner` varchar(16),
+  PRIMARY KEY (`Make`,`Model`,`Color`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+SELECT * FROM sampleDB.cars;
+ 
+CREATE INDEX cars_id ON sampleDB.cars (id);
+DELIMITER ;;
+CREATE PROCEDURE `query_index`()
+BEGIN
+SELECT * FROM sampleDB.cars;
+SELECT * FROM sampleDB.cars_2;
+END;;
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE IF NOT EXISTS `sampleDB`.`mystuff` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `Name` varchar(32) NOT NULL,
+  `Address` text,
+  `Description` text,
+  `Number` float NOT NULL,
+  `Color` varchar(16) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+USE sampleDB;
+DROP PROCEDURE IF EXISTS my_procedure;
+DELIMITER ;;
+CREATE PROCEDURE my_procedure()
+BEGIN
+INSERT INTO mystuff (Name, Address, Description, Number) VALUES ('My Procedure');
+DROP PROCEDURE my_procedure;
+END ;;
+-- Use the procedure
+CALL my_procedure();
+
+-- Please create a very short query which uses SQL features in a complex way. Be sure to use ENGINE=InnoDB. You should only use sampleDB as the database and assume no other table exist. You need to create new

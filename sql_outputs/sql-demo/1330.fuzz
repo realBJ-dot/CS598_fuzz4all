@@ -1,0 +1,20 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+ 
+UPDATE author SET author_name = '<NAME>' WHERE author_id in(1,3);
+DROP DATABASE sampleDB;
+-- MySQL is a popular open-source relational database that allows developers to easily and quickly write applications that utilize complex databases and data analysis. Like other relational databases, MySQL offers high availability, multi-threaded processing, and multiple user support (if you use MySQL in a high performance environment). Unlike relational databases which use disk storage to hold data but are highly transactional, MySQL databases need to be accessed by more than one application.
+-- Using a mutated program, please create a table named 'book' that contains two columns: book_id which is a serial number and is auto incremented on insertion, and name, which is a text field which is not null and has multiple rows. Your mutated program should add at least 30 records to this table. Each row should have two integers, one positive and one negative and a text field of a random string which is auto incremented on insertion. If a row with a positive name and two negative values can be added, update that row to have the negative value added to it to have a row where the positive value is at the beginning and the negative value just below that name. Display the contents of the table.
+CREATE TABLE book (
+book_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+author_id INT,
+PRIMARY KEY(author_id),
+UNIQUE(book_id)
+);
+INSERT INTO author VALUES(1,1);
+INSERT INTO author VALUES(2,1);
+INSERT INTO author VALUES(3,2);
+INSERT INTO author VALUES(1,2);
+INSERT INTO author VALUES(2,3);
+INSERT INTO book(author_id, book_id) VALUES(1,2);
+INSERT INTO book(author_id, book_id) VALUES(1,3);
+INSERT INTO book(author_

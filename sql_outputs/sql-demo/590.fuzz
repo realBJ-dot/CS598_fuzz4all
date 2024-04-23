@@ -1,0 +1,19 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE Mutated 
+(
+  ID INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  FirstName VARCHAR(15) NOT NULL,
+  LastName VARCHAR(10) NOT NULL,
+  Email VARCHAR(200) NOT NULL UNIQUE
+);
+INSERT INTO Mutated
+VALUES(1, 'Mary', 'Jane', '<EMAIL>'),
+(2, 'John', 'Smith', '<EMAIL>'),
+(3, 'James', 'Doe', '<EMAIL>'),
+(4, 'Frank', 'Gordon', '<EMAIL>'),
+(5, 'John', 'Doe', '<EMAIL>'),
+(6, 'Jane', 'Doe', '<EMAIL>'),
+(1000, 'John', 'Doe', '<EMAIL>');
+ 
+ 
+DROP DATABASE sampleDB; 

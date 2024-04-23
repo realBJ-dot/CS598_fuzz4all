@@ -1,0 +1,17 @@
+CREATE DATABASE IF NOT EXISTS sampleDB; USE sampleDB;
+CREATE TABLE `contact` (
+  `contactID` INT(5) NOT NULL AUTO_INCREMENT,
+  `first_name` INT(5) NOT NULL,
+  `last_name` INT(5) NOT NULL,
+  `email_address` INT(5) NOT NULL,
+  `number_phone` INT(5) NOT NULL,
+  PRIMARY KEY (`contactID`)
+);
+CREATE TABLE `address` (
+  `addressID` INT(5) NOT NULL AUTO_INCREMENT,
+  `post_office` INT(5) NOT NULL,
+  `city` CHAR (20) NULL,
+  `region` CHAR (20) NULL,
+  `country` CHAR (20) NULL,
+  PRIMARY KEY (`addressID`)
+);

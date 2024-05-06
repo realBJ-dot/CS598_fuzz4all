@@ -1,8 +1,0 @@
-'use strict';
-<fim_middle> 
-
-
-Execution Output ------------------:
-test.js:2:1: error: invalid expression (possible JSX: pass -parse-jsx to parse)
-<fim_middle> 
-^

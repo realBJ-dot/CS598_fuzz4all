@@ -55,6 +55,32 @@ To use the autoprompting mechanism of `Fuzz4All` via GPT-4, please also export y
 ```
 export OPENAI_API_KEY={key_here}
 ```
+### Fuzzing Javascript and MySQL engine
+For our group project, we specially fuzz on Javascript and MySQL engine. 
+
+The config files we used for JavaScript engines can be found under config/full_run: `javascript_hermes.yaml` and `javascript_v8.yaml`.
+
+The config file we used for MySQL InnoDB engine can be found under config/full_run: `sql_innodb.yaml`.
+
+To perform the test, engines for them need to be manually built in advance, here is the list of sources:
+
+(Meta Hermes Engine) [https://github.com/facebook/hermes] After building the engine, the scripts can be directly executed.
+
+(V8 Engine) [https://v8.dev/docs/build] After building the engine, the scripts can be directly executed.
+
+(MySQL Engine) [https://dev.mysql.com/doc/refman/8.0/en/linux-installation.html] After building the engine. You need to start mysql service, login as `root`, then create user `CS598` with password `test1234` and grant it with all priorities on database `sampleDB`. Then the scripts can be executed.
+
+We included the scripts for them under `/scripts`:
+
+| Engine    | Path |
+| -------- | ------- |
+| Hermes  | js-hermes.sh    |
+| V8 | js-v8.sh     |
+| MySQL    | sql.sh   |
+
+To use these scripts, you might need to change `--target` to refer to the path of executable, and `--folder` to output paths.
+
+We also included  scripts that execute each test that was logged as having potenial error and record the execution output: `scripts\check_hermes_output.sh` and `scripts\check_v8_output.sh`. Please update the path to the log file before executing these scripts.
 
 ### Fuzzing
 
@@ -73,11 +99,6 @@ python Fuzz4All/fuzz.py --config {config_file.yaml} main_with_config \
                         --model_name {model_name} \
                         --target {target_name}
 ```
-The config files we used for JavaScript engines can be found under config/full_run: `javascript_hermes.yaml` and `javascript_v8.yaml`
-
-We included the scripts we used to fuzz V8 and Hermes: `scripts/js-hermes.sh` and `scripts/js-v8.sh`. To uses these scripts, you might need to update the output path and path to V8/Hermes binary.
-
-We also included  scripts that execute each test that was logged as having potenial error and record the execution output: `scripts\check_hermes_output.sh` and `scripts\check_v8_output.sh`. Please update the path to the log file before executing these scripts.
 
 > [!Note]
 > you will neede to build/download your own binary ({target_name}) for fuzzing
@@ -156,6 +177,7 @@ Potential bugs will look like this in `log.txt`:
 ```
 [VERBOSE] 2345.fuzz has potential error! # this indicates that file 2345.fuzz may have a potential bug
 ```
+
 
 ## ⚙️ Artifact
 

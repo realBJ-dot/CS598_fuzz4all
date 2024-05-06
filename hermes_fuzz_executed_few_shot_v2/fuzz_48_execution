@@ -1,8 +1,0 @@
-'use strict';
-Array.prototype.some(function (x) { break }, 23);
- 
-
-Execution Output ------------------:
-test.js:2:37: error: 'break' not within a loop or a switch
-Array.prototype.some(function (x) { break }, 23);
-                                    ^~~~~

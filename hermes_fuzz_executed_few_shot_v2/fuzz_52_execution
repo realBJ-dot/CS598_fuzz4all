@@ -1,9 +1,0 @@
-'use strict';
-<fim_middle>var _a;
-Array.prototype.reduce.call([1, 2, 3], function (accumulator, value) { return accumulator + value * 2; }, 1) === 27
-
-
-Execution Output ------------------:
-test.js:2:1: error: invalid expression (possible JSX: pass -parse-jsx to parse)
-<fim_middle>var _a;
-^

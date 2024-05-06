@@ -63,8 +63,8 @@ class SQLINNODBTarget(Target):
         self.write_back_file(code)
         try:
             exit_code = subprocess.run(
-                #need to change file position
-                f"sudo mysql -u CS598 --password=test1234 < /tmp/temp{self.CURRENT_TIME}.sql",
+                
+                f"sudo mysql -u root --password=test1234 < /tmp/temp{self.CURRENT_TIME}.sql",
                 shell=True,
                 capture_output=True,
                 encoding="utf-8",
@@ -97,6 +97,68 @@ class SQLINNODBTarget(Target):
                 return FResult.ERROR, exit_code.stderr
             return FResult.FAILURE, exit_code.stderr
         elif exit_code.returncode == 0:
-            return FResult.SAFE, exit_code.stdout
+            # perform CERT when query executed without bug 
+            res = self.CERT_validation(f"/tmp/temp{self.CURRENT_TIME}.sql")
+            if res == 0:
+                return FResult.SAFE, exit_code.stdout
+            elif res == 1:
+                return FResult.ERROR, "failed CERT validation"
+            else:
+                return FResult.FAILURE, "mutation failed"
         else:
             return FResult.ERROR, exit_code.stderr
+
+    def CERT_validation(self, filename) -> int:
+        # derive a more restrictive query
+        def modify_query(query):
+            if "select" not in query.lower():
+                return None
+
+            modified_query = query.lower()
+            if "join" in modified_query:
+                # Change join type to INNER JOIN'
+                if "left join" in modified_query:
+                    modified_query = modified_query.replace("left join", "inner join")
+                elif "full join" in modified_query:
+                    modified_query = modified_query.replace("full join","right join")
+                elif "cross join" in modified_query:
+                    modified_query = modified_query.replace("cross join", "full join")
+            elif "where" in modified_query and " and " in modified_query:
+                # Remove "or" from where clause
+                modified_query = modified_query.replace(" or ", " and ")
+            else:
+                # Add DISTINCT to select
+                if "distinct" not in modified_query:
+                    select_index = modified_query.find("select") + len("select")
+                    modified_query = modified_query[:select_index] + " distinct" + modified_query[select_index:]
+
+            return modified_query
+
+    
+        with open(filename, 'r') as file:
+            query = file.read().strip()
+
+        modified_query = modify_query(query)
+        if not modified_query:
+            # query has no select clause. cannot derive a more restrictive one
+            print ("No valid query found in the file.")
+            return 2
+        
+        # execute the original query and gets cardinality via wc
+        command1 = f"sudo mysql -sN -u root --password=test1234 < {filename} | wc -l"
+        original_result = subprocess.run(command1, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+        original_cardinality = int(original_result.stdout.strip())
+        
+        # execute the modified query and gets cardinality via wc
+        command2 = f"sudo mysql -sN -u root --password=test1234 -e \"{modified_query}\" |  wc -l"
+        modified_result = subprocess.run(command2, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+        # there is a chance that modification cause syntax error
+        if modified_result.returncode == 0:    
+            modified_cardinality = int(modified_result.stdout.strip())
+        else:
+            return 2
+    
+        if modified_cardinality <= original_cardinality:
+            return 0 # SAFE
+        return 1 # potential error
+

@@ -1,8 +1,0 @@
-const fs = require('fs');
-
-const promise = new Promise(f => fs.readFile("./data.html", "UTF-8", f))
-.then(r => new Promise(function (resolve, reject) {
-      console.log("data downloaded");
-      resolve(r)
-}))
-.then(content => { return document.write(content)}});

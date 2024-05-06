@@ -1,9 +1,0 @@
-const fs = require('fs');
-
-const path = require('path');
-const http = require('http');
-const http1 = http.Server(function (req, res) {
-  res.end('Hello, React Native!');
-});
-http1.listen(8081);
-

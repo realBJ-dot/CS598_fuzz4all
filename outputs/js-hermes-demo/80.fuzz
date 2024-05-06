@@ -1,8 +1,0 @@
-const fs = require('fs');
-
-var a = [1,2,3];
-a.forEach(function(x) {
-    a = [x,x,...a];
-});
-a = a.join(',');
-fs.writeFileSync('out.json', a);

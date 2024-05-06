@@ -1,4 +1,0 @@
-const fs = require('fs');
-
-
-for (var i = 0; i < 100000000; i++) fs.readFileSync('test.txt', 'utf8');  

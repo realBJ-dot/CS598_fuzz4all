@@ -1,7 +1,0 @@
-const fs = require('fs');
-
-new fs('file.js').readFile()
-
-```
-
-If you are able to run the example, you should be able to see both a file and a `readFile` function that works in both runtimes (with and without Hermes).

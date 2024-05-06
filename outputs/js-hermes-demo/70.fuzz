@@ -1,5 +1,0 @@
-const fs = require('fs');
-
-var arr = new Uint32Array([2, 3, 4]);
-var s1 = "test " + arr + "";
-console.log(s1 === "test [" + arr.toString() + "]");

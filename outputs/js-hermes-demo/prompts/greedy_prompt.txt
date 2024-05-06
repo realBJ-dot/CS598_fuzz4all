@@ -1,9 +1,0 @@
-// Hermes is targeting ECMAScript 2015 (ES6) with some exceptions. It currently supports all ES6 JS library functions, ES6 Array and String searching functions, Set/Map, WeakSet/WeakMap, Array spread, Arrow functions, BigInt, Destructuring assignment, ES6 Promise, for..of loops, Generators, Intl APIs, Iteration, Object rest/spread, Optional chaining and nullish coalescing, Reflection, Shorthand property and computed property on object literals, Symbols, Template string literals, and TypedArrays.
-
-Work is in progress for Async function, ES modules, Intl API glue, Symbol.prototype.description, and WeakRef. Planned features include block scoped variables, classes and method definitions, expanded Intl functionality, RegExp match indices and named capture groups.
-
-However, Hermes excludes support for local mode eval(), features added to ECMAScript after ES6 not listed under "Supported", Realms, Symbol.species and its interactions with JS library functions, Symbol.unscopables, use of constructor property when creating new Arrays in Array.prototype methods, and with statements. 
-
-There are also some incompatibilities, such as arguments changes in non-strict mode not syncing with named parameters, Function.prototype.toString not showing source because Hermes executes from bytecode, and Promise being implemented by pre-compiling the JS polyfill from RN as the internal bytecode. Users can opt-out of Hermes' Promise by passing -Xes6-promise=0 in CLI or setting withES6Promise(false) in the runtime configs.
-/* Please create a very short program which uses Javascript and Hermes features in a complex way */
-const fs = require('fs');

@@ -1,6 +1,0 @@
-const fs = require('fs');
-
-function hello() {
-  return 9;
-}
-fs.read(`${hello}?${1}`, 'utf8', 'base64');

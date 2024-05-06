@@ -64,11 +64,11 @@ The config file we used for MySQL InnoDB engine can be found under config/full_r
 
 To perform the test, engines for them need to be manually built in advance, here is the list of sources:
 
-[`Meta Hermes Engine`] (https://github.com/facebook/hermes) After building the engine, the scripts can be directly executed.
+[`Meta Hermes Engine`](https://github.com/facebook/hermes) After building the engine, the scripts can be directly executed.
 
-[`V8 Engine`] (https://v8.dev/docs/build) After building the engine, the scripts can be directly executed.
+[`V8 Engine`](https://v8.dev/docs/build) After building the engine, the scripts can be directly executed.
 
-[`MySQL Engine`] (https://dev.mysql.com/doc/refman/8.0/en/linux-installation.html) After building the engine. You need to start mysql service, login as `root`, then create user `CS598` with password `test1234` and grant it with all priorities on database `sampleDB`. Then the scripts can be executed.
+[`MySQL Engine`](https://dev.mysql.com/doc/refman/8.0/en/linux-installation.html) After building the engine. You need to start mysql service, login as `root`, then create user `CS598` with password `test1234` and grant it with all priorities on database `sampleDB`. Then the scripts can be executed.
 
 We included the scripts for them under `/scripts`:
 

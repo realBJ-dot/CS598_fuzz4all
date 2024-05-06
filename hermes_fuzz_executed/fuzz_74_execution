@@ -1,8 +1,0 @@
-'use strict';
-let b = await Promise.resolve('done');
-
-
-Execution Output ------------------:
-test.js:2:15: error: ';' expected
-let b = await Promise.resolve('done');
-              ^
